@@ -101,6 +101,7 @@ p <- plot_fish_box()
 p
 ```
 
+<br>
 
 ```{r tab-culvert-010, eval = T}
 # make_tab_summary(df = pscis2 %>% filter(pscis_crossing_id == my_site)) %>% 

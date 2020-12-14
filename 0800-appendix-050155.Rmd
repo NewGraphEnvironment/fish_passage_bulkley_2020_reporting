@@ -102,12 +102,18 @@ p
 ```
 
 
-```{r tab-culvert-010, eval = F}
+```{r tab-culvert-010, eval = T}
+# make_tab_summary(df = pscis2 %>% filter(pscis_crossing_id == my_site)) %>% 
+#   kable() %>% 
+#   kableExtra::add_footnote(label = paste0('Comments: ', pscis2 %>% filter(pscis_crossing_id == my_site) %>% pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
+#   kableExtra::add_footnote(label = paste0('Photos: ', 
+#                                           paste0('![](https://github.com/NewGraphEnvironment/', basename(getwd()), '/raw/master/data/photos/', my_site, '/crossing_all.JPG)')), notation = 'none')
+
 make_tab_summary(df = pscis2 %>% filter(pscis_crossing_id == my_site)) %>% 
   kable() %>% 
   kableExtra::add_footnote(label = paste0('Comments: ', pscis2 %>% filter(pscis_crossing_id == my_site) %>% pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
   kableExtra::add_footnote(label = paste0('Photos: ', 
-                                          paste0('![](https://github.com/NewGraphEnvironment/', basename(getwd()), '/raw/master/data/photos/', my_site, '/crossing_all.JPG)')), notation = 'none')
+                                          paste0('![](data/photos/', my_site, '/crossing_all.JPG)')), notation = 'none')
 ```
 
 <br>

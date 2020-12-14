@@ -259,18 +259,26 @@ tab_summary_comments <- pscis_split %>%
 
 ####-----------make a table with just the photos in it so you can add as a footnote - should combine with commetns I think-------
 ##get list of files (site_ids) in the photo folder
+# tab_photo_url <- list.files(path = paste0(getwd(), '/data/photos/'), full.names = T) %>%
+#   basename() %>%
+#   as_tibble() %>%
+#   mutate(value = as.integer(value)) %>% ##need this to sort
+#   dplyr::arrange(value)  %>%
+#   mutate(photo = paste0('![](https://github.com/NewGraphEnvironment/', basename(getwd()), '/raw/master/data/photos/', value, '/crossing_all.JPG)')) %>%
+#   filter(value %in% pscis$my_crossing_reference) %>% ##we don't want all the photos - just the phase 1 photos for this use case!!!
+#   dplyr::group_split(value) %>%
+#   purrr::set_names(nm = pscis$my_crossing_reference)
+
+
 tab_photo_url <- list.files(path = paste0(getwd(), '/data/photos/'), full.names = T) %>%
   basename() %>%
   as_tibble() %>%
   mutate(value = as.integer(value)) %>% ##need this to sort
   dplyr::arrange(value)  %>%
-  mutate(photo = paste0('![](https://github.com/NewGraphEnvironment/', basename(getwd()), '/raw/master/data/photos/', value, '/crossing_all.JPG)')) %>%
+  mutate(photo = paste0('![](data/photos/', value, '/crossing_all.JPG)')) %>%
   filter(value %in% pscis$my_crossing_reference) %>% ##we don't want all the photos - just the phase 1 photos for this use case!!!
   dplyr::group_split(value) %>%
   purrr::set_names(nm = pscis$my_crossing_reference)
-
-
-
 
 
 

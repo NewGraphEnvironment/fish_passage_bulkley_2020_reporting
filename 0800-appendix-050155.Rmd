@@ -110,7 +110,10 @@ p
 #   kableExtra::add_footnote(label = paste0('Photos: ', 
 #                                           paste0('![](https://github.com/NewGraphEnvironment/', basename(getwd()), '/raw/master/data/photos/', my_site, '/crossing_all.JPG)')), notation = 'none')
 
-make_tab_summary(df = pscis2 %>% filter(pscis_crossing_id == my_site)) %>% 
+tab_sum_input <- make_tab_summary(df = pscis2 %>% filter(pscis_crossing_id == my_site))
+
+
+tab_sum_input %>% 
   kable(caption = paste0('Summary of fish passage reassessment for PSCIS crossing ', my_site, '.')) %>% 
   # kableExtra::add_footnote(label = paste0('Comments: ', pscis2 %>% filter(pscis_crossing_id == my_site) %>%
   #                                           pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
@@ -123,7 +126,7 @@ make_tab_summary(df = pscis2 %>% filter(pscis_crossing_id == my_site)) %>%
 
 <br>
 
-```{r photo-001, eval=T}
+```{r photo-001, fig.cap= my_caption, eval=T}
 my_photo = '20200922_131045_k.JPG'
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')

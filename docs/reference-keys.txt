@@ -9,6 +9,7 @@ tab:tab-fish-site-010
 tab:tab-fish-dens-010
 fig:plot-fish-box-010
 tab:tab-culvert-010
+fig:photo-001
 fig:photo-002
 intro
 background

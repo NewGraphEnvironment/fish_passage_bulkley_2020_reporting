@@ -1,0 +1,14 @@
+# Introduction {#intro}
+New Graph Environment was retained by the Canadian Wildlife Federation in the fall of 2020 to conduct fish passage assessments of stream crossings within the Elk River watershed upstream of the Elko Dam near Elko, BC. The work was carried out in accordance with the BC Ministry of Environment: Field Assessment  for Determining Fish Passage at Closed  Bottom  Structures,  4th  Edition [@fish_passage_assessments] and Fish Passage Strategic Approach: Protocol for Prioritizing Sites for Fish Passage Remediation: 4th Edition [@fishpassagetechnicalworkinggroupFishPassageStrategic2014].
+
+<br>
+
+The health and viability of freshwater fish populations can depend on access to tributary and off channel areas which provide refuge during high flows, opportunities for foraging, overwintering habitat, spawning habitat and summer rearing habitat [@Bramblett_2002; @swalesRoleOffChannelPonds1989].  Culverts can present barriers to fish migration due to increased water velocity, turbulence, a vertical drop at the culvert outlet and/or maintenance issues [@slaneyFishHabitatRehabilitation1997]. Reconnection of fragmented habitats is a management action that can generate some of the highest ecological returns on economic investments relative to other habitat restoration techniques [@saldicaromileStreamHabitatRestoration2004].
+
+```{r eval=F}
+
+
+
+
+```
+

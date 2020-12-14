@@ -1,0 +1,55 @@
+# Results
+
+## Phase 1
+
+A total of XXX assessments were conducted between xxx and xxxxxxxxxx.  Site details and photos are presented in 
+
+The analysis phase is summarized in Table \@ref(tab:cost-est) [test][test]
+
+<br>
+
+```{r cost-est}
+source('R/cost-estimates.R')
+
+tab_cost_est %>% 
+  kable(caption = 'Modelled upstream habitat estimate and cost benefit.',
+        escape = T) %>% 
+  kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>% 
+  kableExtra::scroll_box(width = "100%", height = "500px")
+
+```
+
+
+## Phase 2
+
+
+Raw results are included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting/raw/master/data/habitat_confirmations.xls) and summarized in Tables \@ref(tab:tab-overview) - \@ref(tab:tab-habitat-summary)
+
+
+<br>
+
+```{r tab-overview}
+# tab_overview %>% 
+#   kable(caption = 'Overview of habitat confirmation sites.') %>% 
+#   kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>% 
+#   kableExtra::scroll_box(width = "100%", height = "500px")
+
+tab_overview %>% 
+  my_kable_scroll(caption_text = 'Overview of habitat confirmation sites.')
+```
+
+<br>
+
+```{r}
+make_tab_cv(dat = pscis2) %>% 
+  my_kable(caption_text = 'Summary of Phase 2 fish passage assessments.')
+```
+
+<br>
+
+```{r tab-habitat-summary}
+tab_hab_summary %>% 
+  my_kable_scroll(caption_text = 'Summary of habitat details.')
+
+```
+

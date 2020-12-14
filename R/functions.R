@@ -29,19 +29,53 @@ import_pscis <- function(workbook_name = 'pscis_phase1.xlsm'){ ##new template.  
 }
 
 
-# make_photo_comp_cv <- function(site_id){
-#   photos_images1 <- list.files(path = paste0(getwd(), '/data/photos/', site_id), full.names = T) %>%
-#     stringr::str_subset(., 'barrel|outlet|upstream') %>%
-#     image_read()
-#   photos_images2 <- list.files(path = paste0(getwd(), '/data/photos/', site_id), full.names = T) %>%
-#     stringr::str_subset(., 'downstream|road|inlet') %>%
-#     image_read()
-#   photos_stack1 <-image_append(image_scale(photos_images1, "x420")) ##1/3 the width 373.33 and half the original height
-#   photos_stack2 <- image_append(image_scale(photos_images2, "x420"))
-#   photos_stack <- c(photos_stack1, photos_stack2)
-#   photos_stacked <- image_append(image_scale(photos_stack), stack = T)
-#   image_write(photos_stacked, path = paste0(getwd(), '/data/photos/', site_id, '/crossing_all.JPG'), format = 'jpg')
-# }
+###---------------summary for phase 1---------------------
+####---------------make a table for the comments---------------
+make_tab_summary_comments <- function(df){
+  df %>%
+    select(assessment_comment) %>%
+    # slice(1) %>%
+    set_names('Comment')
+}
+
+####---------------make the report table-----
+##grab a df with the names of the left hand side of the table
+make_tab_summary <- function(df){
+  tab_results_left <- xref_names %>%
+    filter(id_side == 1)
+  ##get the data
+  tab_pull_left <- df %>%
+    select(pull(tab_results_left,spdsht)) %>%
+    # slice(1) %>%
+    t() %>%
+    as.data.frame() %>%
+    tibble::rownames_to_column()
+
+  left <- left_join(tab_pull_left, xref_names, by = c('rowname' = 'spdsht'))
+
+  tab_results_right <- xref_names %>%
+    filter(id_side == 2)
+
+  ##get the data
+  tab_pull_right<- df %>%
+    select(pull(tab_results_right,spdsht)) %>%
+    # slice(1) %>%
+    t() %>%
+    as.data.frame() %>%
+    tibble::rownames_to_column()
+
+  right <- left_join(tab_pull_right, xref_names, by = c('rowname' = 'spdsht'))
+
+  tab_joined <- left_join(
+    select(left, report, V1, id_join),
+    select(right, report, V1, id_join),
+    by = 'id_join'
+  ) %>%
+    select(-id_join) %>%
+    purrr::set_names(c('Location and Stream Data', '-', 'Crossing Characteristics', '--'))
+  return(tab_joined)
+}
+
 
 ##here we stack up and down then side to side for reporting - this works!
 make_photo_comp_cv <- function(site_id){

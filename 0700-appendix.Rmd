@@ -5,7 +5,7 @@
 print_tab_summary <- function(x, y, z){
   kable(x) %>%
     kableExtra::add_footnote(label = paste0('Comments: ', y[[1]]), notation = 'none') %>% #this grabs the comments out
-    kableExtra::add_footnote(label = paste0('Photos: ', z[[1]], z[[2]]), notation = 'none', escape = T)
+    kableExtra::add_footnote(label = paste0('Photos: ', z[[1]], z[[2]]), notation = 'none')
 }
  
 tabs <- mapply(print_tab_summary, x = tab_summary, y = tab_summary_comments, z = tab_photo_url)

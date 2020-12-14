@@ -196,51 +196,8 @@ phase1_priorities <- pscis %>%
   dplyr::rename(utm_easting = easting, utm_northing = northing)
 
 
-####---------------make a table for the comments---------------
-make_tab_summary_comments <- function(df){
-  df %>%
-  select(assessment_comment) %>%
-  # slice(1) %>%
-  set_names('Comment')
-}
 
-####---------------make the report table-----
-##grab a df with the names of the left hand side of the table
-make_tab_summary <- function(df){
-  tab_results_left <- xref_names %>%
-    filter(id_side == 1)
-  ##get the data
-  tab_pull_left <- df %>%
-    select(pull(tab_results_left,spdsht)) %>%
-    # slice(1) %>%
-    t() %>%
-    as.data.frame() %>%
-    tibble::rownames_to_column()
 
-  left <- left_join(tab_pull_left, xref_names, by = c('rowname' = 'spdsht'))
-
-  tab_results_right <- xref_names %>%
-    filter(id_side == 2)
-
-  ##get the data
-  tab_pull_right<- df %>%
-    select(pull(tab_results_right,spdsht)) %>%
-    # slice(1) %>%
-    t() %>%
-    as.data.frame() %>%
-    tibble::rownames_to_column()
-
-  right <- left_join(tab_pull_right, xref_names, by = c('rowname' = 'spdsht'))
-
-  tab_joined <- left_join(
-    select(left, report, V1, id_join),
-    select(right, report, V1, id_join),
-    by = 'id_join'
-  ) %>%
-    select(-id_join) %>%
-    purrr::set_names(c('Location and Stream Data', '-', 'Crossing Characteristics', '--'))
-  return(tab_joined)
-}
 
 ##turn spreadsheet into list of data frames
 pscis_split <- pscis %>%
@@ -255,19 +212,6 @@ tab_summary <- pscis_split %>%
 
 tab_summary_comments <- pscis_split %>%
   purrr::map(make_tab_summary_comments)
-
-
-####-----------make a table with just the photos in it so you can add as a footnote - should combine with commetns I think-------
-##get list of files (site_ids) in the photo folder
-# tab_photo_url <- list.files(path = paste0(getwd(), '/data/photos/'), full.names = T) %>%
-#   basename() %>%
-#   as_tibble() %>%
-#   mutate(value = as.integer(value)) %>% ##need this to sort
-#   dplyr::arrange(value)  %>%
-#   mutate(photo = paste0('![](https://github.com/NewGraphEnvironment/', basename(getwd()), '/raw/master/data/photos/', value, '/crossing_all.JPG)')) %>%
-#   filter(value %in% pscis$my_crossing_reference) %>% ##we don't want all the photos - just the phase 1 photos for this use case!!!
-#   dplyr::group_split(value) %>%
-#   purrr::set_names(nm = pscis$my_crossing_reference)
 
 
 tab_photo_url <- list.files(path = paste0(getwd(), '/data/photos/'), full.names = T) %>%

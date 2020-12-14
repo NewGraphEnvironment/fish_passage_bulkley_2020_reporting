@@ -76,6 +76,25 @@ There is an estimated `r my_priority_info() %>% pull(upstream_habitat_length_km)
 
 <br>
 
+```{r tab-culvert-010, eval = T}
+##had to pull this object out of the table push for some reason
+tab_sum_input <- make_tab_summary(df = pscis2 %>% filter(pscis_crossing_id == my_site))
+
+
+tab_sum_input %>% 
+  kable(caption = paste0('Summary of fish passage reassessment for PSCIS crossing ', my_site, '.')) %>% 
+  # kableExtra::add_footnote(label = paste0('Comments: ', pscis2 %>% filter(pscis_crossing_id == my_site) %>%
+  #                                           pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
+  kableExtra::add_footnote(label = paste0('Photos: ', 
+                                          paste0('![](data/photos/', my_site, '/crossing_all.JPG)')), notation = 'none') %>% 
+  kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
+    kableExtra::scroll_box(width = "100%", height = "500px")
+
+```
+
+
+<br>
+
 ```{r tab-fish-site-010, eval=T}
 my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
 
@@ -101,28 +120,6 @@ p <- plot_fish_box()
 p
 ```
 
-<br>
-
-```{r tab-culvert-010, eval = T}
-# make_tab_summary(df = pscis2 %>% filter(pscis_crossing_id == my_site)) %>% 
-#   kable() %>% 
-#   kableExtra::add_footnote(label = paste0('Comments: ', pscis2 %>% filter(pscis_crossing_id == my_site) %>% pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
-#   kableExtra::add_footnote(label = paste0('Photos: ', 
-#                                           paste0('![](https://github.com/NewGraphEnvironment/', basename(getwd()), '/raw/master/data/photos/', my_site, '/crossing_all.JPG)')), notation = 'none')
-
-tab_sum_input <- make_tab_summary(df = pscis2 %>% filter(pscis_crossing_id == my_site))
-
-
-tab_sum_input %>% 
-  kable(caption = paste0('Summary of fish passage reassessment for PSCIS crossing ', my_site, '.')) %>% 
-  # kableExtra::add_footnote(label = paste0('Comments: ', pscis2 %>% filter(pscis_crossing_id == my_site) %>%
-  #                                           pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
-  kableExtra::add_footnote(label = paste0('Photos: ', 
-                                          paste0('![](data/photos/', my_site, '/crossing_all.JPG)')), notation = 'none') %>% 
-  kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
-    kableExtra::scroll_box(width = "100%", height = "500px")
-
-```
 
 <br>
 

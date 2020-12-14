@@ -42,14 +42,16 @@ tab_overview %>%
 
 ```{r}
 make_tab_cv(dat = pscis2) %>% 
-  my_kable(caption_text = 'Summary of Phase 2 fish passage assessments.')
+  my_kable(caption_text = 'Summary of Phase 2 fish passage reassessments.')
 ```
 
 <br>
 
 ```{r tab-habitat-summary}
 tab_hab_summary %>% 
-  my_kable_scroll(caption_text = 'Summary of habitat details.')
+  filter(Location == 'upstream') %>% 
+  select(-Location) %>% 
+  my_kable_scroll_no_height(caption_text = 'Summary of Phase 2 habitat confirmation details.')
 
 ```
 

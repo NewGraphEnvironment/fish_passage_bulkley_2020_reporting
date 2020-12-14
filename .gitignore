@@ -14,6 +14,7 @@ R/pers_*
 *.JPG
 !crossing_all.JPG
 !*_k.*
+!*_k_*
 *.gpkg-wal
 *.gpkg-shm
 data/raw_input

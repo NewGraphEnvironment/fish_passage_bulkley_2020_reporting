@@ -117,9 +117,9 @@ my_photo = '20200922_131045_k.JPG'
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
 
-# grid::grid.raster(get_img())
+grid::grid.raster(get_img())
 
-knitr::include_graphics(get_img_path())
+# knitr::include_graphics(get_img_path())
 ```
 
 <br>
@@ -131,7 +131,7 @@ my_photo = 'IMG_3304_k.JPG'
 
 my_caption = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
 
-# grid::grid.raster(get_img())
-knitr::include_graphics(get_img_path())
+grid::grid.raster(get_img())
+# knitr::include_graphics(get_img_path())
 ```
 

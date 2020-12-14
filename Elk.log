@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.12.10)  14 DEC 2020 07:18
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.12.10)  14 DEC 2020 07:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3722,16 +3722,8 @@ Overfull \hbox (388.31992pt too wide) in paragraph at lines 3104--3105
 [][] 
  []
 
-File: data/photos/50155/IMG_3304_k.jpg Graphic file (type bmp)
-<data/photos/50155/IMG_3304_k.jpg>
-
-Overfull \hbox (388.35081pt too wide) in paragraph at lines 3107--3107
-[][]
- []
-
-
-LaTeX Warning: Float too large for page by 36.0731pt on input line 3108.
-
+File: Elk_files/figure-latex/photo-002-1.pdf Graphic file (type pdf)
+<use Elk_files/figure-latex/photo-002-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -3745,10 +3737,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 18242 strings out of 479299
- 317826 string characters out of 5875561
+ 18235 strings out of 479299
+ 317655 string characters out of 5875561
  885659 words of memory out of 5000000
- 37405 multiletter control sequences out of 15000+600000
+ 37398 multiletter control sequences out of 15000+600000
  412903 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  94i,15n,118p,1125b,495s stack positions out of 5000i,500n,10000p,200000b,80000s

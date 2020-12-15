@@ -20,10 +20,11 @@ pacman::p_load(
   lubridate,
   forcats,
   bookdown,
-  bit64
+  bit64, ##to make integer column type for pg
+  gert  ##to track git moves
   )
 
 
 
-pacman::p_load_gh("poissonconsulting/fwapgr",
-                  "poissonconsulting/subfoldr2")
+pacman::p_load_gh("poissonconsulting/fwapgr")
+                  # "poissonconsulting/subfoldr2")

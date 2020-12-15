@@ -49,12 +49,33 @@ tab_fish_dens <- function(dat = hab_fish_dens, sit = my_site, species = 'WCT'){
     distinct(.keep_all = T)  %>%
     pivot_wider(names_from = life_stage,
                 values_from = density_100m2) %>%
+    # select(Site = site_number,
+    #        Location = location,
+    #        fry, parr, juvenile, adult) %>%
     select(Site = site_number,
            Location = location,
-           fry, parr, juvenile, adult) %>%
+           fry, parr, everything()) %>%
     purrr::set_names(nm = stringr::str_to_title(names(.))) %>%
     mutate_all(~replace_na(.,"-"))
 }
+
+
+# tab_fish_dens <- hab_fish_dens %>%
+#     filter(
+#       site  == my_site
+#       &
+#         species_code == 'WCT'
+#     ) %>%
+#     select(location,site_number, life_stage, density_100m2) %>%
+#     distinct(.keep_all = T)  %>%
+#     pivot_wider(names_from = life_stage,
+#                 values_from = density_100m2) %>%
+#     select(Site = site_number,
+#            Location = location,
+#            fry, parr, everything()) %>%
+#     purrr::set_names(nm = stringr::str_to_title(names(.))) %>%
+#     mutate_all(~replace_na(.,"-"))
+
 
 plot_fish_box <- function(dat = hab_fish_dens, sit = my_site){
   dat %>%

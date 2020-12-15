@@ -15,6 +15,13 @@ fig:photo-002
 tab:tab-culvert-020
 fig:photo-020
 fig:photo-021
+tab:tab-culvert-030
+tab:tab-fish-site-030
+tab:tab-fish-dens-030
+fig:plot-fish-box-030
+fig:photo-030
+fig:photo-031
+fig:photo-032
 intro
 background
 project-location

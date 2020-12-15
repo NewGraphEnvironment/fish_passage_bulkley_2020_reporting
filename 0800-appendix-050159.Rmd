@@ -1,5 +1,5 @@
 
-```{r setup-01, eval = T}
+```{r setup-02, eval = T}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
 source('R/packages.R')
 source('R/functions.R')
@@ -14,8 +14,8 @@ source('R/functions-fish.R')
 
 
 
-```{r  load-data-01}
-my_site <- 50155
+```{r  load-data-02}
+my_site <- 50159
 ```
 
 
@@ -25,7 +25,7 @@ my_site <- 50155
 
 ## Site Location {-}
 
-Crossing `r as.character(my_site)` is located on a `r my_pscis_info() %>% pull(stream_name)`, approximately 75m upstream from the confluence with Lizard Creek. The stream is located approximately 100m east of the location where it is mapped on the freshwater atlas stream layer. Island Lake Lodge Road is an extension of Mt.Fernie Park Road with access to Highway 3 located within Fernie city limits.  The are is a popular recreational destination for hikers and mountain bikers.  Island Lake Lodge is a year round tourist destination providing accomodations, guided hiking and backcountry catskiing for clients.
+Crossing `r as.character(my_site)` is located on a `r my_pscis_info() %>% pull(stream_name)`, approximately xxxm upstream from the confluence with Lizard Creek. The stream is located approximately 100m east of the location where it is mapped on the freshwater atlas stream layer. Island Lake Lodge Road is an extension of Mt.Fernie Park Road with access to Highway 3 located within Fernie city limits.  The are is a popular recreational destination for hikers and mountain bikers.  Island Lake Lodge is a year round tourist destination providing accomodations, guided hiking and backcountry catskiing for clients.
 
 
 <br>
@@ -42,7 +42,7 @@ PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority fo
 
 ## Stream Characteristics at Crossing {-}
 
-At the time of the survey, the un-embedded and non-backwatered `r my_pscis_info() %>% pull(diameter_or_span_meters)`m diameter crossing was considered a barrier to upstream fish passage with a pipe length of `r my_pscis_info() %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info() %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info() %>% pull(stream_width_ratio)` an outlet drop of `r my_pscis_info() %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-010)). Water temperature was `r my_habitat_info() %>% filter(rowname == 'temperature c') %>% pull(us)`$^\circ$C, pH was `r my_habitat_info() %>% filter(rowname == 'p h') %>% pull(us)` and conductivity was `r my_habitat_info() %>% filter(rowname == 'conductivity m s cm') %>% pull(us)`uS/cm.  
+At the time of the survey, the un-embedded and non-backwatered `r my_pscis_info() %>% pull(diameter_or_span_meters)`m diameter crossing was considered a barrier to upstream fish passage with a pipe length of `r my_pscis_info() %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info() %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info() %>% pull(stream_width_ratio)` an outlet drop of `r my_pscis_info() %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-020)). Water temperature was `r my_habitat_info() %>% filter(rowname == 'temperature c') %>% pull(us)`$^\circ$C, pH was `r my_habitat_info() %>% filter(rowname == 'p h') %>% pull(us)` and conductivity was `r my_habitat_info() %>% filter(rowname == 'conductivity m s cm') %>% pull(us)`uS/cm.  
 
 <br>
 
@@ -62,11 +62,6 @@ The stream was surveyed downstream from the culvert for `r my_priority_info(loc 
 
 The stream was surveyed upstream from the culvert for `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m. Overall, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Figure \@ref(fig:photo-002)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  There were frequent areas of gravels suitable for resident westslope cutthrout trout spawning.  Frequent pools to 40cm deep were present and associated with small and large woody debris. Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` for fry and juvenile westslope cutthrout rearing. 
 
-<br>
-
-## Fish Sampling {-}
-
-To assess potential impacts of the culvert on fish densities in the stream we electrofished upstream and downstream of the crossing.  Three sites were sampled upstream and one site  was sampled downstream. A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'WCT') %>% pull(count_fish)` westslope cutthrout trout and `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'EB') %>% pull(count_fish)` eastern brook trout were captured upstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'WCT') %>% pull(count_fish)` westslope cutthrout trout and `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'EB') %>% pull(count_fish)` eastern brook trout captured downstream.  Raw results are included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting/raw/master/data/habitat_confirmations.xls) and summarized in Tables \@ref(tab:tab-fish-site-010) - \@ref(tab:tab-fish-dens-010) and Figure \@ref(fig:plot-fish-box-010).
 
 <br>
 
@@ -77,11 +72,11 @@ Structure replacement with an open bottomed culvert is recommended to provide un
 
 ## Conclusion {-}
 
-There is an estimated `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of mainstem habitat upstream of crossing `r as.character(my_site)` with habitat in the areas surveyed upstream of the crossing rated as high value for fry and juvenile salmonid rearing. Although potentially attributable to the lower gradient habitat downstream and the proximity to the Lizard Creek mainstem, fish sampling results indicated that the crossing is potentially negatively impacting habitat capacity upstream of the crossing as higher densities of westslope cutthrout trout were captured downstream of the crossing than above. The road may be part of the Island Lake Recreational tenure or solely the responsiblity of the Ministry of Forests, Lands, Natural Resource Operations & Rural Development. The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement with an open bottomed structure.
+There is an estimated `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of mainstem habitat upstream of crossing `r as.character(my_site)` with habitat in the areas surveyed upstream of the crossing rated as high value for fry and juvenile salmonid rearing. The road may be part of the Island Lake Recreational tenure or solely the responsiblity of the Ministry of Forests, Lands, Natural Resource Operations & Rural Development. The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement with an open bottomed structure.
 
 <br>
 
-```{r tab-culvert-010, eval = T}
+```{r tab-culvert-020, eval = T}
 ##had to pull this object out of the table push for some reason
 tab_sum_input <- make_tab_summary(df = pscis2 %>% filter(pscis_crossing_id == my_site))
 
@@ -98,38 +93,11 @@ tab_sum_input %>%
 ```
 
 
-<br>
-
-```{r tab-fish-site-010, eval=T}
-my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
-
-tab_fish_site() %>% 
-  my_kable_scroll_no_height(caption_text = my_caption)
-```
 
 <br>
 
-```{r tab-fish-dens-010, eval=T}
-my_caption <- paste0('Westslope cuthrout trout densities (fish/100m2) for PSCIS crossing ', my_site, '.')
-
-tab_fish_dens() %>% 
-  my_kable_scroll_no_height(caption_text = my_caption)
-```
-
-<br>
-
-```{r plot-fish-box-010, fig.cap= my_caption, eval=T}
-my_caption <- paste0('Fish densities (fish/100m2) for PSCIS crossing ', my_site, '.')
-
-p <- plot_fish_box() 
-p
-```
-
-
-<br>
-
-```{r photo-001, fig.cap= my_caption, eval=T}
-my_photo = '20200922_131045_k.JPG'
+```{r photo-020, fig.cap= my_caption, eval=T}
+my_photo = '20200922_122212_k_.JPG'
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
 
@@ -140,10 +108,10 @@ grid::grid.raster(get_img())
 
 <br>
 
-```{r photo-002, fig.cap= my_caption, eval=T}
+```{r photo-021, fig.cap= my_caption, eval=T}
 
 # 
-my_photo = 'IMG_3304_k.JPG'
+my_photo = 'IMG_3287_k_.JPG'
 
 my_caption = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
 

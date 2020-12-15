@@ -7,6 +7,7 @@ source('R/private_info.R')
 ##lets do both phases at once to create a file for feeding back to bcfishpass
 dat1 <- import_pscis(workbook_name = 'pscis_phase1.xlsm')
 
+
 dat2 <- import_pscis(workbook_name = 'pscis_phase2.xlsm')
 
 dat3 <- import_pscis(workbook_name = 'pscis_reassessments.xlsm')
@@ -39,16 +40,14 @@ conn <- DBI::dbConnect(
 # #
 # #
 # # ##list tables in a schema
-dbGetQuery(conn,
-           "SELECT table_name
-           FROM information_schema.tables
-           WHERE table_schema='bcfishpass'")
-# # #
-# # # ##list column names in a table
-dbGetQuery(conn,
-           "SELECT column_name,data_type
-           FROM information_schema.columns
-           WHERE table_name='pscis_modelledcrossings_streams_xref'")
+# dbGetQuery(conn,
+#            "SELECT table_name
+#            FROM information_schema.tables
+#            WHERE table_schema='bcfishpass'")
+# # # #
+# # # # ##list column names in a table
+
+
 
 
 
@@ -87,7 +86,7 @@ CROSS JOIN LATERAL
 
 ##join the modelling data to our pscis submission info
 dat_joined <- left_join(
-  select(dat, misc_point_id, pscis_crossing_id,my_crossing_reference), ##traded pscis_crossing_id for my_crossing_reference
+  select(dat, misc_point_id, pscis_crossing_id,my_crossing_reference, source), ##traded pscis_crossing_id for my_crossing_reference
   dat_info,
   by = "misc_point_id"
 ) %>%
@@ -115,16 +114,35 @@ conn <- DBI::dbConnect(
 #            FROM information_schema.tables
 #            WHERE table_schema='ali'")
 
+# dbGetQuery(conn,
+#            "SELECT column_name,data_type
+#            FROM information_schema.columns
+#            WHERE table_name='dbm_mof_50k_grid'")
+
+
 # load to database
 sf::st_write(obj = dat, dsn = conn, Id(schema= "working", table = "misc"))
 
 
 
+# dat_info <- dbGetQuery(conn,
+#                        "
+#                                   SELECT a.misc_point_id, b.admin_area_abbreviation
+#                                   FROM working.misc a
+#                                   INNER JOIN
+#                                   whse_legal_admin_boundaries.abms_municipalities_sp b
+#                                   ON ST_Intersects(b.geom, ST_Transform(a.geometry,3005))
+#                        ")
+
 dat_info <- dbGetQuery(conn,
                        "
-                                  SELECT a.misc_point_id, b.admin_area_abbreviation
+
+                                  SELECT a.misc_point_id, b.admin_area_abbreviation, c.map_tile_display_name
                                   FROM working.misc a
                                   INNER JOIN
+                                  whse_basemapping.dbm_mof_50k_grid c
+                                  ON ST_Intersects(c.geom, ST_Transform(a.geometry,3005))
+                                  LEFT OUTER JOIN
                                   whse_legal_admin_boundaries.abms_municipalities_sp b
                                   ON ST_Intersects(b.geom, ST_Transform(a.geometry,3005))
                        ")
@@ -174,10 +192,10 @@ dat_joined3 <- left_join(
 )
 
 ##make a dat to make it easier to see so we can summarize the road info we might want to use
-dat_rd_sum <- dat_joined3 %>%
-  select(pscis_crossing_id, my_crossing_reference, crossing_id, distance, road_name_full,
-         road_class, road_name_full, road_surface, file_type_description, forest_file_id,
-         client_name, client_name_abb, map_label, owner_name, admin_area_abbreviation)
+# dat_rd_sum <- dat_joined3 %>%
+#   select(pscis_crossing_id, my_crossing_reference, crossing_id, distance, road_name_full,
+#          road_class, road_name_full, road_surface, file_type_description, forest_file_id,
+#          client_name, client_name_abb, map_label, owner_name, admin_area_abbreviation)
 
 
 ##make a dat to make it easier to see so we can summarize the road info we might want to use
@@ -191,26 +209,54 @@ dat_joined4 <- dat_joined3 %>%
                 !is.na(owner_name) ~ owner_name)) %>%
   mutate(my_road_tenure =
            case_when(distance > 100 ~ 'Unknown',  ##we need to get rid of the info for the ones that are far away
-                     T ~ my_road_tenure))
+                     T ~ my_road_tenure)) %>%
+  rename(geom_modelled_crossing = geom)
 
 ##we need to qa which are our modelled crossings at least for our phase 2 crossings
-pscis_modelledcrossings_streams_xref <- dat_joined4 %>%
-  select(stream_crossing_id = pscis_crossing_id,
-         crossing_id,
-         linear_feature_id) %>%
-  filter(!is.na(stream_crossing_id)) %>%
-  mutate(modelled_crossing_id = case_when(
-    stream_crossing_id == 50159 |
-    stream_crossing_id == 62425 |
-    stream_crossing_id == 62426
-    ~ NA_integer_,
-    T ~ crossing_id
-  ),
-  linear_feature_id = case_when(
-    is.na(modelled_crossing_id) ~ NA_integer64_,
-    T ~ linear_feature_id
-  ))
+##I used this to populate the phase 2 spreadsheet I believe
+# pscis_modelledcrossings_streams_xref <- dat_joined4 %>%
+#   select(stream_crossing_id = pscis_crossing_id,
+#          crossing_id,
+#          linear_feature_id) %>%
+#   filter(!is.na(stream_crossing_id)) %>%
+#   mutate(modelled_crossing_id = case_when(
+#     stream_crossing_id == 50159 |
+#     stream_crossing_id == 62425 |
+#     stream_crossing_id == 62426
+#     ~ NA_integer_,
+#     T ~ crossing_id
+#   ),
+#   linear_feature_id = case_when(
+#     is.na(modelled_crossing_id) ~ NA_integer64_,
+#     T ~ linear_feature_id
+#   ))
 
+
+##this is going to bring in Pscis data so we can see the pscis id's
+get_this <- bcdc_tidy_resources('pscis-assessments') %>%
+  filter(bcdata_available == T)  %>%
+  pull(package_id)
+
+dat <- bcdata::bcdc_get_data(get_this)
+
+xref_pscis_my_crossing_modelled <- dat %>%
+  purrr::set_names(nm = tolower(names(.))) %>%
+  dplyr::filter(funding_project_number == "BCFP-003_phase1") %>%
+  select(external_crossing_reference, stream_crossing_id) %>%
+  mutate(external_crossing_reference = as.integer(external_crossing_reference)) %>%
+  sf::st_drop_geometry()
+
+dat_joined5 <- left_join(
+  dat_joined4,
+  xref_pscis_my_crossing_modelled,
+  by = c('my_crossing_reference' = 'external_crossing_reference')
+)
+
+##we need to add our pscis info
+dat_joined6 <- dat_joined5 %>%
+  mutate(stream_crossing_id = as.numeric(stream_crossing_id)) %>%
+  mutate(pscis_crossing_id = case_when(is.na(pscis_crossing_id) ~ stream_crossing_id,
+                                       T ~ pscis_crossing_id))
 
 ##burn it all to a file we can use later
-dat_joined4 %>% readr::write_csv(file = paste0(getwd(), '/data/bcfishpass-phase2.csv'))
+dat_joined6 %>% readr::write_csv(file = paste0(getwd(), '/data/bcfishpass-phase2.csv'))

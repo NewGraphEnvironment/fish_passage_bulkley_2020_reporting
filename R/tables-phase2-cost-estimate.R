@@ -1,36 +1,25 @@
-##cost estimates
-source('R/packages.R')
-source('R/functions.R')
-source('R/tables.R')
+##we are going to need to sub in our lenght estimates from the priorities spreadsheet but leave this for now
+##issue - we are biulding the multiplier twice.  bad practice - leave for now
 
 
-# ##now we pull the data out whenever we want to make tables for the report
-bcfishpass <- readr::read_csv(file = paste0(getwd(), '/data/bcfishpass.csv'))
-
-
-
-##make a dat to make it easier to see so we can summarize the road info we might want to use
-bcfishpass_rd <- bcfishpass %>%
-  select(my_crossing_reference, crossing_id, distance, road_name_full,
+# make_tab_cost_est_phase2 <- function(dat = pscis2){
+bcfishpass_rd <- bcfishpass_phase2 %>%
+  filter(source %like% 'phase2') %>%  ##specific to phase 2
+  select(pscis_crossing_id, my_crossing_reference, crossing_id, distance, road_name_full,
          road_class, road_name_full, road_surface, file_type_description, forest_file_id,
          client_name, client_name_abb, map_label, owner_name, admin_area_abbreviation,
          uphab_l_net_inf_000_030:uphab_gross_sub22) %>%
   mutate(uphab_net_sub22 = rowSums(select(., uphab_l_net_inf_000_030:uphab_l_net_obs_150_220))) %>%
-  select(my_crossing_reference:admin_area_abbreviation, uphab_gross_sub22, uphab_net_sub22)
-
-# pscis_rd_prep <- left_join(
-#   select(phase1_priorities, my_crossing_reference, priority_phase1),
-#   select(pscis, my_crossing_reference, crossing_fix, barrier_result, downstream_channel_width_meters, length_or_width_meters,
-#          stream_width_ratio_score, outlet_drop_meters, recommended_diameter_or_span_meters, habitat_value),
-#   by = 'my_crossing_reference'
-# )
+  select(pscis_crossing_id:admin_area_abbreviation, uphab_gross_sub22, uphab_net_sub22)
 
 
 ###note that some of the rd info is not likely correct if the distance is >100m
+
+##########-----------------this should not be in two files!!!----------------------------
 pscis_rd <- left_join(
-  pscis,
+  select(pscis2, -my_crossing_reference),
   bcfishpass_rd,
-  by = 'my_crossing_reference'
+  by = 'pscis_crossing_id'
 ) %>%
   dplyr::mutate(my_road_class = case_when(is.na(road_class) & !is.na(file_type_description) ~
                                             file_type_description,
@@ -43,7 +32,8 @@ pscis_rd <- left_join(
                                             T ~ road_surface)) %>%
   dplyr::mutate(my_road_surface = case_when(is.na(my_road_surface) & !is.na(owner_name) ~
                                             'rail',
-                                          T ~ my_road_surface))
+                                          T ~ my_road_surface)) %>%
+  distinct(.keep_all = T) ##we have multiiple entries with 2 spreadsheets put together
 
 # test <- pscis_rd %>% filter(my_crossing_reference == 4605732)
 
@@ -66,27 +56,18 @@ tab_cost_rd_mult <- pscis_rd %>%
   # mutate(cost_1000s_for_10m_bridge = 10 * cost_m_1000s_bridge) %>%
   distinct( .keep_all = T) %>%
   arrange(cost_m_1000s_bridge)
-  # readr::write_csv(file = paste0(getwd(), '/data/raw_input/tab_cost_rd_mult.csv')) %>%
-# kable() %>%
-# kable_styling(latex_options = c("striped", "scale_down")) %>%
-# kableExtra::save_kable("fig/tab_cost_rd_mult.png")
 
-##make a version for the report
-tab_cost_rd_mult_report <- tab_cost_rd_mult %>%
-  rename(
 
-  )
+##########-----------tab_cost_rd_mult should be in one file only or a function!----------##################
 
 ##make tyhe cost estimates
 tab_cost_est_prep <- left_join(
-  select(pscis_rd, my_crossing_reference, stream_name, road_name, my_road_class,
+  select(pscis_rd, pscis_crossing_id, my_crossing_reference, stream_name, road_name, my_road_class,
          my_road_surface, downstream_channel_width_meters, barrier_result,
          fill_depth_meters, crossing_fix, , habitat_value, recommended_diameter_or_span_meters),
   select(tab_cost_rd_mult, my_road_class, my_road_surface, cost_m_1000s_bridge, cost_embed_cv),
   by = c('my_road_class','my_road_surface')
 )
-
-# test <- tab_cost_est_prep %>% filter(my_crossing_reference == 4605732)
 
 
 tab_cost_est_prep2 <- left_join(
@@ -103,8 +84,8 @@ tab_cost_est_prep2 <- left_join(
 ##add in the model data.  This is a good reason for the data to be input first so that we can use the net distance!!
 tab_cost_est_prep3 <- left_join(
   tab_cost_est_prep2,
-  select(bcfishpass_rd, my_crossing_reference, uphab_gross_sub22, uphab_net_sub22),
-  by = 'my_crossing_reference'
+  select(bcfishpass_rd, pscis_crossing_id, uphab_gross_sub22, uphab_net_sub22),
+  by = 'pscis_crossing_id'
 ) %>%
   mutate(cost_net = round(uphab_net_sub22/cost_est_1000s, 1),
          cost_gross = round(uphab_gross_sub22/cost_est_1000s, 1),
@@ -112,17 +93,14 @@ tab_cost_est_prep3 <- left_join(
          cost_area_gross = round((uphab_gross_sub22 * downstream_channel_width_meters * 0.5)/cost_est_1000s, 1))
 
 ##add the priority info
-tab_cost_est <- left_join(
-  tab_cost_est_prep3,
-  select(phase1_priorities, my_crossing_reference, priority_phase1),
-  by = 'my_crossing_reference'
-) %>%
-  select(my_crossing_reference, stream_name, road_name, downstream_channel_width_meters, priority_phase1,
+tab_cost_est_phase2 <- tab_cost_est_prep3 %>%
+  select(pscis_crossing_id, stream_name, road_name, downstream_channel_width_meters,
          crossing_fix_code, cost_est_1000s, uphab_net_sub22,
          cost_net, cost_area_net) %>%
-  mutate(uphab_net_sub22 = round(uphab_net_sub22,0)) %>%
-  rename(`External ID` = my_crossing_reference,
-         Priority = priority_phase1,
+  mutate(uphab_net_sub22 = round(uphab_net_sub22,0))
+
+tab_cost_est_phase2_report <- tab_cost_est_phase2 %>%
+  rename(`PSCIS ID` = pscis_crossing_id,
          Stream = stream_name,
          Road = road_name,
          `Stream Width (m)` = downstream_channel_width_meters,
@@ -130,16 +108,8 @@ tab_cost_est <- left_join(
         `Cost Est ( $K)` =  cost_est_1000s,
          `Habitat Upstream (m)` = uphab_net_sub22,
          `Cost Benefit (m / $K)` = cost_net,
-         `Cost Benefit (m2 / $K)` = cost_area_net) %>%
-  filter(!is.na(Priority))
+         `Cost Benefit (m2 / $K)` = cost_area_net)
 
+rm(tab_cost_est_prep, tab_cost_est_prep2, tab_cost_est_prep3,
+   bcfishpass_rd, pscis_rd)
 
-
-##clean up
-rm(tab_cost_est_prep, tab_cost_est_prep2, tab_cost_est_prep3)
-
-
-
-
-
-test <- pscis %>% select(my_crossing_reference, downstream_channel_width_meters)

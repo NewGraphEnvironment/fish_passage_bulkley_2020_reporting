@@ -12,8 +12,8 @@ pscis2 <- import_pscis(workbook_name = 'pscis_phase2.xlsm') %>%
 bcfishpass_phase2 <- readr::read_csv(file = paste0(getwd(), '/data/bcfishpass-phase2.csv'))
 
 ##this is made from extract-fwa-watershed-ltree.R
-wsheds <- sf::st_read(dsn = 'data/fishpass_mapping.gpkg', layer = 'hab_wshds_ltree')
-wsheds_up1 <- sf::st_read(dsn = 'data/fishpass_mapping.gpkg', layer = 'hab_wshds_ltree_up1')
+# wsheds <- sf::st_read(dsn = 'data/fishpass_mapping.gpkg', layer = 'hab_wshds_ltree')
+# wsheds_up1 <- sf::st_read(dsn = 'data/fishpass_mapping.gpkg', layer = 'hab_wshds_ltree_up1')
 
 
 

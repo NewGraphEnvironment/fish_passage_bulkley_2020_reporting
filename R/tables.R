@@ -7,8 +7,6 @@ pscis <- import_pscis() %>%
   tibble::rownames_to_column() %>%
   arrange(my_crossing_reference)
 
-
-
 #------------------make the tables for the methods----------
 tab_habvalue <- tibble::tibble(`Habitat Value` = c('High', 'Medium', 'Low'),
                                 `Fish Habitat Criteria` = c(

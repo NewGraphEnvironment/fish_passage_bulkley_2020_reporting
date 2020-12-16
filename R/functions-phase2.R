@@ -82,10 +82,13 @@ my_mapsheet <- function(){
            pull(map_tile_display_name), '.pdf')
 }
 
-my_priority_info <- function(dat = habitat_confirmations_priorities, site = my_site, loc = 'us'){
+my_priority_info <- function(dat = habitat_confirmations_priorities, sit = my_site, loc = 'us'){
   dat %>%
-    filter(site == my_site & location == loc)
+    filter(site == sit & location == loc)
 }
+
+
+
 
 my_cost_estimate <- function(dat = tab_cost_est_phase2, site = my_site){
   dat %>%

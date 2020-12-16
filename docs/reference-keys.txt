@@ -27,7 +27,10 @@ fig:photo-031
 fig:photo-032
 tab:tab-culvert-62423
 tab:tab-habitat-summary-62423
+fig:photo-62423-02
+fig:photo-62423-01
 tab:tab-culvert-62425
+tab:tab-culvert-62426
 tab:tab-habitat-summary-62425
 fig:photo-62425-01
 fig:photo-62425-02

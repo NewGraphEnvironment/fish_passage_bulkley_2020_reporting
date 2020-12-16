@@ -1,6 +1,6 @@
 --- 
-title: "Elk River Fish Passage"
-author: "Al Irvine, R.P.Bio."
+title: "Elk River Fish Passage Restoration Planning"
+author: "Al Irvine, B.Sc., R.P.Bio." 
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -26,6 +26,7 @@ source('R/functions-fish.R')
 
 ```
 
+\pagebreak
 
 # Executive Summary {-}
 

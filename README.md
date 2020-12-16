@@ -13,7 +13,7 @@ This repository builds an [interactive report](https://newgraphenvironment.githu
     + [pscis_assessment_template_v24.xls](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/assessment-projects)
 
 
-    + Excel spreadsheet with priority level detailed for each of the crossings surveyed with Phase 2 assessments as well as details on the length of the surey and a conservative estimate of habitat suitable for fish species located upstream of the crossing.
+    + Excel spreadsheet with priority level detailed for each of the crossings surveyed with Phase 2 assessments as well as details on the length of the surveys and a conservative estimate of habitat suitable for fish species located upstream of the crossing.
 
     + GPS tracks and points from field surveys.  
 

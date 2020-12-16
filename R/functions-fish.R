@@ -18,7 +18,7 @@
 #          `Effort (s)` = ef_seconds,
 #          `Effort (s/m2)` = effort)
 
-tab_fish_site <- function(dat = hab_fish_dens, sit = '50155'){
+tab_fish_site <- function(dat = hab_fish_dens, sit = my_site){
   dat %>%
   filter(
     site == sit

@@ -20,8 +20,8 @@ pacman::p_load(
   lubridate,
   forcats,
   bookdown,
-  bit64, ##to make integer column type for pg
-  gert  ##to track git moves
+  bit64 ##to make integer column type for pg
+  # gert  ##to track git moves
   )
 
 

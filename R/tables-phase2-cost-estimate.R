@@ -92,6 +92,18 @@ tab_cost_est_prep3 <- left_join(
          cost_area_net = round((uphab_net_sub22 * downstream_channel_width_meters * 0.5)/cost_est_1000s, 1),
          cost_area_gross = round((uphab_gross_sub22 * downstream_channel_width_meters * 0.5)/cost_est_1000s, 1))
 
+##this is phase 2 specific and will pull the length estimate from our spreadsheet rather than the model
+# tab_cost_est_prep3 <- left_join(
+#   tab_cost_est_prep2,
+#   select(bcfishpass_rd, pscis_crossing_id, uphab_gross_sub22, uphab_net_sub22),
+#   by = 'pscis_crossing_id'
+# ) %>%
+#   mutate(cost_net = round(uphab_net_sub22/cost_est_1000s, 1),
+#          cost_gross = round(uphab_gross_sub22/cost_est_1000s, 1),
+#          cost_area_net = round((uphab_net_sub22 * downstream_channel_width_meters * 0.5)/cost_est_1000s, 1),
+#          cost_area_gross = round((uphab_gross_sub22 * downstream_channel_width_meters * 0.5)/cost_est_1000s, 1))
+
+
 ##add the priority info
 tab_cost_est_phase2 <- tab_cost_est_prep3 %>%
   select(pscis_crossing_id, stream_name, road_name, downstream_channel_width_meters,

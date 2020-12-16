@@ -22,6 +22,11 @@ fig:plot-fish-box-030
 fig:photo-030
 fig:photo-031
 fig:photo-032
+tab:tab-culvert-090
+tab:tab-fish-site-090
+fig:photo-090
+fig:photo-091
+fig:photo-092
 intro
 background
 project-location

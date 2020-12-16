@@ -216,8 +216,8 @@ tab_hab_summary <- left_join(
   by = c('site', 'location')
 ) %>%
   mutate(location = case_when(
-    location == 'us' ~ 'upstream',
-    T ~ 'downstream'
+    location == 'us' ~ 'Upstream',
+    T ~ 'Downstream'
   )) %>%
   arrange(site) %>%
   select(Site = site,

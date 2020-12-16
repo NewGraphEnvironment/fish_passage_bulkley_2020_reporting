@@ -1,5 +1,5 @@
 
-```{r setup-01, eval = T}
+```{r setup-01, eval = F}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
 source('R/packages.R')
 source('R/functions.R')
@@ -54,13 +54,13 @@ hab_site %>% filter(site == my_site & location == 'us') %>% pull(comments)
 ```
 ## Stream Characteristics Downstream {-}
 
-The stream was surveyed downstream from the culvert for `r my_priority_info(loc = 'ds') %>% pull(survey_length_m)`m to Lizard Creek. Overall, total cover amount was rated as `r my_habitat_info2(loc = 'ds') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'ds') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'ds') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Figure \@ref(fig:photo-001)). The average channel width was `r my_habitat_info3(loc = 'ds', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'ds', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'ds', row = 'average gradient percent')`%.  Habitat value was rated as medium with good potential for fry/juvenile salmonid rearing but a lack of deep pools for adult overwintering and rearing. 
+The stream was surveyed downstream from the culvert for `r my_priority_info(loc = 'ds') %>% pull(survey_length_m)`m to Lizard Creek. Overall, total cover amount was rated as `r my_habitat_info2(loc = 'ds') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'ds') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'ds') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-020), Figure \@ref(fig:photo-001)). The average channel width was `r my_habitat_info3(loc = 'ds', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'ds', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'ds', row = 'average gradient percent')`%.  Habitat value was rated as medium with good potential for fry/juvenile salmonid rearing but a lack of deep pools for adult overwintering and rearing. 
 
 <br>
 
 ## Stream Characteristics Upstream {-}
 
-The stream was surveyed upstream from the culvert for `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m. Overall, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Figure \@ref(fig:photo-002)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  There were frequent areas of gravels suitable for resident westslope cutthrout trout spawning.  Frequent pools to 40cm deep were present and associated with small and large woody debris. Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` for fry and juvenile westslope cutthrout rearing. 
+The stream was surveyed upstream from the culvert for `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m. Overall, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-020), Figure \@ref(fig:photo-002)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  There were frequent areas of gravels suitable for resident westslope cutthrout trout spawning.  Frequent pools to 40cm deep were present and associated with small and large woody debris. Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` for fry and juvenile westslope cutthrout rearing. 
 
 <br>
 
@@ -97,6 +97,15 @@ tab_sum_input %>%
 
 ```
 
+<br>
+
+```{r tab-habitat-summary-010}
+tab_hab_summary %>% 
+  filter(Site  == my_site) %>% 
+  select(-Site) %>% 
+  my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, '.'))
+
+```
 
 <br>
 

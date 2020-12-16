@@ -40,15 +40,16 @@ conn <- DBI::dbConnect(
 # #
 # #
 # # ##list tables in a schema
-# dbGetQuery(conn,
-#            "SELECT table_name
-#            FROM information_schema.tables
-#            WHERE table_schema='bcfishpass'")
+dbGetQuery(conn,
+           "SELECT table_name
+           FROM information_schema.tables
+           WHERE table_schema='ali'")
 # # # #
 # # # # ##list column names in a table
-
-
-
+dbGetQuery(conn,
+           "SELECT column_name,data_type
+           FROM information_schema.columns
+           WHERE table_name='crossings'")
 
 
 # test <- dbGetQuery(conn, "SELECT * FROM bcfishpass.waterfalls")

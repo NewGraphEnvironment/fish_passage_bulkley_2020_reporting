@@ -87,8 +87,8 @@ my_priority_info <- function(dat = habitat_confirmations_priorities, site = my_s
     filter(site == my_site & location == loc)
 }
 
-my_cost_estimate <- function(dat = tab_cost_est_phase2){
+my_cost_estimate <- function(dat = tab_cost_est_phase2, site = my_site){
   dat %>%
-    filter(pscis_crossing_id == my_site)
+    filter(pscis_crossing_id == site)
 }
 

@@ -1,7 +1,6 @@
 --- 
 title: "Elk River Watershed Group Fish Passage Restoration Planning"
-author: 
-  - name: "Al Irvine, B.Sc., R.P.Bio." 
+author: "Al Irvine, B.Sc., R.P.Bio." 
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -9,7 +8,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf
+github-repo: rstudio/bookdown-demo
 description: "My Description."
 ---
 
@@ -34,3 +33,8 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+
+# Executive Summary {-}
+
+<br>

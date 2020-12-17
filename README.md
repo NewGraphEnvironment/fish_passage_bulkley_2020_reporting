@@ -13,8 +13,8 @@ This repository builds an [interactive report](https://newgraphenvironment.githu
     + [pscis_assessment_template_v24.xls](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/assessment-projects)
 
 
-    + Excel spreadsheet with priority level detailed for each of the crossings surveyed with Phase 2 assessments as well as details on the length of the surveys and a conservative estimate of habitat suitable for fish species located upstream of the crossing.
+    + [Excel spreadsheet with priority](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/habitat_confirmations_priorities.xlsx) level detailed for each of the crossings surveyed with Phase 2 assessments as well as details on the length of the surveys and a conservative estimate of habitat suitable for fish species located upstream of the crossing.
 
-    + GPS tracks and points from field surveys.  
+    + [GPS tracks](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/habitat_confirmation_tracks.gpx) from field surveys.  
 
-    + Photos and photo metadata.  
+    + [Photos and photo metadata.](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/photos)  

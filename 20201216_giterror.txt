@@ -1,0 +1,265 @@
+allan@MSI MINGW64 ~/OneDrive/New_Graph/Current/2020-025_cwf_elk/scripts/fish_passage_elk_2020_reporting_cwf (master)
+$ git coa 'clean book'
+[master caccd7c] clean book
+ 108 files changed, 26278 deletions(-)
+ delete mode 100644 docs/Elk.pdf
+ delete mode 100644 docs/Elk.tex
+ delete mode 100644 docs/Elk_files/figure-html/photo-001-1.png
+ delete mode 100644 docs/Elk_files/figure-html/photo-002-1.png
+ delete mode 100644 docs/Elk_files/figure-html/plot-fish-box-010-1.png
+ delete mode 100644 docs/appendix-crossing-50155.html
+ delete mode 100644 docs/appendix-site-assessment-data-and-photos.html
+ delete mode 100644 docs/background.html
+ delete mode 100644 docs/conclusion.html
+ delete mode 100644 docs/data/photos/2020091801/crossing_all.JPG
+ delete mode 100644 docs/data/photos/2020092201/crossing_all.JPG
+ delete mode 100644 docs/data/photos/2020092301/crossing_all.JPG
+ delete mode 100644 docs/data/photos/2020092302/crossing_all.JPG
+ delete mode 100644 docs/data/photos/2020092303/crossing_all.JPG
+ delete mode 100644 docs/data/photos/2020092310/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600008/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600026/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600028/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600037/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600038/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600039/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600040/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600069/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600070/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600077/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600080/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600084/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600090/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600092/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600102/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600130/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600134/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600140/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600157/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600158/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600169/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600181/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600183/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600184/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600185/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600186/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600316/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600329/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600332/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4600367/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4601129/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4601205/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4601556/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4601594/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4601639/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4602270/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4602276/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4602349/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4602533/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4603265/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4603291/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4604198/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4604455/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4605636/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4605649/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4605653/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4605675/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4605697/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4605705/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4605707/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4605708/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4605732/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4605733/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4605742/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4606669/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4606807/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4606835/crossing_all.JPG
+ delete mode 100644 docs/data/photos/4607023/crossing_all.JPG
+ delete mode 100644 docs/data/photos/50155/20200922_131045_k.JPG
+ delete mode 100644 docs/data/photos/50155/IMG_3304_k.JPG
+ delete mode 100644 docs/data/photos/50155/crossing_all.JPG
+ delete mode 100644 docs/fig/hydrology1.png
+ delete mode 100644 docs/index.html
+ delete mode 100644 docs/intro.html
+ delete mode 100644 docs/libs/accessible-code-block-0.0.1/empty-anchor.js
+ delete mode 100644 docs/libs/bsTable-3.3.7/bootstrapTable.js
+ delete mode 100644 docs/libs/bsTable-3.3.7/bootstrapTable.min.css
+ delete mode 100644 docs/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf
+ delete mode 100644 docs/libs/gitbook-2.6.7/css/plugin-bookdown.css
+ delete mode 100644 docs/libs/gitbook-2.6.7/css/plugin-clipboard.css
+ delete mode 100644 docs/libs/gitbook-2.6.7/css/plugin-fontsettings.css
+ delete mode 100644 docs/libs/gitbook-2.6.7/css/plugin-highlight.css
+ delete mode 100644 docs/libs/gitbook-2.6.7/css/plugin-search.css
+ delete mode 100644 docs/libs/gitbook-2.6.7/css/plugin-table.css
+ delete mode 100644 docs/libs/gitbook-2.6.7/css/style.css
+ delete mode 100644 docs/libs/gitbook-2.6.7/js/app.min.js
+ delete mode 100644 docs/libs/gitbook-2.6.7/js/clipboard.min.js
+ delete mode 100644 docs/libs/gitbook-2.6.7/js/jquery.highlight.js
+ delete mode 100644 docs/libs/gitbook-2.6.7/js/lunr.js
+ delete mode 100644 docs/libs/gitbook-2.6.7/js/plugin-bookdown.js
+ delete mode 100644 docs/libs/gitbook-2.6.7/js/plugin-clipboard.js
+ delete mode 100644 docs/libs/gitbook-2.6.7/js/plugin-fontsettings.js
+ delete mode 100644 docs/libs/gitbook-2.6.7/js/plugin-search.js
+ delete mode 100644 docs/libs/gitbook-2.6.7/js/plugin-sharing.js
+ delete mode 100644 docs/libs/jquery-2.2.3/jquery.min.js
+ delete mode 100644 docs/libs/kePrint-0.0.1/kePrint.js
+ delete mode 100644 docs/libs/lightable-0.0.1/lightable.css
+ delete mode 100644 docs/methods.html
+ delete mode 100644 docs/reference-keys.txt
+ delete mode 100644 docs/references.html
+ delete mode 100644 docs/results.html
+ delete mode 100644 docs/search_index.json
+ delete mode 100644 docs/style.css
+
+allan@MSI MINGW64 ~/OneDrive/New_Graph/Current/2020-025_cwf_elk/scripts/fish_passage_elk_2020_reporting_cwf (master)
+$ git coa 'rebuilt book run two with scoll append summary'
+warning: LF will be replaced by CRLF in docs/libs/accessible-code-block-0.0.1/empty-anchor.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/bsTable-3.3.7/bootstrapTable.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/bsTable-3.3.7/bootstrapTable.min.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/css/plugin-bookdown.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/css/plugin-clipboard.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/css/plugin-fontsettings.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/css/plugin-highlight.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/css/plugin-search.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/css/plugin-table.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/css/style.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/js/app.min.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/js/clipboard.min.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/js/jquery.highlight.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/js/lunr.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/js/plugin-bookdown.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/js/plugin-clipboard.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/js/plugin-fontsettings.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/js/plugin-search.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/gitbook-2.6.7/js/plugin-sharing.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/jquery-2.2.3/jquery.min.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/kePrint-0.0.1/kePrint.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in docs/libs/lightable-0.0.1/lightable.css.
+The file will have its original line endings in your working directory
+[master 6b836f9] rebuilt book run two with scoll append summary
+ 105 files changed, 23189 insertions(+)
+ create mode 100644 docs/Elk_files/figure-html/photo-001-1.png
+ create mode 100644 docs/Elk_files/figure-html/photo-002-1.png
+ create mode 100644 docs/Elk_files/figure-html/plot-fish-box-010-1.png
+ create mode 100644 docs/appendix-crossing-50155.html
+ create mode 100644 docs/appendix-site-assessment-data-and-photos.html
+ create mode 100644 docs/background.html
+ create mode 100644 docs/conclusion.html
+ create mode 100644 docs/data/photos/2020091801/crossing_all.JPG
+ create mode 100644 docs/data/photos/2020092201/crossing_all.JPG
+ create mode 100644 docs/data/photos/2020092301/crossing_all.JPG
+ create mode 100644 docs/data/photos/2020092302/crossing_all.JPG
+ create mode 100644 docs/data/photos/2020092303/crossing_all.JPG
+ create mode 100644 docs/data/photos/2020092310/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600008/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600026/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600028/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600037/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600038/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600039/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600040/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600069/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600070/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600077/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600080/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600084/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600090/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600092/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600102/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600130/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600134/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600140/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600157/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600158/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600169/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600181/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600183/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600184/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600185/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600186/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600316/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600329/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600332/crossing_all.JPG
+ create mode 100644 docs/data/photos/4600367/crossing_all.JPG
+ create mode 100644 docs/data/photos/4601129/crossing_all.JPG
+ create mode 100644 docs/data/photos/4601205/crossing_all.JPG
+ create mode 100644 docs/data/photos/4601556/crossing_all.JPG
+ create mode 100644 docs/data/photos/4601594/crossing_all.JPG
+ create mode 100644 docs/data/photos/4601639/crossing_all.JPG
+ create mode 100644 docs/data/photos/4602270/crossing_all.JPG
+ create mode 100644 docs/data/photos/4602276/crossing_all.JPG
+ create mode 100644 docs/data/photos/4602349/crossing_all.JPG
+ create mode 100644 docs/data/photos/4602533/crossing_all.JPG
+ create mode 100644 docs/data/photos/4603265/crossing_all.JPG
+ create mode 100644 docs/data/photos/4603291/crossing_all.JPG
+ create mode 100644 docs/data/photos/4604198/crossing_all.JPG
+ create mode 100644 docs/data/photos/4604455/crossing_all.JPG
+ create mode 100644 docs/data/photos/4605636/crossing_all.JPG
+ create mode 100644 docs/data/photos/4605649/crossing_all.JPG
+ create mode 100644 docs/data/photos/4605653/crossing_all.JPG
+ create mode 100644 docs/data/photos/4605675/crossing_all.JPG
+ create mode 100644 docs/data/photos/4605697/crossing_all.JPG
+ create mode 100644 docs/data/photos/4605705/crossing_all.JPG
+ create mode 100644 docs/data/photos/4605707/crossing_all.JPG
+ create mode 100644 docs/data/photos/4605708/crossing_all.JPG
+ create mode 100644 docs/data/photos/4605732/crossing_all.JPG
+ create mode 100644 docs/data/photos/4605733/crossing_all.JPG
+ create mode 100644 docs/data/photos/4605742/crossing_all.JPG
+ create mode 100644 docs/data/photos/4606669/crossing_all.JPG
+ create mode 100644 docs/data/photos/4606807/crossing_all.JPG
+ create mode 100644 docs/data/photos/4606835/crossing_all.JPG
+ create mode 100644 docs/data/photos/4607023/crossing_all.JPG
+ create mode 100644 docs/data/photos/50155/crossing_all.JPG
+ create mode 100644 docs/fig/hydrology1.png
+ create mode 100644 docs/index.html
+ create mode 100644 docs/intro.html
+ create mode 100644 docs/libs/accessible-code-block-0.0.1/empty-anchor.js
+ create mode 100644 docs/libs/bsTable-3.3.7/bootstrapTable.js
+ create mode 100644 docs/libs/bsTable-3.3.7/bootstrapTable.min.css
+ create mode 100644 docs/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf
+ create mode 100644 docs/libs/gitbook-2.6.7/css/plugin-bookdown.css
+ create mode 100644 docs/libs/gitbook-2.6.7/css/plugin-clipboard.css
+ create mode 100644 docs/libs/gitbook-2.6.7/css/plugin-fontsettings.css
+ create mode 100644 docs/libs/gitbook-2.6.7/css/plugin-highlight.css
+ create mode 100644 docs/libs/gitbook-2.6.7/css/plugin-search.css
+ create mode 100644 docs/libs/gitbook-2.6.7/css/plugin-table.css
+ create mode 100644 docs/libs/gitbook-2.6.7/css/style.css
+ create mode 100644 docs/libs/gitbook-2.6.7/js/app.min.js
+ create mode 100644 docs/libs/gitbook-2.6.7/js/clipboard.min.js
+ create mode 100644 docs/libs/gitbook-2.6.7/js/jquery.highlight.js
+ create mode 100644 docs/libs/gitbook-2.6.7/js/lunr.js
+ create mode 100644 docs/libs/gitbook-2.6.7/js/plugin-bookdown.js
+ create mode 100644 docs/libs/gitbook-2.6.7/js/plugin-clipboard.js
+ create mode 100644 docs/libs/gitbook-2.6.7/js/plugin-fontsettings.js
+ create mode 100644 docs/libs/gitbook-2.6.7/js/plugin-search.js
+ create mode 100644 docs/libs/gitbook-2.6.7/js/plugin-sharing.js
+ create mode 100644 docs/libs/jquery-2.2.3/jquery.min.js
+ create mode 100644 docs/libs/kePrint-0.0.1/kePrint.js
+ create mode 100644 docs/libs/lightable-0.0.1/lightable.css
+ create mode 100644 docs/methods.html
+ create mode 100644 docs/reference-keys.txt
+ create mode 100644 docs/references.html
+ create mode 100644 docs/results.html
+ create mode 100644 docs/search_index.json
+ create mode 100644 docs/style.css

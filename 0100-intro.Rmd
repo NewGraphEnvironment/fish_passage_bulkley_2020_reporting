@@ -1,5 +1,5 @@
 # Introduction {#intro}
-Nupqu Limited Partnership and New Graph Environment were retained by the Canadian Wildlife Federation in the fall of 2020 to conduct fish passage assessments of stream crossings within the Elk River watershed upstream of the Elko Dam near Elko, BC. The work was carried out in accordance with the BC Ministry of Environment: Field Assessment  for Determining Fish Passage at Closed  Bottom  Structures,  4th  Edition [@fish_passage_assessments] and Fish Passage Strategic Approach: Protocol for Prioritizing Sites for Fish Passage Remediation: 4th Edition [@fishpassagetechnicalworkinggroupFishPassageStrategic2014].
+Nupqu Limited Partnership and New Graph Environment were retained by the Canadian Wildlife Federation in the fall of 2020 to plan and conduct fish passage assessments of stream crossings within the Elk River watershed upstream of the Elko Dam near Elko, BC. The work was carried out in accordance with the BC Ministry of Environment: Field Assessment  for Determining Fish Passage at Closed  Bottom  Structures,  4th  Edition [@fish_passage_assessments] and Fish Passage Strategic Approach: Protocol for Prioritizing Sites for Fish Passage Remediation: 4th Edition [@fishpassagetechnicalworkinggroupFishPassageStrategic2014].
 
 <br>
 

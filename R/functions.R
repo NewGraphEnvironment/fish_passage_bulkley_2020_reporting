@@ -153,14 +153,14 @@ tab_culvert <- tab_culvert_prep %>%
 ####------my_kable-------------------------------
 my_kable_scroll <- function(dat, caption_text = ''){
   dat %>%
-    kable(caption = caption_text) %>%
+    kable(caption = caption_text, booktabs = T) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
     kableExtra::scroll_box(width = "100%", height = "500px")
 }
 
 my_kable_scroll_no_height <- function(dat, caption_text = ''){
   dat %>%
-    kable(caption = caption_text) %>%
+    kable(caption = caption_text, booktabs = T) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
     kableExtra::scroll_box(width = "100%")
 }
@@ -174,7 +174,7 @@ my_kable_scroll_no_height <- function(dat, caption_text = ''){
 
 my_kable <- function(dat, caption_text = ''){
   dat %>%
-    kable(caption = caption_text) %>%
+    kable(caption = caption_text, booktabs = T) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11)
     # kableExtra::scroll_box(width = "100%", height = "500px")
 }
@@ -197,4 +197,16 @@ get_img_path_abs <- function(site = my_site, photo = my_photo){
 
 get_img_path <- function(site = my_site, photo = my_photo){
   paste0('data/photos/', site, '/', photo)
+}
+
+##summary table
+print_tab_summary <- function(dat = pscis2, site = my_site){
+  make_tab_summary(df = dat %>% filter(pscis_crossing_id == site)) %>%
+    kable(caption = paste0('Summary of fish passage reassessment for PSCIS crossing ', site, '.'), booktabs = T) %>%
+    # kableExtra::add_footnote(label = paste0('Comments: ', pscis2 %>% filter(pscis_crossing_id == my_site) %>%
+    #                                           pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
+    kableExtra::add_footnote(label = paste0('Photos: ',
+                                            paste0('![](data/photos/', site, '/crossing_all.JPG)')), notation = 'none') %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
+    kableExtra::scroll_box(width = "100%", height = "500px")
 }

@@ -2,13 +2,13 @@
 
 
 ```{r results='asis'}
-print_tab_summary <- function(x, y, z){
-  kable(x) %>%
+print_tab_summary_all <- function(x, y, z){
+  kable(x, booktabs = T) %>%
     kableExtra::add_footnote(label = paste0('Comments: ', y[[1]]), notation = 'none') %>% #this grabs the comments out
     kableExtra::add_footnote(label = paste0('Photos: ', z[[1]], z[[2]]), notation = 'none')
 }
  
-tabs <- mapply(print_tab_summary, x = tab_summary, y = tab_summary_comments, z = tab_photo_url)
+tabs <- mapply(print_tab_summary_all, x = tab_summary, y = tab_summary_comments, z = tab_photo_url)
 
 
 ##this is a test

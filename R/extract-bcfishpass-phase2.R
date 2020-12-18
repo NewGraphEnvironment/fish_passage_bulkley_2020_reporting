@@ -259,5 +259,54 @@ dat_joined6 <- dat_joined5 %>%
   mutate(pscis_crossing_id = case_when(is.na(pscis_crossing_id) ~ stream_crossing_id,
                                        T ~ pscis_crossing_id))
 
+
+#######-----------------add the update real bcfishpass information-----------
+##if we run into issues we can come back and rebiuld from here
+##this sucks and is super hacky but we are going to grab all the info from bcfishpass and add it
+
+##connect again
+##get the road info from the database
+conn <- DBI::dbConnect(
+  RPostgres::Postgres(),
+  dbname = dbname,
+  host = host,
+  port = port,
+  user = user,
+  password = password
+)
+
+
+##maybe easiest to just burn in our ids and join based on the modelled crosing id
+
+dat <- dat_joined6 %>%
+  select(crossing_id)
+
+# load to database
+sf::st_write(obj = dat, dsn = conn, Id(schema= "ali", table = "misc"))
+
+dat_info <- dbGetQuery(conn,
+"SELECT a.crossing_id, b.*
+FROM ali.misc a
+LEFT OUTER JOIN
+ali.crossings b
+ON a.crossing_id = b.modelled_crossing_id")
+
+##here we find identical columns because we will want to remove them from one of the lists.
+columns_to_remove <- intersect(names(dat_joined6), names(dat_info))
+columns_to_keep <- "crossing_id"
+columns_to_remove <- setdiff(columns_to_remove, columns_to_keep)  ##make sure to keep the joining column
+
+
+##Lets keep the newest ones and remove from the old dataframe
+dat_joined7 <- dat_joined6 %>%
+  select(-all_of(columns_to_remove))
+
+##join together the old and the new
+dat_joined8 <- left_join(
+  dat_joined7,
+  dat_info,
+  by = 'crossing_id'
+)
+
 ##burn it all to a file we can use later
-dat_joined6 %>% readr::write_csv(file = paste0(getwd(), '/data/bcfishpass-phase2.csv'))
+dat_joined8 %>% readr::write_csv(file = paste0(getwd(), '/data/bcfishpass-phase2.csv'))

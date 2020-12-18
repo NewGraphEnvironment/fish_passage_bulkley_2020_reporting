@@ -86,7 +86,7 @@ To assess potential impacts of the culvert on fish densities in the stream elect
 
 ## Structure Remediation and Cost Estimate {-}
 
-Structure replacement with an open bottomed culvert is recommended to provide unconstained access to the habitat located upstream of PSCIS crossing `r as.character(my_site)`.  The cost for work is estimated at \$`r as.character(my_cost_estimate() %>% pull(cost_est_1000s) * 1000)` for a cost benefit of \$`r as.character(my_cost_estimate() %>% pull(cost_net) * 1000)`/linear m and \$`r as.character(my_cost_estimate() %>% pull(cost_area_net) * 1000)`/m^2^.
+Structure replacement with an open bottomed structure is recommended to provide access to the habitat located upstream of PSCIS crossing `r as.character(my_site)`.  The cost of the work is estimated at \$`r as.character(my_cost_estimate() %>% pull(cost_est_1000s) * 1000)` for a cost benefit of \$`r as.character(my_cost_estimate() %>% pull(cost_net) * 1000)`/linear m and \$`r as.character(my_cost_estimate() %>% pull(cost_area_net) * 1000)`/m^2^.
 
 
 ## Conclusion {-}

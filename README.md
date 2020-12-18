@@ -15,6 +15,6 @@ This repository builds an [interactive report](https://newgraphenvironment.githu
 
     + [Excel spreadsheet with priority](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/habitat_confirmations_priorities.xlsx) level detailed for each of the crossings surveyed with Phase 2 assessments as well as details on the length of the surveys and a conservative estimate of habitat suitable for fish species located upstream of the crossing.
 
-    + [GPS tracks](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/habitat_confirmation_tracks.gpx) from field surveys.  
+    + [GPS tracks](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data) from field surveys.  
 
     + [Photos and photo metadata.](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/photos)  

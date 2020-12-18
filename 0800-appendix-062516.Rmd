@@ -69,7 +69,9 @@ The stream was surveyed upstream from the culvert for `r my_priority_info(loc = 
 
 ## Structure Remediation and Cost Estimate {-}
 
-Structure replacement with a bridge is recommended to provide access to the habitat located upstream of PSCIS crossing `r as.character(my_site)`.  The cost for the work is estimated at \$`r as.character(my_cost_estimate() %>% pull(cost_est_1000s) * 1000)` for a cost benefit of \$`r as.character(my_cost_estimate() %>% pull(cost_net) * 1000)`/linear m and \$`r as.character(my_cost_estimate() %>% pull(cost_area_net) * 1000)`/m^2^.
+Structure replacement with an open bottomed structure is recommended to provide access to the habitat located upstream of PSCIS crossing `r as.character(my_site)`.  The cost of the work is estimated at \$`r as.character(my_cost_estimate() %>% pull(cost_est_1000s) * 1000)` for a cost benefit of \$`r as.character(my_cost_estimate() %>% pull(cost_net) * 1000)`/linear m and \$`r as.character(my_cost_estimate() %>% pull(cost_area_net) * 1000)`/m^2^.
+
+<br>
 
 
 ## Conclusion {-}

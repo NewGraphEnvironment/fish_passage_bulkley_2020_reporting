@@ -40,6 +40,14 @@ tab:tab-habitat-summary-040
 fig:photo-040
 fig:photo-041
 fig:photo-042
+tab:tab-culvert-197533
+tab:tab-culvert-197559
+tab:tab-habitat-summary-197533
+fig:photo-197533-01
+fig:photo-197533-02
+fig:photo-197533-03
+fig:photo-197533-04
+fig:photo-197533-05
 tab:tab-culvert-090
 tab:tab-habitat-summary-090
 tab:tab-fish-site-090

@@ -92,7 +92,7 @@ There is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of habita
 <br>
 
 ```{r tab-culvert-197533, eval = T}
-print_tab_summary()
+print_tab_summary(site_photo_id = my_site_xref)
 
 ```
 
@@ -100,7 +100,7 @@ print_tab_summary()
 
 ```{r tab-culvert-197559, eval = T}
 ##had to pull this object out of the table push for some reason
-print_tab_summary(site = my_site2)
+print_tab_summary(site = my_site2, site_photo_id = my_site2_xref)
 
 ```
 
@@ -152,7 +152,7 @@ grid::grid.raster(get_img(site = my_site2_xref))
 <br>
 
 ```{r photo-197533-04, fig.cap= my_caption, eval=T}
-my_photo = 'IMG_3080_k_u01_.JPG'
+my_photo = 'IMG_3102_K_u02_.JPG'
 
 my_caption = paste0('Typical habitat above dewatered area upstream of PSCIS crossing ', my_site, '.')
 

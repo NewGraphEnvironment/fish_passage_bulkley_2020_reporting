@@ -18,3 +18,5 @@ R/pers_*
 *.gpkg-wal
 *.gpkg-shm
 data/raw_input
+docs/Elk.pdf
+docs/Elk.tex

@@ -35,6 +35,32 @@ fif <- function(what, where=".", in_files="\\.[Rr]$", recursive = TRUE,
   if (!found) message("(No results found)")
 
 }
+
+fit_to_page <- function(ft, pgwidth = 6.75){
+
+  ft_out <- ft %>% flextable::autofit()
+
+  ft_out <- width(ft_out, width = dim(ft_out)$widths*pgwidth /(flextable_dim(ft_out)$widths))
+  return(ft_out)
+}
+
+fit_to_page_landscape <- function(ft, pgwidth = 12){
+
+  ft_out <- ft %>% flextable::autofit()
+
+  ft_out <- width(ft_out, width = dim(ft_out)$widths*pgwidth /(flextable_dim(ft_out)$widths))
+  return(ft_out)
+}
+
+
+my_flextable <- function(df,  ...){ ##left_just_col = 2 was an option
+  flextable::autofit(flextable::flextable(
+    df,
+    defaults = list(fontname = 'tahoma'))) %>%
+    flextable::theme_booktabs(fontsize = 8) %>% ##changed from flextable::my_theme_booktabs(fontsize = 9) %>%
+    fit_to_page()
+}
+
 ##function to trim up sheet and get names (was previously source from altools package)
 at_trim_xlsheet2 <- function(df, column_last = ncol(df)) {
   df %>%
@@ -200,13 +226,18 @@ get_img_path <- function(site = my_site, photo = my_photo){
 }
 
 ##summary table
-print_tab_summary <- function(dat = pscis2, site = my_site, site_photo_id = my_site){
+print_tab_summary <- function(dat = pscis2, site = my_site, site_photo_id = my_site, font = 11){
   make_tab_summary(df = dat %>% filter(pscis_crossing_id == site)) %>%
-    kable(caption = paste0('Summary of fish passage reassessment for PSCIS crossing ', site, '.'), booktabs = T) %>%
+    kable(caption = paste0('Summary of fish passage reassessment for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
     # kableExtra::add_footnote(label = paste0('Comments: ', pscis2 %>% filter(pscis_crossing_id == my_site) %>%
     #                                           pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
     kableExtra::add_footnote(label = paste0('Photos: ',
                                             paste0('![](data/photos/', site_photo_id, '/crossing_all.JPG)')), notation = 'none') %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
-    kableExtra::scroll_box(width = "100%", height = "500px")
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)
+    # kableExtra::scroll_box(width = "100%", height = "500px") ##not scrolling to simplify our pagedown output
+}
+
+print_tab_cost_mult <- function(dat = tab_cost_rd_mult_report, ...){
+  tab_cost_rd_mult_report %>%
+  my_kable()
 }

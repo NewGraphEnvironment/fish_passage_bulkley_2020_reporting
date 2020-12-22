@@ -12,7 +12,7 @@ pacman::p_load(
   DBI,
   sf,
   magick,
-  citr,
+  # citr,
   bcdata,
   datapasta,
   knitr,
@@ -20,11 +20,14 @@ pacman::p_load(
   lubridate,
   forcats,
   bookdown,
+  flextable,
   bit64 ##to make integer column type for pg
   # gert  ##to track git moves
   )
 
 
 
-pacman::p_load_gh("poissonconsulting/fwapgr")
+pacman::p_load_gh("poissonconsulting/fwapgr",
+                  "crsh/citr",
+                  "rstudio/pagedown")
                   # "poissonconsulting/subfoldr2")

@@ -50,11 +50,27 @@ tab_cost_rd_mult <- pscis_rd %>%
          cost_embed_cv = road_surface_mult * road_class_mult * 25) %>%
   # mutate(cost_1000s_for_10m_bridge = 10 * cost_m_1000s_bridge) %>%
   distinct( .keep_all = T) %>%
-  arrange(cost_m_1000s_bridge)
+  arrange(cost_m_1000s_bridge, my_road_class)
   # readr::write_csv(file = paste0(getwd(), '/data/raw_input/tab_cost_rd_mult.csv')) %>%
 # kable() %>%
 # kable_styling(latex_options = c("striped", "scale_down")) %>%
 # kableExtra::save_kable("fig/tab_cost_rd_mult.png")
+
+
+####-----------report table--------------------
+tab_cost_rd_mult_report <- tab_cost_rd_mult %>%
+  rename(
+    Class = my_road_class,
+    Surface = my_road_surface,
+    `Class Multiplier` = road_class_mult,
+    `Surface Multiplier` = road_surface_mult,
+    `Bridge $K/m` = cost_m_1000s_bridge,
+    `Streambed Simulation $K` = cost_embed_cv
+  ) %>%
+  filter(!is.na(Class)) %>%
+  mutate(Class = stringr::str_to_title(Class),
+         Surface = stringr::str_to_title(Surface)
+         )
 
 
 
@@ -122,5 +138,7 @@ tab_cost_est_phase1 <- left_join(
   select(`PSCIS ID` = stream_crossing_id, everything(), -my_crossing_reference) %>%
   arrange(`PSCIS ID`)
 
-rm(tab_cost_est, tab_cost_est_prep, tab_cost_est_prep2, tab_cost_est_prep3,
+
+##clean up workspace
+rm(ab_cost_est, tab_cost_est_prep, tab_cost_est_prep2, tab_cost_est_prep3,
    bcfishpass_rd, pscis_rd)

@@ -2,5 +2,5 @@ book_filename: "Elk"
 language:
   ui:
     chapter_name: ""
-delete_merged_file: true
+delete_merged_file: false
 output_dir: "docs"

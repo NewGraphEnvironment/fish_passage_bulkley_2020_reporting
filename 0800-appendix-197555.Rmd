@@ -14,8 +14,9 @@ source('R/functions-fish.R')
 
 
 
-```{r  load-data-09}
+```{r load-data-09}
 my_site <- 197555
+my_site_xref <- 4605732
 
 ```
 
@@ -99,7 +100,7 @@ There is an estimated `r my_priority_info() %>% pull(upstream_habitat_length_km)
 
 ```{r tab-culvert-090, eval = T}
 ##had to pull this object out of the table push for some reason
-print_tab_summary()
+print_tab_summary(site_photo_id = my_site_xref)
 
 ```
 
@@ -122,24 +123,6 @@ tab_fish_site() %>%
   my_kable(caption_text = my_caption)
 ```
 
-<br>
-
-```{r tab-fish-dens-090, eval=F}
-my_caption <- paste0('Westslope cuthrout trout densities (fish/100m2) for PSCIS crossing ', my_site, '.')
-
-tab_fish_dens() %>% 
-  my_kable(caption_text = my_caption)
-```
-
-<br>
-
-```{r plot-fish-box-090, fig.cap= my_caption, eval=F}
-my_caption <- paste0('Fish densities (fish/100m2) for PSCIS crossing ', my_site, '.')
-
-p <- plot_fish_box() 
-p
-```
-
 
 <br>
 
@@ -148,7 +131,7 @@ my_photo = '20200917_123657_k_.JPG'
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
 
-grid::grid.raster(get_img(site = 4605732))
+grid::grid.raster(get_img(site = my_site_xref))
 
 # knitr::include_graphics(get_img_path())
 ```
@@ -162,7 +145,7 @@ my_photo = 'IMG_3058_k_.JPG'
 
 my_caption = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
 
-grid::grid.raster(get_img(site = 4605732))
+grid::grid.raster(get_img(site = my_site_xref))
 # knitr::include_graphics(get_img_path())
 ```
 
@@ -171,11 +154,11 @@ grid::grid.raster(get_img(site = 4605732))
 ```{r photo-092, fig.cap= my_caption, eval=T}
 
 # 
-my_photo = '20200917_151420.JPG'
+my_photo = '20200917_151420_k_d_f01_.JPG'
 
 my_caption = paste0('Bull trout captured downstream of PSCIS crossing ', my_site, '.')
 
-grid::grid.raster(get_img(site = 4605732))
+grid::grid.raster(get_img(site = my_site_xref))
 # knitr::include_graphics(get_img_path())
 ```
 

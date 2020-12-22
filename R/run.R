@@ -14,4 +14,4 @@ rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')
 
 
 
-
+rmarkdown::render_site(output_format = 'pagedown::html_paged', encoding = 'UTF-8')

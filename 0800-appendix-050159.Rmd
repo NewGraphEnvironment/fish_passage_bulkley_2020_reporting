@@ -63,18 +63,22 @@ The stream was surveyed downstream from the culvert for `r my_priority_info(loc 
 The stream was surveyed upstream from the culvert for `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m. Overall, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-010), Figure \@ref(fig:photo-002)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  There were frequent areas of gravels suitable for resident westslope cutthrout trout spawning.  Frequent pools to 40cm deep were present and associated with small and large woody debris. Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` for fry and juvenile westslope cutthrout rearing. 
 
 
-<br>
+<br><br>
 
 ## Structure Remediation and Cost Estimate {-}
 
 Structure replacement with a bridge is recommended to provide access to the habitat located upstream of PSCIS crossing `r as.character(my_site)`.  The cost for the work is estimated at \$`r as.character(my_cost_estimate() %>% pull(cost_est_1000s) * 1000)` for a cost benefit of \$`r as.character(my_cost_estimate() %>% pull(cost_net) * 1000)`/linear m and \$`r as.character(my_cost_estimate() %>% pull(cost_area_net) * 1000)`/m^2^.
+
+<br><br>
 
 
 ## Conclusion {-}
 
 There is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of mainstem habitat upstream of crossing `r as.character(my_site)` with habitat in the areas surveyed upstream of the crossing rated as high value for fry and juvenile salmonid rearing. The road may be part of the Island Lake Recreational tenure or solely the responsiblity of the Ministry of Forests, Lands, Natural Resource Operations & Rural Development. The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement with an open bottomed structure.
 
+
 <br><br><br><br>
+
 
 ```{r tab-culvert-020, eval = T}
 ##had to pull this object out of the table push for some reason

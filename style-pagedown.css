@@ -1,0 +1,39 @@
+/* Whole document: */
+body{
+  font-family: Helvetica;
+  font-size: 10pt;
+}
+/* Headers */
+h1{
+  font-size: 12pt;
+}
+/* Headers */
+h2,h3,h4,h5,h6{
+  font-size: 11pt;
+}
+/*stop the url printing in links*/
+a[href^="http"]:not([class="uri"])::after {
+  content: "";
+}
+/*centre the title*/
+h1.title {
+  font-size: 18px;
+  color: Black;
+  text-align: center;
+}
+h4.author { /* Header 4 - and the author and data headers use this too  */
+  font-size: 10px;
+  color: Black;
+  text-align: center;
+}
+@page {
+size: 8.5in 11in;
+}
+:root {/*this doesn't work right*/
+--pagedjs-margin-right: 0.5in !important;
+--pagedjs-margin-left: 0.5in !important;
+/*--pagedjs-margin-top: 0.5in !important;*/
+/*--pagedjs-margin-bottom: 0.5in !important;*/
+--pagedjs-width: 7.5in;
+--pagedjs-height: 10in;
+}

@@ -81,8 +81,9 @@ There is an estimated `r my_priority_info() %>% pull(upstream_habitat_length_km)
 
 <br>
 
-```{r tab-culvert-010, eval = T}
+```{r tab-culvert-010}
 print_tab_summary()
+
 
 ```
 
@@ -102,7 +103,7 @@ tab_hab_summary %>%
 my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
 
 tab_fish_site() %>% 
-  my_kable_scroll_no_height(caption_text = my_caption)
+  my_kable(caption_text = my_caption)
 ```
 
 <br>
@@ -111,7 +112,7 @@ tab_fish_site() %>%
 my_caption <- paste0('Westslope cuthrout trout densities (fish/100m2) for PSCIS crossing ', my_site, '.')
 
 tab_fish_dens() %>% 
-  my_kable_scroll_no_height(caption_text = my_caption)
+  my_kable(caption_text = my_caption)
 ```
 
 <br>

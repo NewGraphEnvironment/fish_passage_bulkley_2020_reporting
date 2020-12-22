@@ -2,7 +2,7 @@
 
 
 ```{r}
-knitr::include_graphics('data/photos/50155/crossing_all.JPG')
+
 ```
 
 As a result of high-level direction from the provincial government, a Fish Passage Strategic Approach protocol has been developed for British Columbia to ensure that the greatest opportunities for restoration of fish passage are pursued.  A Fish Passage Technical Working Group has been formed to coordinate the protocol and data is continuously amalgamated within the Provincial Steam Crossing Inventory System (PSCIS).  The strategic approach protocol involves a four-phase process as described in @fishpassagetechnicalworkinggroupFishPassageStrategic2014 :
@@ -15,7 +15,7 @@ As a result of high-level direction from the provincial government, a Fish Passa
   
  <br>
  
-The scope of 2020/2021 project activities reported on in this document includes planning for and implementation of the first phase of fish passage assessment in the Elk River watershed upstream of the Elko Dam.
+The scope of 2020/2021 project activities reported on in this document includes planning for and implementation of the first two phases of fish passage assessment in the Elk River watershed upstream of the Elko Dam.
 
 ## Project Location
 The project was focused within the upper Elk River watershed upstream of the Elko Dam located at Elko, BC.  

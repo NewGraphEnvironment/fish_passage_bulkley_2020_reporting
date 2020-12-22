@@ -20,5 +20,5 @@ R/pers_*
 data/raw_input
 #docs/Elk.pdf
 docs/Elk.tex
-Elk.html
+#Elk.html
 Elk.Rmd

@@ -205,8 +205,6 @@ phase1_priorities <- pscis %>%
 
 
 
-
-
 ##turn spreadsheet into list of data frames
 pscis_split <- pscis %>%
   # mutate_if(is.numeric, as.character) %>% ##added this to try to get the outlet drop to not disapear

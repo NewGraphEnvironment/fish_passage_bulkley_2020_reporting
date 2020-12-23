@@ -4,10 +4,16 @@ source('R/packages.R')
 source('R/functions.R')
 
 
-pscis <- import_pscis() %>%
+# pscis <- import_pscis() %>%
+#   tibble::rownames_to_column() %>%
+#   mutate(rowname = as.numeric(rowname)) %>%
+#   mutate(column_num = rowname + 4)
+
+pscis <- import_pscis(workbook_name = 'pscis_phase2.xlsm') %>%
   tibble::rownames_to_column() %>%
   mutate(rowname = as.numeric(rowname)) %>%
   mutate(column_num = rowname + 4)
+
 
 ##assign a value that we want to call standard fill
 fill_dpth <- 3
@@ -30,14 +36,14 @@ fill_dpth_mult <- 3
 
 ####----------backwater candidates------------------
 ##backwatering required od<30 and slope <2, swr <1.2 see if there are options
-tab_backwater <- pscis2 %>%  ##changed this to pscis2!
+tab_backwater <- pscis %>%  ##changed this to pscis2!
   filter(barrier_result != 'Passable' &
            barrier_result != 'Unknown' &
            outlet_drop_meters < 0.3 &
            stream_width_ratio_score < 1.2 &
            culvert_slope_percent <= 2 )
 
-str_type <- pscis2 %>%
+str_type <- pscis %>%
   select(rowname, pscis_crossing_id, my_crossing_reference, downstream_channel_width_meters, fill_depth_meters) %>%
   mutate(fill_dpth_over = fill_depth_meters - fill_dpth_mult) %>%
   mutate(span_input = case_when(downstream_channel_width_meters >= 2 ~ brdg_wdth, T ~ NA_real_))  %>%
@@ -51,6 +57,6 @@ str_type <- pscis2 %>%
 
 ##burn to a csv so you can copy and paste into spreadsheet
 
-str_type %>% readr::write_csv(file = paste0(getwd(), '/data/raw_input/pscis2_str_type.csv'))
+str_type %>% readr::write_csv(file = paste0(getwd(), '/data/raw_input/pscis2b_str_type.csv'))
 
 

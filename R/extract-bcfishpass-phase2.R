@@ -5,8 +5,17 @@ source('R/private_info.R')
 ##make a dataframe to pull info from the db
 ##we should probably break each row out and determine the crs by the utm_zone attribute
 ##lets do both phases at once to create a file for feeding back to bcfishpass
-dat1 <- import_pscis(workbook_name = 'pscis_phase1.xlsm')
 
+
+##this is weird but we know these will be dups because we check at the end of this script.
+##lets pull these out of these files at the start
+
+dups <- c(4600183, 4600069, 4600367, 4605732, 4600070)
+
+dat1 <- import_pscis(workbook_name = 'pscis_phase1.xlsm') %>%
+  filter(!my_crossing_reference %in% dups)
+
+dat1b <- import_pscis(workbook_name = 'pscis_phase1b.xlsm')
 
 dat2 <- import_pscis(workbook_name = 'pscis_phase2.xlsm')
 
@@ -14,6 +23,7 @@ dat3 <- import_pscis(workbook_name = 'pscis_reassessments.xlsm')
 
 dat <- bind_rows(
   dat1,
+  dat1b,
   dat2,
   dat3
 ) %>%
@@ -39,17 +49,17 @@ conn <- DBI::dbConnect(
 #            FROM information_schema.schemata")
 # #
 # #
-# # ##list tables in a schema
-dbGetQuery(conn,
-           "SELECT table_name
-           FROM information_schema.tables
-           WHERE table_schema='ali'")
-# # # #
-# # # # ##list column names in a table
-dbGetQuery(conn,
-           "SELECT column_name,data_type
-           FROM information_schema.columns
-           WHERE table_name='crossings'")
+# # # ##list tables in a schema
+# dbGetQuery(conn,
+#            "SELECT table_name
+#            FROM information_schema.tables
+#            WHERE table_schema='ali'")
+# # # # #
+# # # # # ##list column names in a table
+# dbGetQuery(conn,
+#            "SELECT column_name,data_type
+#            FROM information_schema.columns
+#            WHERE table_name='crossings'")
 
 
 # test <- dbGetQuery(conn, "SELECT * FROM bcfishpass.waterfalls")
@@ -161,7 +171,7 @@ dat_joined2 <- left_join(
 # df_joined2 %>% readr::write_csv(file = paste0(getwd(), '/data/bcfishpass-phase2.csv'))
 #
 # ##clean up the workspace
-rm(dat, dat_info, dat_joined, res)
+rm(dat, dat1, dat1b, dat2, dat3, dat_info, dat_joined, res)
 #
 # ##now we pull the data out whenever we want to make tables for the report
 # dat <- readr::read_csv(file = paste0(getwd(), '/data/bcfishpass-phase2.csv'))
@@ -240,6 +250,11 @@ get_this <- bcdc_tidy_resources('pscis-assessments') %>%
 
 dat <- bcdata::bcdc_get_data(get_this)
 
+
+####-------raw data preserve---------------------------------------
+##burn pscis as is as a record
+# dat %>% readr::write_csv(file = paste0(getwd(), '/data/raw_input/pscis_bcdata.csv'))
+
 xref_pscis_my_crossing_modelled <- dat %>%
   purrr::set_names(nm = tolower(names(.))) %>%
   dplyr::filter(funding_project_number == "BCFP-003_phase1") %>%
@@ -265,7 +280,7 @@ dat_joined6 <- dat_joined5 %>%
 ##this sucks and is super hacky but we are going to grab all the info from bcfishpass and add it
 
 ##connect again
-##get the road info from the database
+##get the new bcfishpass info from the database
 conn <- DBI::dbConnect(
   RPostgres::Postgres(),
   dbname = dbname,
@@ -306,7 +321,16 @@ dat_joined8 <- left_join(
   dat_joined7,
   dat_info,
   by = 'crossing_id'
-)
+) %>%
+  distinct(pscis_crossing_id, my_crossing_reference, source, .keep_all = T)
+
+dups <- dat_joined8 %>% group_by(pscis_crossing_id) %>%
+  mutate(duplicated = n()>1) %>%
+  filter(duplicated == T & !is.na(pscis_crossing_id))   ##this is not connected bc its an error with the geometry when its empty - feeds the top input though!!!
+  distinct(pscis_crossing_id, .keep_all = T) %>%
+  pull(my_crossing_reference)
 
 ##burn it all to a file we can use later
 dat_joined8 %>% readr::write_csv(file = paste0(getwd(), '/data/bcfishpass-phase2.csv'))
+
+

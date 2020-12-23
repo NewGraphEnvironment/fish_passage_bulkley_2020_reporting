@@ -60,7 +60,7 @@ tab_cost_est_phase2 %>%
 
 ```{r tab-habitat-summary}
 tab_hab_summary %>% 
-  filter(Location == 'upstream') %>% 
+  filter(Location %ilike% 'upstream') %>% 
   select(-Location) %>% 
   my_kable(caption_text = 'Summary of Phase 2 habitat confirmation details.')
 

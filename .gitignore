@@ -19,6 +19,6 @@ R/pers_*
 *.gpkg-shm
 data/raw_input
 #docs/Elk.pdf
-docs/Elk.tex
+#docs/Elk.tex
 #Elk.html
 Elk.Rmd

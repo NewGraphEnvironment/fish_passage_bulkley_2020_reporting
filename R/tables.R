@@ -2,10 +2,20 @@ source('R/packages.R')
 source('R/functions.R')
 
 ####---------------import pscis data----------------
-##should give this rownames!!
-pscis <- import_pscis() %>%
+pscis1 <- import_pscis() %>%
   tibble::rownames_to_column() %>%
   arrange(my_crossing_reference)
+
+pscis1b <- import_pscis(workbook_name = 'pscis_phase1b.xlsm') %>%
+  tibble::rownames_to_column() %>%
+  arrange(my_crossing_reference)
+
+pscis <- bind_rows(
+  pscis1,
+  pscis1b
+)
+
+rm(pscis1, pscis1b)
 
 #------------------make the tables for the methods----------
 tab_habvalue <- tibble::tibble(`Habitat Value` = c('High', 'Medium', 'Low'),

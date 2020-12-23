@@ -21,7 +21,12 @@ description: "My Description."
 ---
 
 ```{r setup, include = TRUE, echo =FALSE, message=FALSE, warning=FALSE}
-knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, dpi=24, out.width = "100%")
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, dpi=36, out.width = "100%")
+
+##define a picture specific output width you can put in chunk headers - not working
+photo_width <- "80%"
+
+
 # fig.align="center", out.width = "90%",
 source('R/packages.R')
 source('R/functions.R')

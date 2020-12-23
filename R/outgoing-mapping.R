@@ -9,7 +9,7 @@ make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping'){
   dat %>%
     sf::st_as_sf(coords = c("utm_easting", "utm_northing"), crs = 26911, remove = F) %>%
     st_transform(crs = 3005) %>%
-    sf::st_write(paste0("./data/", gpkg_name, ".gpkg"), nm, append = TRUE)
+    sf::st_write(paste0("./data/", gpkg_name, ".gpkg"), nm, delete_layer = TRUE)
 }
 
 # ##just scab together the new id's with the old ones to save time

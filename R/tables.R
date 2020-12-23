@@ -222,5 +222,8 @@ tab_photo_url <- list.files(path = paste0(getwd(), '/data/photos/'), full.names 
   dplyr::group_split(value) %>%
   purrr::set_names(nm = pscis$my_crossing_reference)
 
+##built from funciton in functions.R file
+tabs_phase1 <- mapply(print_tab_summary_all, tab_sum = tab_summary, comments = tab_summary_comments, photos = tab_photo_url)
+
 
 

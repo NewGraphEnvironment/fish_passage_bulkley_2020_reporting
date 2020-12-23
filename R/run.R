@@ -13,7 +13,7 @@ preview_chapter('0800-appendix-197555.Rmd')
 rmarkdown::render_site(output_format = 'pagedown::html_paged', encoding = 'UTF-8')
 
 ##copy it to the docs folder so that it can be downloaded
-file.copy('Elk.html', 'docs/Elk.html')
+file.copy('Elk.html', 'docs/Elk.html', overwrite = T)
 
 ##make the site
 rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')

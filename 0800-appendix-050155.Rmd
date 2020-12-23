@@ -79,7 +79,7 @@ Structure replacement with an open bottomed culvert is recommended to provide un
 
 There is an estimated `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of mainstem habitat upstream of crossing `r as.character(my_site)` with habitat in the areas surveyed upstream of the crossing rated as high value for fry and juvenile salmonid rearing. Although potentially attributable to the lower gradient habitat downstream and the proximity to the Lizard Creek mainstem, fish sampling results indicated that the crossing is potentially negatively impacting habitat capacity upstream of the crossing as higher densities of westslope cutthrout trout were captured downstream of the crossing than above. The road may be part of the Island Lake Recreational tenure or solely the responsiblity of the Ministry of Forests, Lands, Natural Resource Operations & Rural Development. The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement with an open bottomed structure.
 
-<br>
+\pagebreak
 
 ```{r tab-culvert-010}
 print_tab_summary()
@@ -87,7 +87,7 @@ print_tab_summary()
 
 ```
 
-<br>
+\pagebreak
 
 ```{r tab-habitat-summary-010}
 tab_hab_summary %>% 

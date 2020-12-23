@@ -136,7 +136,10 @@ hab_fish_input <- left_join(
 # hab_fish_input %>%
 #   readr::write_csv(file = paste0(getwd(), '/data/raw_input/habitat_confirmation_fish_summary.csv'))
 
-##
+##this is the second time we did it - changed to habitat_confirmation_fish_summary2.csv'
+hab_fish_input %>%
+  readr::write_csv(file = paste0(getwd(), '/data/raw_input/habitat_confirmation_fish_summary2.csv'))
+
 
 ######----------------density plots--------------------------
 

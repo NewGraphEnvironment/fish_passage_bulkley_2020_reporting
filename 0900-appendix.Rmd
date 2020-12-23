@@ -1,24 +1,22 @@
 # Appendix - Phase 1 Fish Passage Assessment Data and Photos {-}
 
 
-```{r tab-phase-1-summaries, results='asis'}
-print_tab_summary_all <- function(x, y, z){
-  kable(x, booktabs = T) %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>% 
-    kableExtra::add_footnote(label = paste0('Comments: ', y[[1]]), notation = 'none') %>% #this grabs the comments out
-    kableExtra::add_footnote(label = paste0('Photos: ', z[[1]], z[[2]]), notation = 'none') %>%  
-    kableExtra::add_footnote(label = '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>', escape = F, notation = 'none')
-}
- 
-tabs <- mapply(print_tab_summary_all, x = tab_summary, y = tab_summary_comments, z = tab_photo_url)
+```{r tab-phase-1-summaries, results='asis',eval=FALSE}
+##moved to functions and tables files
+# print_tab_summary_all <- function(tab_sum, comments, photos){
+#   kable(tab_sum, booktabs = T) %>%
+#     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>% 
+#     kableExtra::add_footnote(label = paste0('Comments: ', comments[[1]]), notation = 'none') %>% #this grabs the comments out
+#     kableExtra::add_footnote(label = paste0('Photos: ', photos[[1]], photos[[2]]), notation = 'none') %>%  
+#     kableExtra::add_footnote(label = '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>', escape = F, notation = 'none')
+# }
+#  
+# tabs_phase1 <- mapply(print_tab_summary_all, tab_sum = tab_summary, comments = tab_summary_comments, photos = tab_photo_url)
 
 
-
-# `r knit(text = unlist(tabs))`
-# tabs
 ##another potential solution here https://stackoverflow.com/questions/64000421/how-to-use-pagedown-and-kable-in-r-to-print-a-table-followed-by-a-page-break
 
 ```
 
 
-`r knit(text = unlist(tabs))`
+`r knit(text = unlist(tabs_phase1))`

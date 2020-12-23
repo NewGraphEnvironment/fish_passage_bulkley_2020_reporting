@@ -80,7 +80,7 @@ The stream was surveyed upstream from the culvert for `r my_priority_info(loc = 
 
 ## Fish Sampling {-}
 
-To assess potential impacts of the culvert on fish densities in the stream electrofishing was conducted upstream and downstream of the crossing.  Four sites were sampled upstream and five sites  were sampled downstream. A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'WCT') %>% pull(count_fish)` westslope cutthrout trout and `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'EB') %>% pull(count_fish)` eastern brook trout were captured upstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'WCT') %>% pull(count_fish)` westslope cutthrout trout and `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'EB') %>% pull(count_fish)` eastern brook trout captured downstream (Figure \@ref(fig:photo-032)).  Raw results are included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting/raw/master/data/habitat_confirmations.xls) and summarized in Tables \@ref(tab:tab-fish-site-030) - \@ref(tab:tab-fish-dens-030) and Figure \@ref(fig:plot-fish-box-030).
+To assess potential impacts of the culvert on fish densities in the stream electrofishing was conducted upstream and downstream of the crossing.  Five sites were sampled downstream and five sites  were sampled upstream. A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'WCT') %>% pull(count_fish)` westslope cutthrout trout and `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'EB') %>% pull(count_fish)` eastern brook trout were captured upstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'WCT') %>% pull(count_fish)` westslope cutthrout trout and `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'EB') %>% pull(count_fish)` eastern brook trout captured downstream (Figure \@ref(fig:photo-032)).  Raw results are included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting/raw/master/data/habitat_confirmations.xls) and summarized in Tables \@ref(tab:tab-fish-site-030) - \@ref(tab:tab-fish-dens-030) and Figure \@ref(fig:plot-fish-box-030).
 
 <br>
 
@@ -88,19 +88,20 @@ To assess potential impacts of the culvert on fish densities in the stream elect
 
 Structure replacement with an open bottomed structure is recommended to provide access to the habitat located upstream of PSCIS crossing `r as.character(my_site)`.  The cost of the work is estimated at \$`r as.character(my_cost_estimate() %>% pull(cost_est_1000s) * 1000)` for a cost benefit of \$`r as.character(my_cost_estimate() %>% pull(cost_net) * 1000)`/linear m and \$`r as.character(my_cost_estimate() %>% pull(cost_area_net) * 1000)`/m^2^.
 
+<br>
 
 ## Conclusion {-}
 
 There is an estimated `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of mainstem habitat upstream of crossing `r as.character(my_site)` with habitat in the areas surveyed upstream of the crossing rated as high value for fry and juvenile salmonid rearing. Fish sampling results indicated that densities of westslope cutthrout trout fry and parr were similiar upstream and downstream of the crossing with a general trend of higher densities below the crossing for both life stages. River Road is under tenure of the Ministry of Forests, Lands, Natural Resource Operations & Rural Development. The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement with an open bottomed structure.
 
-<br>
+\pagebreak
 
 ```{r tab-culvert-030, eval = T}
 print_tab_summary()
 
 ```
 
-<br>
+\pagebreak
 
 ```{r tab-habitat-summary-030}
 tab_hab_summary %>% 
@@ -120,7 +121,7 @@ tab_fish_site() %>%
   my_kable(caption_text = my_caption)
 ```
 
-<br>
+\pagebreak
 
 ```{r tab-fish-dens-030, eval=T}
 my_caption <- paste0('Westslope cuthrout trout densities (fish/100m2) for PSCIS crossing ', my_site, '.')
@@ -141,7 +142,7 @@ p
 
 <br>
 
-```{r photo-030, fig.cap= my_caption, eval=T}
+```{r photo-030, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = '20200921_114215_k_.JPG'
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
@@ -153,7 +154,7 @@ grid::grid.raster(get_img())
 
 <br>
 
-```{r photo-031, fig.cap= my_caption, eval=T}
+```{r photo-031, fig.cap= my_caption, out.width = photo_width, eval=T}
 
 # 
 my_photo = 'IMG_3248_k_.JPG'

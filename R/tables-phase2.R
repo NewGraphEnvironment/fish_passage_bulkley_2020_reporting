@@ -71,7 +71,7 @@ hab_loc2 <- hab_loc %>%
 
 ##join the tables together
 hab_fish_collect_prep2 <- left_join(
-  select(hab_loc2, site_id, utm_zone:utm_northing),
+  select(hab_loc2, reference_number, site_id, utm_zone:utm_northing),
   select(hab_fish_collect_prep, site_id, species),
   by = 'site_id'
 )
@@ -132,7 +132,7 @@ hab_fish_collect <- left_join(
 
 hab_features <- habitat_confirmations %>%
   purrr::pluck("step_4_stream_site_data") %>%
-  select(feature_type:utm_northing) %>%
+  select(reference_number,local_name, feature_type:utm_northing) %>%
   filter(!is.na(feature_type))
 
 

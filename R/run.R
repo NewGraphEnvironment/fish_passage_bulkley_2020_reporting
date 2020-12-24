@@ -16,10 +16,14 @@ preview_chapter('0800-appendix-197555.Rmd')
 ## 1  make the site
 rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')
 
-## 2  then make our printable pdf
+##move the phase 1 appendix out of the main directory to a backup file
+file.rename('0900-appendix.Rmd', 'data/0900-appendix.Rmd')
+
+##   then make our printable pdf
 rmarkdown::render_site(output_format = 'pagedown::html_paged', encoding = 'UTF-8')
 
-## 3 copy it to the docs folder so that it can be downloaded
-file.copy('Elk.html', 'docs/Elk.html', overwrite = T)
+##  move it to the docs folder so that it can be seen by the download button
+file.rename('Elk.html', 'docs/Elk.html')
 
-
+##move the phase 1 appendix back to main directory
+file.rename('data/0900-appendix.Rmd', '0900-appendix.Rmd')

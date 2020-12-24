@@ -21,6 +21,7 @@ pacman::p_load(
   forcats,
   bookdown,
   flextable,
+  english,
   bit64 ##to make integer column type for pg
   # gert  ##to track git moves
   )

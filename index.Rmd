@@ -5,8 +5,6 @@ author:
  - Prepared by Al Irvine, B.Sc., R.P.Bio.
  - New Graph Environment
 date: "`r Sys.Date()` DRafT"
-lof: true
-lot: true
 toc-title: Table of Contents
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -39,6 +37,8 @@ source('R/extract-fish.R')
 source('R/functions-fish.R')
 # options(timeout=180)
 ##bookdown::gitbook
+# lof: true
+# lot: true
 
 ```
 

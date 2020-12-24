@@ -1,3 +1,7 @@
+fig:overview-map
+fig:hydrology-plot
+fig:hydrology-stats
+tab:fiss-species-table
 tab:tablethreshaverage
 tab:tab-hab-value
 tab:tab-barrier-scoring
@@ -67,6 +71,7 @@ intro
 background
 project-location
 fisheries
+westslope-cutthrout-trout
 methods
 planning
 fish-passage-assessments
@@ -77,4 +82,4 @@ habitat-gain-index
 results
 phase-1
 phase-2
-conclusion
+recommendations

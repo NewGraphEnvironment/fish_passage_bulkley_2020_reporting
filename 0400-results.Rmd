@@ -2,9 +2,7 @@
 
 ## Phase 1
 
-A total of XXX assessments were conducted between xxx and xxxxxxxxxx.  Site details and photos are presented in 
-
-The analysis phase is summarized in Table \@ref(tab:cost-est) [test][test]
+A total of `r n_distinct(pscis$my_crossing_reference)` assessments were conducted between `r format(min(pscis$date), format="%B %d %Y")` and `r format(max(pscis$date), format="%B %d %Y")`.  Site details and photos are presented in [Appendix - Phase 1 Fish Passage Assessment Data and Photos].  A cost benefit analysis for phase 1 sites is summarized in Table \@ref(tab:cost-est-phase-1).
 
 <br>
 

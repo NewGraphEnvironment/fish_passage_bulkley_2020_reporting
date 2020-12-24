@@ -15,6 +15,8 @@ pscis <- bind_rows(
   pscis1b
 )
 
+##here is where we should add the pscis ids
+
 rm(pscis1, pscis1b)
 
 #------------------make the tables for the methods----------
@@ -219,14 +221,14 @@ tab_summary <- pscis_split %>%
 tab_summary_comments <- pscis_split %>%
   purrr::map(make_tab_summary_comments)
 
-
+##had a hickup where R cannot handle the default size of the integers we used for numbers so we had to change site names!!
 tab_photo_url <- list.files(path = paste0(getwd(), '/data/photos/'), full.names = T) %>%
   basename() %>%
   as_tibble() %>%
-  mutate(value = as.integer(value)) %>% ##need this to sort
+  mutate(value = as.integer(value)) %>%  ##need this to sort
   dplyr::arrange(value)  %>%
   mutate(photo = paste0('![](data/photos/', value, '/crossing_all.JPG)')) %>%
-  filter(value %in% pscis$my_crossing_reference) %>% ##we don't want all the photos - just the phase 1 photos for this use case!!!
+  filter(value %in% pscis$my_crossing_reference) %>%  ##we don't want all the photos - just the phase 1 photos for this use case!!!
   dplyr::group_split(value) %>%
   purrr::set_names(nm = pscis$my_crossing_reference)
 

@@ -251,9 +251,15 @@ get_this <- bcdc_tidy_resources('pscis-assessments') %>%
 dat <- bcdata::bcdc_get_data(get_this)
 
 
+
 ####-------raw data preserve---------------------------------------
 ##burn pscis as is as a record
 # dat %>% readr::write_csv(file = paste0(getwd(), '/data/raw_input/pscis_bcdata.csv'))
+
+##now if we want to skip this step we just load the csv like so
+# dat <-
+
+
 
 xref_pscis_my_crossing_modelled <- dat %>%
   purrr::set_names(nm = tolower(names(.))) %>%
@@ -327,8 +333,8 @@ dat_joined8 <- left_join(
 dups <- dat_joined8 %>% group_by(pscis_crossing_id) %>%
   mutate(duplicated = n()>1) %>%
   filter(duplicated == T & !is.na(pscis_crossing_id))   ##this is not connected bc its an error with the geometry when its empty - feeds the top input though!!!
-  distinct(pscis_crossing_id, .keep_all = T) %>%
-  pull(my_crossing_reference)
+  # distinct(pscis_crossing_id, .keep_all = T) %>%
+  # pull(my_crossing_reference)
 
 ##burn it all to a file we can use later
 dat_joined8 %>% readr::write_csv(file = paste0(getwd(), '/data/bcfishpass-phase2.csv'))

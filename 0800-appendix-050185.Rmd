@@ -167,7 +167,7 @@ grid::grid.raster(get_img())
 
 <br>
 
-```{r photo-032, fig.cap= my_caption, eval=T}
+```{r photo-032, fig.cap= my_caption, out.width = photo_width, eval=T}
 
 # 
 my_photo = 'IMG_3254_k_.JPG'

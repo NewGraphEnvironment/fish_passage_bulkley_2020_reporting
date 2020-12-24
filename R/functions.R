@@ -181,7 +181,9 @@ print_tab_summary_all <- function(tab_sum, comments, photos){
   kable(tab_sum, booktabs = T) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
     kableExtra::add_footnote(label = paste0('Comments: ', comments[[1]]), notation = 'none') %>% #this grabs the comments out
-    kableExtra::add_footnote(label = paste0('Photos: ', photos[[1]], photos[[2]]), notation = 'none') %>%
+    kableExtra::add_footnote(label = paste0('Photos: ', photos[[1]],
+                                            '. From top left clockwise: Downstream, Road/Site Card, Inlet, Upstream, Outlet, Barrel.',
+                                            photos[[2]]), notation = 'none') %>%
     kableExtra::add_footnote(label = '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>', escape = F, notation = 'none')
 }
 

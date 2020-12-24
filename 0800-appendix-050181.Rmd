@@ -147,8 +147,8 @@ p
 
 <br>
 
-```{r photo-50181-01, fig.cap= my_caption, out.width = photo_width, eval=F}
-my_photo = '20200921_114215_k_.JPG'
+```{r photo-50181-01, fig.cap= my_caption, out.width = photo_width, eval=T}
+my_photo = pull_photo_by_str(str_to_pull = '_u1_')
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
 
@@ -159,10 +159,10 @@ grid::grid.raster(get_img())
 
 <br>
 
-```{r photo-50181-02, fig.cap= my_caption, out.width = photo_width, eval=F}
+```{r photo-50181-02, fig.cap= my_caption, out.width = photo_width, eval=T}
 
 # 
-my_photo = 'IMG_3248_k_.JPG'
+my_photo = pull_photo_by_str(str_to_pull = '_d1_')
 
 my_caption = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
 
@@ -172,10 +172,10 @@ grid::grid.raster(get_img())
 
 <br>
 
-```{r photo-50181-03, fig.cap= my_caption, out.width = photo_width, eval=F}
+```{r photo-50181-03, fig.cap= my_caption, out.width = photo_width, eval=T}
 
 # 
-my_photo = 'IMG_3254_k_.JPG'
+my_photo = pull_photo_by_str(str_to_pull = '_ufish')
 
 my_caption = paste0('Westslope cutthrout trout captured upstream of PSCIS crossing ', my_site, '.')
 

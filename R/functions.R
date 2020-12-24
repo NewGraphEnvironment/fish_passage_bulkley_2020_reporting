@@ -252,3 +252,10 @@ print_tab_cost_mult <- function(dat = tab_cost_rd_mult_report, ...){
   tab_cost_rd_mult_report %>%
   my_kable()
 }
+
+##here is a shot at a function to pull a photo based on a string subset
+pull_photo_by_str <- function(site_id = my_site, str_to_pull = 'barrel'){
+  list.files(path = paste0(getwd(), '/data/photos/', site_id), full.names = T) %>%
+    stringr::str_subset(., str_to_pull) %>%
+    basename()
+}

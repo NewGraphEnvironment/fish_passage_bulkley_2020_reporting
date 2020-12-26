@@ -259,3 +259,11 @@ pull_photo_by_str <- function(site_id = my_site, str_to_pull = 'barrel'){
     stringr::str_subset(., str_to_pull) %>%
     basename()
 }
+
+appendix_title <- function(site = my_site){
+  paste0('# Appendix - Crossing ', site,'{-}')
+}
+
+appendix_subtitle <- function(){
+  paste0('**', my_overview_info() %>% pull(road_name), ' - ', my_overview_info() %>% pull(stream_name), '**')
+}

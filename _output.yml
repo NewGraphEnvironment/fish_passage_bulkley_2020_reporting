@@ -12,6 +12,9 @@ bookdown::gitbook:
       after: |
         <li><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf" target="blank">Scripts and Data</a></li>
     download: ["Elk.pdf", "Elk.html"]
+    fontsettings:
+      theme: night
+      family: serif
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

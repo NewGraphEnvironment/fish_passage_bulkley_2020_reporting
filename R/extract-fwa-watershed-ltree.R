@@ -20,8 +20,8 @@ wshed_input <- bcfishpass_phase2 %>%
 
 dat <- wshed_input %>%
   filter(!is.na(modelled_crossing_id)) %>%
-  mutate(ltree_in = paste0(localcode_ltree, '.*{1}'))  ##this one is maybe a bit better
-  # mutate(ltree_in = paste0(localcode_ltree, '.*'))
+  # mutate(ltree_in = paste0(localcode_ltree, '.*{1}'))  ##this one is maybe a bit better
+  mutate(ltree_in = paste0(localcode_ltree, '.*')) ##this is hab_wshds_ltree
 
 
 conn <- DBI::dbConnect(
@@ -116,11 +116,21 @@ wshds3 <- bind_cols(
          area_km = units::drop_units(area_km))
   # st_transform(crs = 3005)
 
+##visualize your outputs
+ggplot2::ggplot() +
+  # ggplot2::geom_sf(data = wshed_simple, lwd = 0.15, fill = 'red', alpha = 0.1) +
+  ggplot2::geom_sf(data = wshds3 %>% filter(pscis_crossing_id == 50181), lwd = 0.15, fill = 'steelblue', alpha = 0.5)
+  # ggplot2::geom_sf(data = yakoun, lwd = 0.15)
+
 ##add to the geopackage
 wshds3 %>%
-  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_wshds_ltree_up1', append = F) ##might want to f the append....
+  # sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_wshds_ltree_up1', append = F) %>% ##might want to f the append....
+  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_wshds_ltree', append = F) ##might want to f the append....
+
+##burned to a kml so we can easily add elevation info
+st_write(wshds3, append = TRUE, driver = 'kml', dsn = "data/raw_input/hab_wshds_ltree.kml")
+# st_write(wshds3, append = TRUE, driver = 'kml', dsn = "data/raw_input/wsheds_up1.kml")
 
 dbDisconnect(conn = conn)
-
 
 

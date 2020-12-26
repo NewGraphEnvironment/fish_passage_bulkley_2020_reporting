@@ -18,9 +18,7 @@ bcfishpass_phase2 <- readr::read_csv(file = paste0(getwd(), '/data/bcfishpass-ph
 
 
 
-##burned to a kml so we can easily add elevation info
-# st_write(wsheds, append = TRUE, driver = 'kml', dsn = "data/raw_input/wsheds.kml")
-# st_write(wsheds_up1, append = TRUE, driver = 'kml', dsn = "data/raw_input/wsheds_up1.kml")
+
 
 ####--------------bring in the habitat and fish data------------------
 habitat_confirmations <-  readxl::excel_sheets(path = "./data/habitat_confirmations.xls") %>%

@@ -46,7 +46,7 @@ Crossing `r as.character(my_site)` is located on a `r my_pscis_info() %>% pull(s
 
 ## Background {-}
 
-At the crossing location, the stream is `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order with a watershed area upstream of the road of approximately `r my_bcfishpass() %>% pull(watershed_upstr_ha)/100 %>% round(1)` km^2^. The elevation of the watershed ranges from a maximum of 2100 to 1200m at the culvert. Upstream of the crossing, although there are four fords documented in PSCIS there are no other road-stream crossing barriers. No fisheries information was available for the stream [@moeStreamInventorySample] however westslope cutthroat trout, bull trout, mountain whitefish, brook trout, longnose sucker and longnose dace have been recorded downstream in Morrissey Creek [@data_fish_obs].   
+At the crossing location, the stream is `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order with a watershed area upstream of the road of approximately `r my_bcfishpass() %>% mutate(watershed_upstr_ha = watershed_upstr_ha/100) %>% pull(watershed_upstr_ha) %>% round(1)` km^2^. The elevation of the watershed ranges from a maximum of 2100 to 1200m at the culvert. Upstream of the crossing, although there are four fords documented in PSCIS there are no other road-stream crossing barriers. No fisheries information was available for the stream [@moeStreamInventorySample] however westslope cutthroat trout, bull trout, mountain whitefish, brook trout, longnose sucker and longnose dace have been recorded downstream in Morrissey Creek [@data_fish_obs].   
 
 <br>
 

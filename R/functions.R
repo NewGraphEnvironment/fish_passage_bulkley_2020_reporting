@@ -36,6 +36,9 @@ fif <- function(what, where=".", in_files="\\.[Rr]$", recursive = TRUE,
 
 }
 
+
+
+
 fit_to_page <- function(ft, pgwidth = 6.75){
 
   ft_out <- ft %>% flextable::autofit()
@@ -247,6 +250,7 @@ print_tab_summary <- function(dat = pscis2, site = my_site, site_photo_id = my_s
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)
     # kableExtra::scroll_box(width = "100%", height = "500px") ##not scrolling to simplify our pagedown output
 }
+
 
 print_tab_cost_mult <- function(dat = tab_cost_rd_mult_report, ...){
   tab_cost_rd_mult_report %>%

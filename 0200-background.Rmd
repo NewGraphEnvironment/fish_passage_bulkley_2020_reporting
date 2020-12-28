@@ -21,7 +21,36 @@ The scope of 2020/2021 project activities reported on in this document includes 
 
 ## Project Location
 
-To focus the project area on habitat with high value for conservation of westslope cutthrout trout, the project was focused within the upper Elk River watershed upstream of the Elko Dam located at Elko, BC with planning also conducted for the Flathead River watershed.  
+To focus the project area on habitat with high value for conservation of westslope cutthrout trout, the project was focused within the upper Elk River watershed upstream of the Elko Dam located at Elko, BC with planning also conducted for the Flathead River watershed.  The project location is within the traditional territory of the Ktunaxa Nation [@KtunaxaNation]. When Europeans settled in the Kootenay Region around 200 hundred years ago, the Indian Reserved swere created and lead to the seven Indian Bands:
+
+ * ʔakisq̓nuk- Columbia Lake Band (Windermere, BC);
+ * ʔaq̓am- St. Mary's Band (Cranbrook, BC);
+ * ʔakink̓umǂasnuqǂiʔit- Tobacco Plains Band (Grasmere, BC);
+ * yaqan nuʔkiy- Lower Kootenay Band (Creston, BC);
+ * kyaknuqǂiʔit- Shuswap Band (Invermere, BC);
+ * ʔaq̓anqmi- Kootenai Tribe of Idaho (Bonners Ferry, Idaho);
+ * k̓upawi¢q̓nuk- Ksanka Band (Elmo, Montana)
+
+<br>
+
+@KtunaxaNation report the vision statement of the Ktunaxa is:
+
+<br>
+
+"Kȼmak̓qa ksukⱡuⱡa·k kuk̓qani ȼ k̓itqakiⱡ haqa ksiʔⱡ ȼxa ʔa·kⱡukqaʔis ksukiⱡq̓ukaʔmi·k kiʔin Ktunaxa naʔs ʔamak̓ʔis. Qus pik̓aksȼ naʔs ȼxaⱡ yaqanakiⱡ haqaʔki. K̓itqawiȼmu kakiⱡwiȼkiⱡ ʔamakʔis k̓isnikȼik kȼxaⱡ qa kiⱡkk̓axuxami·k k̓itqakiⱡ haqa ȼ k̓isʔin ʔaknumuȼtiⱡʔis."
+
+<br>
+
+The vision statement has been translated to english as:
+
+<br>
+
+"Strong, healthy citizens and communities, speaking our languages and celebrating who we are and our history in our ancestral homelands, working together, managing our lands and resources, within a self-sufficient, self-governing Nation."
+
+
+<br>
+
+The Elk River Alliance is a community-based water group that aims to improve and preserve watershed health through projects that raise watershed literacy, inform sustainable water decision-making, collect scientific data to prioritize restoration opportunities and promote safe and sustainable river recreation [@ElkRiverAlliance2020]. Following a large flood event in 2013 that caused significant property and infrastructure damage throughout the valley, the Elk River Alliance developed a comprehensive Flood Strategy report to provide a review of watershed functioning, forecast streamflow/flooding in the Elk Valley, describe the effects of flooding on the community and provide strategies to mitigate against future flood risk [@walker_etal2016ElkRiver]. Building on the 2016 Flood Strategy, the Elk River Cutthroat Trout Research Initiative is a Elk River Alliance project which focuses on habitat evaluation, identification of restoration opportunities and the communication of westslope cutthrout trout information to the community by conducting redd surveys, habitat assessments and the drafting of restoration plans for future habitat improvements [@elkriveralliance2020ElkRiver]. 
 
 <br>
 
@@ -59,3 +88,13 @@ readr::read_csv(file = paste0(getwd(), '/data/raw_input/fiss_species_table.csv')
 
 
 ### Westslope Cutthrout Trout
+
+In a swimming performance study conducted in an open-channel flume @blank_etal2020SwimmingPerformance estimated the overall average swim speeds of westlope cutthrout trout at 0.84m/s with a maximum observed swim speed of 3.55m/s. Nine of 11 westslope cutthrout trout radio-tagged in the Blackfoot River drainage, Montana by @schmetterling2001SeasonalMovementsin made movements to tributaries presumable for spawning. While in tributaries, fish movements averaged 12.5km and stayed within a 100m reach during the spawning period for between 15 and 63 days.
+
+<br>
+
+Spawning habitat for resident and fluvial subpopulations is documented in @schmetterling2001SeasonalMovements as in the tailouts of deep pools at moderate to high-flow events within small, low-gradient streams with cold well-oxygenated water and clean unsilted gravels. Proximity to large woody debris, boulder or bedrock cover is important for spawning fish while residing in spawning tributaries as high mortality may result when suitable cover is lacking.  The dominant substrate used for spawning ws gravel (1.8 - 3.3cm diameter) with spawning occurring in late May and June towards the end of the spring freshet with rising water temperatures between 7-11$^\circ$C
+
+<br>
+
+  

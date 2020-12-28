@@ -25,14 +25,14 @@ my_site <- 50155
 
 ## Site Location {-}
 
-Crossing `r as.character(my_site)` is located on a `r my_pscis_info() %>% pull(stream_name)`, approximately 75m upstream from the confluence with Lizard Creek. The stream is located approximately 100m east of the location where it is mapped on the freshwater atlas stream layer. Island Lake Lodge Road is an extension of Mt.Fernie Park Road with access to Highway 3 located within Fernie city limits.  The are is a popular recreational destination for hikers and mountain bikers.  Island Lake Lodge is a year round tourist destination providing accomodations, guided hiking and backcountry catskiing for clients.
+Crossing `r as.character(my_site)` is located on a `r my_pscis_info() %>% pull(stream_name)`, approximately 75m upstream from the confluence with Lizard Creek. The stream is located approximately 100m east of the location where it is mapped on the freshwater atlas stream layer. Island Lake Lodge Road is an extension of Mt.Fernie Park Road with access to Highway 3 located within Fernie city limits.  The are is a popular recreational destination for hikers and mountain bikers.  Island Lake Lodge is a year round tourist destination providing accomodations, guided hiking and backcountry catskiing for clients.  
 
 
 <br>
 
 ## Background {-}
 
-At the crossing location, the stream is 2nd order with a watershed area upstream of the road of approximately 1.8km^2^. The elevation of the watershed ranges from a maximum of 1945m to 1080m at the culvert. One 12m long bridge (PSCIS 197543) is located upstream of the subject crossing approximately 575m on the Lazy Lizard bike trail and another 7m long bridge structure is located downstream also on a recreational trail. A search of provincial records yielded no fisheries information for the stream [@moeStreamInventorySample]. Downstream, Lizard Creek supports westslope cutthroat trout, bull trout, mountain whitefish, brook trout, longnose sucker and longnose dace [@data_fish_obs].
+At the crossing location, the stream is 2nd order with a watershed area upstream of the road of approximately 1.8km^2^. The elevation of the watershed ranges from a maximum of 1945m to 1080m at the culvert. One 12m long bridge (PSCIS 197543) is located upstream of the subject crossing approximately 575m on the Lazy Lizard bike trail and another 7m long bridge structure is located downstream also on a recreational trail. A search of provincial records yielded no fisheries information for the stream [@moeStreamInventorySample]. Downstream, Lizard Creek supports westslope cutthroat trout, bull trout, mountain whitefish, brook trout, longnose sucker and longnose dace [@data_fish_obs]. @elkriveralliance2020ElkRiver conducted redd surveys in Lizard Creek in 2019 with a total of 55 redds observed within a 2.4km of stream surveyed comprising the largest densities of redds of the four tributaries surveyed.
 
 <br>
 

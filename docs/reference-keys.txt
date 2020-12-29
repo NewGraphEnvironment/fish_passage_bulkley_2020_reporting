@@ -8,6 +8,7 @@ tab:tab-barrier-scoring
 tab:tab-barrier-result
 tab:tab-cost-mult
 tab:cost-est-phase-1
+fig:map-interactive
 tab:tab-overview
 tab:unnamed-chunk-5
 tab:cost-est-phase-2
@@ -39,10 +40,6 @@ fig:plot-fish-box-030
 fig:photo-030
 fig:photo-031
 fig:photo-032
-tab:tab-culvert-50261
-tab:tab-habitat-summary-50261
-fig:photo-50261-01
-fig:photo-50261-02
 tab:tab-culvert-62423
 tab:tab-habitat-summary-62423
 fig:photo-62423-02

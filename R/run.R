@@ -29,3 +29,5 @@ file.rename('data/0900-appendix.Rmd', '0900-appendix.Rmd')
 
 ##  make the site
 rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')
+
+

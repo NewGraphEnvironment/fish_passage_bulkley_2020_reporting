@@ -229,3 +229,28 @@ tab_hab_summary <- left_join(
          `Habitat Value` = hab_value) %>%
   replace(., is.na(.), "-")
 
+
+##we need an sf object with details for the interactive map
+##prep the location data
+hab_loc_prep <- left_join(
+  hab_loc %>%
+  tidyr::separate(alias_local_name, into = c('site', 'location', 'ef'), remove = F) %>%
+  filter(!alias_local_name %ilike% 'ef' &
+           alias_local_name %ilike% 'us') %>%
+  mutate(site = as.integer(site)),
+  select(filter(habitat_confirmations_priorities, location == 'us'),
+         site, priority, comments),
+  by = 'site'
+)
+
+
+
+tab_hab_map <- left_join(
+  tab_cost_est_phase2,
+  select(
+    hab_loc_prep, site, priority, utm_easting, utm_northing, comments),
+  by = c('pscis_crossing_id' = 'site')
+) %>%
+  sf::st_as_sf(coords = c("utm_easting", "utm_northing"),
+               crs = 26911, remove = F) %>%
+  sf::st_transform(crs = 4326)

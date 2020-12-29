@@ -24,6 +24,10 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, dpi=36, out.widt
 ##define a picture specific output width you can put in chunk headers - not working
 photo_width <- "80%"
 
+##we need a switch to turn off html only so the printed version looks ok
+html_on <- TRUE
+
+
 
 # fig.align="center", out.width = "90%",
 source('R/packages.R')

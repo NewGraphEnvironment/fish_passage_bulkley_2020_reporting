@@ -41,7 +41,7 @@ pscis_rd <- left_join(
 tab_cost_rd_mult <- pscis_rd %>%
   select(my_road_class, my_road_surface) %>%
   # mutate(road_surface_mult = NA_real_, road_class_mult = NA_real_) %>%
-  mutate(road_class_mult = case_when(my_road_class == 'collector' ~ 3,
+  mutate(road_class_mult = case_when(my_road_class == 'collector' ~ 4,
                                      my_road_class == 'arterial' ~ 10,
                                      my_road_class == 'highway' ~ 10,
                                        my_road_class == 'rail' ~ 5,
@@ -83,18 +83,7 @@ tab_cost_est_prep2 <- left_join(
   ) %>%
   mutate(cost_est_1000s = round(cost_est_1000s, 0))
 
-##add in the model data.  This is a good reason for the data to be input first so that we can use the net distance!!
-tab_cost_est_prep3 <- left_join(
-  tab_cost_est_prep2,
-  select(bcfishpass_rd, pscis_crossing_id, uphab_gross_sub22, uphab_net_sub22),
-  by = 'pscis_crossing_id'
-) %>%
-  mutate(cost_net = round(uphab_net_sub22/cost_est_1000s, 1),
-         cost_gross = round(uphab_gross_sub22/cost_est_1000s, 1),
-         cost_area_net = round((uphab_net_sub22 * downstream_channel_width_meters * 0.5)/cost_est_1000s, 1),
-         cost_area_gross = round((uphab_gross_sub22 * downstream_channel_width_meters * 0.5)/cost_est_1000s, 1))
-
-##this is phase 2 specific and will pull the length estimate from our spreadsheet rather than the model
+##add in the priorities upstream habitat distance data.  This is a good reason for the data to be input first so that we can use the net distance!!
 # tab_cost_est_prep3 <- left_join(
 #   tab_cost_est_prep2,
 #   select(bcfishpass_rd, pscis_crossing_id, uphab_gross_sub22, uphab_net_sub22),
@@ -105,13 +94,26 @@ tab_cost_est_prep3 <- left_join(
 #          cost_area_net = round((uphab_net_sub22 * downstream_channel_width_meters * 0.5)/cost_est_1000s, 1),
 #          cost_area_gross = round((uphab_gross_sub22 * downstream_channel_width_meters * 0.5)/cost_est_1000s, 1))
 
+##phase 2 specific
+tab_cost_est_prep3 <- left_join(
+  tab_cost_est_prep2,
+  select(
+    filter(habitat_confirmations_priorities, location == 'us'),
+    site, upstream_habitat_length_m),
+  by = c('pscis_crossing_id' = 'site')
+) %>%
+  mutate(cost_net = round(upstream_habitat_length_m/cost_est_1000s, 1),
+         cost_area_net = round((upstream_habitat_length_m * downstream_channel_width_meters * 0.5)/cost_est_1000s, 1))
+
+
+
 
 ##add the priority info
 tab_cost_est_phase2 <- tab_cost_est_prep3 %>%
   select(pscis_crossing_id, stream_name, road_name, downstream_channel_width_meters,
-         crossing_fix_code, cost_est_1000s, uphab_net_sub22,
+         crossing_fix_code, cost_est_1000s, upstream_habitat_length_m,
          cost_net, cost_area_net) %>%
-  mutate(uphab_net_sub22 = round(uphab_net_sub22,0))
+  mutate(upstream_habitat_length_m = round(upstream_habitat_length_m,0))
 
 tab_cost_est_phase2_report <- tab_cost_est_phase2 %>%
   rename(`PSCIS ID` = pscis_crossing_id,
@@ -119,8 +121,8 @@ tab_cost_est_phase2_report <- tab_cost_est_phase2 %>%
          Road = road_name,
          `Stream Width (m)` = downstream_channel_width_meters,
          Fix = crossing_fix_code,
-        `Cost Est ( $K)` =  cost_est_1000s,
-         `Habitat Upstream (m)` = uphab_net_sub22,
+        `Cost Est (in $K)` =  cost_est_1000s,
+         `Habitat Upstream (m)` = upstream_habitat_length_m,
          `Cost Benefit (m / $K)` = cost_net,
          `Cost Benefit (m2 / $K)` = cost_area_net)
 

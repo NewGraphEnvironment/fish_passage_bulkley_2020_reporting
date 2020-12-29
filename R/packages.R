@@ -22,6 +22,7 @@ pacman::p_load(
   bookdown,
   flextable,
   english,
+  leaflet.extras,
   bit64 ##to make integer column type for pg
   # gert  ##to track git moves
   )

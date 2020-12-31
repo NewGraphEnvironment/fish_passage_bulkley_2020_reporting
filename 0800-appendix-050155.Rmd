@@ -25,14 +25,14 @@ my_site <- 50155
 
 ## Site Location {-}
 
-Crossing `r as.character(my_site)` is located on a `r my_pscis_info() %>% pull(stream_name)`, approximately 75m upstream from the confluence with Lizard Creek. The stream is located approximately 100m east of the location where it is mapped on the freshwater atlas stream layer. Island Lake Lodge Road is an extension of Mt.Fernie Park Road with access to Highway 3 located within Fernie city limits.  The are is a popular recreational destination for hikers and mountain bikers.  Island Lake Lodge is a year round tourist destination providing accomodations, guided hiking and backcountry catskiing for clients.  
+Crossing `r as.character(my_site)` is located on a `r my_pscis_info() %>% pull(stream_name)`, approximately 75m upstream from the confluence with Lizard Creek. The stream is located approximately 100m east of the location where it is mapped on the freshwater atlas stream layer. The culvert is located at km 3.6 of Island Lake Lodge Road which is an extension of Mt.Fernie Park Road with access from Highway 3 located within Fernie city limits.  The area is a popular recreational destination for hikers and mountain bikers.  Island Lake Lodge is a year round tourist destination in the Lizard Creek watershed providing accommodations, guided hiking and backcountry catskiing for clients.  
 
 
 <br>
 
 ## Background {-}
 
-At the crossing location, the stream is 2nd order with a watershed area upstream of the road of approximately 1.8km^2^. The elevation of the watershed ranges from a maximum of 1945m to 1080m at the culvert. One 12m long bridge (PSCIS 197543) is located upstream of the subject crossing approximately 575m on the Lazy Lizard bike trail and another 7m long bridge structure is located downstream also on a recreational trail. A search of provincial records yielded no fisheries information for the stream [@moeStreamInventorySample]. Downstream, Lizard Creek supports westslope cutthroat trout, bull trout, mountain whitefish, brook trout, longnose sucker and longnose dace [@data_fish_obs]. @elkriveralliance2020ElkRiver conducted redd surveys in Lizard Creek in 2019 with a total of 55 redds observed within a 2.4km of stream surveyed comprising the largest densities of redds of the four tributaries surveyed.
+At the crossing location, the stream is 2nd order with a watershed area upstream of the road of approximately 1.8km^2^. The elevation of the watershed ranges from a maximum of 1945m to 1080m at the culvert. One 12m long bridge (PSCIS 197543) is located upstream of the subject crossing approximately 575m on the Lazy Lizard bike trail and another 7m long bridge structure is located downstream also on a recreational trail. A search of provincial records yielded no fisheries information for the stream [@moeStreamInventorySample]. Downstream, Lizard Creek supports westslope cutthroat trout, bull trout, mountain whitefish, brook trout, longnose sucker and longnose dace [@data_fish_obs]. @elkriveralliance2020ElkRiver conducted redd surveys in Lizard Creek in 2019 along with Morrissey Creek, Coal Creek and Forsyth Creek.  A total of 55 redds were observed within a 2.4km section of Lizard Creek comprising the largest densities of redds of the four tributaries surveyed (22.9 redds/km).
 
 <br>
 
@@ -60,7 +60,7 @@ The stream was surveyed downstream from the culvert for `r my_priority_info(loc 
 
 ## Stream Characteristics Upstream {-}
 
-The stream was surveyed upstream from the culvert for `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m. Overall, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-020), Figure \@ref(fig:photo-002)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  There were frequent areas of gravels suitable for resident westslope cutthrout trout spawning.  Frequent pools to 40cm deep were present and associated with small and large woody debris. Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` for fry and juvenile westslope cutthrout rearing. 
+The stream was surveyed upstream from the culvert for `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m. Overall, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-020), Figure \@ref(fig:photo-002)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  Frequent areas of gravels suitable for resident westslope cutthrout trout spawning and pools to 40cm deep associated with small and large woody debris were present throughout areas surveyed. Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` for fry and juvenile westslope cutthrout rearing. 
 
 <br>
 
@@ -77,7 +77,9 @@ Structure replacement with an open bottomed culvert is recommended to provide un
 
 ## Conclusion {-}
 
-There is an estimated `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of mainstem habitat upstream of crossing `r as.character(my_site)` with habitat in the areas surveyed upstream of the crossing rated as high value for fry and juvenile salmonid rearing. Although potentially attributable to the lower gradient habitat downstream and the proximity to the Lizard Creek mainstem, fish sampling results indicated that the crossing is potentially negatively impacting habitat capacity upstream of the crossing as higher densities of westslope cutthrout trout were captured downstream of the crossing than above. The road may be part of the Island Lake Recreational tenure or solely the responsiblity of the Ministry of Forests, Lands, Natural Resource Operations & Rural Development. The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement with an open bottomed structure.
+There is an estimated `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of mainstem habitat upstream of crossing `r as.character(my_site)` with habitat in the areas surveyed rated as high value for fry and juvenile salmonid rearing. Although potentially attributable to lower gradient habitat and closer proximity to the Lizard Creek mainstem, fish sampling results demonstrated that westslope cutthrout trout fry densities were lower upstream of the crossing than below. The road may be permitted to Island Lake Lodge or solely the responsibility of the Ministry of Forests, Lands, Natural Resource Operations & Rural Development. The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement with an open bottomed structure.
+
+<br>
 
 \pagebreak
 
@@ -86,6 +88,8 @@ print_tab_summary()
 
 
 ```
+
+<br>
 
 \pagebreak
 

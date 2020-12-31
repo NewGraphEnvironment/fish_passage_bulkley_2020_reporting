@@ -17,7 +17,7 @@ To identify priorities for crossing structure rehabilitation, background literat
 
 <br>
 
-@norrisBcfishpass2020 recently created `bcfishpass` which are sql and python based shell script libraries that "generate a simple model of aquatic habitat connectivity by identifying natural barriers to fish passage (plus hydro dams that are not feasible to remediate) and classifying all streams not upstream of these barriers as 'potentially accessible'. On potentially accessible streams,"`bcfishpass` scripts "identify known barriers and additional anthropogenic features (primarily road/railway stream crossings, i.e. culverts) that are potentially barriers. To prioritize these features for assessment or remediation," the scripts  "report on how much modelled potentially accessible aquatic habitat the barriers may obstruct. The model can be refined with known fish observations. Depending on the modelling scenario, all aquatic habitat downstream of a given fish observation can be classified as 'observed accessible', overriding any downstream barriers."
+ `bcfishpass` is comprised of sql and python based shell script libraries that "generate a simple model of aquatic habitat connectivity by identifying natural barriers to fish passage (plus hydro dams that are not feasible to remediate) and classifying all streams not upstream of these barriers as 'potentially accessible' [@norrisBcfishpass2020]. On potentially accessible streams,"`bcfishpass` scripts "identify known barriers and additional anthropogenic features (primarily road/railway stream crossings, i.e. culverts) that are potentially barriers. To prioritize these features for assessment or remediation," the scripts  "report on how much modelled potentially accessible aquatic habitat the barriers may obstruct. The model can be refined with known fish observations. Depending on the modelling scenario, all aquatic habitat downstream of a given fish observation can be classified as 'observed accessible', overriding any downstream barriers."
 
 
 <br>
@@ -60,10 +60,10 @@ if(knitr::is_html_output() == TRUE){
 
 <br>
 
-To prepare for Phase 1 and 2 assessments in the study area, past fish passage assessment reports for the Elk River watershed group were first reviewed to identify crossing structures not yet assessed or previously ranked as priorities for rehabilitation in @vastFishPassage2013 and @grainger2011FishPassage2011.  To determine which of those crossings had not yet been assessed with Phase 2 assessments we cross-referenced these reports with only Phase 2 report completed in the study area [@masseEKConfirmation2015] and reviewed outputs from the `Fish Habitat Model` and `bcfishpass`.  Outputs for modelled and PSCIS crossings that met the following criteria underwent a detailed review to  facilitate prioritization for Phase 1 - Fish Passage and/or Phase 2 - Habitat Confirmations.
+To prepare for Phase 1 and 2 assessments in the study area, past fish passage assessment reports for the Elk River watershed group were first reviewed to identify crossing structures not yet assessed or previously ranked as priorities for rehabilitation in @vastFishPassage2013 and @grainger2011FishPassage2011.  To determine which of those crossings had not yet been assessed with Phase 2 assessments we cross-referenced these reports with the Phase 2 report previously completed in the study area by @masseEKConfirmation2015 and reviewed outputs from the `Fish Habitat Model` and `bcfishpass`.  Outputs for PSCIS crossings that met the following criteria underwent a detailed review to facilitate prioritization for Phase 2 - Habitat Confirmations.
 
  * Stream crossing barriers and potential barriers on streams with confirmed fish presence upstream of the structure.
- * Stream crossing barriers and potential barriers on streams documented as ≥ 2.0m wide with linear lengths of modeled upstream habitat <22% gradient for ≥1km.
+ * Stream crossing barriers and potential barriers on streams documented as > 2.0m wide with linear lengths of modelled upstream habitat <20% gradient for ≥1km.
  * Stream crossing barriers and potential barriers located on streams classified as 3rd order or higher.
  * Stream crossing barriers and potential barriers located on streams with >5 ha of modeled wetland and/or lake habitat upstream of the structure.
  * Stream crossing barriers and potential barriers on streams with habitat value rated as "medium" or “high” in past fish passage assessment data.  
@@ -85,9 +85,9 @@ All field data collected including photos were uploaded to the Provincial Stream
  
 ```{r tab-hab-value}
 tab_habvalue %>% 
-  knitr::kable(caption = 'Habitat value criteria (Fish Passage Technical Working Group, 2011).') %>% 
+  knitr::kable(caption = 'Habitat value criteria (Fish Passage Technical Working Group, 2011).', booktabs = T) %>% 
     kableExtra::column_spec(column = 1, width_min = '1.5in') %>% 
-    kableExtra::kable_styling(c("condensed"), full_width = T) 
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) 
   
 ```
  
@@ -95,26 +95,24 @@ tab_habvalue %>%
 
 ## Barrier Scoring
 
-Fish passage potential was determined for each stream crossing identified as a closed bottom structure on fish bearing and potentially fish bearing stream reaches.  The combined scores from five criteria: depth and degree to which the structure is embedded, outlet drop, stream width ratio, culvert slope, and culvert length were used to screen whether each culvert was a likely barrier to some fish species and life stages (Table \@ref(tab:tab-barrier-scoring), Table \@ref(tab:tab-barrier-result). These criteria were developed based on data obtained from various studies and reflect an estimation for the passage of a juvenile salmon or small resident rainbow trout [@clarkinNationalInventoryAssessment2005 ;@bellFisheriesHandbookEngineering1991; @thompsonAssessingFishPassage2013].
+Fish passage potential was determined for each stream crossing identified as a closed bottom structure as per @fish_passage_assessments.  The combined scores from five criteria: depth and degree to which the structure is embedded, outlet drop, stream width ratio, culvert slope, and culvert length were used to screen whether each culvert was a likely barrier to some fish species and life stages (Table \@ref(tab:tab-barrier-scoring), Table \@ref(tab:tab-barrier-result). These criteria were developed based on data obtained from various studies and reflect an estimation for the passage of a juvenile salmon or small resident rainbow trout [@clarkinNationalInventoryAssessment2005 ;@bellFisheriesHandbookEngineering1991; @thompsonAssessingFishPassage2013].  
 
 <br>
 
 ```{r tab-barrier-scoring, eval=T}
-knitr::kable(tab_barrier_scoring,
-             caption = 'Fish Barrier Scoring (MoE 2011).') %>% 
-  # kableExtra::column_spec(column = 2, width_min = '0.5in') %>% 
-  kableExtra::kable_styling(latex_options = "scale_down", htmltable_class = "lightable-minimal") %>%
-  kableExtra::row_spec(0 ,  bold = T, extra_css = 'vertical-align: middle !important;') %>% 
-  kableExtra::scroll_box(width = "100%", height = "500px")
-  # kable_styling(latex_options = "scale_down")
+tab <- as_tibble(t(tab_barrier_scoring)) %>% janitor::row_to_names(1) ##turn the table sideways
+
+tab %>% 
+  my_kable(caption_text = 'Fish Barrier Risk Assessment (MoE 2011).')
+
 
 ```
 
 <br>
 
 ```{r tab-barrier-result}
-knitr::kable(tab_barrier_result,
-             caption = 'Fish Barrier Scoring Results (MoE 2011).') 
+tab_barrier_result %>% 
+  my_kable(caption_text = 'Fish Barrier Scoring Results (MoE 2011).') 
 
 ```
 

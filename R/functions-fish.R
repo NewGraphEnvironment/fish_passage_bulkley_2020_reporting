@@ -94,5 +94,20 @@ plot_fish_box <- function(dat = hab_fish_dens, sit = my_site){
     ylab(expression(Density ~ (fish/100 ~  m^2)))
 }
 
-
+plot_fish_box_all <- function(dat = hab_fish_dens, sp = 'WCT'){
+  dat %>%
+    filter(
+      species_code  == sp
+      # &
+      #   species_code == species
+    ) %>%
+    ggplot(., aes(x = location, y =density_100m2)) +
+    geom_boxplot()+
+    facet_grid(site ~ life_stage, scales ="fixed",
+               as.table = T)+
+    theme_bw()+
+    theme(legend.position = "none", axis.title.x=element_blank()) +
+    geom_dotplot(binaxis='y', stackdir='center', dotsize=1)+
+    ylab(expression(Density ~ (WCT/100 ~  m^2)))
+}
 

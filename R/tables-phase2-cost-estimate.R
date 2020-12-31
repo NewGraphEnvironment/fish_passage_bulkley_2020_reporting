@@ -41,7 +41,8 @@ pscis_rd <- left_join(
 tab_cost_rd_mult <- pscis_rd %>%
   select(my_road_class, my_road_surface) %>%
   # mutate(road_surface_mult = NA_real_, road_class_mult = NA_real_) %>%
-  mutate(road_class_mult = case_when(my_road_class == 'collector' ~ 4,
+  mutate(road_class_mult = case_when(my_road_class == 'local' ~ 4,
+                                     my_road_class == 'collector' ~ 4,
                                      my_road_class == 'arterial' ~ 10,
                                      my_road_class == 'highway' ~ 10,
                                        my_road_class == 'rail' ~ 5,

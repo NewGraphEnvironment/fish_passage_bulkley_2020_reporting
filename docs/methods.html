@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="background.html"/>
-<link rel="next" href="results.html"/>
+<link rel="next" href="results-and-discussion.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -93,12 +93,15 @@
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>2</b> Background</a></li>
 <li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a></li>
-<li class="chapter" data-level="4" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>4</b> Results</a></li>
+<li class="chapter" data-level="4" data-path="results-and-discussion.html"><a href="results-and-discussion.html"><i class="fa fa-check"></i><b>4</b> Results and Discussion</a></li>
 <li class="chapter" data-level="5" data-path="recommendations.html"><a href="recommendations.html"><i class="fa fa-check"></i><b>5</b> Recommendations</a></li>
+<li class="chapter" data-level="" data-path="appendix-phase-1-fish-passage-assessment-data-and-photos.html"><a href="appendix-phase-1-fish-passage-assessment-data-and-photos.html"><i class="fa fa-check"></i>Appendix - Phase 1 Fish Passage Assessment Data and Photos</a></li>
+<li class="chapter" data-level="" data-path="appendix-crossing-50152.html"><a href="appendix-crossing-50152.html"><i class="fa fa-check"></i>Appendix - Crossing 50152</a></li>
 <li class="chapter" data-level="" data-path="appendix-crossing-50155.html"><a href="appendix-crossing-50155.html"><i class="fa fa-check"></i>Appendix - Crossing 50155</a></li>
 <li class="chapter" data-level="" data-path="appendix-crossing-50159.html"><a href="appendix-crossing-50159.html"><i class="fa fa-check"></i>Appendix - Crossing 50159</a></li>
 <li class="chapter" data-level="" data-path="appendix-crossing-50181.html"><a href="appendix-crossing-50181.html"><i class="fa fa-check"></i>Appendix - Crossing 50181</a></li>
 <li class="chapter" data-level="" data-path="appendix-crossing-50185.html"><a href="appendix-crossing-50185.html"><i class="fa fa-check"></i>Appendix - Crossing 50185</a></li>
+<li class="chapter" data-level="" data-path="appendix-crossing-50261.html"><a href="appendix-crossing-50261.html"><i class="fa fa-check"></i>Appendix - Crossing 50261</a></li>
 <li class="chapter" data-level="" data-path="appendix-crossing-62423.html"><a href="appendix-crossing-62423.html"><i class="fa fa-check"></i>Appendix - Crossing 62423</a></li>
 <li class="chapter" data-level="" data-path="appendix-crossings-62425-and-62426.html"><a href="appendix-crossings-62425-and-62426.html"><i class="fa fa-check"></i>Appendix - Crossings 62425 and 62426</a></li>
 <li class="chapter" data-level="" data-path="appendix-crossing-62516.html"><a href="appendix-crossing-62516.html"><i class="fa fa-check"></i>Appendix - Crossing 62516</a></li>
@@ -106,7 +109,6 @@
 <li class="chapter" data-level="" data-path="appendix-crossing-197534.html"><a href="appendix-crossing-197534.html"><i class="fa fa-check"></i>Appendix - Crossing 197534</a></li>
 <li class="chapter" data-level="" data-path="appendix-crossing-197542.html"><a href="appendix-crossing-197542.html"><i class="fa fa-check"></i>Appendix - Crossing 197542</a></li>
 <li class="chapter" data-level="" data-path="appendix-crossing-197555.html"><a href="appendix-crossing-197555.html"><i class="fa fa-check"></i>Appendix - Crossing 197555</a></li>
-<li class="chapter" data-level="" data-path="appendix-phase-1-fish-passage-assessment-data-and-photos.html"><a href="appendix-phase-1-fish-passage-assessment-data-and-photos.html"><i class="fa fa-check"></i>Appendix - Phase 1 Fish Passage Assessment Data and Photos</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf" target="blank">Scripts and Data</a></li>
@@ -135,7 +137,7 @@
 <h2><span class="header-section-number">3.1</span> Planning</h2>
 <p>To identify priorities for crossing structure rehabilitation, background literature, fisheries information, PSCIS, <code>Fish Habitat Model</code> outputs modified from <span class="citation">Norris and Mount (2016)</span> and <code>bcfishpass</code> <span class="citation">(Norris 2020)</span> outputs were reviewed. The <code>Fish Habitat Model</code> was developed by the BC Ministry of Environment to provide estimates of the amount of fish habitat potentially accessible to fish upstream of crossing locations. The model calculates the average gradient of BC Freshwater Atlas <a href="https://catalogue.data.gov.bc.ca/dataset/freshwater-atlas-stream-network">stream network lines</a> at minimum 100m long intervals starting from the downstream end of the streamline segment and working upstream. The network lines are broken into max gradient categories with new segments created when the average gradient of the stream lines exceeds user provided gradient thresholds.</p>
 <p><br></p>
-<p><span class="citation">Norris (2020)</span> recently created <code>bcfishpass</code> which are sql and python based shell script libraries that “generate a simple model of aquatic habitat connectivity by identifying natural barriers to fish passage (plus hydro dams that are not feasible to remediate) and classifying all streams not upstream of these barriers as ‘potentially accessible’. On potentially accessible streams,”<code>bcfishpass</code> scripts “identify known barriers and additional anthropogenic features (primarily road/railway stream crossings, i.e. culverts) that are potentially barriers. To prioritize these features for assessment or remediation,” the scripts “report on how much modelled potentially accessible aquatic habitat the barriers may obstruct. The model can be refined with known fish observations. Depending on the modelling scenario, all aquatic habitat downstream of a given fish observation can be classified as ‘observed accessible’, overriding any downstream barriers.”</p>
+<p><code>bcfishpass</code> is comprised of sql and python based shell script libraries that “generate a simple model of aquatic habitat connectivity by identifying natural barriers to fish passage (plus hydro dams that are not feasible to remediate) and classifying all streams not upstream of these barriers as ‘potentially accessible’ <span class="citation">(Norris 2020)</span>. On potentially accessible streams,”<code>bcfishpass</code> scripts “identify known barriers and additional anthropogenic features (primarily road/railway stream crossings, i.e. culverts) that are potentially barriers. To prioritize these features for assessment or remediation,” the scripts “report on how much modelled potentially accessible aquatic habitat the barriers may obstruct. The model can be refined with known fish observations. Depending on the modelling scenario, all aquatic habitat downstream of a given fish observation can be classified as ‘observed accessible’, overriding any downstream barriers.”</p>
 <p><br></p>
 <p>Following delineation of “non-fish habitat” with the <code>Fish Habitat Model</code>, the <em>average</em> gradient of each stream segment within habitat classified as below the 22% threshold was calculated and summed using <code>bcfishpass</code> to quantify upstream habitat potentially available for westslope cutthrout trout and facilitate stream line symbology based on stream morphology. <code>bcfishpass</code> summed average gradients within seven categories (0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 22%, 22 - 30% and &gt;30%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in four categories: riffle/cascade (0 - 5%), step-pool (5 - 15%), step-pool very steep (15-20%) and extremely steep (20 - 30%) (Table <a href="methods.html#tab:tablethreshaverage">3.1</a>). For each crossing location, the linear length of stream habitat upstream of crossings and &lt;20% was summarized by average gradient and the area of lake and wetland habitat upstream was collated and reviewed to give an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.</p>
 <p><br></p>
@@ -197,10 +199,10 @@ Non fish habitat
 </tbody>
 </table>
 <p><br></p>
-<p>To prepare for Phase 1 and 2 assessments in the study area, past fish passage assessment reports for the Elk River watershed group were first reviewed to identify crossing structures not yet assessed or previously ranked as priorities for rehabilitation in <span class="citation">VAST Resource Solutions Inc. (2013)</span> and <span class="citation">Grainger (2011)</span>. To determine which of those crossings had not yet been assessed with Phase 2 assessments we cross-referenced these reports with only Phase 2 report completed in the study area <span class="citation">(Masse Environmental Consultants Ltd. 2015)</span> and reviewed outputs from the <code>Fish Habitat Model</code> and <code>bcfishpass</code>. Outputs for modelled and PSCIS crossings that met the following criteria underwent a detailed review to facilitate prioritization for Phase 1 - Fish Passage and/or Phase 2 - Habitat Confirmations.</p>
+<p>To prepare for Phase 1 and 2 assessments in the study area, past fish passage assessment reports for the Elk River watershed group were first reviewed to identify crossing structures not yet assessed or previously ranked as priorities for rehabilitation in <span class="citation">VAST Resource Solutions Inc. (2013)</span> and <span class="citation">Grainger (2011)</span>. To determine which of those crossings had not yet been assessed with Phase 2 assessments we cross-referenced these reports with the Phase 2 report previously completed in the study area by <span class="citation">Masse Environmental Consultants Ltd. (2015)</span> and reviewed outputs from the <code>Fish Habitat Model</code> and <code>bcfishpass</code>. Outputs for PSCIS crossings that met the following criteria underwent a detailed review to facilitate prioritization for Phase 2 - Habitat Confirmations.</p>
 <ul>
 <li>Stream crossing barriers and potential barriers on streams with confirmed fish presence upstream of the structure.</li>
-<li>Stream crossing barriers and potential barriers on streams documented as ≥ 2.0m wide with linear lengths of modeled upstream habitat &lt;22% gradient for ≥1km.</li>
+<li>Stream crossing barriers and potential barriers on streams documented as &gt; 2.0m wide with linear lengths of modelled upstream habitat &lt;20% gradient for ≥1km.</li>
 <li>Stream crossing barriers and potential barriers located on streams classified as 3rd order or higher.</li>
 <li>Stream crossing barriers and potential barriers located on streams with &gt;5 ha of modeled wetland and/or lake habitat upstream of the structure.</li>
 <li>Stream crossing barriers and potential barriers on streams with habitat value rated as “medium” or “high” in past fish passage assessment data.</li>
@@ -212,8 +214,8 @@ Non fish habitat
 <p>In the field, crossings prioritized for follow-up were first assessed for fish passage following the procedures outlined in “Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures” <span class="citation">(MoE 2011)</span>. Crossings surveyed included closed bottom structures (CBS), open bottom structures (OBS) and crossings considered “other” (i.e. fords). Six digit numerical crossing identifiers were generated by <code>bcfishpass</code> for each of the crossings modelled. Crossings identified in the field that had no corresponding GIS generated ID were given unique identifiers beginning with the date in YYYYMMDD format appended with an identifier between 1 and 10 (ex. 2020091601). Photos were taken at surveyed crossings and when possible included images of the road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing and any other relevant features. Additionally, the following information was recorded for all surveyed crossings: date of inspection, crossing reference, crew member initials, Universal Transverse Mercator (UTM) coordinates, stream name, road name and kilometer, road tenure information, crossing type, crossing subtype, culvert diameter or span for OBS, culvert length or width for OBS. A more detailed “full assessment” was completed for all closed bottom structures and included the following parameters: presence/absence of continuous culvert embedment (yes/no), average depth of embedment, whether or not the culvert bed resembled the native stream bed, presence of and percentage backwatering, fill depth, outlet drop, outlet pool depth, inlet drop, culvert slope, average downstream channel width, stream slope, presence/absence of beaver activity, presence/absence of fish at time of survey, type of valley fill, and a habitat value rating. Habitat value ratings were based on channel morphology, flow characteristics (perennial, intermittent, ephemeral), fish migration patterns, the presence/absence of deep pools, un-embedded boulders, substrate, woody debris, undercut banks, aquatic vegetation and overhanging riparian vegetation (Table <a href="methods.html#tab:tab-hab-value">3.2</a>). For crossings determined to be potential barriers or barriers based on the data (see <a href="methods.html#barrier-scoring">Barrier Scoring</a>), a culvert fix and recommended diameter/span was proposed.</p>
 <p><br></p>
 <p>All field data collected including photos were uploaded to the Provincial Stream Crossing Inventory System (PSCIS).</p>
-<table class="table table-condensed" style="margin-left: auto; margin-right: auto;">
-<caption>
+<table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
 <span id="tab:tab-hab-value">Table 3.2: </span>Habitat value criteria (Fish Passage Technical Working Group, 2011).
 </caption>
 <thead>
@@ -257,151 +259,131 @@ No suitable spawning habitat, and habitat with low rearing potential (e.g., loca
 </div>
 <div id="barrier-scoring" class="section level2">
 <h2><span class="header-section-number">3.3</span> Barrier Scoring</h2>
-<p>Fish passage potential was determined for each stream crossing identified as a closed bottom structure on fish bearing and potentially fish bearing stream reaches. The combined scores from five criteria: depth and degree to which the structure is embedded, outlet drop, stream width ratio, culvert slope, and culvert length were used to screen whether each culvert was a likely barrier to some fish species and life stages (Table <a href="methods.html#tab:tab-barrier-scoring">3.3</a>, Table <a href="methods.html#tab:tab-barrier-result">3.4</a>. These criteria were developed based on data obtained from various studies and reflect an estimation for the passage of a juvenile salmon or small resident rainbow trout <span class="citation">(Clarkin et al. 2005 ; Bell 1991; Thompson 2013)</span>.</p>
+<p>Fish passage potential was determined for each stream crossing identified as a closed bottom structure as per <span class="citation">MoE (2011)</span>. The combined scores from five criteria: depth and degree to which the structure is embedded, outlet drop, stream width ratio, culvert slope, and culvert length were used to screen whether each culvert was a likely barrier to some fish species and life stages (Table <a href="methods.html#tab:tab-barrier-scoring">3.3</a>, Table <a href="methods.html#tab:tab-barrier-result">3.4</a>. These criteria were developed based on data obtained from various studies and reflect an estimation for the passage of a juvenile salmon or small resident rainbow trout <span class="citation">(Clarkin et al. 2005 ; Bell 1991; Thompson 2013)</span>.</p>
 <p><br></p>
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
-<table class=" lightable-minimal" style="margin-left: auto; margin-right: auto;">
-<caption>
+<table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
 <span id="tab:tab-barrier-scoring">Table 3.3: </span>Fish Barrier Scoring (MoE 2011).
 </caption>
 <thead>
 <tr>
-<th style="text-align:left;font-weight: bold;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
-Risk
+<th style="text-align:left;">
+LOW
 </th>
-<th style="text-align:left;font-weight: bold;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
-Embedded
+<th style="text-align:left;">
+MOD
 </th>
-<th style="text-align:left;font-weight: bold;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
-Value
-</th>
-<th style="text-align:left;font-weight: bold;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
-Outlet Drop (cm)
-</th>
-<th style="text-align:left;font-weight: bold;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
-Value
-</th>
-<th style="text-align:left;font-weight: bold;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
-SWR
-</th>
-<th style="text-align:left;font-weight: bold;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
-Value
-</th>
-<th style="text-align:left;font-weight: bold;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
-Slope (%)
-</th>
-<th style="text-align:left;font-weight: bold;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
-Value
-</th>
-<th style="text-align:left;font-weight: bold;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
-Length (m)
-</th>
-<th style="text-align:left;font-weight: bold;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
-Value
+<th style="text-align:left;">
+HIGH
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-LOW
-</td>
-<td style="text-align:left;">
 &gt;30cm or &gt;20% of diameter and continuous
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-&lt;15
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-&lt;1.0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-&lt;1
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-&lt;15
-</td>
-<td style="text-align:left;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-MOD
 </td>
 <td style="text-align:left;">
 &lt;30cm or 20% of diameter but continuous
 </td>
 <td style="text-align:left;">
+No embedment or discontinuous
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
 5
+</td>
+<td style="text-align:left;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt;15
 </td>
 <td style="text-align:left;">
 15-30
 </td>
 <td style="text-align:left;">
+&gt;30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
 5
+</td>
+<td style="text-align:left;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt;1.0
 </td>
 <td style="text-align:left;">
 1.0-1.3
 </td>
 <td style="text-align:left;">
+&gt;1.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
 3
+</td>
+<td style="text-align:left;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt;1
 </td>
 <td style="text-align:left;">
 1-3
 </td>
 <td style="text-align:left;">
+&gt;3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
 5
+</td>
+<td style="text-align:left;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt;15
 </td>
 <td style="text-align:left;">
 15-30
 </td>
 <td style="text-align:left;">
-3
+&gt;30
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-HIGH
+0
 </td>
 <td style="text-align:left;">
-No embedment or discontinuous
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-&gt;30
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-&gt;1.3
-</td>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-&gt;3
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-&gt;30
+3
 </td>
 <td style="text-align:left;">
 6
@@ -409,10 +391,9 @@ No embedment or discontinuous
 </tr>
 </tbody>
 </table>
-</div>
 <p><br></p>
-<table>
-<caption>
+<table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
 <span id="tab:tab-barrier-result">Table 3.4: </span>Fish Barrier Scoring Results (MoE 2011).
 </caption>
 <thead>
@@ -540,26 +521,6 @@ Loose
 </tr>
 <tr>
 <td style="text-align:left;">
-Local
-</td>
-<td style="text-align:left;">
-Loose
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-12.5
-</td>
-<td style="text-align:right;">
-25
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Road Permit
 </td>
 <td style="text-align:left;">
@@ -623,24 +584,44 @@ Rough
 Local
 </td>
 <td style="text-align:left;">
-Paved
+Loose
+</td>
+<td style="text-align:right;">
+4
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-2
+50.0
 </td>
 <td style="text-align:right;">
-25.0
-</td>
-<td style="text-align:right;">
-50
+100
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Collector
+</td>
+<td style="text-align:left;">
+Paved
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+100.0
+</td>
+<td style="text-align:right;">
+200
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Local
 </td>
 <td style="text-align:left;">
 Paved
@@ -730,7 +711,7 @@ Paved
         </div>
       </div>
 <a href="background.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="results.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="results-and-discussion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -757,7 +738,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "night",
-"family": "serif",
+"family": "sans",
 "size": 2
 },
 "edit": {

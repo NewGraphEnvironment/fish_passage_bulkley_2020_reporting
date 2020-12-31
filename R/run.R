@@ -16,7 +16,7 @@
 ##for a prod build
 
 ##move the phase 1 appendix out of the main directory to a backup file
-file.rename('0900-appendix.Rmd', 'data/0900-appendix.Rmd')
+file.rename('0600-appendix.Rmd', 'data/0600-appendix.Rmd')
 
 ##   then make our printable pdf
 rmarkdown::render_site(output_format = 'pagedown::html_paged', encoding = 'UTF-8')
@@ -25,7 +25,7 @@ rmarkdown::render_site(output_format = 'pagedown::html_paged', encoding = 'UTF-8
 file.rename('Elk.html', 'docs/Elk.html')
 
 ##move the phase 1 appendix back to main directory
-file.rename('data/0900-appendix.Rmd', '0900-appendix.Rmd')
+file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')
 
 ##  make the site
 rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')

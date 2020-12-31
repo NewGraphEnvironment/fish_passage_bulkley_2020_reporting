@@ -14,7 +14,7 @@ bookdown::gitbook:
     download: ["Elk.pdf", "Elk.html"]
     fontsettings:
       theme: night
-      family: serif
+      family: sans
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

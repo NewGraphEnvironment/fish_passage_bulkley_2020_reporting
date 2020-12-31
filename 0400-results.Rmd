@@ -1,10 +1,14 @@
-# Results
+# Results and Discussion
 
 Field assessments were conducted between `r format(min(pscis$date), format="%B %d %Y")` and `r format(max(pscis$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio, Kyle Prince, P,Biol and Mark Fjeld, BiT.  
 
 ## Phase 1
 
-A total of `r n_distinct(pscis$my_crossing_reference)` phase 1 assessments were conducted between with site details and photos presented in [Appendix - Phase 1 Fish Passage Assessment Data and Photos].  A cost benefit analysis for phase 1 sites is summarized in Table \@ref(tab:cost-est-phase-1).
+A total of `r n_distinct(pscis$my_crossing_reference)` phase 1 assessments were conducted with `r pscis %>% filter(barrier_result == 'Passable') %>% nrow()` crossings considered "passable", `r pscis %>% filter(barrier_result == 'Potential') %>% nrow()` crossings considered 'potential' barriers and `r pscis %>% filter(barrier_result == 'Barrier') %>% nrow()` crossings considered barriers.  Site details and photos are presented in [Appendix - Phase 1 Fish Passage Assessment Data and Photos].  A rough cost benefit analysis for Phase 1 sites is presented in Table \@ref(tab:cost-est-phase-1). 
+
+<br>
+
+Barrier passability criteria used in this project follows @fish_passage_assessments, and reflects an estimation for the passage of a juvenile salmon or small resident rainbow trout [@clarkinNationalInventoryAssessment2005 ;@bellFisheriesHandbookEngineering1991; @thompsonAssessingFishPassage2013].  As noted in @bourne_etal2011Barriersfish, with a detailed review of different criteria in @kemp_ohanley2010Proceduresevaluating, passability of barriers can be quantified in many different ways. Fish physiology (i.e. species, length, swim speeds) as well as the temporal variation of physical characteristics (e.g. due to flow volumes/velocities a particular culvert is passable 50% of the time to fish with a defined physiological capacity) make defining passability difficult with important implications for watershed connectivity modelling [@bourne_etal2011Barriersfish; @shaw_etal2016Importancepartial; @mahlum_etal2014EvaluatingBarrier; @kemp_ohanley2010Proceduresevaluating].
 
 <br>
 
@@ -22,12 +26,8 @@ tab_cost_est_phase1 %>%
 ## Phase 2
 
  
-Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` with a total of approximately 15 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for remediation design, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings rated as moderate priorities, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossing was rated as a low priority and `r hab_site_priorities %>% filter(priority %ilike% 'no fix') %>% nrow() %>% english::as.english()` rated as "no fix". 
+Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 15 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority and `r hab_site_priorities %>% filter(priority %ilike% 'no fix') %>% nrow() %>% english::as.english()` rated as "no fix". Results are summarized in Figure \@ref(fig:map-interactive) and Tables \@ref(tab:tab-overview) - \@ref(tab:tab-habitat-summary) with raw habitat and fish sampling data included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting/raw/master/data/habitat_confirmations.xls).  Detailed information for each site assessed with Phase 2 assessments is included within site specific reports included as appendices to this document.
 
-<br>
-
-
-Raw results are included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting/raw/master/data/habitat_confirmations.xls) and summarized in Tables \@ref(tab:tab-overview) - \@ref(tab:tab-habitat-summary)
 
 
 <br>
@@ -47,8 +47,8 @@ map <- leaflet(height=500, width=780) %>%
   # leaflet() %>% 
   addTiles() %>%
   leafem::addMouseCoordinates(proj4 = 26911) %>% ##can't seem to get it to render utms yet
-  addProviderTiles(providers$"Esri.DeLorme") %>% 
-  # addProviderTiles("Esri.WorldTopoMap", group = "Topo") %>%
+  # addProviderTiles(providers$"Esri.DeLorme") %>% 
+  addProviderTiles("Esri.WorldTopoMap", group = "Topo") %>%
   addProviderTiles("Esri.WorldImagery", group = "ESRI Aerial") %>% 
   
   # addMeasure() %>% 
@@ -103,7 +103,7 @@ map
 ```
 
 
-<br
+<br>
 
 ```{r tab-overview}
 # tab_overview %>% 
@@ -112,7 +112,8 @@ map
 #   kableExtra::scroll_box(width = "100%", height = "500px")
 
 tab_overview %>% 
-  my_kable_scroll(caption_text = 'Overview of habitat confirmation sites.')
+  select(-Tenure) %>%
+  my_tab_overview(caption_text = 'Overview of habitat confirmation sites.')
 ```
 
 <br>
@@ -142,5 +143,21 @@ tab_hab_summary %>%
   select(-Location) %>% 
   my_kable(caption_text = 'Summary of Phase 2 habitat confirmation details.')
 
+```
+## Fish Sampling
+
+Fish sampling was conducted at five sites with a total of `r tab_fish_summary %>% filter(species_code == 'WCT') %>% pull(count_fish) %>% sum()` westslope cutthout trout,  `r tab_fish_summary %>% filter(species_code == 'EB') %>% pull(count_fish) %>% sum()` eastern brook trout and `r tab_fish_summary %>% filter(species_code == 'BT') %>% pull(count_fish) %>% sum()` bull trout captured.  Westslope cutthrout trout were captured at three of the sites sampled with fork length data delineated into life stages: fry (&le;60mm), parr (>60 to 110mm), juvenile (>110mm to 140mm) and adult (>140mm) by visually assessing the histogram presented in Figure \@ref(fig:fish-histogram).  Fish sampling results are presented in detail within individual habitat confirmation site memos within the appendices of this document with westslope cutthrout trout density results also presented in Figure \@ref(fig:plot-fish-all).  
+
+<br>
+
+```{r fish-histogram, fig.cap= 'Histogram of westslope cutthrout trout captured during electrofishing surveys.'}
+knitr::include_graphics("fig/fish_histogram.png")
+
+```
+
+<br>
+
+```{r plot-fish-all, fig.cap='Boxplots of densities (fish/100m2) of westslope cutthrout trout captured during habitat confirmation assessments.'}
+plot_fish_box_all()
 ```
 

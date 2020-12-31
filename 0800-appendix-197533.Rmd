@@ -36,11 +36,11 @@ PSCIS crossings `r as.character(my_site)` and `r as.character(my_site2)` are loc
 ## Background {-}
 
 
-At the crossing locations, Brule Creek is a 5th order stream with a watershed area upstream of the highway of approximately 87km^2^. The elevation of the watershed ranges from a maximum of 2800 to 1200m at  PSCIS crossing `r as.character(my_site)`. Brule Creek is known to contain westslope cutthrout trout, rainbow trout and bull trout downstream of the subject culverts and westslope cutthrout trout and rainbow trout above [@data_fish_obs]. On the south side of the upper watershed, at an elevation of 2000m is Josephine Lake (A.K.A. Big Lake) which is 5ha in area. A biophysical inventory in 1983 indicated the lake contained no fish however, it was stocked with westslope cutthrout trout from 1983 - 2000 [@data_fish_obs; @FishInventoriesData2020].
+At the crossing locations, Brule Creek is a 5th order stream with a watershed area upstream of the highway of approximately 87km^2^. The elevation of the watershed ranges from a maximum of 2800 to 1200m at  PSCIS crossing `r as.character(my_site)`. Brule Creek is known to contain westslope cutthrout trout, rainbow trout and bull trout downstream of the subject culverts and westslope cutthrout trout and rainbow trout above [@data_fish_obs]. On the south side of the upper watershed, at an elevation of 2000m, is the 5ha Josephine Lake (also known as Big Lake). The lake was stocked with westslope cutthrout trout from 1983 - 2000 [@data_fish_obs; @FishInventoriesData2020].
 
 <br>
 
-PSCIS stream crossings `r as.character(my_site)` and `r as.character(my_site2)` were ranked as high priorities for follow up with habitat confirmation due to the large size of the stream network upstream (`r my_bcfishpass() %>% pull(wct_network_km)`km) and because Brule Creek is a 5th order stream. The habitat confirmation was completed on `r my_pscis_info() %>% pull(date) %>% format(., format = "%B %d, %Y")`. A map of the watershed including areas surveyed is provided in Attachment 1 – Map [`r my_bcfishpass() %>% pull(map_tile_display_name)`](`r my_mapsheet()`).
+PSCIS stream crossings `r as.character(my_site)` and `r as.character(my_site2)` were ranked as high priorities for follow up with fish passage assessments and habitat confirmations due to the large size of the stream network upstream (`r my_bcfishpass() %>% pull(wct_network_km)`km) of the highway and because Brule Creek is a 5th order stream. The habitat confirmation was completed on `r my_pscis_info() %>% pull(date) %>% format(., format = "%B %d, %Y")`. A map of the watershed including areas surveyed is provided in Attachment 1 – Map [`r my_bcfishpass() %>% pull(map_tile_display_name)`](`r my_mapsheet()`).
 
 <br>
 

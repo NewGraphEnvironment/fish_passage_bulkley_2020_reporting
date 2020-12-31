@@ -58,10 +58,10 @@ hab_fish_indiv <- left_join(
   ) %>%
   mutate(species_code = as.factor(species_code))   %>%
   mutate(life_stage = case_when(  ##this section comes from the histogram below - we include here so we don't need to remake the df
-    length_mm <= 55 ~ 'fry',
-    length_mm > 55 & length_mm <= 105 ~ 'parr',
-    length_mm > 105 & length_mm <= 135 ~ 'juvenile',
-    length_mm > 135 ~ 'adult',
+    length_mm <= 60 ~ 'fry',
+    length_mm > 60 & length_mm <= 110 ~ 'parr',
+    length_mm > 110 & length_mm <= 140 ~ 'juvenile',
+    length_mm > 140 ~ 'adult',
     T ~ NA_character_
   )) %>%
   mutate(life_stage = fct_relevel(life_stage,
@@ -106,6 +106,9 @@ plot_fish_hist_wct <- ggplot(fish_wct, aes(x=length_mm
                  position="identity", size = 0.75)
 plot_fish_hist_wct
 
+
+ggsave(plot = plot_fish_hist_wct, file="./fig/fish_histogram.png",
+       h=3.4, w=5.11, units="in", dpi=300)
 
 ####-----------summary tables for input to spreadsheet----------------------
 hab_fish_input_prep <- hab_fish_indiv %>%

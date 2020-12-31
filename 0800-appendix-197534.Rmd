@@ -99,7 +99,7 @@ Structure replacement with an open bottomed structure is recommended to provide 
 
 ## Conclusion {-}
 
-There is an estimated `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of mainstem habitat available upstream of crossing `r as.character(my_site)` with habitat rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` value, representing an important migration corridor with high rearing and spawning potential for resident and fluvial salmonids. `r my_overview_info() %>% pull(road_name)` is the responsiblity of the Ministry of Transportation and Infrastructure. The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement with an open bottomed structure. 
+There is an estimated `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of mainstem Weigert Creek habitat available upstream of PSCIS `r as.character(my_site)` with habitat rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` value, representing an important migration corridor with high rearing and spawning potential for resident and fluvial salmonids. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure. The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement with an open bottomed structure. 
 
 \pagebreak
 

@@ -1,0 +1,12 @@
+my_road_class,my_road_surface,road_class_mult,road_surface_mult,cost_m_1000s_bridge,cost_embed_cv
+local,loose,1,1,12.5,25
+unclassified,loose,1,1,12.5,25
+unclassified,rough,1,1,12.5,25
+Forest Service Road,loose,1,1,12.5,25
+Road Permit,loose,1,1,12.5,25
+recreation,loose,1,1,12.5,25
+collector,paved,1,2,25,50
+local,paved,1,2,25,50
+arterial,paved,3,2,75,150
+rail,rail,5,2,125,250
+highway,paved,10,2,250,500

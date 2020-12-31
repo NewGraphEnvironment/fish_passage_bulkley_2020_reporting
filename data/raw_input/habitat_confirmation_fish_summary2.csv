@@ -1,0 +1,52 @@
+reference_number,local_name,site,location,ef,site_number,temperature_c,conductivity_m_s_cm,turbidity,sampling_method,method_number,haul_number_pass_number,ef_seconds,ef_length_m,ef_width_m,enclosure,voltage,frequency,pulse,make,model,common_name,stage,total_number,min,max
+3,197555_us_ef1,197555,us,ef1,3,6.4,378,clear,electrofishing,1,1,177,150,3.8,open,250,60,NA,Other,halltech ht-2000,No Fish Caught,NA,NA,NA,NA
+4,197555_ds_ef1,197555,ds,ef1,4,6.4,378,clear,electrofishing,1,1,550,315,3.1,Open,250,60,NA,Other,halltech ht-2000,Bull Trout,adult,1,168,168
+6,197559_us_ef1,197559,us,ef1,6,6.4,337,clear,electrofishing,1,1,233,200,5.1,Open,250,60,NA,Other,halltech ht-2000,No Fish Caught,NA,NA,NA,NA
+18,50155_us_ef1,50155,us,ef1,18,9,480,clear,electrofishing,1,1,117,25,1.6,Open,250,60,NA,Other,halltech ht-2000,Brook Trout,juvenile,2,116,116
+18,50155_us_ef1,50155,us,ef1,18,9,480,clear,electrofishing,1,1,117,25,1.6,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,fry,6,40,50
+18,50155_us_ef1,50155,us,ef1,18,9,480,clear,electrofishing,1,1,117,25,1.6,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,parr,5,80,87
+19,50155_ds_ef1,50155,ds,ef1,19,9,480,clear,electrofishing,1,1,200,40,1.7,Open,250,60,NA,Other,halltech ht-2000,Brook Trout,parr,1,66,66
+19,50155_ds_ef1,50155,ds,ef1,19,9,480,clear,electrofishing,1,1,200,40,1.7,Open,250,60,NA,Other,halltech ht-2000,Brook Trout,juvenile,1,112,112
+19,50155_ds_ef1,50155,ds,ef1,19,9,480,clear,electrofishing,1,1,200,40,1.7,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,fry,24,29,52
+19,50155_ds_ef1,50155,ds,ef1,19,9,480,clear,electrofishing,1,1,200,40,1.7,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,parr,3,73,89
+19,50155_ds_ef1,50155,ds,ef1,19,9,480,clear,electrofishing,1,1,200,40,1.7,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,adult,1,157,157
+24,50185_ds_ef1,50185,ds,ef1,24,9,378,clear,electrofishing,1,1,361,40,2.7,Open,250,40,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,fry,1,46,46
+24,50185_ds_ef1,50185,ds,ef1,24,9,378,clear,electrofishing,1,1,361,40,2.7,Open,250,40,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,parr,3,61,85
+25,50185_ds_ef2,50185,ds,ef2,25,9,378,clear,electrofishing,1,1,70,7,2.25,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,fry,3,34,49
+26,50185_ds_ef3,50185,ds,ef3,26,9,378,clear,electrofishing,1,1,36,3,2.6,Open,250,60,NA,Other,halltech ht-2000,Brook Trout,fry,1,60,60
+26,50185_ds_ef3,50185,ds,ef3,26,9,378,clear,electrofishing,1,1,36,3,2.6,Open,250,60,NA,Other,halltech ht-2000,Brook Trout,parr,1,75,75
+26,50185_ds_ef3,50185,ds,ef3,26,9,378,clear,electrofishing,1,1,36,3,2.6,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,fry,1,48,48
+26,50185_ds_ef3,50185,ds,ef3,26,9,378,clear,electrofishing,1,1,36,3,2.6,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,parr,3,67,88
+27,50185_ds_ef4,50185,ds,ef4,27,9,378,clear,electrofishing,1,1,57,3,2.6,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,parr,2,99,100
+27,50185_ds_ef4,50185,ds,ef4,27,9,378,clear,electrofishing,1,1,57,3,2.6,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,juvenile,1,123,123
+28,50185_ds_ef5,50185,ds,ef5,28,9,378,clear,electrofishing,1,1,170,7,3.1,Open,250,60,NA,Other,halltech ht-2000,Brook Trout,parr,1,70,70
+28,50185_ds_ef5,50185,ds,ef5,28,9,378,clear,electrofishing,1,1,170,7,3.1,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,fry,11,31,51
+28,50185_ds_ef5,50185,ds,ef5,28,9,378,clear,electrofishing,1,1,170,7,3.1,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,parr,1,100,100
+29,50185_us_ef1,50185,us,ef1,29,9,378,clear,electrofishing,1,1,361,40,2.9,Open,250,40,NA,Other,halltech ht-2000,Brook Trout,fry,1,42,42
+29,50185_us_ef1,50185,us,ef1,29,9,378,clear,electrofishing,1,1,361,40,2.9,Open,250,40,NA,Other,halltech ht-2000,Brook Trout,parr,1,63,63
+29,50185_us_ef1,50185,us,ef1,29,9,378,clear,electrofishing,1,1,361,40,2.9,Open,250,40,NA,Other,halltech ht-2000,Brook Trout,adult,1,184,184
+29,50185_us_ef1,50185,us,ef1,29,9,378,clear,electrofishing,1,1,361,40,2.9,Open,250,40,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,fry,5,44,49
+29,50185_us_ef1,50185,us,ef1,29,9,378,clear,electrofishing,1,1,361,40,2.9,Open,250,40,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,parr,1,74,74
+30,50185_us_ef2,50185,us,ef2,30,9,378,clear,electrofishing,1,1,123,13,2.67,Open,250,60,NA,Other,halltech ht-2000,Brook Trout,fry,4,49,60
+30,50185_us_ef2,50185,us,ef2,30,9,378,clear,electrofishing,1,1,123,13,2.67,Open,250,60,NA,Other,halltech ht-2000,Brook Trout,parr,2,105,105
+30,50185_us_ef2,50185,us,ef2,30,9,378,clear,electrofishing,1,1,123,13,2.67,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,parr,2,67,93
+31,50185_us_ef3,50185,us,ef3,31,9,378,clear,electrofishing,1,1,63,13,2.8,Open,250,60,NA,Other,halltech ht-2000,Brook Trout,parr,2,104,108
+31,50185_us_ef3,50185,us,ef3,31,9,378,clear,electrofishing,1,1,63,13,2.8,Open,250,60,NA,Other,halltech ht-2000,Brook Trout,juvenile,4,112,124
+31,50185_us_ef3,50185,us,ef3,31,9,378,clear,electrofishing,1,1,63,13,2.8,Open,250,60,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,fry,1,40,40
+32,50185_us_ef4,50185,us,ef4,32,9,378,clear,electrofishing,1,1,223,18,4.47,Open,250,40,NA,Other,halltech ht-2000,Brook Trout,fry,7,48,60
+32,50185_us_ef4,50185,us,ef4,32,9,378,clear,electrofishing,1,1,223,18,4.47,Open,250,40,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,fry,18,32,51
+32,50185_us_ef4,50185,us,ef4,32,9,378,clear,electrofishing,1,1,223,18,4.47,Open,250,40,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,parr,2,67,78
+33,50155_us_ef2,50155,us,ef2,33,9,480,clear,electrofishing,1,1,61,13,1.6,Open,250,40,NA,Other,halltech ht-2000,Brook Trout,juvenile,2,111,114
+33,50155_us_ef2,50155,us,ef2,33,9,480,clear,electrofishing,1,1,61,13,1.6,Open,250,40,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,fry,5,39,53
+33,50155_us_ef2,50155,us,ef2,33,9,480,clear,electrofishing,1,1,61,13,1.6,Open,250,40,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,parr,2,85,100
+33,50155_us_ef2,50155,us,ef2,33,9,480,clear,electrofishing,1,1,61,13,1.6,Open,250,40,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,juvenile,2,117,131
+34,50155_us_ef3,50155,us,ef3,34,9,480,clear,electrofishing,1,1,154,45,1.6,Open,250,40,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,fry,17,39,54
+34,50155_us_ef3,50155,us,ef3,34,9,480,clear,electrofishing,1,1,154,45,1.6,Open,250,40,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,parr,4,96,102
+34,50155_us_ef3,50155,us,ef3,34,9,480,clear,electrofishing,1,1,154,45,1.6,Open,250,40,NA,Other,halltech ht-2000,Westslope Cutthroat Trout,adult,1,152,152
+46,50181_us_ef1,50181,us,ef1,46,5,292,clear,electrofishing,1,1,651,130,2.2,Open,200,40,NA,Smith-root,LR24,Westslope Cutthroat Trout,parr,6,68,99
+47,50181_ds_ef1,50181,ds,ef1,47,5,292,clear,electrofishing,1,1,840,150,2.2,Open,200,40,NA,Smith-root,LR24,Westslope Cutthroat Trout,fry,2,34,60
+47,50181_ds_ef1,50181,ds,ef1,47,5,292,clear,electrofishing,1,1,840,150,2.2,Open,200,40,NA,Smith-root,LR24,Westslope Cutthroat Trout,parr,11,80,110
+47,50181_ds_ef1,50181,ds,ef1,47,5,292,clear,electrofishing,1,1,840,150,2.2,Open,200,40,NA,Smith-root,LR24,Westslope Cutthroat Trout,juvenile,2,120,139
+48,50185_us_ef5,50185,us,ef5,48,5,292,clear,electrofishing,1,1,521,60,2.8,Open,200,40,NA,Smith-root,LR24,Westslope Cutthroat Trout,fry,4,38,60
+48,50185_us_ef5,50185,us,ef5,48,5,292,clear,electrofishing,1,1,521,60,2.8,Open,200,40,NA,Smith-root,LR24,Westslope Cutthroat Trout,parr,3,62,85
+48,50185_us_ef5,50185,us,ef5,48,5,292,clear,electrofishing,1,1,521,60,2.8,Open,200,40,NA,Smith-root,LR24,Westslope Cutthroat Trout,juvenile,1,120,120

@@ -17,7 +17,7 @@ R/pers_*
 #!*_k_*
 *.gpkg-wal
 *.gpkg-shm
-data/raw_input
+#data/raw_input
 #docs/Elk.pdf
 #docs/Elk.tex
 #Elk.html

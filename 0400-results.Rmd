@@ -2,19 +2,23 @@
 
 Field assessments were conducted between `r format(min(pscis$date), format="%B %d %Y")` and `r format(max(pscis$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio, Kyle Prince, P,Biol and Mark Fjeld, BiT.  
 
+## Planning
+
+Sites selected for follow up with Phase 1 and 2 assessemnts are included as Google Earth kml files [here](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/planning_kmls).  
+
 ## Phase 1
 
-A total of `r n_distinct(pscis$my_crossing_reference)` phase 1 assessments were conducted with `r pscis %>% filter(barrier_result == 'Passable') %>% nrow()` crossings considered "passable", `r pscis %>% filter(barrier_result == 'Potential') %>% nrow()` crossings considered 'potential' barriers and `r pscis %>% filter(barrier_result == 'Barrier') %>% nrow()` crossings considered barriers.  Site details and photos are presented in [Appendix - Phase 1 Fish Passage Assessment Data and Photos].  A rough cost benefit analysis for Phase 1 sites is presented in Table \@ref(tab:cost-est-phase-1). 
+A total of `r n_distinct(pscis$my_crossing_reference)` phase 1 assessments were conducted with `r pscis %>% filter(barrier_result == 'Passable') %>% nrow()` crossings considered "passable", `r pscis %>% filter(barrier_result == 'Potential') %>% nrow()` crossings considered 'potential' barriers and `r pscis %>% filter(barrier_result == 'Barrier') %>% nrow()` crossings considered barriers.  Site details and photos are presented in [Appendix - Phase 1 Fish Passage Assessment Data and Photos].  A rough cost benefit analysis for Phase 1 sites there were determined to be barriers or potential barriers is presented in Table \@ref(tab:cost-est-phase-1). 
 
 <br>
 
-Barrier passability criteria used in this project follows @fish_passage_assessments, and reflects an estimation for the passage of a juvenile salmon or small resident rainbow trout [@clarkinNationalInventoryAssessment2005 ;@bellFisheriesHandbookEngineering1991; @thompsonAssessingFishPassage2013].  As noted in @bourne_etal2011Barriersfish, with a detailed review of different criteria in @kemp_ohanley2010Proceduresevaluating, passability of barriers can be quantified in many different ways. Fish physiology (i.e. species, length, swim speeds) as well as the temporal variation of physical characteristics (e.g. due to flow volumes/velocities a particular culvert is passable 50% of the time to fish with a defined physiological capacity) make defining passability difficult with important implications for watershed connectivity modelling [@bourne_etal2011Barriersfish; @shaw_etal2016Importancepartial; @mahlum_etal2014EvaluatingBarrier; @kemp_ohanley2010Proceduresevaluating].
+Barrier passability criteria used in this project follows @fish_passage_assessments, and reflects an estimation for the passage of a juvenile salmon or small resident rainbow trout [@clarkinNationalInventoryAssessment2005 ;@bellFisheriesHandbookEngineering1991; @thompsonAssessingFishPassage2013].  As noted in @bourne_etal2011Barriersfish, with a detailed review of different criteria in @kemp_ohanley2010Proceduresevaluating, passability of barriers can be quantified in many different ways. Fish physiology (i.e. species, length, swim speeds) as well as the temporal variation of physical characteristics (ex. due to flow volumes/velocities a particular culvert is passable 50% of the time to fish with a defined physiological capacity) make defining passability difficult with important implications for watershed connectivity modelling [@bourne_etal2011Barriersfish; @shaw_etal2016Importancepartial; @mahlum_etal2014EvaluatingBarrier; @kemp_ohanley2010Proceduresevaluating].
 
 <br>
 
 ```{r cost-est-phase-1}
 tab_cost_est_phase1 %>% 
-  my_kable_scroll(caption_text = 'Modelled upstream habitat estimate and cost benefit for Phase 1 assessments.')
+  my_kable_scroll(caption_text = 'Upstream habitat estimates and cost benefit analysis for Phase 1 assessments.  IDs are PSCIS idenfifiers with exception of those with * which are interim references.')
   # kable(caption = 'Modelled upstream habitat estimate and cost benefit.',
   #       escape = T) %>% 
   # kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>% 
@@ -50,14 +54,13 @@ wshds <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'hab_wshds_ltree') %>
 map <- leaflet(height=500, width=780) %>%
   # leaflet() %>% 
   addTiles() %>%
-  leafem::addMouseCoordinates(proj4 = 26911) %>% ##can't seem to get it to render utms yet
+  # leafem::addMouseCoordinates(proj4 = 26911) %>% ##can't seem to get it to render utms yet
   # addProviderTiles(providers$"Esri.DeLorme") %>% 
   addProviderTiles("Esri.WorldTopoMap", group = "Topo") %>%
   addProviderTiles("Esri.WorldImagery", group = "ESRI Aerial") %>% 
   addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
     opacity = 1.0, fillOpacity = 0.25,
     fillColor = "#00DBFF") %>% 
-  
   # addMeasure() %>% 
   # setView(lng = -105.644, lat = 51.618, zoom = 3)
   
@@ -80,7 +83,8 @@ map <- leaflet(height=500, width=780) %>%
   #                   label = paste0(photo_metadata$crossing_id, '_', photo_metadata$filename)) %>%
     addCircleMarkers(
     data=tab_hab_map,
-    label = tab_hab_map$pscis_crossing_id,
+    label = tab_hab_map$pscis_crossing_id, 
+    labelOptions = labelOptions(noHide = T, textOnly = TRUE),
     popup = leafpop::popupTable(x = select((tab_hab_map %>% st_set_geometry(NULL)), 
                                            Site = pscis_crossing_id, Priority = priority, Stream = stream_name, Road = road_name, `Habitat (m)`= upstream_habitat_length_m, Comments = comments),
                                 feature.id = F,
@@ -93,7 +97,7 @@ map <- leaflet(height=500, width=780) %>%
     weight = 2,
     opacity = 1.0 
     ) %>% 
-      addScaleBar(position = 'bottomleft', options = scaleBarOptions(imperial = FALSE)) %>% 
+      # addScaleBar(position = 'bottomleft', options = scaleBarOptions(imperial = FALSE)) %>% 
   addLayersControl(
     baseGroups = c(
       "Esri.DeLorme",

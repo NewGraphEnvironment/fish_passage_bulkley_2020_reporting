@@ -34,11 +34,13 @@ source('R/packages.R')
 source('R/functions.R')
 source('R/functions-phase2.R')
 source('R/tables.R')
-
-source('R/tables-phase1-cost-estimate.R')
 source('R/tables-phase2-cost-estimate.R')
-
 source('R/tables-phase2.R')
+source('R/tables-phase1-cost-estimate.R')
+
+
+
+
 source('R/extract-fish.R')
 source('R/functions-fish.R')
 # options(timeout=180)

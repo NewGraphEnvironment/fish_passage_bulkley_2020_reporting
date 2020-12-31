@@ -105,11 +105,12 @@ methods
 planning
 fish-passage-assessments
 barrier-scoring
-habitat-confirmation-assessments
-reporting
 cost-benefit-analysis
 habitat-gain-index
+habitat-confirmation-assessments
+reporting
 results-and-discussion
+planning-1
 phase-1
 phase-2
 recommendations

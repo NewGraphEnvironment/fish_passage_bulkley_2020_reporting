@@ -62,7 +62,6 @@
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
-<script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
 <script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
 <link href="libs/lfx-fullscreen-1.0.2/lfx-fullscreen-prod.css" rel="stylesheet" />
@@ -256,9 +255,8 @@ No suitable spawning habitat, and habitat with low rearing potential (e.g., loca
 </tbody>
 </table>
 <p><br></p>
-</div>
-<div id="barrier-scoring" class="section level2">
-<h2><span class="header-section-number">3.3</span> Barrier Scoring</h2>
+<div id="barrier-scoring" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Barrier Scoring</h3>
 <p>Fish passage potential was determined for each stream crossing identified as a closed bottom structure as per <span class="citation">MoE (2011)</span>. The combined scores from five criteria: depth and degree to which the structure is embedded, outlet drop, stream width ratio, culvert slope, and culvert length were used to screen whether each culvert was a likely barrier to some fish species and life stages (Table <a href="methods.html#tab:tab-barrier-scoring">3.3</a>, Table <a href="methods.html#tab:tab-barrier-result">3.4</a>. These criteria were developed based on data obtained from various studies and reflect an estimation for the passage of a juvenile salmon or small resident rainbow trout <span class="citation">(Clarkin et al. 2005 ; Bell 1991; Thompson 2013)</span>.</p>
 <p><br></p>
 <table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
@@ -468,40 +466,12 @@ barrier
 </table>
 <p><br></p>
 </div>
-<div id="habitat-confirmation-assessments" class="section level2">
-<h2><span class="header-section-number">3.4</span> Habitat Confirmation Assessments</h2>
-<p>Following fish passage assessments, habitat confirmations were completed in accordance with procedures outlined in the document “A Checklist for Fish Habitat Confirmation Prior to the Rehabilitation of a Stream Crossing” <span class="citation">(Fish Passage Technical Working Group 2011)</span>. The main objective of the field surveys was to document upstream habitat quantity and quality and to determine if any other obstructions exist above or below the crossing. Habitat value was assessed based on channel morphology, flow characteristics (perennial, intermittent, ephemeral), the presence/absence of deep pools, un-embedded boulders, substrate, woody debris, undercut banks, aquatic vegetation and overhanging riparian vegetation. Criteria used to rank habitat value was based on guidelines in <span class="citation">Fish Passage Technical Working Group (2011)</span> (Table <a href="methods.html#tab:tab-hab-value">3.2</a>).</p>
-<p><br></p>
-<p>During habitat confirmations, to standardize data collected and facilitate submission of the data to provincial databases, information was collated on <a href="https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/laws-policies-standards-guidance/inventory-standards/aquatic-ecosystems">“Site Cards”</a>. Habitat characteristics recorded included channel widths, wetted widths, residual pool depths, gradients, bankfull depths, stage, temperature, conductivity, pH, cover by type, substrate and channel morphology (among others). When possible, the crew surveyed downstream of the crossing to the point where fish presence had been previously confirmed and upstream to a minimum distance of 600m. Any potential obstacles to fish passage were inventoried with photos, physical descriptions and locations recorded on site cards. Surveyed routes were recorded with time-signatures on handheld GPS units.</p>
-<p><br></p>
-<p>Fish sampling was conducted a subset of sites when biological data was considered to add significant value to the physical habitat assessment information. When possible, electrofishing was utilized within discrete site units both upstream and downstream of the subject crossing with electrofisher settings, water quality parameters (i.e. conductivity, temperature and ph), start location, length of site and wetted widths (average of a minimum of three) recorded. For each fish captured, fork length and species was recorded, with results included within the fish data submission spreadsheet. Fish information and habitat data will be submitted to the province under scientific fish collection permit CB20-611971.</p>
-<p><br></p>
-</div>
-<div id="reporting" class="section level2">
-<h2><span class="header-section-number">3.5</span> Reporting</h2>
-<p>This pdf report and an online <a href="https://newgraphenvironment.github.io/fish_passage_elk_2020_reporting_cwf/">interactive report</a> were generated with <code>bookdown</code> <span class="citation">(Xie 2016)</span> from <code>Rmarkdown</code> <span class="citation">(Allaire et al. 2020)</span> documents processing raw data available at the <a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf">New Graph Environment Github Site</a>. In addition to numerous spatial layers sourced through the BC Data Catalogue, data inputs for this project can be sourced <a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data">here</a> and include:</p>
-<ul>
-<li><p><a href="https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data#submitfish">Fish Data Submission Spreadsheet Template - V 2.0, January 20, 2020</a></p></li>
-<li><p><a href="https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/assessment-projects">pscis_assessment_template_v24.xls</a></p></li>
-<li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/blob/master/data/bcfishpass-phase2.csv"><code>Fish Habitat Model</code>/<code>bcfishpass</code></a> outputs.</p></li>
-<li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/habitat_confirmations_priorities.xlsx">Custom Excel Spreadsheet</a> detailing Phase 2 site:</p>
-<ul>
-<li>priority level for proceeding to design for replacement</li>
-<li>length of survey upstream and downstream</li>
-<li>a conservative estimate of mainstem habitat potentially available upstream of the crossing</li>
-<li>fish species confirmed as present upstream of the crossing</li>
-</ul></li>
-<li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data">GPS tracks</a> from field surveys.</p></li>
-<li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/photos">Photos and photo metadata.</a></p></li>
-</ul>
-<p><br></p>
 <div id="cost-benefit-analysis" class="section level3">
-<h3><span class="header-section-number">3.5.1</span> Cost Benefit Analysis</h3>
+<h3><span class="header-section-number">3.2.2</span> Cost Benefit Analysis</h3>
 <p>A cost benefit analysis was conducted for each crossing determined to be a barrier based on an estimate of cost associated with remediation or replacement of the crossing with a structure that facilitates fish passage and the amount of potential habitat that would be made available by remediating fish passage at the site (habitat gain index).</p>
 <p><br></p>
-</div>
-<div id="habitat-gain-index" class="section level3">
-<h3><span class="header-section-number">3.5.2</span> Habitat Gain Index</h3>
+<div id="habitat-gain-index" class="section level4">
+<h4><span class="header-section-number">3.2.2.1</span> Habitat Gain Index</h4>
 <p>The habitat gain index is the quantity of modelled habitat upstream of the subject crossing and represents an estimate of habitat gained with remediation of fish passage at the crossing. For this project, a gradient threshold between accessible and non-accessible habitat was set at 20% (for a minimimum length of 100m) intended to represent the maximum gradient of which westslope cutthrout trout are likely to be able to migrate upstream. For Phase 1 assessments a “net” value of habitat quantity output from <code>bcfishpass</code> was used to estimate the amount of habitat upstream of each crossing less than 20% gradient before either a falls of height &gt;5m - as recorded in <span class="citation">MoE (2020c)</span>, a road-stream crossing recorded in PSCIS as a barrier, or a modelled unassessed crossing. For Phase 2 assessments, the amount of potential habitat upstream of each crossing was estimated by measuring the amount of mainstem and stream segments &gt; 1st order upstream of the crossing using the measure tool within QGIS <span class="citation">(QGIS Development Team 2009)</span>.</p>
 <p><br></p>
 <p>Potential options to remediate fish passage were selected from <span class="citation">MoE (2011)</span> and included:</p>
@@ -744,8 +714,37 @@ Paved
 </tr>
 </tbody>
 </table>
-
 </div>
+</div>
+</div>
+<div id="habitat-confirmation-assessments" class="section level2">
+<h2><span class="header-section-number">3.3</span> Habitat Confirmation Assessments</h2>
+<p>Following fish passage assessments, habitat confirmations were completed in accordance with procedures outlined in the document “A Checklist for Fish Habitat Confirmation Prior to the Rehabilitation of a Stream Crossing” <span class="citation">(Fish Passage Technical Working Group 2011)</span>. The main objective of the field surveys was to document upstream habitat quantity and quality and to determine if any other obstructions exist above or below the crossing. Habitat value was assessed based on channel morphology, flow characteristics (perennial, intermittent, ephemeral), the presence/absence of deep pools, un-embedded boulders, substrate, woody debris, undercut banks, aquatic vegetation and overhanging riparian vegetation. Criteria used to rank habitat value was based on guidelines in <span class="citation">Fish Passage Technical Working Group (2011)</span> (Table <a href="methods.html#tab:tab-hab-value">3.2</a>).</p>
+<p><br></p>
+<p>During habitat confirmations, to standardize data collected and facilitate submission of the data to provincial databases, information was collated on <a href="https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/laws-policies-standards-guidance/inventory-standards/aquatic-ecosystems">“Site Cards”</a>. Habitat characteristics recorded included channel widths, wetted widths, residual pool depths, gradients, bankfull depths, stage, temperature, conductivity, pH, cover by type, substrate and channel morphology (among others). When possible, the crew surveyed downstream of the crossing to the point where fish presence had been previously confirmed and upstream to a minimum distance of 600m. Any potential obstacles to fish passage were inventoried with photos, physical descriptions and locations recorded on site cards. Surveyed routes were recorded with time-signatures on handheld GPS units.</p>
+<p><br></p>
+<p>Fish sampling was conducted a subset of sites when biological data was considered to add significant value to the physical habitat assessment information. When possible, electrofishing was utilized within discrete site units both upstream and downstream of the subject crossing with electrofisher settings, water quality parameters (i.e. conductivity, temperature and ph), start location, length of site and wetted widths (average of a minimum of three) recorded. For each fish captured, fork length and species was recorded, with results included within the fish data submission spreadsheet. Fish information and habitat data will be submitted to the province under scientific fish collection permit CB20-611971.</p>
+<p><br></p>
+</div>
+<div id="reporting" class="section level2">
+<h2><span class="header-section-number">3.4</span> Reporting</h2>
+<p>This pdf report and an online <a href="https://newgraphenvironment.github.io/fish_passage_elk_2020_reporting_cwf/">interactive report</a> were generated with <code>bookdown</code> <span class="citation">(Xie 2016)</span> from <code>Rmarkdown</code> <span class="citation">(Allaire et al. 2020)</span> documents processing raw data available at the <a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf">New Graph Environment Github Site</a>. In addition to numerous spatial layers sourced through the BC Data Catalogue, data inputs for this project can be sourced <a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data">here</a> and include:</p>
+<ul>
+<li><p><a href="https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data#submitfish">Fish Data Submission Spreadsheet Template - V 2.0, January 20, 2020</a></p></li>
+<li><p><a href="https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/assessment-projects">pscis_assessment_template_v24.xls</a></p></li>
+<li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/blob/master/data/bcfishpass-phase2.csv"><code>Fish Habitat Model</code>/<code>bcfishpass</code></a> outputs.</p></li>
+<li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/habitat_confirmations_priorities.xlsx">Custom Excel Spreadsheet</a> detailing Phase 2 site:</p>
+<ul>
+<li>priority level for proceeding to design for replacement</li>
+<li>length of survey upstream and downstream</li>
+<li>a conservative estimate of mainstem habitat potentially available upstream of the crossing</li>
+<li>fish species confirmed as present upstream of the crossing</li>
+</ul></li>
+<li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data">GPS tracks</a> from field surveys.</p></li>
+<li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/photos">Photos and photo metadata.</a></p></li>
+</ul>
+<p><br></p>
+
 </div>
 </div>
             </section>

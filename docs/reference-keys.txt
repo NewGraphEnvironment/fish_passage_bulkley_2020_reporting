@@ -96,6 +96,9 @@ fig:photo-092
 intro
 background
 project-location
+ktunaxa-nation
+elk-valley-cumulative-effects-management-framework
+elk-river-alliance
 fisheries
 westslope-cutthrout-trout
 methods
@@ -103,6 +106,7 @@ planning
 fish-passage-assessments
 barrier-scoring
 habitat-confirmation-assessments
+reporting
 cost-benefit-analysis
 habitat-gain-index
 results-and-discussion

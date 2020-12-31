@@ -22,7 +22,7 @@ To identify priorities for crossing structure rehabilitation, background literat
 
 <br>
  
-Following delineation of "non-fish habitat" with the `Fish Habitat Model`, the *average* gradient of each stream segment within habitat classified as below the 22% threshold was calculated and summed using `bcfishpass` to quantify upstream habitat potentially available for westslope cutthrout trout and facilitate stream line symbology based on stream morphology.  `bcfishpass` summed average gradients within seven categories (0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 22%, 22 - 30% and >30%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in four categories: riffle/cascade (0 - 5%), step-pool (5 - 15%), step-pool very steep (15-20%) and extremely steep (20 - 30%) (Table \@ref(tab:tablethreshaverage)). For each crossing location, the linear length of stream habitat upstream of crossings and <20% was summarized by average gradient and the area of lake and wetland habitat upstream was collated and reviewed to give an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.  
+Following delineation of "non-fish habitat" with the `Fish Habitat Model`, the *average* gradient of each stream segment within habitat classified as below the 22% threshold was calculated and summed using `bcfishpass` to quantify upstream habitat potentially available for westslope cutthrout trout and facilitate stream line symbology based on stream morphology.  `bcfishpass` summed average gradients within seven categories (0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 22%, 22 - 30% and >30%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in four categories: riffle/cascade (0 - 5%), step-pool (5 - 15%), step-pool very steep (15-22%) and extremely steep (22 - 30%) (Table \@ref(tab:tablethreshaverage)). For each crossing location, the linear length of stream habitat upstream of crossings and <20% was summarized by average gradient and the area of lake and wetland habitat upstream was collated and reviewed to give an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.  
 
 
 <br>
@@ -30,7 +30,7 @@ Following delineation of "non-fish habitat" with the `Fish Habitat Model`, the *
 
 ```{r tablethreshaverage, eval= T}
 #threshold and average gradient table
-table_thresh_average <- tibble::tibble(`Gradient` = c('0 - 5%', '5 - 15%', '15 - 20%', '20 - 30%', '>30%'),
+table_thresh_average <- tibble::tibble(`Gradient` = c('0 - 5%', '5 - 15%', '15 - 22%', '22 - 30%', '>30%'),
                                        `Channel Type` = c('Riffle and cascade pool', 'Step pool', 'Step pool - very steep', 'Step pool - extremely steep (bull trout only)', 'Non fish habitat'))
 
 # knitr::kable(table_thresh_average,
@@ -100,7 +100,12 @@ Fish passage potential was determined for each stream crossing identified as a c
 <br>
 
 ```{r tab-barrier-scoring, eval=T}
-tab <- as_tibble(t(tab_barrier_scoring)) %>% janitor::row_to_names(1) ##turn the table sideways
+tab <- as_tibble(t(tab_barrier_scoring)) %>% 
+  mutate(V4 = names(tab_barrier_scoring)) %>% 
+  select(V4, everything()) %>% 
+  janitor::row_to_names(1) %>%  ##turn the table sideways
+  mutate(Risk = case_when(Risk == 'Value' ~ '  Value',
+                          T ~ Risk))
 
 tab %>% 
   my_kable(caption_text = 'Fish Barrier Risk Assessment (MoE 2011).')
@@ -121,7 +126,7 @@ tab_barrier_result %>%
 
 ## Habitat Confirmation Assessments
 
-Following fish passage assessments, habitat confirmations were completed in accordance with procedures outlined in the document “A Checklist for Fish Habitat Confirmation Prior to the Rehabilitation of a Stream Crossing” [@confirmation_checklist_2011]. The main objective of the field surveys was to document upstream habitat quantity and quality and to determine if any other obstructions exist above or below the crossing.  Habitat value was assessed based on channel morphology, flow characteristics (perennial, intermittent, ephemeral), the presence/absence of deep  pools, un-embedded  boulders, substrate, woody debris, undercut banks, aquatic vegetation and overhanging riparian vegetation. Criteria used to rank habitat value was based on guidelines in @confirmation_checklist_2011 and summarized in Table \@ref(tab:tablehabvalue). 
+Following fish passage assessments, habitat confirmations were completed in accordance with procedures outlined in the document “A Checklist for Fish Habitat Confirmation Prior to the Rehabilitation of a Stream Crossing” [@confirmation_checklist_2011]. The main objective of the field surveys was to document upstream habitat quantity and quality and to determine if any other obstructions exist above or below the crossing.  Habitat value was assessed based on channel morphology, flow characteristics (perennial, intermittent, ephemeral), the presence/absence of deep  pools, un-embedded  boulders, substrate, woody debris, undercut banks, aquatic vegetation and overhanging riparian vegetation. Criteria used to rank habitat value was based on guidelines in @confirmation_checklist_2011 (Table \@ref(tab:tab-hab-value)). 
 
 <br>
 
@@ -133,7 +138,7 @@ Fish sampling was conducted a subset of sites when biological data was considere
 
 <br>
 
-##Reporting
+## Reporting
 
 This pdf report and an online [interactive report](https://newgraphenvironment.github.io/fish_passage_elk_2020_reporting_cwf/) were generated with `bookdown` [@bookdown2016] from `Rmarkdown` [@R-rmarkdown] documents processing raw data available at the [New Graph Environment Github Site ](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf). In addition to numerous spatial layers sourced through the BC Data Catalogue, data inputs for this project can be sourced [here](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data) and include: 
 
@@ -145,7 +150,11 @@ This pdf report and an online [interactive report](https://newgraphenvironment.g
  + [`Fish Habitat Model`/`bcfishpass`](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/blob/master/data/bcfishpass-phase2.csv) outputs.
 
 
- + [Excel spreadsheet detailing priority](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/habitat_confirmations_priorities.xlsx) level assigned for each of the crossings surveyed with Phase 2 assessments as well as details on the length of the surveys conducted and a conservative estimate of habitat suitable for fish species located upstream of the crossing.
+ + [Custom Excel Spreadsheet](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/habitat_confirmations_priorities.xlsx) detailing Phase 2 site:
+     - priority level for proceeding to design for replacement
+     - length of survey upstream and downstream
+     - a conservative estimate of mainstem habitat potentially available upstream of the crossing 
+     - fish species confirmed as present upstream of the crossing
 
  + [GPS tracks](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data) from field surveys.  
 
@@ -169,11 +178,12 @@ The habitat gain index is the quantity of modelled habitat upstream of the subje
 
 
 Potential options to remediate fish passage were selected from @fish_passage_assessments and included:  
- * Removal (RM) - Complete removal of the structure and deactivation of the road. 
- * Open Bottom Structure (OBS) - Replacement of the culvert with a bridge or other open bottom structure.  For this project we considered bridges as the only viable option for OBS type based on consultation with FLNR road crossing engineering experts.  It should be noted however, that box culverts could be considered a viable and economical option as they have been observed as successfully facilitating fish passage on the west coast of the province (Betty Rebellato, Canadian Wildlife Federation - Project Biologist).
- * Streambed Simulation (SS) - Replacement of the structure with a streambed simulation design culvert.  Often achieved by embedding the culvert by 40% or more. Based on consultation with FLNR engineering experts, we considered crossings on streams with a channel width of <2m and a stream gradient of <8% as candidates for replacement with streambed simulations.
- * Additional Substrate Material (EM) - Add additional substrate to the culvert and/or downstream weir to embed culvert and reduce overall velocity/turbulence.  This option was considered only when outlet drop = 0, culvert slope <1.0% and stream width ratio < 1.0.
- * Backwater (BW) - Backwatering of the structure to reduce velocity and turbulence. This option was considered only when outlet drop < 0.3m, culvert slope <2.0%, stream width ratio < 1.2 and stream profiling indicates it would be effective..
+
+ + Removal (RM) - Complete removal of the structure and deactivation of the road. 
+ + Open Bottom Structure (OBS) - Replacement of the culvert with a bridge or other open bottom structure.  For this project we considered bridges as the only viable option for OBS type based on consultation with FLNR road crossing engineering experts.  It should be noted however, that box culverts could be considered a viable and economical option as they have been observed as successfully facilitating fish passage on the west coast of the province (Betty Rebellato, Canadian Wildlife Federation - Project Biologist).
+ + Streambed Simulation (SS) - Replacement of the structure with a streambed simulation design culvert.  Often achieved by embedding the culvert by 40% or more. Based on consultation with FLNR engineering experts, we considered crossings on streams with a channel width of <2m and a stream gradient of <8% as candidates for replacement with streambed simulations.
+ + Additional Substrate Material (EM) - Add additional substrate to the culvert and/or downstream weir to embed culvert and reduce overall velocity/turbulence.  This option was considered only when outlet drop = 0, culvert slope <1.0% and stream width ratio < 1.0.
+ + Backwater (BW) - Backwatering of the structure to reduce velocity and turbulence. This option was considered only when outlet drop < 0.3m, culvert slope <2.0%, stream width ratio < 1.2 and stream profiling indicates it would be effective..
  
  <br>
 

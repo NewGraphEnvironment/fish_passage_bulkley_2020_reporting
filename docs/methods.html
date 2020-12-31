@@ -139,7 +139,7 @@
 <p><br></p>
 <p><code>bcfishpass</code> is comprised of sql and python based shell script libraries that “generate a simple model of aquatic habitat connectivity by identifying natural barriers to fish passage (plus hydro dams that are not feasible to remediate) and classifying all streams not upstream of these barriers as ‘potentially accessible’ <span class="citation">(Norris 2020)</span>. On potentially accessible streams,”<code>bcfishpass</code> scripts “identify known barriers and additional anthropogenic features (primarily road/railway stream crossings, i.e. culverts) that are potentially barriers. To prioritize these features for assessment or remediation,” the scripts “report on how much modelled potentially accessible aquatic habitat the barriers may obstruct. The model can be refined with known fish observations. Depending on the modelling scenario, all aquatic habitat downstream of a given fish observation can be classified as ‘observed accessible’, overriding any downstream barriers.”</p>
 <p><br></p>
-<p>Following delineation of “non-fish habitat” with the <code>Fish Habitat Model</code>, the <em>average</em> gradient of each stream segment within habitat classified as below the 22% threshold was calculated and summed using <code>bcfishpass</code> to quantify upstream habitat potentially available for westslope cutthrout trout and facilitate stream line symbology based on stream morphology. <code>bcfishpass</code> summed average gradients within seven categories (0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 22%, 22 - 30% and &gt;30%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in four categories: riffle/cascade (0 - 5%), step-pool (5 - 15%), step-pool very steep (15-20%) and extremely steep (20 - 30%) (Table <a href="methods.html#tab:tablethreshaverage">3.1</a>). For each crossing location, the linear length of stream habitat upstream of crossings and &lt;20% was summarized by average gradient and the area of lake and wetland habitat upstream was collated and reviewed to give an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.</p>
+<p>Following delineation of “non-fish habitat” with the <code>Fish Habitat Model</code>, the <em>average</em> gradient of each stream segment within habitat classified as below the 22% threshold was calculated and summed using <code>bcfishpass</code> to quantify upstream habitat potentially available for westslope cutthrout trout and facilitate stream line symbology based on stream morphology. <code>bcfishpass</code> summed average gradients within seven categories (0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 22%, 22 - 30% and &gt;30%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in four categories: riffle/cascade (0 - 5%), step-pool (5 - 15%), step-pool very steep (15-22%) and extremely steep (22 - 30%) (Table <a href="methods.html#tab:tablethreshaverage">3.1</a>). For each crossing location, the linear length of stream habitat upstream of crossings and &lt;20% was summarized by average gradient and the area of lake and wetland habitat upstream was collated and reviewed to give an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.</p>
 <p><br></p>
 <table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
@@ -174,7 +174,7 @@ Step pool
 </tr>
 <tr>
 <td style="text-align:left;">
-15 - 20%
+15 - 22%
 </td>
 <td style="text-align:left;">
 Step pool - very steep
@@ -182,7 +182,7 @@ Step pool - very steep
 </tr>
 <tr>
 <td style="text-align:left;">
-20 - 30%
+22 - 30%
 </td>
 <td style="text-align:left;">
 Step pool - extremely steep (bull trout only)
@@ -263,10 +263,13 @@ No suitable spawning habitat, and habitat with low rearing potential (e.g., loca
 <p><br></p>
 <table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:tab-barrier-scoring">Table 3.3: </span>Fish Barrier Scoring (MoE 2011).
+<span id="tab:tab-barrier-scoring">Table 3.3: </span>Fish Barrier Risk Assessment (MoE 2011).
 </caption>
 <thead>
 <tr>
+<th style="text-align:left;">
+Risk
+</th>
 <th style="text-align:left;">
 LOW
 </th>
@@ -281,6 +284,9 @@ HIGH
 <tbody>
 <tr>
 <td style="text-align:left;">
+Embedded
+</td>
+<td style="text-align:left;">
 &gt;30cm or &gt;20% of diameter and continuous
 </td>
 <td style="text-align:left;">
@@ -292,6 +298,9 @@ No embedment or discontinuous
 </tr>
 <tr>
 <td style="text-align:left;">
+Value
+</td>
+<td style="text-align:left;">
 0
 </td>
 <td style="text-align:left;">
@@ -302,6 +311,9 @@ No embedment or discontinuous
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+Outlet Drop (cm)
+</td>
 <td style="text-align:left;">
 &lt;15
 </td>
@@ -314,6 +326,9 @@ No embedment or discontinuous
 </tr>
 <tr>
 <td style="text-align:left;">
+Value
+</td>
+<td style="text-align:left;">
 0
 </td>
 <td style="text-align:left;">
@@ -324,6 +339,9 @@ No embedment or discontinuous
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+SWR
+</td>
 <td style="text-align:left;">
 &lt;1.0
 </td>
@@ -336,6 +354,9 @@ No embedment or discontinuous
 </tr>
 <tr>
 <td style="text-align:left;">
+Value
+</td>
+<td style="text-align:left;">
 0
 </td>
 <td style="text-align:left;">
@@ -346,6 +367,9 @@ No embedment or discontinuous
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+Slope (%)
+</td>
 <td style="text-align:left;">
 &lt;1
 </td>
@@ -358,6 +382,9 @@ No embedment or discontinuous
 </tr>
 <tr>
 <td style="text-align:left;">
+Value
+</td>
+<td style="text-align:left;">
 0
 </td>
 <td style="text-align:left;">
@@ -369,6 +396,9 @@ No embedment or discontinuous
 </tr>
 <tr>
 <td style="text-align:left;">
+Length (m)
+</td>
+<td style="text-align:left;">
 &lt;15
 </td>
 <td style="text-align:left;">
@@ -379,6 +409,9 @@ No embedment or discontinuous
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+Value
+</td>
 <td style="text-align:left;">
 0
 </td>
@@ -437,38 +470,48 @@ barrier
 </div>
 <div id="habitat-confirmation-assessments" class="section level2">
 <h2><span class="header-section-number">3.4</span> Habitat Confirmation Assessments</h2>
-<p>Following fish passage assessments, habitat confirmations were completed in accordance with procedures outlined in the document “A Checklist for Fish Habitat Confirmation Prior to the Rehabilitation of a Stream Crossing” <span class="citation">(Fish Passage Technical Working Group 2011)</span>. The main objective of the field surveys was to document upstream habitat quantity and quality and to determine if any other obstructions exist above or below the crossing. Habitat value was assessed based on channel morphology, flow characteristics (perennial, intermittent, ephemeral), the presence/absence of deep pools, un-embedded boulders, substrate, woody debris, undercut banks, aquatic vegetation and overhanging riparian vegetation. Criteria used to rank habitat value was based on guidelines in <span class="citation">Fish Passage Technical Working Group (2011)</span> and summarized in Table <a href="#tab:tablehabvalue"><strong>??</strong></a>.</p>
+<p>Following fish passage assessments, habitat confirmations were completed in accordance with procedures outlined in the document “A Checklist for Fish Habitat Confirmation Prior to the Rehabilitation of a Stream Crossing” <span class="citation">(Fish Passage Technical Working Group 2011)</span>. The main objective of the field surveys was to document upstream habitat quantity and quality and to determine if any other obstructions exist above or below the crossing. Habitat value was assessed based on channel morphology, flow characteristics (perennial, intermittent, ephemeral), the presence/absence of deep pools, un-embedded boulders, substrate, woody debris, undercut banks, aquatic vegetation and overhanging riparian vegetation. Criteria used to rank habitat value was based on guidelines in <span class="citation">Fish Passage Technical Working Group (2011)</span> (Table <a href="methods.html#tab:tab-hab-value">3.2</a>).</p>
 <p><br></p>
 <p>During habitat confirmations, to standardize data collected and facilitate submission of the data to provincial databases, information was collated on <a href="https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/laws-policies-standards-guidance/inventory-standards/aquatic-ecosystems">“Site Cards”</a>. Habitat characteristics recorded included channel widths, wetted widths, residual pool depths, gradients, bankfull depths, stage, temperature, conductivity, pH, cover by type, substrate and channel morphology (among others). When possible, the crew surveyed downstream of the crossing to the point where fish presence had been previously confirmed and upstream to a minimum distance of 600m. Any potential obstacles to fish passage were inventoried with photos, physical descriptions and locations recorded on site cards. Surveyed routes were recorded with time-signatures on handheld GPS units.</p>
 <p><br></p>
 <p>Fish sampling was conducted a subset of sites when biological data was considered to add significant value to the physical habitat assessment information. When possible, electrofishing was utilized within discrete site units both upstream and downstream of the subject crossing with electrofisher settings, water quality parameters (i.e. conductivity, temperature and ph), start location, length of site and wetted widths (average of a minimum of three) recorded. For each fish captured, fork length and species was recorded, with results included within the fish data submission spreadsheet. Fish information and habitat data will be submitted to the province under scientific fish collection permit CB20-611971.</p>
 <p><br></p>
-<p>##Reporting</p>
+</div>
+<div id="reporting" class="section level2">
+<h2><span class="header-section-number">3.5</span> Reporting</h2>
 <p>This pdf report and an online <a href="https://newgraphenvironment.github.io/fish_passage_elk_2020_reporting_cwf/">interactive report</a> were generated with <code>bookdown</code> <span class="citation">(Xie 2016)</span> from <code>Rmarkdown</code> <span class="citation">(Allaire et al. 2020)</span> documents processing raw data available at the <a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf">New Graph Environment Github Site</a>. In addition to numerous spatial layers sourced through the BC Data Catalogue, data inputs for this project can be sourced <a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data">here</a> and include:</p>
 <ul>
 <li><p><a href="https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data#submitfish">Fish Data Submission Spreadsheet Template - V 2.0, January 20, 2020</a></p></li>
 <li><p><a href="https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/assessment-projects">pscis_assessment_template_v24.xls</a></p></li>
 <li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/blob/master/data/bcfishpass-phase2.csv"><code>Fish Habitat Model</code>/<code>bcfishpass</code></a> outputs.</p></li>
-<li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/habitat_confirmations_priorities.xlsx">Excel spreadsheet detailing priority</a> level assigned for each of the crossings surveyed with Phase 2 assessments as well as details on the length of the surveys conducted and a conservative estimate of habitat suitable for fish species located upstream of the crossing.</p></li>
+<li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/habitat_confirmations_priorities.xlsx">Custom Excel Spreadsheet</a> detailing Phase 2 site:</p>
+<ul>
+<li>priority level for proceeding to design for replacement</li>
+<li>length of survey upstream and downstream</li>
+<li>a conservative estimate of mainstem habitat potentially available upstream of the crossing</li>
+<li>fish species confirmed as present upstream of the crossing</li>
+</ul></li>
 <li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data">GPS tracks</a> from field surveys.</p></li>
 <li><p><a href="https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/photos">Photos and photo metadata.</a></p></li>
 </ul>
 <p><br></p>
 <div id="cost-benefit-analysis" class="section level3">
-<h3><span class="header-section-number">3.4.1</span> Cost Benefit Analysis</h3>
+<h3><span class="header-section-number">3.5.1</span> Cost Benefit Analysis</h3>
 <p>A cost benefit analysis was conducted for each crossing determined to be a barrier based on an estimate of cost associated with remediation or replacement of the crossing with a structure that facilitates fish passage and the amount of potential habitat that would be made available by remediating fish passage at the site (habitat gain index).</p>
 <p><br></p>
 </div>
 <div id="habitat-gain-index" class="section level3">
-<h3><span class="header-section-number">3.4.2</span> Habitat Gain Index</h3>
+<h3><span class="header-section-number">3.5.2</span> Habitat Gain Index</h3>
 <p>The habitat gain index is the quantity of modelled habitat upstream of the subject crossing and represents an estimate of habitat gained with remediation of fish passage at the crossing. For this project, a gradient threshold between accessible and non-accessible habitat was set at 20% (for a minimimum length of 100m) intended to represent the maximum gradient of which westslope cutthrout trout are likely to be able to migrate upstream. For Phase 1 assessments a “net” value of habitat quantity output from <code>bcfishpass</code> was used to estimate the amount of habitat upstream of each crossing less than 20% gradient before either a falls of height &gt;5m - as recorded in <span class="citation">MoE (2020c)</span>, a road-stream crossing recorded in PSCIS as a barrier, or a modelled unassessed crossing. For Phase 2 assessments, the amount of potential habitat upstream of each crossing was estimated by measuring the amount of mainstem and stream segments &gt; 1st order upstream of the crossing using the measure tool within QGIS <span class="citation">(QGIS Development Team 2009)</span>.</p>
 <p><br></p>
-<p>Potential options to remediate fish passage were selected from <span class="citation">MoE (2011)</span> and included:<br />
-* Removal (RM) - Complete removal of the structure and deactivation of the road.
-* Open Bottom Structure (OBS) - Replacement of the culvert with a bridge or other open bottom structure. For this project we considered bridges as the only viable option for OBS type based on consultation with FLNR road crossing engineering experts. It should be noted however, that box culverts could be considered a viable and economical option as they have been observed as successfully facilitating fish passage on the west coast of the province (Betty Rebellato, Canadian Wildlife Federation - Project Biologist).
-* Streambed Simulation (SS) - Replacement of the structure with a streambed simulation design culvert. Often achieved by embedding the culvert by 40% or more. Based on consultation with FLNR engineering experts, we considered crossings on streams with a channel width of &lt;2m and a stream gradient of &lt;8% as candidates for replacement with streambed simulations.
-* Additional Substrate Material (EM) - Add additional substrate to the culvert and/or downstream weir to embed culvert and reduce overall velocity/turbulence. This option was considered only when outlet drop = 0, culvert slope &lt;1.0% and stream width ratio &lt; 1.0.
-* Backwater (BW) - Backwatering of the structure to reduce velocity and turbulence. This option was considered only when outlet drop &lt; 0.3m, culvert slope &lt;2.0%, stream width ratio &lt; 1.2 and stream profiling indicates it would be effective..</p>
+<p>Potential options to remediate fish passage were selected from <span class="citation">MoE (2011)</span> and included:</p>
+<ul>
+<li>Removal (RM) - Complete removal of the structure and deactivation of the road.</li>
+<li>Open Bottom Structure (OBS) - Replacement of the culvert with a bridge or other open bottom structure. For this project we considered bridges as the only viable option for OBS type based on consultation with FLNR road crossing engineering experts. It should be noted however, that box culverts could be considered a viable and economical option as they have been observed as successfully facilitating fish passage on the west coast of the province (Betty Rebellato, Canadian Wildlife Federation - Project Biologist).</li>
+<li>Streambed Simulation (SS) - Replacement of the structure with a streambed simulation design culvert. Often achieved by embedding the culvert by 40% or more. Based on consultation with FLNR engineering experts, we considered crossings on streams with a channel width of &lt;2m and a stream gradient of &lt;8% as candidates for replacement with streambed simulations.</li>
+<li>Additional Substrate Material (EM) - Add additional substrate to the culvert and/or downstream weir to embed culvert and reduce overall velocity/turbulence. This option was considered only when outlet drop = 0, culvert slope &lt;1.0% and stream width ratio &lt; 1.0.</li>
+<li>Backwater (BW) - Backwatering of the structure to reduce velocity and turbulence. This option was considered only when outlet drop &lt; 0.3m, culvert slope &lt;2.0%, stream width ratio &lt; 1.2 and stream profiling indicates it would be effective..</li>
+</ul>
 <p><br></p>
 <p>Cost estimates for structure replacement with bridges and embedded culverts were generated based on the channel width, slope of the culvert, depth of fill, road class and road surface type. Road details were sourced from <span class="citation">FLNRORD (2020b)</span> and <span class="citation">FLNRORD (2020a)</span> through <code>bcfishpass</code>. Interviews with Phil MacDonald, Engineering Specialist FLNR - Kootenay, Steve Page, Area Engineer - FLNR - Northern Engineering Group and Matt Hawkins - MoTi - Design Supervisor for Highway Design and Survey - Nelson were utilized to helped refine estimates. Base costs for installation of bridges on forest service roads and permit roads with surfaces specified as rough and loose was estimated at $12500/linear m and assumed that the road could be closed during construction. For streams with channel widths &lt;2m embedded culverts were reported as an effective solution with total installation costs estimated at $25k/crossing (pers. comm. Phil MacDonald, Steve Page). A multiplier table was generated to estimate incremental cost increases due to the type of road with costs estimated for structure replacement on paved surfaces, railways and arterial/highways costing up to 20 times more than forest service roads due to expenses associate with design/engineering requirements, traffic control and paving. The cost multiplier table (Table <a href="methods.html#tab:tab-cost-mult">3.5</a>) used for cost estimates in this study is a “rough first draft”, should be considered very approximate and refined for future projects.</p>
 <p><br></p>

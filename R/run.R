@@ -1,5 +1,6 @@
 ##this is for as we work through
 # preview_chapter('index.Rmd')
+preview_chapter('0300-method.Rmd')
 # preview_chapter('0200-background.Rmd')
 # preview_chapter('0800-appendix-050155.Rmd')
 # preview_chapter('0800-appendix-050181.Rmd') ##nupku

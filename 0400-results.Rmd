@@ -42,7 +42,11 @@ pal <-
 # marker_options <- markerOptions(  
 #   zIndexOffset = 1000)
 tracks <- sf::read_sf("./data/habitat_confirmation_tracks.gpx", layer = "tracks") 
-  
+wshds <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'hab_wshds_ltree') %>% 
+  filter(!pscis_crossing_id %in% c(62423, 62426, 50181, 50159)) %>% ##these ones are not correct - fix later
+  st_transform(crs = 4326)
+
+
 map <- leaflet(height=500, width=780) %>%
   # leaflet() %>% 
   addTiles() %>%
@@ -50,6 +54,9 @@ map <- leaflet(height=500, width=780) %>%
   # addProviderTiles(providers$"Esri.DeLorme") %>% 
   addProviderTiles("Esri.WorldTopoMap", group = "Topo") %>%
   addProviderTiles("Esri.WorldImagery", group = "ESRI Aerial") %>% 
+  addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
+    opacity = 1.0, fillOpacity = 0.25,
+    fillColor = "#00DBFF") %>% 
   
   # addMeasure() %>% 
   # setView(lng = -105.644, lat = 51.618, zoom = 3)
@@ -157,7 +164,7 @@ knitr::include_graphics("fig/fish_histogram.png")
 
 <br>
 
-```{r plot-fish-all, fig.cap='Boxplots of densities (fish/100m2) of westslope cutthrout trout captured during habitat confirmation assessments.'}
+```{r plot-fish-all, fig.cap='Boxplots of densities (fish/100m2) of westslope cutthrout trout captured by life stage and site for data collected during habitat confirmation assessments.'}
 plot_fish_box_all()
 ```
 

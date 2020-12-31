@@ -1,7 +1,3 @@
-pagedown::html_paged:
-  css: ["style-pagedown.css", "default-page", "default"]
-  toc: true
-  toc_depth: 1
 bookdown::gitbook:
   toc_depth: 1
   css: style.css
@@ -15,6 +11,10 @@ bookdown::gitbook:
     fontsettings:
       theme: night
       family: sans
+pagedown::html_paged:
+  css: ["style-pagedown.css", "default-page", "default"]
+  toc: true
+  toc_depth: 1
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

@@ -16,7 +16,14 @@ The scope of 2020/2021 project activities reported on in this document includes 
 
 ## Project Location
 
-To focus the project area on habitat with high value for conservation of westslope cutthrout trout, the project was focused within the upper Elk River watershed upstream of the Elko Dam located at Elko, BC with planning also conducted for the Flathead River watershed.  The project location is within the traditional territory of the Ktunaxa Nation [@KtunaxaNation]. When Europeans settled in the Kootenay Region around 200 hundred years ago, the Indian Reserved swere created and lead to the seven Indian Bands:
+To focus the project area on habitat with high value for conservation of westslope cutthrout trout, the project was focused within the upper Elk River watershed upstream of the Elko Dam located at Elko, BC with planning also conducted for the Flathead River watershed.  
+
+
+<br>
+
+### Ktunaxa Nation
+
+The project location is within the traditional territory of the Ktunaxa Nation [@KtunaxaNation2020] with Elk River components within an area known as Qukin ʔamakʔis, or Raven’s Land [@ministryofforests2020ElkValley]. When Europeans settled in the Kootenay Region around 200 hundred years ago, the Indian Reserves were created which lead to the seven Indian Bands:
 
  * ʔakisq̓nuk- Columbia Lake Band (Windermere, BC);
  * ʔaq̓am- St. Mary's Band (Cranbrook, BC);
@@ -28,7 +35,7 @@ To focus the project area on habitat with high value for conservation of westslo
 
 <br>
 
-@KtunaxaNation report the vision statement of the Ktunaxa is:
+@KtunaxaNation2020 report the vision statement of the Ktunaxa is:
 
 <br>
 
@@ -44,6 +51,19 @@ The vision statement has been translated to english as:
 
 
 <br>
+
+### Elk Valley Cumulative Effects Management Framework
+
+Coal deposits are located in the Elk River and Flathead coalfields which extend fromthe Canada-USA border to the northwest for 175km along the Rocky Mountains with cumulative coal thickness ranging up to 70m. Subsurface resource exploration and develpment is prohibited in the Flathead River watershed due to legislation enacted in 2011.  At the time of reporting there were four active coal mines in the Elk River watershed (Fording River, Greenhills, Line Creek and Elkview) on closed mine (Coal Mountain) and multiple exploration projects as well as proposed new mines [@ministryofenergy2020EastKootenay].
+
+<br>
+
+First Nations, stakeholders, proponents and provincial and municipal governments recognize that the region has been impacted by historic and current coal operations as well as other stresses such as forestry operations, wildfire, residential development, recreational activities and transportation.  To assess the historic, current and potential future conditions of valued component and to support resource management decisions within the region the Provincial Cumulative Effects Framework, the Elk Valley Cumulative Effects Management Framework (EV-CEMF) has been formed with  joint management between the Ktunaxa Nation Council and the B.C. Ministry of Forests, Lands, Natural Resource Operations and Rural Development (FLNRORD). A working group consisting of the Ktunaxa Nation Council, industry, community, organizations, and provincial government ministries has been put in place to provide guidance and oversight for EV-CEMF activities.  Valued component technical reports for Grizzly Bear, Riparian and westslope cutthroat trout [@davidson_etal2018AquaticEcosystems], bighorn sheep, and old and mature forest have been drafted, integrated into an overarching Cumulative Effects Assessment and Management Report [@elkvalleycumulativeeffectsmanagementframeworkworkinggroup2018ElkValley], endorsed by the Working Group, and will be submitted to FLNRORD Regional Executive Director and KNC for final approval. These reports describe the historical, current, and future assessment of cumulative effects in the Elk Valley and provide management and mitigation recommendations. Next step include the development of an Implementation Plan to identify priority actions and spatial locations for to focus management and mitigation of cumulative effect in the valley [@ministryofforests2020ElkValley].
+
+<br>
+
+
+### Elk River Alliance
 
 The Elk River Alliance is a community-based water group that aims to improve and preserve watershed health through projects that raise watershed literacy, inform sustainable water decision-making, collect scientific data to prioritize restoration opportunities and promote safe and sustainable river recreation [@ElkRiverAlliance2020]. Following a large flood event in 2013 that caused significant property and infrastructure damage throughout the valley, the Elk River Alliance developed a comprehensive Flood Strategy report to provide a review of watershed functioning, forecast streamflow/flooding in the Elk Valley, describe the effects of flooding on the community and provide strategies to mitigate against future flood risk [@walker_etal2016ElkRiver]. Building on the 2016 Flood Strategy, the Elk River Cutthroat Trout Research Initiative is a Elk River Alliance project which focuses on habitat evaluation, identification of restoration opportunities and the communication of westslope cutthrout trout information to the community by conducting redd surveys, habitat assessments and the drafting of restoration plans for future habitat improvements [@elkriveralliance2020ElkRiver]. 
 
@@ -84,7 +104,7 @@ readr::read_csv(file = paste0(getwd(), '/data/raw_input/fiss_species_table.csv')
 
 ### Westslope Cutthrout Trout
 
-In a swimming performance study conducted in an open-channel flume @blank_etal2020SwimmingPerformance estimated the overall average swim speeds of westlope cutthrout trout at 0.84m/s with a maximum observed swim speed of 3.55m/s. Nine of 11 westslope cutthrout trout radio-tagged in the Blackfoot River drainage, Montana by @schmetterling2001SeasonalMovementsin made movements to tributaries presumable for spawning. While in tributaries, fish movements averaged 12.5km and stayed within a 100m reach during the spawning period for between 15 and 63 days.
+In a swimming performance study conducted in an open-channel flume @blank_etal2020SwimmingPerformance estimated the overall average swim speeds of westlope cutthrout trout at 0.84m/s with a maximum observed swim speed of 3.55m/s. Nine of 11 westslope cutthrout trout radio-tagged in the Blackfoot River drainage, Montana by @schmetterling2001SeasonalMovements made movements to tributaries presumable for spawning. While in tributaries, fish movements averaged 12.5km and stayed within a 100m reach during the spawning period for between 15 and 63 days.
 
 <br>
 

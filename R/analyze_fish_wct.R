@@ -22,8 +22,8 @@ dbGetQuery(conn,
 dbGetQuery(conn,
            "SELECT column_name,data_type
            FROM information_schema.columns
-           WHERE table_schema = 'bcfishpass'
-           and table_name='streams'")
+           WHERE table_schema = 'whse_fish'
+           and table_name='fiss_fish_obsrvtn_pnt_sp'")
 
 ##get some stats for WCT
 query = "SELECT
@@ -41,16 +41,24 @@ AND e.watershed_group_code = 'ELKR';"
 wct_elkr <- st_read(conn, query = query)
 
 wct_elkr_grad <- wct_elkr %>%
-  mutate(slopeclass = case_when(
-    gradient < .03 ~ 'sc00_03',
-    gradient >= .03 &  gradient < .05 ~ 'sc03_05',
-    gradient >= .05 &  gradient < .12 ~ 'sc05_12',
-    gradient >= .12 &  gradient < .22 ~ 'sc12_22',
-    gradient >= .22 &  gradient < .30 ~ 'sc22_30',
-    gradient >= .30 ~ 'sc30_plus')) %>%
-  group_by(slopeclass)  %>%
-  summarise(num_occ = n())
+  mutate(Gradient = case_when(
+    gradient < .03 ~ '0 - 3 %',
+    gradient >= .03 &  gradient < .05 ~ '03 - 5 %',
+    gradient >= .05 &  gradient < .08 ~ '05 - 8 %',
+    gradient >= .08 &  gradient < .15 ~ '08 - 15 %',
+    gradient >= .15 &  gradient < .22 ~ '15 - 22 %',
+    gradient >= .22  ~ '22+ %')) %>%
+  group_by(Gradient)  %>%
+  summarise(Count = n()) %>%
+  mutate(total = nrow(wct_elkr),
+         Percent = round(Count/total * 100, 0))
 
-wct_elkr_order <- wct_elkr %>%
-  group_by(stream_order)  %>%
-  summarise(num_occ = n())
+wct_elkr_grad$gradient_id <- c(3,5,8,15,22,99)
+
+##save this for the report
+##burn it all to a file we can use later
+wct_elkr_grad %>% readr::write_csv(file = paste0(getwd(), '/data/raw_input/wct_elkr_grad.csv'))
+
+
+
+

@@ -1,6 +1,6 @@
 # Results and Discussion
 
-Field assessments were conducted between `r format(min(pscis$date), format="%B %d %Y")` and `r format(max(pscis$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio, Kyle Prince, P,Biol, Mark Fjeld, BiT and Chad Hughes, Ecologist. Results of Phase 1 and Phase 2 assessments are summarized in Figure \@ref(fig:map-interactive) with additional details provided in sections below.
+Field assessments were conducted between `r format(min(pscis$date), format="%B %d %Y")` and `r format(max(pscis$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio, Kyle Prince, P,Biol, Mark Fjeld, BiT and Chad Hughes, Ecologist. Results of Phase 1 and Phase 2 assessments are `r if(html_on)knitr::asis_output("summarized in Figure \\@ref(fig:map-interactive) with additional details ")` provided in sections below.
 
 <br>
 
@@ -122,12 +122,12 @@ tab_cost_est_phase1 %>%
 
 ```
 
+<br>
 
 ## Phase 2
 
  
-Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 15 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority and `r hab_site_priorities %>% filter(priority %ilike% 'no fix') %>% nrow() %>% english::as.english()` rated as "no fix". Results are summarized in Figure \@ref(fig:map-interactive) and Tables \@ref(tab:tab-overview) - \@ref(tab:tab-habitat-summary) with raw habitat and fish sampling data included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting/raw/master/data/habitat_confirmations.xls).  Detailed information for each site assessed with Phase 2 assessments is included within site specific reports included as appendices to this document.
-
+Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 15 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority and `r hab_site_priorities %>% filter(priority %ilike% 'no fix') %>% nrow() %>% english::as.english()` rated as "no fix". Results are summarized in `r if(html_on){knitr::asis_output("Figure \\@ref(fig:map-interactive) and ")}`Tables \@ref(tab:tab-overview) - \@ref(tab:tab-habitat-summary) with raw habitat and fish sampling data included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting/raw/master/data/habitat_confirmations.xls).  Detailed information for each site assessed with Phase 2 assessments is included within site specific reports included as appendices to this document.
 
 
 <br>
@@ -145,6 +145,8 @@ tab_overview %>%
 
 <br>
 
+\pagebreak
+
 ```{r}
 make_tab_cv(dat = pscis2) %>% 
   my_kable(caption_text = 'Summary of Phase 2 fish passage reassessments.')
@@ -154,7 +156,7 @@ make_tab_cv(dat = pscis2) %>%
 
 ```{r cost-est-phase-2}
 tab_cost_est_phase2_report %>% 
-  my_kable_scroll(caption_text = 'Cost benefit analysis for Phase 2 assessments.')
+  my_kable(caption_text = 'Cost benefit analysis for Phase 2 assessments.')
   # kable(caption = 'Modelled upstream habitat estimate and cost benefit.',
   #       escape = T) %>% 
   # kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>% 

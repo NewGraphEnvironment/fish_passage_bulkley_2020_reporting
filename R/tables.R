@@ -17,6 +17,20 @@ pscis <- bind_rows(
   pscis1b
 )
 
+##lets add in the xref pscis id info
+##this is made from load-crossings-xref.R
+xref_pscis_my_crossing_modelled <- readr::read_csv(file = paste0(getwd(), '/data/raw_input/xref_pscis_my_crossing_modelled.csv'))
+
+
+pscis <- left_join(
+  select(pscis, -pscis_crossing_id),
+  select(xref_pscis_my_crossing_modelled, stream_crossing_id, my_crossing_reference),
+  by = 'my_crossing_reference'
+) %>%
+  select(rowname, date, pscis_crossing_id = stream_crossing_id, everything()) %>%
+  arrange(pscis_crossing_id)
+
+
 ##here is where we should add the pscis ids
 
 rm(pscis1, pscis1b)
@@ -189,7 +203,7 @@ xref_structure_fix <- tibble::tribble(
 ####------------make a table to summarize priorization of phase 1 sites
 ##uses habitat value to initially screen but then refines based on what are likely not barriers to most most the time
 phase1_priorities <- pscis %>%
-  select(my_crossing_reference, utm_zone:northing, habitat_value, barrier_result) %>%
+  select(pscis_crossing_id, my_crossing_reference, utm_zone:northing, habitat_value, barrier_result) %>%
   mutate(priority_phase1 = case_when(habitat_value == 'High' & barrier_result != 'Passable' ~ 'high',
                                      habitat_value == 'Medium' & barrier_result != 'Passable' ~ 'mod',
                                      habitat_value == 'Low' & barrier_result != 'Passable' ~ 'low',
@@ -206,7 +220,6 @@ phase1_priorities <- pscis %>%
                                      my_crossing_reference == 4605675 ~ 'low', ##does not seem like much of barrier
                                      T ~ priority_phase1)) %>%
   dplyr::rename(utm_easting = easting, utm_northing = northing)
-
 
 
 ##turn spreadsheet into list of data frames

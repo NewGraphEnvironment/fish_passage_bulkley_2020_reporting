@@ -1,5 +1,19 @@
 ##we are going to need to sub in our lenght estimates from the priorities spreadsheet but leave this for now
 ##issue - we are biulding the multiplier twice.  bad practice - leave for now
+##this is made from extract-bcfishpass-phase2.R
+source('R/packages.R')
+source('R/functions.R')
+source('R/tables.R')
+
+
+pscis2 <- import_pscis(workbook_name = 'pscis_phase2.xlsm') %>%
+  tibble::rownames_to_column() %>%
+  arrange(pscis_crossing_id) %>%
+  mutate(rowname = as.numeric(rowname))
+
+
+##this is made from extract-bcfishpass-phase2.R
+bcfishpass_phase2 <- readr::read_csv(file = paste0(getwd(), '/data/bcfishpass-phase2.csv'))
 
 
 # make_tab_cost_est_phase2 <- function(dat = pscis2){

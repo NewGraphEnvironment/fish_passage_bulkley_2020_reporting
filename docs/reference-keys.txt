@@ -7,8 +7,8 @@ tab:tab-hab-value
 tab:tab-barrier-scoring
 tab:tab-barrier-result
 tab:tab-cost-mult
-tab:cost-est-phase-1
 fig:map-interactive
+tab:cost-est-phase-1
 tab:tab-overview
 tab:unnamed-chunk-4
 tab:cost-est-phase-2
@@ -113,4 +113,5 @@ results-and-discussion
 planning-1
 phase-1
 phase-2
+fish-sampling
 recommendations

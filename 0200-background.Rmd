@@ -90,7 +90,7 @@ knitr::include_graphics("fig/hydrology_stats1.png")
 
 ## Fisheries
 
-Fish species recorded in the Elk River watershed group are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].
+Fish species recorded in the Elk River watershed group are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Bull trout and westslope cutthrout trout are considered of special concern (blue-listed) provincially and westslope cutthrout trout (Pacific populations) are are listed under the *Species at Risk Act* by the Committee on the Status of Endangered Wildlife in Canada as a species of special concern [@bcspeciesecosystemexplorer2020Salvelinusconfluentusa; @bcspeciesecosystemexplorer2020Oncorhynchusclarkii; @schweigert_etal2017COSEWICassessment].  The focus of 2020 field work was to assess potential impacts of road-stream crossings on habitat connectivity for westslope cutthrout trout.
 
 <br>
 
@@ -104,12 +104,16 @@ readr::read_csv(file = paste0(getwd(), '/data/raw_input/fiss_species_table.csv')
 
 ### Westslope Cutthrout Trout
 
-In a swimming performance study conducted in an open-channel flume @blank_etal2020SwimmingPerformance estimated the overall average swim speeds of westlope cutthrout trout at 0.84m/s with a maximum observed swim speed of 3.55m/s. Nine of 11 westslope cutthrout trout radio-tagged in the Blackfoot River drainage, Montana by @schmetterling2001SeasonalMovements made movements to tributaries presumable for spawning. While in tributaries, fish movements averaged 12.5km and stayed within a 100m reach during the spawning period for between 15 and 63 days.
+There are multiple life history strategies for westslope cutthrout trout including stream-resident, fluvial and adfluvial.  All have habitat requirements during life history stages that include cold clean water and varied forms of cover (undercut banks, pool-riffle habitat and riparian vegetation).  Stream-resident fish inhabitat headwater streams above barriers and complete their life cycle within a relatively small range and typically remain relatively small (i.e. <200mm in length).  Fluvial fish are migratory subpopulations that move between small spawning/rearing tibutaries and larger adult rearing rivers. Lengths of fluvial fish generally reach more than 400mm.  Finally, adfluvial subpopulations  rear in lakes and migrate to spawning/rearing tributaries with lengths often exceeding 500mm [@schweigert_etal2017COSEWICassessment].
+
 
 <br>
 
-Spawning habitat for resident and fluvial subpopulations is documented in @schmetterling2001SeasonalMovements as in the tailouts of deep pools at moderate to high-flow events within small, low-gradient streams with cold well-oxygenated water and clean unsilted gravels. Proximity to large woody debris, boulder or bedrock cover is important for spawning fish while residing in spawning tributaries as high mortality may result when suitable cover is lacking.  The dominant substrate used for spawning ws gravel (1.8 - 3.3cm diameter) with spawning occurring in late May and June towards the end of the spring freshet with rising water temperatures between 7-11$^\circ$C
+Spawning habitat for resident and fluvial subpopulations are documented as within the tailouts of deep pools at moderate to high-flow events within small, low-gradient streams with cold well-oxygenated water and clean unsilted gravels [@schmetterling2001SeasonalMovements]. Proximity to large woody debris, boulder or bedrock cover is important for spawning fish while residing in spawning tributaries as high mortality may result when suitable cover is lacking.  The dominant substrate used for spawning ws gravel (1.8 - 3.3cm diameter) with spawning occurring in late May and June towards the end of the spring freshet with rising water temperatures between 7-11$^\circ$C
 
 <br>
+
+
+In a swimming performance study conducted in an open-channel flume @blank_etal2020SwimmingPerformance estimated the overall average swim speeds of westlope cutthrout trout (150mm - 290mm in length) at 0.84m/s with a maximum observed swim speed of 3.55m/s. Nine of 11 westslope cutthrout trout radio-tagged in the Blackfoot River drainage, Montana by @schmetterling2001SeasonalMovements made movements to tributaries presumable for spawning. While in tributaries, fish movements averaged 12.5km and stayed within a 100m reach during the spawning period for between 15 and 63 days.
 
   

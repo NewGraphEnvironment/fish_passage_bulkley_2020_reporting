@@ -113,13 +113,11 @@ Barrier passability criteria used in this project follows @fish_passage_assessme
 <br>
 
 ```{r cost-est-phase-1}
-tab_cost_est_phase1 %>% 
+if(html_on){
+  tab_cost_est_phase1 %>% 
   my_kable_scroll(caption_text = 'Upstream habitat estimates and cost benefit analysis for Phase 1 assessments.  IDs are PSCIS idenfifiers with exception of those with * which are interim references.')
-  # kable(caption = 'Modelled upstream habitat estimate and cost benefit.',
-  #       escape = T) %>% 
-  # kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>% 
-  # kableExtra::scroll_box(width = "100%", height = "500px")
-
+} else tab_cost_est_phase1 %>% 
+  my_kable(caption_text = 'Upstream habitat estimates and cost benefit analysis for Phase 1 assessments.  IDs are PSCIS idenfifiers with exception of those with * which are interim references.')
 ```
 
 <br>
@@ -133,12 +131,11 @@ Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nr
 <br>
 
 ```{r tab-overview}
-# tab_overview %>% 
-#   kable(caption = 'Overview of habitat confirmation sites.') %>% 
-#   kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>% 
-#   kableExtra::scroll_box(width = "100%", height = "500px")
-
+if(html_on){
 tab_overview %>% 
+  select(-Tenure) %>%
+  my_tab_overview_scroll(caption_text = 'Overview of habitat confirmation sites.')
+} else tab_overview %>% 
   select(-Tenure) %>%
   my_tab_overview(caption_text = 'Overview of habitat confirmation sites.')
 ```
@@ -170,6 +167,7 @@ tab_cost_est_phase2_report %>%
 tab_hab_summary %>% 
   filter(Location %ilike% 'upstream') %>% 
   select(-Location) %>% 
+  rename(`PSCIS ID` = Site) %>% 
   my_kable(caption_text = 'Summary of Phase 2 habitat confirmation details.')
 
 ```

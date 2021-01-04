@@ -209,6 +209,14 @@ my_tab_overview <- function(dat, caption_text = '', font = font_set){
     # kableExtra::scroll_box(width = "100%", height = "500px")
 }
 
+my_tab_overview_scroll <- function(dat, caption_text = '', font = font_set){
+  dat %>%
+    kable(caption = caption_text, booktabs = T) %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) %>%
+    kableExtra::column_spec(column = 9, width_min = '1.5in') %>%
+    kableExtra::scroll_box(width = "100%", height = "500px")
+}
+
 
 my_kable_scroll_no_height <- function(dat, caption_text = ''){
   dat %>%

@@ -6,7 +6,7 @@ library(tidyhydat)
 library(fasstr)
 library(hydatr)
 
-download_hydat()
+# download_hydat()
 
 ##C:\Users\allan\AppData\Local\tidyhydat\tidyhydat
 
@@ -67,7 +67,7 @@ plot <- ggplot()+
   #             alpha = 0.3, linetype = 1)+
 
   scale_x_date(date_labels = "%b", date_breaks = "2 month") +
-  labs(x = NULL, y = expression(paste("Mean Daily Discharge in Elk River", sep="")))+
+  labs(x = NULL, y = expression(paste("Mean Daily Discharge (", m^3, "/s)", sep="")))+
   theme_bw() +
   # ylim(0,600) +
   # theme(axis.text.y=element_blank())+

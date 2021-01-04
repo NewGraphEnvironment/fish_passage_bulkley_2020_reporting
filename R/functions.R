@@ -1,3 +1,6 @@
+
+
+
 ##funciton ot find a string in your directory from https://stackoverflow.com/questions/45502010/is-there-an-r-version-of-rstudios-find-in-files
 
 fif <- function(what, where=".", in_files="\\.[Rr]$", recursive = TRUE,
@@ -191,20 +194,19 @@ print_tab_summary_all <- function(tab_sum, comments, photos){
 }
 
 ####------my_kable-------------------------------
-my_kable_scroll <- function(dat, caption_text = ''){
+my_kable_scroll <- function(dat, caption_text = '', font = font_set){
   dat %>%
     kable(caption = caption_text, booktabs = T) %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) %>%
     kableExtra::scroll_box(width = "100%", height = "500px")
 }
 
-my_tab_overview <- function(dat, caption_text = ''){
+my_tab_overview <- function(dat, caption_text = '', font = font_set){
   dat %>%
     kable(caption = caption_text, booktabs = T) %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
-    kableExtra::column_spec(column = 9, width_min = '1.5in') %>%
-    kableExtra::scroll_box(width = "100%", height = "500px")
-
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) %>%
+    kableExtra::column_spec(column = 9, width_min = '1.5in')
+    # kableExtra::scroll_box(width = "100%", height = "500px")
 }
 
 
@@ -222,10 +224,10 @@ my_kable_scroll_no_height <- function(dat, caption_text = ''){
 #     kableExtra::scroll_box(width = "100%", height = "500px")
 # }
 
-my_kable <- function(dat, caption_text = ''){
+my_kable <- function(dat, caption_text = '', font = font_set){
   dat %>%
     kable(caption = caption_text, booktabs = T) %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11)
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)
     # kableExtra::scroll_box(width = "100%", height = "500px")
 }
 

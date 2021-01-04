@@ -4,7 +4,7 @@ author:
  - Prepared for Canadian Wildlife Federation
  - Prepared by Al Irvine, B.Sc., R.P.Bio.
  - New Graph Environment
- - Version 0.0.2
+ - Version 0.0.3
 date: "2020-12-31 DRafT"
 toc-title: Table of Contents
 site: bookdown::bookdown_site
@@ -19,16 +19,20 @@ description: "My Description."
 
 ---
 
+
 ```{r setup, include = TRUE, echo =FALSE, message=FALSE, warning=FALSE}
-knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, dpi=36, out.width = "100%")
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, dpi=60, out.width = "100%")
 
-##define a picture specific output width you can put in chunk headers - not working
-photo_width <- "80%"
-
-##we need a switch to turn off html only so the printed version looks ok
+##define a picture specific output width you can put in chunk headers
+photo_width <- "100%"
+# photo_width <- "80%"
+# ##we need a switch to turn off html only so the printed version looks ok
 html_on <- TRUE
+# html_on <- FALSE
+# 
 
 
+##try to fix the kable caption size https://stackoverflow.com/questions/45018397/changing-the-font-size-of-figure-captions-in-rmarkdown-html-output
 
 # fig.align="center", out.width = "90%",
 source('R/packages.R')
@@ -42,10 +46,11 @@ source('R/tables-reporting.R')
 source('R/extract-fish.R')
 source('R/functions-fish.R')
 
-# options(timeout=180)
-##bookdown::gitbook
-# lof: true
-# lot: true
+##set the font default size for the tables.  had a crash and think this might have been it so put after functions.R
+##seems odd but not risking again for now.
+font_set <- 11
+# font_set <- 9
+
 
 ```
 

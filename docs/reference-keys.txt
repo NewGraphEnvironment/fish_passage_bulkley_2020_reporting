@@ -2,6 +2,7 @@ fig:overview-map
 fig:hydrology-plot
 fig:hydrology-stats
 tab:fiss-species-table
+fig:fish-wct-bar
 tab:tablethreshaverage
 tab:tab-hab-value
 tab:tab-barrier-scoring
@@ -10,7 +11,7 @@ tab:tab-cost-mult
 fig:map-interactive
 tab:cost-est-phase-1
 tab:tab-overview
-tab:unnamed-chunk-4
+tab:unnamed-chunk-3
 tab:cost-est-phase-2
 tab:tab-habitat-summary
 fig:fish-histogram

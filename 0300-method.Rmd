@@ -87,7 +87,7 @@ All field data collected including photos were uploaded to the Provincial Stream
 tab_habvalue %>% 
   knitr::kable(caption = 'Habitat value criteria (Fish Passage Technical Working Group, 2011).', booktabs = T) %>% 
     kableExtra::column_spec(column = 1, width_min = '1.5in') %>% 
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) 
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font_set) 
   
 ```
  
@@ -151,10 +151,15 @@ Cost estimates for structure replacement with bridges and embedded culverts were
 
 <br>
 
+\pagebreak
 
 ```{r tab-cost-mult}
-print_tab_cost_mult(caption_text = 'Cost multiplier table based on road class and surface type.')
+# print_tab_cost_mult(caption_text = 'Cost multiplier table based on road class and surface type.')
+tab_cost_rd_mult_report %>%
+  my_kable(caption_text = 'Cost multiplier table based on road class and surface type.')
 ```
+
+<br>
 
 ## Habitat Confirmation Assessments
 
@@ -169,6 +174,8 @@ During habitat confirmations, to standardize data collected and facilitate submi
 Fish sampling was conducted a subset of sites when biological data was considered to add significant value to the physical habitat assessment information. When possible, electrofishing was utilized within discrete site units both upstream and downstream of the subject crossing with electrofisher settings, water quality parameters (i.e. conductivity, temperature and ph), start location, length of site and wetted widths (average of a minimum of three) recorded.  For each fish captured, fork length and species was recorded, with results included within the fish data submission spreadsheet.  Fish information and habitat data will be submitted to the province under scientific fish collection permit CB20-611971.
 
 <br>
+
+\pagebreak
 
 ## Reporting
 
@@ -188,12 +195,12 @@ This pdf report and an online [interactive report](https://newgraphenvironment.g
      - a conservative estimate of mainstem habitat potentially available upstream of the crossing 
      - fish species confirmed as present upstream of the crossing
 
- + [GPS tracks](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data) from field surveys.  
+ + [GPS tracks](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/habitat_confirmation_tracks.gpx) from field surveys.  
 
  + [Photos and photo metadata.](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/photos) 
  
  
- <br>
+
  
 
 

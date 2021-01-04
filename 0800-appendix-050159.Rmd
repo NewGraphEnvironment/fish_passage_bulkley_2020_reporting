@@ -98,7 +98,7 @@ tab_hab_summary %>%
 
 <br>
 
-```{r photo-020, fig.cap= my_caption, eval=T}
+```{r photo-020, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = '20200922_122212_k_.JPG'
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
@@ -110,7 +110,7 @@ grid::grid.raster(get_img())
 
 <br>
 
-```{r photo-021, fig.cap= my_caption, eval=T}
+```{r photo-021, fig.cap= my_caption, out.width = photo_width, eval=T}
 
 # 
 my_photo = 'IMG_3287_k_.JPG'

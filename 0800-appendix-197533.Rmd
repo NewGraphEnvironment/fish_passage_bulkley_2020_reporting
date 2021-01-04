@@ -135,7 +135,7 @@ tab_fish_site(sit = my_site2) %>%
 
 <br>
 
-```{r photo-197533-01, fig.cap= my_caption, eval=T}
+```{r photo-197533-01, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = '20200918_111231_k_d_01_.JPG'
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
@@ -147,7 +147,7 @@ grid::grid.raster(get_img(site = my_site_xref))
 
 <br>
 
-```{r photo-197533-02, fig.cap= my_caption, eval=T}
+```{r photo-197533-02, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = '20200918_114535_k_u01_.JPG'
 
 my_caption = paste0('Typical habitat upstream of PSCIS crossing ', my_site, ' and downstream of PSCIS crossing ', my_site, '.')
@@ -158,7 +158,7 @@ grid::grid.raster(get_img(site = my_site_xref))
 
 <br>
 
-```{r photo-197533-03, fig.cap= my_caption, eval=T}
+```{r photo-197533-03, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = 'IMG_3074_k_d01_wct.JPG'
 
 my_caption = paste0('Westlope cutthrout trout in outlet pool downstream of PSCIS crossing ', my_site2, '.')
@@ -169,7 +169,7 @@ grid::grid.raster(get_img(site = my_site2_xref))
 
 <br>
 
-```{r photo-197533-04, fig.cap= my_caption, eval=T}
+```{r photo-197533-04, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = 'IMG_3080_k_u01_.JPG'
 
 my_caption = paste0('Subsurface flow area upstream of PSCIS crossing ', my_site2, '.')
@@ -180,7 +180,7 @@ grid::grid.raster(get_img(site = my_site2_xref))
 
 <br>
 
-```{r photo-197533-05, fig.cap= my_caption, eval=T}
+```{r photo-197533-05, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = 'IMG_3102_K_u02_.JPG'
 
 my_caption = paste0('Typical habitat above dewatered area upstream of PSCIS crossing ', my_site, '.')
@@ -191,7 +191,7 @@ grid::grid.raster(get_img(site = my_site2_xref))
 
 <br>
 
-```{r photo-197533-06, fig.cap= my_caption, eval=T}
+```{r photo-197533-06, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = 'IMG_3110_k_u03_ef_.JPG'
 
 my_caption = paste0('Habitat within electrofishing site upstream of PSCIS crossing ', my_site, '.')

@@ -131,7 +131,7 @@ p
 
 <br>
 
-```{r photo-001, fig.cap= my_caption, eval=T}
+```{r photo-001, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = '20200922_131045_k.JPG'
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
@@ -143,7 +143,7 @@ grid::grid.raster(get_img())
 
 <br>
 
-```{r photo-002, fig.cap= my_caption, eval=T}
+```{r photo-002, fig.cap= my_caption, out.width = photo_width, eval=T}
 
 # 
 my_photo = 'IMG_3304_k.JPG'

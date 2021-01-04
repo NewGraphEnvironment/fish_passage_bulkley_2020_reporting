@@ -98,7 +98,7 @@ tab_hab_summary %>%
 
 <br>
 
-```{r photo-50152-01, fig.cap= my_caption, eval=T}
+```{r photo-50152-01, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = pull_photo_by_str(str_to_pull = '_d1')
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
@@ -110,7 +110,7 @@ grid::grid.raster(get_img())
 
 <br>
 
-```{r photo-50152-02, fig.cap= my_caption, eval=T}
+```{r photo-50152-02, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = pull_photo_by_str(str_to_pull = '_u1')
 
 my_caption = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')

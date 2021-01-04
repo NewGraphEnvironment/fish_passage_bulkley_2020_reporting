@@ -126,7 +126,7 @@ tab_fish_site() %>%
 
 <br>
 
-```{r photo-090, fig.cap= my_caption, eval=T}
+```{r photo-090, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = '20200917_123657_k_.JPG'
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
@@ -138,7 +138,7 @@ grid::grid.raster(get_img(site = my_site_xref))
 
 <br>
 
-```{r photo-091, fig.cap= my_caption, eval=T}
+```{r photo-091, fig.cap= my_caption, out.width = photo_width, eval=T}
 
 # 
 my_photo = 'IMG_3058_k_.JPG'
@@ -151,7 +151,7 @@ grid::grid.raster(get_img(site = my_site_xref))
 
 <br>
 
-```{r photo-092, fig.cap= my_caption, eval=T}
+```{r photo-092, fig.cap= my_caption, out.width = photo_width, eval=T}
 
 # 
 my_photo = '20200917_151420_k_d_f01_.JPG'

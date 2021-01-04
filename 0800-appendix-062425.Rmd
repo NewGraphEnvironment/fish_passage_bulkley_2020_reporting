@@ -126,7 +126,7 @@ grid::grid.raster(get_img())
 
 <br>
 
-```{r photo-62425-02, fig.cap= my_caption, eval=T}
+```{r photo-62425-02, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = 'IMG_3197_k_d01.JPG'
 
 my_caption = paste0('Typical habitat upstream of PSCIS crossing ', my_site, ' and downstream of PSCIS crossing 62426.')
@@ -137,7 +137,7 @@ grid::grid.raster(get_img(site = my_site2))
 
 <br>
 
-```{r photo-62425-03, fig.cap= my_caption, eval=T}
+```{r photo-62425-03, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = 'IMG_3181_k_u_split_.JPG'
 
 my_caption = paste0('Grave Creek redirection out of historic channel located upstream of PSCIS crossing 62426.')

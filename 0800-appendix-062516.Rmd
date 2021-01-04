@@ -97,7 +97,7 @@ tab_hab_summary %>%
 
 <br>
 
-```{r photo-040, fig.cap= my_caption, eval=T}
+```{r photo-040, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = 'IMG_3366_k_.JPG'
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
@@ -109,7 +109,7 @@ grid::grid.raster(get_img())
 
 <br>
 
-```{r photo-041, fig.cap= my_caption, eval=T}
+```{r photo-041, fig.cap= my_caption, out.width = photo_width,eval=T}
 my_photo = '20200923_115923_k_.JPG'
 
 my_caption = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
@@ -120,7 +120,7 @@ grid::grid.raster(get_img())
 
 <br>
 
-```{r photo-042, fig.cap= my_caption, eval=T}
+```{r photo-042, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = '20200923_115933_u_g_.JPG'
 
 my_caption = paste0('Gravels suitable for spawning upstream of PSCIS crossing ', my_site, '.')

@@ -48,6 +48,8 @@ get_watershed <- function(dat){
     st_as_sf()
 }
 
+
+
 # ##for each site grab a blueline key and downstream route measure
 # hab_site_priorities2 <- hab_site_priorities %>%
 #   mutate(srid = as.integer(26911))
@@ -93,5 +95,23 @@ hab_site_fwa_wshds %>%
 # hab_site_fwa_index %>%
 #   sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_fwa_index', append = T) ##might want to f the append....
 
+##get the watersheds for the study area as a whole
+##here is the elk
+wshd_study_elk <- fwapgr::fwa_watershed_at_measure(blue_line_key = 356570562, downstream_route_measure = 22910, epsg = 3005) %>%
+  mutate(study_area = 'elk')
 
+wshd_study_elk %>%
+sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'wshd_study_elk', append = F)
+
+##here is the flathead
+wshd_study_flathead <- st_read(conn,
+                               query = "SELECT * FROM whse_basemapping.fwa_named_watersheds_poly a
+                               WHERE a.named_watershed_id = '4600'"
+) %>%
+  mutate(study_area = 'flathead')
+
+wshd_study_flathead %>%
+  # select(-wscode_ltree) %>%
+  st_cast("POLYGON") %>%
+  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'wshd_study_flathead', append = F)
 

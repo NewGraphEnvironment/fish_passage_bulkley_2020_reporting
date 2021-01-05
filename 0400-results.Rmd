@@ -16,7 +16,12 @@ tracks <- sf::read_sf("./data/habitat_confirmation_tracks.gpx", layer = "tracks"
 wshds <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'hab_wshds_ltree') %>% 
   filter(!pscis_crossing_id %in% c(62423, 62426, 50181, 50159)) %>% ##these ones are not correct - fix later
   st_transform(crs = 4326)
-
+wshd_study_elk <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'wshd_study_elk') %>% 
+  st_transform(crs = 4326)
+wshd_study_flathead <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'wshd_study_flathead') %>% 
+  st_transform(crs = 4326)  
+  
+  
 map <- leaflet(height=500, width=780) %>%
   # leaflet() %>% 
   addTiles() %>%
@@ -26,7 +31,13 @@ map <- leaflet(height=500, width=780) %>%
   addProviderTiles("Esri.WorldImagery", group = "ESRI Aerial") %>% 
   addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
     opacity = 1.0, fillOpacity = 0.25,
-    fillColor = "#00DBFF") %>% 
+    fillColor = "#00DBFF") %>%
+  addPolygons(data = wshd_study_elk, color = "#F29A6E", weight = 1, smoothFactor = 0.5,
+    opacity = 1.0, fillOpacity = 0.25,
+    fillColor = "#F29A6E", label = 'Upper Elk River') %>% 
+  addPolygons(data = wshd_study_flathead, color = "#C39D50", weight = 1, smoothFactor = 0.5,
+    opacity = 1.0, fillOpacity = 0.25,
+    fillColor = "#C39D50", label = 'Flathead River') %>%
   # addMeasure() %>% 
   # setView(lng = -105.644, lat = 51.618, zoom = 3)
   

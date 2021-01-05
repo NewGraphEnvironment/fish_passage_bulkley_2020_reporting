@@ -1,0 +1,2767 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="flathead_field_sites_20201231" id="flathead_field_sites_20201231">
+	<SimpleField name="aggregated_crossings_id" type="int"></SimpleField>
+	<SimpleField name="stream_crossing_id" type="int"></SimpleField>
+	<SimpleField name="dam_id" type="int"></SimpleField>
+	<SimpleField name="modelled_crossing_id" type="int"></SimpleField>
+	<SimpleField name="crossing_source" type="string"></SimpleField>
+	<SimpleField name="crossing_type" type="string"></SimpleField>
+	<SimpleField name="crossing_name" type="string"></SimpleField>
+	<SimpleField name="barrier_status" type="string"></SimpleField>
+	<SimpleField name="linear_feature_id" type="int"></SimpleField>
+	<SimpleField name="blue_line_key" type="int"></SimpleField>
+	<SimpleField name="downstream_route_measure" type="float"></SimpleField>
+	<SimpleField name="watershed_group_code" type="string"></SimpleField>
+	<SimpleField name="stream_order" type="int"></SimpleField>
+	<SimpleField name="stream_magnitude" type="int"></SimpleField>
+	<SimpleField name="gradient" type="float"></SimpleField>
+	<SimpleField name="watershed_upstr_ha" type="float"></SimpleField>
+	<SimpleField name="total_network_km" type="float"></SimpleField>
+	<SimpleField name="total_stream_km" type="float"></SimpleField>
+	<SimpleField name="total_lakereservoir_ha" type="float"></SimpleField>
+	<SimpleField name="total_wetland_ha" type="float"></SimpleField>
+	<SimpleField name="total_slopeclass03_waterbodies_km" type="float"></SimpleField>
+	<SimpleField name="total_slopeclass03_km" type="float"></SimpleField>
+	<SimpleField name="total_slopeclass05_km" type="float"></SimpleField>
+	<SimpleField name="total_slopeclass08_km" type="float"></SimpleField>
+	<SimpleField name="total_slopeclass15_km" type="float"></SimpleField>
+	<SimpleField name="total_slopeclass22_km" type="float"></SimpleField>
+	<SimpleField name="total_slopeclass30_km" type="float"></SimpleField>
+	<SimpleField name="total_belowupstrbarriers_network_km" type="float"></SimpleField>
+	<SimpleField name="total_belowupstrbarriers_stream_km" type="float"></SimpleField>
+	<SimpleField name="total_belowupstrbarriers_lakereservoir_ha" type="float"></SimpleField>
+	<SimpleField name="total_belowupstrbarriers_wetland_ha" type="float"></SimpleField>
+	<SimpleField name="total_belowupstrbarriers_slopeclass03_waterbodies_km" type="float"></SimpleField>
+	<SimpleField name="total_belowupstrbarriers_slopeclass03_km" type="float"></SimpleField>
+	<SimpleField name="total_belowupstrbarriers_slopeclass05_km" type="float"></SimpleField>
+	<SimpleField name="total_belowupstrbarriers_slopeclass08_km" type="float"></SimpleField>
+	<SimpleField name="total_belowupstrbarriers_slopeclass15_km" type="float"></SimpleField>
+	<SimpleField name="total_belowupstrbarriers_slopeclass22_km" type="float"></SimpleField>
+	<SimpleField name="total_belowupstrbarriers_slopeclass30_km" type="float"></SimpleField>
+	<SimpleField name="wct_network_km" type="float"></SimpleField>
+	<SimpleField name="wct_stream_km" type="float"></SimpleField>
+	<SimpleField name="wct_lakereservoir_ha" type="float"></SimpleField>
+	<SimpleField name="wct_wetland_ha" type="float"></SimpleField>
+	<SimpleField name="wct_slopeclass03_waterbodies_km" type="float"></SimpleField>
+	<SimpleField name="wct_slopeclass03_km" type="float"></SimpleField>
+	<SimpleField name="wct_slopeclass05_km" type="float"></SimpleField>
+	<SimpleField name="wct_slopeclass08_km" type="float"></SimpleField>
+	<SimpleField name="wct_slopeclass15_km" type="float"></SimpleField>
+	<SimpleField name="wct_slopeclass22_km" type="float"></SimpleField>
+	<SimpleField name="wct_slopeclass30_km" type="float"></SimpleField>
+	<SimpleField name="wct_belowupstrbarriers_network_km" type="float"></SimpleField>
+	<SimpleField name="wct_belowupstrbarriers_stream_km" type="float"></SimpleField>
+	<SimpleField name="wct_belowupstrbarriers_lakereservoir_ha" type="float"></SimpleField>
+	<SimpleField name="wct_belowupstrbarriers_wetland_ha" type="float"></SimpleField>
+	<SimpleField name="wct_belowupstrbarriers_slopeclass03_waterbodies_km" type="float"></SimpleField>
+	<SimpleField name="wct_belowupstrbarriers_slopeclass03_km" type="float"></SimpleField>
+	<SimpleField name="wct_belowupstrbarriers_slopeclass05_km" type="float"></SimpleField>
+	<SimpleField name="wct_belowupstrbarriers_slopeclass08_km" type="float"></SimpleField>
+	<SimpleField name="wct_belowupstrbarriers_slopeclass15_km" type="float"></SimpleField>
+	<SimpleField name="wct_belowupstrbarriers_slopeclass22_km" type="float"></SimpleField>
+	<SimpleField name="wct_belowupstrbarriers_slopeclass30_km" type="float"></SimpleField>
+	<SimpleField name="study_area" type="string"></SimpleField>
+	<SimpleField name="external_crossing_reference" type="string"></SimpleField>
+	<SimpleField name="utm_zone" type="int"></SimpleField>
+	<SimpleField name="stream_name" type="string"></SimpleField>
+	<SimpleField name="road_name" type="string"></SimpleField>
+	<SimpleField name="barrier_result_code" type="string"></SimpleField>
+	<SimpleField name="downstream_channel_width" type="float"></SimpleField>
+	<SimpleField name="habitat_value_code" type="string"></SimpleField>
+	<SimpleField name="consultant_name" type="string"></SimpleField>
+	<SimpleField name="image_view_url" type="string"></SimpleField>
+	<SimpleField name="my_text" type="string"></SimpleField>
+	<SimpleField name="my_priority" type="string"></SimpleField>
+	<SimpleField name="my_stream_name" type="string"></SimpleField>
+	<SimpleField name="my_road_name" type="string"></SimpleField>
+	<SimpleField name="modelled_crossing_id_corr" type="int"></SimpleField>
+	<SimpleField name="linear_feature_id_corr" type="int"></SimpleField>
+	<SimpleField name="reviewer" type="string"></SimpleField>
+	<SimpleField name="notes" type="string"></SimpleField>
+	<SimpleField name="observedspp_dnstr2" type="string"></SimpleField>
+	<SimpleField name="observedspp_upstr2" type="string"></SimpleField>
+	<SimpleField name="misc_point_id" type="int"></SimpleField>
+</Schema>
+<Folder><name>flathead_field_sites_20201231</name>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">1354</SimpleData>
+		<SimpleData name="stream_crossing_id">62146</SimpleData>
+		<SimpleData name="modelled_crossing_id">4606489</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">WOODBOX</SimpleData>
+		<SimpleData name="crossing_name">Lodgepole-McLatchie</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706849738</SimpleData>
+		<SimpleData name="blue_line_key">356542684</SimpleData>
+		<SimpleData name="downstream_route_measure">733</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">6</SimpleData>
+		<SimpleData name="gradient">0.0964</SimpleData>
+		<SimpleData name="watershed_upstr_ha">187.5568</SimpleData>
+		<SimpleData name="total_network_km">6.01</SimpleData>
+		<SimpleData name="total_stream_km">6.01</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_slopeclass15_km">1.41</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.35</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.28</SimpleData>
+		<SimpleData name="wct_network_km">1.53</SimpleData>
+		<SimpleData name="wct_stream_km">1.53</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">1.36</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.17</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">FLAT011</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">Tributary to Flathead River</SimpleData>
+		<SimpleData name="road_name">Lodgepole-McLatchie</SimpleData>
+		<SimpleData name="barrier_result_code">PASSABLE</SimpleData>
+		<SimpleData name="consultant_name">VAST RESOURCE SOLUTIONS INC.</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62286</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1085</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.667183473928,49.3672521891296</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">113</SimpleData>
+		<SimpleData name="stream_crossing_id">50093</SimpleData>
+		<SimpleData name="modelled_crossing_id">4605870</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Couldrey</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706878590</SimpleData>
+		<SimpleData name="blue_line_key">356500235</SimpleData>
+		<SimpleData name="downstream_route_measure">1536</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="stream_magnitude">8</SimpleData>
+		<SimpleData name="gradient">0.063</SimpleData>
+		<SimpleData name="watershed_upstr_ha">178.8137</SimpleData>
+		<SimpleData name="total_network_km">6.94</SimpleData>
+		<SimpleData name="total_stream_km">6.94</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.88</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.14</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.62</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.35</SimpleData>
+		<SimpleData name="wct_network_km">0</SimpleData>
+		<SimpleData name="wct_stream_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Couldrey05</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Couldrey Creek</SimpleData>
+		<SimpleData name="road_name">Couldrey</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">3.1</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50093</SimpleData>
+		<SimpleData name="my_text">Stream gradients &gt;20 % downstream. Bull trout potential only.</SimpleData>
+		<SimpleData name="my_priority">low</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1081</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.608047879985,49.0357747110632</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">87</SimpleData>
+		<SimpleData name="stream_crossing_id">50064</SimpleData>
+		<SimpleData name="modelled_crossing_id">4606364</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Harvey</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706858423</SimpleData>
+		<SimpleData name="blue_line_key">356550708</SimpleData>
+		<SimpleData name="downstream_route_measure">172</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">4</SimpleData>
+		<SimpleData name="gradient">0.091</SimpleData>
+		<SimpleData name="watershed_upstr_ha">345.6398</SimpleData>
+		<SimpleData name="total_network_km">7.54</SimpleData>
+		<SimpleData name="total_stream_km">6.5</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">3.09</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0.28</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.04</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.14</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.25</SimpleData>
+		<SimpleData name="total_slopeclass15_km">1.58</SimpleData>
+		<SimpleData name="total_slopeclass22_km">1.77</SimpleData>
+		<SimpleData name="total_slopeclass30_km">1.73</SimpleData>
+		<SimpleData name="wct_network_km">1.48</SimpleData>
+		<SimpleData name="wct_stream_km">1.48</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">1.3</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.18</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Harvey05</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">Blower Creek</SimpleData>
+		<SimpleData name="road_name">Harvey</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.7</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50064</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1132</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.590867166601,49.2533490827538</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">105</SimpleData>
+		<SimpleData name="stream_crossing_id">50084</SimpleData>
+		<SimpleData name="modelled_crossing_id">4607463</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead-Border</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706875677</SimpleData>
+		<SimpleData name="blue_line_key">356567503</SimpleData>
+		<SimpleData name="downstream_route_measure">3044</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="stream_magnitude">1</SimpleData>
+		<SimpleData name="gradient">0.0206</SimpleData>
+		<SimpleData name="total_network_km">2.26</SimpleData>
+		<SimpleData name="total_stream_km">1.82</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">9.72</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0.43</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.28</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">1.44</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.11</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">2.26</SimpleData>
+		<SimpleData name="wct_stream_km">1.82</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">9.72</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0.43</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.28</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">1.44</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.11</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Flathead16</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Flathead River</SimpleData>
+		<SimpleData name="road_name">Flathead-Border</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">2</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50084</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1133</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.532914549375,49.0813347144082</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">110</SimpleData>
+		<SimpleData name="stream_crossing_id">50090</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Calder Branch</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706879645</SimpleData>
+		<SimpleData name="blue_line_key">356546387</SimpleData>
+		<SimpleData name="downstream_route_measure">1656</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">4</SimpleData>
+		<SimpleData name="gradient">0.0611</SimpleData>
+		<SimpleData name="watershed_upstr_ha">212.3455</SimpleData>
+		<SimpleData name="total_network_km">6.42</SimpleData>
+		<SimpleData name="total_stream_km">6.32</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">0</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0.1</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">1.03</SimpleData>
+		<SimpleData name="total_slopeclass15_km">1.74</SimpleData>
+		<SimpleData name="total_slopeclass22_km">1.5</SimpleData>
+		<SimpleData name="total_slopeclass30_km">1.29</SimpleData>
+		<SimpleData name="wct_network_km">2.47</SimpleData>
+		<SimpleData name="wct_stream_km">2.47</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">1.03</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">1.3</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.14</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Flathead18</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Calder Creek</SimpleData>
+		<SimpleData name="road_name">Calder Branch</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.2</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50090</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1134</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.514528565019,49.0054304586892</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">165</SimpleData>
+		<SimpleData name="stream_crossing_id">50148</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">WOODBOX</SimpleData>
+		<SimpleData name="crossing_name">29 Mile Branch</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706862134</SimpleData>
+		<SimpleData name="blue_line_key">356553670</SimpleData>
+		<SimpleData name="downstream_route_measure">6077</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="stream_magnitude">24</SimpleData>
+		<SimpleData name="gradient">0.0319</SimpleData>
+		<SimpleData name="watershed_upstr_ha">1533.0307</SimpleData>
+		<SimpleData name="total_network_km">27.03</SimpleData>
+		<SimpleData name="total_stream_km">26.36</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">0</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0.29</SimpleData>
+		<SimpleData name="total_slopeclass03_km">1.95</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.49</SimpleData>
+		<SimpleData name="total_slopeclass08_km">2.22</SimpleData>
+		<SimpleData name="total_slopeclass15_km">3.21</SimpleData>
+		<SimpleData name="total_slopeclass22_km">3.46</SimpleData>
+		<SimpleData name="total_slopeclass30_km">2.71</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">3.24</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">3.24</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">1.94</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.47</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0.51</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0.28</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0.05</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">6.61</SimpleData>
+		<SimpleData name="wct_stream_km">6.61</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">1.95</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.49</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">2.18</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">1.42</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.58</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">3.19</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">3.19</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">1.94</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.47</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0.51</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0.28</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">29Mile04</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">Twenty Nine Mile Creek</SimpleData>
+		<SimpleData name="road_name">29 Mile Branch</SimpleData>
+		<SimpleData name="barrier_result_code">PASSABLE</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50148</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="observedspp_dnstr2">{WCT}</SimpleData>
+		<SimpleData name="observedspp_upstr2">{WCT}</SimpleData>
+		<SimpleData name="misc_point_id">1151</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.687308734818,49.2173924599495</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">115</SimpleData>
+		<SimpleData name="stream_crossing_id">50095</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Couldrey</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706880116</SimpleData>
+		<SimpleData name="blue_line_key">356557712</SimpleData>
+		<SimpleData name="downstream_route_measure">6547</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="stream_magnitude">9</SimpleData>
+		<SimpleData name="gradient">0.0235</SimpleData>
+		<SimpleData name="watershed_upstr_ha">576.469</SimpleData>
+		<SimpleData name="total_network_km">5.28</SimpleData>
+		<SimpleData name="total_stream_km">4.24</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">0</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">1.04</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.22</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.02</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.07</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.34</SimpleData>
+		<SimpleData name="total_slopeclass30_km">2.05</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.17</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.17</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0.12</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0.04</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0.01</SimpleData>
+		<SimpleData name="wct_network_km">1.88</SimpleData>
+		<SimpleData name="wct_stream_km">0.85</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">1.04</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.22</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.02</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.07</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.16</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.17</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0.12</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0.04</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Couldrey07</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Frozen Lake Creek</SimpleData>
+		<SimpleData name="road_name">Couldrey</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.6</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50095</SimpleData>
+		<SimpleData name="my_text">Very little potential habitat upstream for cutthrout (&gt;25% in 25m).</SimpleData>
+		<SimpleData name="my_priority">low</SimpleData>
+		<SimpleData name="modelled_crossing_id_corr">4605747</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="observedspp_dnstr2">{BT,WCT}</SimpleData>
+		<SimpleData name="observedspp_upstr2">{BT,DV,SP,WCT}</SimpleData>
+		<SimpleData name="misc_point_id">1169</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.665643048806,49.0053316441224</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">111</SimpleData>
+		<SimpleData name="stream_crossing_id">50091</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Calder Branch</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706879468</SimpleData>
+		<SimpleData name="blue_line_key">356500013</SimpleData>
+		<SimpleData name="downstream_route_measure">939</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">2</SimpleData>
+		<SimpleData name="gradient">0.0431</SimpleData>
+		<SimpleData name="watershed_upstr_ha">165.8507</SimpleData>
+		<SimpleData name="total_network_km">3.21</SimpleData>
+		<SimpleData name="total_stream_km">3.21</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">1.39</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.27</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.58</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.06</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.07</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.27</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.27</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.27</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">2.3</SimpleData>
+		<SimpleData name="wct_stream_km">2.3</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">1.39</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.27</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.58</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.06</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.27</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.27</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.27</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Flathead19</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Calder Creek</SimpleData>
+		<SimpleData name="road_name">Calder Branch</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.6</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50091</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1200</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.516889679815,49.0090980303109</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">123</SimpleData>
+		<SimpleData name="stream_crossing_id">50104</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Ram</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706873577</SimpleData>
+		<SimpleData name="blue_line_key">356383839</SimpleData>
+		<SimpleData name="downstream_route_measure">67</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="stream_magnitude">1</SimpleData>
+		<SimpleData name="gradient">0.1473</SimpleData>
+		<SimpleData name="total_network_km">1.48</SimpleData>
+		<SimpleData name="total_stream_km">1.48</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.14</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.79</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.02</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0.01</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">0.77</SimpleData>
+		<SimpleData name="wct_stream_km">0.77</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.14</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.63</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Cabin08</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Cabin Creek</SimpleData>
+		<SimpleData name="road_name">Ram</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.5</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50104</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1205</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.709655956595,49.1126791143292</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">1338</SimpleData>
+		<SimpleData name="stream_crossing_id">62122</SimpleData>
+		<SimpleData name="modelled_crossing_id">4607466</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead FSR</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706856885</SimpleData>
+		<SimpleData name="blue_line_key">356564409</SimpleData>
+		<SimpleData name="downstream_route_measure">1767</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="stream_magnitude">10</SimpleData>
+		<SimpleData name="gradient">0.0204</SimpleData>
+		<SimpleData name="watershed_upstr_ha">709.8563</SimpleData>
+		<SimpleData name="total_network_km">15.6</SimpleData>
+		<SimpleData name="total_stream_km">15.19</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">1.64</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0.27</SimpleData>
+		<SimpleData name="total_slopeclass03_km">4.91</SimpleData>
+		<SimpleData name="total_slopeclass05_km">1.17</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_slopeclass15_km">3.1</SimpleData>
+		<SimpleData name="total_slopeclass22_km">1.99</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.85</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">2</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">2</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">1.99</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.01</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">9.62</SimpleData>
+		<SimpleData name="wct_stream_km">9.21</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">1.64</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0.27</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">4.91</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">1.17</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">3</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.28</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">1.99</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">1.99</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">1.99</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">FLAT032</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">Morris Creek</SimpleData>
+		<SimpleData name="road_name">Flathead FSR</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">VAST RESOURCE SOLUTIONS INC.</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62262</SimpleData>
+		<SimpleData name="my_text">Non fish bearing according to Canfor inventory (http://a100.gov.bc.ca/pub/acat/public/viewReport.do?reportId=50443).</SimpleData>
+		<SimpleData name="my_priority">no fix</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="observedspp_dnstr2">{BT}</SimpleData>
+		<SimpleData name="misc_point_id">1239</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.568294229191,49.2635366433925</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">97</SimpleData>
+		<SimpleData name="stream_crossing_id">50075</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead-Commerce Creek</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706870446</SimpleData>
+		<SimpleData name="blue_line_key">356491266</SimpleData>
+		<SimpleData name="downstream_route_measure">115</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="stream_magnitude">1</SimpleData>
+		<SimpleData name="gradient">0.0433</SimpleData>
+		<SimpleData name="total_network_km">1.97</SimpleData>
+		<SimpleData name="total_stream_km">1.77</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">3.34</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0.2</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.24</SimpleData>
+		<SimpleData name="total_slopeclass05_km">1.04</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.49</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.03</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.03</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.03</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">1.97</SimpleData>
+		<SimpleData name="wct_stream_km">1.77</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">3.34</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0.2</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.24</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">1.04</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.49</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.03</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.03</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.03</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Commerce03</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Commerce Creek</SimpleData>
+		<SimpleData name="road_name">Flathead-Commerce Creek</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.3</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50075</SimpleData>
+		<SimpleData name="my_text">Huge outlet drop.  Wetland headed stream. Appears to have limited flow but decent amount of habitat modelled upstream.</SimpleData>
+		<SimpleData name="my_priority">mod</SimpleData>
+		<SimpleData name="modelled_crossing_id_corr">4606601</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1259</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.479923121742,49.1330087878713</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">84</SimpleData>
+		<SimpleData name="stream_crossing_id">50061</SimpleData>
+		<SimpleData name="modelled_crossing_id">4606344</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Harvey</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706857678</SimpleData>
+		<SimpleData name="blue_line_key">356512576</SimpleData>
+		<SimpleData name="downstream_route_measure">202</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="stream_magnitude">12</SimpleData>
+		<SimpleData name="gradient">0.0323</SimpleData>
+		<SimpleData name="watershed_upstr_ha">477.3711</SimpleData>
+		<SimpleData name="total_network_km">12.2</SimpleData>
+		<SimpleData name="total_stream_km">12.2</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.94</SimpleData>
+		<SimpleData name="total_slopeclass08_km">1.58</SimpleData>
+		<SimpleData name="total_slopeclass15_km">1.91</SimpleData>
+		<SimpleData name="total_slopeclass22_km">1.05</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.95</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">1.48</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">1.48</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.65</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0.68</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0.16</SimpleData>
+		<SimpleData name="wct_network_km">4.59</SimpleData>
+		<SimpleData name="wct_stream_km">4.59</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.94</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">1.55</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">1.88</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.22</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">1.33</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">1.33</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.65</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0.68</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">-0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Harvey02</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">Fuel Creek</SimpleData>
+		<SimpleData name="road_name">Harvey</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">4.8</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50061</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="observedspp_upstr2">{WCT}</SimpleData>
+		<SimpleData name="misc_point_id">1276</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.695482697517,49.2624924697092</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">124</SimpleData>
+		<SimpleData name="stream_crossing_id">50105</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Ram</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706873604</SimpleData>
+		<SimpleData name="blue_line_key">356563950</SimpleData>
+		<SimpleData name="downstream_route_measure">15988</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="stream_magnitude">7</SimpleData>
+		<SimpleData name="gradient">0.0079</SimpleData>
+		<SimpleData name="watershed_upstr_ha">706.6062</SimpleData>
+		<SimpleData name="total_network_km">10.16</SimpleData>
+		<SimpleData name="total_stream_km">10.16</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">1.62</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.63</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.03</SimpleData>
+		<SimpleData name="total_slopeclass15_km">1.41</SimpleData>
+		<SimpleData name="total_slopeclass22_km">2.42</SimpleData>
+		<SimpleData name="total_slopeclass30_km">1.7</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">1.76</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">1.76</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0.95</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.22</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0.27</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0.31</SimpleData>
+		<SimpleData name="wct_network_km">2.36</SimpleData>
+		<SimpleData name="wct_stream_km">2.36</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">1.62</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.63</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.11</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">1.17</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">1.17</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0.95</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.22</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Cabin09</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Cabin Creek</SimpleData>
+		<SimpleData name="road_name">Ram</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.6</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50105</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="observedspp_dnstr2">{AF,BT,CBA,CC,CCG,CT,DV,KO,MW,WCT}</SimpleData>
+		<SimpleData name="observedspp_upstr2">{WCT}</SimpleData>
+		<SimpleData name="misc_point_id">1277</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.714776747035,49.1127806438942</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">133</SimpleData>
+		<SimpleData name="stream_crossing_id">50115</SimpleData>
+		<SimpleData name="modelled_crossing_id">4600519</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Ram branch at 73km</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706875064</SimpleData>
+		<SimpleData name="blue_line_key">356516423</SimpleData>
+		<SimpleData name="downstream_route_measure">275</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">2</SimpleData>
+		<SimpleData name="gradient">0.0996</SimpleData>
+		<SimpleData name="watershed_upstr_ha">286.3377</SimpleData>
+		<SimpleData name="total_network_km">4.59</SimpleData>
+		<SimpleData name="total_stream_km">4.59</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.53</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.47</SimpleData>
+		<SimpleData name="total_slopeclass15_km">2.63</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.76</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.64</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.64</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0.01</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0.63</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">2.59</SimpleData>
+		<SimpleData name="wct_stream_km">2.59</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.53</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.08</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">1.36</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.63</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.64</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.64</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0.63</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Cabin19</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Cabin Creek</SimpleData>
+		<SimpleData name="road_name">Ram branch at 73km</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">2.9</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50115</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1279</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.673699292418,49.1017577613584</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">94</SimpleData>
+		<SimpleData name="stream_crossing_id">50072</SimpleData>
+		<SimpleData name="modelled_crossing_id">4606965</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706866956</SimpleData>
+		<SimpleData name="blue_line_key">356489221</SimpleData>
+		<SimpleData name="downstream_route_measure">133</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="stream_magnitude">1</SimpleData>
+		<SimpleData name="gradient">0.0335</SimpleData>
+		<SimpleData name="total_network_km">1.09</SimpleData>
+		<SimpleData name="total_stream_km">1.09</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.78</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.3</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.89</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.89</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.78</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0.1</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">1.09</SimpleData>
+		<SimpleData name="wct_stream_km">1.09</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.78</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.3</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.89</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.89</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.78</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0.1</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Flathead07</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Flathead River</SimpleData>
+		<SimpleData name="road_name">Flathead</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.4</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50072</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1281</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.4929819781,49.1551550577875</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">1359</SimpleData>
+		<SimpleData name="stream_crossing_id">62151</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Pincher Creek FSR</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706849632</SimpleData>
+		<SimpleData name="blue_line_key">356538706</SimpleData>
+		<SimpleData name="downstream_route_measure">556</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">5</SimpleData>
+		<SimpleData name="gradient">0.0585</SimpleData>
+		<SimpleData name="watershed_upstr_ha">287.3285</SimpleData>
+		<SimpleData name="total_network_km">6.08</SimpleData>
+		<SimpleData name="total_stream_km">6.08</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.09</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.88</SimpleData>
+		<SimpleData name="total_slopeclass15_km">1.05</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.49</SimpleData>
+		<SimpleData name="total_slopeclass30_km">1.14</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.01</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.01</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0.01</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">2.28</SimpleData>
+		<SimpleData name="wct_stream_km">2.28</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.09</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.88</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">1.05</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.26</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.02</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.02</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">FLAT074</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">Unknown</SimpleData>
+		<SimpleData name="road_name">Pincher Creek FSR</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">0.9</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="consultant_name">VAST RESOURCE SOLUTIONS INC.</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62291</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="observedspp_dnstr2">{BT,WCT}</SimpleData>
+		<SimpleData name="misc_point_id">1288</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.604068142918,49.363225755396</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">120</SimpleData>
+		<SimpleData name="stream_crossing_id">50101</SimpleData>
+		<SimpleData name="modelled_crossing_id">4605484</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Ram</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706873501</SimpleData>
+		<SimpleData name="blue_line_key">356502636</SimpleData>
+		<SimpleData name="downstream_route_measure">134</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">2</SimpleData>
+		<SimpleData name="gradient">0.0912</SimpleData>
+		<SimpleData name="watershed_upstr_ha">228.4031</SimpleData>
+		<SimpleData name="total_network_km">2.46</SimpleData>
+		<SimpleData name="total_stream_km">2.46</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.65</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.78</SimpleData>
+		<SimpleData name="total_slopeclass30_km">1.03</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.41</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.41</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0.41</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">0.4</SimpleData>
+		<SimpleData name="wct_stream_km">0.4</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.4</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.4</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.4</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0.4</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Cabin05</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Cabin Creek</SimpleData>
+		<SimpleData name="road_name">Ram</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">3.4</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50101</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1294</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.677795970568,49.1102700071994</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">86</SimpleData>
+		<SimpleData name="stream_crossing_id">50063</SimpleData>
+		<SimpleData name="modelled_crossing_id">4600388</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Harvey</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706858058</SimpleData>
+		<SimpleData name="blue_line_key">356550427</SimpleData>
+		<SimpleData name="downstream_route_measure">286</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">2</SimpleData>
+		<SimpleData name="gradient">0.0439</SimpleData>
+		<SimpleData name="watershed_upstr_ha">140.4311</SimpleData>
+		<SimpleData name="total_network_km">2.9</SimpleData>
+		<SimpleData name="total_stream_km">2.9</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.21</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.92</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.29</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.41</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.19</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.19</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.18</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">1.57</SimpleData>
+		<SimpleData name="wct_stream_km">1.57</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.21</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.92</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.29</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.14</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.19</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.19</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.18</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Harvey04</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">West Kisoo Creek</SimpleData>
+		<SimpleData name="road_name">Harvey</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">3.5</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50063</SimpleData>
+		<SimpleData name="my_text">Relatively large channel width.  Good flow and hab value rated high.  </SimpleData>
+		<SimpleData name="my_priority">high</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1311</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.677781837947,49.2586023208455</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">1341</SimpleData>
+		<SimpleData name="stream_crossing_id">62128</SimpleData>
+		<SimpleData name="modelled_crossing_id">4606186</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead FSR</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706849873</SimpleData>
+		<SimpleData name="blue_line_key">356467724</SimpleData>
+		<SimpleData name="downstream_route_measure">144</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="stream_magnitude">1</SimpleData>
+		<SimpleData name="gradient">0</SimpleData>
+		<SimpleData name="total_network_km">1.33</SimpleData>
+		<SimpleData name="total_stream_km">1.33</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.15</SimpleData>
+		<SimpleData name="total_slopeclass05_km">1</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.18</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.15</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.15</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0.15</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">1.33</SimpleData>
+		<SimpleData name="wct_stream_km">1.33</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.15</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">1</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.18</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.15</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.15</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0.15</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">FLAT013</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">Tributary to Flathead River</SimpleData>
+		<SimpleData name="road_name">Flathead FSR</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">0.8</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="consultant_name">VAST RESOURCE SOLUTIONS INC.</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62268</SimpleData>
+		<SimpleData name="my_text">Assessment comments state &quot;Poor fish habitat. Fish use unlikely. Low priority&quot;</SimpleData>
+		<SimpleData name="my_priority">low</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1154</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.623803317406,49.3598639127995</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">107</SimpleData>
+		<SimpleData name="stream_crossing_id">50086</SimpleData>
+		<SimpleData name="modelled_crossing_id">4607465</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead-Border</SimpleData>
+		<SimpleData name="barrier_status">POTENTIAL</SimpleData>
+		<SimpleData name="linear_feature_id">706877016</SimpleData>
+		<SimpleData name="blue_line_key">356511386</SimpleData>
+		<SimpleData name="downstream_route_measure">801</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">2</SimpleData>
+		<SimpleData name="gradient">0.1506</SimpleData>
+		<SimpleData name="watershed_upstr_ha">162.145</SimpleData>
+		<SimpleData name="total_network_km">5.01</SimpleData>
+		<SimpleData name="total_stream_km">4.51</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">1.84</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0.45</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.51</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.41</SimpleData>
+		<SimpleData name="total_slopeclass08_km">2.48</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.81</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.36</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">2.38</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">1.88</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0.45</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0.46</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.41</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">1.06</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0.01</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">4.49</SimpleData>
+		<SimpleData name="wct_stream_km">3.99</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">1.84</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0.45</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.51</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.41</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">2.48</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.56</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.09</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">2.38</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">1.88</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0.46</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.41</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">1.06</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Couldrey02</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Couldrey Creek</SimpleData>
+		<SimpleData name="road_name">Flathead-Border</SimpleData>
+		<SimpleData name="barrier_result_code">POTENTIAL</SimpleData>
+		<SimpleData name="downstream_channel_width">1</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50086</SimpleData>
+		<SimpleData name="my_text">Appears passable at most flows. Rocky mountain sculpin nearby and their swim speeds could be a consideration.</SimpleData>
+		<SimpleData name="my_priority">mod</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="observedspp_dnstr2">{WCT}</SimpleData>
+		<SimpleData name="misc_point_id">1230</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.530674163384,49.0480799948423</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">102</SimpleData>
+		<SimpleData name="stream_crossing_id">50081</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead-Border</SimpleData>
+		<SimpleData name="barrier_status">POTENTIAL</SimpleData>
+		<SimpleData name="linear_feature_id">706871296</SimpleData>
+		<SimpleData name="blue_line_key">356417860</SimpleData>
+		<SimpleData name="downstream_route_measure">260</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">-5</SimpleData>
+		<SimpleData name="stream_magnitude">-5</SimpleData>
+		<SimpleData name="gradient">0</SimpleData>
+		<SimpleData name="total_network_km">0.38</SimpleData>
+		<SimpleData name="total_stream_km">0.38</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.38</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.01</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.01</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0.01</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">0.38</SimpleData>
+		<SimpleData name="wct_stream_km">0.38</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.38</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Flathead14</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Beryl Creek</SimpleData>
+		<SimpleData name="road_name">Flathead-Border</SimpleData>
+		<SimpleData name="barrier_result_code">POTENTIAL</SimpleData>
+		<SimpleData name="downstream_channel_width">5</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50081</SimpleData>
+		<SimpleData name="my_text">Small habitat gain with crossing that appears passable to all life stages/species at most flows.</SimpleData>
+		<SimpleData name="my_priority">low</SimpleData>
+		<SimpleData name="modelled_crossing_id_corr">4606966</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="observedspp_dnstr2">{LSU}</SimpleData>
+		<SimpleData name="misc_point_id">1235</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.507373565085,49.1195702937511</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">90</SimpleData>
+		<SimpleData name="stream_crossing_id">50067</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706860952</SimpleData>
+		<SimpleData name="blue_line_key">356551471</SimpleData>
+		<SimpleData name="downstream_route_measure">267</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="stream_magnitude">22</SimpleData>
+		<SimpleData name="gradient">0.031</SimpleData>
+		<SimpleData name="watershed_upstr_ha">1306.3009</SimpleData>
+		<SimpleData name="total_network_km">31.8</SimpleData>
+		<SimpleData name="total_stream_km">30.06</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">9.33</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">1.61</SimpleData>
+		<SimpleData name="total_slopeclass03_km">5.4</SimpleData>
+		<SimpleData name="total_slopeclass05_km">1.47</SimpleData>
+		<SimpleData name="total_slopeclass08_km">1</SimpleData>
+		<SimpleData name="total_slopeclass15_km">4.29</SimpleData>
+		<SimpleData name="total_slopeclass22_km">5.47</SimpleData>
+		<SimpleData name="total_slopeclass30_km">3.02</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">7.7</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">7.25</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">2.1</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0.43</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">2.09</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.03</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0.6</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">1.43</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">1.74</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0.91</SimpleData>
+		<SimpleData name="wct_network_km">13.43</SimpleData>
+		<SimpleData name="wct_stream_km">11.7</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">9.33</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">1.61</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">5.35</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">1.47</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.97</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">2.84</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">1.19</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">3.97</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">3.53</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">2.1</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">2.04</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.03</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0.6</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0.86</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Flathead02</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Flathead River</SimpleData>
+		<SimpleData name="road_name">Flathead</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">2.3</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50067</SimpleData>
+		<SimpleData name="my_text">Dry channel but westslopes recorded upstream in wetlands. </SimpleData>
+		<SimpleData name="my_priority">mod</SimpleData>
+		<SimpleData name="modelled_crossing_id_corr">4607397</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="observedspp_dnstr2">{WCT}</SimpleData>
+		<SimpleData name="observedspp_upstr2">{WCT}</SimpleData>
+		<SimpleData name="misc_point_id">1330</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.533781284813,49.2104992063601</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">106</SimpleData>
+		<SimpleData name="stream_crossing_id">50085</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead-Border</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706877139</SimpleData>
+		<SimpleData name="blue_line_key">356423198</SimpleData>
+		<SimpleData name="downstream_route_measure">565</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="stream_magnitude">1</SimpleData>
+		<SimpleData name="gradient">0.0069</SimpleData>
+		<SimpleData name="total_network_km">4.05</SimpleData>
+		<SimpleData name="total_stream_km">3.65</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">3.16</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0.41</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.06</SimpleData>
+		<SimpleData name="total_slopeclass05_km">2.44</SimpleData>
+		<SimpleData name="total_slopeclass08_km">1.16</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">2.89</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">2.49</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0.41</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0.06</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">2.44</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">4.05</SimpleData>
+		<SimpleData name="wct_stream_km">3.65</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">3.16</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0.41</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.06</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">2.44</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">1.16</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">2.89</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">2.49</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0.06</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">2.44</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Couldrey01</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Couldrey Creek</SimpleData>
+		<SimpleData name="road_name">Flathead-Border</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">2.5</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50085</SimpleData>
+		<SimpleData name="my_text">Rocky mountain sculpin nearby. Comments indicate poorly defined channel downstream.</SimpleData>
+		<SimpleData name="my_priority">low</SimpleData>
+		<SimpleData name="modelled_crossing_id_corr">4607465</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1331</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.529667676856,49.0498847747779</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">128</SimpleData>
+		<SimpleData name="stream_crossing_id">50110</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Ram</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706872809</SimpleData>
+		<SimpleData name="blue_line_key">356508456</SimpleData>
+		<SimpleData name="downstream_route_measure">0</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="stream_magnitude">1</SimpleData>
+		<SimpleData name="gradient">0.0111</SimpleData>
+		<SimpleData name="total_network_km">0.44</SimpleData>
+		<SimpleData name="total_stream_km">0.44</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.03</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.41</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">0.44</SimpleData>
+		<SimpleData name="wct_stream_km">0.44</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.03</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.41</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Cabin14</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Cabin Creek</SimpleData>
+		<SimpleData name="road_name">Ram</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.6</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50110</SimpleData>
+		<SimpleData name="my_text">No habitat modelled upstream</SimpleData>
+		<SimpleData name="my_priority">no fix</SimpleData>
+		<SimpleData name="modelled_crossing_id_corr">4605506</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="observedspp_upstr2">{WCT}</SimpleData>
+		<SimpleData name="misc_point_id">1082</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.729115934171,49.1228878457606</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">141</SimpleData>
+		<SimpleData name="stream_crossing_id">50124</SimpleData>
+		<SimpleData name="modelled_crossing_id">4605468</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Kishinena</SimpleData>
+		<SimpleData name="barrier_status">POTENTIAL</SimpleData>
+		<SimpleData name="linear_feature_id">706877341</SimpleData>
+		<SimpleData name="blue_line_key">356532546</SimpleData>
+		<SimpleData name="downstream_route_measure">3262</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">2</SimpleData>
+		<SimpleData name="gradient">0.0013</SimpleData>
+		<SimpleData name="watershed_upstr_ha">61.3202</SimpleData>
+		<SimpleData name="total_network_km">1.57</SimpleData>
+		<SimpleData name="total_stream_km">1.57</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">1.1</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.46</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">1.57</SimpleData>
+		<SimpleData name="wct_stream_km">1.57</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">1.1</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.46</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Sage03</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Sage Creek</SimpleData>
+		<SimpleData name="road_name">Kishinena</SimpleData>
+		<SimpleData name="barrier_result_code">POTENTIAL</SimpleData>
+		<SimpleData name="downstream_channel_width">0.8</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50124</SimpleData>
+		<SimpleData name="my_text">Small watershed with habitat value rated low. Swampy area.</SimpleData>
+		<SimpleData name="my_priority">low</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1083</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.435592059453,49.0461940402524</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">92</SimpleData>
+		<SimpleData name="stream_crossing_id">50070</SimpleData>
+		<SimpleData name="modelled_crossing_id">4606171</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706863929</SimpleData>
+		<SimpleData name="blue_line_key">356492219</SimpleData>
+		<SimpleData name="downstream_route_measure">451</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">2</SimpleData>
+		<SimpleData name="gradient">0.1535</SimpleData>
+		<SimpleData name="watershed_upstr_ha">49.8534</SimpleData>
+		<SimpleData name="total_network_km">1.93</SimpleData>
+		<SimpleData name="total_stream_km">1.93</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_slopeclass22_km">1.08</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.07</SimpleData>
+		<SimpleData name="wct_network_km">0</SimpleData>
+		<SimpleData name="wct_stream_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Flathead05</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Flathead River</SimpleData>
+		<SimpleData name="road_name">Flathead</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">2.3</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50070</SimpleData>
+		<SimpleData name="my_text">Too steep immediatley upstream.</SimpleData>
+		<SimpleData name="my_priority">low</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1084</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.502884394916,49.1818916898643</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">83</SimpleData>
+		<SimpleData name="stream_crossing_id">50060</SimpleData>
+		<SimpleData name="modelled_crossing_id">4606391</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Harvey</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706855859</SimpleData>
+		<SimpleData name="blue_line_key">356553222</SimpleData>
+		<SimpleData name="downstream_route_measure">15557</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="stream_magnitude">1</SimpleData>
+		<SimpleData name="gradient">0</SimpleData>
+		<SimpleData name="total_network_km">0.16</SimpleData>
+		<SimpleData name="total_stream_km">0</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">0</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0.16</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">0.16</SimpleData>
+		<SimpleData name="wct_stream_km">0</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0.16</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Harvey01</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">Harvey Creek</SimpleData>
+		<SimpleData name="road_name">Harvey</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">2.1</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50060</SimpleData>
+		<SimpleData name="my_text">Harvey Lake is 1ha lake upstream ~230m upstream of the crossing. </SimpleData>
+		<SimpleData name="my_priority">mod</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="observedspp_dnstr2">{BT,CT,WCT}</SimpleData>
+		<SimpleData name="misc_point_id">1131</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.709416270188,49.2830742320401</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">1336</SimpleData>
+		<SimpleData name="stream_crossing_id">62120</SimpleData>
+		<SimpleData name="modelled_crossing_id">4607457</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead FSR</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706852743</SimpleData>
+		<SimpleData name="blue_line_key">356539638</SimpleData>
+		<SimpleData name="downstream_route_measure">145</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="stream_magnitude">16</SimpleData>
+		<SimpleData name="gradient">0.0667</SimpleData>
+		<SimpleData name="watershed_upstr_ha">739.4328</SimpleData>
+		<SimpleData name="total_network_km">18.68</SimpleData>
+		<SimpleData name="total_stream_km">18.52</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">0</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0.16</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.03</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.03</SimpleData>
+		<SimpleData name="total_slopeclass08_km">2.65</SimpleData>
+		<SimpleData name="total_slopeclass15_km">6.13</SimpleData>
+		<SimpleData name="total_slopeclass22_km">1.83</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.98</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">1.15</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">1.15</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0.99</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0.03</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0.07</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">0.28</SimpleData>
+		<SimpleData name="wct_stream_km">0.28</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.24</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.03</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.28</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.28</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0.24</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0.03</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">FLAT021</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">Tributary to Flathead River</SimpleData>
+		<SimpleData name="road_name">Flathead FSR</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">4.5</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">VAST RESOURCE SOLUTIONS INC.</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62260</SimpleData>
+		<SimpleData name="my_text">Small potential habitat gain but assessment comments indicate good rearing habitat and good potential fix candidate.</SimpleData>
+		<SimpleData name="my_priority">mod</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1202</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.569157254625,49.3074930862016</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">95</SimpleData>
+		<SimpleData name="stream_crossing_id">50073</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706868755</SimpleData>
+		<SimpleData name="blue_line_key">356511646</SimpleData>
+		<SimpleData name="downstream_route_measure">969</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="stream_magnitude">8</SimpleData>
+		<SimpleData name="gradient">0.0273</SimpleData>
+		<SimpleData name="watershed_upstr_ha">509.6423</SimpleData>
+		<SimpleData name="total_network_km">10.38</SimpleData>
+		<SimpleData name="total_stream_km">10.38</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.07</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.01</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.13</SimpleData>
+		<SimpleData name="total_slopeclass15_km">4.99</SimpleData>
+		<SimpleData name="total_slopeclass22_km">2.34</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.62</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.05</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.05</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0.05</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">4.03</SimpleData>
+		<SimpleData name="wct_stream_km">4.03</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.06</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.01</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.1</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">3.23</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.62</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.05</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.05</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0.05</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Flathead08</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Flathead River</SimpleData>
+		<SimpleData name="road_name">Flathead</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">2.1</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50073</SimpleData>
+		<SimpleData name="my_text">Assessment comments indicate WCT found upstream by Artech in 1995 but no FISS point observed. Good flows in photos.</SimpleData>
+		<SimpleData name="my_priority">mod</SimpleData>
+		<SimpleData name="modelled_crossing_id_corr">4606218</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1261</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.502467990283,49.1429994033279</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">125</SimpleData>
+		<SimpleData name="stream_crossing_id">50107</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Storm Creek Branch</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706871838</SimpleData>
+		<SimpleData name="blue_line_key">356543105</SimpleData>
+		<SimpleData name="downstream_route_measure">97</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="stream_magnitude">1</SimpleData>
+		<SimpleData name="gradient">0.0729</SimpleData>
+		<SimpleData name="total_network_km">0.87</SimpleData>
+		<SimpleData name="total_stream_km">0.87</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.04</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.03</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.69</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.11</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0.01</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">0.76</SimpleData>
+		<SimpleData name="wct_stream_km">0.76</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.04</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.03</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.69</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Cabin11</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Storm Creek</SimpleData>
+		<SimpleData name="road_name">Storm Creek Branch</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">2.8</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50107</SimpleData>
+		<SimpleData name="my_text">Assessment comments indicate upstream crossings removed. Good flow. No fish captured in 330 EF site located in Storm Ck near confluence.  Suspect barrier downstream (http://a100.gov.bc.ca/pub/acat/public/viewReport.do?reportId=21683).</SimpleData>
+		<SimpleData name="my_priority">low</SimpleData>
+		<SimpleData name="modelled_crossing_id_corr">4601087</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1262</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.69643753336,49.1364995022449</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">1337</SimpleData>
+		<SimpleData name="stream_crossing_id">62121</SimpleData>
+		<SimpleData name="modelled_crossing_id">4607459</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead FSR</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706854722</SimpleData>
+		<SimpleData name="blue_line_key">356460943</SimpleData>
+		<SimpleData name="downstream_route_measure">1150</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">2</SimpleData>
+		<SimpleData name="gradient">0.0392</SimpleData>
+		<SimpleData name="watershed_upstr_ha">90.7</SimpleData>
+		<SimpleData name="total_network_km">1.56</SimpleData>
+		<SimpleData name="total_stream_km">1.56</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.23</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.21</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.09</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.52</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.23</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.53</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.53</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0.23</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.21</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0.09</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">1.05</SimpleData>
+		<SimpleData name="wct_stream_km">1.05</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.23</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.21</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.09</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.52</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.53</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.53</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0.23</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.21</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0.09</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">FLAT030</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">Tributary to Flathead River</SimpleData>
+		<SimpleData name="road_name">Flathead FSR</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.5</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="consultant_name">VAST RESOURCE SOLUTIONS INC.</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62261</SimpleData>
+		<SimpleData name="my_text">Dry channel with poor habitat. </SimpleData>
+		<SimpleData name="my_priority">low</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1263</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.574215713189,49.2874206259102</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">121</SimpleData>
+		<SimpleData name="stream_crossing_id">50102</SimpleData>
+		<SimpleData name="modelled_crossing_id">4605498</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Ram</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706873467</SimpleData>
+		<SimpleData name="blue_line_key">356437088</SimpleData>
+		<SimpleData name="downstream_route_measure">62</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="stream_magnitude">1</SimpleData>
+		<SimpleData name="gradient">0.1122</SimpleData>
+		<SimpleData name="total_network_km">1.31</SimpleData>
+		<SimpleData name="total_stream_km">1.31</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.12</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.81</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.22</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.22</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.22</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0.05</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0.17</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">0.7</SimpleData>
+		<SimpleData name="wct_stream_km">0.7</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.12</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.58</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.22</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.22</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0.05</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0.17</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Cabin06</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Cabin Creek</SimpleData>
+		<SimpleData name="road_name">Ram</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.6</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50102</SimpleData>
+		<SimpleData name="my_text">Good flow but very steep then extremely steep upstream.</SimpleData>
+		<SimpleData name="my_priority">mod</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1193</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.694880892252,49.1121239968409</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">283</SimpleData>
+		<SimpleData name="stream_crossing_id">51146</SimpleData>
+		<SimpleData name="modelled_crossing_id">4601867</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Storm Creek</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706871659</SimpleData>
+		<SimpleData name="blue_line_key">356472865</SimpleData>
+		<SimpleData name="downstream_route_measure">76</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">2</SimpleData>
+		<SimpleData name="gradient">0.1213</SimpleData>
+		<SimpleData name="watershed_upstr_ha">58.0378</SimpleData>
+		<SimpleData name="total_network_km">1.98</SimpleData>
+		<SimpleData name="total_stream_km">1.98</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.04</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.81</SimpleData>
+		<SimpleData name="total_slopeclass22_km">1.14</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.03</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.03</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0.04</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">0.59</SimpleData>
+		<SimpleData name="wct_stream_km">0.59</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.04</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.34</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.21</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.03</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.03</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0.03</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Cabin10</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Storm Creek</SimpleData>
+		<SimpleData name="road_name">Storm Creek</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">2</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=51146</SimpleData>
+		<SimpleData name="my_text">No fish captured in 330 EF site located in Storm Ck near confluence.  Suspect barrier downstream (http://a100.gov.bc.ca/pub/acat/public/viewReport.do?reportId=21683).</SimpleData>
+		<SimpleData name="my_priority">low</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1320</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.695595740131,49.1363207598334</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">117</SimpleData>
+		<SimpleData name="stream_crossing_id">50097</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Ram</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706873665</SimpleData>
+		<SimpleData name="blue_line_key">356533854</SimpleData>
+		<SimpleData name="downstream_route_measure">513</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">5</SimpleData>
+		<SimpleData name="gradient">0.0343</SimpleData>
+		<SimpleData name="watershed_upstr_ha">217.557</SimpleData>
+		<SimpleData name="total_network_km">4.01</SimpleData>
+		<SimpleData name="total_stream_km">3.88</SimpleData>
+		<SimpleData name="total_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_wetland_ha">0.35</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0.13</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.03</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.07</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.22</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.91</SimpleData>
+		<SimpleData name="total_slopeclass22_km">1.46</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.57</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.07</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.07</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.07</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">1.47</SimpleData>
+		<SimpleData name="wct_stream_km">1.47</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.03</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.07</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.22</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.69</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.46</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.07</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.07</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.07</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Cabin01</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Cabin Creek</SimpleData>
+		<SimpleData name="road_name">Ram</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.4</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50097</SimpleData>
+		<SimpleData name="my_text">Nice gravels in photos.  Quuite steep but potentially productive - particularly for bull trout.</SimpleData>
+		<SimpleData name="my_priority">mod</SimpleData>
+		<SimpleData name="modelled_crossing_id_corr">4605524</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1324</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.567260614284,49.0987798489463</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">1358</SimpleData>
+		<SimpleData name="stream_crossing_id">62150</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Pincher Creek FSR</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706849390</SimpleData>
+		<SimpleData name="blue_line_key">356559811</SimpleData>
+		<SimpleData name="downstream_route_measure">2291</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">4</SimpleData>
+		<SimpleData name="stream_magnitude">25</SimpleData>
+		<SimpleData name="gradient">0.048</SimpleData>
+		<SimpleData name="watershed_upstr_ha">673.5584</SimpleData>
+		<SimpleData name="total_network_km">23</SimpleData>
+		<SimpleData name="total_stream_km">23</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.01</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.2</SimpleData>
+		<SimpleData name="total_slopeclass08_km">1.28</SimpleData>
+		<SimpleData name="total_slopeclass15_km">2.24</SimpleData>
+		<SimpleData name="total_slopeclass22_km">2.63</SimpleData>
+		<SimpleData name="total_slopeclass30_km">2.06</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.85</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.85</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.2</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0.65</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">-0.01</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">3.3</SimpleData>
+		<SimpleData name="wct_stream_km">3.3</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.2</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">1.28</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">1.52</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.3</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.84</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.84</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.2</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0.65</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">FLAT900</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">Tributary to Flathead River</SimpleData>
+		<SimpleData name="road_name">Pincher Creek FSR</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.8</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="consultant_name">VAST RESOURCE SOLUTIONS INC.</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62290</SimpleData>
+		<SimpleData name="my_text">Appears to be pinned to wrong stream.  Assessment comments indicate poor habitat.</SimpleData>
+		<SimpleData name="my_priority">low</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="observedspp_dnstr2">{BT,WCT}</SimpleData>
+		<SimpleData name="observedspp_upstr2">{WCT}</SimpleData>
+		<SimpleData name="misc_point_id">1309</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.61028312885,49.3699846896148</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">1342</SimpleData>
+		<SimpleData name="stream_crossing_id">62129</SimpleData>
+		<SimpleData name="modelled_crossing_id">4606215</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead FSR</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706849871</SimpleData>
+		<SimpleData name="blue_line_key">356563443</SimpleData>
+		<SimpleData name="downstream_route_measure">429</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="stream_magnitude">6</SimpleData>
+		<SimpleData name="gradient">0.0312</SimpleData>
+		<SimpleData name="watershed_upstr_ha">208.6957</SimpleData>
+		<SimpleData name="total_network_km">8.31</SimpleData>
+		<SimpleData name="total_stream_km">8.31</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.02</SimpleData>
+		<SimpleData name="total_slopeclass05_km">1.53</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.63</SimpleData>
+		<SimpleData name="total_slopeclass15_km">1.68</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.56</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.72</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">1.91</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">1.91</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">1.29</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0.29</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0.33</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">4.31</SimpleData>
+		<SimpleData name="wct_stream_km">4.31</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.02</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">1.53</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.63</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">1.65</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.48</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">1.91</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">1.91</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">1.29</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0.29</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0.33</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">-0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">FLAT012</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">Tributary to Flathead River</SimpleData>
+		<SimpleData name="road_name">Flathead FSR</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.3</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">VAST RESOURCE SOLUTIONS INC.</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62269</SimpleData>
+		<SimpleData name="my_text">Kokanee (2001) inventory site just downstream. (http://a100.gov.bc.ca/pub/acat/public/viewReport.do?reportId=29)</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1168</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.622309048088,49.360004098715</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">91</SimpleData>
+		<SimpleData name="stream_crossing_id">50069</SimpleData>
+		<SimpleData name="modelled_crossing_id">4607564</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Flathead</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706862976</SimpleData>
+		<SimpleData name="blue_line_key">356526880</SimpleData>
+		<SimpleData name="downstream_route_measure">156</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="stream_magnitude">5</SimpleData>
+		<SimpleData name="gradient">0.1027</SimpleData>
+		<SimpleData name="watershed_upstr_ha">147.1844</SimpleData>
+		<SimpleData name="total_network_km">4.81</SimpleData>
+		<SimpleData name="total_stream_km">4.81</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.01</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.03</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.2</SimpleData>
+		<SimpleData name="total_slopeclass15_km">1.24</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.72</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.86</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.52</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.52</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0.52</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">0</SimpleData>
+		<SimpleData name="wct_stream_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Flathead04</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Flathead River</SimpleData>
+		<SimpleData name="road_name">Flathead</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">3.7</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50069</SimpleData>
+		<SimpleData name="my_text">Too steep for cutthrout. Site upstream by Artech.</SimpleData>
+		<SimpleData name="my_priority">low</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1174</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.51360934061,49.1916145921508</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">119</SimpleData>
+		<SimpleData name="stream_crossing_id">50100</SimpleData>
+		<SimpleData name="modelled_crossing_id">4605505</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Ram</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706873689</SimpleData>
+		<SimpleData name="blue_line_key">356474879</SimpleData>
+		<SimpleData name="downstream_route_measure">231</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">2</SimpleData>
+		<SimpleData name="gradient">0.0628</SimpleData>
+		<SimpleData name="watershed_upstr_ha">49.4607</SimpleData>
+		<SimpleData name="total_network_km">1.54</SimpleData>
+		<SimpleData name="total_stream_km">1.54</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.23</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.13</SimpleData>
+		<SimpleData name="total_slopeclass22_km">0.24</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.06</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.54</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.54</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0.23</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0.12</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">0.37</SimpleData>
+		<SimpleData name="wct_stream_km">0.37</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.23</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.13</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.01</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.24</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.24</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0.23</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0.01</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Cabin04</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Cabin Creek</SimpleData>
+		<SimpleData name="road_name">Ram</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">2.7</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50100</SimpleData>
+		<SimpleData name="my_text">Larger stream but fairly steep with relatively low habitat gain potential.</SimpleData>
+		<SimpleData name="my_priority">mod</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1308</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.677346335436,49.1093343180177</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_field_sites_20201231">
+		<SimpleData name="aggregated_crossings_id">154</SimpleData>
+		<SimpleData name="stream_crossing_id">50137</SimpleData>
+		<SimpleData name="crossing_source">ASSESSED</SimpleData>
+		<SimpleData name="crossing_type">ROUND</SimpleData>
+		<SimpleData name="crossing_name">Howell North Branch at 5km</SimpleData>
+		<SimpleData name="barrier_status">BARRIER</SimpleData>
+		<SimpleData name="linear_feature_id">706859785</SimpleData>
+		<SimpleData name="blue_line_key">356453431</SimpleData>
+		<SimpleData name="downstream_route_measure">103</SimpleData>
+		<SimpleData name="watershed_group_code">ELKR</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="stream_magnitude">4</SimpleData>
+		<SimpleData name="gradient">0.0353</SimpleData>
+		<SimpleData name="watershed_upstr_ha">96.0361</SimpleData>
+		<SimpleData name="total_network_km">2.67</SimpleData>
+		<SimpleData name="total_stream_km">2.67</SimpleData>
+		<SimpleData name="total_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_slopeclass03_km">0.13</SimpleData>
+		<SimpleData name="total_slopeclass05_km">0.04</SimpleData>
+		<SimpleData name="total_slopeclass08_km">0.56</SimpleData>
+		<SimpleData name="total_slopeclass15_km">0.43</SimpleData>
+		<SimpleData name="total_slopeclass22_km">1.13</SimpleData>
+		<SimpleData name="total_slopeclass30_km">0.02</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_network_km">0.03</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_stream_km">0.03</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass05_km">0.04</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="total_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_network_km">1.73</SimpleData>
+		<SimpleData name="wct_stream_km">1.73</SimpleData>
+		<SimpleData name="wct_slopeclass03_waterbodies_km">0</SimpleData>
+		<SimpleData name="wct_slopeclass03_km">0.13</SimpleData>
+		<SimpleData name="wct_slopeclass05_km">0.04</SimpleData>
+		<SimpleData name="wct_slopeclass08_km">0.56</SimpleData>
+		<SimpleData name="wct_slopeclass15_km">0.43</SimpleData>
+		<SimpleData name="wct_slopeclass22_km">0.58</SimpleData>
+		<SimpleData name="wct_slopeclass30_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_network_km">0.04</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_stream_km">0.04</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_wetland_ha">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass03_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass05_km">0.04</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass08_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass15_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass22_km">0</SimpleData>
+		<SimpleData name="wct_belowupstrbarriers_slopeclass30_km">0</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="external_crossing_reference">Howell07</SimpleData>
+		<SimpleData name="utm_zone">11</SimpleData>
+		<SimpleData name="stream_name">unnamed tributary to Howell Creek</SimpleData>
+		<SimpleData name="road_name">Howell North Branch at 5km</SimpleData>
+		<SimpleData name="barrier_result_code">BARRIER</SimpleData>
+		<SimpleData name="downstream_channel_width">1.7</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="consultant_name">GRAINGER</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50137</SimpleData>
+		<SimpleData name="my_text">Assessment comments indicate nice pools and LWD.  Decent amount of habitat modelled upstream.</SimpleData>
+		<SimpleData name="my_priority">high</SimpleData>
+		<SimpleData name="modelled_crossing_id_corr">4603736</SimpleData>
+		<SimpleData name="reviewer">ali</SimpleData>
+		<SimpleData name="misc_point_id">1170</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.704473219282,49.239371159181</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

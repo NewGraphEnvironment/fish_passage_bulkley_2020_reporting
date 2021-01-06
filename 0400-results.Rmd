@@ -9,6 +9,10 @@ Field assessments were conducted between `r format(min(pscis$date), format="%B %
 pal <- 
    colorFactor(palette = c("red", "yellow", "grey", "black"), 
                levels = c("high", "moderate", "low", "no fix"))
+
+pal_phase1 <- 
+   colorFactor(palette = c("red", "yellow", "grey", "black"), 
+               levels = c("high", "moderate", "low", NA))
 #https://stackoverflow.com/questions/61026700/bring-a-group-of-markers-to-front-in-leaflet
 # marker_options <- markerOptions(  
 #   zIndexOffset = 1000)
@@ -84,7 +88,7 @@ map <- leaflet(height=500, width=780) %>%
                                 feature.id = F,
                                 row.numbers = F),
     radius = 9,
-    fillColor = ~pal(priority_phase1),
+    fillColor = ~pal_phase1(priority_phase1),
     color= "#ffffff",
     stroke = TRUE,
     fillOpacity = 1.0,

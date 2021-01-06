@@ -94,12 +94,16 @@ Structure replacement with an open bottomed structure is recommended to provide 
 
 There is an estimated `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of mainstem habitat upstream of crossing `r as.character(my_site)` with habitat in the areas surveyed upstream of the crossing rated as high value for fry and juvenile salmonid rearing. Fish sampling indicated generally higher densities of fry, parr and juvenile westslope cutthrout trout downstream when compared to upstream.  River Road is under tenure of the Ministry of Forests, Lands, Natural Resource Operations & Rural Development. The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement with an open bottomed structure.
 
+<br>
+
 \pagebreak
 
 ```{r tab-culvert-030, eval = T}
 print_tab_summary()
 
 ```
+
+<br>
 
 \pagebreak
 
@@ -120,6 +124,8 @@ my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
 tab_fish_site() %>% 
   my_kable(caption_text = my_caption)
 ```
+
+<br>
 
 \pagebreak
 

@@ -30,7 +30,7 @@ knitr::include_graphics("fig/ElkOverview_2020-12-23_v2.png")
 
 <br>
 
-```{r hydrology-plot, fig.cap = 'Hydrograph for Elk River at Fernie (Station #08NK002). Available daily discharge data from 1970 to 2018.'}
+```{r hydrology-plot, fig.cap = 'Hydrograph for Elk River at Fernie (Station #08NK002). Available daily discharge data from 1970 to 2018 with black line and shaded ribbon representing mean and maximum/minimum flows respectively.'}
 knitr::include_graphics("fig/hydrology2.png")
 ```
 

@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="flathead_planning" id="flathead_planning">
+	<SimpleField name="aggregated_crossings_id" type="int"></SimpleField>
+	<SimpleField name="stream_crossing_id" type="int"></SimpleField>
+	<SimpleField name="priority" type="string"></SimpleField>
+	<SimpleField name="study_area" type="string"></SimpleField>
+	<SimpleField name="wct_network_km" type="float"></SimpleField>
+	<SimpleField name="stream_order" type="int"></SimpleField>
+	<SimpleField name="downstream_channel_width" type="float"></SimpleField>
+	<SimpleField name="wct_lakereservoir_ha" type="float"></SimpleField>
+	<SimpleField name="wct_wetland_ha" type="float"></SimpleField>
+	<SimpleField name="observedspp_upstr" type="string"></SimpleField>
+	<SimpleField name="habitat_value_code" type="string"></SimpleField>
+	<SimpleField name="image_view_url" type="string"></SimpleField>
+	<SimpleField name="comments" type="string"></SimpleField>
+</Schema>
+<Folder><name>flathead_planning</name>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">113</SimpleData>
+		<SimpleData name="stream_crossing_id">50093</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50093</SimpleData>
+		<SimpleData name="comments">Stream gradients &gt;20 % downstream. Bull trout potential only.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.608047879985,49.0357747110632</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">128</SimpleData>
+		<SimpleData name="stream_crossing_id">50110</SimpleData>
+		<SimpleData name="priority">no fix</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0.44</SimpleData>
+		<SimpleData name="observedspp_upstr">{WCT}</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50110</SimpleData>
+		<SimpleData name="comments">No habitat modelled upstream</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.729115934171,49.1228878457606</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">141</SimpleData>
+		<SimpleData name="stream_crossing_id">50124</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">1.57</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50124</SimpleData>
+		<SimpleData name="comments">Small watershed with habitat value rated low. Swampy area.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.435592059453,49.0461940402524</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">92</SimpleData>
+		<SimpleData name="stream_crossing_id">50070</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50070</SimpleData>
+		<SimpleData name="comments">Too steep immediatley upstream.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.502884394916,49.1818916898643</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">105</SimpleData>
+		<SimpleData name="stream_crossing_id">50084</SimpleData>
+		<SimpleData name="priority">high</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">2.26</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="downstream_channel_width">2</SimpleData>
+		<SimpleData name="wct_wetland_ha">9.72</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50084</SimpleData>
+		<SimpleData name="comments">Fish observed at outlet. Falls in FISS just downstream. Culvert appears passable to all life stages/species at time of survey but may be velocity barrier at higher flows.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.532914549375,49.0813347144082</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">110</SimpleData>
+		<SimpleData name="stream_crossing_id">50090</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">2.47</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="downstream_channel_width">1.2</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50090</SimpleData>
+		<SimpleData name="comments">If this is the mainstem, habitat upstream at bridge appears mod to high value.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.514528565019,49.0054304586892</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">83</SimpleData>
+		<SimpleData name="stream_crossing_id">50060</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0.16</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="downstream_channel_width">2.1</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50060</SimpleData>
+		<SimpleData name="comments">Harvey Lake is 1ha lake upstream ~230m upstream of the crossing. </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.709416270188,49.2830742320401</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">87</SimpleData>
+		<SimpleData name="stream_crossing_id">50064</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">1.48</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="downstream_channel_width">1.7</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50064</SimpleData>
+		<SimpleData name="comments">Dry at time of survey.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.590867166601,49.2533490827538</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">1341</SimpleData>
+		<SimpleData name="stream_crossing_id">62128</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">1.33</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62268</SimpleData>
+		<SimpleData name="comments">Assessment comments state &quot;Poor fish habitat. Fish use unlikely. Low priority&quot;</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.623803317406,49.3598639127995</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">115</SimpleData>
+		<SimpleData name="stream_crossing_id">50095</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">1.88</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="downstream_channel_width">1.6</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="observedspp_upstr">{BT,DV,SP,WCT}</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50095</SimpleData>
+		<SimpleData name="comments">Very little potential habitat upstream for cutthrout (&gt;25% in 25m).</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.665643048806,49.0053316441224</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">1342</SimpleData>
+		<SimpleData name="stream_crossing_id">62129</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">4.31</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62269</SimpleData>
+		<SimpleData name="comments">Kokanee (2001) inventory site just downstream. (http://a100.gov.bc.ca/pub/acat/public/viewReport.do?reportId=29). Dry upstream in photos.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.622309048088,49.360004098715</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">154</SimpleData>
+		<SimpleData name="stream_crossing_id">50137</SimpleData>
+		<SimpleData name="priority">high</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">1.73</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50137</SimpleData>
+		<SimpleData name="comments">Assessment comments indicate nice pools and LWD.  Decent amount of habitat modelled upstream.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.704473219282,49.239371159181</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">12806</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="comments">First order watershed. </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.447373692644,49.0598697436668</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">91</SimpleData>
+		<SimpleData name="stream_crossing_id">50069</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50069</SimpleData>
+		<SimpleData name="comments">Too steep for cutthrout. Site upstream by Artech.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.51360934061,49.1916145921508</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">121</SimpleData>
+		<SimpleData name="stream_crossing_id">50102</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0.7</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50102</SimpleData>
+		<SimpleData name="comments">Good flow but very steep then extremely steep upstream.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.694880892252,49.1121239968409</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">111</SimpleData>
+		<SimpleData name="stream_crossing_id">50091</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">2.3</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50091</SimpleData>
+		<SimpleData name="comments">Good flow in photos. Smaller channel width. Not on mapped stream location</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.516889679815,49.0090980303109</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">1336</SimpleData>
+		<SimpleData name="stream_crossing_id">62120</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0.28</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="downstream_channel_width">4.5</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62260</SimpleData>
+		<SimpleData name="comments">Small potential habitat gain but assessment comments indicate good rearing habitat and good potential fix candidate.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.569157254625,49.3074930862016</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">123</SimpleData>
+		<SimpleData name="stream_crossing_id">50104</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0.77</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50104</SimpleData>
+		<SimpleData name="comments">Good flow but &gt;15% just upstream. </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.709655956595,49.1126791143292</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">107</SimpleData>
+		<SimpleData name="stream_crossing_id">50086</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">4.49</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="downstream_channel_width">1</SimpleData>
+		<SimpleData name="wct_wetland_ha">1.84</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50086</SimpleData>
+		<SimpleData name="comments">Appears passable at most flows. Rocky mountain sculpin nearby and their swim speeds could be a consideration.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.530674163384,49.0480799948423</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">102</SimpleData>
+		<SimpleData name="stream_crossing_id">50081</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0.38</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50081</SimpleData>
+		<SimpleData name="comments">Small habitat gain with crossing that appears passable to all life stages/species at most flows.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.507373565085,49.1195702937511</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">1338</SimpleData>
+		<SimpleData name="stream_crossing_id">62122</SimpleData>
+		<SimpleData name="priority">no fix</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">9.62</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="downstream_channel_width">1</SimpleData>
+		<SimpleData name="wct_wetland_ha">1.64</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62262</SimpleData>
+		<SimpleData name="comments">Non fish bearing according to Canfor inventory (http://a100.gov.bc.ca/pub/acat/public/viewReport.do?reportId=50443).</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.568294229191,49.2635366433925</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">95</SimpleData>
+		<SimpleData name="stream_crossing_id">50073</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">4.03</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50073</SimpleData>
+		<SimpleData name="comments">Assessment comments indicate WCT found upstream by Artech in 1995 but no FISS point observed. Good flows in photos.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.502467990283,49.1429994033279</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">97</SimpleData>
+		<SimpleData name="stream_crossing_id">50075</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">1.97</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="downstream_channel_width">1.3</SimpleData>
+		<SimpleData name="wct_wetland_ha">3.34</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50075</SimpleData>
+		<SimpleData name="comments">Huge outlet drop.  Wetland headed stream. Appears to have limited flow but decent amount of habitat modelled upstream.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.479923121742,49.1330087878713</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">125</SimpleData>
+		<SimpleData name="stream_crossing_id">50107</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0.76</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50107</SimpleData>
+		<SimpleData name="comments">Assessment comments indicate upstream crossings removed. Good flow. No fish captured in 330 EF site located in Storm Ck near confluence.  Suspect barrier downstream (http://a100.gov.bc.ca/pub/acat/public/viewReport.do?reportId=21683).</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.69643753336,49.1364995022449</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">1337</SimpleData>
+		<SimpleData name="stream_crossing_id">62121</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">1.05</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62261</SimpleData>
+		<SimpleData name="comments">Dry channel with poor habitat. </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.574215713189,49.2874206259102</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">84</SimpleData>
+		<SimpleData name="stream_crossing_id">50061</SimpleData>
+		<SimpleData name="priority">high</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">4.59</SimpleData>
+		<SimpleData name="observedspp_upstr">{WCT}</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50061</SimpleData>
+		<SimpleData name="comments">Large stream but dry during assessment.  WCT known upstream and wetted at 50151 (ford) located 600m upstream.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.695482697517,49.2624924697092</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">133</SimpleData>
+		<SimpleData name="stream_crossing_id">50115</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">2.59</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50115</SimpleData>
+		<SimpleData name="comments">Larger stream with good flow.  Gradients model as &gt;15% almost immediately upstream of crossing.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.673699292418,49.1017577613584</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">124</SimpleData>
+		<SimpleData name="stream_crossing_id">50105</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">2.36</SimpleData>
+		<SimpleData name="observedspp_upstr">{WCT}</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50105</SimpleData>
+		<SimpleData name="comments">Unmapped stream with assessment comments indicating approximately 100m of habitat available upstream. </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.714776747035,49.1127806438942</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">94</SimpleData>
+		<SimpleData name="stream_crossing_id">50072</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">1.09</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50072</SimpleData>
+		<SimpleData name="comments">Small stream with good flow in photos. Assessment comments indicate good gravels. Very close to the mainstem of the Flathead.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.4929819781,49.1551550577875</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">1359</SimpleData>
+		<SimpleData name="stream_crossing_id">62151</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">2.28</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62291</SimpleData>
+		<SimpleData name="comments">Very small stream.  Uncertain whether this is modelled crossing 4604684 or an unmapped tributary.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.604068142918,49.363225755396</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">120</SimpleData>
+		<SimpleData name="stream_crossing_id">50101</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0.4</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50101</SimpleData>
+		<SimpleData name="comments">Larger stream with good flow.  Gradients model as &gt;15 downstream so naturally occuring barriers are fairly likely.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.677795970568,49.1102700071994</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">119</SimpleData>
+		<SimpleData name="stream_crossing_id">50100</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0.37</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50100</SimpleData>
+		<SimpleData name="comments">Larger stream but fairly steep with relatively low habitat gain potential.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.677346335436,49.1093343180177</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">1358</SimpleData>
+		<SimpleData name="stream_crossing_id">62150</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">3.3</SimpleData>
+		<SimpleData name="observedspp_upstr">{WCT}</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=62290</SimpleData>
+		<SimpleData name="comments">Appears to be pinned to wrong stream.  Assessment comments indicate poor habitat.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.61028312885,49.3699846896148</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">86</SimpleData>
+		<SimpleData name="stream_crossing_id">50063</SimpleData>
+		<SimpleData name="priority">high</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">1.57</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50063</SimpleData>
+		<SimpleData name="comments">Relatively large channel width.  Good flow and hab value rated high.  </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.677781837947,49.2586023208455</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">283</SimpleData>
+		<SimpleData name="stream_crossing_id">51146</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">0.59</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=51146</SimpleData>
+		<SimpleData name="comments">No fish captured in 330 EF site located in Storm Ck near confluence.  Suspect barrier downstream (http://a100.gov.bc.ca/pub/acat/public/viewReport.do?reportId=21683).</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.695595740131,49.1363207598334</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">117</SimpleData>
+		<SimpleData name="stream_crossing_id">50097</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">1.47</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="downstream_channel_width">1.4</SimpleData>
+		<SimpleData name="wct_wetland_ha">0</SimpleData>
+		<SimpleData name="habitat_value_code">MEDIUM</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50097</SimpleData>
+		<SimpleData name="comments">Nice gravels in photos.  Quuite steep but potentially productive - particularly for bull trout.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.567260614284,49.0987798489463</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">106</SimpleData>
+		<SimpleData name="stream_crossing_id">50085</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">4.05</SimpleData>
+		<SimpleData name="stream_order">1</SimpleData>
+		<SimpleData name="downstream_channel_width">2.5</SimpleData>
+		<SimpleData name="wct_wetland_ha">3.16</SimpleData>
+		<SimpleData name="habitat_value_code">HIGH</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50085</SimpleData>
+		<SimpleData name="comments">Rocky mountain sculpin nearby. Comments indicate poorly defined channel downstream.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.529667676856,49.0498847747779</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">90</SimpleData>
+		<SimpleData name="stream_crossing_id">50067</SimpleData>
+		<SimpleData name="priority">mod</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="wct_network_km">13.43</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="downstream_channel_width">2.3</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="wct_wetland_ha">9.33</SimpleData>
+		<SimpleData name="observedspp_upstr">{WCT}</SimpleData>
+		<SimpleData name="habitat_value_code">LOW</SimpleData>
+		<SimpleData name="image_view_url">http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=50067</SimpleData>
+		<SimpleData name="comments">Dry channel but westslopes recorded upstream in wetlands. </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.533781284813,49.2104992063601</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">12800</SimpleData>
+		<SimpleData name="priority">high</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="comments">Phase 1 required. WCT known upstream. Connected to Proctor Lake which has recorded RB.  Large potential habitat gain.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.44601891497,49.0573746116629</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">12919</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="comments">Artech sample site downstream( http://a100.gov.bc.ca/pub/acat/public/viewReport.do?reportId=441).  Rated low habitat value upstream with wetland type habitat at PSCIS 50124.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.446058031239,49.0318513562135</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">9825</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="wct_lakereservoir_ha">0</SimpleData>
+		<SimpleData name="comments">Crossing appears to be on the USA border cutline and not a road.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.497746595457,49.0014598048413</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">12920</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="stream_order">2</SimpleData>
+		<SimpleData name="comments">Artech sample site just upstream ( http://a100.gov.bc.ca/pub/acat/public/viewReport.do?reportId=441). Gradient &gt;15% just downstream.  Suspect no fish but further review of Artech report recommended.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.436198214017,49.0133867880437</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">9834</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="stream_order">3</SimpleData>
+		<SimpleData name="comments">Crossing appears to be on the USA border cutline and not a road.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.50226198627,49.0014761853368</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#flathead_planning">
+		<SimpleData name="aggregated_crossings_id">9837</SimpleData>
+		<SimpleData name="priority">low</SimpleData>
+		<SimpleData name="study_area">flathead</SimpleData>
+		<SimpleData name="comments">Crossing appears to be on the USA border cutline and not a road.</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-114.406758368062,49.0015996281296</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

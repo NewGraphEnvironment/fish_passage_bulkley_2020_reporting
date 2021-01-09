@@ -1,3 +1,12 @@
+##we use this script to pull the potentially good candidates from the crossings layer of bcfishpass
+##so we can view them in qgis and add a priority as well as cross reference stream_crossing_id with the modelled_crossing_id
+
+##there is another script (extract-bcfishpass-planning2-report.R) to pull the data back out and dress it for a clean kml file and tables
+
+
+
+##to look at pscis crossings only we use the query builder in Q to say "stream_crossing_id" IS NOT NULL
+##when it is time to look at the modelled crossings only we use "stream_crossing_id" IS NULL
 source('R/functions.R')
 source('R/packages.R')
 source('R/private_info.R')
@@ -28,8 +37,8 @@ dbGetQuery(conn,
 dbGetQuery(conn,
            "SELECT column_name,data_type
            FROM information_schema.columns
-           WHERE table_schema = 'whse_fish'
-           and table_name='fiss_fish_obsrvtn_events_sp'")
+           WHERE table_schema = 'bcfishpass'
+           and table_name='crossings'")
 
 ##get the watersheds of interest
 ##here is the elk
@@ -140,7 +149,6 @@ dat_pscis <- bind_rows(
 # dat_pscis %>% readr::write_csv(file = paste0(getwd(), '/data/raw_input/pscis_study_area.csv'))
 
 
-
 ###lets join the two outputs together for each and add the coordinates so we can make a valid
 dat_mod_prep <- bind_rows(
   dat_mod_elk,
@@ -156,6 +164,9 @@ dat_mod_prep <- bind_cols(
   coords
 )
 
+##we are habing issues with these data types for some reason so we need to either remove them or change them to character.
+convert_to_char <- c('wscode_ltree','localcode_ltree','dnstr_crossings','dnstr_barriers_anthropogenic','observedspp_dnstr','observedspp_upstr')
+
 ##add the pscis info that we need for our analysis
 dat_mod <- full_join(
   dat_mod_prep %>% st_drop_geometry(),
@@ -169,6 +180,7 @@ dat_mod <- full_join(
   filter(!crossing_type %in% c('FORD', "BRIDGE", "OBS", "DAM - OTHER", "DAM - HYDRO")) %>%
   filter(is.na(barrier_status) | barrier_status != 'PASSABLE') %>%
   filter(is.na(crossing_source) | crossing_source != 'HABITAT CONFIRMATION') %>%
+  filter(is.na(barrier_result_code) | barrier_result_code != 'PASSABLE') %>%  ##added later
   filter(
     !is.na(observedspp_upstr) |
       wct_network_km >= 1 |
@@ -183,9 +195,7 @@ dat_mod <- full_join(
          my_stream_name = NA_character_,
          my_road_name = NA_character_,
          modelled_crossing_id_corr = NA_integer_,
-         linear_feature_id_corr = NA_integer_,
-         reviewer = 'ali',
-         notes = NA_character_) %>%
+         reviewer = 'ali') %>%
   mutate(utm_easting = case_when(
     is.na(utm_easting) ~ easting,
     T ~ utm_easting),
@@ -194,8 +204,9 @@ dat_mod <- full_join(
       T ~ utm_northing)) %>%
   st_as_sf(coords = c("utm_easting", "utm_northing")) %>%
   select(-easting, -northing) %>%
-  mutate(observedspp_dnstr2 = as.character(observedspp_dnstr), ##we are having issues with indexed columns that we are dropping but want to keep these
-         observedspp_upstr2 = as.character(observedspp_upstr))
+  mutate(across(all_of(convert_to_char), as.character))
+
+
 
   # replace(., is.na(.), TRUE)
   # filter(!is.na(stream_crossing_id)) %>% ##heres the clincher! diff is 600 crossings
@@ -203,7 +214,7 @@ dat_mod <- full_join(
 # filter(wct_network_km >= 1)
 
 # add a unique id - we could just use the reference number
-dat_mod$misc_point_id <- seq.int(nrow(dat))
+dat_mod$misc_point_id <- seq.int(nrow(dat_mod))
 
 
 ##disconnect then burn to local db
@@ -218,26 +229,65 @@ conn <- DBI::dbConnect(
   password = "postgres"
 )
 
-##see the columns in a table
-# dbGetQuery(conn,
-#            "SELECT column_name,data_type
-#            FROM information_schema.columns
-#            WHERE table_schema = 'working'
-#            and table_name='my_pscis_20180315'")
+##############################################################################################################
+##############################################################################################################
+##THIS IS WHERE WE MOVE AROUND IN TIME#####################################################################
+##############################################################################################################
+##############################################################################################################
 
-remove <- c('wscode_ltree','localcode_ltree','dnstr_crossings','dnstr_barriers_anthropogenic','observedspp_dnstr','observedspp_upstr')
-dat <- dat_mod %>%
-  select(-all_of(remove))
 
-sf::st_write(obj = dat, dsn = conn, Id(schema= "working", table = "elk_flathead_planning_20210101", change the name!!))
+##this is what we do if we don't want to incorperate already input information
+# sf::st_write(obj = dat, dsn = conn, Id(schema= "working", table = "elk_flathead_planning_20210101", change the name!!))
+#
+# ## sf doesn't automagically create a spatial index or a primary key
+# res <- dbSendQuery(conn, "CREATE INDEX ON working.elk_flathead_planning_20210101 USING GIST (geometry)")
+# dbClearResult(res)
+# res <- dbSendQuery(conn, "ALTER TABLE working.elk_flathead_planning_20210101 ADD PRIMARY KEY (misc_point_id)")
+# dbClearResult(res)
+
+# dbDisconnect(conn = conn)
+
+
+##lets get the data that has been input in qgis and join it back into the dataframe so it can be reburned
+query <- "SELECT a.aggregated_crossings_id, a.stream_crossing_id, a.my_text, a.my_priority, a.my_stream_name, a.my_road_name,
+a.modelled_crossing_id_corr, a.geometry FROM working.elk_flathead_planning_20210101 a;"
+
+dat_after_review<- st_read(conn, query = query) %>%
+  st_drop_geometry()
+
+##join back your info and populate where we have completed the review
+cols_to_replace <- names(dat_after_review) %>%
+  purrr::discard(~ .x %in% c('aggregated_crossings_id', 'stream_crossing_id')) ##we join with this so keep
+
+##remove the columns we already have data for
+dat_mod2 <- dat_mod %>%
+  select(-all_of(cols_to_replace))
+
+##join with data already completed
+dat_mod3 <- left_join(
+  dat_mod2,
+  dat_after_review,
+  by = c('aggregated_crossings_id', 'stream_crossing_id')
+)
+
+##declare the schema and table names
+schema_name = "working"
+table_name = "elk_flathead_planning_20210109"
+crs = 26911
+geom_type = "Point"
+
+##burn back to the database and keep on working!!!
+sf::st_write(obj = dat_mod3, dsn = conn, Id(schema= schema_name, table = table_name))
 
 ## sf doesn't automagically create a spatial index or a primary key
-res <- dbSendQuery(conn, "CREATE INDEX ON working.elk_flathead_planning_20210101 USING GIST (geometry)")
+res <- dbSendQuery(conn, paste0("CREATE INDEX ON ", schema_name, ".", table_name, " USING GIST (geometry)"))
 dbClearResult(res)
-res <- dbSendQuery(conn, "ALTER TABLE working.elk_flathead_planning_20210101 ADD PRIMARY KEY (misc_point_id)")
+res <- dbSendQuery(conn, paste0("ALTER TABLE ", schema_name, ".", table_name, " ADD PRIMARY KEY (misc_point_id)"))
+dbClearResult(res)
+res <- dbSendQuery(conn,
+                   paste0("ALTER TABLE ", schema_name, ".", table_name, " ALTER COLUMN geometry
+           Type geometry(", geom_type, ", ", crs, ")
+           USING ST_SetSRID(geometry, ", crs, ");"))
 dbClearResult(res)
 
 dbDisconnect(conn = conn)
-
-test <- dat %>%
-  filter(modelled_crossing_id == 4605870)

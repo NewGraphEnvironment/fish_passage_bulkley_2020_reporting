@@ -11,7 +11,7 @@ bcdc_browse()
 
 dat_points <- c(
   # 'pscis-habitat-confirmations',
-  'pscis-assessments'
+  'provincial-obstacles-to-fish-passage'
   # 'hydrometric-stations-active-and-discontinued',
   # 'known-bc-fish-observations-and-bc-fish-distributions',
   # 'stream-inventory-sample-sites'
@@ -24,7 +24,7 @@ dat_points <- c(
 # metadata <- bcdc_get_record("7ecfafa6-5e18-48cd-8d9b-eae5b5ea2881")
 
 # ##should start a lookup table for these layers
-get_this <- bcdc_tidy_resources('pscis-assessments') %>%
+get_this <- bcdc_tidy_resources('provincial-obstacles-to-fish-passage') %>%
   filter(bcdata_available == T)  %>%
   pull(package_id)
 

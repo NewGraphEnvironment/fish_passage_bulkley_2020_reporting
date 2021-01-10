@@ -23,7 +23,8 @@ wshds <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'hab_wshds_ltree') %>
 wshd_study_elk <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'wshd_study_elk') %>% 
   st_transform(crs = 4326)
 wshd_study_flathead <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'wshd_study_flathead') %>% 
-  st_transform(crs = 4326)  
+  st_transform(crs = 4326) 
+photo_metadata <- readr::read_csv(file = 'data/photo_metadata.csv')
   
   
 map <- leaflet(height=500, width=780) %>%
@@ -57,11 +58,10 @@ map <- leaflet(height=500, width=780) %>%
   ) %>% 
     addPolylines(data=tracks,  opacity=0.75, color = '#e216c4',
                fillOpacity = 0.75, weight=5, group = "Phase 2") %>%
-  # addAwesomeMarkers(lng = photo_metadata$lon_map,lat = photo_metadata$lat_map,
-  #                   popup = leafpop::popupImage(photo_metadata$url, src = "remote"),
-  #                   clusterOptions = markerClusterOptions(),
-  #                   labelOptions = offset(c(0,0)),
-  #                   label = paste0(photo_metadata$crossing_id, '_', photo_metadata$filename)) %>%
+  addAwesomeMarkers(lng = photo_metadata$gpslongitude,lat = photo_metadata$gpslatitude,
+                    popup = leafpop::popupImage(photo_metadata$url, src = "remote"),
+                    clusterOptions = markerClusterOptions(),
+                    group = "Phase 2") %>%
     addCircleMarkers(
     data=tab_hab_map,
     label = tab_hab_map$pscis_crossing_id, 

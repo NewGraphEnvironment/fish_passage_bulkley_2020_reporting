@@ -117,13 +117,13 @@ map %>%
 
 ## Planning
 
-Sites selected for follow up with Phase 1 and 2 assessments in the upper Elk River and Flathead River watersheds are included as a zipped package of Google Earth kml files [here](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/planning_kmls/elk_planning_kmls.zip).  
+Sites selected for follow up with Phase 1 and 2 assessments in the upper Elk River and Flathead River watersheds are included as a zipped package of Google Earth kml files [here](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/planning_kmls/elk_planning_kmls.zip). 
 
 <br>
 
 ## Phase 1
 
-A total of `r n_distinct(pscis$my_crossing_reference)` phase 1 assessments were conducted with `r pscis %>% filter(barrier_result == 'Passable') %>% nrow()` crossings considered "passable", `r pscis %>% filter(barrier_result == 'Potential') %>% nrow()` crossings considered 'potential' barriers and `r pscis %>% filter(barrier_result == 'Barrier') %>% nrow()` crossings considered barriers.  Site details and photos are presented in [Appendix - Phase 1 Fish Passage Assessment Data and Photos].  A rough cost benefit analysis for Phase 1 sites there were determined to be barriers or potential barriers is presented in Table \@ref(tab:cost-est-phase-1). 
+A total of `r n_distinct(pscis$my_crossing_reference)` Phase 1 assessments were conducted with `r pscis %>% filter(barrier_result == 'Passable') %>% nrow()` crossings considered "passable", `r pscis %>% filter(barrier_result == 'Potential') %>% nrow() %>% english::as.english()` crossings considered "potential" barriers and `r pscis %>% filter(barrier_result == 'Barrier') %>% nrow()` crossings considered "barriers" according to threshold values based on culvert embedment, outlet drop, slope, diameter (relative to channel size) and length [@fish_passage_assessments].  Site details and photos are presented in [Appendix - Phase 1 Fish Passage Assessment Data and Photos].  A rough cost benefit analysis for Phase 1 sites there were determined to be barriers or potential barriers is presented in Table \@ref(tab:cost-est-phase-1). 
 
 <br>
 

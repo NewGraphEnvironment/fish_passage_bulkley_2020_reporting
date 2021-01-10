@@ -148,10 +148,32 @@ make_tab_summary <- function(df){
 ##here we stack up and down then side to side for reporting - this works!
 make_photo_comp_cv <- function(site_id){
   photos_images1 <- list.files(path = paste0(getwd(), '/data/photos/', site_id), full.names = T) %>%
-    stringr::str_subset(., 'barrel|outlet|upstream') %>%
+    stringr::str_subset(., 'upstream|road|inlet') %>%
+    as_tibble() %>%
+    mutate(sort = case_when(
+      value %ilike% 'road' ~ 1,
+      value %ilike% 'inlet' ~ 2,
+      value %ilike% 'upstream' ~ 3,
+      value %ilike% 'barrel' ~ 4,
+      value %ilike% 'outlet' ~ 5,
+      value %ilike% 'downstream' ~ 6,
+    )) %>%
+    arrange(sort) %>%
+    pull(value) %>%
     image_read()
   photos_images2 <- list.files(path = paste0(getwd(), '/data/photos/', site_id), full.names = T) %>%
-    stringr::str_subset(., 'downstream|road|inlet') %>%
+    stringr::str_subset(., 'barrel|outlet|downstream') %>%
+    as_tibble() %>%
+    mutate(sort = case_when(
+      value %ilike% 'road' ~ 1,
+      value %ilike% 'inlet' ~ 2,
+      value %ilike% 'upstream' ~ 3,
+      value %ilike% 'barrel' ~ 4,
+      value %ilike% 'outlet' ~ 5,
+      value %ilike% 'downstream' ~ 6,
+    )) %>%
+    arrange(sort) %>%
+    pull(value) %>%
     image_read()
   photos_stack1 <-image_append(image_scale(photos_images1, "x420"), stack = T) ##1/3 the width 373.33 and half the original height
   photos_stack2 <- image_append(image_scale(photos_images2, "x420"), stack = T)
@@ -159,6 +181,7 @@ make_photo_comp_cv <- function(site_id){
   photos_stacked <- image_append(image_scale(photos_stack), stack = F)
   image_write(photos_stacked, path = paste0(getwd(), '/data/photos/', site_id, '/crossing_all.JPG'), format = 'jpg')
 }
+
 
 
 ####-------culvert details summary---------------
@@ -187,10 +210,22 @@ print_tab_summary_all <- function(tab_sum, comments, photos){
   kable(tab_sum, booktabs = T) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
     kableExtra::add_footnote(label = paste0('Comments: ', comments[[1]]), notation = 'none') %>% #this grabs the comments out
-    kableExtra::add_footnote(label = paste0('Photos: ', photos[[1]],
-                                            '. From top left clockwise: Downstream, Road/Site Card, Inlet, Upstream, Outlet, Barrel.',
+    kableExtra::add_footnote(label = paste0('Photos: External ID ', photos[[1]],
+                                            '. From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.',
                                             photos[[2]]), notation = 'none') %>%
     kableExtra::add_footnote(label = '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>', escape = F, notation = 'none')
+}
+
+##summary table
+print_tab_summary <- function(dat = pscis2, site = my_site, site_photo_id = my_site, font = 11){
+  make_tab_summary(df = dat %>% filter(pscis_crossing_id == site)) %>%
+    kable(caption = paste0('Summary of fish passage reassessment for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
+    # kableExtra::add_footnote(label = paste0('Comments: ', pscis2 %>% filter(pscis_crossing_id == my_site) %>%
+    #                                           pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
+    kableExtra::add_footnote(label = paste0('Photos: From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.',
+                                            paste0('![](data/photos/', site_photo_id, '/crossing_all.JPG)')), notation = 'none') %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)
+  # kableExtra::scroll_box(width = "100%", height = "500px") ##not scrolling to simplify our pagedown output
 }
 
 ####------my_kable-------------------------------
@@ -259,17 +294,7 @@ get_img_path <- function(site = my_site, photo = my_photo){
   paste0('data/photos/', site, '/', photo)
 }
 
-##summary table
-print_tab_summary <- function(dat = pscis2, site = my_site, site_photo_id = my_site, font = 11){
-  make_tab_summary(df = dat %>% filter(pscis_crossing_id == site)) %>%
-    kable(caption = paste0('Summary of fish passage reassessment for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
-    # kableExtra::add_footnote(label = paste0('Comments: ', pscis2 %>% filter(pscis_crossing_id == my_site) %>%
-    #                                           pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
-    kableExtra::add_footnote(label = paste0('Photos: ',
-                                            paste0('![](data/photos/', site_photo_id, '/crossing_all.JPG)')), notation = 'none') %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)
-    # kableExtra::scroll_box(width = "100%", height = "500px") ##not scrolling to simplify our pagedown output
-}
+
 
 
 print_tab_cost_mult <- function(dat = tab_cost_rd_mult_report, ...){

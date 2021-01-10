@@ -1,6 +1,6 @@
 # Results and Discussion
 
-Field assessments were conducted between `r format(min(pscis$date), format="%B %d %Y")` and `r format(max(pscis$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio, Kyle Prince, P,Biol, Mark Fjeld, BiT and Chad Hughes, Ecologist. Results of Phase 1 and Phase 2 assessments are `r if(html_on)knitr::asis_output("summarized in Figure \\@ref(fig:map-interactive) with additional details ")` provided in sections below.
+Field assessments were conducted between `r format(min(pscis$date), format="%B %d %Y")` and `r format(max(pscis$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio, Kyle Prince, P,Biol, Mark Fjeld, BiT and Chad Hughes, Ecologist. `r if(html_on)knitr::asis_output("Results of Phase 1 and Phase 2 assessments are summarized in Figure \\@ref(fig:map-interactive) with additional details provided in sections below.")` 
 
 <br>
 
@@ -56,9 +56,11 @@ map <- leaflet(height=500, width=780) %>%
     labels = c("High", "Moderate", "Low", 'No fix'), opacity = 1,
     title = "Fish Passage Priorities",
   ) %>% 
-    addPolylines(data=tracks,  opacity=0.75, color = '#e216c4',
+    addPolylines(
+      data=tracks,  opacity=0.75, color = '#e216c4',
                fillOpacity = 0.75, weight=5, group = "Phase 2") %>%
-  addAwesomeMarkers(lng = photo_metadata$gpslongitude,lat = photo_metadata$gpslatitude,
+  addAwesomeMarkers(
+    lng = photo_metadata$gpslongitude,lat = photo_metadata$gpslatitude,
                     popup = leafpop::popupImage(photo_metadata$url, src = "remote"),
                     clusterOptions = markerClusterOptions(),
                     group = "Phase 2") %>%
@@ -115,7 +117,9 @@ map %>%
 
 ## Planning
 
-Sites selected for follow up with Phase 1 and 2 assessments in the upper Elk River and Flathead River watersheds are included as Google Earth kml files [here](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/planning_kmls).  
+Sites selected for follow up with Phase 1 and 2 assessments in the upper Elk River and Flathead River watersheds are included as a zipped package of Google Earth kml files [here](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/planning_kmls/elk_planning_kmls.zip).  
+
+<br>
 
 ## Phase 1
 

@@ -7,13 +7,23 @@ source('R/functions.R')
 site_id_list <- list.files(path = paste0(getwd(), '/data/photos/'), full.names = T) %>%
   basename()
 
-##lets look to see that we have all the right photo names
+##lets look to see that we have all the right photo names - the sorting has nothing to do with it
+##but might be useful for QA if we add the total and check that it is equiv - leave for now...
 find_photo_names <- function(site_id){
   list.files(path = paste0(getwd(), '/data/photos/', site_id), full.names = T) %>%
     stringr::str_subset(., 'barrel|outlet|upstream|downstream|road|inlet') %>%
-    as_tibble()
+    as_tibble() %>%
+    mutate(sort = case_when(
+      value %ilike% 'road' ~ 1,
+      value %ilike% 'inlet' ~ 2,
+      value %ilike% 'upstream' ~ 3,
+      value %ilike% 'barrel' ~ 4,
+      value %ilike% 'outlet' ~ 5,
+      value %ilike% 'downstream' ~ 6,
+    )) %>%
+    arrange(sort) %>%
+    select(-sort)
 }
-
 
 
 ##if you look at this "by hand" you can see tibbles with less than 6 rows so those should be fixed.
@@ -24,17 +34,14 @@ photo_names <- site_id_list %>%
   map(find_photo_names)
 
 
-##once you review the test results and you are good then run your function over the list
+##once you review the test results and make sure they are all there you are good then run your function over the list
 site_id_list %>%
   map(make_photo_comp_cv)
 
 
 
 
-
-
-
-lets try to get the names of the photos printed on the photos
+#could try to get the names of the photos printed on the photos but might not be worth it...
 
 ##------------used this to make the function
 # site_id <- '3054'

@@ -41,4 +41,6 @@ st_write(dat_after_review, dsn = paste0(getwd(), '/data/planning_kmls/flathead_p
 dbDisconnect(conn = conn)
 
 
-##burn to a kml
+##we need to zip our kmls or they would be pulled correctly from github
+files_to_zip <- paste0("data/planning_kmls/", list.files(path = "data/planning_kmls/", pattern = "\\.kml$"))  ##this used to includes the planning file which we don't want to do so watch out
+zip::zipr("data/planning_kmls/elk_planning_kmls.zip", files = files_to_zip)  ##it does not work to zip to kmz!!

@@ -13,7 +13,7 @@ R/pers_*
 #data/photos/*
 *.JPG
 !crossing_all.JPG
-#!*_k.*
+!*_k*
 #!*_k_*
 *.gpkg-wal
 *.gpkg-shm

@@ -1,10 +1,9 @@
-Workflows for [Fish Passage and Habitat Confirmation Assessments](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical) conducted in the Elk River watershed upstream of the Elko Dam near Fernie in the summer/fall of 2020.
 
-This repository builds an [interactive report](https://newgraphenvironment.github.io/fish_passage_elk_2020_reporting_cwf/) that is in the early stages of development, is incomplete and may contain errors.  It is updated regularly and will change substantially with much more detail yet to be added.   Please contact al@newgraphenvironment.com (2507771518) with any feedback regarding any of the fish passage restoration candidate sites or if you have any questions regarding the project.  Thank you for taking the time to review.
+This repository builds an [interactive report](https://newgraphenvironment.github.io/fish_passage_elk_2020_reporting_cwf/) documenting fish passage and habitat confirmation assessments at road-stream crossings within the Elk River watershed group in the summer/fall of 2020. Although some planning for future assessments was conducted for both the Elk River watershed upstream of the Elko Dam near Elko, BC and the Flathead River, on the ground surveys focused on the Elk River and tributaries located upstream of the Elko Dam. 
 
 <br>
 
- * The report is generated from scratch from a Rmarkdown document processing raw data from:
+ * The report is generated with primarily `R` and `SQL` scripts from a `Rmarkdown` document processing raw data from:
  
     + [Checklist for Habitat Confirmation](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/habitat-confirmation-projects) procedures developed by the provincial [Fish Passage Technical Working Group](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical) to guide biologists confirming fish habitat value at a stream crossing which has been identified as a potential high‐priority restoration site.
 

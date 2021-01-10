@@ -38,7 +38,7 @@ dbGetQuery(conn,
            "SELECT column_name,data_type
            FROM information_schema.columns
            WHERE table_schema = 'bcfishpass'
-           and table_name='crossings'")
+           and table_name='barriers_anthropogenic'")
 
 ##get the watersheds of interest
 ##here is the elk
@@ -92,13 +92,23 @@ INNER JOIN whse_fish.pscis_assessment_svw p ON (ST_Within(p.geom, a.geometry));"
 
 dat_pscis_elk <- st_read(conn, query = query)
 
+##CHANGE - we will try to use bcfishpass.barriers_anthropogenic
+#get a spatial version of the modelled info
+# query = "SELECT c.*, a.study_area
+#   FROM ali.misc a
+# INNER JOIN bcfishpass.barriers_anthropogenic c ON (ST_Within(c.geom, a.geometry));"
 
 #get a spatial version of the modelled info
 query = "SELECT c.*, a.study_area
   FROM ali.misc a
 INNER JOIN ali.crossings c ON (ST_Within(c.geom, a.geometry));"
 
+
 dat_mod_elk <- st_read(conn, query = query)
+# dat_mod_elk_ali <- st_read(conn, query = query2)
+#
+# test <- setdiff(select(dat_mod_elk_ali, stream_crossing_id, modelled_crossing_id, dam_id) %>% st_drop_geometry(),
+#                 select(dat_mod_elk, stream_crossing_id, modelled_crossing_id, dam_id) %>% st_drop_geometry())
 
 ####------now do the flathead-------------
 dat <- wshd_study_flathead %>%
@@ -137,6 +147,11 @@ query = "SELECT c.*, a.study_area
   FROM ali.misc a
 INNER JOIN ali.crossings c ON (ST_Within(c.geom, a.geometry));"
 
+#get a spatial version of the modelled info
+# query = "SELECT c.*, a.study_area
+#   FROM ali.misc a
+# INNER JOIN bcfishpass.barriers_anthropogenic c ON (ST_Within(c.geom, a.geometry));"
+
 dat_mod_flathead <- st_read(conn, query = query)
 
 ###lets join the two outputs together for each
@@ -166,6 +181,8 @@ dat_mod_prep <- bind_cols(
 
 ##we are habing issues with these data types for some reason so we need to either remove them or change them to character.
 convert_to_char <- c('wscode_ltree','localcode_ltree','dnstr_crossings','dnstr_barriers_anthropogenic','observedspp_dnstr','observedspp_upstr')
+# convert_to_char <- c('wscode_ltree','localcode_ltree','dnstr_barriers_anthropogenic','observedspp_dnstr','observedspp_upstr') ##removed 'dnstr_crossings'
+
 
 ##add the pscis info that we need for our analysis
 dat_mod <- full_join(
@@ -250,7 +267,7 @@ conn <- DBI::dbConnect(
 
 ##lets get the data that has been input in qgis and join it back into the dataframe so it can be reburned
 query <- "SELECT a.aggregated_crossings_id, a.stream_crossing_id, a.my_text, a.my_priority, a.my_stream_name, a.my_road_name,
-a.modelled_crossing_id_corr, a.geometry FROM working.elk_flathead_planning_20210101 a;"
+a.modelled_crossing_id_corr, a.geometry FROM working.elk_flathead_planning_20210101 a;" ##this could now be changed to 20210109
 
 dat_after_review<- st_read(conn, query = query) %>%
   st_drop_geometry()
@@ -258,6 +275,10 @@ dat_after_review<- st_read(conn, query = query) %>%
 ##join back your info and populate where we have completed the review
 cols_to_replace <- names(dat_after_review) %>%
   purrr::discard(~ .x %in% c('aggregated_crossings_id', 'stream_crossing_id')) ##we join with this so keep
+
+# cols_to_replace <- names(dat_after_review) %>%
+#   purrr::discard(~ .x %in% c('modelled_crossing_id', 'stream_crossing_id', 'dam_id')) ##we join with this so keep
+
 
 ##remove the columns we already have data for
 dat_mod2 <- dat_mod %>%

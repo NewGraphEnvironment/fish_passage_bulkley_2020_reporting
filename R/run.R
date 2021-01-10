@@ -44,3 +44,17 @@ file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')
 
 ##  make the site
 rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')
+
+##sub in the title page
+length <- pdf_length(paste0(getwd(), "/docs/Elk.pdf"))
+
+pdf_subset(paste0(getwd(), "/docs/Elk.pdf"),
+           pages = 2:length, output = paste0(getwd(), "/docs/Elk2.pdf"))
+
+pdf_combine(c(paste0(getwd(), "/docs/title_page.pdf"),
+  paste0(getwd(), "/docs/Elk2.pdf")),
+            output = paste0(getwd(), "/docs/Elk3.pdf"))
+
+file.rename(paste0(getwd(), "/docs/Elk3.pdf"), paste0(getwd(),"/docs/Elk.pdf"))
+
+file.remove(paste0(getwd(), "/docs/Elk2.pdf"))

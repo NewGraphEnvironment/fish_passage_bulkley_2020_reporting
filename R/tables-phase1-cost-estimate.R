@@ -74,7 +74,7 @@ tab_cost_rd_mult <- pscis_rd %>%
 
 ####-----------report table--------------------
 tab_cost_rd_mult_report <- tab_cost_rd_mult %>%
-  mutate(cost_m_1000s_bridge = cost_m_1000s_bridge * 10) %>%
+  # mutate(cost_m_1000s_bridge = cost_m_1000s_bridge * 10) %>%
   rename(
     Class = my_road_class,
     Surface = my_road_surface,

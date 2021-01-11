@@ -56,6 +56,23 @@ map <- leaflet(height=500, width=780) %>%
     labels = c("High", "Moderate", "Low", 'No fix'), opacity = 1,
     title = "Fish Passage Priorities",
   ) %>% 
+    addCircleMarkers(
+    data=tab_phase1_map,
+    label = tab_phase1_map$ID,
+    labelOptions = labelOptions(noHide = F, textOnly = TRUE),
+    popup = leafpop::popupTable(x = select((tab_phase1_map %>% st_set_geometry(NULL)),
+                                           Site = ID, Priority = priority_phase1, Stream = stream_name, Road = road_name, `Habitat value`= habitat_value, `Barrier Result` = barrier_result, `Culvert data` = data_link, `Culvert photos` = photo_link),
+                                feature.id = F,
+                                row.numbers = F),
+    radius = 9,
+    fillColor = ~pal_phase1(priority_phase1),
+    color= "#ffffff",
+    stroke = TRUE,
+    fillOpacity = 1.0,
+    weight = 2,
+    opacity = 1.0,
+    group = "Phase 1"
+    ) %>%
     addPolylines(
       data=tracks,  opacity=0.75, color = '#e216c4',
                fillOpacity = 0.75, weight=5, group = "Phase 2") %>%
@@ -69,7 +86,7 @@ map <- leaflet(height=500, width=780) %>%
     label = tab_hab_map$pscis_crossing_id, 
     labelOptions = labelOptions(noHide = T, textOnly = TRUE),
     popup = leafpop::popupTable(x = select((tab_hab_map %>% st_set_geometry(NULL)), 
-                                           Site = pscis_crossing_id, Priority = priority, Stream = stream_name, Road = road_name, `Habitat (m)`= upstream_habitat_length_m, Comments = comments),
+                                           Site = pscis_crossing_id, Priority = priority, Stream = stream_name, Road = road_name, `Habitat (m)`= upstream_habitat_length_m, Comments = comments, `Culvert data` = data_link, `Culvert photos` = photo_link),
                                 feature.id = F,
                                 row.numbers = F), 
     radius = 9,
@@ -81,24 +98,6 @@ map <- leaflet(height=500, width=780) %>%
     opacity = 1.0,
     group = "Phase 2"
     ) %>% 
-  addCircleMarkers(
-    data=tab_phase1_map,
-    label = tab_phase1_map$ID,
-    labelOptions = labelOptions(noHide = F, textOnly = TRUE),
-    popup = leafpop::popupTable(x = select((tab_phase1_map %>% st_set_geometry(NULL)),
-                                           Site = ID, Priority = priority_phase1, Stream = stream_name, Road = road_name, `Habitat value`= habitat_value, `Barrier Result` = barrier_result, `Data Link` = link),
-                                feature.id = F,
-                                row.numbers = F),
-    radius = 9,
-    fillColor = ~pal_phase1(priority_phase1),
-    color= "#ffffff",
-    stroke = TRUE,
-    fillOpacity = 1.0,
-    weight = 2,
-    opacity = 1.0,
-    group = "Phase 1"
-    ) %>%
-
   #     # addScaleBar(position = 'bottomleft', options = scaleBarOptions(imperial = FALSE)) %>% 
   addLayersControl(
     baseGroups = c(
@@ -121,6 +120,10 @@ map %>%
 pscis_historic <- readr::read_csv(file = paste0(getwd(), '/data/raw_input/pscis_study_area.csv'))
 pscis_historic_phase2 <- readr::read_csv(file = paste0(getwd(), '/data/raw_input/pscis_phase2_study_area.csv'))
 
+##read in the kml so we can summarize
+planning_results <- sf::st_read("data/planning_kmls/flathead_planning.kml")
+# 
+# planning_results %>% filter(study_area %ilike% 'flathead')
 ```
 
 Review of the PSCIS database indicated that prior to 2020, `r pscis_historic %>% filter(study_area %ilike% 'elk' & assessment_date < '2020-01-01') %>% nrow()` assessments for fish passage (Phase 1) and `r pscis_historic_phase2 %>% filter(study_area %ilike% 'elk' & assmt_date < '2020-01-01') %>% nrow()` habitat confirmations (Phase 2) have been conducted at crossing structures within the Upper Elk River.  Within the Flathead River watershed `r pscis_historic %>% filter(study_area %ilike% 'flathead' & assessment_date < '2020-01-01') %>% nrow()` fish passage assessments and `r pscis_historic_phase2 %>% filter(study_area %ilike% 'flathead' & assmt_date < '2020-01-01') %>% nrow() %>% english::as.english()` habitat confirmations had been conducted.  Following review of background literature, fisheries information, PSCIS and `bcfishpass` outputs, both modelled and PSCIS sites were selected for follow up with Phase 1 and 2 assessments. Results are included as a zipped package of Google Earth kml files stored  [here](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/planning_kmls/elk_planning_kmls.zip). 

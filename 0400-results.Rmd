@@ -1,6 +1,6 @@
 # Results and Discussion
 
-Field assessments were conducted between `r format(min(pscis$date), format="%B %d %Y")` and `r format(max(pscis$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio, Kyle Prince, P,Biol, Mark Fjeld, BiT and Chad Hughes, Ecologist. `r if(html_on)knitr::asis_output("Results of Phase 1 and Phase 2 assessments are summarized in Figure \\@ref(fig:map-interactive) with additional details provided in sections below.")` 
+Field assessments were conducted between `r format(min(pscis$date), format="%B %d %Y")` and `r format(max(pscis$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio, New Graph Environment, Mark Fjeld, BiT, Nupqu Limited Partnership, Kyle Prince, P,Biol, Living Lakes Canada, and Chad Hughes, Ecologist, Elk River Alliance. `r if(html_on)knitr::asis_output("Results of Phase 1 and Phase 2 assessments are summarized in Figure \\@ref(fig:map-interactive) with additional details provided in sections below.")` 
 
 <br>
 

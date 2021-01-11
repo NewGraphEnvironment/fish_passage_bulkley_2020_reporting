@@ -1,6 +1,6 @@
 # Methods
 
-Workflows for the project can be classified into four categories: planning, fish passage assessments, habitat confirmation assessments and reporting.
+Workflows for the project can be classified into planning, fish passage assessments, habitat confirmation assessments and reporting. All components leveraged the R programming language and environment for statistical computing to facilitate workflow tracking and reproducibility [@rcoreteam2020languageenvironment]. 
 
 
 ```{r eval=F}

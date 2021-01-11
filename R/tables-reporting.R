@@ -95,7 +95,14 @@ tab_hab_map <- left_join(
 ) %>%
   sf::st_as_sf(coords = c("utm_easting", "utm_northing"),
                crs = 26911, remove = F) %>%
-  sf::st_transform(crs = 4326)
+  sf::st_transform(crs = 4326) %>%
+  mutate(data_link = paste0('<a href =',
+                            'https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/fig/sum/', pscis_crossing_id,
+                            '.png', '>', 'data link', '</a>')) %>%
+  # mutate(data_link = paste0('[data](fig/sum/', pscis_crossing_id, '.png)')) %>%
+  mutate(photo_link = paste0('<a href =',
+                             'https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/photos/', pscis_crossing_id,
+                             '/crossing_all.JPG', '>', 'photo link', '</a>'))
 
 tab_phase1_map_prep <- left_join(
   phase1_priorities,
@@ -115,8 +122,11 @@ tab_phase1_map <- tab_phase1_map_prep %>%
   sf::st_transform(crs = 4326) %>%
   mutate(priority_phase1 = case_when(priority_phase1 == 'mod' ~ 'moderate',
                                      T ~ priority_phase1)) %>%
-  dplyr::mutate(link = paste0('<a href =',
+  mutate(data_link = paste0('<a href =',
+                            'https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/fig/sum/', my_crossing_reference,
+                            '.png', '>', 'data link', '</a>')) %>%
+  dplyr::mutate(photo_link = paste0('<a href =',
     'https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/photos/', my_crossing_reference,
-    '/crossing_all.JPG', '>', 'Link', '</a>'))
+    '/crossing_all.JPG', '>', 'photo link', '</a>'))
 
 rm(tab_phase1_map_prep)

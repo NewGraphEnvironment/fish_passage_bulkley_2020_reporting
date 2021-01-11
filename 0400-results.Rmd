@@ -120,8 +120,8 @@ map %>%
 pscis_historic <- readr::read_csv(file = paste0(getwd(), '/data/raw_input/pscis_study_area.csv'))
 pscis_historic_phase2 <- readr::read_csv(file = paste0(getwd(), '/data/raw_input/pscis_phase2_study_area.csv'))
 
-##read in the kml so we can summarize
-planning_results <- sf::st_read("data/planning_kmls/flathead_planning.kml")
+##read in the kml so we can summarize - prints to console for some reason!
+# planning_results <- sf::st_read("data/planning_kmls/flathead_planning.kml")
 # 
 # planning_results %>% filter(study_area %ilike% 'flathead')
 ```

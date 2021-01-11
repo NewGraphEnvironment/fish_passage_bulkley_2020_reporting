@@ -27,7 +27,7 @@ print_tab_summary_phase2_png <- function(site){
 }
 
 
-print_tab_summary_phase1_png(site = '4600005')
+# print_tab_summary_phase1_png(site = '4600005')
 
 sites_phase1 <- pscis %>% pull(my_crossing_reference)
 

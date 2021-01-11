@@ -31,14 +31,14 @@ conn <- DBI::dbConnect(
 dbGetQuery(conn,
            "SELECT table_name
            FROM information_schema.tables
-           WHERE table_schema='whse_basemapping'")
+           WHERE table_schema='whse_fish'")
 # # # # #
 # # # # # ##list column names in a table
 dbGetQuery(conn,
            "SELECT column_name,data_type
            FROM information_schema.columns
-           WHERE table_schema = 'bcfishpass'
-           and table_name='barriers_anthropogenic'")
+           WHERE table_schema = 'whse_fish'
+           and table_name='pscis_habitat_confirmation_svw'")
 
 ##get the watersheds of interest
 ##here is the elk
@@ -92,6 +92,12 @@ INNER JOIN whse_fish.pscis_assessment_svw p ON (ST_Within(p.geom, a.geometry));"
 
 dat_pscis_elk <- st_read(conn, query = query)
 
+query2 <- "SELECT p.*, a.study_area
+  FROM ali.misc a
+INNER JOIN whse_fish.pscis_habitat_confirmation_svw p ON (ST_Within(p.geom, a.geometry));"
+
+dat_pscis_elk2 <- st_read(conn, query = query2)
+
 ##CHANGE - we will try to use bcfishpass.barriers_anthropogenic
 #get a spatial version of the modelled info
 # query = "SELECT c.*, a.study_area
@@ -134,13 +140,32 @@ INNER JOIN whse_fish.pscis_assessment_svw p ON (ST_Within(p.geom, a.geometry));"
 
 dat_pscis_flathead <- st_read(conn, query = query)
 
+query2 <- "SELECT p.*, a.study_area
+  FROM ali.misc a
+INNER JOIN whse_fish.pscis_habitat_confirmation_svw p ON (ST_Within(p.geom, a.geometry));"
+
+dat_pscis_flathead2 <- st_read(conn, query = query2)
+
 ##see who did assesssments in the flathead
 unique(dat_pscis_flathead$consultant_name)
 flat_vast <- dat_pscis_flathead %>%
   filter(consultant_name %ilike% 'VAST')  ##nothing large and nothing with high hab value - no mention in the report either
 
+###lets join the two outputs together for each
+dat_pscis <- bind_rows(
+  dat_pscis_elk,
+  dat_pscis_flathead
+)
+
+dat_pscis2 <- bind_rows(
+  dat_pscis_elk2,
+  dat_pscis_flathead2
+)
+
 ##burn the pscis info to a dataframe so that we can do a summary in the report
 # dat_pscis %>% readr::write_csv(file = paste0(getwd(), '/data/raw_input/pscis_study_area.csv'))
+# dat_pscis2 %>% readr::write_csv(file = paste0(getwd(), '/data/raw_input/pscis_phase2_study_area.csv'))
+
 
 #get a spatial version of the modelled info
 query = "SELECT c.*, a.study_area
@@ -154,14 +179,8 @@ INNER JOIN ali.crossings c ON (ST_Within(c.geom, a.geometry));"
 
 dat_mod_flathead <- st_read(conn, query = query)
 
-###lets join the two outputs together for each
-dat_pscis <- bind_rows(
-  dat_pscis_elk,
-  dat_pscis_flathead
-)
 
-#burn the pscis info to a dataframe so that we can do a summary in the report
-# dat_pscis %>% readr::write_csv(file = paste0(getwd(), '/data/raw_input/pscis_study_area.csv'))
+
 
 
 ###lets join the two outputs together for each and add the coordinates so we can make a valid

@@ -1,5 +1,5 @@
 
-This repository builds an [interactive report](https://newgraphenvironment.github.io/fish_passage_elk_2020_reporting_cwf/) documenting fish passage and habitat confirmation assessments at road-stream crossings within the Elk River watershed group in the summer/fall of 2020. Although some planning for future assessments was conducted for both the Elk River watershed upstream of the Elko Dam near Elko, BC and the Flathead River, on the ground surveys focused on the Elk River and tributaries located upstream of the Elko Dam. 
+This repository builds an [interactive report](https://newgraphenvironment.github.io/ish_passage_bulkley_2020_reporting/) documenting fish passage and habitat confirmation assessments at road-stream crossings within the Bulkley River watershed group in the summer/fall of 2020. 
 
 <br>
 

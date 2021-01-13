@@ -10,26 +10,23 @@ source('R/private_info.R')
 ##this is weird but we know these will be dups because we check at the end of this script.
 ##lets pull these out of these files at the start
 
-dups <- c(4600183, 4600069, 4600367, 4605732, 4600070)
+# dups <- c(4600183, 4600069, 4600367, 4605732, 4600070)
 
-dat1 <- import_pscis(workbook_name = 'pscis_phase1.xlsm') %>%
-  filter(!my_crossing_reference %in% dups)
+dat1 <- import_pscis(workbook_name = 'pscis_phase1.xlsm')
+  # filter(!my_crossing_reference %in% dups)
 
-dat1b <- import_pscis(workbook_name = 'pscis_phase1b.xlsm')
-
-dat2 <- import_pscis(workbook_name = 'pscis_phase2.xlsm')
+# dat2 <- import_pscis(workbook_name = 'pscis_phase2.xlsm')
 
 dat3 <- import_pscis(workbook_name = 'pscis_reassessments.xlsm')
 
 dat <- bind_rows(
   dat1,
-  dat1b,
   dat2,
   dat3
 ) %>%
   distinct(.keep_all = T) %>%
   sf::st_as_sf(coords = c("easting", "northing"),
-               crs = 26911, remove = F) %>%
+               crs = 26909, remove = F) %>% ##don't forget to put it in the right crs buds
   sf::st_transform(crs = 3005) ##convert to match the bcfishpass format
 
 
@@ -50,16 +47,16 @@ conn <- DBI::dbConnect(
 # #
 # #
 # # # ##list tables in a schema
-# dbGetQuery(conn,
-#            "SELECT table_name
-#            FROM information_schema.tables
-#            WHERE table_schema='ali'")
+dbGetQuery(conn,
+           "SELECT table_name
+           FROM information_schema.tables
+           WHERE table_schema='bcfishpass'")
 # # # # #
 # # # # # ##list column names in a table
-# dbGetQuery(conn,
-#            "SELECT column_name,data_type
-#            FROM information_schema.columns
-#            WHERE table_name='crossings'")
+dbGetQuery(conn,
+           "SELECT column_name,data_type
+           FROM information_schema.columns
+           WHERE table_name='modelled_stream_crossings'")
 
 
 # test <- dbGetQuery(conn, "SELECT * FROM bcfishpass.waterfalls")
@@ -97,7 +94,7 @@ CROSS JOIN LATERAL
 
 ##join the modelling data to our pscis submission info
 dat_joined <- left_join(
-  select(dat, misc_point_id, pscis_crossing_id,my_crossing_reference, source), ##traded pscis_crossing_id for my_crossing_reference
+  select(dat, misc_point_id, pscis_crossing_id, my_crossing_reference, source), ##traded pscis_crossing_id for my_crossing_reference
   dat_info,
   by = "misc_point_id"
 ) %>%
@@ -171,7 +168,7 @@ dat_joined2 <- left_join(
 # df_joined2 %>% readr::write_csv(file = paste0(getwd(), '/data/bcfishpass-phase2.csv'))
 #
 # ##clean up the workspace
-rm(dat, dat1, dat1b, dat2, dat3, dat_info, dat_joined, res)
+rm(dat_info, dat_joined, res)
 #
 # ##now we pull the data out whenever we want to make tables for the report
 # dat <- readr::read_csv(file = paste0(getwd(), '/data/bcfishpass-phase2.csv'))
@@ -183,17 +180,20 @@ rm(dat, dat1, dat1b, dat2, dat3, dat_info, dat_joined, res)
 
 ##we already did this but can do it again I guess.  you cut and paste the result into kable then back
 ##into here using addin for datapasta
-# tab_rd_tenure_xref <- unique(dat$client_name) %>%
-#   as_tibble() %>%
-#   purrr::set_names(nm = 'client_name') %>%
-#   mutate(client_name_abb = NA)
+tab_rd_tenure_xref <- unique(dat_joined2$client_name) %>%
+  as_tibble() %>%
+  purrr::set_names(nm = 'client_name') %>%
+  mutate(client_name_abb = NA)
 
 tab_rd_tenure_xref <- tibble::tribble(
-                                                   ~client_name, ~client_name_abb,
-                        "DISTRICT MANAGER ROCKY MOUNTAIN (DRM)",          "FLNR",
-                                "CANADIAN FOREST PRODUCTS LTD.",        "Canfor",
-                                                             NA,              NA
+                                           ~client_name,        ~client_name_abb,
+                                                     NA,                      NA,
+                        "DISTRICT MANAGER NADINA (DND)",           "FLNR Nadina",
+                        "CANADIAN FOREST PRODUCTS LTD.",                "Canfor",
+                            "WET’SUWET’EN VENTURES LTD", "Wet’suwet’en Ventures"
                         )
+
+
 
 ##add that to your dat file for later
 dat_joined3 <- left_join(
@@ -223,8 +223,35 @@ dat_joined4 <- dat_joined3 %>%
                      T ~ my_road_tenure)) %>%
   rename(geom_modelled_crossing = geom)
 
+##build tables to populate the pscis spreadsheets
+pscis1_rd_tenure <- left_join(
+  select(dat1, my_crossing_reference),
+  select(dat_joined4, my_crossing_reference, my_road_tenure),
+  by = 'my_crossing_reference'
+) %>%
+  distinct(my_crossing_reference, my_road_tenure) %>%
+  tibble::rownames_to_column() %>%
+  mutate(rowname = as.integer(rowname)) %>%
+  mutate(rowname = rowname + 4)
+
+
+##burn it all to a file we can input to pscis submission spreadsheet
+pscis1_rd_tenure %>% readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/pscis1_rd_tenure.csv'))
+
+pscis_reassessmeents_rd_tenure <- left_join(
+  select(dat3, pscis_crossing_id),
+  select(dat_joined4, pscis_crossing_id, my_road_tenure),
+  by = 'pscis_crossing_id'
+) %>%
+  distinct(pscis_crossing_id, my_road_tenure) %>%
+  tibble::rownames_to_column() %>%
+  mutate(rowname = as.integer(rowname)) %>%
+  mutate(rowname = rowname + 4)
+
+##burn it all to a file we can input to pscis submission spreadsheet
+pscis_reassessmeents_rd_tenure %>% readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/pscis_reassessmeents_rd_tenure.csv'))
 ##we need to qa which are our modelled crossings at least for our phase 2 crossings
-##I used this to populate the phase 2 spreadsheet I believe
+
 # pscis_modelledcrossings_streams_xref <- dat_joined4 %>%
 #   select(stream_crossing_id = pscis_crossing_id,
 #          crossing_id,
@@ -242,13 +269,13 @@ dat_joined4 <- dat_joined3 %>%
 #     T ~ linear_feature_id
 #   ))
 
-
+########################DO THIS AFTER PSCIS IS LOADED####################
 ##this is going to bring in Pscis data so we can see the pscis id's
-get_this <- bcdc_tidy_resources('pscis-assessments') %>%
-  filter(bcdata_available == T)  %>%
-  pull(package_id)
-
-dat <- bcdata::bcdc_get_data(get_this)
+# get_this <- bcdc_tidy_resources('pscis-assessments') %>%
+#   filter(bcdata_available == T)  %>%
+#   pull(package_id)
+#
+# dat <- bcdata::bcdc_get_data(get_this)
 
 
 
@@ -256,29 +283,27 @@ dat <- bcdata::bcdc_get_data(get_this)
 ##burn pscis as is as a record
 # dat %>% readr::write_csv(file = paste0(getwd(), '/data/raw_input/pscis_bcdata.csv'))
 
-##now if we want to skip this step we just load the csv like so
-# dat <-
 
-
-
-xref_pscis_my_crossing_modelled <- dat %>%
-  purrr::set_names(nm = tolower(names(.))) %>%
-  dplyr::filter(funding_project_number == "BCFP-003_phase1") %>%
-  select(external_crossing_reference, stream_crossing_id) %>%
-  mutate(external_crossing_reference = as.integer(external_crossing_reference)) %>%
-  sf::st_drop_geometry()
-
-dat_joined5 <- left_join(
-  dat_joined4,
-  xref_pscis_my_crossing_modelled,
-  by = c('my_crossing_reference' = 'external_crossing_reference')
-)
+# xref_pscis_my_crossing_modelled <- dat %>%
+#   purrr::set_names(nm = tolower(names(.))) %>%
+#   dplyr::filter(funding_project_number == "BCFP-003_phase1") %>%
+#   select(external_crossing_reference, stream_crossing_id) %>%
+#   mutate(external_crossing_reference = as.integer(external_crossing_reference)) %>%
+#   sf::st_drop_geometry()
+#
+# dat_joined5 <- left_join(
+#   dat_joined4,
+#   xref_pscis_my_crossing_modelled,
+#   by = c('my_crossing_reference' = 'external_crossing_reference')
+# )
 
 ##we need to add our pscis info
 dat_joined6 <- dat_joined5 %>%
   mutate(stream_crossing_id = as.numeric(stream_crossing_id)) %>%
   mutate(pscis_crossing_id = case_when(is.na(pscis_crossing_id) ~ stream_crossing_id,
                                        T ~ pscis_crossing_id))
+
+#######################################################################################################
 
 
 #######-----------------add the update real bcfishpass information-----------

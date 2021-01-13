@@ -1,0 +1,6 @@
+column_num,pscis_crossing_id,my_crossing_reference,downstream_channel_width_meters,fill_depth_meters,fill_dpth_over,span_input
+5,123463,NA,1.8,1,-2,NA
+6,124502,NA,3.2,2,-1,10
+7,3067,NA,9,2,-1,18
+8,58158,NA,2.5,4,1,13
+9,195289,NA,14,1.5,-1.5,28

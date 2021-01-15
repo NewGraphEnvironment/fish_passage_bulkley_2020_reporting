@@ -50,17 +50,17 @@ map <- leaflet(height=500, width=780) %>%
   #              fillOpacity = 0.75, weight=2) %>% 
   # addPolylines(data=forest_tenure_road_lines,  opacity=1, color = '#ff7f00',
   #              fillOpacity = 0.75, weight=2) %>%
-    addLegend(
-    position = "topright",
-    colors = c("red", "yellow", "grey", "black"),
-    labels = c("High", "Moderate", "Low", 'No fix'), opacity = 1,
-    title = "Fish Passage Priorities",
-  ) %>% 
+  #   addLegend(
+  #   position = "topright",
+  #   colors = c("red", "yellow", "grey", "black"),
+  #   labels = c("High", "Moderate", "Low", 'No fix'), opacity = 1,
+  #   title = "Fish Passage Priorities",
+  # ) %>% 
     addCircleMarkers(
-    data=tab_phase1_map,
-    label = tab_phase1_map$pscis_crossing_id,
+    data=tab_map %>% filter(source %like% 'phase1'),
+    label = tab_map$pscis_crossing_id,
     labelOptions = labelOptions(noHide = F, textOnly = TRUE),
-    popup = leafpop::popupTable(x = select((tab_phase1_map %>% st_set_geometry(NULL)),
+    popup = leafpop::popupTable(x = select((tab_map %>% st_set_geometry(NULL)),
                                            Site = pscis_crossing_id, Priority = priority_phase1, Stream = stream_name, Road = road_name, `Habitat value`= habitat_value, `Barrier Result` = barrier_result, `Culvert data` = data_link, `Culvert photos` = photo_link),
                                 feature.id = F,
                                 row.numbers = F),
@@ -72,7 +72,27 @@ map <- leaflet(height=500, width=780) %>%
     weight = 2,
     opacity = 1.0,
     group = "Phase 1"
+    ) %>% 
+  
+  
+    addCircleMarkers(
+    data=tab_map %>% filter(source %like% 'phase2'),
+    label = tab_map$pscis_crossing_id,
+    labelOptions = labelOptions(noHide = F, textOnly = TRUE),
+    popup = leafpop::popupTable(x = select((tab_map %>% st_set_geometry(NULL)),
+                                           Site = pscis_crossing_id, Priority = priority_phase1, Stream = stream_name, Road = road_name, `Habitat value`= habitat_value, `Barrier Result` = barrier_result, `Culvert data` = data_link, `Culvert photos` = photo_link),
+                                feature.id = F,
+                                row.numbers = F),
+    radius = 9,
+    fillColor = ~pal_phase1(priority_phase1),
+    color= "#ffffff",
+    stroke = TRUE,
+    fillOpacity = 1.0,
+    weight = 2,
+    opacity = 1.0,
+    group = "Phase 2"
     ) %>%
+  
   #   addPolylines(
   #     data=tracks,  opacity=0.75, color = '#e216c4',
   #              fillOpacity = 0.75, weight=5, group = "Phase 2") %>%
@@ -109,8 +129,8 @@ map <- leaflet(height=500, width=780) %>%
   addMiniMap(tiles = providers$"Esri.NatGeoWorldMap",
              zoomLevelOffset = -6, width = 100, height = 100)
 
-map 
-  # hideGroup("Phase 2") 
+map %>% 
+  hideGroup("Phase 2")
 ```
 
 
@@ -221,4 +241,5 @@ knitr::include_graphics("fig/fish_histogram.png")
 ```{r plot-fish-all, fig.cap='Boxplots of densities (fish/100m2) of westslope cutthrout trout captured by life stage and site for data collected during habitat confirmation assessments.', eval=F}
 plot_fish_box_all()
 ```
+
 

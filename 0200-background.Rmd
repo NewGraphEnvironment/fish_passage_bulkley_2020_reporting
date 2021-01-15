@@ -73,7 +73,7 @@ readr::read_csv(file = paste0(getwd(), '/data/raw_input/fiss_species_table.csv')
 
 <br>
 
-```{r fish-wct-fiss-summary, eval=T}
+```{r fish-fiss-summary, eval=T}
 fiss_sum <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum.csv'))
 fiss_sum_grad <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum_grad.csv'))
 fiss_sum_width <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum_width.csv'))
@@ -85,7 +85,7 @@ fiss_sum_width <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs
 
 <br>
 
-```{r fish-plot-grad, out.width = photo_width, fig.cap= 'Summary of select historic salmonid observations vs. stream gradient category.', eval=T}
+```{r fish-plot-grad, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. stream gradient category for the Bulkley River watershed group.', eval=T}
 ##bar graph
 plot_grad <- fiss_sum_grad %>% 
   filter(gradient_id != 99) %>% 
@@ -100,7 +100,7 @@ plot_grad
 
 <br>
 
-```{r fish-plot-width, out.width = photo_width, fig.cap= 'Summary of select historic salmonid observations vs. channel width category.', eval=T}
+```{r fish-plot-width, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. channel width category for the Bulkley River watershed group.', eval=T}
 ##bar graph
 plot_width <- fiss_sum_width %>% 
   filter(!is.na(width_id)) %>%
@@ -114,7 +114,7 @@ plot_width
 
 <br>
 
-```{r fish-plot-wshed, out.width = photo_width, fig.cap= 'Summary of select historic salmonid observations vs. watershed size category.', eval=T}
+```{r fish-plot-wshed, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. watershed size category for the Bulkley River watershed group.', eval=T}
 ##bar graph
 fiss_sum_wshed_filter <- fiss_sum %>% 
   filter(upstream_area_ha < 10000)

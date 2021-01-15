@@ -29,4 +29,3 @@ reporting
 results-and-discussion
 phase-1
 phase-2
-recommendations

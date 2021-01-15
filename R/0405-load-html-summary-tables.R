@@ -2,7 +2,8 @@
 print_tab_summary_png <- function(site){
   make_tab_summary(df = pscis_all %>% sf::st_drop_geometry() %>% filter(pscis_crossing_id == site)) %>%
     kable(booktabs = T) %>%    #
-    kableExtra::add_footnote(label = paste0('Comments: ', pscis_all %>% filter(pscis_crossing_id == site) %>% ##might be my_crossing_refe
+    kableExtra::add_footnote(label = paste0('Comments: ', pscis_all %>% filter(pscis_crossing_id == site) %>%
+                                              distinct(pscis_crossing_id, .keep_all = T) %>% ##might be my_crossing_refe
                                               pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
     # kableExtra::add_footnote(label = paste0('Photos: From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.',
     #                                         paste0('![](data/photos/', site, '/crossing_all.JPG)')), notation = 'none', escape = F) %>%

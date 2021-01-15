@@ -1,3 +1,4 @@
+fig:overview-map
 fig:hydrology-plot
 fig:hydrology-stats
 fig:fish-plot-grad

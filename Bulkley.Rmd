@@ -16,7 +16,6 @@ link-citations: no
 github-repo: rstudio/bookdown-demo
 description: "My Description."
 
-
 ---
 
 
@@ -93,6 +92,8 @@ The health and viability of freshwater fish populations can depend on access to 
 
 <!--chapter:end:0100-intro.Rmd-->
 
+
+
 # Background
 
 As a result of high-level direction from the provincial government, a Fish Passage Strategic Approach protocol has been developed for British Columbia to ensure that the greatest opportunities for restoration of fish passage are pursued.  A Fish Passage Technical Working Group has been formed to coordinate the protocol and data is continuously amalgamated within the Provincial Steam Crossing Inventory System (PSCIS).  The strategic approach protocol involves a four-phase process as described in @fishpassagetechnicalworkinggroupFishPassageStrategic2014 :
@@ -115,20 +116,33 @@ The Bukley River has a mean annual discharge of `r round(fasstr::calc_longterm_m
 
 <br>
 
-```{r overview-map, fig.cap = 'Overview map of Study Areas',eval=FALSE}
-knitr::include_graphics("fig/ElkOverview_2020-12-23_v2.png")
+```{r overview-map, fig.cap = 'Overview map of Study Areas',eval=T}
+knitr::include_graphics("fig/BulkelyMoriceOverview2.jpeg")
 ```
 
 <br>
 
-```{r hydrology-plot, fig.cap = 'Hydrograph for Bulkley River At Quick (Station #08EE004 - Lat 54.62 Lon -126.90). Available daily discharge data from 1930 to 2018.', eval=T}
+```{r fig-sub, fig.cap='two plots', fig.show="hold", out.width="50%", eval=F}
+par(mar = c(4, 4, .1, .1))
+plot(1:10)
+plot(rnorm(10), pch=19)
+```
+
+
+```{r hydrology-plot, fig.cap = 'Hydrograph for Bulkley River at Quick (Station #08EE004 - daily discharge data from 1930 to 2018) and near Houston (Station #08EE003 - daily discharge data from 1980 to 2018.', fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=T}
 knitr::include_graphics("fig/hydrograph_08EE004.png")
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics("fig/hydrograph_08EE003.png")
 ```
 
 <br>
 
-```{r hydrology-stats, fig.cap = 'Summary of hydrology statistics for Bulkley River At Quick (Station #08EE004)', eval=T}
+```{r hydrology-stats, fig.cap = 'Summary of hydrology statistics for Bulkley River at Quick (Station #08EE004) and near Houston (Station #08EE003).', fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=T}
+
 knitr::include_graphics("fig/hydrology_stats_08EE004.png")
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics("fig/hydrology_stats_08EE003.png")
+
 ```
 
 

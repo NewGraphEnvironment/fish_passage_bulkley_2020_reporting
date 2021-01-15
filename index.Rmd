@@ -16,7 +16,6 @@ link-citations: no
 github-repo: rstudio/bookdown-demo
 description: "My Description."
 
-
 ---
 
 

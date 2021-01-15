@@ -25,7 +25,7 @@ pscis_combined <- bind_rows(
   distinct(.keep_all = T) %>%
   sf::st_as_sf(coords = c("easting", "northing"),
                crs = 26909, remove = F) %>% ##don't forget to put it in the right crs buds
-  sf::st_transform(crs = 3005) ##convert to match the bcfishpass format
+  sf::st_transform(crs = 4326) ##convert to match the bcfishpass format
 
 ##lets add in the xref pscis id info
 ##this is made from load-crossings-xref.R

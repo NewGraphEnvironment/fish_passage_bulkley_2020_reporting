@@ -446,6 +446,8 @@ pal <-
 pal_phase1 <- 
    colorFactor(palette = c("red", "yellow", "grey", "black"), 
                levels = c("high", "moderate", "low", NA))
+
+tab_map_phase2 <- tab_map %>% filter(source %like% 'phase2')
 #https://stackoverflow.com/questions/61026700/bring-a-group-of-markers-to-front-in-leaflet
 # marker_options <- markerOptions(  
 #   zIndexOffset = 1000)
@@ -508,23 +510,23 @@ map <- leaflet(height=500, width=780) %>%
     ) %>% 
   
   
-    # addCircleMarkers(
-    # data=tab_map %>% filter(source %like% 'phase2'),
-    # label = tab_map$pscis_crossing_id,
-    # labelOptions = labelOptions(noHide = F, textOnly = TRUE),
-    # popup = leafpop::popupTable(x = select((tab_map %>% st_set_geometry(NULL)),
-    #                                        Site = pscis_crossing_id, Priority = priority_phase1, Stream = stream_name, Road = road_name, `Habitat value`= habitat_value, `Barrier Result` = barrier_result, `Culvert data` = data_link, `Culvert photos` = photo_link),
-    #                             feature.id = F,
-    #                             row.numbers = F),
-    # radius = 9,
-    # fillColor = ~pal_phase1(priority_phase1),
-    # color= "#ffffff",
-    # stroke = TRUE,
-    # fillOpacity = 1.0,
-    # weight = 2,
-    # opacity = 1.0,
-    # group = "Phase 2"
-    # ) %>%
+    addCircleMarkers(
+    data=tab_map_phase2,
+    label = tab_map_phase2$pscis_crossing_id,
+    labelOptions = labelOptions(noHide = F, textOnly = TRUE),
+    popup = leafpop::popupTable(x = select((tab_map_phase2 %>% st_set_geometry(NULL)),
+                                           Site = pscis_crossing_id, Priority = priority_phase1, Stream = stream_name, Road = road_name, `Habitat value`= habitat_value, `Barrier Result` = barrier_result, `Culvert data` = data_link, `Culvert photos` = photo_link),
+                                feature.id = F,
+                                row.numbers = F),
+    radius = 9,
+    fillColor = ~pal_phase1(priority_phase1),
+    color= "#ffffff",
+    stroke = TRUE,
+    fillOpacity = 1.0,
+    weight = 2,
+    opacity = 1.0,
+    group = "Phase 2"
+    ) %>%
   
   #   addPolylines(
   #     data=tracks,  opacity=0.75, color = '#e216c4',
@@ -676,8 +678,7 @@ plot_fish_box_all()
 ```
 
 
-
-<!--chapter:end:0401-results.Rmd-->
+<!--chapter:end:0400-results.Rmd-->
 
 # Appendix - Phase 1 Fish Passage Assessment Data and Photos {-}
 

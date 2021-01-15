@@ -74,7 +74,7 @@ A total of `r n_distinct(pscis_phase1_reassessments$my_crossing_reference)` Phas
 
 <br>
 
-Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 18 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority and `r hab_site_priorities %>% filter(priority %ilike% 'no fix') %>% nrow() %>% english::as.english()` crossing was rated as "no fix".
+Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 18 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority.
 
 
 <!--chapter:end:index.Rmd-->
@@ -168,8 +168,10 @@ readr::read_csv(file = paste0(getwd(), '/data/raw_input/fiss_species_table.csv')
 
 <br>
 
-```{r fish-wct-fiss-summary, eval=FALSE}
-wct_elkr_grad <- readr::read_csv(file = paste0(getwd(), '/data/raw_input/wct_elkr_grad.csv'))
+```{r fish-wct-fiss-summary, eval=T}
+fiss_sum <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum.csv'))
+fiss_sum_grad <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum_grad.csv'))
+fiss_sum_width <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum_width.csv'))
 
 # A summary of historical westslope cutthrout trout observations in the Elk River watershed group by average gradient category of associated stream segment is provided in Figure \@ref(fig:fish-wct-bar). Of `r wct_elkr_grad %>% filter(gradient_id == 3) %>% pull(total)` observations, `r wct_elkr_grad %>% filter(gradient_id == 3) %>% pull(Percent) + wct_elkr_grad %>% filter(gradient_id == 5) %>% pull(Percent) + wct_elkr_grad %>% filter(gradient_id == 8) %>% pull(Percent)`% were within stream segments with average gradients ranging from 0 - 8%.  A total of `r wct_elkr_grad %>% filter(gradient_id == 3) %>% pull(Percent)`% of historic observations were within stream segments with gradients between 0 - 3%, `r wct_elkr_grad %>% filter(gradient_id == 5) %>% pull(Percent)`% were within stream segments with gradients ranging from 3 - 5% and `r wct_elkr_grad %>% filter(gradient_id == 5) %>% pull(Percent)`% were within stream segments with gradients between 5 - 8% [@data_fish_obs; @norris2020bcfishobs]. 
 
@@ -178,18 +180,64 @@ wct_elkr_grad <- readr::read_csv(file = paste0(getwd(), '/data/raw_input/wct_elk
 
 <br>
 
-```{r fish-wct-bar, out.width = photo_width, fig.cap= 'Summary of historic westslope cutthrout trout observations vs. stream gradient category.', eval=F}
+```{r fish-plot-grad, out.width = photo_width, fig.cap= 'Summary of select historic salmonid observations vs. stream gradient category.', eval=T}
 ##bar graph
-plot_wct_elkr_grad <- wct_elkr_grad %>% 
+plot_grad <- fiss_sum_grad %>% 
+  filter(gradient_id != 99) %>% 
   ggplot(aes(x = Gradient, y = Percent)) +
   geom_bar(stat = "identity")+
-  theme_bw(base_size = 8)+
-  labs(x = "Stream Gradient", y = "WCT Occurrences (%)")
-plot_wct_elkr_grad
+  facet_wrap(~species_code, ncol = 2)+
+  theme_bw(base_size = 11)+
+  labs(x = "Average Stream Gradient", y = "Occurrences (%)")
+plot_grad
 
 ```
 
-  
+<br>
+
+```{r fish-plot-width, out.width = photo_width, fig.cap= 'Summary of select historic salmonid observations vs. channel width category.', eval=T}
+##bar graph
+plot_width <- fiss_sum_width %>% 
+  filter(!is.na(width_id)) %>%
+  ggplot(aes(x = Width, y = Percent)) +
+  geom_bar(stat = "identity")+
+  facet_wrap(~species_code, ncol = 2)+
+  theme_bw(base_size = 11)+
+  labs(x = "Channel Width", y = "Occurrences (%)")
+plot_width
+```
+
+<br>
+
+```{r fish-plot-wshed, out.width = photo_width, fig.cap= 'Summary of select historic salmonid observations vs. watershed size category.', eval=T}
+##bar graph
+fiss_sum_wshed_filter <- fiss_sum %>% 
+  filter(upstream_area_ha < 10000)
+
+bin_1 <- 0
+# bin_1 <- floor(min(fiss_sum_wshed_filter$upstream_area_ha, na.rm = TRUE)/5)*5
+bin_n <- ceiling(max(fiss_sum_wshed_filter$upstream_area_ha, na.rm = TRUE)/5)*5
+bins <- seq(bin_1,bin_n, by = 1000)
+
+plot_wshed_hist <- ggplot(fiss_sum_wshed_filter, aes(x=upstream_area_ha
+                                           # fill=alias_local_name
+                                           # color = alias_local_name
+)) +
+  geom_histogram(breaks = bins, 
+                 position="identity", size = 0.75)+
+  labs(x = "Upstream Watershed Area (ha)", y = "Count Fish (#)") +
+  facet_wrap(~species_code, ncol = 2)+
+  # scale_color_grey() +
+  # scale_fill_grey() +
+  theme_bw(base_size = 11)+
+  scale_x_continuous(breaks = bins[seq(1, length(bins), by = 2)])+
+  # scale_color_manual(values=c("grey90", "grey60", "grey30", "grey0"))+
+  # theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  geom_histogram(aes(y=..density..), breaks = bins, alpha=0.5,
+                 position="identity", size = 0.75)
+plot_wshed_hist
+```
+
 
 <!--chapter:end:0200-background.Rmd-->
 

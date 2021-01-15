@@ -123,7 +123,7 @@ tab_phase1_map <- tab_phase1_map_prep %>%
   mutate(priority_phase1 = case_when(priority_phase1 == 'mod' ~ 'moderate',
                                      T ~ priority_phase1)) %>%
   mutate(data_link = paste0('<a href =',
-                            'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/fig/sum/', amalgamated_crossing_id,
+                            'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/fig/sum/', pscis_crossing_id,
                             '.png', '>', 'data link', '</a>')) %>%
   dplyr::mutate(photo_link = paste0('<a href =',
     'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', amalgamated_crossing_id,

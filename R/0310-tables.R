@@ -193,7 +193,8 @@ phase1_priorities <- pscis_phase1_reassessments %>%
 
 
 ##turn spreadsheet into list of data frames
-pscis_split <- pscis_phase1_reassessments %>%
+pscis_split <- pscis_phase1_reassessments  %>%
+  sf::st_drop_geometry() %>%
   # mutate_if(is.numeric, as.character) %>% ##added this to try to get the outlet drop to not disapear
   # tibble::rownames_to_column() %>%
   dplyr::group_split(pscis_crossing_id) %>%

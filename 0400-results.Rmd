@@ -1,6 +1,6 @@
 # Results and Discussion
 
-Field assessments were conducted between `r format(min(pscis$date), format="%B %d %Y")` and `r format(max(pscis$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio, New Graph Environment, Mark Fjeld, BiT, Nupqu Limited Partnership, Kyle Prince, P,Biol, Living Lakes Canada, and Chad Hughes, Ecologist, Elk River Alliance. `r if(html_on)knitr::asis_output("Results of Phase 1 and Phase 2 assessments are summarized in Figure \\@ref(fig:map-interactive) with additional details provided in sections below.")` 
+Field assessments were conducted between `r format(min(pscis_phase1$date), format="%B %d %Y")` and `r format(max(pscis_phase1$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio, New Graph Environment and Kyle Prince, P,Biol. `r if(html_on)knitr::asis_output("Results of Phase 1 and Phase 2 assessments are summarized in Figure \\@ref(fig:map-interactive) with additional details provided in sections below.")` 
 
 <br>
 
@@ -16,33 +16,33 @@ pal_phase1 <-
 #https://stackoverflow.com/questions/61026700/bring-a-group-of-markers-to-front-in-leaflet
 # marker_options <- markerOptions(  
 #   zIndexOffset = 1000)
-tracks <- sf::read_sf("./data/habitat_confirmation_tracks.gpx", layer = "tracks") 
-wshds <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'hab_wshds_ltree') %>% 
-  filter(!pscis_crossing_id %in% c(62423, 62426, 50181, 50159)) %>% ##these ones are not correct - fix later
-  st_transform(crs = 4326)
-wshd_study_elk <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'wshd_study_elk') %>% 
-  st_transform(crs = 4326)
-wshd_study_flathead <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'wshd_study_flathead') %>% 
-  st_transform(crs = 4326) 
-photo_metadata <- readr::read_csv(file = 'data/photo_metadata.csv')
+# tracks <- sf::read_sf("./data/habitat_confirmation_tracks.gpx", layer = "tracks") 
+# wshds <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'hab_wshds_ltree') %>% 
+#   filter(!pscis_crossing_id %in% c(62423, 62426, 50181, 50159)) %>% ##these ones are not correct - fix later
+#   st_transform(crs = 4326)
+# wshd_study_elk <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'wshd_study_elk') %>% 
+#   st_transform(crs = 4326)
+# wshd_study_flathead <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'wshd_study_flathead') %>% 
+#   st_transform(crs = 4326) 
+# photo_metadata <- readr::read_csv(file = 'data/photo_metadata.csv')
   
   
 map <- leaflet(height=500, width=780) %>%
   # leaflet() %>% 
-  addTiles() %>%
+  addTiles()  %>% 
   # leafem::addMouseCoordinates(proj4 = 26911) %>% ##can't seem to get it to render utms yet
   # addProviderTiles(providers$"Esri.DeLorme") %>% 
   addProviderTiles("Esri.WorldTopoMap", group = "Topo") %>%
   addProviderTiles("Esri.WorldImagery", group = "ESRI Aerial") %>% 
-  addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
-    opacity = 1.0, fillOpacity = 0.25,
-    fillColor = "#00DBFF") %>%
-  addPolygons(data = wshd_study_elk, color = "#F29A6E", weight = 1, smoothFactor = 0.5,
-    opacity = 1.0, fillOpacity = 0.25,
-    fillColor = "#F29A6E", label = 'Upper Elk River') %>% 
-  addPolygons(data = wshd_study_flathead, color = "#C39D50", weight = 1, smoothFactor = 0.5,
-    opacity = 1.0, fillOpacity = 0.25,
-    fillColor = "#C39D50", label = 'Flathead River') %>%
+  # addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
+  #   opacity = 1.0, fillOpacity = 0.25,
+  #   fillColor = "#00DBFF") %>%
+  # addPolygons(data = wshd_study_elk, color = "#F29A6E", weight = 1, smoothFactor = 0.5,
+  #   opacity = 1.0, fillOpacity = 0.25,
+  #   fillColor = "#F29A6E", label = 'Upper Elk River') %>% 
+  # addPolygons(data = wshd_study_flathead, color = "#C39D50", weight = 1, smoothFactor = 0.5,
+  #   opacity = 1.0, fillOpacity = 0.25,
+  #   fillColor = "#C39D50", label = 'Flathead River') %>%
   # addMeasure() %>% 
   # setView(lng = -105.644, lat = 51.618, zoom = 3)
   
@@ -58,10 +58,10 @@ map <- leaflet(height=500, width=780) %>%
   ) %>% 
     addCircleMarkers(
     data=tab_phase1_map,
-    label = tab_phase1_map$ID,
+    label = tab_phase1_map$pscis_crossing_id,
     labelOptions = labelOptions(noHide = F, textOnly = TRUE),
     popup = leafpop::popupTable(x = select((tab_phase1_map %>% st_set_geometry(NULL)),
-                                           Site = ID, Priority = priority_phase1, Stream = stream_name, Road = road_name, `Habitat value`= habitat_value, `Barrier Result` = barrier_result, `Culvert data` = data_link, `Culvert photos` = photo_link),
+                                           Site = pscis_crossing_id, Priority = priority_phase1, Stream = stream_name, Road = road_name, `Habitat value`= habitat_value, `Barrier Result` = barrier_result, `Culvert data` = data_link, `Culvert photos` = photo_link),
                                 feature.id = F,
                                 row.numbers = F),
     radius = 9,
@@ -73,31 +73,31 @@ map <- leaflet(height=500, width=780) %>%
     opacity = 1.0,
     group = "Phase 1"
     ) %>%
-    addPolylines(
-      data=tracks,  opacity=0.75, color = '#e216c4',
-               fillOpacity = 0.75, weight=5, group = "Phase 2") %>%
-  addAwesomeMarkers(
-    lng = photo_metadata$gpslongitude,lat = photo_metadata$gpslatitude,
-                    popup = leafpop::popupImage(photo_metadata$url, src = "remote"),
-                    clusterOptions = markerClusterOptions(),
-                    group = "Phase 2") %>%
-    addCircleMarkers(
-    data=tab_hab_map,
-    label = tab_hab_map$pscis_crossing_id, 
-    labelOptions = labelOptions(noHide = T, textOnly = TRUE),
-    popup = leafpop::popupTable(x = select((tab_hab_map %>% st_set_geometry(NULL)), 
-                                           Site = pscis_crossing_id, Priority = priority, Stream = stream_name, Road = road_name, `Habitat (m)`= upstream_habitat_length_m, Comments = comments, `Culvert data` = data_link, `Culvert photos` = photo_link),
-                                feature.id = F,
-                                row.numbers = F), 
-    radius = 9,
-    fillColor = ~pal(priority),
-    color= "#ffffff",
-    stroke = TRUE, 
-    fillOpacity = 1.0,
-    weight = 2,
-    opacity = 1.0,
-    group = "Phase 2"
-    ) %>% 
+  #   addPolylines(
+  #     data=tracks,  opacity=0.75, color = '#e216c4',
+  #              fillOpacity = 0.75, weight=5, group = "Phase 2") %>%
+  # addAwesomeMarkers(
+  #   lng = photo_metadata$gpslongitude,lat = photo_metadata$gpslatitude,
+  #                   popup = leafpop::popupImage(photo_metadata$url, src = "remote"),
+  #                   clusterOptions = markerClusterOptions(),
+  #                   group = "Phase 2") %>%
+  #   addCircleMarkers(
+  #   data=tab_hab_map,
+  #   label = tab_hab_map$pscis_crossing_id, 
+  #   labelOptions = labelOptions(noHide = T, textOnly = TRUE),
+  #   popup = leafpop::popupTable(x = select((tab_hab_map %>% st_set_geometry(NULL)), 
+  #                                          Site = pscis_crossing_id, Priority = priority, Stream = stream_name, Road = road_name, `Habitat (m)`= upstream_habitat_length_m, Comments = comments, `Culvert data` = data_link, `Culvert photos` = photo_link),
+  #                               feature.id = F,
+  #                               row.numbers = F), 
+  #   radius = 9,
+  #   fillColor = ~pal(priority),
+  #   color= "#ffffff",
+  #   stroke = TRUE, 
+  #   fillOpacity = 1.0,
+  #   weight = 2,
+  #   opacity = 1.0,
+  #   group = "Phase 2"
+  #   ) %>% 
   #     # addScaleBar(position = 'bottomleft', options = scaleBarOptions(imperial = FALSE)) %>% 
   addLayersControl(
     baseGroups = c(
@@ -109,30 +109,27 @@ map <- leaflet(height=500, width=780) %>%
   addMiniMap(tiles = providers$"Esri.NatGeoWorldMap",
              zoomLevelOffset = -6, width = 100, height = 100)
 
-map %>% 
-  hideGroup("Phase 2") 
+map 
+  # hideGroup("Phase 2") 
 ```
 
 
 ## Planning
 
-```{r}
+```{r eval=F}
 pscis_historic <- readr::read_csv(file = paste0(getwd(), '/data/raw_input/pscis_study_area.csv'))
 pscis_historic_phase2 <- readr::read_csv(file = paste0(getwd(), '/data/raw_input/pscis_phase2_study_area.csv'))
 
-##read in the kml so we can summarize - prints to console for some reason!
-# planning_results <- sf::st_read("data/planning_kmls/flathead_planning.kml")
-# 
-# planning_results %>% filter(study_area %ilike% 'flathead')
+# Review of the PSCIS database indicated that prior to 2020, `r pscis_historic %>% filter(study_area %ilike% 'elk' & assessment_date < '2020-01-01') %>% nrow()` assessments for fish passage (Phase 1) and `r pscis_historic_phase2 %>% filter(study_area %ilike% 'elk' & assmt_date < '2020-01-01') %>% nrow()` habitat confirmations (Phase 2) have been conducted at crossing structures within the Upper Elk River.  Within the Flathead River watershed `r pscis_historic %>% filter(study_area %ilike% 'flathead' & assessment_date < '2020-01-01') %>% nrow()` fish passage assessments and `r pscis_historic_phase2 %>% filter(study_area %ilike% 'flathead' & assmt_date < '2020-01-01') %>% nrow() %>% english::as.english()` habitat confirmations had been conducted.  Following review of background literature, fisheries information, PSCIS and `bcfishpass` outputs, both modelled and PSCIS sites were selected for follow up with Phase 1 and 2 assessments. Results are included as a zipped package of Google Earth kml files stored  [here](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/planning_kmls/elk_planning_kmls.zip).
 ```
 
-Review of the PSCIS database indicated that prior to 2020, `r pscis_historic %>% filter(study_area %ilike% 'elk' & assessment_date < '2020-01-01') %>% nrow()` assessments for fish passage (Phase 1) and `r pscis_historic_phase2 %>% filter(study_area %ilike% 'elk' & assmt_date < '2020-01-01') %>% nrow()` habitat confirmations (Phase 2) have been conducted at crossing structures within the Upper Elk River.  Within the Flathead River watershed `r pscis_historic %>% filter(study_area %ilike% 'flathead' & assessment_date < '2020-01-01') %>% nrow()` fish passage assessments and `r pscis_historic_phase2 %>% filter(study_area %ilike% 'flathead' & assmt_date < '2020-01-01') %>% nrow() %>% english::as.english()` habitat confirmations had been conducted.  Following review of background literature, fisheries information, PSCIS and `bcfishpass` outputs, both modelled and PSCIS sites were selected for follow up with Phase 1 and 2 assessments. Results are included as a zipped package of Google Earth kml files stored  [here](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/planning_kmls/elk_planning_kmls.zip). 
+ 
 
 <br>
 
 ## Phase 1
 
-During 2020 field surveys, a total of `r n_distinct(pscis$my_crossing_reference)` Phase 1 assessments were conducted with `r pscis %>% filter(barrier_result == 'Passable') %>% nrow()` crossings considered "passable", `r pscis %>% filter(barrier_result == 'Potential') %>% nrow() %>% english::as.english()` crossings considered "potential" barriers and `r pscis %>% filter(barrier_result == 'Barrier') %>% nrow()` crossings considered "barriers" according to threshold values based on culvert embedment, outlet drop, slope, diameter (relative to channel size) and length [@fish_passage_assessments].  Site details and photos are presented in [Appendix - Phase 1 Fish Passage Assessment Data and Photos] with maps stored [here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/elk/).  A cost benefit analysis for Phase 1 sites that were determined to be barriers or potential barriers is presented in Table \@ref(tab:cost-est-phase-1). 
+During 2020 field surveys, a total of `r n_distinct(pscis_phase1$my_crossing_reference)` Phase 1 assessments were conducted with `r pscis_phase1 %>% filter(barrier_result == 'Passable') %>% nrow()` crossings considered "passable", `r pscis_phase1 %>% filter(barrier_result == 'Potential') %>% nrow() %>% english::as.english()` crossings considered "potential" barriers and `r pscis_phase1 %>% filter(barrier_result == 'Barrier') %>% nrow()` crossings considered "barriers" according to threshold values based on culvert embedment, outlet drop, slope, diameter (relative to channel size) and length [@fish_passage_assessments].  Site details and photos are presented in [Appendix - Phase 1 Fish Passage Assessment Data and Photos] with maps stored [here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/).  A cost benefit analysis for Phase 1 sites that were determined to be barriers or potential barriers is presented in Table \@ref(tab:cost-est-phase-1). 
 
 <br>
 
@@ -143,9 +140,9 @@ Barrier passability criteria used in this project follows @fish_passage_assessme
 ```{r cost-est-phase-1}
 if(html_on){
   tab_cost_est_phase1 %>% 
-  my_kable_scroll(caption_text = 'Upstream habitat estimates and cost benefit analysis for Phase 1 assessments.  IDs are PSCIS idenfifiers with exception of those with * which are interim references.')
+  my_kable_scroll(caption_text = 'Upstream habitat estimates and cost benefit analysis for Phase 1 assessments.  ')
 } else tab_cost_est_phase1 %>% 
-  my_kable(caption_text = 'Upstream habitat estimates and cost benefit analysis for Phase 1 assessments.  IDs are PSCIS idenfifiers with exception of those with * which are interim references.')
+  my_kable(caption_text = 'Upstream habitat estimates and cost benefit analysis for Phase 1 assessments.')
 ```
 
 <br>
@@ -153,7 +150,7 @@ if(html_on){
 ## Phase 2
 
  
-Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 15 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority and `r hab_site_priorities %>% filter(priority %ilike% 'no fix') %>% nrow() %>% english::as.english()` rated as "no fix". Results are summarized in `r if(html_on){knitr::asis_output("Figure \\@ref(fig:map-interactive) and ")}`Tables \@ref(tab:tab-overview) - \@ref(tab:tab-habitat-summary) with raw habitat and fish sampling data included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting/raw/master/data/habitat_confirmations.xls).  Detailed information for each site assessed with Phase 2 assessments is included within site specific reports included as appendices to this document with pdf maps stored [here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/elk/confirmations/).
+Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 15 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority and `r hab_site_priorities %>% filter(priority %ilike% 'no fix') %>% nrow() %>% english::as.english()` rated as "no fix". Results are summarized in `r if(html_on){knitr::asis_output("Figure \\@ref(fig:map-interactive) and ")}`Tables \@ref(tab:tab-overview) - \@ref(tab:tab-habitat-summary) with raw habitat and fish sampling data included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/habitat_confirmations.xls).  Detailed information for each site assessed with Phase 2 assessments is included within site specific reports included as appendices to this document with pdf maps stored [here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/confirmations/).
 
 
 <br>
@@ -173,7 +170,7 @@ tab_overview %>%
 \pagebreak
 
 ```{r}
-make_tab_cv(dat = pscis2) %>% 
+make_tab_cv(dat = pscis_phase2) %>% 
   my_kable(caption_text = 'Summary of Phase 2 fish passage reassessments.')
 ```
 
@@ -199,23 +196,26 @@ tab_hab_summary %>%
   my_kable(caption_text = 'Summary of Phase 2 habitat confirmation details.')
 
 ```
-
-<br>
-
+```{r}
 ## Fish Sampling
 
-Fish sampling was conducted at five sites with a total of `r tab_fish_summary %>% filter(species_code == 'WCT') %>% pull(count_fish) %>% sum()` westslope cutthout trout,  `r tab_fish_summary %>% filter(species_code == 'EB') %>% pull(count_fish) %>% sum()` eastern brook trout and `r tab_fish_summary %>% filter(species_code == 'BT') %>% pull(count_fish) %>% sum()` bull trout captured.  Westslope cutthrout trout were captured at three of the sites sampled with fork length data delineated into life stages: fry (&le;60mm), parr (>60 to 110mm), juvenile (>110mm to 140mm) and adult (>140mm) by visually assessing the histogram presented in Figure \@ref(fig:fish-histogram).  Fish sampling results are presented in detail within individual habitat confirmation site memos within the appendices of this document with westslope cutthrout trout density results also presented in Figure \@ref(fig:plot-fish-all).  
+# Fish sampling was conducted at five sites with a total of `r tab_fish_summary %>% filter(species_code == 'WCT') %>% pull(count_fish) %>% sum()` westslope cutthout trout,  `r tab_fish_summary %>% filter(species_code == 'EB') %>% pull(count_fish) %>% sum()` eastern brook trout and `r tab_fish_summary %>% filter(species_code == 'BT') %>% pull(count_fish) %>% sum()` bull trout captured.  Westslope cutthrout trout were captured at three of the sites sampled with fork length data delineated into life stages: fry (&le;60mm), parr (>60 to 110mm), juvenile (>110mm to 140mm) and adult (>140mm) by visually assessing the histogram presented in Figure \@ref(fig:fish-histogram).  Fish sampling results are presented in detail within individual habitat confirmation site memos within the appendices of this document with westslope cutthrout trout density results also presented in Figure \@ref(fig:plot-fish-all).  
+```
 
 <br>
 
-```{r fish-histogram, fig.cap= 'Histogram of westslope cutthrout trout captured during electrofishing surveys.'}
+
+
+<br>
+
+```{r fish-histogram, fig.cap= 'Histogram of westslope cutthrout trout captured during electrofishing surveys.', eval = F}
 knitr::include_graphics("fig/fish_histogram.png")
 
 ```
 
 <br>
 
-```{r plot-fish-all, fig.cap='Boxplots of densities (fish/100m2) of westslope cutthrout trout captured by life stage and site for data collected during habitat confirmation assessments.'}
+```{r plot-fish-all, fig.cap='Boxplots of densities (fish/100m2) of westslope cutthrout trout captured by life stage and site for data collected during habitat confirmation assessments.', eval=F}
 plot_fish_box_all()
 ```
 

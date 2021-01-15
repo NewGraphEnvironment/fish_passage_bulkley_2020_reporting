@@ -33,28 +33,8 @@ Following delineation of "non-fish habitat" with the `Fish Habitat Model`, the *
 table_thresh_average <- tibble::tibble(`Gradient` = c('0 - 5%', '5 - 15%', '15 - 22%', '22 - 30%', '>30%'),
                                        `Channel Type` = c('Riffle and cascade pool', 'Step pool', 'Step pool - very steep', 'Step pool - extremely steep (bull trout only)', 'Non fish habitat'))
 
-# knitr::kable(table_thresh_average,
-#              caption = 'Stream gradient threshold and average gradient categories generated from the Fish Habitat Model as well as associated channel type.')
-
-# table_thresh_average %>%
-#   gt() %>%
-#   tab_header(title="Stream gradient categories (threshold and average) and associated channel type.") %>%
-#   tab_options(table.font.size = 11)
-if(knitr::is_html_output() == TRUE){
-  table_thresh_average %>% 
+table_thresh_average %>% 
     my_kable(caption_text = 'Stream gradient categories (threshold and average) and associated channel type.')
-    # knitr::kable(caption = 'Stream gradient categories (threshold and average) and associated channel type.') %>% 
-    # # kableExtra::column_spec(column = 1, width_min = '1.5in') %>% 
-    # kableExtra::kable_styling(c("condensed"), full_width = T) 
-} else table_thresh_average %>%
-  my_flextable(fontsize = 8) %>% 
-  flextable::autofit() %>%
-  flextable::align(i = NULL, j = c(1,2), align = "left", part = "all") %>% 
-  flextable::set_caption('Stream gradient categories (threshold and average) and associated channel type.')
-
-#  Although bull trout are known to populate habitat within and above stream reaches with gradients up to 30% areas upstream of gradients estimated at >22% for more than 100m were considered non-fish habitat if no fish observations had been documented upstream. 
-
-
 ```
 
 
@@ -177,25 +157,25 @@ Fish sampling was conducted a subset of sites when biological data was considere
 
 ## Reporting
 
-This pdf report and an online [interactive report](https://newgraphenvironment.github.io/fish_passage_elk_2020_reporting_cwf/) were generated with `bookdown` [@bookdown2016] from `Rmarkdown` [@R-rmarkdown] documents processing raw data available at the [New Graph Environment Github Site ](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf). In addition to numerous spatial layers sourced through the BC Data Catalogue, data inputs for this project can be sourced [here](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data) and include: 
+This pdf report and an online [interactive report](https://newgraphenvironment.github.io/fish_passage_bulkley_2020_reporting/) were generated with `bookdown` [@bookdown2016] from `Rmarkdown` [@R-rmarkdown] documents processing raw data available at the [New Graph Environment Github Site ](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting). In addition to numerous spatial layers sourced through the BC Data Catalogue, data inputs for this project can be sourced [here](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data) and include: 
 
  + Populated [Fish Data Submission Spreadsheet Template - V 2.0, January 20, 2020 ](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data#submitfish) 
 
  + Populated [pscis_assessment_template_v24.xls](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/assessment-projects)
  
  
- + [`Fish Habitat Model`/`bcfishpass`](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/blob/master/data/bcfishpass-phase2.csv) outputs.
+ + [`Fish Habitat Model`/`bcfishpass`](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/blob/master/data/bcfishpass-phase2.csv) outputs.
 
 
- + [Custom Excel Spreadsheet](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/data/habitat_confirmations_priorities.xlsx) detailing Phase 2 site:
+ + [Custom Excel Spreadsheet](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/habitat_confirmations_priorities.xlsx) detailing Phase 2 site:
      - priority level for proceeding to design for replacement
      - length of survey upstream and downstream
      - a conservative estimate of mainstem habitat potentially available upstream of the crossing 
      - fish species confirmed as present upstream of the crossing
 
- + [GPS tracks](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/habitat_confirmation_tracks.gpx) from field surveys.  
+ + [GPS tracks](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/habitat_confirmation_tracks.gpx) from field surveys.  
 
- + [Photos and photo metadata.](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/tree/master/data/photos) 
+ + [Photos and photo metadata.](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos) 
  
  
 

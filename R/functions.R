@@ -101,6 +101,7 @@ import_pscis <- function(workbook_name = 'pscis_phase1.xlsm'){ ##new template.  
 ####---------------make a table for the comments---------------
 make_tab_summary_comments <- function(df){
   df %>%
+    sf::st_drop_geometry() %>%
     select(assessment_comment) %>%
     # slice(1) %>%
     set_names('Comment')

@@ -1,0 +1,175 @@
+--- 
+title: "Bulkley River Watershed Group Fish Passage Restoration Planning"
+author:
+ - Prepared for Habitat Conservation Trust Fund
+ - Prepared by Al Irvine, B.Sc., R.P.Bio.
+ - New Graph Environment
+ - Version 0.0.1
+date: "2021 DRafT"
+toc-title: Table of Contents
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: no
+github-repo: rstudio/bookdown-demo
+description: "My Description."
+
+
+---
+
+
+```{r setup, include = TRUE, echo =FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, dpi=60, out.width = "100%")
+
+##define a picture specific output width you can put in chunk headers
+##we need a switch to turn off html only so the printed version looks ok
+photo_width <- "100%"
+html_on <- TRUE
+
+##these are the settings for the pagedown version!! DONT FORGET THE FONT DOWN BELOW TOO!!!!!!!!!!!!!!
+# photo_width <- "80%"
+# html_on <- FALSE
+
+
+
+##try to fix the kable caption size https://stackoverflow.com/questions/45018397/changing-the-font-size-of-figure-captions-in-rmarkdown-html-output
+
+# fig.align="center", out.width = "90%",
+source('R/packages.R')
+source('R/functions.R')
+source('R/functions-phase2.R')
+source('R/0310-tables.R')
+source('R/0320-tables-phase2.R')
+source('R/0330-tables-phase1-cost-estimate.R')
+source('R/0340-tables-phase2-cost-estimate.R') ##the order of these matters to much - should fix.  need to make cost estimate table seperate
+source('R/0350-tables-reporting.R')
+# source('R/extract-fish.R')
+# source('R/functions-fish.R')
+
+##set the font default size for the tables.  had a crash and think this might have been it so put after functions.R
+##seems odd but not risking again for now.
+font_set <- 11
+# font_set <- 9
+
+
+```
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+
+# Executive Summary {.front-matter .unnumbered}
+
+New Graph Environment was retained by the Habitat Conservation Trust, the Provincial Fish Passage Remediation Program and the Canadian Wildlife Federation in 2020 to plan and conduct fish passage and habitat confirmation assessments at road-stream crossings as part of connectivity restoration planning. Although planning was conducted for both the Morice River watershed group and the Bulkley River watershed group, on the ground surveys in 2020 focused primarily within Bulkley River tributaries. 
+
+<br>
+
+A total of `r n_distinct(pscis_phase1_reassessments$my_crossing_reference)` Phase 1 assessments were conducted with `r pscis_phase1_reassessments %>% filter(barrier_result == 'Passable') %>% nrow()` crossings considered "passable", `r pscis_phase1_reassessments %>% filter(barrier_result == 'Potential') %>% nrow() %>% english::as.english()` crossings considered "potential" barriers and `r pscis_phase1_reassessments %>% filter(barrier_result == 'Barrier') %>% nrow()` crossings considered "barriers" according to threshold values based on culvert embedment, outlet drop, slope, diameter (relative to channel size) and length.
+
+<br>
+
+Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 18 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority and `r hab_site_priorities %>% filter(priority %ilike% 'no fix') %>% nrow() %>% english::as.english()` crossing was rated as "no fix".
+
+
+<!--chapter:end:index.Rmd-->
+
+
+
+# Introduction {#intro}
+New Graph Environment was retained by the Canadian Wildlife Federation and Nupgu Limited Partnership in the fall of 2020 to plan and conduct fish passage and habitat confirmation assessments at road-stream crossings as part of connectivity restoration planning targeting westslope cutthrout trout. Although some planning was conducted for both the Elk River watershed upstream of the Elko Dam near Elko, BC and the Flathead River, on the ground surveys in 2020 focused on the Elk River and tributaries located upstream of the Elko Dam. 
+
+<br>
+
+The health and viability of freshwater fish populations can depend on access to tributary and off channel areas which provide refuge during high flows, opportunities for foraging, overwintering habitat, spawning habitat and summer rearing habitat [@Bramblett_2002; @swalesRoleOffChannelPonds1989; @diebel_etal2015EffectsRoad].  Culverts can present barriers to fish migration due to low water depth, increased water velocity, turbulence, a vertical drop at the culvert outlet and/or maintenance issues [@slaneyFishHabitatRehabilitation1997; @cote_etal2005Fishpassage]. Reconnection of fragmented habitats by culvert removal or replacement is a management action that can generate high ecological returns relative to other habitat restoration techniques [@saldicaromileStreamHabitatRestoration2004; @roni_etal2008GlobalReview]. As road crossing structures are commonly upgraded as part of road maintenance there are numerous opportunities to restore connectivity by ensuring that fish passage considerations are incorporated into repair and replacement designs.
+
+<!--chapter:end:0100-intro.Rmd-->
+
+
+# Background
+
+Placeholder
+
+
+## Project Location
+### Wet'suwet'en
+### Gitxsan
+## Fisheries
+
+<!--chapter:end:0200-background.Rmd-->
+
+
+# Methods
+
+Placeholder
+
+
+## Planning
+## Fish Passage Assessments
+### Barrier Scoring
+### Cost Benefit Analysis
+#### Habitat Gain Index
+## Habitat Confirmation Assessments
+## Reporting
+
+<!--chapter:end:0300-method.Rmd-->
+
+
+# Results and Discussion
+
+Placeholder
+
+
+## Planning
+## Phase 1
+## Phase 2
+
+<!--chapter:end:0400-results.Rmd-->
+
+# Recommendations
+
+```{r}
+# Recommended next steps for fish passage restoration in the Elk River watershed group include:
+# 
+# 
+#  * Continue to collaborate with potential partners to build relationships, explore perspectives and develop “road maps” for fish passage restoration in different situations (MoT roads, rail lines, permit roads of different usages, FSRs, etc.) – documenting the people involved, discussions and process that are undertaken, funding options, etc.
+#  * Continue to develop `bcfishpass` and build a connectivity index for the study area watersheds to inform a connectivity remediation plan.
+#  * Acquire funding to procure site plans and replacement designs for structures identified as high priorities for restoration. 
+#  * Conduct fish passage and habitat confirmation assessments at road and rail stream crossings identified as high and moderate priorities in the Elk and Flathead River study areas through this project and future connectivity modelling analysis.
+#  * Refine passability thresholds for road-stream crossing structures to explore metrics specific to life stage and life history for westslope cutthrout trout to focus quantification of impacts of structures on connectivity within spawning and/or rearing habitats.
+#  * Work with regulators, the Elk Valley Cumulative Effects Management Framework Working Group and others to explore previously developed habitat suitablity indices for westslope cutthrout trout in the region as well as to analyze historic electrofishing data to determine catch per unit effort by species, area of habitat surveyed and timed electrofishing effort for sites within the study area. Results should be overlaid onto GIS (size/elevation of the watershed, length of modelled upstream channel, channel gradient, substrate type, etc.) to model species specific fish densities in habitats similiar to those found upstream and downstream of culvert locations.  This will facilitate estimations of the carrying capacities of habitats potentially blocked by road-stream crossing structures, allowing assessment of impacts of stream crossings on associated fish populations and quantification of the value of crossing remediations. 
+#  * Drafting and implementation of a collaborative plan for assessing the impacts of fish passage restoration investments.  The plan should be designed to provide data necessary to effectively monitor the outcomes of restoration efforts, inform future investments and build capacity/momentum for ecosystem restoration activities in the region.
+```
+
+
+
+<!--chapter:end:0500-recomendations.Rmd-->
+
+# Appendix - Phase 1 Fish Passage Assessment Data and Photos {-}
+
+`r knit(text = unlist(tabs_phase1))`
+
+<!--chapter:end:0600-appendix.Rmd-->
+
+`r if (knitr::is_html_output()){ '
+# References {-}
+<div id="refs"></div>
+'}`
+
+```{r}
+#https://github.com/rstudio/bookdown/issues/8 how to put the references wherever we want.
+
+# `r if (knitr::is_html_output()){ '
+# # References {-}
+# <div id="refs"></div>
+# '}`
+```
+
+
+<!--chapter:end:2000-references.Rmd-->
+

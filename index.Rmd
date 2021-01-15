@@ -1,11 +1,11 @@
 --- 
-title: "Elk River Watershed Group Fish Passage Restoration Planning"
+title: "Bulkley River Watershed Group Fish Passage Restoration Planning"
 author:
- - Prepared for Canadian Wildlife Federation
+ - Prepared for Habitat Conservation Trust Fund
  - Prepared by Al Irvine, B.Sc., R.P.Bio.
  - New Graph Environment
- - Version 0.0.4
-date: "2020-12-31 DRafT"
+ - Version 0.0.1
+date: "2021 DRafT"
 toc-title: Table of Contents
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -40,13 +40,13 @@ html_on <- TRUE
 source('R/packages.R')
 source('R/functions.R')
 source('R/functions-phase2.R')
-source('R/tables.R')
-source('R/tables-phase2.R')
-source('R/tables-phase1-cost-estimate.R')
-source('R/tables-phase2-cost-estimate.R') ##the order of these matters to much - should fix.  need to make cost estimate table seperate
-source('R/tables-reporting.R')
-source('R/extract-fish.R')
-source('R/functions-fish.R')
+source('R/0310-tables.R')
+source('R/0320-tables-phase2.R')
+source('R/0330-tables-phase1-cost-estimate.R')
+source('R/0340-tables-phase2-cost-estimate.R') ##the order of these matters to much - should fix.  need to make cost estimate table seperate
+source('R/0350-tables-reporting.R')
+# source('R/extract-fish.R')
+# source('R/functions-fish.R')
 
 ##set the font default size for the tables.  had a crash and think this might have been it so put after functions.R
 ##seems odd but not risking again for now.
@@ -66,13 +66,13 @@ knitr::write_bib(c(
 
 # Executive Summary {.front-matter .unnumbered}
 
-New Graph Environment was retained by the Canadian Wildlife Federation and Nupqu Limited Partnership in the fall of 2020 to plan and conduct fish passage and habitat confirmation assessments at road-stream crossings as part of connectivity restoration planning targeting westslope cutthrout trout. Although some planning was conducted for both the Elk River watershed upstream of the Elko Dam near Elko, BC and the Flathead River, on the ground surveys in 2020 focused on the Elk River and tributaries located upstream of the Elko Dam. 
+New Graph Environment was retained by the Habitat Conservation Trust, the Provincial Fish Passage Remediation Program and the Canadian Wildlife Federation in 2020 to plan and conduct fish passage and habitat confirmation assessments at road-stream crossings as part of connectivity restoration planning. Although planning was conducted for both the Morice River watershed group and the Bulkley River watershed group, on the ground surveys in 2020 focused primarily within Bulkley River tributaries. 
 
 <br>
 
-A total of `r n_distinct(pscis$my_crossing_reference)` Phase 1 assessments were conducted with `r pscis %>% filter(barrier_result == 'Passable') %>% nrow()` crossings considered "passable", `r pscis %>% filter(barrier_result == 'Potential') %>% nrow() %>% english::as.english()` crossings considered "potential" barriers and `r pscis %>% filter(barrier_result == 'Barrier') %>% nrow()` crossings considered "barriers" according to threshold values based on culvert embedment, outlet drop, slope, diameter (relative to channel size) and length.
+A total of `r n_distinct(pscis_phase1_reassessments$my_crossing_reference)` Phase 1 assessments were conducted with `r pscis_phase1_reassessments %>% filter(barrier_result == 'Passable') %>% nrow()` crossings considered "passable", `r pscis_phase1_reassessments %>% filter(barrier_result == 'Potential') %>% nrow() %>% english::as.english()` crossings considered "potential" barriers and `r pscis_phase1_reassessments %>% filter(barrier_result == 'Barrier') %>% nrow()` crossings considered "barriers" according to threshold values based on culvert embedment, outlet drop, slope, diameter (relative to channel size) and length.
 
 <br>
 
-Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 15 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority and `r hab_site_priorities %>% filter(priority %ilike% 'no fix') %>% nrow() %>% english::as.english()` crossing was rated as "no fix".
+Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 18 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority and `r hab_site_priorities %>% filter(priority %ilike% 'no fix') %>% nrow() %>% english::as.english()` crossing was rated as "no fix".
 

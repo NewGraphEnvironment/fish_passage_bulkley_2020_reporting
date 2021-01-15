@@ -1,26 +1,24 @@
 rowname,pscis_crossing_id,my_road_tenure
-5,123794,MoTi resource
-6,123795,MoTi resource
-7,124487,MoTi highway
-8,123445,MoTi highway
-9,123446,MoTi local
-10,124500,MoTi local
-11,124501,MoTi local
-12,124504,MoTi local
-13,3042,FLNR Nadina 9111
-14,3139,FLNR Nadina 7543
-15,3054,FLNR Nadina 7543
-16,58159,MoTi unclassified
-17,195290,MoTi highway
-18,195288,MoTi local
+5,3042,FLNR Nadina 9111
+6,3054,FLNR Nadina 7543
+7,3139,FLNR Nadina 7543
+8,58159,MoTi unclassified
+9,123445,MoTi highway
+10,123446,MoTi local
+11,123794,MoTi resource
+12,123795,MoTi resource
+13,124487,MoTi highway
+14,124500,MoTi local
+15,124501,MoTi local
+16,124504,MoTi local
+17,195288,MoTi local
+18,195290,MoTi highway
 19,197360,FLNR Nadina 9947
-20,NA,MoTi local
-21,NA,FLNR Nadina 9772
-22,NA,NA
-23,NA,Canfor R10460
-24,NA,MoTi unclassified
-25,NA,FLNR Nadina 9486
-26,NA,FLNR Nadina 10157
-27,NA,MoTi highway
-28,NA,Unknown
-29,NA,Canadian National
+20,197640,MoTi local
+21,197658,MoTi highway
+22,197662,MoTi highway
+23,197663,MoTi highway
+24,197664,MoTi highway
+25,197665,Unknown
+26,197667,Canadian National
+27,197668,Canadian National

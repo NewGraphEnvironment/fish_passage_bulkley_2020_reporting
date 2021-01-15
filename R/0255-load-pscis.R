@@ -11,9 +11,11 @@ source('R/functions.R')
 pscis_phase1 <- import_pscis(workbook_name = 'pscis_phase1.xlsm')
 # filter(!my_crossing_reference %in% dups)
 
-pscis_phase2 <- import_pscis(workbook_name = 'pscis_phase2.xlsm')
+pscis_phase2 <- import_pscis(workbook_name = 'pscis_phase2.xlsm') %>%
+  arrange(pscis_crossing_id)
 
-pscis_reassessments <- import_pscis(workbook_name = 'pscis_reassessments.xlsm')
+pscis_reassessments <- import_pscis(workbook_name = 'pscis_reassessments.xlsm') %>%
+  arrange(pscis_crossing_id)
 
 pscis_combined <- bind_rows(
   pscis_phase1,

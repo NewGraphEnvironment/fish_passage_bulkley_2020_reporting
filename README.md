@@ -1,5 +1,5 @@
 
-This repository builds an [interactive report](https://newgraphenvironment.github.io/ish_passage_bulkley_2020_reporting/) documenting fish passage and habitat confirmation assessments at road-stream crossings within the Bulkley River watershed group in the summer/fall of 2020. 
+This repository builds an [interactive report](https://newgraphenvironment.github.io/fish_passage_bulkley_2020_reporting/) documenting fish passage and habitat confirmation assessments at road-stream crossings within the Bulkley River watershed group in the summer/fall of 2020. 
 
 <br>
 

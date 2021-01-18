@@ -1,47 +1,47 @@
 site,location,reference_number,gazetted_name,alias_local_name,utm_zone.y,easting,northing
-123794,ds,1,Unnamed tributary to Blunt Creek,123794_ds,NA,NA,NA
-123795,ds,2,Unnamed tributary to Blunt Creek,123795_ds,NA,NA,NA
-123794,us,3,Unnamed tributary to Blunt Creek,123794_us,9,616100.00022186,6106762.99889178
-123795,us,4,Unnamed tributary to Blunt Creek,123795_us,9,615759.999863672,6106891.99984096
-124487,us,5,Porphyry Creek,124487_us,9,603072.999554044,6113362.99933694
-124487,ds,6,Porphyry Creek,124487_ds,NA,NA,NA
-197640,ds,7,Unnamed Tributary to Buck Creek,197640_ds,NA,NA,NA
-197640,us,8,Unnamed Tributary to Buck Creek,197640_us,9,654311.98,6012382.71
-197658,us,9,Byman Creek,197658_us,9,666847.204800561,6044305.15083155
-197658,ds2,10,Byman Creek,197658_ds2,NA,NA,NA
-197658,ds1,11,Byman Creek,197658_ds1,NA,NA,NA
-197662,us,12,Richfield Creek,197662_us,9,672404.701407138,6044146.31063178
-197662,ds,13,Richfield Creek,197662_ds,NA,NA,NA
-197664,us,14,Barren Creek,197664_us,9,660454.320605913,6037919.07396583
-197664,ds,15,Barren Creek,197664_ds,NA,NA,NA
-197665,ds,16,Barren Creek,197665_ds,NA,NA,NA
-123445,ds,17,Tyhee Creek,123445_ds,NA,NA,NA
-123445,us,18,Tyhee Creek,123445_us,9,627237.999298919,6061455.99891583
-123446,us,19,Tyhee Creek,123446_us,9,627526.999938615,6061770.9991354
-124500,us,20,Helps Creek,124500_us,9,627551.999986065,6058696.9992515
-124500,ds,21,Helps Creek,124500_ds,NA,NA,NA
-124501,us,22,Moan Creek,124501_us,9,630660.999557748,6055712.99897291
-124501,ds,23,Moan Creek,124501_ds,NA,NA,NA
-197668,ds,24,Coffin Creek,197668_ds,NA,NA,NA
-124504,us,25,Coffin Creek,124504_us,9,634323.000642575,6054586.99962762
-3042,us,26,Barren Creek,3042_us,9,654450.999981963,6042826.9997542
-3042,ds,27,Barren Creek,3042_ds,NA,NA,NA
-3139,ds,28,Tributary to McQuarrie Creek,3139_ds,NA,NA,NA
-3139,us,29,Tributary to McQuarrie Creek,3139_us,9,656656.999628447,6048544.00040697
-3054,ds,30,Johnny David Creek,3054_ds,NA,NA,NA
-3054,us,31,Johnny David Creek,3054_us,9,664880.999453145,6052688.00067799
-197663,us,32,Johnny David Creek,197663_us,9,670240.817805527,6044772.32944654
-197663,ds,33,Johnny David Creek,197663_ds,NA,NA,NA
-58159,ds,34,McDowell Creek,58159_ds,NA,NA,NA
-58159,us,35,McDowell Creek,58159_us,9,627643.000071568,6060448.99908467
-195290,ds,36,Gibson Creek,195290_ds,NA,NA,NA
-195290,us,37,Gibson Creek,195290_us,9,640014.000210579,6051696.99921541
-195288,ds,38,Gibson Creek,195288_ds,NA,NA,NA
-197360,ds,39,Riddeck Creek,197360_ds,NA,NA,NA
+123794,ds,1,Unnamed tributary to Blunt Creek,123794_ds,,,
+123795,ds,2,Unnamed tributary to Blunt Creek,123795_ds,,,
+123794,us,3,Unnamed tributary to Blunt Creek,123794_us,9,616100,6106763
+123795,us,4,Unnamed tributary to Blunt Creek,123795_us,9,615760,6106892
+124487,us,5,Porphyry Creek,124487_us,9,603073,6113363
+124487,ds,6,Porphyry Creek,124487_ds,,,
+197640,ds,7,Unnamed Tributary to Buck Creek,197640_ds,,,
+197640,us,8,Unnamed Tributary to Buck Creek,197640_us,9,654312,6012383
+197658,us,9,Byman Creek,197658_us,9,666847,6044305
+197658,ds2,10,Byman Creek,197658_ds2,,,
+197658,ds1,11,Byman Creek,197658_ds1,,,
+197662,us,12,Richfield Creek,197662_us,9,672405,6044146
+197662,ds,13,Richfield Creek,197662_ds,,,
+197664,us,14,Barren Creek,197664_us,9,660454,6037919
+197664,ds,15,Barren Creek,197664_ds,,,
+197665,ds,16,Barren Creek,197665_ds,,,
+123445,ds,17,Tyhee Creek,123445_ds,,,
+123445,us,18,Tyhee Creek,123445_us,9,627238,6061456
+123446,us,19,Tyhee Creek,123446_us,9,627527,6061771
+124500,us,20,Helps Creek,124500_us,9,627552,6058697
+124500,ds,21,Helps Creek,124500_ds,,,
+124501,us,22,Moan Creek,124501_us,9,630661,6055713
+124501,ds,23,Moan Creek,124501_ds,,,
+197668,ds,24,Coffin Creek,197668_ds,,,
+124504,us,25,Coffin Creek,124504_us,9,634323,6054587
+3042,us,26,Barren Creek,3042_us,9,654451,6042827
+3042,ds,27,Barren Creek,3042_ds,,,
+3139,ds,28,Tributary to McQuarrie Creek,3139_ds,,,
+3139,us,29,Tributary to McQuarrie Creek,3139_us,9,656657,6048544
+3054,ds,30,Johnny David Creek,3054_ds,,,
+3054,us,31,Johnny David Creek,3054_us,9,664881,6052688
+197663,us,32,Johnny David Creek,197663_us,9,670241,6044772
+197663,ds,33,Johnny David Creek,197663_ds,,,
+58159,ds,34,McDowell Creek,58159_ds,,,
+58159,us,35,McDowell Creek,58159_us,9,627643,6060449
+195290,ds,36,Gibson Creek,195290_ds,,,
+195290,us,37,Gibson Creek,195290_us,9,640014,6051697
+195288,ds,38,Gibson Creek,195288_ds,,,
+197360,ds,39,Riddeck Creek,197360_ds,,,
 197360,us,40,Riddeck Creek,197360_us,9,649936,5992406
-58159,ds,41,McDowell Creek,58159_ds_ef,NA,NA,NA
-58159,us,42,McDowell Creek,58159_us_ef,9,627643.000071568,6060448.99908467
-195290,ds,43,Gibson Creek,195290_ds_ef,NA,NA,NA
-195290,us,44,Gibson Creek,195290_us_ef,9,640014.000210579,6051696.99921541
-197360,ds,45,Riddeck Creek,197360_ds_ef,NA,NA,NA
+58159,ds,41,McDowell Creek,58159_ds_ef,,,
+58159,us,42,McDowell Creek,58159_us_ef,9,627643,6060449
+195290,ds,43,Gibson Creek,195290_ds_ef,,,
+195290,us,44,Gibson Creek,195290_us_ef,9,640014,6051697
+197360,ds,45,Riddeck Creek,197360_ds_ef,,,
 197360,us,46,Riddeck Creek,197360_us_ef,9,649936,5992406

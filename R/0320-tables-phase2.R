@@ -1,6 +1,6 @@
-source('R/packages.R')
-source('R/functions.R')
-source('R/0255-load-pscis.R')
+# source('R/packages.R')
+# source('R/functions.R')
+# source('R/0255-load-pscis.R')
 source('R/0310-tables.R')
 
 # pscis2 <- import_pscis(workbook_name = 'pscis_phase2.xlsm') %>%
@@ -41,12 +41,25 @@ hab_site <- left_join(
 
 ##summarized the fish collection information
 ##----this happens after it is all sorted out as per "extract-fish.R"
+# hab_fish_collect_prep <- habitat_confirmations %>%
+#   purrr::pluck("step_2_fish_coll_data") %>%
+#   dplyr::filter(!is.na(site_number)) %>%
+#   tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F) %>%
+#   mutate(site_id = paste0(site, location)) %>%
+#   distinct(site_id, species, .keep_all = T) %>%
+#   mutate(across(c(date_in,date_out), janitor::excel_numeric_to_date)) %>%
+#   mutate(across(c(time_in,time_out), chron::times))
+
+
 hab_fish_collect_prep <- habitat_confirmations %>%
   purrr::pluck("step_2_fish_coll_data") %>%
   dplyr::filter(!is.na(site_number)) %>%
   tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F) %>%
   mutate(site_id = paste0(site, location)) %>%
-  distinct(site_id, species, .keep_all = T)
+  distinct(local_name, species, .keep_all = T) %>% ##changed this to make it work as a feed for the extract-fish.R file
+  mutate(across(c(date_in,date_out), janitor::excel_numeric_to_date)) %>%
+  mutate(across(c(time_in,time_out), chron::times))
+
 
 ##prep the location info so it is ready to join to the fish data
 hab_loc2 <- hab_loc %>%
@@ -57,7 +70,7 @@ hab_loc2 <- hab_loc %>%
 ##join the tables together
 hab_fish_collect_prep2 <- left_join(
   select(hab_loc2, reference_number, site_id, utm_zone:utm_northing),
-  select(hab_fish_collect_prep, site_id, species),
+  select(hab_fish_collect_prep %>% distinct(site_id, species, .keep_all = T), site_id, species),
   by = 'site_id'
 )
 
@@ -139,7 +152,6 @@ hab_site_priorities <- left_join(
 rm(hab_site_prep,
    # hab_fish_indiv_prep,
    # hab_fish_indiv_prep2,
-   hab_fish_collect_prep,
    hab_fish_collect_prep2,
    hab_loc2)
 

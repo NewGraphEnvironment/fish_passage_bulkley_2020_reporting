@@ -1,0 +1,90 @@
+reference_number,local_name,site,location,ef,site_number,temperature_c,conductivity_m_s_cm,turbidity,sampling_method,method_number,haul_number_pass_number,ef_seconds,ef_length_m,ef_width_m,enclosure,voltage,frequency,pulse,make,model,date_in,time_in,date_out,time_out,common_name,stage,total_number,min,max
+9,197658_us,197658,us,,9,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,17:40:00,2020-09-02,09:32:00,Coho Salmon,fry,1,61,61
+9,197658_us,197658,us,,9,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,17:40:00,2020-09-02,09:32:00,Rainbow Trout,parr,2,79,96
+9,197658_us,197658,us,,9,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,17:40:00,2020-09-02,09:32:00,Rainbow Trout,juvenile,2,110,120
+11,197658_ds1,197658,ds1,,11,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,17:31:00,2020-09-02,10:14:00,Rainbow Trout,fry,1,48,48
+11,197658_ds1,197658,ds1,,11,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,17:31:00,2020-09-02,10:14:00,Rainbow Trout,parr,3,74,88
+12,197662_us,197662,us,,12,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,18:55:00,2020-09-02,12:12:00,Rainbow Trout,fry,2,50,57
+12,197662_us,197662,us,,12,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,18:55:00,2020-09-02,12:12:00,Rainbow Trout,parr,1,79,79
+13,197662_ds,197662,ds,,13,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,18:40:00,2020-09-02,11:21:00,Coho Salmon,fry,2,67,68
+13,197662_ds,197662,ds,,13,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,18:40:00,2020-09-02,11:21:00,Rainbow Trout,fry,1,57,57
+13,197662_ds,197662,ds,,13,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,18:40:00,2020-09-02,11:21:00,Rainbow Trout,parr,2,73,100
+22,124501_us,124501,us,,22,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,19:18:00,2020-09-04,08:59:00,Rainbow Trout,parr,1,96,96
+23,124501_ds,124501,ds,,23,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,19:35:00,2020-09-04,08:45:00,Rainbow Trout,parr,4,85,95
+24,197668_ds,197668,ds,,24,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,19:04:30,2020-09-04,09:20:00,Coho Salmon,fry,4,53,69
+24,197668_ds,197668,ds,,24,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,19:04:30,2020-09-04,09:20:00,Coho Salmon,parr,1,77,77
+24,197668_ds,197668,ds,,24,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,19:04:30,2020-09-04,09:20:00,Rainbow Trout,fry,4,53,58
+24,197668_ds,197668,ds,,24,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,19:04:30,2020-09-04,09:20:00,Rainbow Trout,parr,1,95,95
+24,197668_ds,197668,ds,,24,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,19:04:30,2020-09-04,09:20:00,Rainbow Trout,juvenile,3,109,137
+24,197668_ds,197668,ds,,24,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,19:04:30,2020-09-04,09:20:00,Sucker (General),parr,1,77,77
+25,124504_us,124504,us,,25,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,18:51:00,2020-09-04,09:58:00,Coho Salmon,fry,1,57,57
+25,124504_us,124504,us,,25,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,18:51:00,2020-09-04,09:58:00,Coho Salmon,parr,2,76,77
+25,124504_us,124504,us,,25,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,18:51:00,2020-09-04,09:58:00,Rainbow Trout,fry,3,51,54
+25,124504_us,124504,us,,25,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,18:51:00,2020-09-04,09:58:00,Rainbow Trout,parr,8,78,97
+32,197663_us,197663,us,,32,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,18:17:00,2020-09-02,14:14:00,No Fish Caught,,,,
+33,197663_ds,197663,ds,,33,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,18:03:00,2020-09-02,13:21:00,Coho Salmon,fry,14,55,70
+33,197663_ds,197663,ds,,33,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,18:03:00,2020-09-02,13:21:00,Coho Salmon,juvenile,1,102,102
+33,197663_ds,197663,ds,,33,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,18:03:00,2020-09-02,13:21:00,Rainbow Trout,fry,7,48,70
+33,197663_ds,197663,ds,,33,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,18:03:00,2020-09-02,13:21:00,Rainbow Trout,parr,8,73,96
+33,197663_ds,197663,ds,,33,,,,minnow trapping,1,1,,,,,,,,,,2020-09-01,18:03:00,2020-09-02,13:21:00,Rainbow Trout,juvenile,1,110,110
+36,195290_ds,195290,ds,,36,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,18:10:50,2020-09-04,12:01:00,Coho Salmon,fry,6,67,68
+36,195290_ds,195290,ds,,36,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,18:10:50,2020-09-04,12:01:00,Coho Salmon,parr,1,74,74
+36,195290_ds,195290,ds,,36,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,18:10:50,2020-09-04,12:01:00,Dolly Varden,adult,1,144,144
+36,195290_ds,195290,ds,,36,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,18:10:50,2020-09-04,12:01:00,Rainbow Trout,fry,1,66,66
+36,195290_ds,195290,ds,,36,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,18:10:50,2020-09-04,12:01:00,Rainbow Trout,parr,7,79,99
+37,195290_us,195290,us,,37,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,18:05:00,2020-09-04,13:19:00,Rainbow Trout,parr,1,99,99
+37,195290_us,195290,us,,37,,,,minnow trapping,1,1,,,,,,,,,,2020-09-03,18:05:00,2020-09-04,13:19:00,Rainbow Trout,juvenile,6,109,122
+41,58159_ds_ef1,58159,ds,ef1,41,11,324,clear,electrofishing,1,1,71,5,2,open,250,60,,Other,halltech,,,,,Chinook Salmon,fry,3,61,68
+41,58159_ds_ef1,58159,ds,ef1,41,11,324,clear,electrofishing,1,1,71,5,2,open,250,60,,Other,halltech,,,,,Rainbow Trout,fry,7,39,58
+41,58159_ds_ef1,58159,ds,ef1,41,11,324,clear,electrofishing,1,1,71,5,2,open,250,60,,Other,halltech,,,,,Rainbow Trout,parr,2,78,86
+42,58159_ds_ef2,58159,ds,ef2,42,11,324,clear,electrofishing,1,1,104,33,1.75,Open,250,60,,Other,halltech,,,,,Chinook Salmon,fry,1,61,61
+42,58159_ds_ef2,58159,ds,ef2,42,11,324,clear,electrofishing,1,1,104,33,1.75,Open,250,60,,Other,halltech,,,,,Rainbow Trout,fry,14,37,63
+42,58159_ds_ef2,58159,ds,ef2,42,11,324,clear,electrofishing,1,1,104,33,1.75,Open,250,60,,Other,halltech,,,,,Rainbow Trout,parr,1,78,78
+42,58159_ds_ef2,58159,ds,ef2,42,11,324,clear,electrofishing,1,1,104,33,1.75,Open,250,60,,Other,halltech,,,,,Rainbow Trout,juvenile,2,116,117
+43,58159_ds_ef3,58159,ds,ef3,43,11,324,clear,electrofishing,1,1,176,47,1.63,Open,250,60,,Other,halltech,,,,,Chinook Salmon,fry,3,60,70
+43,58159_ds_ef3,58159,ds,ef3,43,11,324,clear,electrofishing,1,1,176,47,1.63,Open,250,60,,Other,halltech,,,,,Chinook Salmon,parr,1,79,79
+43,58159_ds_ef3,58159,ds,ef3,43,11,324,clear,electrofishing,1,1,176,47,1.63,Open,250,60,,Other,halltech,,,,,Coho Salmon,fry,4,47,68
+43,58159_ds_ef3,58159,ds,ef3,43,11,324,clear,electrofishing,1,1,176,47,1.63,Open,250,60,,Other,halltech,,,,,Rainbow Trout,fry,8,43,56
+43,58159_ds_ef3,58159,ds,ef3,43,11,324,clear,electrofishing,1,1,176,47,1.63,Open,250,60,,Other,halltech,,,,,Rainbow Trout,parr,3,77,90
+43,58159_ds_ef3,58159,ds,ef3,43,11,324,clear,electrofishing,1,1,176,47,1.63,Open,250,60,,Other,halltech,,,,,Rainbow Trout,juvenile,3,108,135
+43,58159_ds_ef3,58159,ds,ef3,43,11,324,clear,electrofishing,1,1,176,47,1.63,Open,250,60,,Other,halltech,,,,,Rainbow Trout,adult,1,185,185
+44,58159_ds_ef4,58159,ds,ef4,44,11,324,clear,electrofishing,1,1,147,50,2,Open,250,60,,Other,halltech,,,,,Chinook Salmon,fry,8,60,70
+44,58159_ds_ef4,58159,ds,ef4,44,11,324,clear,electrofishing,1,1,147,50,2,Open,250,60,,Other,halltech,,,,,Chinook Salmon,parr,3,75,85
+44,58159_ds_ef4,58159,ds,ef4,44,11,324,clear,electrofishing,1,1,147,50,2,Open,250,60,,Other,halltech,,,,,Coho Salmon,fry,5,44,68
+44,58159_ds_ef4,58159,ds,ef4,44,11,324,clear,electrofishing,1,1,147,50,2,Open,250,60,,Other,halltech,,,,,Rainbow Trout,fry,13,45,70
+44,58159_ds_ef4,58159,ds,ef4,44,11,324,clear,electrofishing,1,1,147,50,2,Open,250,60,,Other,halltech,,,,,Rainbow Trout,parr,5,74,100
+45,58159_us_ef1,58159,us,ef1,45,11,324,clear,electrofishing,1,1,107,23,1.9,Open,250,60,,Other,halltech,,,,,Rainbow Trout,fry,4,49,65
+45,58159_us_ef1,58159,us,ef1,45,11,324,clear,electrofishing,1,1,107,23,1.9,Open,250,60,,Other,halltech,,,,,Rainbow Trout,parr,1,96,96
+46,58159_us_ef2,58159,us,ef2,46,11,324,clear,electrofishing,1,1,268,31,1.8,Open,250,60,,Other,halltech,,,,,Rainbow Trout,parr,2,79,84
+46,58159_us_ef2,58159,us,ef2,46,11,324,clear,electrofishing,1,1,268,31,1.8,Open,250,60,,Other,halltech,,,,,Rainbow Trout,juvenile,3,105,120
+47,58159_us_ef3,58159,us,ef3,47,11,324,clear,electrofishing,1,1,144,26,1.8,Open,250,60,,Other,halltech,,,,,Rainbow Trout,fry,2,69,70
+47,58159_us_ef3,58159,us,ef3,47,11,324,clear,electrofishing,1,1,144,26,1.8,Open,250,60,,Other,halltech,,,,,Rainbow Trout,parr,1,77,77
+47,58159_us_ef3,58159,us,ef3,47,11,324,clear,electrofishing,1,1,144,26,1.8,Open,250,60,,Other,halltech,,,,,Rainbow Trout,juvenile,1,115,115
+48,58159_us_ef4,58159,us,ef4,48,11,324,clear,electrofishing,1,1,57,4,2.5,Open,250,60,,Other,halltech,,,,,Coho Salmon,parr,1,83,83
+48,58159_us_ef4,58159,us,ef4,48,11,324,clear,electrofishing,1,1,57,4,2.5,Open,250,60,,Other,halltech,,,,,Rainbow Trout,fry,4,62,70
+48,58159_us_ef4,58159,us,ef4,48,11,324,clear,electrofishing,1,1,57,4,2.5,Open,250,60,,Other,halltech,,,,,Rainbow Trout,juvenile,1,125,125
+49,58158_us_ef1,58158,us,ef1,49,11,324,clear,electrofishing,1,1,75,11,2.5,Open,250,60,,Other,halltech,,,,,Rainbow Trout,parr,1,85,85
+50,195290_us_ef1,195290,us,ef1,50,13,315,clear,electrofishing,1,1,152,65,1.6,Open,150,60,,Other,halltech,,,,,Rainbow Trout,fry,1,50,50
+50,195290_us_ef1,195290,us,ef1,50,13,315,clear,electrofishing,1,1,152,65,1.6,Open,150,60,,Other,halltech,,,,,Rainbow Trout,parr,1,97,97
+50,195290_us_ef1,195290,us,ef1,50,13,315,clear,electrofishing,1,1,152,65,1.6,Open,150,60,,Other,halltech,,,,,Rainbow Trout,juvenile,4,102,140
+51,195290_ds_ef1,195290,ds,ef1,51,13,315,turbid,electrofishing,1,1,42,8,1.8,Open,150,60,,Other,halltech,,,,,Coho Salmon,fry,1,65,65
+51,195290_ds_ef1,195290,ds,ef1,51,13,315,turbid,electrofishing,1,1,42,8,1.8,Open,150,60,,Other,halltech,,,,,Coho Salmon,parr,1,80,80
+51,195290_ds_ef1,195290,ds,ef1,51,13,315,turbid,electrofishing,1,1,42,8,1.8,Open,150,60,,Other,halltech,,,,,Rainbow Trout,fry,2,49,52
+51,195290_ds_ef1,195290,ds,ef1,51,13,315,turbid,electrofishing,1,1,42,8,1.8,Open,150,60,,Other,halltech,,,,,Rainbow Trout,parr,2,77,81
+51,195290_ds_ef1,195290,ds,ef1,51,13,315,turbid,electrofishing,1,1,42,8,1.8,Open,150,60,,Other,halltech,,,,,Rainbow Trout,juvenile,3,114,124
+52,195290_us_ef2,195290,us,ef2,52,13,315,clear,electrofishing,1,1,71,16,2.8,Open,150,60,,Other,halltech,,,,,Rainbow Trout,parr,1,84,84
+53,197663_ds_ef1,197663,ds,ef1,53,11,186,clear,electrofishing,1,1,199,5.1,3.75,Open,250,60,,Other,halltech,,,,,Coho Salmon,fry,11,42,68
+53,197663_ds_ef1,197663,ds,ef1,53,11,186,clear,electrofishing,1,1,199,5.1,3.75,Open,250,60,,Other,halltech,,,,,Coho Salmon,parr,1,74,74
+53,197663_ds_ef1,197663,ds,ef1,53,11,186,clear,electrofishing,1,1,199,5.1,3.75,Open,250,60,,Other,halltech,,,,,Rainbow Trout,fry,8,46,68
+53,197663_ds_ef1,197663,ds,ef1,53,11,186,clear,electrofishing,1,1,199,5.1,3.75,Open,250,60,,Other,halltech,,,,,Rainbow Trout,parr,6,74,99
+53,197663_ds_ef1,197663,ds,ef1,53,11,186,clear,electrofishing,1,1,199,5.1,3.75,Open,250,60,,Other,halltech,,,,,Rainbow Trout,juvenile,3,106,136
+54,197663_us_ef1,197663,us,ef1,54,11,186,clear,electrofishing,1,1,283,12.7,2.5,Open,250,60,,Other,halltech,,,,,Coho Salmon,parr,4,78,89
+54,197663_us_ef1,197663,us,ef1,54,11,186,clear,electrofishing,1,1,283,12.7,2.5,Open,250,60,,Other,halltech,,,,,Mountain Whitefish,parr,1,85,85
+54,197663_us_ef1,197663,us,ef1,54,11,186,clear,electrofishing,1,1,283,12.7,2.5,Open,250,60,,Other,halltech,,,,,Rainbow Trout,fry,7,40,70
+54,197663_us_ef1,197663,us,ef1,54,11,186,clear,electrofishing,1,1,283,12.7,2.5,Open,250,60,,Other,halltech,,,,,Rainbow Trout,parr,9,72,98
+54,197663_us_ef1,197663,us,ef1,54,11,186,clear,electrofishing,1,1,283,12.7,2.5,Open,250,60,,Other,halltech,,,,,Rainbow Trout,juvenile,2,111,114
+54,197663_us_ef1,197663,us,ef1,54,11,186,clear,electrofishing,1,1,283,12.7,2.5,Open,250,60,,Other,halltech,,,,,Rainbow Trout,adult,1,160,160
+55,197360_us_ef1,197360,us,ef1,55,15,140,clear,electrofishing,1,1,48,20,1.9,Open,250,60,,Other,halltech,,,,,Rainbow Trout,fry,6,50,62
+56,197360_us_ef2,197360,us,ef2,56,15,140,clear,electrofishing,1,1,33,10,2,Open,250,60,,Other,halltech,,,,,Rainbow Trout,fry,6,37,55
+56,197360_us_ef2,197360,us,ef2,56,15,140,clear,electrofishing,1,1,33,10,2,Open,250,60,,Other,halltech,,,,,Rainbow Trout,juvenile,2,112,133
+57,197360_ds_ef1,197360,ds,ef1,57,15,140,clear,electrofishing,1,1,94,9,2,Open,250,60,,Other,halltech,,,,,Rainbow Trout,fry,2,56,65

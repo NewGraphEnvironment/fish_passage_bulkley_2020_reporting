@@ -1,8 +1,9 @@
-source('R/packages.R')
-source('R/functions.R')
-source('R/0310-tables.R')
-source('R/0340-tables-phase2-cost-estimate.R')
+# source('R/packages.R')
+# source('R/functions.R')
+# source('R/0310-tables.R')
+
 source('R/0320-tables-phase2.R')
+source('R/0340-tables-phase2-cost-estimate.R')
 
 ##these orignally had modelled rather than pscis ids
 # xref_pscis_my_crossing_modelled %>%
@@ -87,22 +88,22 @@ hab_loc_prep <- left_join(
 
 
 ##need to populate the coordinates before this will work
-# tab_hab_map <- left_join(
-#   tab_cost_est_phase2,
-#   select(
-#     hab_loc_prep, site, priority, utm_easting, utm_northing, comments),
-#   by = c('pscis_crossing_id' = 'site')
-# ) %>%
-#   sf::st_as_sf(coords = c("utm_easting", "utm_northing"),
-#                crs = 26911, remove = F) %>%
-#   sf::st_transform(crs = 4326) %>%
-#   mutate(data_link = paste0('<a href =',
-#                             'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/fig/sum/', pscis_crossing_id,
-#                             '.png', '>', 'data link', '</a>')) %>%
-#   # mutate(data_link = paste0('[data](fig/sum/', pscis_crossing_id, '.png)')) %>%
-#   mutate(photo_link = paste0('<a href =',
-#                              'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', pscis_crossing_id,
-#                              '/crossing_all.JPG', '>', 'photo link', '</a>'))
+tab_hab_map <- left_join(
+  tab_cost_est_phase2 %>% filter(source %like% 'phase2'),
+  hab_loc_prep %>% select(site, priority, utm_easting, utm_northing, comments),
+  by = c('pscis_crossing_id' = 'site')
+)   %>%
+  sf::st_as_sf(coords = c("utm_easting", "utm_northing"),
+               crs = 26909, remove = F) %>%
+  sf::st_transform(crs = 4326) %>%
+  mutate(data_link = paste0('<a href =',
+                            'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/fig/sum/', pscis_crossing_id,
+                            '.png', '>', 'data link', '</a>')) %>%
+  # mutate(data_link = paste0('[data](fig/sum/', pscis_crossing_id, '.png)')) %>%
+  mutate(photo_link = paste0('<a href =',
+                             'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', pscis_crossing_id,
+                             '/crossing_all.JPG', '>', 'photo link', '</a>'))
+
 tab_map_prep <- left_join(
   pscis_all,
   phase1_priorities %>% st_drop_geometry() %>% select(-utm_zone:utm_northing, priority_phase1, -habitat_value, -barrier_result),

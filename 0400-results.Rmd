@@ -18,14 +18,12 @@ tab_map_phase2 <- tab_map %>% filter(source %like% 'phase2')
 #https://stackoverflow.com/questions/61026700/bring-a-group-of-markers-to-front-in-leaflet
 # marker_options <- markerOptions(  
 #   zIndexOffset = 1000)
-# tracks <- sf::read_sf("./data/habitat_confirmation_tracks.gpx", layer = "tracks") 
+tracks <- sf::read_sf("./data/habitat_confirmation_tracks.gpx", layer = "tracks")
 # wshds <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'hab_wshds_ltree') %>% 
 #   filter(!pscis_crossing_id %in% c(62423, 62426, 50181, 50159)) %>% ##these ones are not correct - fix later
 #   st_transform(crs = 4326)
-# wshd_study_elk <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'wshd_study_elk') %>% 
-#   st_transform(crs = 4326)
-# wshd_study_flathead <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'wshd_study_flathead') %>% 
-#   st_transform(crs = 4326) 
+wshd_study_areas <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'wshd_study_areas') %>%
+  st_transform(crs = 4326)
 # photo_metadata <- readr::read_csv(file = 'data/photo_metadata.csv')
   
   
@@ -39,27 +37,23 @@ map <- leaflet(height=500, width=780) %>%
   # addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
   #   opacity = 1.0, fillOpacity = 0.25,
   #   fillColor = "#00DBFF") %>%
-  # addPolygons(data = wshd_study_elk, color = "#F29A6E", weight = 1, smoothFactor = 0.5,
-  #   opacity = 1.0, fillOpacity = 0.25,
-  #   fillColor = "#F29A6E", label = 'Upper Elk River') %>% 
-  # addPolygons(data = wshd_study_flathead, color = "#C39D50", weight = 1, smoothFactor = 0.5,
-  #   opacity = 1.0, fillOpacity = 0.25,
-  #   fillColor = "#C39D50", label = 'Flathead River') %>%
-  # addMeasure() %>% 
-  # setView(lng = -105.644, lat = 51.618, zoom = 3)
-  
+  addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'BULK'), color = "#F29A6E", weight = 1, smoothFactor = 0.5,
+    opacity = 1.0, fillOpacity = 0.25,
+    fillColor = "#F29A6E", label = 'Bulkley River') %>%
+  addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'MORR'), color = "#C39D50", weight = 1, smoothFactor = 0.5,
+    opacity = 1.0, fillOpacity = 0.25,
+    fillColor = "#C39D50", label = 'Morice River') %>%
   # addPolylines(data=drake::readd(fish_habitat_model_lines),  opacity=1, color = '#6498d2',
   #              fillOpacity = 0.75, weight=2) %>% 
   # addPolylines(data=forest_tenure_road_lines,  opacity=1, color = '#ff7f00',
   #              fillOpacity = 0.75, weight=2) %>%
-  #   addLegend(
-  #   position = "topright",
-  #   colors = c("red", "yellow", "grey", "black"),
-  #   labels = c("High", "Moderate", "Low", 'No fix'), opacity = 1,
-  #   title = "Fish Passage Priorities",
-  # ) %>% 
-    addCircleMarkers(
-    data=tab_map %>% filter(source %like% 'phase1'),
+    addLegend(
+    position = "topright",
+    colors = c("red", "yellow", "grey", "black"),
+    labels = c("High", "Moderate", "Low", 'No fix'), opacity = 1,
+    title = "Fish Passage Priorities",
+  ) %>%
+    addCircleMarkers(data=tab_map %>% filter(source %like% 'phase1'),
     label = tab_map$pscis_crossing_id,
     labelOptions = labelOptions(noHide = F, textOnly = TRUE),
     popup = leafpop::popupTable(x = select((tab_map %>% st_set_geometry(NULL)),
@@ -75,18 +69,24 @@ map <- leaflet(height=500, width=780) %>%
     opacity = 1.0,
     group = "Phase 1"
     ) %>% 
-  
-  
+    addPolylines(data=tracks,  
+                 opacity=0.75, color = '#e216c4',
+               fillOpacity = 0.75, weight=5, group = "Phase 2") %>%
+  # addAwesomeMarkers(
+  #   lng = photo_metadata$gpslongitude,lat = photo_metadata$gpslatitude,
+  #                   popup = leafpop::popupImage(photo_metadata$url, src = "remote"),
+  #                   clusterOptions = markerClusterOptions(),
+  #                   group = "Phase 2") %>%
     addCircleMarkers(
-    data=tab_map_phase2,
-    label = tab_map_phase2$pscis_crossing_id,
-    labelOptions = labelOptions(noHide = F, textOnly = TRUE),
-    popup = leafpop::popupTable(x = select((tab_map_phase2 %>% st_set_geometry(NULL)),
-                                           Site = pscis_crossing_id, Priority = priority_phase1, Stream = stream_name, Road = road_name, `Habitat value`= habitat_value, `Barrier Result` = barrier_result, `Culvert data` = data_link, `Culvert photos` = photo_link),
+    data=tab_hab_map,
+    label = tab_hab_map$pscis_crossing_id,
+    labelOptions = labelOptions(noHide = T, textOnly = TRUE),
+    popup = leafpop::popupTable(x = select((tab_hab_map %>% st_set_geometry(NULL)),
+                                           Site = pscis_crossing_id, Priority = priority, Stream = stream_name, Road = road_name, `Habitat (m)`= upstream_habitat_length_m, Comments = comments, `Culvert data` = data_link, `Culvert photos` = photo_link),
                                 feature.id = F,
                                 row.numbers = F),
     radius = 9,
-    fillColor = ~pal_phase1(priority_phase1),
+    fillColor = ~pal(priority),
     color= "#ffffff",
     stroke = TRUE,
     fillOpacity = 1.0,
@@ -94,32 +94,6 @@ map <- leaflet(height=500, width=780) %>%
     opacity = 1.0,
     group = "Phase 2"
     ) %>%
-  
-  #   addPolylines(
-  #     data=tracks,  opacity=0.75, color = '#e216c4',
-  #              fillOpacity = 0.75, weight=5, group = "Phase 2") %>%
-  # addAwesomeMarkers(
-  #   lng = photo_metadata$gpslongitude,lat = photo_metadata$gpslatitude,
-  #                   popup = leafpop::popupImage(photo_metadata$url, src = "remote"),
-  #                   clusterOptions = markerClusterOptions(),
-  #                   group = "Phase 2") %>%
-  #   addCircleMarkers(
-  #   data=tab_hab_map,
-  #   label = tab_hab_map$pscis_crossing_id, 
-  #   labelOptions = labelOptions(noHide = T, textOnly = TRUE),
-  #   popup = leafpop::popupTable(x = select((tab_hab_map %>% st_set_geometry(NULL)), 
-  #                                          Site = pscis_crossing_id, Priority = priority, Stream = stream_name, Road = road_name, `Habitat (m)`= upstream_habitat_length_m, Comments = comments, `Culvert data` = data_link, `Culvert photos` = photo_link),
-  #                               feature.id = F,
-  #                               row.numbers = F), 
-  #   radius = 9,
-  #   fillColor = ~pal(priority),
-  #   color= "#ffffff",
-  #   stroke = TRUE, 
-  #   fillOpacity = 1.0,
-  #   weight = 2,
-  #   opacity = 1.0,
-  #   group = "Phase 2"
-  #   ) %>% 
   #     # addScaleBar(position = 'bottomleft', options = scaleBarOptions(imperial = FALSE)) %>% 
   addLayersControl(
     baseGroups = c(
@@ -243,4 +217,5 @@ knitr::include_graphics("fig/fish_histogram.png")
 ```{r plot-fish-all, fig.cap='Boxplots of densities (fish/100m2) of westslope cutthrout trout captured by life stage and site for data collected during habitat confirmation assessments.', eval=F}
 plot_fish_box_all()
 ```
+
 

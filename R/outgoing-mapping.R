@@ -12,28 +12,6 @@ make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping', utm_zone = 9){
     sf::st_write(paste0("./data/", gpkg_name, ".gpkg"), nm, delete_layer = TRUE)
 }
 
-# ##just scab together the new id's with the old ones to save time
-# ##this is built with load-crossings-xref.R file
-# xref_pscis_my_crossing_modelled <- readr::read_csv(file = paste0(getwd(), '/data/raw_input/xref_pscis_my_crossing_modelled.csv')) %>%
-#   mutate(across(everything(), as.integer))
-
-# phase1_priorities <- left_join(
-#   phase1_priorities,
-#   select(xref_pscis_my_crossing_modelled, my_crossing_reference, stream_crossing_id),
-#   by = 'my_crossing_reference'
-# )
-
-
-# phase1_priorities2 <- phase1_priorities %>%
-#   mutate(pscis_crossing_id = as.character(pscis_crossing_id),
-#          my_crossing_reference = as.character(my_crossing_reference)) %>%
-#   mutate(id_combined = case_when(
-#   !is.na(pscis_crossing_id) ~ pscis_crossing_id,
-#   T ~ paste0('*', my_crossing_reference
-#   ))) %>% sf::st_as_sf(coords = c("utm_easting", "utm_northing"), crs = 26911, remove = F) %>%
-#   st_transform(crs = 3005)
-
-
 
 make_geopackage(dat = hab_fish_collect)
 make_geopackage(dat = hab_features)

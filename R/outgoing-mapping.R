@@ -1,13 +1,13 @@
-source('R/packages.R')
-source('R/functions.R')
-source('R/tables-phase2.R')
-source('R/tables.R')
+# source('R/packages.R')
+# source('R/functions.R')
+source('R/0320-tables-phase2.R')
+# source('R/tables.R')
 
 ##make your geopackage for mapping
-make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping'){
+make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping', utm_zone = 9){
   nm <-deparse(substitute(dat))
   dat %>%
-    sf::st_as_sf(coords = c("utm_easting", "utm_northing"), crs = 26911, remove = F) %>%
+    sf::st_as_sf(coords = c("utm_easting", "utm_northing"), crs = 26900 + utm_zone, remove = F) %>%
     st_transform(crs = 3005) %>%
     sf::st_write(paste0("./data/", gpkg_name, ".gpkg"), nm, delete_layer = TRUE)
 }
@@ -24,14 +24,14 @@ make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping'){
 # )
 
 
-phase1_priorities2 <- phase1_priorities %>%
-  mutate(pscis_crossing_id = as.character(pscis_crossing_id),
-         my_crossing_reference = as.character(my_crossing_reference)) %>%
-  mutate(id_combined = case_when(
-  !is.na(pscis_crossing_id) ~ pscis_crossing_id,
-  T ~ paste0('*', my_crossing_reference
-  ))) %>% sf::st_as_sf(coords = c("utm_easting", "utm_northing"), crs = 26911, remove = F) %>%
-  st_transform(crs = 3005)
+# phase1_priorities2 <- phase1_priorities %>%
+#   mutate(pscis_crossing_id = as.character(pscis_crossing_id),
+#          my_crossing_reference = as.character(my_crossing_reference)) %>%
+#   mutate(id_combined = case_when(
+#   !is.na(pscis_crossing_id) ~ pscis_crossing_id,
+#   T ~ paste0('*', my_crossing_reference
+#   ))) %>% sf::st_as_sf(coords = c("utm_easting", "utm_northing"), crs = 26911, remove = F) %>%
+#   st_transform(crs = 3005)
 
 
 
@@ -40,30 +40,61 @@ make_geopackage(dat = hab_features)
 make_geopackage(dat = hab_site_priorities)
 # make_geopackage(dat = phase1_priorities2)
 
-##we do this manually so we don't clutter the file with another version and we don't mangle the original file name
-phase1_priorities2 %>%
-sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'phase1_priorities', delete_layer = TRUE)
+##we do this manually since the
+phase1_priorities %>%
+  st_transform(crs = 3005) %>%
+  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'phase1_priorities', delete_layer = TRUE)
+
+
 
 ##add the tracks
 sf::read_sf("./data/habitat_confirmation_tracks.gpx", layer = "tracks") %>%
   sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_tracks', append = TRUE)
 
+##study area watersheds
+conn <- DBI::dbConnect(
+  RPostgres::Postgres(),
+  dbname = "postgis",
+  host = "localhost",
+  port = "5432",
+  user = "postgres",
+  password = "postgres"
+)
+
+dbGetQuery(conn,
+           "SELECT column_name,data_type
+           FROM information_schema.columns
+           WHERE table_name='fwa_watershed_groups_poly'")
+
+##here is the flathead
+wshd_study_areas <- st_read(conn,
+                           query = "SELECT * FROM whse_basemapping.fwa_watershed_groups_poly a
+                               WHERE a.watershed_group_code  = 'BULK'
+                           OR a.watershed_group_code  = 'MORR'"
+)
+
+wshd_study_areas %>%
+  # select(-wscode_ltree) %>%
+  st_cast("POLYGON") %>%
+  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'wshd_study_areas', append = F)
+
+dbDisconnect(conn = conn)
+
 ####------------add the watersheds-------------------------
 
 ##having the watersheds derived is nice so lets try
 ##make a function to retrieve the watershed info
-get_watershed <- function(dat){
-  mapply(fwapgr::fwa_watershed_at_measure,
-         blue_line_key = dat$blue_line_key,
-         downstream_route_measure = dat$downstream_route_measure,
-         SIMPLIFY = F) %>%
-    purrr::set_names(nm = dat$pscis_crossing_id) %>%
-    discard(function(x) nrow(x) == 0) %>% ##remove zero row tibbles with https://stackoverflow.com/questions/49696392/remove-list-elements-that-are-zero-row-tibbles
-    data.table::rbindlist(idcol="pscis_crossing_id") %>%
-    distinct(pscis_crossing_id, .keep_all = T) %>% ##in case there are duplicates we should get rid of
-    st_as_sf()
-}
-
+# get_watershed <- function(dat){
+#   mapply(fwapgr::fwa_watershed_at_measure,
+#          blue_line_key = dat$blue_line_key,
+#          downstream_route_measure = dat$downstream_route_measure,
+#          SIMPLIFY = F) %>%
+#     purrr::set_names(nm = dat$pscis_crossing_id) %>%
+#     discard(function(x) nrow(x) == 0) %>% ##remove zero row tibbles with https://stackoverflow.com/questions/49696392/remove-list-elements-that-are-zero-row-tibbles
+#     data.table::rbindlist(idcol="pscis_crossing_id") %>%
+#     distinct(pscis_crossing_id, .keep_all = T) %>% ##in case there are duplicates we should get rid of
+#     st_as_sf()
+# }
 
 
 # ##for each site grab a blueline key and downstream route measure
@@ -83,51 +114,32 @@ get_watershed <- function(dat){
 # hab_site_fwa_wshds <- get_watershed(dat = hab_site_fwa_index)
 
 ##filter only phase 2 sites that were qa'd to a modelled crossing thorugh
-wshed_input <- bcfishpass_phase2 %>%
-  filter(source %like% 'phase2' &
-           !is.na(modelled_crossing_id)) %>%
-  select(-geom, -geometry) %>%
-  mutate(downstream_route_measure_chk = case_when(
-    downstream_route_measure < 200 ~ 20,
-    T ~ NA_real_
-  ),
-  downstream_route_measure = case_when(
-    !is.na(downstream_route_measure_chk) ~ downstream_route_measure_chk,
-    T ~ downstream_route_measure
-  ))
+# wshed_input <- bcfishpass_phase2 %>%
+#   filter(source %like% 'phase2' &
+#            !is.na(modelled_crossing_id)) %>%
+#   select(-geom, -geometry) %>%
+#   mutate(downstream_route_measure_chk = case_when(
+#     downstream_route_measure < 200 ~ 20,
+#     T ~ NA_real_
+#   ),
+#   downstream_route_measure = case_when(
+#     !is.na(downstream_route_measure_chk) ~ downstream_route_measure_chk,
+#     T ~ downstream_route_measure
+#   ))
+#
+#
+# ##now lets get our watersheds
+# hab_site_fwa_wshds <- left_join(
+#   get_watershed(dat = wshed_input) %>% mutate(pscis_crossing_id = as.integer(pscis_crossing_id)),
+#   select(wshed_input, -localcode_ltree, -wscode_ltree),
+#   by = 'pscis_crossing_id'
+# )
+#
+# ##add to the geopackage
+# hab_site_fwa_wshds %>%
+#   sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_wshds', append = F) ##might want to f the append....
 
 
-##now lets get our watersheds
-hab_site_fwa_wshds <- left_join(
-  get_watershed(dat = wshed_input) %>% mutate(pscis_crossing_id = as.integer(pscis_crossing_id)),
-  select(wshed_input, -localcode_ltree, -wscode_ltree),
-  by = 'pscis_crossing_id'
-)
 
-##add to the geopackage
-hab_site_fwa_wshds %>%
-  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_wshds', append = F) ##might want to f the append....
 
-# hab_site_fwa_index %>%
-#   sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_fwa_index', append = T) ##might want to f the append....
-
-##get the watersheds for the study area as a whole
-##here is the elk
-wshd_study_elk <- fwapgr::fwa_watershed_at_measure(blue_line_key = 356570562, downstream_route_measure = 22910, epsg = 3005) %>%
-  mutate(study_area = 'elk')
-
-wshd_study_elk %>%
-sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'wshd_study_elk', append = F)
-
-##here is the flathead
-wshd_study_flathead <- st_read(conn,
-                               query = "SELECT * FROM whse_basemapping.fwa_named_watersheds_poly a
-                               WHERE a.named_watershed_id = '4600'"
-) %>%
-  mutate(study_area = 'flathead')
-
-wshd_study_flathead %>%
-  # select(-wscode_ltree) %>%
-  st_cast("POLYGON") %>%
-  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'wshd_study_flathead', append = F)
 

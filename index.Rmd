@@ -4,8 +4,8 @@ author:
  - Prepared for Habitat Conservation Trust Fund
  - Prepared by Al Irvine, B.Sc., R.P.Bio.
  - New Graph Environment
- - Version 0.0.1
-date: "2021-01-15 DRafT"
+ - Version DRafT 0.0.1
+date: format(Sys.Date(), "%Y-%m-%d")
 toc-title: Table of Contents
 site: bookdown::bookdown_site
 output: bookdown::gitbook

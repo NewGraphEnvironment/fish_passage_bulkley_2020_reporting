@@ -26,7 +26,7 @@ my_site2_xref <- 14000079
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` at km 47 of the `r my_overview_info() %>% pull(road_name)` accessed from Houston, BC. The `r my_overview_info() %>% pull(road_name)` is a forest tenure road and the responsibility of the BC Ministry of Forests, Lands, Natural Resource Operations & Rural Development (FLNR) - Nadina District.   
+PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` at km 47 of the `r my_overview_info() %>% pull(road_name)` accessed from Houston, BC. The `r my_overview_info() %>% pull(road_name)` is a forest tenure road and the responsibility of the BC Ministry of Forests, Lands, Natural Resource Operations & Rural Development (FLNR) - Nadina District. The area immediately to the south of the subject crossing is a conservation area manged by the Nature Trust of British Columbia.
 
 ```{r eval=F}
 ##idon't think we need this here but...
@@ -63,7 +63,7 @@ knitr::asis_output(model_url)
 ```{r model-caption-197360, fig.cap= my_caption, out.width = "0.01%", eval=T}
 my_photo = 'fig/pixel.png'
 
-my_caption = paste0('3D model of habitat immediately upstream and downstream of PSCIS crossing ', my_site, '.')
+my_caption = paste0('Interactive 3D model of habitat immediately upstream and downstream of PSCIS crossing ', my_site, '.')
 
 
   

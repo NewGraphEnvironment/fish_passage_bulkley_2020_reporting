@@ -27,7 +27,7 @@ tab_overview <- left_join(
   by = c('pscis_crossing_id' = 'site')
 ) %>%
   mutate(utm = paste0(round(easting,0), ' ', round(northing,0))) %>%
-  select(Site = pscis_crossing_id,
+  select(`PSCIS ID` = pscis_crossing_id,
          Stream = stream_name,
          Road = road_name,
          Tenure = road_tenure,
@@ -70,7 +70,7 @@ tab_hab_summary <- left_join(
          `Gradient (%)` = average_gradient_percent,
          `Total Cover` = total_cover,
          `Habitat Value` = hab_value) %>%
-  replace(., is.na(.), "-")
+  replace(., is.na(.), "--")
 
 
 ##we need an sf object with details for the interactive map

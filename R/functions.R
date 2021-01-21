@@ -213,8 +213,8 @@ print_tab_summary_all <- function(tab_sum, comments, photos){
     kableExtra::add_footnote(label = paste0('Comments: ', comments[[1]]), notation = 'none') %>% #this grabs the comments out
     kableExtra::add_footnote(label = paste0('Photos: PSCIS ID ', photos[[1]],
                                             '. From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.',
-                                            photos[[2]]), notation = 'none') %>%
-    kableExtra::add_footnote(label = '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>', escape = F, notation = 'none')
+                                            photos[[2]]), notation = 'none')
+    # kableExtra::add_footnote(label = '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>', escape = F, notation = 'none')
 }
 
 ##summary table

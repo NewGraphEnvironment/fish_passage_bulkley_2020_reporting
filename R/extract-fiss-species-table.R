@@ -13,7 +13,7 @@ conn <- DBI::dbConnect(
 )
 
 
-##we are going to use the whole elk for now but should refine for our study area
+##we are going to use the whole bulkley for now but should refine for our study area
 fish_species_watershed <- sf::st_read(conn,
                                       query = "SELECT nws.gnis_name,nws.fwa_watershed_code, nws.gnis_id, x.species_code,x.species_name,x.observation_date
                    FROM whse_fish.fiss_fish_obsrvtn_pnt_sp x

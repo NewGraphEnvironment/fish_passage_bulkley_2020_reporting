@@ -34,7 +34,7 @@ file.rename('0600-appendix.Rmd', 'data/0600-appendix.Rmd')
 rmarkdown::render_site(output_format = 'pagedown::html_paged', encoding = 'UTF-8')
 
 ##  move it to the docs folder so that it can be seen by the download button
-file.rename('Elk.html', 'docs/Elk.html')
+file.rename('Bulkley.html', 'docs/Bulkley.html')
 
 ##move the phase 1 appendix back to main directory
 file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')
@@ -49,15 +49,15 @@ rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')
 
 
 ##sub in the title page
-length <- pdf_length(paste0(getwd(), "/docs/Elk.pdf"))
+length <- pdf_length(paste0(getwd(), "/docs/Bulkley.pdf"))
 
-pdf_subset(paste0(getwd(), "/docs/Elk.pdf"),
-           pages = 2:length, output = paste0(getwd(), "/docs/Elk2.pdf"))
+pdf_subset(paste0(getwd(), "/docs/Bulkley.pdf"),
+           pages = 2:length, output = paste0(getwd(), "/docs/Bulkley2.pdf"))
 
 pdf_combine(c(paste0(getwd(), "/docs/title_page.pdf"),
-  paste0(getwd(), "/docs/Elk2.pdf")),
-            output = paste0(getwd(), "/docs/Elk3.pdf"))
+  paste0(getwd(), "/docs/Bulkley2.pdf")),
+            output = paste0(getwd(), "/docs/Bulkley3.pdf"))
 
-file.rename(paste0(getwd(), "/docs/Elk3.pdf"), paste0(getwd(),"/docs/Elk.pdf"))
+file.rename(paste0(getwd(), "/docs/Bulkley3.pdf"), paste0(getwd(),"/docs/Bulkley.pdf"))
 
-file.remove(paste0(getwd(), "/docs/Elk2.pdf"))
+file.remove(paste0(getwd(), "/docs/Bulkley2.pdf"))

@@ -1,10 +1,10 @@
 --- 
-title: "Bulkley River Watershed Group Fish Passage Restoration Planning"
+title: "Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning"
 author:
- - Prepared for Habitat Conservation Trust Fund
+ - Prepared for Habitat Conservation Trust Fund, BC Fish Passage Remediation Program and the Canadian Wildlife Federation
  - Prepared by Al Irvine, B.Sc., R.P.Bio.
- - New Graph Environment
- - Version DRafT 0.0.1
+ - New Graph Environment on behalf of Society for Ecosytem Restoration Northern BC
+ - Version DRafT - 0.0.1
 date: |
    `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents

@@ -15,8 +15,9 @@ tab:tab-overview
 tab:unnamed-chunk-6
 tab:cost-est-phase-2
 tab:tab-habitat-summary
-fig:model-197360
+fig:model-caption-197360
 tab:tab-culvert-197360
+tab:tab-culvert-197669
 tab:tab-habitat-summary-197360
 tab:tab-fish-site-197360
 tab:tab-fish-dens-197360
@@ -27,6 +28,8 @@ fig:photo-197360-03
 intro
 background
 project-location
+wetsuweten
+gitxsan
 fisheries
 methods
 planning

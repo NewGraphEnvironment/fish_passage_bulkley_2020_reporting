@@ -109,16 +109,20 @@ tab_cost_est_prep3 <- left_join(
     filter(habitat_confirmations_priorities, location == 'us'),
     site, upstream_habitat_length_m),
   by = c('pscis_crossing_id' = 'site')
+)
+
+tab_cost_est_prep4 <- left_join(
+  tab_cost_est_prep3,
+  select(hab_site %>% filter(!alias_local_name %like% 'ds' & !alias_local_name %like% 'ef'), site, avg_channel_width_m),
+  by = c('pscis_crossing_id' = 'site')
 ) %>%
   mutate(cost_net = round(upstream_habitat_length_m/cost_est_1000s, 1),
-         cost_area_net = round((upstream_habitat_length_m * downstream_channel_width_meters * 0.5)/cost_est_1000s, 1))
-
-
+         cost_area_net = round((upstream_habitat_length_m * avg_channel_width_m)/cost_est_1000s, 1)) #downstream_channel_width_meters
 
 
 ##add the priority info
-tab_cost_est_phase2 <- tab_cost_est_prep3 %>%
-  select(pscis_crossing_id, stream_name, road_name, barrier_result, habitat_value, downstream_channel_width_meters,
+tab_cost_est_phase2 <- tab_cost_est_prep4 %>%
+  select(pscis_crossing_id, stream_name, road_name, barrier_result, habitat_value, avg_channel_width_m,
          crossing_fix_code, cost_est_1000s, upstream_habitat_length_m,
          cost_net, cost_area_net, source) %>%
   mutate(upstream_habitat_length_m = round(upstream_habitat_length_m,0))
@@ -130,7 +134,7 @@ tab_cost_est_phase2_report <- tab_cost_est_phase2 %>%
          Road = road_name,
          Result = barrier_result,
          `Habitat value` = habitat_value,
-         `Stream Width (m)` = downstream_channel_width_meters,
+         `Stream Width (m)` = avg_channel_width_m,
          Fix = crossing_fix_code,
         `Cost Est (in $K)` =  cost_est_1000s,
          `Habitat Upstream (m)` = upstream_habitat_length_m,

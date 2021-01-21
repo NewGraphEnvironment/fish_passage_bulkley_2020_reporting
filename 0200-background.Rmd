@@ -14,11 +14,11 @@ As a result of high-level direction from the provincial government, a Fish Passa
 
 ## Project Location
 
-The project area includes the Bulkley River and Morice River watershed groups (Figure \@ref(fig:overview-map).  
+The project area includes the Bulkley River and Morice River watershed groups (Figure \@ref(fig:overview-map)) and is  within the  traditional territories of the Gitxsan and Wet'suwet'en. The valley  bottom has  seen  extensive  settlement  over  the  past hundred years with major population centers including the Village of Hazelton, the Town of Smithers, the Village of Telkwa and the District Municipality of Houston.  The watersheds are within the Skeena, Stikine, and the Nadina Natural Resource Districts. 
 
 <br>
 
-The Bukley River has a mean annual discharge of `r round(fasstr::calc_longterm_mean(station_number = "08EE004")$LTMAD,1)` m^3^/s at station 08EE004 located near Quick and `r round(fasstr::calc_longterm_mean(station_number = "08EE003")$LTMAD,1)` m^3^/s at station 08EE003 located upstream near Houston.  Flow patterns are typical of high elevation watersheds on the west side of the northern Rocky Mountains which receive large amounts of precipitation as snow leading to peak levels of discharge during snowmelt, typically from May to July (Figures \@ref(fig:hydrology-plot) - \@ref(fig:hydrology-stats)). 
+The Bukley River  is an 8th  order stream that drains an area of 7,762 km^2^ in a generally northerly direction from Bulkley Lake on the Nechako Plateau to its confluence with the Skeena River at Hazleton. It has a mean annual discharge of `r round(fasstr::calc_longterm_mean(station_number = "08EE004")$LTMAD,1)` m^3^/s at station 08EE004 located near Quick and `r round(fasstr::calc_longterm_mean(station_number = "08EE003")$LTMAD,1)` m^3^/s at station 08EE003 located upstream near Houston.  Flow patterns are typical of high elevation watersheds on the west side of the northern Rocky Mountains which receive large amounts of precipitation as snow leading to peak levels of discharge during snowmelt, typically from May to July (Figures \@ref(fig:hydrology-plot) - \@ref(fig:hydrology-stats)). 
 
 <br>
 
@@ -60,10 +60,16 @@ knitr::include_graphics("fig/hydrology_stats_08EE003.png")
 ### Gitxsan
 ```
 
+## Wet'suwet'en
 
+Wet'suwet'en hereditary territory covers an area of 22,000km^2^ including the Bulkley River and Morice River watersheds and portions of the Nechako River watershed.  The Wet'suwet'en people are a matrilineal society organized into the Gilseyhu (Big Frog), Laksilyu (Small Frog), Tsayu (Beaver clan), Gitdumden (Wolf/Bear) and Laksamshu (Fireweed) clans. Within each of the clans there are are a number of kin-based groups known as Yikhs or House groups. The Yikh is a partnership between the people and the territory. Thirteen Yikhs with Hereditary Chiefs manage a total of 38 distinct territories upon which they have jurisdiction.  Within a clan, the head Chief is entrusted with the stewardship of the House territory to ensure the Land is managed in a sustainable manner. Inuk Nu’at’en (Wet'suwet'en law) governing the harvesting of fish within their lands are based on values founded on thousands of years of social, subsistence and environmental dynamics. The Yintahk (Land) is the centre of life as well as culture and it's management is intended to provide security for sustaining salmon, wildlife, and natural foods to ensure the health and well-being of the Wet'suwet'en [@officeofthewetsuweten2013Wetsuwet; @OfficeoftheWetsuweten2021; @flnrord2017NaturalResource].
 
 
 <br>
+
+## Gitxsan
+
+The Gitxsan Laxyip (traditional territories) covers an area of 33,000km^2^ within the Skeena River and Nass River watersheds.  The Laxyip is governed by 60 Simgiigyet (Hereditary Chiefs), within the traditional hereditary system made up of Wilps (House groups).  Traditional governance of the Gitxsan is guided by the principles of Ayookw (Gitxsan law) [@GitxsanHuwilpGovernment2021]. 
 
 
 ## Fisheries
@@ -82,11 +88,6 @@ readr::read_csv(file = paste0(getwd(), '/data/raw_input/fiss_species_table.csv')
 
 ```
 
-<br>
-
- 
-
-<br>
 
 ```{r fish-fiss-summary, eval=T}
 fiss_sum <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum.csv'))

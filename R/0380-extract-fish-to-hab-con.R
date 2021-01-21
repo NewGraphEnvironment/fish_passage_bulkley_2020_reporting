@@ -105,7 +105,7 @@ plot_fish_hist <- ggplot(fish %>% filter(!species_code %in% c("MW",'SU','NFC', '
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
   # geom_histogram(aes(y=..density..), breaks = bins, alpha=1,
   #                position="identity", size = 0.75)
-plot_fish_hist
+# plot_fish_hist
 
 
 # ggsave(plot = plot_fish_hist, file="./fig/fish_histogram.png",
@@ -137,9 +137,9 @@ hab_fish_input <- left_join(
   # janitor::adorn_totals()   ##use this to ensure you have the same number of fish in the summary as the individual fish sheet
 
 ##burn to a csv so you can cut and paste into your fish submission
-hab_fish_input %>%
-  readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/hab_con_fish_summary.csv'),
-                   na = "")
+# hab_fish_input %>%
+#   readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/hab_con_fish_summary.csv'),
+#                    na = "")
 
 
 ######----------------density plots--------------------------
@@ -156,7 +156,8 @@ hab_fish_dens <- hab_fish_indiv %>%
          location = case_when(location == 'us' ~ 'Upstream',
                               T ~ 'Downstream'))
 
-
+# hab_fish_dens %>%
+#   readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/hab_fish_dens.csv'))
 
 ##paths to write to will need to change now
 # ggsave(plot = plot_fish_box, filename = "./fig/plot_fish_box.png",

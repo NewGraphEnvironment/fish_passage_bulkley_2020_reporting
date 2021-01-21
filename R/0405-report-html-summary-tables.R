@@ -1,6 +1,6 @@
 ##summary table
 print_tab_summary_png <- function(site){
-  make_tab_summary(df = pscis_all %>% sf::st_drop_geometry() %>% filter(pscis_crossing_id == site)) %>%
+  make_tab_summary(df = pscis_all %>% filter(pscis_crossing_id == site)) %>% ##%>% sf::st_drop_geometry()
     kable(booktabs = T) %>%    #
     kableExtra::add_footnote(label = paste0('Comments: ', pscis_all %>% filter(pscis_crossing_id == site) %>%
                                               distinct(pscis_crossing_id, .keep_all = T) %>% ##might be my_crossing_refe

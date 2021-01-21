@@ -79,8 +79,8 @@ tab_cost_est_phase1_report <- tab_cost_est_phase1 %>%
     `Habitat Upstream (km)` = steelhead_network_km,
     `Cost Benefit (m / $K)` = cost_gross,
     `Cost Benefit (m2 / $K)` = cost_area_gross) %>%
-  filter(!is.na(Priority)) %>%
-  st_drop_geometry()  ##added this
+  filter(!is.na(Priority))
+  # st_drop_geometry()  ##added this
 
 
 tab_cost_est_phase1 <- tab_cost_est_phase1_report %>%

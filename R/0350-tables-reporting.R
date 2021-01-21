@@ -105,14 +105,17 @@ tab_hab_map <- left_join(
                              '/crossing_all.JPG', '>', 'photo link', '</a>'))
 
 tab_map_prep <- left_join(
-  pscis_all,
-  phase1_priorities %>% st_drop_geometry() %>% select(-utm_zone:utm_northing, priority_phase1, -habitat_value, -barrier_result),
+  pscis_all %>%
+    sf::st_as_sf(coords = c("easting", "northing"),
+                 crs = 26909, remove = F) %>% ##don't forget to put it in the right crs buds
+    sf::st_transform(crs = 4326), ##convert to match the bcfishpass format,
+  phase1_priorities %>% select(-utm_zone:utm_northing, priority_phase1, -habitat_value, -barrier_result), # %>% st_drop_geometry()
   by = 'pscis_crossing_id'
 )
 
 tab_phase1_map_prep <- left_join(
   phase1_priorities,
-  select(pscis_phase1_reassessments %>% st_drop_geometry(), pscis_crossing_id, amalgamated_crossing_id, stream_name, road_name),
+  select(pscis_phase1_reassessments, pscis_crossing_id, amalgamated_crossing_id, stream_name, road_name), # %>% st_drop_geometry()
   by = 'pscis_crossing_id'
 )
 
@@ -125,7 +128,7 @@ tab_map <- tab_map_prep %>%
   #   ))) %>%
   # sf::st_as_sf(coords = c("utm_easting", "utm_northing"),
   #              crs = 26911, remove = F) %>%
-  sf::st_transform(crs = 4326) %>%
+  # sf::st_transform(crs = 4326) %>%
   mutate(priority_phase1 = case_when(priority_phase1 == 'mod' ~ 'moderate',
                                      T ~ priority_phase1)) %>%
   mutate(data_link = paste0('<a href =',
@@ -144,7 +147,7 @@ tab_phase1_map <- tab_phase1_map_prep %>%
   #   ))) %>%
   # sf::st_as_sf(coords = c("utm_easting", "utm_northing"),
   #              crs = 26911, remove = F) %>%
-  sf::st_transform(crs = 4326) %>%
+  # sf::st_transform(crs = 4326) %>%
   mutate(priority_phase1 = case_when(priority_phase1 == 'mod' ~ 'moderate',
                                      T ~ priority_phase1)) %>%
   mutate(data_link = paste0('<a href =',

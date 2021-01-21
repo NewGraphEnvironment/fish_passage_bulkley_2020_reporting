@@ -34,7 +34,10 @@ dbGetQuery(conn,
 
 # test <- dbGetQuery(conn, "SELECT * FROM bcfishpass.waterfalls")
 
-dat <- pscis_all
+dat <- pscis_all %>%
+  sf::st_as_sf(coords = c("easting", "northing"),
+               crs = 26909, remove = F) %>% ##don't forget to put it in the right crs buds
+  sf::st_transform(crs = 4326)
 
 # add a unique id - we could just use the reference number
 dat$misc_point_id <- seq.int(nrow(dat))
@@ -73,8 +76,8 @@ dat_joined <- left_join(
   # dat_info,
   select(dat_info,misc_point_id:fcode_label, distance, crossing_id), ##geom keep only the road info and the distance to nearest point from here
   by = "misc_point_id"
-) %>%
-  sf::st_drop_geometry() ##distinct will pick up geometries!!!!!!
+)
+  # sf::st_drop_geometry() ##distinct will pick up geometries!!!!!!
 
 
 dbDisconnect(conn = conn)
@@ -188,7 +191,7 @@ pscis_reassessmeents_rd_tenure <- left_join(
   readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/pscis_reassessmeents_rd_tenure.csv'))
 
 pscis_phase2_rd_tenure <- left_join(
-  select(pscis_all %>% filter(source %like% 'phase2') %>% st_drop_geometry(), pscis_crossing_id),
+  select(pscis_all %>% filter(source %like% 'phase2'), pscis_crossing_id), # %>% st_drop_geometry()
   select(dat_joined4, pscis_crossing_id, my_road_tenure),
   by = 'pscis_crossing_id'
 ) %>%
@@ -199,7 +202,7 @@ pscis_phase2_rd_tenure <- left_join(
   readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/pscis_phase2_rd_tenure.csv'))
 
 pscis_rd <- dat_joined4 %>%
-  sf::st_drop_geometry() %>%
+  # sf::st_drop_geometry() %>%
   dplyr::mutate(my_road_class = case_when(is.na(road_class) & !is.na(file_type_description) ~
                                             file_type_description,
                                           T ~ road_class)) %>%

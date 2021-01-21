@@ -19,6 +19,6 @@ xref_pscis_my_crossing_modelled <- dat %>%
   dplyr::filter(funding_project_number == "Bulkley_6-288_Phase1") %>% ##we don't need these - funding_project_number == "Bulkley_6-288_Reassessments"
   select(external_crossing_reference, stream_crossing_id) %>%
   mutate(external_crossing_reference = as.integer(external_crossing_reference)) %>%
-  sf::st_drop_geometry() %>%
+  # sf::st_drop_geometry() %>%
   readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/xref_pscis_my_crossing_modelled.csv'))
 

@@ -58,6 +58,19 @@ wshd_study_areas %>%
 
 dbDisconnect(conn = conn)
 
+##going to grab the watershed for the riddeck ck crossing
+
+
+wshd_reddick <- fwapgr::fwa_watershed_at_measure(blue_line_key = 360878896, downstream_route_measure = 1313.57027395708)
+
+wshd_reddick %>%
+  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'wshd_reddick', append = F)
+
+st_write(wshd_reddick, append = TRUE, driver = 'kml', dsn = "data/extracted_inputs/wshd_reddick.kml")
+
+# ggplot2::ggplot() +
+#   ggplot2::geom_sf(data = wshd_reddick, lwd = 0.15, fill = 'steelblue', alpha = 0.5)
+
 ####------------add the watersheds-------------------------
 
 ##having the watersheds derived is nice so lets try

@@ -218,10 +218,10 @@ print_tab_summary_all <- function(tab_sum, comments, photos){
 }
 
 ##summary table
-print_tab_summary <- function(dat = pscis2, site = my_site, site_photo_id = my_site, font = 11){
+print_tab_summary <- function(dat = pscis_phase2, site = my_site, site_photo_id = my_site, font = 11){
   make_tab_summary(df = dat %>% filter(pscis_crossing_id == site)) %>%
     kable(caption = paste0('Summary of fish passage reassessment for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
-    # kableExtra::add_footnote(label = paste0('Comments: ', pscis2 %>% filter(pscis_crossing_id == my_site) %>%
+    # kableExtra::add_footnote(label = paste0('Comments: ', pscis_phase2 %>% filter(pscis_crossing_id == my_site) %>%
     #                                           pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
     kableExtra::add_footnote(label = paste0('Photos: From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.',
                                             paste0('![](data/photos/', site_photo_id, '/crossing_all.JPG)')), notation = 'none') %>%
@@ -311,7 +311,7 @@ pull_photo_by_str <- function(site_id = my_site, str_to_pull = 'barrel'){
 }
 
 appendix_title <- function(site = my_site){
-  paste0('# Appendix - Crossing ', site,'{-}')
+  paste0('# Appendix - Crossing ', site, ' - ', my_overview_info() %>% pull(stream_name), ' {-}')
 }
 
 appendix_subtitle <- function(){

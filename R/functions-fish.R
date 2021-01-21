@@ -38,8 +38,9 @@ tab_fish_site <- function(dat = hab_fish_dens, sit = my_site){
 }
 
 
-tab_fish_dens <- function(dat = hab_fish_dens, sit = my_site, species = 'WCT'){
+tab_fish_dens <- function(dat = hab_fish_dens, sit = my_site, species = 'RB'){
   dat %>%
+    mutate(life_stage = factor(life_stage, levels = c('fry', 'parr', 'juvenile', 'adult'))) %>%
     filter(
       site  == sit
       &
@@ -49,15 +50,13 @@ tab_fish_dens <- function(dat = hab_fish_dens, sit = my_site, species = 'WCT'){
     distinct(.keep_all = T)  %>%
     pivot_wider(names_from = life_stage,
                 values_from = density_100m2) %>%
-    # select(Site = site_number,
-    #        Location = location,
-    #        fry, parr, juvenile, adult) %>%
     select(Site = site_number,
            Location = location,
-           fry, parr, everything()) %>%
+           everything()) %>% ##removed fry, parr
     purrr::set_names(nm = stringr::str_to_title(names(.))) %>%
     mutate_all(~replace_na(.,"-"))
 }
+
 
 
 # tab_fish_dens <- hab_fish_dens %>%
@@ -94,7 +93,7 @@ plot_fish_box <- function(dat = hab_fish_dens, sit = my_site){
     ylab(expression(Density ~ (fish/100 ~  m^2)))
 }
 
-plot_fish_box_all <- function(dat = hab_fish_dens, sp = 'WCT'){
+plot_fish_box_all <- function(dat = hab_fish_dens, sp = 'RB'){
   dat %>%
     filter(
       species_code  == sp
@@ -108,6 +107,6 @@ plot_fish_box_all <- function(dat = hab_fish_dens, sp = 'WCT'){
     theme_bw()+
     theme(legend.position = "none", axis.title.x=element_blank()) +
     geom_dotplot(binaxis='y', stackdir='center', dotsize=1)+
-    ylab(expression(Density ~ (WCT/100 ~  m^2)))
+    ylab(expression(Density ~ (Fish/100 ~  m^2)))
 }
 

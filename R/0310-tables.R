@@ -5,6 +5,9 @@ source('R/0255-load-pscis.R')
 
 bcfishpass <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/bcfishpass.csv'))
 
+bcfishpass_phase2 <- bcfishpass %>%
+  filter(source %like% 'phase2')
+
 bcfishpass_rd <- bcfishpass %>%
   select(pscis_crossing_id, my_crossing_reference, crossing_id, distance, road_name_full,
          road_class, road_name_full, road_surface, file_type_description, forest_file_id,

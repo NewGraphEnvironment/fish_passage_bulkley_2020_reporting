@@ -5,7 +5,8 @@ author:
  - Prepared by Al Irvine, B.Sc., R.P.Bio.
  - New Graph Environment
  - Version DRafT 0.0.1
-date: format(Sys.Date(), "%Y-%m-%d")
+date: |
+   `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -44,8 +45,12 @@ source('R/0320-tables-phase2.R')
 source('R/0330-tables-phase1-cost-estimate.R')
 source('R/0340-tables-phase2-cost-estimate.R') ##the order of these matters to much - should fix.  need to make cost estimate table seperate
 source('R/0350-tables-reporting.R')
-# source('R/extract-fish.R')
-# source('R/functions-fish.R')
+source('R/0380-extract-fish-to-hab-con-density-summary.R')
+source('R/functions-fish.R')
+
+
+# ##made this with 0380-extract-fish-to-hab-con.R
+# hab_fish_dens <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/hab_fish_dens.csv'))
 
 ##set the font default size for the tables.  had a crash and think this might have been it so put after functions.R
 ##seems odd but not risking again for now.

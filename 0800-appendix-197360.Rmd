@@ -16,19 +16,16 @@ source('R/functions-fish.R')
 
 ```{r  load-data-197360}
 my_site <- 197360
-my_site2 <- 197559
-my_site_xref <- 4600183
-my_site2_xref <- 4600070
+
 ```
 
 
-`r paste0('# Appendix - Crossings ', my_site, ' and ', my_site2)`{-} 
-`r paste0('**', my_overview_info() %>% pull(road_name), ' and ', my_overview_info(site = my_site2) %>% pull(road_name), ' - ', my_overview_info() %>% pull(stream_name), '**')`
+`r appendix_title()`
 
 
 ## Site Location {-}
 
-PSCIS crossings `r as.character(my_site)` and `r as.character(my_site2)` are located north of Sparwood, BC on `r my_pscis_info() %>% pull(stream_name)`, approximately 600m and 725m upstream from the Elk River.  During 2020 surveys, two fords (PSCIS 197535 and 197536) were documented 700m and 2km upstream of crossing `r as.character(my_site2)` respectively.  Although several un-assessed crossings are modelled upstream of PSCIS 197536 (ford), review of aerial imagery indicates that the sole crossing upstream on the mainstem of Brule Creek is a bridge (modelled crossing 24706664) and the remaining upstream crossings are on small and/or very steep tributaries and unlikely to be blocking access to significant amounts of important habitat. Both Busato Road and Highway 43 are the responsibility of the Ministry of Transportation and Infrastructure.   
+PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` at km 47 of the `r my_overview_info() %>% pull(road_name)`.  During 2020 surveys, PSCIS culvert 197669 was documented on `r my_pscis_info() %>% pull(stream_name)`, 1.2km upstream of the FSR. The `r my_overview_info() %>% pull(road_name)` is  the responsibility of the Ministry of Forests, Lands, Natural Resource Operations & Rural Development (FLNR) - Nadina District.   
 
 
 <br>
@@ -36,111 +33,128 @@ PSCIS crossings `r as.character(my_site)` and `r as.character(my_site2)` are loc
 ## Background {-}
 
 
-At the crossing locations, Brule Creek is a 5th order stream with a watershed area upstream of the highway of approximately 87km^2^. The elevation of the watershed ranges from a maximum of 2800 to 1200m at  PSCIS crossing `r as.character(my_site)`. Brule Creek is known to contain westslope cutthrout trout, rainbow trout and bull trout downstream of the subject culverts and westslope cutthrout trout and rainbow trout above [@data_fish_obs]. On the south side of the upper watershed, at an elevation of 2000m, is the 5ha Josephine Lake (also known as Big Lake). The lake was stocked with westslope cutthrout trout from 1983 - 2000 [@data_fish_obs; @FishInventoriesData2020].
+`r my_pscis_info() %>% pull(stream_name)` flows through an extensive area of wetland type habitat into the top end of Owen Lake approximately 1km downstream of the crossing.  Owen Lake is drained by Owen Creek emptying into the Morice River approximately 20km to the north.  At the crossing location, `r my_pscis_info() %>% pull(stream_name)` is a 4th order stream with a watershed area upstream of the highway of approximately 29km^2^. The elevation of the watershed ranges from a maximum of 1140 to 750m at PSCIS crossing `r as.character(my_site)`. `r my_pscis_info() %>% pull(stream_name)` is known to contain longnose sucker and rainbow trout usptream of the subject culvert [@data_fish_obs]. On the north side of the upper watershed, at an elevation of 1160m, are the 25ha Neuch Lakes. The limit of fish distribution in the `r my_pscis_info() %>% pull(stream_name)` mainstem is documented by @davidbustardandassociatesltd_1999StreamInventory as a 6m high waterfall located 2.4km upstream of the FSR  with the three main tributary systems classified as either non-fish bearing or fish bearing for only short distances (<200m) from the mainstem.
 
 <br>
 
-PSCIS stream crossings `r as.character(my_site)` and `r as.character(my_site2)` were ranked as high priorities for follow up with fish passage assessments and habitat confirmations due to the large size of the stream network upstream (`r my_bcfishpass() %>% pull(wct_network_km)`km) of the highway and because Brule Creek is a 5th order stream. The habitat confirmation was completed on `r my_pscis_info() %>% pull(date) %>% format(., format = "%B %d, %Y")`. A map of the watershed including areas surveyed is provided in Attachment 1 – Map [`r my_bcfishpass() %>% pull(map_tile_display_name)`](`r my_mapsheet()`).
+PSCIS stream crossing `r as.character(my_site)` was prioritized for follow up with a habitat confirmation through consultation with Lars Reese-Hansen (Aquatic Habitat Specialist, FLNR) and Don Morgan (Wildlife Habitat Specialist, MoE). They indicated (pers comm.) that following fish passage assessments of most of the crossings in the Owen Creek watershed in 2014, Riddeck Creek upstream of the crossing contained the highest value habitat potentially blocked by a road-stream crossing barrier. A map of the watershed is provided in Attachment 1 – Map [093L.104](https://hillcrestgeo.ca/outgoing/fishpassage/projects/morice/FishPassage_093L104.pdf).
 
 <br>
 
 ## Stream Characteristics at Crossing {-}
 
-At the time of the survey, both culverts were un-embedded, non-backwatered and considered barriers to upstream fish passage. PSCIS crossing `r as.character(my_site)` was `r my_pscis_info() %>% pull(diameter_or_span_meters)`m in diameter with a pipe length of `r my_pscis_info() %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info() %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info() %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info() %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-197360)). PSCIS crossing `r as.character(my_site2)` was `r my_pscis_info(site = my_site2) %>% pull(diameter_or_span_meters)`m in diameter with a pipe length of `r my_pscis_info(site = my_site2) %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info(site = my_site2) %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info(site = my_site2) %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info(site = my_site2) %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-197559)). Water temperature was `r my_habitat_info() %>% filter(rowname == 'temperature c') %>% pull(us)`$^\circ$C, pH was `r my_habitat_info() %>% filter(rowname == 'p h') %>% pull(us)` and conductivity was `r my_habitat_info() %>% filter(rowname == 'conductivity m s cm') %>% pull(us)`uS/cm.  
+At the time of the survey, the culvert was un-embedded, non-backwatered and considered a barrier to upstream fish passage. The pipe was `r my_pscis_info() %>% pull(diameter_or_span_meters)`m in diameter with a pipe length of `r my_pscis_info() %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info() %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info() %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info() %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-197360)). Water temperature was `r my_habitat_info() %>% filter(rowname == 'temperature c') %>% pull(us)`$^\circ$C, pH was `r my_habitat_info() %>% filter(rowname == 'p h') %>% pull(us)` and conductivity was `r my_habitat_info() %>% filter(rowname == 'conductivity m s cm') %>% pull(us)`uS/cm.  A survey was conducted with a remotely piloted vehicle immediately upstream and downstream of the crossing. The resulting images were stitched into a 3-dimensional model covering an area of approximatley 12ha `r if(html_on){knitr::asis_output("(Figure \\@ref(fig:model-197360)).")} else knitr::asis_output("presented at this [link](https://www.mapsmadeeasy.com/maps/public_3D/421d3b7404d74cacad6471612260bb41/")`
 
 <br>
+
+<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/421d3b7404d74cacad6471612260bb41" scrolling="yes" title="Maps Made Easy" width="100%" height="500" frameBorder ="0"></iframe>
+
+```{r model-197360, fig.cap= my_caption, out.width = "0.01%", eval=T}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('3D model of habitat immediately upstream and downstream of PSCIS crossing ', my_site, '.')
+
+# test <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/421d3b7404d74cacad6471612260bb41" scrolling="no" title="Maps Made Easy" width="100%" height="500" frameBorder ="0"></iframe>'
+  
+knitr::include_graphics(my_photo, dpi = NA)
+# knitr::asis_output(test)
+```
 
 
 ```{r eval=F}
 ##this is useful to get some comments for the report
 hab_site %>% filter(site == my_site & location == 'us') %>% pull(comments)
-hab_site %>% filter(site == my_site2 & location == 'us') %>% pull(comments)
 my_priority <-  my_priority_info()
 
 ```
 
-## Stream Characteristics Downstream of `r as.character(my_site)` {-}
+## Stream Characteristics Downstream {-}
 
-The stream was surveyed downstream from the culvert for `r my_priority_info(loc = 'ds') %>% pull(survey_length_m)`m. Overall, total cover amount was rated as `r my_habitat_info2(loc = 'ds') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'ds') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'ds') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197360), Figure \@ref(fig:photo-197360-01)). The average channel width was `r my_habitat_info3(loc = 'ds', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'ds', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'ds', row = 'average gradient percent')`%. The dominant substrate was `r my_habitat_info3(loc = 'ds', row = "bed material dominant")` with `r my_habitat_info3(loc = 'ds', row = "bed material subdominant")` subdominant. In the area surveyed, the stream channel appeared to be anthropogenically channelized and straightened with influence of adjacent livestock grazing/access negatively impacting stream banks due to loss of riparian vegetation and erosion. Habitat was rated as `r my_priority_info(loc = 'ds') %>%  pull(hab_value)` as it was considered an important migration corridor with moderate value habitat for fry/juvenile salmonid rearing.  
-
-<br>
-
-## Stream Characteristics Upstream of `r as.character(my_site)` and Downstream of `r as.character(my_site2)`{-}
-
-The stream was surveyed upstream from `r as.character(my_site)` for `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m to `r as.character(my_site2)`. Overall, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197360), Figure \@ref(fig:photo-197360-02)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  There was a large pool at the outlet of crossing `r as.character(my_site2)` containing approximately nine westslope cutthrout trout with lengths of five of the fish estimated at 200mm and four at 300mm (Figure \@ref(fig:photo-197360-03)).  The outlet pool was depth was >1m with gravels suitable for spawning at the tailout.  Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` for resident and fluvial salmonid rearing and spawning. 
-
+The stream was surveyed downstream from the culvert for `r my_priority_info(loc = 'ds') %>% pull(survey_length_m)`m. Overall, total cover amount was rated as `r my_habitat_info2(loc = 'ds') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'ds') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'ds') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197360), Figure \@ref(fig:photo-197360-01)). The average channel width was `r my_habitat_info3(loc = 'ds', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'ds', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'ds', row = 'average gradient percent')`%. The dominant substrate was `r my_habitat_info3(loc = 'ds', row = "bed material dominant")` with `r my_habitat_info3(loc = 'ds', row = "bed material subdominant")` subdominant. A somewhat recent burn was noted within a forested area on left bank of stream.  Habitat was rated as `r my_priority_info(loc = 'ds') %>%  pull(hab_value)` as it was considered an important migration corridor with moderate value habitat for fry/juvenile salmonid rearing.  
 
 <br>
 
-## Stream Characteristics Upstream of `r as.character(my_site2)`{-}
+## Stream Characteristics Upstream {-}
 
-The stream was surveyed immediately upstream from `r as.character(my_site2)` for 1200m and then another 600m beginning at the ford (PSCIS 197536) 2km upstream for a total of `r my_priority_info(sit = my_site2, loc = 'us') %>% pull(survey_length_m)`m. The channel was dewatered immediately upstream of Highway 43 with intermittent pools only to a distance approximately 670 m upstream.  Upstream of the dewatered area, stream flows increased with increasing upstream distance.  Overall, total cover amount was rated as `r my_habitat_info2(sit = my_site2, loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(sit = my_site2, loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(sit = my_site2,, loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197360), Figure \@ref(fig:photo-197360-02)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(sit = my_site2, loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(sit = my_site2, loc = 'us', row = 'average gradient percent')`%.  Overall, habitat upstream of `r as.character(my_site2)` was rated as `r my_priority_info(sit = my_site2, loc = 'us') %>% pull(hab_value)` value habitat present suitable for resident and fluvial salmonid rearing and spawning. 
+The stream was surveyed upstream from `r as.character(my_site)` for `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m. Immediately upstream of the crossing for a distance of approximately 150m is a beaver influenced wetland with a beaver dam structure located approximately 40m upstream of the road.  Within the area surveyed, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197360), Figure \@ref(fig:photo-197360-02)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  Abundant gravels and small cobbles suitable for resident, fluvial, adfluvial and anadromous salmonid spawning were present throughout the area surveyed. Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` for salmonid rearing and spawning. 
+
 
 <br>
+
 
 ## Fish Sampling {-}
 
-To assess potential impacts of the culvert on fisheries values in the stream, electrofishing was conducted upstream of the crossing.  Sampling was not conducted downstream of crossing `r as.character(my_site2)` as bull trout presence was suspected and it was determined that spawners and/or eggs may have been present.  One site was sampled upstream with no fish captured (Figure \@ref(fig:photo-032)).  Raw results are included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting/raw/master/data/habitat_confirmations.xls) and summarized in Table \@ref(tab:tab-fish-site-197360).
+To assess potential impacts of the culvert on fisheries values in the stream, electrofishing was conducted upstream and downstream of the crossing.  Two sites were sampled upstream and one site was sampled downstream.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'RB') %>% pull(count_fish)` rainbow trout captured upstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'RB') %>% pull(count_fish)` rainbow trout captured downstream (Figure \@ref(fig:photo-197360-03)). Raw results are included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/habitat_confirmations.xls) and summarized in Tables \@ref(tab:tab-fish-site-197360) - \@ref(tab:tab-fish-dens-197360) and Figure \@ref(fig:plot-fish-box-197360).
 
 
 <br>
 
 ## Structure Remediation and Cost Estimate {-}
 
-As properties on Busato Road could be accessed from either side of the road, removal of PSCIS `r as.character(my_site)` could be explored as an option for providing access to the 125m of habitat located upstream and below PSCIS `r as.character(my_site)`.  However, to facilitate an estimate of "worst case scenario", costs for replacement of both crossing `r as.character(my_site)` and `r as.character(my_site)` with bridges are estimated at \$`r as.character(my_cost_estimate() %>% pull(cost_est_1000s) * 1000)` and \$`r as.character(my_cost_estimate(site = my_site2) %>% pull(cost_est_1000s) * 1000)` respectively.  The combined cost benefit of replacements are estimated at `r paste0('$', as.character(my_cost_estimate() %>% pull(cost_net) * 1000 + my_cost_estimate(site = my_site2) %>% pull(cost_net) * 1000))`/linear m and \$`r as.character(my_cost_estimate() %>% pull(cost_area_net) * 1000  + my_cost_estimate(site = my_site2) %>% pull(cost_area_net) * 1000)`/m^2^.
+Structure replacement with a bridge (`r my_pscis_info() %>% pull(recommended_diameter_or_span_meters)`m span) is recommended to provide access to the habitat located upstream of PSCIS crossing `r as.character(my_site)`.  In addition to not facilitating high velocities and erosion due to constricted flow, structures with large openings in relation to stream channel size have been demonstrated to reduce the likelyhood of structure blockage due to beaver [@jensen_etal2001HabitatStructural]. The cost of the work is estimated at \$`r as.character(my_cost_estimate() %>% pull(cost_est_1000s) * 1000)` for a cost benefit of `r as.character(my_cost_estimate() %>% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %>% pull(cost_area_net))`m^2^/\$1000.
 
 
 <br>
-
 
 
 ## Conclusion {-}
 
-There is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of habitat upstream of crossing `r as.character(my_site2)` and another `r my_priority_info(sit = my_site2) %>% pull(upstream_habitat_length_km)`km upstream of `r as.character(my_site2)` rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for resident and fluvial salmonid rearing/spawning. The lack of fish captured upstream of the crossing is not an indication of a lack of fish presence but may be indicative of low population densities and/or restricted access due to  downstream culverts and dewatering. Although an interim ranking for remediation at the crossings was assessed as `r my_priority_info() %>% pull(priority)` priority to proceeding to designs for both crossings, follow up to determine the extent of dewatering during higher flow periods is recommended.  Although unconfirmed at the time of reporting, the 670m section of stream located immediately upstream of Highway 43 that was flowing subsurface at the time of the survey, very likely flows above ground during high and peak flows when adult westslope cutthrout trout display a general pattern of upstream movement to spawning areas [@schweigert_etal2017COSEWICassessment].
+There is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of habitat upstream of crossing `r as.character(my_site)` rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing/spawning. Densities of rainbow trout fry captured at upstream sites were higher than the density of fish captured downstream however this may have been a result of habitat differences and difficult electrofishing conditions downstream including thick shrub overhead cover and areas deep water. Although only rainbow trout were captured both upstream and downstream the stream contains habitat likely suitable for coho salmon spawning and fry/parr rearing. In order to delineate pre-road channel locations/conditions and to inform the positioning of a replacement bridge, a pre-road hydrology assessment could be undertaken. The `r my_overview_info() %>% pull(road_name)` is under tenure of the Ministry of Forests, Lands, Natural Resource Operations & Rural Development.  The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. 
 
 <br>
 
 ```{r tab-culvert-197360, eval = T}
-print_tab_summary(site_photo_id = my_site_xref)
+print_tab_summary()
 
 ```
 
-<br>
-
-```{r tab-culvert-197559, eval = T}
-##had to pull this object out of the table push for some reason
-print_tab_summary(site = my_site2, site_photo_id = my_site2_xref)
-
-```
 
 <br>
 
 ```{r tab-habitat-summary-197360}
 tab_hab_summary %>% 
-  filter(Site  == my_site | Site  == my_site2) %>% 
+  filter(Site  == my_site) %>% 
   # select(-Site) %>% 
-  my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossings ', my_site, ' and ', my_site2, '.'))
+  my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossings ', my_site, '.'))
 
 ```
 
 <br>
 
 ```{r tab-fish-site-197360, eval=T}
-my_caption <- paste0('Electrofishing site upstream of PSCIS crossing ', my_site2, '.')
+my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
 
-tab_fish_site(sit = my_site2) %>% 
+tab_fish_site() %>% 
   my_kable(caption_text = my_caption)
 ```
 
 
 <br>
 
+```{r tab-fish-dens-197360, eval=T}
+my_caption <- paste0('Rainbow trout densities (fish/100m2) for PSCIS crossing ', my_site, '.')
+
+tab_fish_dens() %>% 
+  my_kable(caption_text = my_caption)
+```
+
+<br>
+
+```{r plot-fish-box-197360, fig.cap= my_caption, eval=T}
+my_caption <- paste0('Densites of rainbow trout (fish/100m2) capture upstream and downstream of PSCIS crossing ', my_site, '.')
+
+plot_fish_box() 
+
+```
+
+<br>
+
 ```{r photo-197360-01, fig.cap= my_caption, out.width = photo_width, eval=T}
-my_photo = '20200918_111231_k_d_01_.JPG'
+my_photo = pull_photo_by_str(str_to_pull = '_d1_')
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
 
-grid::grid.raster(get_img(site = my_site_xref))
+grid::grid.raster(get_img())
 
 # knitr::include_graphics(get_img_path())
 ```
@@ -148,55 +162,23 @@ grid::grid.raster(get_img(site = my_site_xref))
 <br>
 
 ```{r photo-197360-02, fig.cap= my_caption, out.width = photo_width, eval=T}
-my_photo = '20200918_114535_k_u01_.JPG'
+my_photo = pull_photo_by_str(str_to_pull = '_u1_')
 
-my_caption = paste0('Typical habitat upstream of PSCIS crossing ', my_site, ' and downstream of PSCIS crossing ', my_site, '.')
+my_caption = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
 
-grid::grid.raster(get_img(site = my_site_xref))
+grid::grid.raster(get_img())
 # knitr::include_graphics(get_img_path())
 ```
+
 
 <br>
 
 ```{r photo-197360-03, fig.cap= my_caption, out.width = photo_width, eval=T}
-my_photo = 'IMG_3074_k_d01_wct.JPG'
+my_photo = pull_photo_by_str(str_to_pull = '_f1_')
 
-my_caption = paste0('Westlope cutthrout trout in outlet pool downstream of PSCIS crossing ', my_site2, '.')
+my_caption = paste0('Rainbow trout captured upstream of PSCIS crossing ', my_site, '.')
 
-grid::grid.raster(get_img(site = my_site2_xref))
-# knitr::include_graphics(get_img_path())
-```
-
-<br>
-
-```{r photo-197360-04, fig.cap= my_caption, out.width = photo_width, eval=T}
-my_photo = 'IMG_3080_k_u01_.JPG'
-
-my_caption = paste0('Subsurface flow area upstream of PSCIS crossing ', my_site2, '.')
-
-grid::grid.raster(get_img(site = my_site2_xref))
-# knitr::include_graphics(get_img_path())
-```
-
-<br>
-
-```{r photo-197360-05, fig.cap= my_caption, out.width = photo_width, eval=T}
-my_photo = 'IMG_3102_K_u02_.JPG'
-
-my_caption = paste0('Typical habitat above dewatered area upstream of PSCIS crossing ', my_site, '.')
-
-grid::grid.raster(get_img(site = my_site2_xref))
-# knitr::include_graphics(get_img_path())
-```
-
-<br>
-
-```{r photo-197360-06, fig.cap= my_caption, out.width = photo_width, eval=T}
-my_photo = 'IMG_3110_k_u03_ef_.JPG'
-
-my_caption = paste0('Habitat within electrofishing site upstream of PSCIS crossing ', my_site, '.')
-
-grid::grid.raster(get_img(site = my_site2_xref))
+grid::grid.raster(get_img())
 # knitr::include_graphics(get_img_path())
 ```
 

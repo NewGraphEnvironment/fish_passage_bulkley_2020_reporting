@@ -2,16 +2,9 @@
 # preview_chapter('index.Rmd')
 # preview_chapter('0300-method.Rmd')
 # preview_chapter('0400-results.Rmd')
-preview_chapter('0200-background.Rmd')
-# preview_chapter('0800-appendix-050155.Rmd')
-# preview_chapter('0800-appendix-050181.Rmd') ##nupku
-# preview_chapter('0800-appendix-050185.Rmd')
-# preview_chapter('0800-appendix-062423.Rmd')
-# preview_chapter('0800-appendix-062425.Rmd')
-# preview_chapter('0800-appendix-062516.Rmd')
-# preview_chapter('0800-appendix-197534.Rmd')
-# preview_chapter('0800-appendix-197533.Rmd')
-# preview_chapter('0800-appendix-197555.Rmd')
+# preview_chapter('0200-background.Rmd')
+preview_chapter('0800-appendix-197360.Rmd')
+
 
 
 ##this is how we clean up our bib file.  We need to find a way to add together the packages.bib file with the book.bib file first though.
@@ -53,6 +46,7 @@ file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')
 
 ##  make the site
 rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')
+
 
 ##sub in the title page
 length <- pdf_length(paste0(getwd(), "/docs/Elk.pdf"))

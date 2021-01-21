@@ -157,4 +157,7 @@ rm(hab_site_prep,
 #   filter(my_crossing_reference %in% c(4605732, 4600070, 4600183))
 
 
-
+# hab_fish_sum <- habitat_confirmations %>%
+#   purrr::pluck("step_3_individual_fish_data") %>%
+#   dplyr::filter(!is.na(site_number))
+#   select(-gazetted_names:-site_number)

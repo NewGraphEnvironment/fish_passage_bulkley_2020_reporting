@@ -1,7 +1,7 @@
 
 
 my_overview_info <- function(site = my_site){
-  pscis2 %>% filter(pscis_crossing_id == site)
+  pscis_phase2 %>% filter(pscis_crossing_id == site)
 }
 
 ##transpose the data so you can get ranges and filter
@@ -57,7 +57,7 @@ my_habitat_info3 <- function(dat = hab_site, sit = my_site,
     pull(V1)
 }
 
-my_pscis_info <- function(dat = pscis2, site = my_site){
+my_pscis_info <- function(dat = pscis_phase2, site = my_site){
   dat %>%
     filter(pscis_crossing_id == site) %>%
     mutate(stream_name = stringr::str_replace_all(stream_name, 'Tributary', 'tributary'))
@@ -78,14 +78,14 @@ my_watershed_area <- function(dat = wsheds, site = my_site){
 }
 
 ##we needed to back off this b/c maps not ready
-# my_mapsheet <- function(){
-#   paste0('https://hillcrestgeo.ca/outgoing/fishpassage/projects/elk/FishPassage_', my_bcfishpass() %>%
-#            pull(map_tile_display_name), '.pdf')
-# }
-
 my_mapsheet <- function(){
-  paste0('https://hillcrestgeo.ca/outgoing/fishpassage/projects/elk/confirmations')
+  paste0('https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/FishPassage_', my_bcfishpass() %>%
+           pull(map_tile_display_name), '.pdf')
 }
+
+# my_mapsheet <- function(){
+#   paste0('https://hillcrestgeo.ca/outgoing/fishpassage/projects/elk/confirmations')
+# }
 
 my_priority_info <- function(dat = habitat_confirmations_priorities, sit = my_site, loc = 'us'){
   dat %>%

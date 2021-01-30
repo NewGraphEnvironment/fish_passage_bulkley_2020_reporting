@@ -62,12 +62,18 @@ dbDisconnect(conn = conn)
 
 
 wshd_reddick <- fwapgr::fwa_watershed_at_measure(blue_line_key = 360878896, downstream_route_measure = 1313.57027395708)
-
 wshd_reddick %>%
   sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'wshd_reddick', append = F)
 
-st_write(wshd_reddick, append = TRUE, driver = 'kml', dsn = "data/extracted_inputs/wshd_reddick.kml")
 
+wshd_gibson <- fwapgr::fwa_watershed_at_measure(blue_line_key = 360820934, downstream_route_measure = 198)
+wshd_gibson %>%
+  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'wshd_gibson', append = F)
+
+
+
+st_write(wshd_reddick, append = TRUE, driver = 'kml', dsn = "data/extracted_inputs/wshd_reddick.kml")
+st_write(wshd_gibson, append = TRUE, driver = 'kml', dsn = "data/extracted_inputs/wshd_gibson.kml")
 # ggplot2::ggplot() +
 #   ggplot2::geom_sf(data = wshd_reddick, lwd = 0.15, fill = 'steelblue', alpha = 0.5)
 

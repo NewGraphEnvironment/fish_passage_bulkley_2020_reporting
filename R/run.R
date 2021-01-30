@@ -4,7 +4,7 @@
 # preview_chapter('0400-results.Rmd')
 # preview_chapter('0200-background.Rmd')
 preview_chapter('0800-appendix-197360.Rmd')
-
+preview_chapter('0800-appendix-195290.Rmd')
 
 
 ##this is how we clean up our bib file.  We need to find a way to add together the packages.bib file with the book.bib file first though.
@@ -16,8 +16,10 @@ preview_chapter('0800-appendix-197360.Rmd')
 ##we also need to change all the date header to year in the bib file so that it can be run by our pdf maker
 ##i did this by hand last time but would be good to automate!!!
 
+
+
 #######################################################################################
-##for a prod build
+##to build both a paged html version and a gitbook follow the steps below
 
 
 ##change your VErsion #
@@ -25,39 +27,69 @@ preview_chapter('0800-appendix-197360.Rmd')
 ##move the phase 1 appendix out of the main directory to a backup file
 file.rename('0600-appendix.Rmd', 'data/0600-appendix.Rmd')
 
-##go to the index.Rmd doc and turn
-#html_on <- FALSE and change
-#font_set <- 9
-#photo_width <- "80%"
+#################################################################################################
+##go to the index.Rmd and change html_on <- FALSE
+#################################################################################################
+
 
 ##   then make our printable pdf
 rmarkdown::render_site(output_format = 'pagedown::html_paged', encoding = 'UTF-8')
 
+
 ##  move it to the docs folder so that it can be seen by the download button
 file.rename('Bulkley.html', 'docs/Bulkley.html')
+
+##now we need to print the docs/Elk.html file to Elk.pdf with chrome.  We should automate this step.  Do in browser for now
+openHTML('docs/Bulkley.html')
 
 ##move the phase 1 appendix back to main directory
 file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')
 
-##go to the index.Rmd doc and turn
-#html_on <- TRUE and change
-#font_set <- 11
-#photo_width <- "100%"
+#################################################################################################
+##go to the index.Rmd and change html_on <- TRUE
+#################################################################################################
+
 
 ##  make the site
 rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')
 
 
-##sub in the title page
-length <- pdf_length(paste0(getwd(), "/docs/Bulkley.pdf"))
 
-pdf_subset(paste0(getwd(), "/docs/Bulkley.pdf"),
-           pages = 2:length, output = paste0(getwd(), "/docs/Bulkley2.pdf"))
 
-pdf_combine(c(paste0(getwd(), "/docs/title_page.pdf"),
-  paste0(getwd(), "/docs/Bulkley2.pdf")),
-            output = paste0(getwd(), "/docs/Bulkley3.pdf"))
 
-file.rename(paste0(getwd(), "/docs/Bulkley3.pdf"), paste0(getwd(),"/docs/Bulkley.pdf"))
 
-file.remove(paste0(getwd(), "/docs/Bulkley2.pdf"))
+
+
+
+
+##########################################make Phase 1 appendix seperately
+#################################################################################################
+##we need a workflow to print the Phase 1 attachment
+files_to_move <- list.files(pattern = ".Rmd$") %>%
+  stringr::str_subset(., 'index|Elk|0600', negate = T)
+files_destination <- paste0('hold/', files_to_move)
+
+mapply(file.rename, from = files_to_move, to = files_destination)
+
+##this is hacky but hash out the following from the functions.R file print_tab_summary_all function
+# kableExtra::add_footnote(label = '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>', escape = F, notation = 'none')
+
+##   then make our printable pdf
+rmarkdown::render_site(output_format = 'pagedown::html_paged', encoding = 'UTF-8')
+
+##  move it to the docs folder so that it can be in the same place as the report
+file.rename('Bulkley.html', 'docs/Attachment_3_Phase_1_Data_and_Photos.html')
+
+##move the files from the hold file back to the main file
+mapply(file.rename, from = files_destination, to = files_to_move)
+
+##go to the docs folder - print the attachment to pdf
+
+##now get rid of the first 5 pages
+length <- pdf_length(paste0(getwd(), "/docs/Attachment_3_Phase_1_Data_and_Photos_prep.pdf"))
+
+pdf_subset(paste0(getwd(), "/docs/Attachment_3_Phase_1_Data_and_Photos_prep.pdf"),
+           pages = 7:length, output = paste0(getwd(), "/docs/Attachment_3_Phase_1_Data_and_Photos.pdf"))
+
+##clean out the old file
+file.remove(paste0(getwd(), "/docs/Attachment_3_Phase_1_Data_and_Photos_prep.pdf"))

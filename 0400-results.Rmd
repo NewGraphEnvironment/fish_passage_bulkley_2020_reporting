@@ -191,7 +191,7 @@ tab_cost_est_phase2_report %>%
 tab_hab_summary %>% 
   filter(Location %ilike% 'upstream') %>% 
   select(-Location) %>% 
-  rename(`PSCIS ID` = Site) %>% 
+  rename(`PSCIS ID` = Site, `Length surveyed upstream (m)` = `Length Surveyed (m)`) %>%
   my_kable(caption_text = 'Summary of Phase 2 habitat confirmation details.')
 
 ```

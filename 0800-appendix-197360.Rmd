@@ -20,9 +20,7 @@ my_site2 <- 197669
 my_site2_xref <- 14000079
 ```
 
-
 `r appendix_title()`
-
 
 ## Site Location {-}
 
@@ -43,7 +41,7 @@ PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pu
 
 <br>
 
-PSCIS stream crossing `r as.character(my_site)` was prioritized for follow up with a habitat confirmation through consultation with Lars Reese-Hansen (Aquatic Habitat Specialist, FLNR) and Don Morgan (Wildlife Habitat Specialist, MoE). They indicated (pers comm.) that following fish passage assessments in 2014 (implemented through watershed status evaluation field surveys throughout the Owen Creek watershed), Riddeck Creek upstream of the crossing contained the highest value habitat potentially blocked by a road-stream crossing barrier. A map of the watershed is provided in Attachment 1 – Map [093L.104](https://hillcrestgeo.ca/outgoing/fishpassage/projects/morice/FishPassage_093L104.pdf).
+PSCIS stream crossing `r as.character(my_site)` was prioritized for follow up with a habitat confirmation through consultation with Lars Reese-Hansen (Aquatic Habitat Specialist, FLNR) and Don Morgan (Wildlife Habitat Specialist, MoE). They indicated (pers comm.) that following fish passage assessments in 2014 (implemented through watershed status evaluation field surveys throughout the Owen Creek watershed), Riddeck Creek upstream of the crossing contained the highest value habitat potentially blocked by a road-stream crossing barrier. A map of the watershed is provided in map attachment [`r my_bcfishpass() %>% pull(map_tile_display_name)`](`r my_mapsheet()`).
 
 <br>
 
@@ -171,29 +169,44 @@ plot_fish_box()
 
 <br>
 
-```{r photo-197360-01, fig.cap= my_caption, out.width = photo_width, eval=T}
+
+```{r photo-197360-01, fig.cap= my_caption, out.width = photo_width}
 my_photo = pull_photo_by_str(str_to_pull = '_d1_')
 
 my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
 
 grid::grid.raster(get_img())
 
-# knitr::include_graphics(get_img_path())
 ```
 
 <br>
 
-```{r photo-197360-02, fig.cap= my_caption, out.width = photo_width, eval=T}
+```{r photo-197360-02, fig.cap= my_caption, out.width = photo_width}
 my_photo = pull_photo_by_str(str_to_pull = '_u1_')
 
 my_caption = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
-
 grid::grid.raster(get_img())
-# knitr::include_graphics(get_img_path())
 ```
 
 
 <br>
+
+```{r photo-197360-d01, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=F}
+##we could put 2 photos in on box but it is lots of extra work with the crossreferences. pdfs suck anyway.  Don't get too custom with it!!!
+
+# my_photo1 = pull_photo_by_str(str_to_pull = '_d1_')
+# my_caption1 = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
+# 
+# my_photo2 = pull_photo_by_str(str_to_pull = '_u1_')
+# my_caption2 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(get_img_path(photo = my_photo1))
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(get_img_path(photo = my_photo2))
+```
+
 
 ```{r photo-197360-03, fig.cap= my_caption, out.width = photo_width, eval=T}
 my_photo = pull_photo_by_str(str_to_pull = '_f1_')

@@ -25,6 +25,15 @@ fish_species_watershed <- sf::st_read(conn,
                            GROUP BY x.species_code,x.species_name,nws.gnis_name,nws.gnis_id,x.observation_date,nws.fwa_watershed_code
                            ORDER BY nws.gnis_name,nws.fwa_watershed_code,x.species_code")
 
+query <- "WITH ws AS
+(SELECT * FROM whse_basemapping.fwa_watershed_groups_poly ws
+WHERE ws.watershed_group_code IN ('BULK'))
+SELECT DISTINCT x.species_code, x.species_name
+  FROM whse_fish.fiss_fish_obsrvtn_pnt_sp x
+INNER JOIN ws ON (ST_Within(x.geom, ws.geom));"
+
+fish_spp_bulk <- st_read(conn, query = query)
+
 # fish_species_lookup <- dbGetQuery(conn,
 #                                   "Select * from whse_fish.species_codes_lookup")
 

@@ -12,7 +12,8 @@ bookdown::gitbook:
       theme: night
       family: sans
 pagedown::html_paged:
-  css: ["style-pagedown.css", "default-page", "default"]
+  front_cover: "fig/logo.png"
+  css: ["style-pagedown.css", "default-page-custom.css", "default"] #
   toc: true
   toc_depth: 1
 bookdown::pdf_book:

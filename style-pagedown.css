@@ -15,25 +15,42 @@ h2,h3,h4,h5,h6{
 a[href^="http"]:not([class="uri"])::after {
   content: "";
 }
-/*centre the title*/
-h1.title {
+
+@page {
+size: 8.5in 11in;
+}
+
+@page:left {
+  margin-left: 30mm;
+  margin-right: 30mm;
+  margin-top: 30mm;
+  margin-bottom: 30mm;
+}
+
+@page:right {
+  margin-left: 30mm;
+  margin-right: 30mm;
+  margin-top: 30mm;
+  margin-bottom: 30mm;
+}
+
+.title {
   font-size: 18px;
   color: Black;
   text-align: center;
 }
-h4.author { /* Header 4 - and the author and data headers use this too  */
-  font-size: 10px;
+.author { /* Header 4 - and the author and data headers use this too  */
+  font-size: 13px;
   color: Black;
   text-align: center;
 }
-@page {
-size: 8.5in 11in;
+.date{ /* Header 4 - and the author and data headers use this too  */
+  font-size: 12px;
+  color: Black;
+  text-align: center;
 }
-:root {/*this doesn't work right*/
---pagedjs-margin-right: 0.5in !important;
---pagedjs-margin-left: 0.5in !important;
-/*--pagedjs-margin-top: 0.5in !important;*/
-/*--pagedjs-margin-bottom: 0.5in !important;*/
---pagedjs-width: 7.5in;
---pagedjs-height: 10in;
-}
+
+/*set the caption size - this might work with my_kable2 but not sure*/
+/* .caption p {
+   font-size: 10px;
+}*/

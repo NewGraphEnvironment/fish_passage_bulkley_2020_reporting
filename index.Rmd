@@ -1,12 +1,27 @@
 --- 
 title: "Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning"
-author:
- - Prepared for Habitat Conservation Trust Fund, BC Fish Passage Remediation Program and the Canadian Wildlife Federation
- - Prepared by Al Irvine, B.Sc., R.P.Bio.
- - New Graph Environment on behalf of Society for Ecosytem Restoration Northern BC
- - Version DRafT - 0.0.1
+author: |
+ |
+ |
+ | Prepared for
+ | Habitat Conservation Trust Fund
+ | BC Fish Passage Remediation Program
+ | Canadian Wildlife Federation
+ |
+ |
+ | Prepared by
+ | Al Irvine, B.Sc., R.P.Bio.
+ | New Graph Environment
+ | 6 Regent St
+ | Nelson, BC V1L 2P1
+ |  
+ | on behalf of
+ | Society for Ecosytem Restoration Northern BC
 date: |
-   `r format(Sys.Date(), "%Y-%m-%d")`
+ |
+ | Version 0.0.1
+ | 
+ | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -22,21 +37,28 @@ description: "My Description."
 
 ```{r setup, include = TRUE, echo =FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, dpi=60, out.width = "100%")
+options(scipen=999)
+options(knitr.kable.NA = '--')
 
-##define a picture specific output width you can put in chunk headers
-##we need a switch to turn off html only so the printed version looks ok
-photo_width <- "100%"
 html_on <- TRUE
-
-##these are the settings for the pagedown version!! DONT FORGET THE FONT DOWN BELOW TOO!!!!!!!!!!!!!!
-# photo_width <- "80%"
 # html_on <- FALSE
 
+```
+
+```{r settings-gitbook, eval= html_on}
+photo_width <- "100%"
+font_set <- 11
+
+```
+
+```{r settings-paged-html, eval= identical(html_on, FALSE)}
+photo_width <- "80%"
+font_set <- 9
+
+```
 
 
-##try to fix the kable caption size https://stackoverflow.com/questions/45018397/changing-the-font-size-of-figure-captions-in-rmarkdown-html-output
-
-# fig.align="center", out.width = "90%",
+```{r}
 source('R/packages.R')
 source('R/functions.R')
 source('R/functions-phase2.R')
@@ -47,18 +69,8 @@ source('R/0340-tables-phase2-cost-estimate.R') ##the order of these matters to m
 source('R/0350-tables-reporting.R')
 source('R/0380-extract-fish-to-hab-con-density-summary.R')
 source('R/functions-fish.R')
-
-
-# ##made this with 0380-extract-fish-to-hab-con.R
-# hab_fish_dens <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/hab_fish_dens.csv'))
-
-##set the font default size for the tables.  had a crash and think this might have been it so put after functions.R
-##seems odd but not risking again for now.
-font_set <- 11
-# font_set <- 9
-
-
 ```
+
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
@@ -79,4 +91,11 @@ A total of `r n_distinct(pscis_phase1_reassessments$my_crossing_reference)` Phas
 <br>
 
 Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 18 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority.
+
+
+
+```{js, logo-header, echo = FALSE, eval= html_on}
+title=document.getElementById('header');
+title.innerHTML = '<img src="fig/logo_html3.png" alt="NewGraph">' + title.innerHTML
+```
 

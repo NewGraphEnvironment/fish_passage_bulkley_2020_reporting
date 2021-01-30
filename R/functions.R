@@ -311,8 +311,21 @@ pull_photo_by_str <- function(site_id = my_site, str_to_pull = 'barrel'){
 }
 
 appendix_title <- function(site = my_site){
-  paste0('# Appendix - Crossing ', site, ' - ', my_overview_info() %>% pull(stream_name), ' {-}')
+  paste0('# Appendix - ', site, ' - ', my_overview_info() %>% pull(stream_name), ' {-}')
 }
+
+
+##can't get this to work
+# appendix_title <- function(site = my_site){
+#   # site_id <- 'test' ##works when this is a string
+#   knitr::asis_output(paste0('# Appendix - ', site, ' - ', my_overview_info() %>% pull(stream_name), ' {-#', site_id, '}'))
+# }
+
+##when we have 2 crosings
+appendix_title2 <- function(site = my_site, site2 = my_site2){
+  paste0('# Appendix - ', site, ' & ', site2, ' - ', my_overview_info() %>% pull(stream_name), ' {-}')
+}
+
 
 appendix_subtitle <- function(){
   paste0('**', my_overview_info() %>% pull(road_name), ' - ', my_overview_info() %>% pull(stream_name), '**')

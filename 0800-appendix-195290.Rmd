@@ -41,11 +41,11 @@ PSCIS stream crossings `r as.character(my_site)` and `r as.character(my_site2)` 
 
 ## Stream Characteristics at Crossing {-}
 
-At the time of the survey, the culvert was un-embedded, non-backwatered and considered a barrier to upstream fish passage. The pipe was `r my_pscis_info() %>% pull(diameter_or_span_meters)`m in diameter with a pipe length of `r my_pscis_info() %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info() %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info() %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info() %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-195290)). Water temperature was `r my_habitat_info() %>% filter(rowname == 'temperature c') %>% pull(us)`$^\circ$C, pH was `r my_habitat_info() %>% filter(rowname == 'p h') %>% pull(us)` and conductivity was `r my_habitat_info() %>% filter(rowname == 'conductivity m s cm') %>% pull(us)`uS/cm.  Surveys were conducted with a remotely piloted vehicle immediately upstream and downstream of both crossings. The resulting images were stitched into 3-dimensional models (4cm resolution) `r if(html_on){knitr::asis_output("presented in Figures \\@ref(fig:model-caption-195290) - \\@ref(fig:model-caption-195288) and downloadable as a google earth kmz files [here](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/outputs_uav/gibson195290202020210121.kmz) and [here.](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/outputs_uav/gibson195288202020210120.kmz)")} else knitr::asis_output("presented [here](https://www.mapsmadeeasy.com/maps/public_3D/9ee5bee50be8436abbeb1dc83f4235cb/) and [here](https://www.mapsmadeeasy.com/maps/public/345c333761aa431cac06f62c8d2f0291).  Google earth kmz files of the models are downloadable  [here](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/outputs_uav/gibson195290202020210121.kmz) and [here](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/outputs_uav/gibson195288202020210120.kmz).")`
+At the time of the survey, the culvert was un-embedded, non-backwatered and considered a barrier to upstream fish passage. The pipe was `r my_pscis_info() %>% pull(diameter_or_span_meters)`m in diameter with a pipe length of `r my_pscis_info() %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info() %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info() %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info() %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-195290)). Water temperature was `r my_habitat_info() %>% filter(rowname == 'temperature c') %>% pull(us)`$^\circ$C, pH was `r my_habitat_info() %>% filter(rowname == 'p h') %>% pull(us)` and conductivity was `r my_habitat_info() %>% filter(rowname == 'conductivity m s cm') %>% pull(us)`uS/cm.  Surveys were conducted with a remotely piloted vehicle immediately upstream and downstream of both crossings. The resulting images were stitched into 3-dimensional models (4cm resolution) `r if(gitbook_on){knitr::asis_output("presented in Figures \\@ref(fig:model-caption-195290) - \\@ref(fig:model-caption-195288) and downloadable as a google earth kmz files [here](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/outputs_uav/gibson195290202020210121.kmz) and [here.](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/outputs_uav/gibson195288202020210120.kmz)")} else knitr::asis_output("presented [here](https://www.mapsmadeeasy.com/maps/public_3D/9ee5bee50be8436abbeb1dc83f4235cb/) and [here](https://www.mapsmadeeasy.com/maps/public/345c333761aa431cac06f62c8d2f0291).  Google earth kmz files of the models are downloadable  [here](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/outputs_uav/gibson195290202020210121.kmz) and [here](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/outputs_uav/gibson195288202020210120.kmz).")`
 
 <br>
 
-```{r model-195290, eval = identical(html_on, TRUE)}
+```{r model-195290, eval = identical(gitbook_on, TRUE)}
 model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/9ee5bee50be8436abbeb1dc83f4235cb" scrolling="no" title="Maps Made Easy" width="100%" height="500" frameBorder ="0"></iframe>'
 
 knitr::asis_output(model_url)
@@ -63,7 +63,7 @@ knitr::include_graphics(my_photo, dpi = NA)
 
 <br>
 
-```{r model-195288, eval = identical(html_on, TRUE)}
+```{r model-195288, eval = identical(gitbook_on, TRUE)}
 model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/345c333761aa431cac06f62c8d2f0291" scrolling="no" title="Maps Made Easy" width="100%" height="500" frameBorder ="0"></iframe>'
 
 knitr::asis_output(model_url)
@@ -141,6 +141,78 @@ print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2_xre
 
 <br>
 
+
+```{r photo-195290-01, eval=T}
+my_photo1 = pull_photo_by_str(str_to_pull = '_d1_')
+
+my_caption1 = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-195290-01-print, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(get_img(photo = my_photo1))
+```
+
+<br>
+
+```{r photo-195290-02}
+my_photo2 = pull_photo_by_str(str_to_pull = '_f1_')
+
+my_caption2 = paste0('Coho captured downstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-195290-02-print, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(get_img(photo = my_photo2))
+
+```
+
+<br>
+
+```{r photo-195290-d01, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(get_img_path(photo = my_photo1))
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(get_img_path(photo = my_photo2))
+```
+
+
+```{r photo-195290-03}
+my_photo1 = pull_photo_by_str(str_to_pull = '_u1_')
+
+my_caption1 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-195290-03-print, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(get_img(photo = my_photo1))
+
+```
+
+<br>
+
+```{r photo-195290-04}
+my_photo2 = pull_photo_by_str(str_to_pull = '_u2_')
+
+my_caption2 = paste0('Wetland habitat upstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-195290-04-print, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(get_img(photo = my_photo2))
+```
+
+```{r photo-195290-d02, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(get_img_path(photo = my_photo1))
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(get_img_path(photo = my_photo2))
+```
+
+<br>
+
 ```{r tab-habitat-summary-195290}
 tab_hab_summary %>% 
   filter(Site  == my_site | Site  == my_site2) %>% 
@@ -177,47 +249,5 @@ plot_fish_box()
 
 ```
 
-<br>
-
-
-```{r photo-195290-01, fig.cap= my_caption, out.width = photo_width}
-my_photo = pull_photo_by_str(str_to_pull = '_d1_')
-
-my_caption = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
-
-grid::grid.raster(get_img())
-
-```
-
-<br>
-
-```{r photo-195290-02, fig.cap= my_caption, out.width = photo_width}
-my_photo = pull_photo_by_str(str_to_pull = '_u1_')
-
-my_caption = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
-grid::grid.raster(get_img())
-```
-
-
-<br>
-
-```{r photo-195290-d01, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=F}
-##we could put 2 photos in a box but it is lots of extra work with the crossreferences. not customizing the pdf too too much!!!
-my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
-
-knitr::include_graphics(get_img_path(photo = my_photo1))
-knitr::include_graphics("fig/pixel.png")
-knitr::include_graphics(get_img_path(photo = my_photo2))
-```
-
-
-```{r photo-195290-03, fig.cap= my_caption, out.width = photo_width, eval=T}
-my_photo = pull_photo_by_str(str_to_pull = '_f1_')
-
-my_caption = paste0('Coho captured downstream of PSCIS crossing ', my_site, '.')
-
-grid::grid.raster(get_img())
-# knitr::include_graphics(get_img_path())
-```
 
 

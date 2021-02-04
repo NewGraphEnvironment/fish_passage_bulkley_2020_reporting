@@ -5,8 +5,15 @@ source('R/0255-load-pscis.R')
 
 bcfishpass <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/bcfishpass.csv'))
 
-bcfishpass_phase2 <- bcfishpass %>%
-  filter(source %like% 'phase2')
+# bcfishpass_phase2 <- bcfishpass %>%
+#   filter(source %like% 'phase2')
+
+conn <- rws_connect("data/bcfishpass.sqlite")
+bcfishpass_phase2 <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk", conn = conn) %>%
+  filter(stream_crossing_id %in% (pscis_phase2 %>% pull(pscis_crossing_id)))
+rws_disconnect(conn)
+
+
 
 bcfishpass_rd <- bcfishpass %>%
   select(pscis_crossing_id, my_crossing_reference, crossing_id, distance, road_name_full,

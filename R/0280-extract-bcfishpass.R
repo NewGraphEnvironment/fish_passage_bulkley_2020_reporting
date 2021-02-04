@@ -23,13 +23,13 @@ conn <- DBI::dbConnect(
 dbGetQuery(conn,
            "SELECT table_name
            FROM information_schema.tables
-           WHERE table_schema='bcfishpass'")
+           WHERE table_schema='whse_basemapping'")
 # # # # #
 # # # # # ##list column names in a table
 dbGetQuery(conn,
            "SELECT column_name,data_type
            FROM information_schema.columns
-           WHERE table_name='barriers_anthropogenic'")
+           WHERE table_name='transport_line'")
 
 
 # test <- dbGetQuery(conn, "SELECT * FROM bcfishpass.waterfalls")
@@ -132,7 +132,7 @@ tab_rd_tenure_xref <- tibble::tribble(
                                            ~client_name,        ~client_name_abb,
                         "DISTRICT MANAGER NADINA (DND)",           "FLNR Nadina",
                         "CANADIAN FOREST PRODUCTS LTD.",                "Canfor",
-                            "WET’SUWET’EN VENTURES LTD", "Wet’suwet’en Ventures"
+                            "WET'SUWET'EN VENTURES LTD", "Wetsuweten Ventures"
                         )
 
 

@@ -23,3 +23,4 @@ R/pers_*
 #Elk.html
 Elk.Rmd
 *~$*
+*.sqlite

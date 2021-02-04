@@ -1,4 +1,5 @@
-##all the data is in the bcfishpass now so we will redo this and use it for analysis going forward
+##all the data is in bcfishpass.crossings now so we will redo this and use it for analysis going forward
+##in here we also have workflows to match our crossings to modelled crossings in case they are not already.
 
 source('R/packages.R')
 source('R/functions.R')
@@ -73,17 +74,16 @@ query <- "SELECT *
    FROM bcfishpass.crossings
    WHERE watershed_group_code IN ('BULK','MORR')"
 
-##import and grab the coordinates
-bcfishpass_morr_bulk <- st_read(conn, query =  query) %>%
-  st_transform(crs = 26909) %>%
-  mutate(utm_zone = 9,
-         northing = sf::st_coordinates(.)[,1],
-         easting = sf::st_coordinates(.)[,2]) %>%
-  st_drop_geometry()
-
-
+##import and grab the coordinates - this is already done
+# bcfishpass_morr_bulk <- st_read(conn, query =  query) %>%
+#   st_transform(crs = 26909) %>%
+#   mutate(utm_zone = 9,
+#          northing = sf::st_coordinates(.)[,1],
+#          easting = sf::st_coordinates(.)[,2]) %>%
+#   st_drop_geometry()
 
 dbDisconnect(conn = conn)
+
 
 ##join the modelled road data to our pscis submission info
 
@@ -93,6 +93,23 @@ dat_joined <- left_join(
   # select(dat_info,misc_point_id:fcode_label, distance, crossing_id), ##geom keep only the road info and the distance to nearest point from here
   by = "misc_point_id"
 )
+
+##lets simiplify dat_joined to have a look up
+my_pscis_modelledcrossings_streams_xref <- dat_joined %>%
+  select(pscis_crossing_id, stream_crossing_id, modelled_crossing_id, source) %>%
+  st_drop_geometry()
+
+##this is already done
+# mydb <- DBI::dbConnect(RSQLite::SQLite(), "data/bcfishpass.sqlite")
+conn <- rws_connect("data/bcfishpass.sqlite")
+rws_list_tables(conn)
+# rws_drop_table("bcfishpass_morr_bulk", conn = conn)
+# rws_write(bcfishpass_morr_bulk, exists = F, delete = TRUE,
+#           conn = conn, x_name = "bcfishpass_morr_bulk")
+rws_write(my_pscis_modelledcrossings_streams_xref, exists = FALSE, delete = TRUE,
+          conn = conn, x_name = "my_pscis_modelledcrossings_streams_xref")
+rws_list_tables(conn)
+rws_disconnect(conn)
 
 ##make a dataframe with our crossings that need a match
 match_this <- dat_joined %>%
@@ -106,7 +123,8 @@ match_this <- dat_joined %>%
 match_this_to_join <- match_this %>%
   select(-stream_crossing_id) %>%
   mutate(linear_feature_id = NA_integer_) %>%
-  rename(stream_crossing_id = pscis_crossing_id)
+  rename(stream_crossing_id = pscis_crossing_id) %>%
+  mutate(across(c(stream_crossing_id:linear_feature_id), as.numeric))
 
 
 ##test to see if the match_this hits are already assigned in crossings
@@ -123,19 +141,15 @@ pscis_modelledcrossings_streams_xref <- read_csv("C:/scripts/bcfishpass/01_prep/
 pscis_modelledcrossings_streams_xref %>%
   filter(stream_crossing_id %in% (match_this %>% pull(pscis_crossing_id)))
 
+##because the crossings are already there we will need to pull them out and then sub them back in
+pscis_modelledcrossings_streams_xref_to_join <- pscis_modelledcrossings_streams_xref %>%
+  filter(!stream_crossing_id %in% (match_this %>% pull(pscis_crossing_id)))
 
-# mydb <- DBI::dbConnect(RSQLite::SQLite(), "data/bcfishpass.sqlite")
-conn <- rws_connect("data/bcfishpass.sqlite")
-rws_list_tables(conn)
-rws_drop_table("bcfishpass_morr_bulk", conn = conn)
-rws_write(bcfishpass_morr_bulk, exists = F, delete = TRUE,
-          conn = conn, x_name = "bcfishpass_morr_bulk")
-# rws_write(epa_traits_dtbl, exists = FALSE, delete = TRUE,
-#           conn = conn, x_name = "invertebrates_ffg_tolerance_epa_freshbiotraits")
-rws_list_tables(conn)
-rws_disconnect(conn)
+pscis_modelledcrossings_streams_xref_joined <- bind_rows(
+  pscis_modelledcrossings_streams_xref_to_join,
+  match_this_to_join) %>%
+  mutate(stream_crosssing_id = as.integer(stream_crossing_id)) %>% ##i can't figure out why this needs to be an integer. it should sort as is (numeric)
+  dplyr::arrange(stream_crosssing_id)
 
-# ##burn it all to a file we can use later
-# dat_joined %>% readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/bcfishpass2.csv'))
-
-
+##now burn it back to bcfishpass ready for a pull request
+readr::write_csv(pscis_modelledcrossings_streams_xref_joined, "C:/scripts/bcfishpass/01_prep/02_pscis/data/pscis_modelledcrossings_streams_xref.csv")

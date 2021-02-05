@@ -75,12 +75,12 @@ query <- "SELECT *
    WHERE watershed_group_code IN ('BULK','MORR')"
 
 ##import and grab the coordinates - this is already done
-# bcfishpass_morr_bulk <- st_read(conn, query =  query) %>%
-#   st_transform(crs = 26909) %>%
-#   mutate(utm_zone = 9,
-#          northing = sf::st_coordinates(.)[,1],
-#          easting = sf::st_coordinates(.)[,2]) %>%
-#   st_drop_geometry()
+bcfishpass_morr_bulk <- st_read(conn, query =  query) %>%
+  st_transform(crs = 26909) %>%
+  mutate(utm_zone = 9,
+         northing = sf::st_coordinates(.)[,1],
+         easting = sf::st_coordinates(.)[,2]) %>%
+  st_drop_geometry()
 
 dbDisconnect(conn = conn)
 
@@ -106,8 +106,8 @@ rws_list_tables(conn)
 # rws_drop_table("bcfishpass_morr_bulk", conn = conn)
 # rws_write(bcfishpass_morr_bulk, exists = F, delete = TRUE,
 #           conn = conn, x_name = "bcfishpass_morr_bulk")
-rws_write(my_pscis_modelledcrossings_streams_xref, exists = FALSE, delete = TRUE,
-          conn = conn, x_name = "my_pscis_modelledcrossings_streams_xref")
+# rws_write(my_pscis_modelledcrossings_streams_xref, exists = FALSE, delete = TRUE,
+#           conn = conn, x_name = "my_pscis_modelledcrossings_streams_xref")
 rws_list_tables(conn)
 rws_disconnect(conn)
 
@@ -131,10 +131,12 @@ match_this_to_join <- match_this %>%
 bcfishpass_morr_bulk %>%
   filter(stream_crossing_id %in% (match_this %>% pull(pscis_crossing_id)))
 
-##nope
+##need to learn to move from the other fork for now rename and grab from there
+file.rename(from = "C:/scripts/bcfishpass/01_prep/02_pscis/data/pscis_modelledcrossings_streams_xref.csv",
+            to = "C:/scripts/pscis_modelledcrossings_streams_xref.csv")
 
 ##get the crossing data from bcfishpass
-pscis_modelledcrossings_streams_xref <- read_csv("C:/scripts/bcfishpass/01_prep/02_pscis/data/pscis_modelledcrossings_streams_xref.csv")
+pscis_modelledcrossings_streams_xref <- readr::read_csv("C:/scripts/pscis_modelledcrossings_streams_xref.csv")
 
 
 ##check to make sure your match_this crossings aren't already assigned somehow
@@ -148,8 +150,9 @@ pscis_modelledcrossings_streams_xref_to_join <- pscis_modelledcrossings_streams_
 pscis_modelledcrossings_streams_xref_joined <- bind_rows(
   pscis_modelledcrossings_streams_xref_to_join,
   match_this_to_join) %>%
-  mutate(stream_crosssing_id = as.integer(stream_crossing_id)) %>% ##i can't figure out why this needs to be an integer. it should sort as is (numeric)
-  dplyr::arrange(stream_crosssing_id)
+  # mutate(stream_crossing_id = as.integer(stream_crossing_id)) %>% ##i can't figure out why this needs to be an integer. it should sort as is (numeric)
+  dplyr::arrange(stream_crossing_id)
 
 ##now burn it back to bcfishpass ready for a pull request
-readr::write_csv(pscis_modelledcrossings_streams_xref_joined, "C:/scripts/bcfishpass/01_prep/02_pscis/data/pscis_modelledcrossings_streams_xref.csv")
+readr::write_csv(pscis_modelledcrossings_streams_xref_joined, "C:/scripts/bcfishpass/01_prep/02_pscis/data/pscis_modelledcrossings_streams_xref.csv",
+                 na = "")

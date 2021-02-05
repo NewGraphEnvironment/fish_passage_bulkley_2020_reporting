@@ -1,7 +1,7 @@
 
 
-my_overview_info <- function(site = my_site){
-  pscis_phase2 %>% filter(pscis_crossing_id == site)
+my_overview_info <- function(dat = pscis_phase2, site = my_site){
+  dat %>% filter(pscis_crossing_id == site)
 }
 
 ##transpose the data so you can get ranges and filter
@@ -67,9 +67,16 @@ my_pscis_info <- function(dat = pscis_phase2, site = my_site){
 my_bcfishpass <- function(dat = bcfishpass_phase2, site = my_site){
   dat %>%
     mutate(across(where(is.numeric), round, 0)) %>%
-    filter(pscis_crossing_id == site) %>%
-    distinct(pscis_crossing_id, .keep_all = T)
+    filter(stream_crossing_id == site) %>%
+    distinct(stream_crossing_id, .keep_all = T)
 }
+
+# my_bcfishpass <- function(dat = bcfishpass_phase2, site = my_site){
+#   dat %>%
+#     mutate(across(where(is.numeric), round, 0)) %>%
+#     filter(pscis_crossing_id == site) %>%
+#     distinct(pscis_crossing_id, .keep_all = T)
+# }
 
 my_watershed_area <- function(dat = wsheds, site = my_site){
   dat %>%
@@ -80,7 +87,7 @@ my_watershed_area <- function(dat = wsheds, site = my_site){
 ##we needed to back off this b/c maps not ready
 my_mapsheet <- function(){
   paste0('https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/FishPassage_', my_bcfishpass() %>%
-           pull(map_tile_display_name), '.pdf')
+           pull(dbm_mof_50k_grid), '.pdf')
 }
 
 # my_mapsheet <- function(){

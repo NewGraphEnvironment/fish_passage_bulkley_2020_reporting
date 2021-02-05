@@ -3,6 +3,7 @@
 # preview_chapter('0300-method.Rmd')
 # preview_chapter('0400-results.Rmd')
 # preview_chapter('0200-background.Rmd')
+preview_chapter('0800-appendix-195290.Rmd')
 preview_chapter('0800-appendix-197360.Rmd')
 preview_chapter('0800-appendix-195290.Rmd')
 

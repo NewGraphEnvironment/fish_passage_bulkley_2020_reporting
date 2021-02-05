@@ -79,20 +79,32 @@ st_write(wshd_gibson, append = TRUE, driver = 'kml', dsn = "data/extracted_input
 
 ####------------add the watersheds-------------------------
 
+
+
+
 ##having the watersheds derived is nice so lets try
 ##make a function to retrieve the watershed info
-# get_watershed <- function(dat){
-#   mapply(fwapgr::fwa_watershed_at_measure,
-#          blue_line_key = dat$blue_line_key,
-#          downstream_route_measure = dat$downstream_route_measure,
-#          SIMPLIFY = F) %>%
-#     purrr::set_names(nm = dat$pscis_crossing_id) %>%
-#     discard(function(x) nrow(x) == 0) %>% ##remove zero row tibbles with https://stackoverflow.com/questions/49696392/remove-list-elements-that-are-zero-row-tibbles
-#     data.table::rbindlist(idcol="pscis_crossing_id") %>%
-#     distinct(pscis_crossing_id, .keep_all = T) %>% ##in case there are duplicates we should get rid of
-#     st_as_sf()
-# }
+get_watershed <- function(dat){
+  mapply(fwapgr::fwa_watershed_at_measure,
+         blue_line_key = dat$blue_line_key,
+         downstream_route_measure = dat$downstream_route_measure,
+         SIMPLIFY = F) %>%
+    purrr::set_names(nm = dat$stream_crossing_id) %>%
+    discard(function(x) nrow(x) == 0) %>% ##remove zero row tibbles with https://stackoverflow.com/questions/49696392/remove-list-elements-that-are-zero-row-tibbles
+    data.table::rbindlist(idcol="stream_crossing_id") %>%
+    distinct(stream_crossing_id, .keep_all = T) %>% ##in case there are duplicates we should get rid of
+    st_as_sf()
+}
 
+test <- bcfishpass_phase2[1:23,]
+test2 <- bcfishpass_phase2[1,]
+
+
+wshds <- get_watershed(test) ##this works without the top row. not sure why
+wshds2 <- get_watershed(bcfishpass_phase2)
+wsh_test <- fwapgr::fwa_watershed_at_measure(blue_line_key = 360869846, downstream_route_measure = 133)
+wsh_test <- fwapgr::fwa_watershed_at_measure(blue_line_key = test %>% pull(blue_line_key),
+                                             downstream_route_measure = test %>% pull(downstream_route_measure))
 
 # ##for each site grab a blueline key and downstream route measure
 # hab_site_priorities2 <- hab_site_priorities %>%
@@ -133,10 +145,10 @@ st_write(wshd_gibson, append = TRUE, driver = 'kml', dsn = "data/extracted_input
 # )
 #
 # ##add to the geopackage
-# hab_site_fwa_wshds %>%
-#   sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_wshds', append = F) ##might want to f the append....
+wshds %>%
+  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_wshds', append = F) ##might want to f the append....
 
 
-
+sf::st_layers(paste0("./data/", 'fishpass_mapping', ".gpkg"))
 
 

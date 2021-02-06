@@ -128,10 +128,16 @@ hab_fish_collect <- left_join(
   dplyr::distinct(reference_number, alias_local_name, site_number, utm_zone, utm_easting, utm_northing, species_code)
 
 
-hab_features <- habitat_confirmations %>%
+hab_features <- left_join(
+  habitat_confirmations %>%
   purrr::pluck("step_4_stream_site_data") %>%
   select(reference_number,local_name, feature_type:utm_northing) %>%
-  filter(!is.na(feature_type))
+  filter(!is.na(feature_type)),
+
+  xref_obstacle_names,
+
+  by = c('feature_type' = 'spreadsheet_feature_type')
+)
 
 ##add the priorities to the site data
 hab_site_priorities <- left_join(

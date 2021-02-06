@@ -24,7 +24,7 @@ my_site2 <- 58158
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` at km 47 of the `r my_overview_info() %>% pull(road_name)` accessed from Houston, BC. The `r my_overview_info() %>% pull(road_name)` is a forest tenure road and the responsibility of the BC Ministry of Forests, Lands, Natural Resource Operations & Rural Development (FLNR) - Nadina District. The area immediately to the south of the subject crossing is a conservation area manged by the Nature Trust of British Columbia.
+PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` on the `r my_overview_info() %>% pull(road_name)` accessed from Houston, BC. The `r my_overview_info() %>% pull(road_name)` is a private road owned by the Woodmere Nursery.  At the time of field surveys it was used to access a newly constructed agricultural facility and by nursery operations to access a waste storage/burn pile area.
 
 ```{r eval=F}
 ##idon't think we need this here but...
@@ -37,7 +37,7 @@ PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pu
 ## Background {-}
 
 
-`r my_pscis_info() %>% pull(stream_name)` flows through an extensive area of wetland type habitat into the top end of Owen Lake approximately 1km downstream of the crossing.  At the crossing location, `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream with a watershed area upstream of the highway of approximately `r round(my_bcfishpass() %>% pull(watershed_upstr_ha)/100,1)`km^2^. The elevation of the watershed ranges from a maximum of 1140 to 750m at PSCIS crossing `r as.character(my_site)`. `r my_pscis_info() %>% pull(stream_name)` is known to contain coho and rainbow trout usptream of the subject culvert [@data_fish_obs]. 
+`r my_pscis_info() %>% pull(stream_name)` drains McDowell Lake (35ha), Dorsay Lake (4ha) and one other unnamed lake (9ha) flowing from McDowell Lake in a south then west direction for approximately 9km to the confluence with the Bulkley River. At crossing `r as.character(my_site)`, `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream with a watershed area upstream of the highway of approximately `r round(my_bcfishpass() %>% pull(watershed_upstr_ha)/100,1)`km^2^. The elevation of the watershed ranges from a maximum of 1140 to 750m at PSCIS crossing `r as.character(my_site)`. `r my_pscis_info() %>% pull(stream_name)` is known to contain coho and rainbow trout usptream of the subject culvert [@data_fish_obs]. 
 
 <br>
 
@@ -73,21 +73,21 @@ The stream was surveyed upstream from `r as.character(my_site)` for `r my_priori
 
 <br>
 
-PSCIS culvert `r as.character(my_site2)` was documented on `r my_pscis_info() %>% pull(stream_name)`, XXXXXXXX 600m upstream on Highway 16. The culvert has been newly replaced and is baffled with a natural type substrate throughout.  Although ranked as a barrier to upstream fish passage using the provincial metric the crossing is likely not a barrier to anadromous salmon and fluvial salmonids the rear in the Bulkley River during most flows. The pipe was `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(diameter_or_span_meters)`m in diameter with a pipe length of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-58158)).
+PSCIS culvert `r as.character(my_site2)` was documented on `r my_pscis_info() %>% pull(stream_name)`, 500m upstream on Highway 16. The culvert has been newly replaced and is baffled with a natural type substrate throughout.  Although ranked as a barrier to upstream fish passage using the provincial metric the crossing is likely not a barrier during most flows for adult anadromous salmon and fluvial salmonids migrating upstream from the Bulkley River. The pipe was `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(diameter_or_span_meters)`m in diameter with a pipe length of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-58158)).
 
 <br>
 
 
 ## Fish Sampling {-}
 
-To assess potential impacts of the culvert on fisheries values in the stream, electrofishing was conducted upstream and downstream of the crossing.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'CO') %>% pull(count_fish)` coho were captured downstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'CO') %>% pull(count_fish)` coho captured upstream `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'CH') %>% pull(count_fish)` chinook were captured downstream with rainbow trout being the only species besides coho captured upstream (`r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'RB') %>% pull(count_fish)` fish). Sampling results are summarized in Tables \@ref(tab:tab-fish-site-58159) - \@ref(tab:tab-fish-dens-58159) and Figure \@ref(fig:plot-fish-box-58159).
+To assess potential impacts of the culvert on fisheries values in the stream, electrofishing was conducted upstream and downstream of the crossing.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'CO') %>% pull(count_fish)` coho were captured downstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'CO') %>% pull(count_fish)` coho captured upstream. Although there is only moderate confidence in their identification, `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'CH') %>% pull(count_fish)` fish captured were identified as chinook.  With the exception of one coho, only rainbow trout (`r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'RB') %>% pull(count_fish)` fish) were captured upstream. Sampling results are summarized in Tables \@ref(tab:tab-fish-site-58159) - \@ref(tab:tab-fish-dens-58159) and Figure \@ref(fig:plot-fish-box-58159).
 
 
 <br>
 
 ## Structure Remediation and Cost Estimate {-}
 
-Structure replacement with a bridge (`r my_pscis_info() %>% pull(recommended_diameter_or_span_meters)`m span) is recommended to provide access to the habitat located upstream of PSCIS crossing `r as.character(my_site)`. The cost of the work is estimated at \$`r as.character(my_cost_estimate() %>% pull(cost_est_1000s) * 1000)` for a cost benefit of `r as.character(my_cost_estimate() %>% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %>% pull(cost_area_net))`m^2^/\$1000.
+Structure replacement with a bridge (`r my_pscis_info() %>% pull(recommended_diameter_or_span_meters)`m span) is recommended to provide access to the habitat located upstream of PSCIS crossing `r as.character(my_site)`. The cost of the work is estimated at \$`r format(my_cost_estimate() %>% pull(cost_est_1000s) * 1000, big.mark = ',')` for a cost benefit of `r as.character(my_cost_estimate() %>% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %>% pull(cost_area_net))`m^2^/\$1000.
 
 
 <br>

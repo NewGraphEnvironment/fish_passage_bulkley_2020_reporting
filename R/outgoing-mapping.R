@@ -96,54 +96,11 @@ get_watershed <- function(dat){
     st_as_sf()
 }
 
-test <- bcfishpass_phase2[1:23,]
-test2 <- bcfishpass_phase2[1,]
+bcfishpass_phase2_clean <- bcfishpass_phase2 %>% ##we needed to remove crossings that are first order
+  filter(stream_order != 1)
 
+wshds <- get_watershed(bcfishpass_phase2_clean)
 
-wshds <- get_watershed(test) ##this works without the top row. not sure why
-wshds2 <- get_watershed(bcfishpass_phase2)
-wsh_test <- fwapgr::fwa_watershed_at_measure(blue_line_key = 360869846, downstream_route_measure = 133)
-wsh_test <- fwapgr::fwa_watershed_at_measure(blue_line_key = test %>% pull(blue_line_key),
-                                             downstream_route_measure = test %>% pull(downstream_route_measure))
-
-# ##for each site grab a blueline key and downstream route measure
-# hab_site_priorities2 <- hab_site_priorities %>%
-#   mutate(srid = as.integer(26911))
-#
-# hab_site_fwa_index <- mapply(fwapgr::fwa_index_point,
-#                              x = hab_site_priorities2$utm_easting,
-#                              y = hab_site_priorities2$utm_northing,
-#                              srid = hab_site_priorities2$srid,
-#                              SIMPLIFY = F) %>%
-#   purrr::set_names(nm = hab_site_priorities2$alias_local_name) %>%
-#   data.table::rbindlist(idcol="alias_local_name") %>%
-#   st_as_sf()
-
-# ##now lets get our watersheds
-# hab_site_fwa_wshds <- get_watershed(dat = hab_site_fwa_index)
-
-##filter only phase 2 sites that were qa'd to a modelled crossing thorugh
-# wshed_input <- bcfishpass_phase2 %>%
-#   filter(source %like% 'phase2' &
-#            !is.na(modelled_crossing_id)) %>%
-#   select(-geom, -geometry) %>%
-#   mutate(downstream_route_measure_chk = case_when(
-#     downstream_route_measure < 200 ~ 20,
-#     T ~ NA_real_
-#   ),
-#   downstream_route_measure = case_when(
-#     !is.na(downstream_route_measure_chk) ~ downstream_route_measure_chk,
-#     T ~ downstream_route_measure
-#   ))
-#
-#
-# ##now lets get our watersheds
-# hab_site_fwa_wshds <- left_join(
-#   get_watershed(dat = wshed_input) %>% mutate(pscis_crossing_id = as.integer(pscis_crossing_id)),
-#   select(wshed_input, -localcode_ltree, -wscode_ltree),
-#   by = 'pscis_crossing_id'
-# )
-#
 # ##add to the geopackage
 wshds %>%
   sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_wshds', append = F) ##might want to f the append....

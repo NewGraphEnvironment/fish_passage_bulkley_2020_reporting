@@ -32,7 +32,11 @@ source('R/0255-load-pscis.R')
 #   sf::st_transform(crs = 3005) ##convert to match the bcfishpass format
 
 
-dat <- pscis_all
+dat <- pscis_all %>%
+  sf::st_as_sf(coords = c("easting", "northing"),
+               crs = 26909, remove = F) %>% ##don't forget to put it in the right crs buds
+  sf::st_transform(crs = 3005) ##get the crs same as the layers we want to hit up
+
 
 ##get the road info from the database
 conn <- DBI::dbConnect(
@@ -130,9 +134,9 @@ tab_cost_rd_mult <- pscis_rd %>%
   # mutate(road_surface_mult = NA_real_, road_class_mult = NA_real_) %>%
   mutate(road_class_mult = case_when(my_road_class == 'local' ~ 4,
                                      my_road_class == 'collector' ~ 4,
-                                     my_road_class == 'arterial' ~ 10,
-                                     my_road_class == 'highway' ~ 10,
-                                     my_road_class == 'rail' ~ 5,
+                                     my_road_class == 'arterial' ~ 20,
+                                     my_road_class == 'highway' ~ 20,
+                                     my_road_class == 'rail' ~ 20,
                                      T ~ 1))  %>%
   mutate(road_surface_mult = case_when(my_road_surface == 'loose' |
                                          my_road_surface == 'rough' ~

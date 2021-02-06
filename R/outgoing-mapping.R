@@ -58,29 +58,7 @@ wshd_study_areas %>%
 
 dbDisconnect(conn = conn)
 
-##going to grab the watershed for the riddeck ck crossing
-
-
-wshd_reddick <- fwapgr::fwa_watershed_at_measure(blue_line_key = 360878896, downstream_route_measure = 1313.57027395708)
-wshd_reddick %>%
-  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'wshd_reddick', append = F)
-
-
-wshd_gibson <- fwapgr::fwa_watershed_at_measure(blue_line_key = 360820934, downstream_route_measure = 198)
-wshd_gibson %>%
-  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'wshd_gibson', append = F)
-
-
-
-st_write(wshd_reddick, append = TRUE, driver = 'kml', dsn = "data/extracted_inputs/wshd_reddick.kml")
-st_write(wshd_gibson, append = TRUE, driver = 'kml', dsn = "data/extracted_inputs/wshd_gibson.kml")
-# ggplot2::ggplot() +
-#   ggplot2::geom_sf(data = wshd_reddick, lwd = 0.15, fill = 'steelblue', alpha = 0.5)
-
 ####------------add the watersheds-------------------------
-
-
-
 
 ##having the watersheds derived is nice so lets try
 ##make a function to retrieve the watershed info
@@ -96,7 +74,9 @@ get_watershed <- function(dat){
     st_as_sf()
 }
 
-bcfishpass_phase2_clean <- bcfishpass_phase2 %>% ##we needed to remove crossings that are first order
+##we needed to remove crossings that are first order - this used to run but doesn't want to anymore
+##i wonder if it is because the 1st order watershed is the first one on the list so the api kicks us off...
+bcfishpass_phase2_clean <- bcfishpass_phase2 %>%
   filter(stream_order != 1)
 
 wshds <- get_watershed(bcfishpass_phase2_clean)
@@ -105,7 +85,32 @@ wshds <- get_watershed(bcfishpass_phase2_clean)
 wshds %>%
   sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_wshds', append = F) ##might want to f the append....
 
+#burn to kml as well so we can see elevations
+st_write(wshds, append = TRUE, driver = 'kml', dsn = "data/extracted_inputs/wshds.kml")
 
-sf::st_layers(paste0("./data/", 'fishpass_mapping', ".gpkg"))
+####--------------------burn geojsons from geopackage-----------------------------------------------------
+##we need geojsons to make the mapping convenient so lets pull everything out of the geopackage and write to geojson files
+read_gpkg <- function(layers = layer_name){
+  sf::st_read(dsn = "./data/fishpass_mapping.gpkg", layer = layers) %>%
+    mutate(name = layers)
+}
 
+##get the names of the layers you want
+layer_names <- sf::st_layers(paste0("./data/", 'fishpass_mapping', ".gpkg")) %>%
+  pluck('name')
 
+##grab the layers and give them a name
+layers_to_burn <- layer_names %>%
+  purrr::map(read_gpkg) %>%
+  purrr::set_names(nm = layer_names)
+
+##now burn them to a folder called fishpass_mapping
+dir.create('data/fishpass_mapping')
+
+write_geojson <- function(layers){
+  layers %>%
+  geojsonio::geojson_write(file = paste0("./data/fishpass_mapping/", unique(layers$name), ".geojson"))
+}
+
+layers_to_burn %>%
+  map(write_geojson)

@@ -34,13 +34,18 @@ dbGetQuery(conn,
            FROM information_schema.columns
            WHERE table_name='crossings'")
 
+dbGetQuery(conn,
+           "SELECT a.total_lakereservoir_ha
+           FROM bcfishpass.crossings a
+           WHERE stream_crossing_id IN (58159,58161,123446)")
+
 
 #first thing we want to do is match up our pha
 
 dat <- pscis_all %>%
   sf::st_as_sf(coords = c("easting", "northing"),
                crs = 26909, remove = F) %>% ##don't forget to put it in the right crs buds
-  sf::st_transform(crs = 3005) ##not sure why tis ws wsg84...
+  sf::st_transform(crs = 3005) ##get the crs same as the layers we want to hit up
 
 # add a unique id - we could just use the reference number
 dat$misc_point_id <- seq.int(nrow(dat))
@@ -78,12 +83,11 @@ query <- "SELECT *
 bcfishpass_morr_bulk <- st_read(conn, query =  query) %>%
   st_transform(crs = 26909) %>%
   mutate(utm_zone = 9,
-         northing = sf::st_coordinates(.)[,1],
-         easting = sf::st_coordinates(.)[,2]) %>%
+         easting = sf::st_coordinates(.)[,1],
+         northing = sf::st_coordinates(.)[,2]) %>%
   st_drop_geometry()
 
 dbDisconnect(conn = conn)
-
 
 ##join the modelled road data to our pscis submission info
 
@@ -104,7 +108,7 @@ my_pscis_modelledcrossings_streams_xref <- dat_joined %>%
 conn <- rws_connect("data/bcfishpass.sqlite")
 rws_list_tables(conn)
 # rws_drop_table("bcfishpass_morr_bulk", conn = conn)
-# rws_write(bcfishpass_morr_bulk, exists = F, delete = TRUE,
+# rws_write(bcfishpass_morr_bulk, exists = T, delete = TRUE,
 #           conn = conn, x_name = "bcfishpass_morr_bulk")
 # rws_write(my_pscis_modelledcrossings_streams_xref, exists = FALSE, delete = TRUE,
 #           conn = conn, x_name = "my_pscis_modelledcrossings_streams_xref")
@@ -132,8 +136,9 @@ bcfishpass_morr_bulk %>%
   filter(stream_crossing_id %in% (match_this %>% pull(pscis_crossing_id)))
 
 ##need to learn to move from the other fork for now rename and grab from there
-file.rename(from = "C:/scripts/bcfishpass/01_prep/02_pscis/data/pscis_modelledcrossings_streams_xref.csv",
-            to = "C:/scripts/pscis_modelledcrossings_streams_xref.csv")
+file.copy(from = "C:/scripts/bcfishpass/01_prep/02_pscis/data/pscis_modelledcrossings_streams_xref.csv",
+            to = "C:/scripts/pscis_modelledcrossings_streams_xref.csv",
+          overwrite = T)
 
 ##get the crossing data from bcfishpass
 pscis_modelledcrossings_streams_xref <- readr::read_csv("C:/scripts/pscis_modelledcrossings_streams_xref.csv")

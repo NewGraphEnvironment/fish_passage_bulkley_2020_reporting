@@ -186,6 +186,50 @@ xref_structure_fix <- tibble::tribble(
                         )
 
 
+##this is made from load-obstacles-xref.R
+xref_obstacle_names <- tibble::tribble(
+                                                    ~fiss_obstacle_name, ~spreadsheet_feature_type,
+                                                          "Beaver Dams",                        NA,
+                                                     "Velocity barrier",                        NA,
+                                                                "Wedge",                        NA,
+                                                               "Bridge",                        NA,
+                                                            "Hydro Dam",                        NA,
+                                         "Water Management Storage Dam",                        NA,
+                                                        "Not Specified",                        NA,
+                                                                 "Bars",                        NA,
+                                                              "LWD Jam",                 "LWD Jam",
+                                                                "OTHER",                        NA,
+                                              "Irrigation District Dam",                        NA,
+                                                 "Dam - Unknown Origin",                        NA,
+                                                              "Cascade",                        NA,
+                                                                 "Pump",                        NA,
+                                                              "Log jam",                        NA,
+                                                     "Cascade or Chute",                        NA,
+                                                    "Persistent Debris",                        NA,
+                                                            "Hydro dam",                        NA,
+                                                                "Rocks",                        NA,
+                         "Persistent debris; present for several years",                        NA,
+                                                                 "Weir",                        NA,
+                                                                "Falls",                   "falls",
+                                                                 "Logs",                        NA,
+                                                              "Log Jam",                        NA,
+                                                              "Culvert",                        NA,
+                                                                 "Rock",                        NA,
+                                                               "Canyon",                        NA,
+                                                           "Beaver Dam",                        NA,
+                                                "Regional District Dam",                        NA,
+                                                          "Underground",                        NA,
+                                                         "Woody Debris",                        NA,
+                                                        "Cascade/Chute",        "cascade or Chute",
+                                                          "Private Dam",                        NA,
+                                                             "Gradient",                        NA,
+                                             "Fisheries Management Dam",                        NA,
+                                                           "BEAVER DAM",                        NA,
+                                          "Landslide or bank sloughing",                        NA,
+                                                     "Velocity Barrier",                        NA,
+                                                                  "Dam",                        NA
+                         )
+
 
 ####------------make a table to summarize priorization of phase 1 sites
 ##uses habitat value to initially screen but then refines based on what are likely not barriers to most most the time

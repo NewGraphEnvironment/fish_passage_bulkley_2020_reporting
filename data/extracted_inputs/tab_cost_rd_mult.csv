@@ -6,5 +6,5 @@ unclassified,loose,1,1,12.5,25
 unclassified,rough,1,1,12.5,25
 local,loose,4,1,50,100
 local,paved,4,2,100,200
-rail,rail,5,2,125,250
-highway,paved,10,2,250,500
+highway,paved,20,2,500,1000
+rail,rail,20,2,500,1000

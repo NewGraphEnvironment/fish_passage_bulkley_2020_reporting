@@ -2,18 +2,19 @@ source('R/packages.R')
 source('R/functions.R')
 source('R/0255-load-pscis.R')
 
-
+##this isa remnant fie from 0280-extract-bcfishpass.R
 bcfishpass <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/bcfishpass.csv'))
 
 # bcfishpass_phase2 <- bcfishpass %>%
 #   filter(source %like% 'phase2')
 
+
+##this is our new file made from 0282-extract-bcfishpass2-crossing-corrections.R
 conn <- rws_connect("data/bcfishpass.sqlite")
 bcfishpass_phase2 <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk", conn = conn) %>%
   filter(stream_crossing_id %in% (pscis_phase2 %>% pull(pscis_crossing_id))) %>%
   mutate(downstream_route_measure = as.integer(downstream_route_measure))
 rws_disconnect(conn)
-
 
 
 bcfishpass_rd <- bcfishpass %>%
@@ -27,15 +28,16 @@ bcfishpass_rd <- bcfishpass %>%
 ####----tab cost multipliers for road surface-----
 tab_cost_rd_mult <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/tab_cost_rd_mult.csv'))
 
+
 ####-----------report table--------------------
 tab_cost_rd_mult_report <- tab_cost_rd_mult %>%
-  mutate(my_road_class = stringr::str_to_title(my_road_class)) %>%
+  mutate(cost_m_1000s_bridge = cost_m_1000s_bridge * 10) %>%
   rename(
     Class = my_road_class,
     Surface = my_road_surface,
     `Class Multiplier` = road_class_mult,
     `Surface Multiplier` = road_surface_mult,
-    `Bridge $K/m` = cost_m_1000s_bridge,
+    `Bridge $K/10m` = cost_m_1000s_bridge,
     `Streambed Simulation $K` = cost_embed_cv
   ) %>%
   filter(!is.na(Class)) %>%

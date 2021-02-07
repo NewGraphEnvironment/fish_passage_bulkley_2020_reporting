@@ -37,12 +37,12 @@ PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pu
 ## Background {-}
 
 
-`r my_pscis_info() %>% pull(stream_name)` drains McDowell Lake (35ha), Dorsay Lake (4ha) and one other unnamed lake (9ha) flowing from McDowell Lake in a south then west direction for approximately 9km to the confluence with the Bulkley River. At crossing `r as.character(my_site)`, `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream with a watershed area upstream of the highway of approximately `r round(my_bcfishpass() %>% pull(watershed_upstr_ha)/100,1)`km^2^. The elevation of the watershed ranges from a maximum of 1140 to 750m at PSCIS crossing `r as.character(my_site)`. `r my_pscis_info() %>% pull(stream_name)` is known to contain coho and rainbow trout usptream of the subject culvert [@data_fish_obs]. 
+`r my_pscis_info() %>% pull(stream_name)` drains McDowell Lake (35ha), Dorsay Lake (4ha) and one other unnamed lake (9ha) flowing from McDowell Lake in a south then west direction for approximately 9km to the confluence with the Bulkley River. At crossing `r as.character(my_site)`, `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r round(my_bcfishpass() %>% pull(watershed_upstr_ha)/100,1)`km^2^. The elevation of the watershed ranges from a maximum of 1000 to 520m at PSCIS crossing `r as.character(my_site)`. `r my_pscis_info() %>% pull(stream_name)` is known to contain coho and rainbow trout upstream of the subject culvert [@data_fish_obs]. 
 
 <br>
 
 
-PSCIS stream crossings `r as.character(my_site)` and `r as.character(my_site2)` were rated high priorities for follow up by both @irvine2018AnalysisPriority and @smith2018AssessingBarriers due to significant quantities of habitat suitable for salmonid rearing. A map of the watershed is provided in map attachment [`r my_bcfishpass() %>% pull(dbm_mof_50k_grid)`](`r my_mapsheet()`).
+PSCIS stream crossings `r as.character(my_site)` and `r as.character(my_site2)` were rated as high priorities for follow up by both @irvine2018AnalysisPriority and @smith2018AssessingBarriers due to significant quantities of upstream habitat suitable for salmonid rearing. A map of the watershed is provided in map attachment [`r my_bcfishpass() %>% pull(dbm_mof_50k_grid)`](`r my_mapsheet()`).
 
 <br>
 

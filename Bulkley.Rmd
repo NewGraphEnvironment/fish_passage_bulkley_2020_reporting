@@ -1538,9 +1538,6 @@ The stream was surveyed downstream from the culvert for `r my_priority_info(loc 
 The stream was surveyed upstream from `r as.character(my_site)` for `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197662-03) - \\@ref(fig:photo-197662-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-197662-d2))"))`. Within the area surveyed, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197662)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` for salmonid rearing and spawning. 
 
 
-<br>
-
-PSCIS culvert `r as.character(my_site2)` was documented on `r my_pscis_info() %>% pull(stream_name)`, 500m upstream on Highway 16. The culvert has been newly replaced and is baffled with a natural type substrate throughout.  Although ranked as a barrier to upstream fish passage using the provincial metric the crossing is likely not a barrier during most flows for adult anadromous salmon and fluvial salmonids migrating upstream from the Bulkley River. The pipe was `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(diameter_or_span_meters)`m in diameter with a pipe length of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-58158)).
 
 <br>
 
@@ -1562,7 +1559,7 @@ Structure replacement with a bridge (`r my_pscis_info() %>% pull(recommended_dia
 
 ## Conclusion {-}
 
-There is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of habitat upstream of crossing `r as.character(my_site)`.  Habitat in this area was rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing/spawning.  `r my_overview_info() %>% pull(road_name)` is on private land owned by the Woodmere Nursury.  The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. 
+There is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of habitat upstream of crossing `r as.character(my_site)`.  Habitat in this area was rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing/spawning.  `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.  The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. 
 
 <br>
 

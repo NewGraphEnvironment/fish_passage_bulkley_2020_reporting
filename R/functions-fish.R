@@ -40,7 +40,7 @@ tab_fish_site <- function(dat = hab_fish_dens, sit = my_site){
 
 tab_fish_dens <- function(dat = hab_fish_dens, sit = my_site, species = 'RB'){
   dat %>%
-    mutate(life_stage = factor(life_stage, levels = c('fry', 'parr', 'juvenile', 'adult'))) %>%
+    # mutate(life_stage = factor(life_stage, levels = c('fry', 'parr', 'juvenile', 'adult'))) %>%
     filter(
       site  == sit
       &
@@ -53,8 +53,8 @@ tab_fish_dens <- function(dat = hab_fish_dens, sit = my_site, species = 'RB'){
     select(Site = site_number,
            Location = location,
            everything()) %>% ##removed fry, parr
-    purrr::set_names(nm = stringr::str_to_title(names(.))) %>%
-    mutate_all(~replace_na(.,"-"))
+    purrr::set_names(nm = stringr::str_to_title(names(.)))
+    # mutate_all(~replace_na(.,"-"))
 }
 
 
@@ -109,4 +109,27 @@ plot_fish_box_all <- function(dat = hab_fish_dens, sp = 'RB'){
     geom_dotplot(binaxis='y', stackdir='center', dotsize=1)+
     ylab(expression(Density ~ (Fish/100 ~  m^2)))
 }
+
+tab_fish_mt <- function(sit = my_site){
+  left_join(
+  hab_fish_input,
+
+  select(hab_fish_codes, common_name, species_code),
+
+  by = 'common_name'
+  )  %>%
+    filter(site == sit & sampling_method == 'minnow trapping') %>%
+    select(Location = location,
+           Species = species_code,
+           Stage = stage,
+           Number = total_number) %>%
+    pivot_wider(names_from = Stage,
+                values_from = Number) %>%
+    mutate(Location = case_when(Location == 'us' ~ 'Upstream',
+                                T ~ 'Downstream')) %>%
+    mutate_all(~replace_na(.,"0"))
+
+}
+
+
 

@@ -166,20 +166,11 @@ my_caption2 = paste0('Aerial view of typical habitat downstream of PSCIS crossin
 ```{r photo-197360-02, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
 source('R/packages.R')
 grid::grid.raster(get_img(photo = my_photo2))
-kable(xref_obstacle_names)
 ```
 
 <br>
 
 ```{r photo-197360-d01, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
-##we could put 2 photos in on box but it is lots of extra work with the crossreferences. pdfs suck anyway.  Don't get too custom with it!!!
-
-# my_photo1 = pull_photo_by_str(str_to_pull = '_d1_')
-# my_caption1 = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
-# 
-# my_photo2 = pull_photo_by_str(str_to_pull = '_u1_')
-# my_caption2 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
-
 my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
 
 knitr::include_graphics(get_img_path(photo = my_photo1))

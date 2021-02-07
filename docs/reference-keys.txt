@@ -48,6 +48,15 @@ tab:tab-culvert-197669
 tab:tab-fish-site-197360
 tab:tab-fish-dens-197360
 fig:plot-fish-box-197360
+tab:tab-culvert-197662
+tab:tab-habitat-summary-197662
+tab:tab-fish-dens-197662
+fig:photo-197662-01
+fig:photo-197662-02
+fig:photo-197662-03
+fig:photo-197662-04
+fig:photo-197662-05
+fig:photo-197662-06
 intro
 background
 project-location

@@ -164,8 +164,9 @@ my_caption2 = paste0('Aerial view of typical habitat downstream of PSCIS crossin
 ```
 
 ```{r photo-197360-02, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+source('R/packages.R')
 grid::grid.raster(get_img(photo = my_photo2))
-
+kable(xref_obstacle_names)
 ```
 
 <br>

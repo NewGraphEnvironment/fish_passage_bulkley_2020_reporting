@@ -154,7 +154,8 @@ hab_fish_dens <- hab_fish_indiv %>%
   tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F) %>%
   mutate(site_id = paste0(site, location),
          location = case_when(location == 'us' ~ 'Upstream',
-                              T ~ 'Downstream'))
+                              T ~ 'Downstream'),
+         life_stage = factor(life_stage, levels = c('fry', 'parr', 'juvenile', 'adult')))
 
 # hab_fish_dens %>%
 #   readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/hab_fish_dens.csv'))

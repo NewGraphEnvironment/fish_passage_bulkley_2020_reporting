@@ -43,6 +43,7 @@ tab_backwater <- pscis %>%  ##changed this to pscis2!
            stream_width_ratio_score < 1.2 &
            culvert_slope_percent <= 2 )
 
+##need to tweak the span so that we add 4 to the width if it is over 6m...
 str_type <- pscis %>%
   select(column_num, pscis_crossing_id, my_crossing_reference, downstream_channel_width_meters, fill_depth_meters) %>%
   mutate(fill_dpth_over = fill_depth_meters - fill_dpth_mult) %>%

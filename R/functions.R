@@ -330,3 +330,52 @@ appendix_title2 <- function(site = my_site, site2 = my_site2){
 appendix_subtitle <- function(){
   paste0('**', my_overview_info() %>% pull(road_name), ' - ', my_overview_info() %>% pull(stream_name), '**')
 }
+
+
+##############this is for making kmls
+make_kml_col <- function(df){
+  df %>%
+    mutate(`PSCIS ID` = as.integer(`PSCIS ID`),
+           `Modelled ID` = as.integer(`Modelled ID`),
+           color = case_when(Priority == 'high' ~ 'red',
+                             Priority == 'no fix' ~ 'green',
+                             Priority == 'moderate' ~ 'yellow',
+                             T ~ 'grey'),
+           # shape = case_when(Priority == 'high' ~ 'http://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png',
+           #                   Priority == 'no fix' ~ 'http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png',
+           #                   Priority == 'moderate' ~ 'http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png',
+           #                   T ~ 'http://maps.google.com/mapfiles/kml/pushpin/wht-pushpin.png'),
+           shape = case_when(Priority == 'high' ~ 'http://maps.google.com/mapfiles/kml/paddle/red-blank.png',
+                             Priority == 'no fix' ~ 'http://maps.google.com/mapfiles/kml/paddle/grn-blank.png',
+                             Priority == 'moderate' ~ 'http://maps.google.com/mapfiles/kml/paddle/ylw-blank.png',
+                             T ~ 'http://maps.google.com/mapfiles/kml/paddle/wht-blank.png'),
+           color = plotKML::col2kml(color),
+           site_id = case_when(!is.na(`PSCIS ID`) ~ paste('PSCIS ', `PSCIS ID`),
+                               is.na(`PSCIS ID`) ~ paste0('Modelled ', `Modelled ID`)),
+           label = paste0(site_id, '-', Priority),
+           `Image link` = case_when(!is.na(`Image link`) ~ cell_spec('crossing', "html", link = `Image link`),
+                                    T ~ `Image link`)) %>%
+    select(site_id, Area, Priority, label, color, shape, everything())
+  # mutate(across(where(is.numeric), round(.,2)))
+
+}
+
+## add a line to the function to make the comments column wide enough
+make_html_tbl <- function(df) {
+  # df2 <- df %>%
+  #   dplyr::mutate(`Image link` = cell_spec('crossing', "html", link = `Image link`))
+  df2 <- select(df, -shape, -color, -label) %>% janitor::remove_empty()
+  df %>%
+    mutate(html_tbl = knitr::kable(df2, 'html', escape = F) %>%
+             kableExtra::row_spec(0:nrow(df2), extra_css = "border: 1px solid black;") %>% # All cells get a border
+             kableExtra::row_spec(0, background = "yellow") %>%
+             kableExtra::column_spec(column = ncol(df2) - 1, width_min = '0.5in') %>%
+             kableExtra::column_spec(column = ncol(df2), width_min = '4in')
+    )
+}
+
+
+openHTML <- function(x) browseURL(paste0('file://', file.path(getwd(), x)))
+
+
+

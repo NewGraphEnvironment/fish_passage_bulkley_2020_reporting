@@ -18,9 +18,8 @@ R/pers_*
 *.gpkg-wal
 *.gpkg-shm
 #data/raw_input
-#docs/Elk.pdf
+docs/Bulkley.pdf
 #docs/Elk.tex
-#Elk.html
-Elk.Rmd
+docs/Bulkley.html
 *~$*
 *.sqlite

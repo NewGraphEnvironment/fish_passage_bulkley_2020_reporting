@@ -41,7 +41,7 @@ PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pu
 
 <br>
 
-In the summer of 1998,  the Nadina Community Futures Development Corporation (NCFDC) contracted the Britis Columbia Conservation Foundation to carry out a detailed Level 1 Fish, Fish Habitat and Riparian Assessment in Richfield Creek and several other large Upper Bulkley River tributary streams.  Building on these assessments and detailed fish sampling, @ncfdc1998MidBulkleyDetailed developed restoration prescriptions for the lower reaches of the watershed were developed based on the following assessment of impacts:
+In the summer of 1998,  the Nadina Community Futures Development Corporation (NCFDC) contracted the British Columbia Conservation Foundation to carry out a detailed Level 1 Fish, Fish Habitat and Riparian Assessment in Richfield Creek and several other large Upper Bulkley River tributary streams.  Building on these assessments and detailed fish sampling, @ncfdc1998MidBulkleyDetailed developed restoration prescriptions for the lower reaches of the watershed based on the following assessment of impacts:
 
  * loss of riparian forest and soil compaction in areas used for agriculture, the powerline corridor, transportation corridors and at housing developments within the floodplain.
  * loss of the shrub/herb layer and soil compaction from cattle grazing where overstory still present.
@@ -91,7 +91,7 @@ The stream was surveyed upstream from `r as.character(my_site)` for `r my_priori
 
 ## Fish Sampling {-}
 
-To assess potential impacts of the culvert on fisheries values in the stream, minnowtrapping was conducted with three traps set overnight upstream as well as downstream of the crossing.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'CO') %>% pull(count_fish)` coho and `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'RB') %>% pull(count_fish)` were captured downstream.  Only rainbow trout (`r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'RB') %>% pull(count_fish)` fish) were captured upstream (Table \@ref(tab:tab-fish-dens-197662) and `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197662-05) - \\@ref(fig:photo-197662-06))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-197662-d03))"))`.
+Minnowtrapping was conducted with three traps set overnight upstream as well as downstream of the crossing.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'CO') %>% pull(count_fish)` coho and `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'RB') %>% pull(count_fish)` were captured downstream.  Only rainbow trout (`r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'RB') %>% pull(count_fish)` fish) were captured upstream (Table \@ref(tab:tab-fish-dens-197662) and `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197662-05) - \\@ref(fig:photo-197662-06))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-197662-d03))"))`.
 
 
 <br>
@@ -108,6 +108,7 @@ Structure replacement with a bridge (`r my_pscis_info() %>% pull(recommended_dia
 
 There is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of habitat upstream of crossing `r as.character(my_site)`.  Habitat in this area was rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing/spawning.  `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.  The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. 
 
+<!-- this is a bit strange but the pages.js will not build beyond this so we leave for now -->
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-197662, eval = T}

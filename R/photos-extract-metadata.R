@@ -6,7 +6,7 @@ make_photo_metadata_list <- function(input_file){
   exifr::read_exif(input_file,recursive=T) %>%
     purrr::set_names(., nm = tolower(names(.))) %>%
     select(filename, sourcefile, gpslatitude, gpslongitude) %>%
-    mutate(url  = paste0('https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/raw/master/',
+    mutate(url  = paste0('https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/',
                                                 sourcefile),
                                   base = tools::file_path_sans_ext(filename))
 }

@@ -37,7 +37,7 @@ dbGetQuery(conn,
 dat <- pscis_all %>%
   sf::st_as_sf(coords = c("easting", "northing"),
                crs = 26909, remove = F) %>% ##don't forget to put it in the right crs buds
-  sf::st_transform(crs = 4326)
+  sf::st_transform(crs = 3005)
 
 # add a unique id - we could just use the reference number
 dat$misc_point_id <- seq.int(nrow(dat))

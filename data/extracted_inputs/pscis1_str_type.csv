@@ -1,31 +1,31 @@
-rowname,pscis_crossing_id,my_crossing_reference,downstream_channel_width_meters,fill_depth_meters,fill_dpth_over,span_input
-1,NA,1800092,5.1,1,-2,10.2
-2,NA,1805182,NA,NA,NA,NA
-3,NA,1805455,NA,NA,NA,NA
-4,NA,1805183,NA,NA,NA,NA
-5,NA,1803661,NA,NA,NA,NA
-6,NA,1800472,NA,NA,NA,NA
-7,NA,1802520,1.4,1.2,-1.8,NA
-8,NA,1804986,1.5,1.8,-1.2,NA
-9,NA,1804153,NA,NA,NA,NA
-10,NA,1804151,NA,NA,NA,NA
-11,NA,1804851,NA,NA,NA,NA
-12,NA,1800868,NA,NA,NA,NA
-13,NA,1800077,NA,NA,NA,NA
-14,NA,1800068,2.5,1,-2,10
-15,NA,1804152,1.5,2,-1,NA
-16,NA,1800073,1,2,-1,NA
-17,NA,1800071,5,1.8,-1.2,10
-18,NA,1800064,3.2,1,-2,10
-19,NA,1800062,11.1,1.6,-1.4,22.2
-20,NA,1800066,3.2,0,-3,10
-21,NA,1805595,NA,NA,NA,NA
-22,NA,2020082701,NA,NA,NA,NA
-23,NA,1800060,12.5,1,-2,25
-24,NA,1800213,6.3,3,0,12.6
-25,NA,1801069,4.7,1,-2,10
-26,NA,1800076,3.5,2,-1,10
-27,NA,2020083101,6,1,-2,12
-28,NA,1805606,3.8,0.8,-2.2,10
-29,NA,1805608,5.3,0.8,-2.2,10.6
-30,NA,14000079,2.6,0.3,-2.7,10
+column_num,pscis_crossing_id,my_crossing_reference,barrier_result,downstream_channel_width_meters,fill_depth_meters,fill_dpth_over,crossing_fix,span_input
+5,NA,1800092,Barrier,5.1,1,-2,Replace with New Open Bottom Structure,10
+6,NA,1805182,Passable,NA,NA,NA,NA,NA
+7,NA,1805455,Unknown,NA,NA,NA,NA,NA
+8,NA,1805183,Passable,NA,NA,NA,NA,NA
+9,NA,1803661,Unknown,NA,NA,NA,NA,NA
+10,NA,1800472,Passable,NA,NA,NA,NA,NA
+11,NA,1802520,Barrier,1.4,1.2,-1.8,Replace Structure with Streambed Simulation CBS,3
+12,NA,1804986,Barrier,1.5,1.8,-1.2,Replace Structure with Streambed Simulation CBS,3
+13,NA,1804153,Passable,NA,NA,NA,NA,NA
+14,NA,1804151,Passable,NA,NA,NA,NA,NA
+15,NA,1804851,Passable,NA,NA,NA,NA,NA
+16,NA,1800868,Unknown,NA,NA,NA,NA,NA
+17,NA,1800077,Unknown,NA,NA,NA,NA,NA
+18,NA,1800068,Barrier,2.5,1,-2,Replace with New Open Bottom Structure,10
+19,NA,1804152,Barrier,1.5,2,-1,Replace Structure with Streambed Simulation CBS,3
+20,NA,1800073,Potential,1,2,-1,Replace Structure with Streambed Simulation CBS,3
+21,NA,1800071,Potential,5,1.8,-1.2,Replace with New Open Bottom Structure,10
+22,NA,1800064,Potential,3.2,1,-2,Replace with New Open Bottom Structure,10
+23,NA,1800062,Barrier,11.1,1.6,-1.4,Replace with New Open Bottom Structure,15.1
+24,NA,1800066,Passable,3.2,0,-3,NA,NA
+25,NA,1805595,Passable,NA,NA,NA,NA,NA
+26,NA,2020082701,Passable,NA,NA,NA,NA,NA
+27,NA,1800060,Barrier,12.5,1,-2,Replace with New Open Bottom Structure,16.5
+28,NA,1800213,Barrier,6.3,3,0,Replace with New Open Bottom Structure,10.3
+29,NA,1801069,Passable,4.7,1,-2,NA,NA
+30,NA,1800076,Passable,3.5,2,-1,NA,NA
+31,NA,2020083101,Passable,6,1,-2,NA,NA
+32,NA,1805606,Barrier,3.8,0.8,-2.2,Replace with New Open Bottom Structure,10
+33,NA,1805608,Barrier,5.3,0.8,-2.2,Replace with New Open Bottom Structure,10
+34,NA,14000079,Barrier,2.6,0.3,-2.7,Replace with New Open Bottom Structure,10

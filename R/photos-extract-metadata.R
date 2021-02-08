@@ -17,7 +17,7 @@ photo_metadata_list <- files %>%
   map_df(make_photo_metadata_list)
 
 
-##now we need to subset the ones that contain _k_ or crossings_all
+##now we need to subset the ones that contain _k_
 photo_metadata_list2 <- photo_metadata_list %>%
   filter(filename %like% '_k')
 

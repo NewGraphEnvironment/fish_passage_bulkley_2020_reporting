@@ -38,10 +38,10 @@ map <- leaflet(height=500, width=780) %>%
   #   opacity = 1.0, fillOpacity = 0.25,
   #   fillColor = "#00DBFF") %>%
   addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'BULK'), color = "#F29A6E", weight = 1, smoothFactor = 0.5,
-    opacity = 1.0, fillOpacity = 0.25,
+    opacity = 1.0, fillOpacity = 0,
     fillColor = "#F29A6E", label = 'Bulkley River') %>%
   addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'MORR'), color = "#C39D50", weight = 1, smoothFactor = 0.5,
-    opacity = 1.0, fillOpacity = 0.25,
+    opacity = 1.0, fillOpacity = 0,
     fillColor = "#C39D50", label = 'Morice River') %>%
   # addPolylines(data=drake::readd(fish_habitat_model_lines),  opacity=1, color = '#6498d2',
   #              fillOpacity = 0.75, weight=2) %>% 
@@ -106,7 +106,7 @@ map <- leaflet(height=500, width=780) %>%
              zoomLevelOffset = -6, width = 100, height = 100)
 
 map %>% 
-  hideGroup("Phase 2")
+  hideGroup("Phase 1")
 ```
 
 

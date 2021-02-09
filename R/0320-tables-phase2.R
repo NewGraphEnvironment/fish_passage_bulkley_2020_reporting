@@ -93,39 +93,33 @@ hab_fish_collect_prep1 <- habitat_confirmations %>%
   dplyr::filter(!is.na(site_number)) %>%
   select(-gazetted_name:-site_number)
 
-hab_fish_indiv_prep <- habitat_confirmations %>%
-  purrr::pluck("step_3_individual_fish_data") %>%
-  dplyr::filter(!is.na(site_number)) %>%
-  select(-gazetted_names:-site_number)
+# hab_fish_indiv_prep <- habitat_confirmations %>%
+#   purrr::pluck("step_3_individual_fish_data") %>%
+#   dplyr::filter(!is.na(site_number)) %>%
+#   select(-gazetted_names:-site_number)
+#
+#
+#
+# hab_fish_indiv_prep2 <- left_join(
+#   hab_fish_indiv_prep,
+#   hab_loc,
+#   by = 'reference_number'
+# )
+#
+#
+# hab_fish_indiv <- left_join(
+#   hab_fish_indiv_prep2,
+#   select(hab_fish_codes, common_name:species_code),
+#   by = c('species' = 'common_name')
+# ) %>%
+#   dplyr::distinct(alias_local_name, utm_zone, utm_easting, utm_northing, species_code)
 
-
-
-hab_fish_indiv_prep2 <- left_join(
-  hab_fish_indiv_prep,
-  hab_loc,
-  by = 'reference_number'
-)
-
-hab_fish_collect_prep2 <- left_join(
-  hab_fish_collect_prep1,
-  hab_loc,
-  by = 'reference_number'
-)
-
-
-hab_fish_indiv <- left_join(
-  hab_fish_indiv_prep2,
-  select(hab_fish_codes, common_name:species_code),
-  by = c('species' = 'common_name')
-) %>%
-  dplyr::distinct(alias_local_name, utm_zone, utm_easting, utm_northing, species_code)
-
-hab_fish_collect <- left_join(
-  hab_fish_collect_prep2,
-  select(hab_fish_codes, common_name:species_code),
-  by = c('species' = 'common_name')
-) %>%
-  dplyr::distinct(reference_number, alias_local_name, site_number, utm_zone, utm_easting, utm_northing, species_code)
+# hab_fish_collect <- left_join(
+#   hab_fish_collect_prep2,
+#   select(hab_fish_codes, common_name:species_code),
+#   by = c('species' = 'common_name')
+# ) %>%
+#   dplyr::distinct(reference_number, alias_local_name, site_number, utm_zone, utm_easting, utm_northing, species_code)
 
 
 hab_features <- left_join(

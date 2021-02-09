@@ -92,7 +92,8 @@ st_write(wshds, append = TRUE, driver = 'kml', dsn = "data/extracted_inputs/wshd
 ##we need geojsons to make the mapping convenient so lets pull everything out of the geopackage and write to geojson files
 read_gpkg <- function(layers = layer_name){
   sf::st_read(dsn = "./data/fishpass_mapping.gpkg", layer = layers) %>%
-    mutate(name = layers)
+    mutate(name = layers) %>%
+    sf::st_transform(crs = 4326)
 }
 
 ##get the names of the layers you want

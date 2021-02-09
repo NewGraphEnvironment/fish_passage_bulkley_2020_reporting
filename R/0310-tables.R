@@ -50,9 +50,16 @@ pscis_rd <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/pscis
   # filter(distance < 100)
 
 ####--------import priorities spreadsheet--------------
-habitat_confirmations_priorities <- readxl::read_excel(
-  path = "./data/habitat_confirmations_priorities.xlsx",
-  .name_repair = janitor::make_clean_names) %>%
+# habitat_confirmations_priorities <- readxl::read_excel(
+#   path = "./data/habitat_confirmations_priorities.xlsx",
+#   .name_repair = janitor::make_clean_names) %>%
+#   filter(!local_name %like% 'ef') %>% ##ditch the ef sites
+#   tidyr::separate(local_name, into = c('site', 'location'), remove = F) %>%
+#   mutate(site = as.numeric(site),
+#          upstream_habitat_length_km = round(upstream_habitat_length_m/1000,1))
+
+habitat_confirmations_priorities <- readr::read_csv(
+  file = "./data/habitat_confirmations_priorities.csv") %>%
   filter(!local_name %like% 'ef') %>% ##ditch the ef sites
   tidyr::separate(local_name, into = c('site', 'location'), remove = F) %>%
   mutate(site = as.numeric(site),

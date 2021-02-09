@@ -6,7 +6,7 @@
 preview_chapter('0800-appendix-195290.Rmd')
 preview_chapter('0800-appendix-197360.Rmd')
 preview_chapter('0800-appendix-195290.Rmd')
-
+preview_chapter('0800-appendix-197658.Rmd')
 
 ##this is how we clean up our bib file.  We need to find a way to add together the packages.bib file with the book.bib file first though.
 # citr::tidy_bib_file(
@@ -34,7 +34,8 @@ file.rename('0600-appendix.Rmd', 'data/0600-appendix.Rmd')
 
 
 ##   then make our printable pdf
-rmarkdown::render_site(output_format = 'pagedown::html_paged', encoding = 'UTF-8')
+rmarkdown::render_site(output_format = 'pagedown::html_paged',
+                       encoding = 'UTF-8')
 
 
 ##  move it to the docs folder so that it can be seen by the download button
@@ -53,13 +54,6 @@ file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')
 
 ##  make the site
 rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')
-
-
-
-
-
-
-
 
 
 

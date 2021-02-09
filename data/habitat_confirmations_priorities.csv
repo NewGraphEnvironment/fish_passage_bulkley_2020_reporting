@@ -1,0 +1,45 @@
+﻿reference_number,gazetted_names,local_name,survey_length_m,electrofishing,minnowtrapping,uav_survey,hab_value,priority,comments,upstream_habitat_length_m,species_codes,future_sampling_recommended
+1,Unnamed tributary to Blunt Creek,123794_ds,250,,,,,,,,,
+2,Unnamed tributary to Blunt Creek,123795_ds,200,,,,,,,,,
+3,Unnamed tributary to Blunt Creek,123794_us,525,,,,,moderate,,,,yes
+4,Unnamed tributary to Blunt Creek,123795_us,650,,,,,moderate,,,,yes
+5,Porphyry Creek,124487_us,540,,,,,high,,,,
+6,Porphyry Creek,124487_ds,145,,,,,,,,,
+7,Unnamed Tributary to Buck Creek,197640_ds,70,,,,,,,,,
+8,Unnamed Tributary to Buck Creek,197640_us,535,,,,,high,,,,yes
+9,Byman Creek,197658_us,1400,,yes,,high,high,,6000,"CO,CSU,LNC,LSU,RB,RSC,ST",yes
+10,Byman Creek,197658_ds2,330,,,,high,,,,,
+11,Byman Creek,197658_ds1,300,,yes,,moderate,,,,,
+12,Richfield Creek,197662_us,1200,,yes,,high,high,,2000,"CH,CO,LNC,LSU,RB,ST",yes
+13,Richfield Creek,197662_ds,300,,yes,,high,,,,,
+14,Barren Creek,197664_us,800,,,,,moderate,,,,
+15,Barren Creek,197664_ds,240,,,,,,,,,
+16,Barren Creek,197665_ds,20,,,,,,,,,
+17,Tyhee Creek,123445_ds,170,,,,,,,,,
+18,Tyhee Creek,123445_us,540,,,,,high,,,,
+19,Tyhee Creek,123446_us,100,,,,,low,,,,
+20,Helps Creek,124500_us,1100,,,,,low,,,,
+21,Helps Creek,124500_ds,415,,,,,,,,,
+22,Moan Creek,124501_us,520,,yes,,,low,,,,
+23,Moan Creek,124501_ds,450,,yes,,,,,,,
+24,Coffin Creek,197668_ds,300,,yes,,,,,,,
+25,Coffin Creek,124504_us,415,,yes,,,high,,,,yes
+26,Barren Creek,3042_us,400,,,,,moderate,,,,yes
+27,Barren Creek,3042_ds,260,,,,,,,,,
+28,Tributary to McQuarrie Creek,3139_ds,285,yes,,,,,,,,
+29,Tributary to McQuarrie Creek,3139_us,625,yes,,,,moderate,,,,
+30,Johnny David Creek,3054_ds,350,,,,,,,,,
+31,Johnny David Creek,3054_us,725,,,,,moderate,,,,
+32,Johnny David Creek,197663_us,690,yes,yes,,,high,,,,
+33,Johnny David Creek,197663_ds,300,yes,yes,,,,,,,
+34,McDowell Creek,58159_ds,135,yes,,,moderate,,,,,
+35,McDowell Creek,58159_us,440,yes,,,moderate,high,,780,"RB, CO",
+36,Gibson Creek,195290_ds,150,yes,yes,,moderate,,,,,
+37,Gibson Creek,195290_us,150,yes,yes,yes,moderate,high,,1000,"RB, CT, CO, BT",
+38,Gibson Creek,195288_ds,250,,,yes,moderate,,,,,
+39,Riddeck Creek,197360_ds,300,yes,,yes,moderate,,,,,
+40,Riddeck Creek,197360_us,1200,yes,,yes,high,high,,1200,"RB, LSU",
+58,Gibson Creek,195288_us,180,,,yes,moderate,high,,4500,"RB, CT",
+59,Barren Creek,197665_us,100,,,,,moderate,,,,
+60,Moan Creek,197667_us,100,,,,,high,,,,
+61,Coffin Creek,197668_us,40,,,,,high,,,,

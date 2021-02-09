@@ -23,13 +23,13 @@ conn <- DBI::dbConnect(
 dbGetQuery(conn,
            "SELECT table_name
            FROM information_schema.tables
-           WHERE table_schema='whse_basemapping'")
+           WHERE table_schema='bcfishpass'")
 # # # # #
 # # # # # ##list column names in a table
 dbGetQuery(conn,
            "SELECT column_name,data_type
            FROM information_schema.columns
-           WHERE table_name='transport_line'")
+           WHERE table_name='crossings'")
 
 
 # test <- dbGetQuery(conn, "SELECT * FROM bcfishpass.waterfalls")

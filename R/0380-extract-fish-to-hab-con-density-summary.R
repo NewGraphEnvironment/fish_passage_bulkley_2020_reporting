@@ -23,7 +23,7 @@ hab_fish_indiv_prep3 <- left_join(
   select(hab_fish_codes, common_name:species_code),
   by = c('species' = 'common_name')
 ) %>%
-  dplyr::select(reference_number, alias_local_name, site_number, method_number, species_code, length_mm) ##added method #
+  dplyr::select(reference_number, alias_local_name, site_number, sampling_method, method_number, species_code, length_mm) ##added method #
 
 
 ##we need the size of the sites too
@@ -35,20 +35,45 @@ hab_fish_indiv_prep3 <- left_join(
 #   dplyr::filter(!is.na(site_number)) %>%
 #   # select(-gazetted_name:-site_number) %>%
 #   dplyr::distinct(reference_number, method_number, .keep_all = T) ##added method #
+hab_fish_collect_prep_mt <- habitat_confirmations %>%
+  purrr::pluck("step_2_fish_coll_data") %>%
+  dplyr::filter(!is.na(site_number)) %>%
+  tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F) %>%
+  mutate(site_id = paste0(site, location)) %>%
+  distinct(local_name, sampling_method, method_number, .keep_all = T) %>% ##changed this to make it work as a feed for the extract-fish.R file
+  mutate(across(c(date_in,date_out), janitor::excel_numeric_to_date)) %>%
+  mutate(across(c(time_in,time_out), chron::times))
+
+##we use this to test things out
+# hab_fish_indiv <- left_join(
+#   select(hab_fish_collect_prep_mt %>% filter(reference_number == 36),
+#          reference_number,
+#          local_name,
+#          site_number:model, date_in:time_out ##added date_in:time_out
+#   ),
+#   select(hab_fish_indiv_prep3 %>% filter(reference_number == 36),
+#          reference_number,
+#          sampling_method,
+#          method_number, ##added method #
+#          # alias_local_name,
+#          species_code, length_mm),
+#   by = c('reference_number', 'sampling_method', 'method_number') #added method # and haul
+# )
 
 ##
 hab_fish_indiv <- left_join(
-   select(hab_fish_collect_prep,
+   select(hab_fish_collect_prep_mt,
           reference_number,
           local_name,
           site_number:model, date_in:time_out ##added date_in:time_out
           ),
   select(hab_fish_indiv_prep3,
          reference_number,
+         sampling_method,
          method_number, ##added method #
          # alias_local_name,
          species_code, length_mm),
-  by = c('reference_number', 'method_number') #added method #
+  by = c('reference_number', 'sampling_method', 'method_number') #added method # and haul
 ) %>%
   mutate(species_code = as.character(species_code)) %>%
   mutate(species_code = case_when(
@@ -171,5 +196,5 @@ remove <- ls() %>%
 ##this prints a list to the console that we can copy and paste into the rm call #https://stackoverflow.com/questions/30861769/convert-a-list-into-a-string/30862559
 # paste(unlist(remove), collapse=', ')
 
-rm(bin_1, bin_n, bins, hab_fish_collect_prep, hab_fish_indiv_prep, hab_fish_indiv_prep2, hab_fish_indiv_prep3, hab_fish_input_prep,
+rm(bin_1, bin_n, bins, hab_fish_collect_prep_mt, hab_fish_indiv_prep, hab_fish_indiv_prep2, hab_fish_indiv_prep3, hab_fish_input_prep,
    fish_eb, fish_wct)

@@ -100,7 +100,7 @@ The stream was surveyed upstream from `r as.character(my_site)` for `r my_priori
 
 ## Fish Sampling {-}
 
-Minnowtrapping was conducted with three traps set overnight upstream as well as downstream of the crossing.  A total of `r tab_fish_summary %>% filter((site_id == paste0(my_site, '_ds1')) & species_code == 'CO') %>% pull(count_fish)` coho and `r tab_fish_summary %>% filter((site_id == paste0(my_site, '_ds1')) & species_code == 'RB') %>% pull(count_fish)` rainbow trout were captured downstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'CO') %>% pull(count_fish)` coho and `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'RB') %>% pull(count_fish)` rainbow trout were captured upstream (Table \@ref(tab:tab-fish-dens-197658) and `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197658-05) - \\@ref(fig:photo-197658-06))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-197658-d03))"))`.
+Minnowtrapping was conducted with three traps set overnight upstream as well as downstream of the crossing.  A total of `r tab_fish_summary %>% filter((site_id == paste0(my_site, '_ds1')) & species_code == 'CO') %>% pull(count_fish)` coho and `r tab_fish_summary %>% filter((site_id == paste0(my_site, '_ds1')) & species_code == 'RB') %>% pull(count_fish)` rainbow trout were captured downstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'CO') %>% pull(count_fish)` coho and `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'RB') %>% pull(count_fish)` rainbow trout were captured upstream (Table \@ref(tab:tab-fish-mt-197658) and `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197658-05) - \\@ref(fig:photo-197658-06))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-197658-d03))"))`.
 
 
 <br>
@@ -140,7 +140,7 @@ tab_hab_summary %>%
 
 <br>
 
-```{r tab-fish-dens-197658, eval=T}
+```{r tab-fish-mt-197658, eval=T}
 my_caption <- paste0('Fish captured in minnowtraps set overnight upstream and downstream of PSCIS crossing ', my_site, '.')
 
 tab_fish_mt() %>% 
@@ -153,7 +153,7 @@ tab_fish_mt() %>%
 ```{r photo-197658-01-prep, eval=T}
 my_photo1 = pull_photo_by_str(str_to_pull = '_d1_')
 
-my_caption1 = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
+my_caption1 = paste0('Typical habitat immediately downstream of PSCIS crossing ', my_site, '.')
 
 ```
 
@@ -166,7 +166,7 @@ grid::grid.raster(get_img(photo = my_photo1))
 ```{r photo-197658-02-prep}
 my_photo2 = pull_photo_by_str(str_to_pull = '_d2_')
 
-my_caption2 = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
+my_caption2 = paste0('Typical habitat downstream of crossing ', my_site, ' below the railway bridge and adjacent to the Bulkley River mainstem.')
 ```
 
 ```{r photo-197658-02, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
@@ -189,7 +189,7 @@ knitr::include_graphics(get_img_path(photo = my_photo2))
 ```{r photo-197658-03-prep}
 my_photo1 = pull_photo_by_str(str_to_pull = '_u1_')
 
-my_caption1 = paste0('Gravel and cobble substrate upstream of PSCIS crossing ', my_site, '.')
+my_caption1 = paste0('habitat upstream of PSCIS crossing ', my_site, '.')
 
 ```
 
@@ -203,7 +203,7 @@ grid::grid.raster(get_img(photo = my_photo1))
 ```{r photo-197658-04-prep}
 my_photo2 = pull_photo_by_str(str_to_pull = '_u2_')
 
-my_caption2 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+my_caption2 = paste0('Habitat upstream of PSCIS crossing ', my_site, '.')
 
 ```
 
@@ -240,7 +240,7 @@ grid::grid.raster(get_img(photo = my_photo1))
 ```{r photo-197658-06-prep}
 my_photo2 = pull_photo_by_str(str_to_pull = '_uf1_')
 
-my_caption2 = paste0('Rainbow trout captured upstream of PSCIS crossing ', my_site, '.')
+my_caption2 = paste0('Coho captured upstream of PSCIS crossing ', my_site, '.')
 
 ```
 

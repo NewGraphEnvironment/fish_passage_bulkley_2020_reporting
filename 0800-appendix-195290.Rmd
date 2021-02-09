@@ -113,7 +113,7 @@ The stream was surveyed upstream from `r as.character(my_site)` for `r my_priori
 
 ## Fish Sampling {-}
 
-To assess potential impacts of the culvert on fisheries values in the stream, electrofishing and minnowtrapping was conducted upstream and downstream of the crossing.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured upstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish captured downstream (Figure \@ref(fig:photo-195290-03)). Species captured downstream included coho, bull trout (or potentially dolly varden) and rainbow trout.  Only rainbow trout were captured upstream.  Electrofishing results are summarized in Tables \@ref(tab:tab-fish-site-195290) - \@ref(tab:tab-fish-dens-195290) and Figure \@ref(fig:plot-fish-box-195290).
+To assess potential impacts of the culvert on fisheries values in the stream, electrofishing and minnowtrapping was conducted upstream and downstream of the crossing.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured upstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish captured downstream (Figure \@ref(fig:photo-195290-03)). Species captured downstream included coho, bull trout (or potentially dolly varden) and rainbow trout.  Only rainbow trout were captured upstream.  Electrofishing results are summarized in Tables \@ref(tab:tab-fish-site-195290) - Tables \@ref(tab:tab-fish-dens-195290) and Figure \@ref(fig:plot-fish-box-195290) with minnowtrapping results summarized in Table \@ref(tab:tab-fish-mt-195290).
 
 
 <br>
@@ -142,6 +142,54 @@ print_tab_summary()
 ```{r tab-culvert-195288, eval = T}
 print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2)
 
+```
+
+
+<br>
+
+```{r tab-habitat-summary-195290}
+tab_hab_summary %>% 
+  filter(Site  == my_site | Site  == my_site2) %>% 
+  # select(-Site) %>% 
+  my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossings ', my_site, 'and ', my_site2, '.'))
+
+```
+
+<br>
+
+```{r tab-fish-site-195290, eval=T}
+my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
+
+tab_fish_site() %>% 
+  my_kable(caption_text = my_caption)
+```
+
+
+<br>
+
+```{r tab-fish-dens-195290, eval=T}
+my_caption <- paste0('Densities of fish captured (fish/100m2) during electrofishing upstream and downstream of PSCIS crossing ', my_site, '.')
+
+tab_fish_dens() %>% 
+  my_kable(caption_text = my_caption)
+```
+
+<br>
+
+```{r plot-fish-box-195290, fig.cap= my_caption, eval=T}
+my_caption <- paste0('Densites of fish (fish/100m2) capture upstream and downstream of PSCIS crossing ', my_site, '.')
+
+plot_fish_box() 
+
+```
+
+<br>
+
+```{r tab-fish-mt-195290, eval=T}
+my_caption <- paste0('Fish captured in minnowtraps set overnight upstream and downstream of PSCIS crossing ', my_site, '.')
+
+tab_fish_mt() %>% 
+  my_kable(caption_text = my_caption)
 ```
 
 <br>
@@ -215,44 +263,5 @@ knitr::include_graphics(get_img_path(photo = my_photo1))
 knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics(get_img_path(photo = my_photo2))
 ```
-
-<br>
-
-```{r tab-habitat-summary-195290}
-tab_hab_summary %>% 
-  filter(Site  == my_site | Site  == my_site2) %>% 
-  # select(-Site) %>% 
-  my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossings ', my_site, 'and ', my_site2, '.'))
-
-```
-
-<br>
-
-```{r tab-fish-site-195290, eval=T}
-my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
-
-tab_fish_site() %>% 
-  my_kable(caption_text = my_caption)
-```
-
-
-<br>
-
-```{r tab-fish-dens-195290, eval=T}
-my_caption <- paste0('Densities of fish captured (fish/100m2) during electrofishing upstream and downstream of PSCIS crossing ', my_site, '.')
-
-tab_fish_dens() %>% 
-  my_kable(caption_text = my_caption)
-```
-
-<br>
-
-```{r plot-fish-box-195290, fig.cap= my_caption, eval=T}
-my_caption <- paste0('Densites of fish (fish/100m2) capture upstream and downstream of PSCIS crossing ', my_site, '.')
-
-plot_fish_box() 
-
-```
-
 
 

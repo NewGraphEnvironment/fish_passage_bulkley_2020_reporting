@@ -240,7 +240,7 @@ my_kable_scroll <- function(dat, caption_text = '', font = font_set){
 my_tab_overview <- function(dat, caption_text = '', font = font_set){
   dat %>%
     kable(caption = caption_text, booktabs = T) %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) %>%
+    kableExtra::kable_styling(c("condensed", , "responsive"), full_width = T, font_size = font) %>%
     kableExtra::column_spec(column = 9, width_min = '1.5in')
     # kableExtra::scroll_box(width = "100%", height = "500px")
 }
@@ -271,7 +271,7 @@ my_kable_scroll_no_height <- function(dat, caption_text = ''){
 my_kable <- function(dat, caption_text = '', font = font_set){
   dat %>%
     kable(caption = caption_text, booktabs = T) %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)
+    kableExtra::kable_styling(c("condensed", , "responsive"), full_width = T, font_size = font)
     # kableExtra::scroll_box(width = "100%", height = "500px")
 }
 

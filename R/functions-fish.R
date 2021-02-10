@@ -38,32 +38,34 @@ tab_fish_site <- function(dat = hab_fish_dens, sit = my_site){
 }
 
 
-tab_fish_dens <- function(dat = hab_fish_dens, sit = my_site, species = 'RB'){
+tab_fish_dens <- function(dat = hab_fish_dens, sit = my_site){ #species = 'RB'
   dat %>%
     # mutate(life_stage = factor(life_stage, levels = c('fry', 'parr', 'juvenile', 'adult'))) %>%
     filter(
       site  == sit
-      &
-        species_code == species
+      # &
+      #   species_code == species
     ) %>%
-    select(location,site_number, life_stage, density_100m2) %>%
+    select(location,site_number, species_code, life_stage, density_100m2) %>%
     distinct(.keep_all = T)  %>%
     pivot_wider(names_from = life_stage,
                 values_from = density_100m2) %>%
     select(Site = site_number,
            Location = location,
+           Species = species_code,
            everything()) %>% ##removed fry, parr
-    purrr::set_names(nm = stringr::str_to_title(names(.)))
-    # mutate_all(~replace_na(.,"-"))
+    purrr::set_names(nm = stringr::str_to_title(names(.))) %>%
+    arrange(Species) %>%
+    mutate_all(~replace_na(.,"0"))
 }
 
-
-
-# tab_fish_dens <- hab_fish_dens %>%
+# tab_fish_dens <- function(dat = hab_fish_dens, sit = my_site){ #species = 'RB'
+#   dat %>%
+#     # mutate(life_stage = factor(life_stage, levels = c('fry', 'parr', 'juvenile', 'adult'))) %>%
 #     filter(
-#       site  == my_site
-#       &
-#         species_code == 'WCT'
+#       site  == sit
+#       # &
+#       #   species_code == species
 #     ) %>%
 #     select(location,site_number, life_stage, density_100m2) %>%
 #     distinct(.keep_all = T)  %>%
@@ -71,9 +73,10 @@ tab_fish_dens <- function(dat = hab_fish_dens, sit = my_site, species = 'RB'){
 #                 values_from = density_100m2) %>%
 #     select(Site = site_number,
 #            Location = location,
-#            fry, parr, everything()) %>%
+#            everything()) %>% ##removed fry, parr
 #     purrr::set_names(nm = stringr::str_to_title(names(.))) %>%
-#     mutate_all(~replace_na(.,"-"))
+#     mutate_all(~replace_na(.,"0"))
+# }
 
 
 plot_fish_box <- function(dat = hab_fish_dens, sit = my_site){
@@ -118,15 +121,19 @@ tab_fish_mt <- function(sit = my_site){
 
   by = 'common_name'
   )  %>%
-    filter(site == sit & sampling_method == 'minnow trapping') %>%
+    filter(site == sit & sampling_method == 'minnow trapping' & !is.na(stage)) %>%
+    group_by(site, location, species_code, stage) %>%
+    summarise(Number = sum(total_number)) %>%
+    ungroup() %>%
     select(Location = location,
            Species = species_code,
            Stage = stage,
-           Number = total_number) %>%
+           Number) %>%
     pivot_wider(names_from = Stage,
                 values_from = Number) %>%
     mutate(Location = case_when(Location == 'us' ~ 'Upstream',
                                 T ~ 'Downstream')) %>%
+    arrange(Species) %>%
     mutate_all(~replace_na(.,"0"))
 
 }

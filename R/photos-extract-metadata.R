@@ -14,12 +14,10 @@ make_photo_metadata_list <- function(input_file){
 files <- paste0('data/photos/',list.files('data/photos'))
 
 photo_metadata_list <- files %>%
-  map_df(make_photo_metadata_list)
+  map_df(make_photo_metadata_list) %>%
+  filter(filename %like% '_k') ##now we need to subset the ones that contain _k_
 
 
-##now we need to subset the ones that contain _k_
-photo_metadata_list2 <- photo_metadata_list %>%
-  filter(filename %like% '_k')
 
 ##burn this to a csv so we can pull into the map
-write.csv(photo_metadata_list2, file = 'data/photo_metadata.csv', row.names = F)
+write.csv(photo_metadata_list, file = 'data/photo_metadata.csv', row.names = F)

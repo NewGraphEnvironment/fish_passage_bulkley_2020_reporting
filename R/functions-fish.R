@@ -115,7 +115,8 @@ plot_fish_box_all <- function(dat = hab_fish_dens, sp = 'RB'){
 
 tab_fish_mt <- function(sit = my_site){
   left_join(
-  hab_fish_input,
+  hab_fish_input %>%
+    mutate(stage = factor(stage, levels = c('fry', 'parr', 'juvenile', 'adult'))),
 
   select(hab_fish_codes, common_name, species_code),
 
@@ -135,7 +136,6 @@ tab_fish_mt <- function(sit = my_site){
                                 T ~ 'Downstream')) %>%
     arrange(Species) %>%
     mutate_all(~replace_na(.,"0"))
-
 }
 
 

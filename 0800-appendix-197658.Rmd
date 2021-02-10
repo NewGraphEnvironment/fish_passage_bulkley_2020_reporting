@@ -23,7 +23,11 @@ my_site <- 197658
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` on `r my_overview_info() %>% pull(road_name)` approximately 20km east of Houston, BC with the highway located approximately 2.5km upstream from the confluence with the Bulkley River. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.
+PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` on `r my_overview_info() %>% pull(road_name)` approximately 20km  east of Houston, BC with the crossing located approximately 2.5km upstream from the confluence with the Bulkley River. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.
+
+
+
+<br>
 
 ```{r eval=F}
 ##idon't think we need this here but...
@@ -36,7 +40,7 @@ PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pu
 ## Background {-}
 
 
-At crossing `r as.character(my_site)`, `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r round(my_bcfishpass() %>% pull(watershed_upstr_ha)/100,1)`km^2^. The elevation of the watershed ranges from a maximum of 1400 to 660m at PSCIS crossing `r as.character(my_site)`. Upstream of the highway, coho, steelhead, rainbow trout, longnose dace, redside shiner, longnose sucker and largescale sucker have been previously recorded as present [@data_fish_obs]. A bridge (PSCIS 197660) is a bridge located under the railway approximately 1.3km downstream.  Although there are numerous crossings modelled upstream, a series of three impassable waterfalls are located approximately 6km upstream of the highway (pers. comm. Jonathan Van Barneveld, Forester - FLNR).  There are only two modelled crossings (1800233, 1801084) located on a small tributary to the mainstem below the location of these waterfalls.
+At crossing `r as.character(my_site)`, `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r round(my_bcfishpass() %>% pull(watershed_upstr_ha)/100,1)`km^2^. The elevation of the watershed ranges from a maximum of 1240 to 680m at PSCIS crossing `r as.character(my_site)`. Upstream of the highway, coho, steelhead, rainbow trout, longnose dace, redside shiner, longnose sucker and largescale sucker have been previously recorded as present [@data_fish_obs]. A bridge (PSCIS 197660) is a bridge located under the railway approximately 1.3km downstream.  Although there are numerous crossings modelled upstream, a series of three impassable waterfalls are located approximately 6km upstream of the highway (pers. comm. Jonathan Van Barneveld, Forester - FLNR).  There are only two modelled crossings (1800233, 1801084) located on a small tributary to the mainstem below the location of these waterfalls.
 
 
 <br>

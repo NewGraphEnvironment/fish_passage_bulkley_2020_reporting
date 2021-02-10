@@ -107,9 +107,10 @@ my_pscis_modelledcrossings_streams_xref <- dat_joined %>%
 # mydb <- DBI::dbConnect(RSQLite::SQLite(), "data/bcfishpass.sqlite")
 conn <- rws_connect("data/bcfishpass.sqlite")
 rws_list_tables(conn)
-# rws_drop_table("bcfishpass_morr_bulk", conn = conn)
-# rws_write(bcfishpass_morr_bulk, exists = T, delete = TRUE,
-#           conn = conn, x_name = "bcfishpass_morr_bulk")
+rws_drop_table("bcfishpass_morr_bulk", conn = conn)
+rws_write(bcfishpass_morr_bulk, exists = F, delete = TRUE,
+          conn = conn, x_name = "bcfishpass_morr_bulk")
+rws_drop_table("my_pscis_modelledcrossings_streams_xref", conn = conn)
 # rws_write(my_pscis_modelledcrossings_streams_xref, exists = FALSE, delete = TRUE,
 #           conn = conn, x_name = "my_pscis_modelledcrossings_streams_xref")
 rws_list_tables(conn)
@@ -120,7 +121,7 @@ match_this <- dat_joined %>%
   st_drop_geometry() %>%
   select(pscis_crossing_id, stream_crossing_id, modelled_crossing_id, linear_feature_id, watershed_group_code) %>%
   mutate(reviewer = 'AI',
-         notes = "Matched to closest stream model (not sure why it didn't happen automatically") %>%
+         notes = "Matched to closest stream model") %>%
   filter(!is.na(pscis_crossing_id) &
            is.na(stream_crossing_id))
 

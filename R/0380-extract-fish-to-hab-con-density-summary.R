@@ -196,5 +196,4 @@ remove <- ls() %>%
 ##this prints a list to the console that we can copy and paste into the rm call #https://stackoverflow.com/questions/30861769/convert-a-list-into-a-string/30862559
 # paste(unlist(remove), collapse=', ')
 
-rm(bin_1, bin_n, bins, hab_fish_collect_prep_mt, hab_fish_indiv_prep, hab_fish_indiv_prep2, hab_fish_indiv_prep3, hab_fish_input_prep,
-   fish_eb, fish_wct)
+rm(bin_1, bin_n, bins, hab_fish_collect_prep_mt, hab_fish_indiv_prep, hab_fish_indiv_prep2, hab_fish_indiv_prep3, hab_fish_input_prep)

@@ -24,7 +24,7 @@ dat_points <- c(
 # metadata <- bcdc_get_record("7ecfafa6-5e18-48cd-8d9b-eae5b5ea2881")
 
 # ##should start a lookup table for these layers
-get_this <- bcdc_tidy_resources('pscis-assessments') %>%
+get_this <- bcdc_tidy_resources('provincial-obstacles-to-fish-passage') %>%
   filter(bcdata_available == T)  %>%
   pull(package_id)
 
@@ -35,8 +35,8 @@ get_this <- bcdc_tidy_resources('pscis-assessments') %>%
 #
 # bcdc_get_record(get_this)[["metadata_modified"]] ##also metadata_modified
 #
-
-
+crs = 3005
+get = get_this
 ##define what happens when we go to download
 bcdata_download <- function(get = get_this, crs = 3005){
   conn <- dbConnect(dbDriver("PostgreSQL"),

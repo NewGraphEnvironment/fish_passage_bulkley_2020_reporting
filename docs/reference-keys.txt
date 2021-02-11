@@ -1,6 +1,7 @@
 fig:overview-map
 fig:hydrology-plot
 fig:hydrology-stats
+tab:fiss-species-table
 fig:fish-plot-grad
 fig:fish-plot-width
 fig:fish-plot-wshed

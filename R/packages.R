@@ -13,7 +13,6 @@ pacman::p_load(
   DBI,
   sf,
   magick,
-  # citr,
   bcdata,
   datapasta,
   knitr,
@@ -21,10 +20,11 @@ pacman::p_load(
   lubridate,
   forcats,
   bookdown,
-  flextable,
+  # flextable,
   english,
   leaflet.extras,
-  pdftools,
+  # pdftools,
+  geojsonsf,
   bit64 ##to make integer column type for pg
   # gert  ##to track git moves
   )

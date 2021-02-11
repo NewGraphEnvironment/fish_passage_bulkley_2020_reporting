@@ -192,19 +192,20 @@ The Gitxsan Laxyip (traditional territories) covers an area of 33,000km^2^ withi
 
 ## Fisheries
 
-
+Fish species recorded in the Bulkley River and Morice watershed groups are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Coastal cutthrout trout and bull trout are considered of special concern (blue-listed) provincially. 
 
 <br>
 
-```{r fiss-species-table, eval=F}
-readr::read_csv(file = paste0(getwd(), '/data/raw_input/fiss_species_table.csv')) %>% 
-  filter(`Species Code` != 'CT') %>% 
-  my_kable(caption_text = 'Fish species recorded in the Bulkley River watershed group.')
+```{r fiss-species-table}
+fiss_species_table <- readr::read_csv(paste0(getwd(), '/data/extracted_inputs/fiss_species_table.csv'))
+  # filter(`Species Code` != 'CT') %>% 
+fiss_species_table %>%  
+  my_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
 
-
-# Fish species recorded in the Elk River watershed group are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Bull trout and westslope cutthrout trout are considered of special concern (blue-listed) provincially and westslope cutthrout trout (Pacific populations) are are listed under the *Species at Risk Act* by the Committee on the Status of Endangered Wildlife in Canada as a species of special concern [@bcspeciesecosystemexplorer2020Salvelinusconfluentusa; @bcspeciesecosystemexplorer2020Oncorhynchusclarkii; @schweigert_etal2017COSEWICassessment].  The focus of 2020 field work was to assess potential impacts of road-stream crossings on habitat connectivity for westslope cutthrout trout.
 
 ```
+
+<br>
 
 
 ```{r fish-fiss-summary, eval=T}

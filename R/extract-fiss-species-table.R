@@ -1,6 +1,6 @@
 source('R/functions.R')
 source('R/packages.R')
-source('R/tables-phase2.R')
+source('R/0320-tables-phase2.R')
 
 
 conn <- DBI::dbConnect(
@@ -15,70 +15,60 @@ conn <- DBI::dbConnect(
 
 ##we are going to use the whole bulkley for now but should refine for our study area
 fish_species_watershed <- sf::st_read(conn,
-                                      query = "SELECT nws.gnis_name,nws.fwa_watershed_code, nws.gnis_id, x.species_code,x.species_name,x.observation_date
+                                      query = "SELECT DISTINCT ws.watershed_group_code, x.species_code,x.species_name
                    FROM whse_fish.fiss_fish_obsrvtn_pnt_sp x
                    INNER JOIN
-                   whse_basemapping.fwa_named_watersheds_poly nws
-                   ON ST_intersects(x.geom, nws.geom)
-                   WHERE nws.gnis_id IN
-                             ('16880')
-                           GROUP BY x.species_code,x.species_name,nws.gnis_name,nws.gnis_id,x.observation_date,nws.fwa_watershed_code
-                           ORDER BY nws.gnis_name,nws.fwa_watershed_code,x.species_code")
-
-query <- "WITH ws AS
-(SELECT * FROM whse_basemapping.fwa_watershed_groups_poly ws
-WHERE ws.watershed_group_code IN ('BULK'))
-SELECT DISTINCT x.species_code, x.species_name
-  FROM whse_fish.fiss_fish_obsrvtn_pnt_sp x
-INNER JOIN ws ON (ST_Within(x.geom, ws.geom));"
-
-fish_spp_bulk <- st_read(conn, query = query)
-
-# fish_species_lookup <- dbGetQuery(conn,
-#                                   "Select * from whse_fish.species_codes_lookup")
-
-fish_species_lookup <- hab_fish_codes %>%
-  select(common_name, species_code, scientific_name)
+                   whse_basemapping.fwa_watershed_groups_poly ws
+                   ON ST_intersects(x.geom, ws.geom)
+                   WHERE ws.watershed_group_code IN
+                             ('BULK','MORR')")
 
 
-# fish_species_watershed <- merge (fish_species_watershed,
-#                                 fish_species_lookup[,c("SPECIES_CODE","SCIENTIFIC_NAME")],
-#                                 by.x = c("species_code"), by.y = c("SPECIES_CODE"),
-#                                 all.x = TRUE)
+##lets bust it up and join it back together
+fish_spp <- full_join(
+  fish_species_watershed %>% filter(watershed_group_code == 'BULK') %>% rename(Bulkley = watershed_group_code),
+  fish_species_watershed %>% filter(watershed_group_code == 'MORR')%>% rename(Morice = watershed_group_code),
+  by = c('species_code', 'species_name')
+)
 
-fish_species_watershed <- left_join(fish_species_watershed,
-                                    fish_species_lookup,
-                                    by = "species_code")
+fish_all <- fishbc::freshwaterfish
+fish_cdc <- fishbc::cdc
 
-##we need to remove Family: from the SCIENTIFIC_NAME column to facilitate a nice sort/lookup
-##we could look at adding it after in brackets maybe
-# fish_species_watershed$scientific_name <- gsub("Family: ", "", fish_species_watershed$scientific_name)
+fish_spp2 <- left_join(fish_spp,
+                       fish_all,
+                       by = c("species_code" = "Code")) %>%
+  filter(!is.na(Class) & !species_code %in% c('TR', 'CBA')) %>% ##mottled sculpin has some sort of error going on
+           # !species_code %in% c('ACT', 'ST', 'TR', 'C', 'GR', 'WF', 'WST')) %>%
+  # mutate(species_name = case_when(species_name == 'Westslope (Yellowstone) Cutthroat Trout' ~ 'Westslope Cutthroat Trout',
+  #                                 T ~ species_name)) %>%
+  mutate(CDCode = case_when(species_code == 'BT' ~ 'F-SACO-11', ##pacific population yo
+                            T ~ CDCode)) %>%
+  select(species_code, species_name, Bulkley, Morice, CDCode)
 
-##select rows that have no scientific name
-no_scientific <- fish_species_watershed[is.na(fish_species_watershed$scientific_name),]
-
-
-
-#use pipes to group
-fish_table <- fish_species_watershed %>%
-  dplyr::group_by(scientific_name, species_name,gnis_name,species_code) %>%
-  dplyr::summarise(count = n()) %>%
-  dplyr::arrange(gnis_name) %>% ##ditch the rare occurance which look like errors
-  dplyr::filter(count > 1 &
-                  species_name != 'Dolly Varden' &
-                  species_name != 'Rainbow Smelt' &
-                  !stringr::str_detect(species_name, "General") &
-                  !species_code %in% 'TR') %>%
-  ungroup() %>%
-  filter(!is.na(scientific_name)) %>%
-  select('Scientific Name' = scientific_name, 'Species Name' = species_name,
-         'Species Code' = species_code) %>%
-  mutate_all(~replace_na(.,"-")) %>%
-  mutate_all(~stringr::str_replace_all(.,"NA", "-"))
-
+fish_spp3 <- left_join(
+  fish_spp2,
+  fish_cdc,
+  by = c('CDCode' = 'Species Code')
+) %>%
+  select(`Scientific Name`,
+         'Species Name' = species_name,
+         'Species Code' = species_code,
+         `BC List`,
+         `Provincial FRPA`,
+         COSEWIC,
+         SARA,
+         Bulkley,
+         Morice) %>%
+  mutate(Bulkley = case_when(!is.na(Bulkley) ~ 'Yes',
+                                 T ~ Bulkley),
+         Morice = case_when(!is.na(Morice) ~ 'Yes',
+                              T ~ Morice)) %>%
+  mutate(COSEWIC = case_when(`Species Code` == 'CH' ~ NA_character_,
+                             T ~ COSEWIC)) %>%
+  arrange(`Scientific Name`, `Species Name`)
+  # replace(., is.na(.), "--")
 
 ##print your table to input_raw for use in the report
-fish_table %>% readr::write_csv(file = paste0(getwd(), '/data/raw_input/fiss_species_table.csv'))
-
+fish_spp3 %>% readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_species_table.csv'))
 
 dbDisconnect(conn = conn)

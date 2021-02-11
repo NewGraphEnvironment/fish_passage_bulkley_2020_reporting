@@ -2,7 +2,7 @@
 ##last time downloaded
 
 conn <- dbConnect(dbDriver("PostgreSQL"),
-                  dbname = "postgis_2018",
+                  dbname = "postgis",
                   host = "localhost",
                   port = "5432",
                   user = "postgres",
@@ -15,19 +15,21 @@ dbGetQuery(conn,
 
 
 d <- sf::st_read(conn,
-            query = "SELECT a.fish_obstacle_point_id, a.utm_zone, a.utm_easting, a.utm_northing, a.last_updated
-            FROM whse_fish.fiss_obstacles_pnt_sp_old a")
-
-d2 <- sf::st_read(conn,
-                 query = "SELECT a.fish_obstacle_point_id, a.utm_zone, a.utm_easting, a.utm_northing, a.last_updated
+            query = "SELECT a.fish_obstacle_point_id, a.utm_zone, a.utm_easting, a.utm_northing,
+            a.obstacle_name, a.gazetted_name, a.last_updated
             FROM whse_fish.fiss_obstacles_pnt_sp a")
 
+##pull file with 'date_modified' as 2017-01-30
+d3 <- st_read("D:/temp/Fish_Obstacles.shp")
 
-d3 <- left_join(
+
+d4 <- left_join(
+  select(d3, FSHBSTCLPN, UTM_ZONE, TMSTNG, TMNRTHNG, BSTCLNM, GZTTDNM),
   d,
-  d2,
-  by = "fish_obstacle_point_id"
-)
+  by = c('FSHBSTCLPN' = "fish_obstacle_point_id")
+) %>%
+  select(FSHBSTCLPN, obstacle_name, BSTCLNM, gazetted_name, GZTTDNM, everything()) %>%
+  readr::write_csv('data/extracted_inputs/fiss_obstacle_qa.csv')
 
 dbDisconnect(conn = conn)
 ##looks like there hasn't been an update for jan 1 to feb 11.  Need to check back.

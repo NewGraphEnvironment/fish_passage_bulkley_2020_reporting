@@ -13,7 +13,7 @@ conn <- DBI::dbConnect(
 )
 
 
-##we are going to use the whole bulkley for now but should refine for our study area
+##get the observations from the fiss layer
 fish_species_watershed <- sf::st_read(conn,
                                       query = "SELECT DISTINCT ws.watershed_group_code, x.species_code,x.species_name
                    FROM whse_fish.fiss_fish_obsrvtn_pnt_sp x
@@ -63,7 +63,7 @@ fish_spp3 <- left_join(
                                  T ~ Bulkley),
          Morice = case_when(!is.na(Morice) ~ 'Yes',
                               T ~ Morice)) %>%
-  mutate(COSEWIC = case_when(`Species Code` == 'CH' ~ NA_character_,
+  mutate(COSEWIC = case_when(`Species Code` == 'CH' ~ NA_character_, ##designated units do not land in the skeena so remove
                              T ~ COSEWIC)) %>%
   arrange(`Scientific Name`, `Species Name`)
   # replace(., is.na(.), "--")

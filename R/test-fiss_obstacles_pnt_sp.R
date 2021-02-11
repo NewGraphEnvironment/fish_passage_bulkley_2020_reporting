@@ -29,7 +29,9 @@ d4 <- left_join(
   by = c('FSHBSTCLPN' = "fish_obstacle_point_id")
 ) %>%
   select(FSHBSTCLPN, obstacle_name, BSTCLNM, gazetted_name, GZTTDNM, everything()) %>%
+  slice(1:1000) %>%
   readr::write_csv('data/extracted_inputs/fiss_obstacle_qa.csv')
+
 
 dbDisconnect(conn = conn)
 ##looks like there hasn't been an update for jan 1 to feb 11.  Need to check back.

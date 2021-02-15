@@ -221,7 +221,7 @@ print_tab_summary_all <- function(tab_sum, comments, photos){
 print_tab_summary <- function(dat = pscis_phase2, site = my_site, site_photo_id = my_site, font = 11){
   make_tab_summary(df = dat %>% filter(pscis_crossing_id == site)) %>%
     kable(caption = paste0('Summary of fish passage reassessment for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
-    kableExtra::add_footnote(label = paste0('Comments: ', dat %>% filter(pscis_crossing_id == my_site) %>%
+    kableExtra::add_footnote(label = paste0('Comments: ', dat %>% filter(pscis_crossing_id == site) %>%
                                               pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
     kableExtra::add_footnote(label = paste0('Photos: From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.',
                                             paste0('![](data/photos/', site_photo_id, '/crossing_all.JPG)')), notation = 'none') %>%

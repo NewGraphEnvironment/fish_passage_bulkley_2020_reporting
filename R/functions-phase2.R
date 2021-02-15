@@ -108,3 +108,12 @@ my_cost_estimate <- function(dat = tab_cost_est_phase2, site = my_site){
     distinct(pscis_crossing_id, .keep_all = T)
 }
 
+##this will pull out fish species names from our fish species codes
+my_fish_sp <- function(sit = my_site, col_to_pull = quo(observedspp_upstr)){
+  str_to_pull <- stringr::str_replace_all((my_bcfishpass(site = sit) %>% pull(!!col_to_pull)), c("\\{" = "","\\}" = "")) %>%
+    strsplit(., ",") %>% unlist()
+  fishbc::freshwaterfish %>% filter(Code %in% str_to_pull) %>% pull(CommonName) %>% stringr::str_to_lower() %>%
+    knitr::combine_words()
+}
+
+

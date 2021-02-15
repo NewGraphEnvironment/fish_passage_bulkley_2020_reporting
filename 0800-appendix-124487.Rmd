@@ -108,7 +108,7 @@ tab_hab_summary %>%
 ```{r photo-124487-01-prep, eval=T}
 my_photo1 = pull_photo_by_str(str_to_pull = '_d1_')
 
-my_caption1 = paste0('Typical habitat immediately downstream of PSCIS crossing ', my_site, '.')
+my_caption1 = paste0('Outlets of PSCIS crossing ', my_site, '.')
 
 ```
 

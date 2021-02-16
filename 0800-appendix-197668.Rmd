@@ -38,7 +38,7 @@ The `r my_pscis_info() %>% pull(stream_name)` watershed upstream of the highway 
 
 <br>
 
-Coffin Lake is a shallow lake (max depth 2m) located approximately 4.5km upstream of Lawson Road.  Ducks Unlimited raised water levels in Coffin Lake and a downstream wetland area by installing a 2m high earthen dam in the late 1980s [@hatlevik1985ReconnaissanceSurvey; @simpson1986DucksUnlimited; @ProvincialObstaclesFish]. 
+Coffin Lake is a shallow lake (max depth 2m) located approximately 4.5km upstream of Lawson Road.  In the late 1980s, Ducks Unlimited raised water levels in Coffin Lake and a downstream wetland area by installing a 63m long X 2.3m high earthen dam incorporating a variable crest weir capable of a 1.0m drawdown.  Additionally excavated level ditching (1800m) within the sedge willow meadow was planned.The intent of the works was to provide a more secure and stable water regime, improve water/cover interspersion and provide territorial, loafing and nesting sites for waterfowl [@hatlevik1985ReconnaissanceSurvey; @simpson1986DucksUnlimited; @ProvincialObstaclesFish]. Feedback on the preliminary development proposal by a regulatory fisheries technician noted that an ideal dam structure would be one providing options to either allow fish passage or comprise a complete barrier.  Documentation detailing specifics of the final design of the dam and potential fishway was not obtained with a search of available literature. 
 
 <br>
 
@@ -95,7 +95,7 @@ The stream was surveyed downstream from the culvert for `r my_priority_info(loc 
 
 ## Fish Sampling {-}
 
-Minnowtrapping was conducted upstream and downstream of `r as.character(my_site)`.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site2, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured upstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish captured downstream `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197668-05) - \\@ref(fig:photo-197668-06))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-197668-d3))"))`. Species captured upstream included coho and rainbow trout with coho, sucker and rainbow trout captured downstream.  Results are summarized in Table \@ref(tab:tab-fish-mt-197668).
+Minnowtrapping was conducted upstream and downstream of `r as.character(my_site)`.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured upstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish captured downstream `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197668-05) - \\@ref(fig:photo-197668-06))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-197668-d3))"))`. Species captured upstream included coho and rainbow trout with coho, sucker and rainbow trout captured downstream.  Results are summarized in Table \@ref(tab:tab-fish-mt-197668).
 
 
 <br>
@@ -165,7 +165,7 @@ grid::grid.raster(get_img(photo = my_photo1))
 ```{r photo-197668-02-prep}
 my_photo2 = pull_photo_by_str(str_to_pull = '_d2_')
 
-my_caption2 = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
+my_caption2 = paste0('Coffin Creek downstream of PSCIS crossing ', my_site, ' at confluence with the Bulkley River.')
 ```
 
 ```{r photo-197668-02, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
@@ -201,7 +201,7 @@ grid::grid.raster(get_img(photo = my_photo1))
 ```{r photo-197668-04-prep}
 my_photo2 = pull_photo_by_str(str_to_pull = '_u2_')
 
-my_caption2 = paste0('Habitat upstream of PSCIS crossing ', my_site2, '.')
+my_caption2 = paste0('Habitat 2.1km upstream of PSCIS crossing ', my_site2, '.')
 
 ```
 

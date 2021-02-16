@@ -24,7 +24,7 @@ preview_chapter('test.Rmd')
 
 #######################################################################################
 ##to build both a paged html version and a gitbook follow the steps below
-
+source('R/photos-extract-metadata.R')
 
 ##change your VErsion #
 

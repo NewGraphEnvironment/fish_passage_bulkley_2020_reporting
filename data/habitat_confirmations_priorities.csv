@@ -22,8 +22,8 @@
 21,Helps Creek,124500_ds,415,,,,,,,,,
 22,Moan Creek,124501_us,520,,yes,,,low,,,,
 23,Moan Creek,124501_ds,450,,yes,,,,,,,
-24,Coffin Creek,197668_ds,300,,yes,,,,,,,
-25,Coffin Creek,124504_us,415,,yes,,,high,,,,yes
+24,Coffin Creek,197668_ds,300,,yes,,high,,,,,
+25,Coffin Creek,124504_us,415,,yes,,high,high,,4000,"CO, CSU,CT,DV,LSU,MW,RB,RSC",yes
 26,Barren Creek,3042_us,400,,,,,moderate,,,,yes
 27,Barren Creek,3042_ds,260,,,,,,,,,
 28,Tributary to McQuarrie Creek,3139_ds,285,yes,,,,,,,,
@@ -42,4 +42,4 @@
 58,Gibson Creek,195288_us,180,,,yes,moderate,high,,4500,"RB, CT",
 59,Barren Creek,197665_us,100,,,,,moderate,,,,
 60,Moan Creek,197667_us,100,,,,,high,,,,
-61,Coffin Creek,197668_us,40,,,,,high,,,,
+61,Coffin Creek,197668_us,40,,,,high,high,,4000,"CO, CSU,CT,DV,LSU,MW,RB,RSC",

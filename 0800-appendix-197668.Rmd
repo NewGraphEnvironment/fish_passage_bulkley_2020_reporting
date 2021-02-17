@@ -34,7 +34,7 @@ PSCIS crossings `r as.character(my_site)` and `r as.character(my_site2)` are loc
 ## Background {-}
 
 
-The `r my_pscis_info() %>% pull(stream_name)` watershed upstream of the highway is approximately `r round(my_bcfishpass() %>% pull(watershed_upstr_ha)/100,1)`km^2^ in area containing an estimated `r my_bcfishpass() %>% pull(total_lakereservoir_ha)`ha of lake and `r my_bcfishpass() %>% pull(total_wetland_ha)`ha of wetland.  The watershed elevation ranges from approximately 1400m to 530m at the railway where `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream. Numerous fish species have been documented upstream of both crossings including coho salmon, `r my_fish_sp()` [@data_fish_obs; @wilson_rabnett2007FishPassage]. 
+The `r my_pscis_info() %>% pull(stream_name)` watershed upstream of the railway is approximately `r round(my_bcfishpass() %>% pull(watershed_upstr_ha)/100,1)`km^2^ in area containing an estimated `r my_bcfishpass() %>% pull(total_lakereservoir_ha)`ha of lake and `r my_bcfishpass() %>% pull(total_wetland_ha)`ha of wetland.  The watershed elevation ranges from approximately 1400m to 530m at the railway where `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream. Numerous fish species have been documented upstream of both crossings including coho salmon, `r my_fish_sp()` [@data_fish_obs; @wilson_rabnett2007FishPassage]. 
 
 <br>
 

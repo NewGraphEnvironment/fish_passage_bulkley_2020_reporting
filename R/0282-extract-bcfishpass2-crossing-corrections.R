@@ -32,12 +32,20 @@ dbGetQuery(conn,
 dbGetQuery(conn,
            "SELECT column_name,data_type
            FROM information_schema.columns
-           WHERE table_name='crossings'")
+           WHERE table_name='fiss_fish_obsrvtn_pnt_sp'")
 
 dbGetQuery(conn,
            "SELECT a.total_lakereservoir_ha
            FROM bcfishpass.crossings a
            WHERE stream_crossing_id IN (58159,58161,123446)")
+
+dbGetQuery(conn,
+           "SELECT o.observation_date, o.point_type_code  FROM whse_fish.fiss_fish_obsrvtn_pnt_sp o;") %>%
+  filter(observation_date > '1900-01-01' &
+         observation_date < '2021-02-01') %>%
+  group_by(point_type_code) %>%
+  summarise(min = min(observation_date, na.rm = T),
+            max = max(observation_date, na.rm = T))
 
 
 #first thing we want to do is match up our pha

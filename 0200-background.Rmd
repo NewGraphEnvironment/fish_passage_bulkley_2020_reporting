@@ -22,6 +22,15 @@ The Bukley River  is an 8th  order stream that drains an area of 7,762 km^2^ in 
 
 <br>
 
+Numerous water licenses are held within the watershed with a potential over-allocation of flows identified during low flow  periods  [@ilmb2007MoriceLand].  Changes  to  the  climate  systems  are  causing  impacts  to  natural  and  human systems  on  all  continents  with  alterations  to  hydrological  systems  caused  by  changing  precipitation  or melting  snow  and  ice  increasing  the  frequency  and  magnitude  of  extreme  events  such  as  floods  as droughts [@ipcc2014Climatechange; @eccc2016Climatedata].  These changes are resulting in modifications to the quantity and quality of water resources throughout British Columbia and are likely to compound issues related to drought and flooding in the Bulkley River watershed. 
+
+<br>
+
+As  a  major  access  corridor  to  northwestern  British  Columbia,  Highway  16  and  the  Canadian  National Railway  are  major  linear  developments  that  run  along  the  Bulkley  River  within  and  adjacent  to  the floodplain with numerous crossing structures blocking fish access to important fish habitats.  Additionally, as the valley bottom  contains some of the most productive land in the area there has been extensive conversion  of  riparian  ecosystems  to  hayfields  and  pastures  leading  to  alterations  in  flow  regimes, increases  in  water  temperatures,  reduced  streambank  stability,  loss  of  overstream  cover  and channelization [@ilmb2007MoriceLand; @wilson_rabnett2007FishPassage]. 
+
+<br>
+
+
 ```{r overview-map, fig.cap = 'Overview map of Study Areas',eval=T}
 knitr::include_graphics("fig/BulkelyMoriceOverview2.jpeg")
 ```

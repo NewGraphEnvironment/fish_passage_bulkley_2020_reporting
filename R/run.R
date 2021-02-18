@@ -3,13 +3,16 @@
 # preview_chapter('0300-method.Rmd')
 # preview_chapter('0400-results.Rmd')
 # preview_chapter('0200-background.Rmd')
+preview_chapter('0800-appendix-124500.Rmd') #helps
 preview_chapter('0800-appendix-195290.Rmd')
 preview_chapter('0800-appendix-197360.Rmd')
 preview_chapter('0800-appendix-195290.Rmd')
 preview_chapter('0800-appendix-197658.Rmd')
 preview_chapter('0800-appendix-197663.Rmd')
+preview_chapter('0800-appendix-197667.Rmd') #moan
 preview_chapter('0800-appendix-197668.Rmd') #coffin
 preview_chapter('0800-appendix-123445.Rmd')
+preview_chapter('0200-background.Rmd')
 preview_chapter('test.Rmd')
 ##this is how we clean up our bib file.  We need to find a way to add together the packages.bib file with the book.bib file first though.
 # citr::tidy_bib_file(

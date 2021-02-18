@@ -1,0 +1,193 @@
+
+```{r setup-197640, eval = F}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
+source('R/packages.R')
+source('R/functions.R')
+source('R/functions-phase2.R')
+source('R/tables-phase2.R')
+source('R/tables.R')
+source('R/extract-fish.R')
+source('R/functions-fish.R')
+
+
+```
+
+
+
+```{r  load-data-197640}
+my_site <- 197640
+
+```
+
+`r appendix_title()`
+
+## Site Location {-}
+
+PSCIS crossing `r as.character(my_site)` is located on a `r my_pscis_info() %>% pull(stream_name)` on `r my_overview_info() %>% pull(road_name)` approximately 18km south of Houston and immediately south of the Carrier FSR turn-off.  The culvert is located approximately `r my_priority_info(loc = 'ds') %>% pull(survey_length_m)`m upstream from the confluence with the Bulkley River. `r my_overview_info() %>% pull(road_name)` is a the responsibility of the B.C. Ministry of Transportation and Infrastructure.
+
+
+<br>
+
+## Background {-}
+
+
+At crossing `r as.character(my_site)`, `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r round(my_bcfishpass() %>% pull(watershed_upstr_ha)/100,1)`km^2^ containing an estimated `r my_bcfishpass() %>% pull(total_wetland_ha)`ha of wetland. The elevation of the watershed ranges from a maximum of 1460m to 820m at PSCIS crossing `r as.character(my_site)`. Upstream of `r my_overview_info() %>% pull(road_name)`, `r my_fish_sp()` have been previously recorded as present. Chinook, coho and pink salmon noted as spawning downstream in Buck Creek [@data_fish_obs; @wilson_rabnett2007FishPassage; @ncfdc1998MidBulkleyDetailed]. Pink salmon have been noted as spawning in the first reach with coho spawners noted to Reach 3 and chinook spawners to Reach 5 where the subject tributary enters the mainstem [@ncfdc1998MidBulkleyDetailed].  @dfo1991FishHabitat report that Buck Creek supports a small chinook population ranging from 12-100 spawners. 
+
+<br>
+
+Three water temperature sensors have been deployed on the Buck Creek mainstem since 2016 [@westcott2020UpperBulkley]. The closest water sensor to the subject stream is near the 9km mark of Buck Flats Road approximately 100m upstream of the bridge on the left bank cabled to alder in run habitat (UTM: 9U.653072.6019700).  The sensor has been gathering water temperature data at 1hour intervals since 2017 with data available through the Skeena Salmon Data Centre [@dfo/flnro2019WaterTemperature]. 
+
+<br>
+
+There are multiple tributaries entering the mainstem of the subject stream upstream of crossing `r as.character(my_site)` containing numerous modelled road stream crossings however these tributaries are not expected to contain valuable habitats due to the small size of their contributing watersheds.  
+
+<br>
+
+PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up following 2020 Phase 1 - fish passage assessments that targeted all major streams in the Buck Creek watershed.  Crossing `r as.character(my_site)` was noted as located on the stream with the highest value habitat in the watershed that was potentially blocked to anadromous species by a road-stream crossing structure.  A map of the watershed is provided in map attachment [`r my_bcfishpass() %>% pull(dbm_mof_50k_grid)`](`r my_mapsheet()`).
+
+<br>
+
+
+## Stream Characteristics at Crossing {-}
+
+At the time of the survey, the culvert under `r my_overview_info() %>% pull(road_name)` was un-embedded, non-backwatered and ranked as a barrier to upstream fish passage according to the provincial protocol [@fish_passage_assessments]. The pipe was `r my_pscis_info() %>% pull(diameter_or_span_meters)`m in diameter with a length of `r my_pscis_info() %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info() %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info() %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info() %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-197640)). Water temperature was `r my_habitat_info3(row = 'temperature c')`$^\circ$C, pH was `r my_habitat_info3(row = 'p h')` and conductivity was `r my_habitat_info3(row = 'conductivity m s cm')`uS/cm.
+
+
+<br>
+
+```{r eval=F}
+##this is useful to get some comments for the report
+hab_site %>% filter(site == my_site & location == 'us') %>% pull(comments)
+my_priority <-  my_priority_info()
+
+```
+
+## Stream Characteristics Downstream {-}
+
+The stream was surveyed downstream from the culvert for `r my_priority_info(loc = 'ds') %>% pull(survey_length_m)`m to the confluence with Buck Creek `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197640-01) - \\@ref(fig:photo-197640-02))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-197640-d1))"))`. Total cover amount was rated as `r my_habitat_info2(loc = 'ds') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'ds') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'ds') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197640)). The average channel width was `r my_habitat_info3(loc = 'ds', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'ds', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'ds', row = 'average gradient percent')`%. The dominant substrate was `r my_habitat_info3(loc = 'ds', row = "bed material dominant")` with `r my_habitat_info3(loc = 'ds', row = "bed material subdominant")` subdominant. A fish (130mm) was observed in the culvert outlet pool and a substance suspected to be didymo was noted on the substrate.  The habitat was rated as `r my_priority_info(loc = 'ds') %>%  pull(hab_value)` value as it was considered an important migration corridor with habitat suitable for fry and juvenile salmonid rearing. 
+
+<br>
+
+## Stream Characteristics Upstream {-}
+
+The stream was surveyed immediately upstream from `r as.character(my_site)` for approximately `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197640-03) - \\@ref(fig:photo-197640-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-197640-d2))"))`. Within the area surveyed, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197640)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  The dominant substrate was `r my_habitat_info3(loc = 'us', row = "bed material dominant")` with `r my_habitat_info3(loc = 'us', row = "bed material subdominant")` subdominant. Rare pockets of gravel suitable for spawning resident, fluvial and anadromous salmonids were noted. The stream appeared to be aggraded with side bars common.  One salmonid (110mm) was observed just upstream of `r my_overview_info() %>% pull(road_name)`. Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` value with moderate rearing potential for fry and juvenile salmonids. 
+
+<br>
+
+One crossing (PSCIS 197647) was assessed on an upstream tributary crossed by the Carrier FSR (Table \@ref(tab:tab-culvert-197647)).  This tributary that enters the subject stream approximately 3.3km upstream of `r as.character(my_site)`, was dry at the time of the survey and did not provide any viable fish habitat. Numerous fish inventory sample sites were located downstream of the location of 197647 within the adjacent tributary to the subject stream with no fish observations recorded in two seasons of sampling [@moeStreamInventorySample].
+
+<br>
+
+## Structure Remediation and Cost Estimate {-}
+
+Replacement of PSCIS crossing `r as.character(my_site)` with a bridge (`r my_pscis_info() %>% pull(recommended_diameter_or_span_meters)`m span) is recommended. The cost of the work is estimated at \$`r format(my_cost_estimate() %>% pull(cost_est_1000s) * 1000, big.mark = ',')` for a cost benefit of `r as.character(my_cost_estimate() %>% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %>% pull(cost_area_net))`m^2^/\$1000.
+
+
+<br>
+
+
+## Conclusion {-}
+
+A conservative estimate of mainstem habitat upstream of crossing `r as.character(my_site)` is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km to the top end of a 71ha wetland where rainbow trout have been recorded. Habitat in the areas surveyed upstream of the culvert were rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing with areas of wetland habitat likely suitable for rainbow trout, coho and steelhead rearing. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.  The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. 
+
+<!-- this is a bit strange but the pages.js will not build beyond this so we leave for now -->
+<!-- `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")` -->
+
+<br>
+
+```{r tab-culvert-197640, eval = T}
+print_tab_summary()
+
+```
+
+<br>
+
+```{r tab-culvert-197647, eval = T}
+print_tab_summary(dat = pscis_all, 
+                  site = 197647, 
+                  site_photo_id = 1804986)
+
+```
+
+
+<br>
+
+```{r tab-habitat-summary-197640}
+tab_hab_summary %>% 
+  filter(Site  == my_site) %>% 
+  # select(-Site) %>% 
+  my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, '.')) 
+
+```
+
+<br>
+
+
+```{r photo-197640-01-prep, eval=T}
+my_photo1 = pull_photo_by_str(str_to_pull = '_d1_')
+
+my_caption1 = paste0('Habitat downstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-197640-01, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(get_img(photo = my_photo1))
+```
+
+<br>
+
+```{r photo-197640-02-prep}
+my_photo2 = pull_photo_by_str(str_to_pull = '_d2_')
+
+my_caption2 = paste0('Habitat downstream of crossing ', my_site, ' at the confluence with Buck Creek.')
+```
+
+```{r photo-197640-02, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(get_img(photo = my_photo2))
+
+```
+
+<br>
+
+```{r photo-197640-d01, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(get_img_path(photo = my_photo1))
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(get_img_path(photo = my_photo2))
+```
+
+
+```{r photo-197640-03-prep}
+my_photo1 = pull_photo_by_str(str_to_pull = '_u1_')
+
+my_caption1 = paste0('Habitat upstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-197640-03, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(get_img(photo = my_photo1))
+
+```
+
+<br>
+
+```{r photo-197640-04-prep}
+my_photo2 = pull_photo_by_str(str_to_pull = '_u2_')
+
+my_caption2 = paste0('Habitat upstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-197640-04, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(get_img(photo = my_photo2))
+```
+
+```{r photo-197640-d02, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(get_img_path(photo = my_photo1))
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(get_img_path(photo = my_photo2))
+```

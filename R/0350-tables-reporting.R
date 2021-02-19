@@ -118,11 +118,7 @@ tab_map_prep <- left_join(
   by = 'pscis_crossing_id'
 )
 
-tab_phase1_map_prep <- left_join(
-  phase1_priorities,
-  select(pscis_phase1_reassessments, pscis_crossing_id, amalgamated_crossing_id, stream_name, road_name), # %>% st_drop_geometry()
-  by = 'pscis_crossing_id'
-)
+
 
 tab_map <- tab_map_prep %>%
   # mutate(pscis_crossing_id = as.character(pscis_crossing_id),
@@ -147,23 +143,5 @@ tab_map <- tab_map_prep %>%
   #                                   'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', amalgamated_crossing_id,
   #                                   '/crossing_all.JPG', '>', 'photo link', '</a>'))
 
-# tab_phase1_map <- tab_phase1_map_prep %>%
-#   # mutate(pscis_crossing_id = as.character(pscis_crossing_id),
-#   #        my_crossing_reference = as.character(my_crossing_reference)) %>%
-#   # mutate(ID = case_when(
-#   #   !is.na(pscis_crossing_id) ~ pscis_crossing_id,
-#   #   T ~ paste0('*', my_crossing_reference
-#   #   ))) %>%
-#   # sf::st_as_sf(coords = c("utm_easting", "utm_northing"),
-#   #              crs = 26911, remove = F) %>%
-#   # sf::st_transform(crs = 4326) %>%
-#   mutate(priority_phase1 = case_when(priority_phase1 == 'mod' ~ 'moderate',
-#                                      T ~ priority_phase1)) %>%
-#   mutate(data_link = paste0('<a href =',
-#                             'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/fig/sum/', pscis_crossing_id,
-#                             '.png', '>', 'data link', '</a>')) %>%
-#   dplyr::mutate(photo_link = paste0('<a href =',
-#     'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', amalgamated_crossing_id,
-#     '/crossing_all.JPG', '>', 'photo link', '</a>'))
 
 rm(tab_phase1_map_prep)

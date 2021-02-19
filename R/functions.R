@@ -332,6 +332,11 @@ appendix_title2 <- function(site = my_site, site2 = my_site2){
   paste0('# Appendix - ', site, ' & ', site2, ' - ', my_overview_info() %>% pull(stream_name), ' {-}')
 }
 
+##when we have 3 crosings
+appendix_title3 <- function(site = my_site, site2 = my_site2, site3 = my_site3){
+  paste0('# Appendix - ', site, ' & ', site2, ' & ', site3, ' - ', my_overview_info() %>% pull(stream_name), ' {-}')
+}
+
 
 appendix_subtitle <- function(){
   paste0('**', my_overview_info() %>% pull(road_name), ' - ', my_overview_info() %>% pull(stream_name), '**')

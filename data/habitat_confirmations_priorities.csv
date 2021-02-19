@@ -26,8 +26,8 @@
 25,Coffin Creek,124504_us,415,,yes,,high,high,,4000,"CO, CSU,CT,DV,LSU,MW,RB,RSC",yes
 26,Barren Creek,3042_us,400,,,,,moderate,,,,yes
 27,Barren Creek,3042_ds,260,,,,,,,,,
-28,Tributary to McQuarrie Creek,3139_ds,285,yes,,,,,,,,
-29,Tributary to McQuarrie Creek,3139_us,625,yes,,,,moderate,,,,
+28,Tributary to McQuarrie Creek,3139_ds,285,yes,,,high,,,,,
+29,Tributary to McQuarrie Creek,3139_us,625,yes,,,high,moderate,,7300,RB,
 30,Johnny David Creek,3054_ds,350,,,,moderate,,,,,
 31,Johnny David Creek,3054_us,725,,,,moderate,moderate,,7500,RB,
 32,Johnny David Creek,197663_us,690,yes,yes,,high,high,,10000,"CO, RB, MW",

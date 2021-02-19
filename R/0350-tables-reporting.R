@@ -114,7 +114,7 @@ tab_map_prep <- left_join(
     sf::st_as_sf(coords = c("easting", "northing"),
                  crs = 26909, remove = F) %>% ##don't forget to put it in the right crs buds
     sf::st_transform(crs = 4326), ##convert to match the bcfishpass format,
-  phase1_priorities %>% select(-utm_zone:utm_northing, priority_phase1, -habitat_value, -barrier_result), # %>% st_drop_geometry()
+  phase1_priorities %>% select(-utm_zone:utm_northing, -my_crossing_reference, priority_phase1, -habitat_value, -barrier_result), # %>% st_drop_geometry()
   by = 'pscis_crossing_id'
 )
 
@@ -136,12 +136,16 @@ tab_map <- tab_map_prep %>%
   # sf::st_transform(crs = 4326) %>%
   mutate(priority_phase1 = case_when(priority_phase1 == 'mod' ~ 'moderate',
                                      T ~ priority_phase1)) %>%
-  mutate(data_link = paste0('<a href =',
-                            'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/fig/sum/', pscis_crossing_id,
-                            '.png', '>', 'data link', '</a>')) %>%
-  dplyr::mutate(photo_link = paste0('<a href =',
-                                    'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', amalgamated_crossing_id,
-                                    '/crossing_all.JPG', '>', 'photo link', '</a>'))
+  mutate(data_link = paste0('<a href =', 'sum/', pscis_crossing_id,
+                            '.html', '>', 'data link', '</a>')) %>%
+  mutate(photo_link = paste0('<a href =', 'data/photos/', amalgamated_crossing_id,
+                             '/crossing_all.JPG', '>', 'photo link', '</a>'))
+  # mutate(data_link = paste0('<a href =',
+  #                           'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/fig/sum/', pscis_crossing_id,
+  #                           '.png', '>', 'data link', '</a>')) %>%
+  # dplyr::mutate(photo_link = paste0('<a href =',
+  #                                   'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', amalgamated_crossing_id,
+  #                                   '/crossing_all.JPG', '>', 'photo link', '</a>'))
 
 tab_phase1_map <- tab_phase1_map_prep %>%
   # mutate(pscis_crossing_id = as.character(pscis_crossing_id),

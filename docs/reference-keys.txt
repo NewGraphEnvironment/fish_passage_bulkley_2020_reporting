@@ -16,6 +16,12 @@ tab:tab-overview
 tab:unnamed-chunk-7
 tab:cost-est-phase-2
 tab:tab-habitat-summary
+tab:tab-culvert-3139
+tab:tab-habitat-summary-3139
+fig:photo-3139-01
+fig:photo-3139-02
+fig:photo-3139-03
+fig:photo-3139-04
 tab:tab-culvert-58159
 tab:tab-culvert-58158
 tab:tab-habitat-summary-58159
@@ -73,6 +79,13 @@ tab:tab-culvert-197669
 tab:tab-fish-site-197360
 tab:tab-fish-dens-197360
 fig:plot-fish-box-197360
+tab:tab-culvert-197640
+tab:tab-culvert-197647
+tab:tab-habitat-summary-197640
+fig:photo-197640-01
+fig:photo-197640-02
+fig:photo-197640-03
+fig:photo-197640-04
 tab:tab-culvert-197658
 tab:tab-habitat-summary-197658
 tab:tab-fish-mt-197658
@@ -141,10 +154,3 @@ reporting
 results-and-discussion
 phase-1
 phase-2
-tab:tab-culvert-197640
-tab:tab-culvert-197647
-tab:tab-habitat-summary-197640
-fig:photo-197640-01
-fig:photo-197640-02
-fig:photo-197640-03
-fig:photo-197640-04

@@ -488,7 +488,7 @@ Reporting was generated with `bookdown` [@bookdown2016] from `Rmarkdown` [@R-rma
 
 # Results and Discussion
 
-Field assessments were conducted between `r format(min(pscis_phase1$date), format="%B %d %Y")` and `r format(max(pscis_phase1$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio, New Graph Environment and Kyle Prince, P,Biol. `r if(gitbook_on)knitr::asis_output("Results of Phase 1 and Phase 2 assessments are summarized in Figure \\@ref(fig:map-interactive) with additional details provided in sections below.")` 
+Field assessments were conducted between `r format(min(pscis_phase1$date), format="%B %d %Y")` and `r format(max(pscis_phase1$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio. and Kyle Prince, P.Biol. `r if(gitbook_on)knitr::asis_output("Results of Phase 1 and Phase 2 assessments are summarized in Figure \\@ref(fig:map-interactive) with additional details provided in sections below.")` 
 
 <br>
 
@@ -542,7 +542,8 @@ map <- leaflet(height=500, width=780) %>%
     title = "Fish Passage Priorities",
   ) %>%
     addCircleMarkers(data=tab_map %>% filter(source %like% 'phase1' | source %like% 'pscis_reassessments'),
-    label = tab_map$pscis_crossing_id,
+    label = tab_map %>% filter(source %like% 'phase1' | source %like% 'pscis_reassessments') %>% pull(pscis_crossing_id),               
+    # label = tab_map$pscis_crossing_id,
     labelOptions = labelOptions(noHide = F, textOnly = TRUE),
     popup = leafpop::popupTable(x = select((tab_map %>% st_set_geometry(NULL) %>% filter(source %like% 'phase1' | source %like% 'pscis_reassessments')),
                                            Site = pscis_crossing_id, Priority = priority_phase1, Stream = stream_name, Road = road_name, `Habitat value`= habitat_value, `Barrier Result` = barrier_result, `Culvert data` = data_link, `Culvert photos` = photo_link),

@@ -141,3 +141,10 @@ reporting
 results-and-discussion
 phase-1
 phase-2
+tab:tab-culvert-197640
+tab:tab-culvert-197647
+tab:tab-habitat-summary-197640
+fig:photo-197640-01
+fig:photo-197640-02
+fig:photo-197640-03
+fig:photo-197640-04

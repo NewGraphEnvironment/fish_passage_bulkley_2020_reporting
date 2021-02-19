@@ -14,6 +14,8 @@ conn <- rws_connect("data/bcfishpass.sqlite")
 bcfishpass_phase2 <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk", conn = conn) %>%
   filter(stream_crossing_id %in% (pscis_phase2 %>% pull(pscis_crossing_id))) %>%
   mutate(downstream_route_measure = as.integer(downstream_route_measure))
+bcfishpass_all <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk", conn = conn) %>%
+  mutate(downstream_route_measure = as.integer(downstream_route_measure))
 rws_disconnect(conn)
 
 

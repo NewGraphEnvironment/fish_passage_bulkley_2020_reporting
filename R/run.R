@@ -7,6 +7,7 @@ preview_chapter('0800-appendix-124500.Rmd') #helps
 preview_chapter('0800-appendix-195290.Rmd')
 preview_chapter('0800-appendix-197360.Rmd')
 preview_chapter('0800-appendix-195290.Rmd')
+preview_chapter('0800-appendix-197640.Rmd') #buck
 preview_chapter('0800-appendix-197658.Rmd')
 preview_chapter('0800-appendix-197663.Rmd')
 preview_chapter('0800-appendix-197667.Rmd') #moan
@@ -27,7 +28,7 @@ preview_chapter('test.Rmd')
 
 #######################################################################################
 ##to build both a paged html version and a gitbook follow the steps below
-source('R/photos-extract-metadata.R')
+
 
 ##change your VErsion #
 
@@ -59,6 +60,7 @@ file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')
 
 
 ##  make the site
+source('R/photos-extract-metadata.R')
 rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')
 
 

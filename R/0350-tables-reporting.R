@@ -97,8 +97,11 @@ tab_hab_map <- left_join(
                crs = 26909, remove = F) %>%
   sf::st_transform(crs = 4326) %>%
   ##changed this to docs .html from fig .png
+  # mutate(data_link = paste0('<a href =',
+  #                           'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/docs/sum/', pscis_crossing_id,
+  #                           '.html', '>', 'data link', '</a>')) %>%
   mutate(data_link = paste0('<a href =',
-                            'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/docs/sum/', pscis_crossing_id,
+                            'sum/', pscis_crossing_id,
                             '.html', '>', 'data link', '</a>')) %>%
   # mutate(data_link = paste0('[data](fig/sum/', pscis_crossing_id, '.png)')) %>%
   mutate(photo_link = paste0('<a href =',

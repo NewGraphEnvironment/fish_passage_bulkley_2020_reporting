@@ -5,8 +5,8 @@
 4,Unnamed tributary to Blunt Creek,123795_us,650,,,,,moderate,,,,yes
 5,Porphyry Creek,124487_us,540,,,,high,high,,8000,"RB, DV",
 6,Porphyry Creek,124487_ds,145,,,,moderate,,,,,
-7,Unnamed Tributary to Buck Creek,197640_ds,70,,,,,,,,,
-8,Unnamed Tributary to Buck Creek,197640_us,535,,,,,high,,,,yes
+7,Unnamed Tributary to Buck Creek,197640_ds,70,,,,moderate,,,,,
+8,Unnamed Tributary to Buck Creek,197640_us,535,,,,moderate,high,,4200,RB,yes
 9,Byman Creek,197658_us,1400,,yes,,high,high,,6000,"CO,CSU,LNC,LSU,RB,RSC,ST",yes
 10,Byman Creek,197658_ds2,330,,,,high,,,,,
 11,Byman Creek,197658_ds1,300,,yes,,moderate,,,,,

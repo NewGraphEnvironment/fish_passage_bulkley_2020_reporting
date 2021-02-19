@@ -88,6 +88,8 @@ hab_loc_prep <- left_join(
 
 
 ##need to populate the coordinates before this will work
+####please note that the photos are only in those files ecause they are referenced in other parts
+##of the document
 tab_hab_map <- left_join(
   tab_cost_est_phase2 %>% filter(source %like% 'phase2'),
   hab_loc_prep %>% select(site, priority, utm_easting, utm_northing, comments),

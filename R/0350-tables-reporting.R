@@ -102,10 +102,12 @@ tab_hab_map <- left_join(
   #                           '.html', '>', 'data link', '</a>')) %>%
   mutate(data_link = paste0('<a href =', 'sum/', pscis_crossing_id,
                             '.html', '>', 'data link', '</a>')) %>%
+  mutate(photo_link = paste0('<a href =', 'data/photos/', pscis_crossing_id,
+                            '/crossing_all.JPG', '>', 'photo link', '</a>'))
   # mutate(data_link = paste0('[data](fig/sum/', pscis_crossing_id, '.png)')) %>%
-  mutate(photo_link = paste0('<a href =',
-                             'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', pscis_crossing_id,
-                             '/crossing_all.JPG', '>', 'photo link', '</a>'))
+  # mutate(photo_link = paste0('<a href =',
+  #                            'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', pscis_crossing_id,
+  #                            '/crossing_all.JPG', '>', 'photo link', '</a>'))
 
 tab_map_prep <- left_join(
   pscis_all %>%

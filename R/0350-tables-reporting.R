@@ -101,9 +101,9 @@ tab_hab_map <- left_join(
   #                           'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/docs/sum/', pscis_crossing_id,
   #                           '.html', '>', 'data link', '</a>')) %>%
   mutate(data_link = paste0('<a href =', 'sum/', pscis_crossing_id,
-                            '.html', '>', 'data link', '</a>')) %>%
+                            '.html', '>', 'data (right click - open in new tab)', '</a>')) %>%
   mutate(photo_link = paste0('<a href =', 'data/photos/', pscis_crossing_id,
-                            '/crossing_all.JPG', '>', 'photo link', '</a>'))
+                            '/crossing_all.JPG', '>', 'photos (right click - open in new tab)', '</a>'))
   # mutate(data_link = paste0('[data](fig/sum/', pscis_crossing_id, '.png)')) %>%
   # mutate(photo_link = paste0('<a href =',
   #                            'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', pscis_crossing_id,
@@ -137,9 +137,9 @@ tab_map <- tab_map_prep %>%
   mutate(priority_phase1 = case_when(priority_phase1 == 'mod' ~ 'moderate',
                                      T ~ priority_phase1)) %>%
   mutate(data_link = paste0('<a href =', 'sum/', pscis_crossing_id,
-                            '.html', '>', 'data link', '</a>')) %>%
+                            '.html', '>', 'data (right click - open in new tab)', '</a>')) %>%
   mutate(photo_link = paste0('<a href =', 'data/photos/', amalgamated_crossing_id,
-                             '/crossing_all.JPG', '>', 'photo link', '</a>'))
+                             '/crossing_all.JPG', '>', 'photos (right click - open in new tab)', '</a>'))
   # mutate(data_link = paste0('<a href =',
   #                           'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/fig/sum/', pscis_crossing_id,
   #                           '.png', '>', 'data link', '</a>')) %>%

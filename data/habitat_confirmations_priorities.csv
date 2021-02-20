@@ -1,8 +1,8 @@
 ﻿reference_number,gazetted_names,local_name,survey_length_m,electrofishing,minnowtrapping,uav_survey,hab_value,priority,comments,upstream_habitat_length_m,species_codes,future_sampling_recommended
-1,Unnamed tributary to Blunt Creek,123794_ds,250,,,,,,,,,
-2,Unnamed tributary to Blunt Creek,123795_ds,200,,,,,,,,,
-3,Unnamed tributary to Blunt Creek,123794_us,525,,,,,moderate,,,,yes
-4,Unnamed tributary to Blunt Creek,123795_us,650,,,,,moderate,,,,yes
+1,Unnamed tributary to Blunt Creek,123794_ds,250,,,,moderate,,,,,
+2,Unnamed tributary to Blunt Creek,123795_ds,200,,,,moderate,,,,,
+3,Unnamed tributary to Blunt Creek,123794_us,525,,,,moderate,moderate,,525,(RB),yes
+4,Unnamed tributary to Blunt Creek,123795_us,650,,,,moderate,moderate,,,,yes
 5,Porphyry Creek,124487_us,540,,,,high,high,,8000,"RB, DV",
 6,Porphyry Creek,124487_ds,145,,,,moderate,,,,,
 7,Unnamed Tributary to Buck Creek,197640_ds,70,,,,moderate,,,,,
@@ -12,20 +12,20 @@
 11,Byman Creek,197658_ds1,300,,yes,,moderate,,,,,
 12,Richfield Creek,197662_us,1200,,yes,,high,high,,2000,"CH,CO,LNC,LSU,RB,ST",yes
 13,Richfield Creek,197662_ds,300,,yes,,high,,,,,
-14,Barren Creek,197664_us,800,,,,,moderate,,,,
-15,Barren Creek,197664_ds,240,,,,,,,,,
-16,Barren Creek,197665_ds,20,,,,,,,,,
+14,Barren Creek,197664_us,800,,,,high,moderate,,6200,"CH,CO,CT,L,RB,SST,ST",
+15,Barren Creek,197664_ds,240,,,,high,,,,,
+16,Barren Creek,197665_ds,20,,,,high,,,6400,,
 17,Tyhee Creek,123445_ds,170,,,,moderate,,,,,
 18,Tyhee Creek,123445_us,540,,,,moderate,high,,6000,"BB,C,CAS,CC,CH,CM,CO,CT,GPW,LSU,MW,NSC,PCC,PK,PW,RB,RDC,RSC,SA,SK,ST,SU",
 19,Tyhee Creek,123446_us,100,,,,moderate,moderate,,5500,"BB,C,CAS,CC,CH,CM,CO,CT,GPW,LSU,MW,NSC,PCC,PK,PW,RB,RDC,RSC,SA,SK,ST,SU",
 20,Helps Creek,124500_us,1100,,,,moderate,low,,9000,"CT,DV,LNC,LSU,RB, ST, CO, L",
 21,Helps Creek,124500_ds,415,,,,high,,,,,
 22,Moan Creek,124501_us,520,,yes,,high,low,,2800,"CO, CH, RB, CT, DV, BT",
-23,Moan Creek,124501_ds,450,,yes,,,,,,,
+23,Moan Creek,124501_ds,450,,yes,,high,,,,,
 24,Coffin Creek,197668_ds,300,,yes,,high,,,,,
 25,Coffin Creek,124504_us,415,,yes,,high,high,,4000,"CO, CSU,CT,DV,LSU,MW,RB,RSC",yes
-26,Barren Creek,3042_us,400,,,,,moderate,,,,yes
-27,Barren Creek,3042_ds,260,,,,,,,,,
+26,Barren Creek,3042_us,400,,,,moderate,moderate,,1700,RB,yes
+27,Barren Creek,3042_ds,260,,,,moderate,,,,,
 28,Tributary to McQuarrie Creek,3139_ds,285,yes,,,high,,,,,
 29,Tributary to McQuarrie Creek,3139_us,625,yes,,,high,moderate,,7300,RB,
 30,Johnny David Creek,3054_ds,350,,,,moderate,,,,,
@@ -40,6 +40,6 @@
 39,Riddeck Creek,197360_ds,300,yes,,yes,moderate,,,,,
 40,Riddeck Creek,197360_us,1200,yes,,yes,high,high,,1200,"RB, LSU",
 58,Gibson Creek,195288_us,180,,,yes,moderate,high,,4500,"RB, CT",
-59,Barren Creek,197665_us,100,,,,,moderate,,,,
+59,Barren Creek,197665_us,100,,,,moderate,low,,6400,"CH,CO,CT,L,RB,SST,ST",
 60,Moan Creek,197667_us,100,,,,high,high,,3300,"CO, CH, RB, CT, DV, BT",
 61,Coffin Creek,197668_us,40,,,,high,high,,4000,"CO, CSU,CT,DV,LSU,MW,RB,RSC",

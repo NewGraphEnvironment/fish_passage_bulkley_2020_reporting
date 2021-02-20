@@ -11,12 +11,13 @@ preview_chapter('0800-appendix-195290.Rmd')
 preview_chapter('0800-appendix-197640.Rmd') #buck
 preview_chapter('0800-appendix-197658.Rmd')
 preview_chapter('0800-appendix-197663.Rmd')
+preview_chapter('0800-appendix-197665.Rmd') #barren
 preview_chapter('0800-appendix-197667.Rmd') #moan
 preview_chapter('0800-appendix-197668.Rmd') #coffin
 preview_chapter('0800-appendix-123445.Rmd')
 preview_chapter('0200-background.Rmd')
 preview_chapter('0400-results.Rmd')
-preview_chapter('test.Rmd')
+preview_chapter('index.Rmd')
 ##this is how we clean up our bib file.  We need to find a way to add together the packages.bib file with the book.bib file first though.
 # citr::tidy_bib_file(
 #   rmd_file = "Elk-River-Fish-Passage-2020.Rmd",

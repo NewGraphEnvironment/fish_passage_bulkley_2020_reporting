@@ -100,7 +100,8 @@ print_tab_summary()
 
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-culvert-197647, eval = T}
 print_tab_summary(dat = pscis_all, 

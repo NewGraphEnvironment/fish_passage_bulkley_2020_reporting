@@ -49,7 +49,7 @@ In the summer of 1998,  the Nadina Community Futures Development Corporation (NC
 
 <br>
  
-Overall, @ncfdc1998MidBulkleyDetailed report that, in an unimpacted state, the first reach of `r my_pscis_info() %>% pull(stream_name)` (including the 2.5km upstream of the culvert) is a critical and productive area for spawning and rearing particularly for coho and steelhead.  They also note that the area may be an important area for chinook salmon summer rearing and summer/fall spawning habitat as it contains larger substrate, greater foraging opportunities, greater channel complexity and cooler temperatures than present in the adjacent Bulkley mainstem.  The proximity of the reach to the mainstem provides easy access to overwintering habitat, mainstem rearing areas for older juvenile salmonids and options for refuge during high flow events.
+Overall, @ncfdc1998MidBulkleyDetailed report that, in an unimpacted state, the first reach of `r my_pscis_info() %>% pull(stream_name)` (including the 2.5km upstream of the culvert) is a critical and productive area for spawning and rearing particularly for coho and steelhead.  They also note that the area may be an important area for chinook salmon summer rearing and summer/fall spawning habitat as it contains larger substrate, greater foraging opportunities, greater channel complexity and cooler temperatures than present in the adjacent Bulkley mainstem.  The proximity of the reach to the mainstem provides easy access to overwintering habitat, mainstem rearing areas for older juvenile salmonids and options for refuge during high flow events.  Detailed prescriptions for restorative measures that address noted impacts are documented in @ncfdc1998MidBulkleyDetailed.
 
 <br>
 

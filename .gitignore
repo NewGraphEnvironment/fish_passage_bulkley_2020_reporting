@@ -18,7 +18,7 @@ R/pers_*
 *.gpkg-wal
 *.gpkg-shm
 #data/raw_input
-docs/Bulkley.pdf
+#docs/Bulkley.pdf
 #docs/Elk.tex
 docs/Bulkley.html
 *~$*

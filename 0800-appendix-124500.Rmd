@@ -86,16 +86,16 @@ Replacement of PSCIS crossing `r as.character(my_site)` with a bridge (`r my_psc
 A conservative estimate of mainstem and major tributary habitat upstream of crossing `r as.character(my_site)` is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km.  Habitat in the areas surveyed was rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing with habitat noted as particulary suitable for coho and cutthrout. Although classified as a "barrier" according to the provincial metric, the crossing is likely passable to adult salmonids during moderate flows.  During low flow periods, water depths in the culverts may be an impediment to upstream passage for large adult fish. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.  The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. 
 
 <!-- this is a bit strange but the pages.js will not build beyond this so we leave for now -->
-<!-- `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")` -->
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
-<br>
+<!-- <br> -->
 
 ```{r tab-culvert-124500, eval = T}
 print_tab_summary()
 
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-197666, eval = T}
 print_tab_summary(dat = pscis_all, site = 197666, site_photo_id = 2020083101)

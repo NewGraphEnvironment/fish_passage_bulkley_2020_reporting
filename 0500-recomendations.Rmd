@@ -1,0 +1,20 @@
+# Recommendations
+
+Recommendations for potential incorporation into watershed connectivity planning for the Bulkley and Morice watershed groups include:
+
+ * Refine barrier thresholds for road-stream crossing structures to explore metrics specific to life stage and life history types of species of interest. This will further focus efforts of potential remediation actions based on biological attributes (ex. timing of migration, size/direction of fish migrating, etc.) and could result in the consideration of physical works to alter crossing characteristics that can be significantly less costly than structure replacements (i.e. build up downstream area with rock riffles to decrease the outlet drop size).
+ 
+ * Model fish densities (fish/m^2^) vs. habitat/water quality characteristics (i.e. gradient, watershed size, channel size, alkalinity, elevation, etc.) using historically gathered electrofishing data to inform crossing prioritization and the monitoring of subsequent restoration actions.
+
+
+ * Continue to develop `bcfishpass` and other open source tools that are scalable, facilitate reproducible analysis and can be adapted to incorporate alternative fragmentation indicators and habitat gain/value metrics.
+ 
+ * Continue to conduct fish passage and habitat confirmation assessments at road and rail stream crossings at sites in the study areas prioritized through this project and future connectivity modelling.
+ 
+ * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration.
+ 
+ * Explore cost benefit relationships and the ethics of fish passage investments alongside the cost benefits and ethics of alternative restoration activities (ex. land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, etc.).
+ 
+ * Expand the scope of the working group to include the entire Skeena River watershed.  A Skeena level effort will facilitate a more inclusive decision making environment, open up opportunities for collaboration/funding to more governments/organizations/stakeholders and allow consideration of all potential remediation sites that could benefit Skeena fish populations.
+ 
+ * Continue to collaborate with potential partners to build relationships, explore perspectives and develop “road maps” for fish passage restoration in different situations (MoT roads, rail lines, permit roads of different usages, FSRs, etc.) – documenting the people involved, discussions and processes that are undertaken, funding options, synergies, measures of success, etc. Through this collaboration such as is occurring with the Bulkley River working group, continue to draft and implement plans for fish passage restoration investments as well as to monitor the impacts of those investments on fish populations.

@@ -39,8 +39,8 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, dpi=60, out.widt
 options(scipen=999)
 options(knitr.kable.NA = '--')
 
-# gitbook_on <- TRUE
-gitbook_on <- FALSE  ##we just need turn  this on and off to switch between gitbook and pdf via paged.js
+gitbook_on <- TRUE
+# gitbook_on <- FALSE  ##we just need turn  this on and off to switch between gitbook and pdf via paged.js
 
 ```
 

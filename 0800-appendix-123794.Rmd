@@ -23,28 +23,19 @@ my_site <- 123794
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` at km 19.3 of the `r my_overview_info() %>% pull(road_name)`.  The site is accessed via Moricetown Road through Witset approximately 40km north of Smithers.  The culvert is located approximately 670m upstream from the confluence with a major tributary to Blunt Creek.  Blunt Creek flows into the Suskwa River which in turn enters the Bulkley River near Hazleton BC. `r my_overview_info() %>% pull(road_name)` is the responsibility of the FLNR - Skeena Stikine District.
+PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` at km 19.3 of the `r my_overview_info() %>% pull(road_name)`.  The site is accessed via Moricetown Road through Witset approximately 40km north of Smithers.  The culvert is located approximately 670m upstream from the confluence with a major tributary to Blunt Creek.  Blunt Creek flows east into Harold Price Creek which in turn flows into the Suskwa River.  The Suskwa River enters the Bulkley River near Hazleton BC. `r my_overview_info() %>% pull(road_name)` is the responsibility of the FLNR - Skeena Stikine District.
 
-
-
-<br>
-
-```{r eval=F}
-##idon't think we need this here but...
-#During 2020 surveys, PSCIS culvert 197669 was documented on `r my_pscis_info() %>% pull(stream_name)`, 1.2km upstream of the FSR.
-
-```
 
 <br>
 
 ## Background {-}
 
 
-At crossing `r as.character(my_site)`, `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream. The elevation of the watershed ranges from a maximum of 1350m to 530m at PSCIS crossing `r as.character(my_site)`. Upstream of the `r my_overview_info() %>% pull(road_name)`, `r my_fish_sp()` have been previously recorded as present [@data_fish_obs]. @data_fish_obs also indicates that salmon (unidentified species) have been recorded in an adjacent tributary. 
+At crossing `r as.character(my_site)`, `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream. Watershed area upstream of the crossing is estimated at `r round(my_bcfishpass() %>% pull(watershed_upstr_ha)/100,1)`km^2^ ranging from a maximum elevation of 1260m to 1070m at PSCIS crossing `r as.character(my_site)`. Upstream of the `r my_overview_info() %>% pull(road_name)`, `r my_fish_sp()` have been previously recorded as present [@data_fish_obs]. @data_fish_obs also indicates that salmon (unidentified species) have been recorded in an adjacent tributary with cutthrout recorded nearby within multiple streams connecting to the greater stream network just downstream of the subject tributary.
 
 <br>
 
-PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @irvine2018AnalysisPriority because there was salmon noted nearby, due to the presence of a small lake upstream and because PSCIS data indicated a larger channel containing habitat rated as high value.  Although on a smaller stream, the crossing's location on a forest service road was considered advantageous as these sites are often eligible for funding through forestry supported funds such as the Land Based Investment Fund if restoration of fish passage is warranted.  A map of the watershed is provided in map attachment [`r my_bcfishpass() %>% pull(dbm_mof_50k_grid)`](`r my_mapsheet()`).
+PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @irvine2018AnalysisPriority because there was salmon noted nearby, due to the presence of a small lake upstream, and because PSCIS data indicated a larger channel containing habitat rated as high value.  Although on a smaller stream, the crossing's location on a forest service road was considered advantageous as these sites are often eligible for funding through forestry supported funds such as the Land Based Investment Fund if restoration of fish passage is warranted.  A map of the watershed is provided in map attachment [`r my_bcfishpass() %>% pull(dbm_mof_50k_grid)`](`r my_mapsheet()`).
 
 
 ## Stream Characteristics at Crossing {-}

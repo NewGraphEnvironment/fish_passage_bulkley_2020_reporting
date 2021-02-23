@@ -1,0 +1,5 @@
+species_code,spawn_gradient_max,spawn_channel_width_min,spawn_channel_width_max,rear_gradient_max,rear_channel_width_max,rear_lake_ha_min,rear_wetland_multiplier,rear_lake_multiplier
+CH,"0.03 (Kirsch et al. 2004, Busch et al. 2011, Cooney and Holzer 2006)","3.7 (Busch et al. 2011, Cooney and Holzer 2006)",50 (Cooney and Holzer 2006),"0.05 (Woll et al. 2017, Porter et al. 2008)",15 (Porter et al. 2008),,,
+CO,"0.05 (Roberge et al. 2002, Sloat et al. 2017)",2 (Sloat et. al 2017),50,"0.05 (Kirsch et al. 2004, Porter et al. 2008, Rosenfeld et al. 2000)",15,,1.5,
+ST,"0.04 (Scheer and Steel 2006, Cooney and Holzer 2006)",3.8 (Cooney and Holzer 2006),50 (Cooney and Holzer 2006),0.074 (Porter et al. 2008),15 (Porter et al. 2008),,,
+SK,"0.02 (Lake 1999, Hoopes 1972)",2 (Woll et al. 2017),50 (Woll et al. 2017),,,200 (Woll et al. 2017),,1.5

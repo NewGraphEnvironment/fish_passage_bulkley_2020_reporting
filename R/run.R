@@ -4,6 +4,8 @@
 # preview_chapter('0400-results.Rmd')
 # preview_chapter('0200-background.Rmd')
 preview_chapter('0800-appendix-003139.Rmd') #mcquarrie
+preview_chapter('0800-appendix-123795.Rmd') #tirb to blunt
+preview_chapter('0800-appendix-124487.Rmd') #porphyryr
 preview_chapter('0800-appendix-124500.Rmd') #helps
 preview_chapter('0800-appendix-195290.Rmd')
 preview_chapter('0800-appendix-197360.Rmd')

@@ -34,8 +34,8 @@ hydatr_info <- as.data.frame(hydat_station_info(tidyhat_info$STATION_NUMBER))
 # hydrograph
 
 
-hydrograph_print <- hydrograph[["Daily_Statistics"]]
-hydrograph_print
+# hydrograph_print <- hydrograph[["Daily_Statistics"]]
+# hydrograph_print
 # ggsave(plot = hydrograph_print, file="./fig/hydrology1.png",
 #        h=3.4, w=5.11, units="in", dpi=300)
 
@@ -51,7 +51,7 @@ hydrograph1_caption <- hydatr_info$title
 hydrograph_stats_print <- fasstr::plot_data_screening3(station_number = station)[["Data_Screening"]] + ggdark::dark_theme_bw() ##first version is not dark
 hydrograph_stats_print
 
-ggsave(plot = hydrograph_stats_print, file=paste0("./fig/hydrology_stats", station, ".png"),
+ggsave(plot = hydrograph_stats_print, file=paste0("./fig/hydrology_stats_", station, ".png"),
        h=3.4, w=5.11, units="in", dpi=300)
 
 ##another way to make the graph
@@ -154,3 +154,4 @@ plot
 
 ggsave(plot = plot, file=paste0("./fig/hydrograph_", station, ".png"),
        h=3.4, w=5.11, units="in", dpi=300)
+

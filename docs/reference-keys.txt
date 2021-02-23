@@ -2,9 +2,6 @@ fig:overview-map
 fig:hydrology-plot
 fig:hydrology-stats
 tab:fiss-species-table
-fig:fish-plot-grad
-fig:fish-plot-width
-fig:fish-plot-wshed
 tab:tablethreshaverage
 tab:tab-hab-value
 tab:tab-barrier-scoring
@@ -13,7 +10,7 @@ tab:tab-cost-mult
 fig:map-interactive
 tab:cost-est-phase-1
 tab:tab-overview
-tab:unnamed-chunk-7
+tab:unnamed-chunk-6
 tab:cost-est-phase-2
 tab:tab-habitat-summary
 tab:tab-culvert-3139
@@ -48,6 +45,12 @@ fig:photo-123794-01
 fig:photo-123794-02
 fig:photo-123794-03
 fig:photo-123794-04
+tab:tab-culvert-123795
+tab:tab-habitat-summary-123795
+fig:photo-123795-01
+fig:photo-123795-02
+fig:photo-123795-03
+fig:photo-123795-04
 tab:tab-culvert-124487
 tab:tab-habitat-summary-124487
 fig:photo-124487-01
@@ -157,10 +160,14 @@ fig:photo-197668-05
 fig:photo-197668-06
 intro
 background
-project-location
 wetsuweten
 gitxsan
+project-location
+bulkley-river
 fisheries
+bulkley-river-1
+morice-river
+fish-passage-restoration-and-implementation
 methods
 planning
 fish-passage-assessments
@@ -172,3 +179,4 @@ reporting
 results-and-discussion
 phase-1
 phase-2
+recommendations

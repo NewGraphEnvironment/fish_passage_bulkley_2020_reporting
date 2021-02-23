@@ -2,25 +2,34 @@
 
 # Background
 
-As a result of high-level direction from the provincial government, a Fish Passage Strategic Approach protocol has been developed for British Columbia to ensure that the greatest opportunities for restoration of fish passage are pursued.  A Fish Passage Technical Working Group has been formed to coordinate the protocol and data is continuously amalgamated within the Provincial Steam Crossing Inventory System (PSCIS).  The strategic approach protocol involves a four-phase process as described in @fishpassagetechnicalworkinggroupFishPassageStrategic2014 :
+The study area includes the Bulkley River and Morice River watershed groups (Figure \@ref(fig:overview-map)) and is  within the  traditional territories of the Gitxsan and Wet'suwet'en. The valley  bottom has  seen  extensive  settlement  over  the  past hundred years with major population centers including the Village of Hazelton, the Town of Smithers, the Village of Telkwa and the District Municipality of Houston.  The watersheds are within the Skeena, Stikine, and the Nadina Natural Resource Districts. 
 
- * Phase 1: Fish Passage Assessment – Fish stream crossings within watersheds with high fish values are assessed to determine barrier status of structures and document a general assessment of adjacent habitat quality and quantity.
- * Phase 2: Habitat Confirmation – Assessments of crossings prioritized for follow up in Phase 1 studies are conducted to confirm quality and quantity of habitat upstream and down as well as to scope for other potential nearby barriers that could affect the practicality of remediation.
- * Phase 3: Design – Site plans and designs are drawn for priority crossings where high value fish habitat has been confirmed. 
- * Phase 4: Remediation – Reconnection of isolated habitats through replacement, rehabilitation or removal of prioritized crossing structure barriers. 
- 
-  
 <br>
+
+
+## Wet'suwet'en
+
+Wet'suwet'en hereditary territory covers an area of 22,000km^2^ including the Bulkley River and Morice River watersheds and portions of the Nechako River watershed.  The Wet'suwet'en people are a matrilineal society organized into the Gilseyhu (Big Frog), Laksilyu (Small Frog), Tsayu (Beaver clan), Gitdumden (Wolf/Bear) and Laksamshu (Fireweed) clans. Within each of the clans there are are a number of kin-based groups known as Yikhs or House groups. The Yikh is a partnership between the people and the territory. Thirteen Yikhs with Hereditary Chiefs manage a total of 38 distinct territories upon which they have jurisdiction.  Within a clan, the head Chief is entrusted with the stewardship of the House territory to ensure the Land is managed in a sustainable manner. Inuk Nu’at’en (Wet'suwet'en law) governing the harvesting of fish within their lands are based on values founded on thousands of years of social, subsistence and environmental dynamics. The Yintahk (Land) is the centre of life as well as culture and it's management is intended to provide security for sustaining salmon, wildlife, and natural foods to ensure the health and well-being of the Wet'suwet'en [@officeofthewetsuweten2013Wetsuwet; @OfficeoftheWetsuweten2021; @flnrord2017NaturalResource].
+
+
+<br>
+
+## Gitxsan
+
+The Gitxsan Laxyip (traditional territories) covers an area of 33,000km^2^ within the Skeena River and Nass River watersheds.  The Laxyip is governed by 60 Simgiigyet (Hereditary Chiefs), within the traditional hereditary system made up of Wilps (House groups).  Traditional governance of the Gitxsan is guided by the principles of Ayookw (Gitxsan law) [@GitxsanHuwilpGovernment2021]. 
+
+<br>
+
+
 
 ## Project Location
+### Bulkley River
 
-The project area includes the Bulkley River and Morice River watershed groups (Figure \@ref(fig:overview-map)) and is  within the  traditional territories of the Gitxsan and Wet'suwet'en. The valley  bottom has  seen  extensive  settlement  over  the  past hundred years with major population centers including the Village of Hazelton, the Town of Smithers, the Village of Telkwa and the District Municipality of Houston.  The watersheds are within the Skeena, Stikine, and the Nadina Natural Resource Districts. 
-
-<br>
-
-The Bukley River  is an 8th  order stream that drains an area of 7,762 km^2^ in a generally northerly direction from Bulkley Lake on the Nechako Plateau to its confluence with the Skeena River at Hazleton. It has a mean annual discharge of `r round(fasstr::calc_longterm_mean(station_number = "08EE004")$LTMAD,1)` m^3^/s at station 08EE004 located near Quick and `r round(fasstr::calc_longterm_mean(station_number = "08EE003")$LTMAD,1)` m^3^/s at station 08EE003 located upstream near Houston.  Flow patterns are typical of high elevation watersheds on the west side of the northern Rocky Mountains which receive large amounts of precipitation as snow leading to peak levels of discharge during snowmelt, typically from May to July (Figures \@ref(fig:hydrology-plot) - \@ref(fig:hydrology-stats)). 
+The Bukley River is an 8th  order stream that drains an area of 7,762 km^2^ in a generally northerly direction from Bulkley Lake on the Nechako Plateau to its confluence with the Skeena River at Hazleton. It has a mean annual discharge of `r round(fasstr::calc_longterm_mean(station_number = "08EE004")$LTMAD,1)` m^3^/s at station 08EE004 located near Quick and `r round(fasstr::calc_longterm_mean(station_number = "08EE003")$LTMAD,1)` m^3^/s at station 08EE003 located upstream near Houston.  Flow patterns are typical of high elevation watersheds on the west side of the northern Rocky Mountains which receive large amounts of precipitation as snow leading to peak levels of discharge during snowmelt, typically from May to July (Figures \@ref(fig:hydrology-plot) - \@ref(fig:hydrology-stats)). Fisheries are discussed in the Fisheries Section below.
 
 <br>
+
+
 
 Numerous water licenses are held within the watershed with a potential over-allocation of flows identified during low flow  periods  [@ilmb2007MoriceLand].  Changes  to  the  climate  systems  are  causing  impacts  to  natural  and  human systems  on  all  continents  with  alterations  to  hydrological  systems  caused  by  changing  precipitation  or melting  snow  and  ice  increasing  the  frequency  and  magnitude  of  extreme  events  such  as  floods  as droughts [@ipcc2014Climatechange; @eccc2016Climatedata].  These changes are resulting in modifications to the quantity and quality of water resources throughout British Columbia and are likely to compound issues related to drought and flooding in the Bulkley River watershed. 
 
@@ -63,22 +72,6 @@ knitr::include_graphics("fig/hydrology_stats_08EE003.png")
 
 <br>
 
-```{r}
-### Wet'suwet'en
-
-### Gitxsan
-```
-
-## Wet'suwet'en
-
-Wet'suwet'en hereditary territory covers an area of 22,000km^2^ including the Bulkley River and Morice River watersheds and portions of the Nechako River watershed.  The Wet'suwet'en people are a matrilineal society organized into the Gilseyhu (Big Frog), Laksilyu (Small Frog), Tsayu (Beaver clan), Gitdumden (Wolf/Bear) and Laksamshu (Fireweed) clans. Within each of the clans there are are a number of kin-based groups known as Yikhs or House groups. The Yikh is a partnership between the people and the territory. Thirteen Yikhs with Hereditary Chiefs manage a total of 38 distinct territories upon which they have jurisdiction.  Within a clan, the head Chief is entrusted with the stewardship of the House territory to ensure the Land is managed in a sustainable manner. Inuk Nu’at’en (Wet'suwet'en law) governing the harvesting of fish within their lands are based on values founded on thousands of years of social, subsistence and environmental dynamics. The Yintahk (Land) is the centre of life as well as culture and it's management is intended to provide security for sustaining salmon, wildlife, and natural foods to ensure the health and well-being of the Wet'suwet'en [@officeofthewetsuweten2013Wetsuwet; @OfficeoftheWetsuweten2021; @flnrord2017NaturalResource].
-
-
-<br>
-
-## Gitxsan
-
-The Gitxsan Laxyip (traditional territories) covers an area of 33,000km^2^ within the Skeena River and Nass River watersheds.  The Laxyip is governed by 60 Simgiigyet (Hereditary Chiefs), within the traditional hereditary system made up of Wilps (House groups).  Traditional governance of the Gitxsan is guided by the principles of Ayookw (Gitxsan law) [@GitxsanHuwilpGovernment2021]. 
 
 
 ## Fisheries
@@ -86,6 +79,7 @@ The Gitxsan Laxyip (traditional territories) covers an area of 33,000km^2^ withi
 Fish species recorded in the Bulkley River and Morice watershed groups are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Coastal cutthrout trout and bull trout are considered of special concern (blue-listed) provincially. 
 
 <br>
+
 
 ```{r fiss-species-table}
 fiss_species_table <- readr::read_csv(paste0(getwd(), '/data/extracted_inputs/fiss_species_table.csv'))
@@ -96,10 +90,31 @@ fiss_species_table %>%
 
 ```
 
+### Bulkley River
+
+Traditionally, the salmon stocks in the Bulkley River were the principal food source for the Gitxsan and Wet’suwet’en people with numerous fishing  areas located within the lower Bulkley  drainage (from  the confluence of the Skeena to the confluence with the Telkwa River) and the upper Bulkley drainage which includes the mainstem Bulkley River and tributaries upstream of the Telkwa River confluence [@wilson_rabnett2007FishPassage]. 
+
+<br>
+
+ 
+Within the lower Bulkley drainage the principle Gitxsan and Wet’suwet’en fishing areas were located on four mainstem locations:  Hagwilget Canyon downstream of Hagwilget Village, Hagwilget Canyon at the village, Bulkley mainstem upstream of the Suskwa confluence and Moricetown Canyon.  Historically, one of the largest aboriginal fisheries on the Skeena was located within the Hagwilget Canyon.  The majority of  the  sites  that  traditionally fished within the canyon are no longer utilized  since the  Department of Fisheries blasted the rocks that concentrated the fish close to the canyon walls in the winter of 1958-59 [@wilson_rabnett2007FishPassage]. 
+
+
 <br>
 
 
-```{r fish-fiss-summary, eval=T}
+Approximately 11.3 km downstream of the Bulkley Lake outlet and just upstream of Watson Creek, the upper Bulkley falls is an approximately 4m high narrow rock sill that crosses the Bulkley River, producing a steep cascade section.  This obstacle to fish passage is recorded as an almost complete barrier to fish passage for salmon during low water flows.  Coho have not been observed beyond the falls since 1972 [@wilson_rabnett2007FishPassage].
+
+<br>
+
+Renowned as a world class recreational steelhead and coho fishery, the Bulkley River receives some of the heaviest angling pressure in the province.  In response to longstanding angler concerns with respect to overcrowding, quality of experience and conflict amongst anglers, an Angling Management Plan was drafted for the river following the initiation of the Skeena Quality Waters Strategy process in 2006 and an extensive multi-year consultation process.   The plan  introduces a number of  regulatory measures with the intent to provide Canadian resident anglers with quality steelhead fishing opportunities.  Regulatory measures introduced with the Angling Management Plan include prohibited angling for non-guided non-resident aliens on Saturdays and Sundays, Sept 1 - Oct 31 within the Bulkley River, angling prohibited for non-guided non-resident aliens on Saturdays and Sundays, all year within the Suskwa River and angling prohibited for non-guided non-resident aliens Sept 1 - Oct 31 in the Telkwa River.  The Bukley River is considered Class II waterand there is no fshing permitted upstream of the Morice/Bulkley River Confluence [@flnro2013BulkleyRiver; @flnro2013OverviewAngling; @flnrord2019FreshwaterFishing].
+
+<br>
+
+### Morice River
+
+
+```{r fish-fiss-summary, eval=F}
 fiss_sum <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum.csv'))
 fiss_sum_grad <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum_grad.csv'))
 fiss_sum_width <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum_width.csv'))
@@ -108,10 +123,7 @@ fiss_sum_width <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs
 
 ```
 
-
-<br>
-
-```{r fish-plot-grad, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. stream gradient category for the Bulkley River watershed group.', eval=T}
+```{r fish-plot-grad, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. stream gradient category for the Bulkley River watershed group.', eval=F}
 ##bar graph
 plot_grad <- fiss_sum_grad %>% 
   filter(gradient_id != 99) %>% 
@@ -124,9 +136,7 @@ plot_grad
 
 ```
 
-<br>
-
-```{r fish-plot-width, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. channel width category for the Bulkley River watershed group.', eval=T}
+```{r fish-plot-width, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. channel width category for the Bulkley River watershed group.', eval=F}
 ##bar graph
 plot_width <- fiss_sum_width %>% 
   filter(!is.na(width_id)) %>%
@@ -138,9 +148,7 @@ plot_width <- fiss_sum_width %>%
 plot_width
 ```
 
-<br>
-
-```{r fish-plot-wshed, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. watershed size category for the Bulkley River watershed group.', eval=T}
+```{r fish-plot-wshed, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. watershed size category for the Bulkley River watershed group.', eval=F}
 ##bar graph
 fiss_sum_wshed_filter <- fiss_sum %>% 
   filter(upstream_area_ha < 10000)
@@ -169,3 +177,16 @@ plot_wshed_hist <- ggplot(fiss_sum_wshed_filter, aes(x=upstream_area_ha
 plot_wshed_hist
 ```
 
+<br>
+
+## Fish Passage Restoration and Implementation
+
+As a result of high-level direction from the provincial government, a Fish Passage Strategic Approach protocol has been developed for British Columbia to ensure that the greatest opportunities for restoration of fish passage are pursued.  A Fish Passage Technical Working Group has been formed to coordinate the protocol and data is continuously amalgamated within the Provincial Steam Crossing Inventory System (PSCIS).  The strategic approach protocol involves a four-phase process as described in @fishpassagetechnicalworkinggroupFishPassageStrategic2014 :
+
+ * Phase 1: Fish Passage Assessment – Fish stream crossings within watersheds with high fish values are assessed to determine barrier status of structures and document a general assessment of adjacent habitat quality and quantity.
+ * Phase 2: Habitat Confirmation – Assessments of crossings prioritized for follow up in Phase 1 studies are conducted to confirm quality and quantity of habitat upstream and down as well as to scope for other potential nearby barriers that could affect the practicality of remediation.
+ * Phase 3: Design – Site plans and designs are drawn for priority crossings where high value fish habitat has been confirmed. 
+ * Phase 4: Remediation – Reconnection of isolated habitats through replacement, rehabilitation or removal of prioritized crossing structure barriers. 
+ 
+  
+<br>

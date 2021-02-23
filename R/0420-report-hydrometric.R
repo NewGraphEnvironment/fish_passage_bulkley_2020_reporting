@@ -6,7 +6,7 @@ library(tidyhydat)
 library(fasstr)
 library(hydatr)
 
-download_hydat()
+# download_hydat()
 
 ##C:\Users\allan\AppData\Local\tidyhydat\tidyhydat
 
@@ -48,10 +48,10 @@ hydrograph1_caption <- hydatr_info$title
 ##Bulkley River At Quick (Station #08EE004 - Lat 54.62 Lon -126.90). Available daily discharge data from 1930 to 2018.
 
 ##fasstr::plot_data_screening2 is a custom version of plot_data_screening
-hydrograph_stats_print <- fasstr::plot_data_screening3(station_number = station)[["Data_Screening"]]
+hydrograph_stats_print <- fasstr::plot_data_screening3(station_number = station)[["Data_Screening"]] + ggdark::dark_theme_bw() ##first version is not dark
 hydrograph_stats_print
 
-ggsave(plot = hydrograph_stats_print, file=paste0("./fig/hydrology_stats_", station, ".png"),
+ggsave(plot = hydrograph_stats_print, file=paste0("./fig/hydrology_stats", station, ".png"),
        h=3.4, w=5.11, units="in", dpi=300)
 
 ##another way to make the graph
@@ -82,7 +82,7 @@ plot <- ggplot()+
 
   scale_x_date(date_labels = "%b", date_breaks = "2 month") +
   labs(x = NULL, y = expression(paste("Mean Daily Discharge (", m^3, "/s)", sep="")))+
-  theme_bw() +
+  ggdark::dark_theme_bw() +
   # ylim(0,600) +
   # theme(axis.text.y=element_blank())+
   # scale_y_continuous() +
@@ -109,7 +109,7 @@ hydrograph1_caption <- hydatr_info$title
 #Bulkley River Near Houston (Station #08EE003 - Lat 54.40 Lon -126.72). Available daily discharge data from 1980 to 2018.
 
 
-hydrograph_stats_print <- fasstr::plot_data_screening3(station_number = station, start_year = 1980)[["Data_Screening"]]
+hydrograph_stats_print <- fasstr::plot_data_screening3(station_number = station, start_year = 1980)[["Data_Screening"]] + ggdark::dark_theme_bw
 hydrograph_stats_print
 
 ggsave(plot = hydrograph_stats_print, file=paste0("./fig/hydrology_stats_", station, ".png"),
@@ -142,7 +142,7 @@ plot <- ggplot()+
 
   scale_x_date(date_labels = "%b", date_breaks = "2 month") +
   labs(x = NULL, y = expression(paste("Mean Daily Discharge (", m^3, "/s)", sep="")))+
-  theme_bw() +
+  ggdark::dark_theme_bw() +
   # ylim(0,600) +
   # theme(axis.text.y=element_blank())+
   # scale_y_continuous() +

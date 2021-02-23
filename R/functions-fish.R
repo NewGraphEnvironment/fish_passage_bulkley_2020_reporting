@@ -90,7 +90,7 @@ plot_fish_box <- function(dat = hab_fish_dens, sit = my_site){
     geom_boxplot()+
     facet_grid(species_code ~ life_stage, scales ="fixed",
                as.table = T)+
-    theme_bw()+
+    dark_theme_bw()+
     theme(legend.position = "none", axis.title.x=element_blank()) +
     geom_dotplot(binaxis='y', stackdir='center', dotsize=1)+
     ylab(expression(Density ~ (fish/100 ~  m^2)))

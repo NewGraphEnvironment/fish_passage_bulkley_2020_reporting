@@ -76,20 +76,6 @@ knitr::include_graphics("fig/hydrology_stats_08EE003.png")
 
 ## Fisheries
 
-Fish species recorded in the Bulkley River and Morice watershed groups are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Coastal cutthrout trout and bull trout are considered of special concern (blue-listed) provincially. 
-
-<br>
-
-
-```{r fiss-species-table}
-fiss_species_table <- readr::read_csv(paste0(getwd(), '/data/extracted_inputs/fiss_species_table.csv'))
-  # filter(`Species Code` != 'CT') %>% 
-fiss_species_table %>%  
-  my_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
-
-
-```
-
 ### Bulkley River
 
 Traditionally, the salmon stocks in the Bulkley River were the principal food source for the Gitxsan and Wet’suwet’en people with numerous fishing  areas located within the lower Bulkley  drainage (from  the confluence of the Skeena to the confluence with the Telkwa River) and the upper Bulkley drainage which includes the mainstem Bulkley River and tributaries upstream of the Telkwa River confluence [@wilson_rabnett2007FishPassage]. 
@@ -112,6 +98,23 @@ Renowned as a world class recreational steelhead and coho fishery, the Bulkley R
 <br>
 
 ### Morice River
+
+
+### Fish Species
+
+Fish species recorded in the Bulkley River and Morice River watershed groups are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Coastal cutthrout trout and bull trout are considered of special concern (blue-listed) provincially. 
+
+<br>
+
+
+```{r fiss-species-table}
+fiss_species_table <- readr::read_csv(paste0(getwd(), '/data/extracted_inputs/fiss_species_table.csv'))
+  # filter(`Species Code` != 'CT') %>% 
+fiss_species_table %>%  
+  my_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
+
+
+```
 
 
 ```{r fish-fiss-summary, eval=F}
@@ -177,7 +180,12 @@ plot_wshed_hist <- ggplot(fiss_sum_wshed_filter, aes(x=upstream_area_ha
 plot_wshed_hist
 ```
 
+
+
 <br>
+
+
+
 
 ## Fish Passage Restoration and Implementation
 

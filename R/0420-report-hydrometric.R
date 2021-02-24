@@ -51,7 +51,7 @@ hydrograph1_caption <- hydatr_info$title
 hydrograph_stats_print <- fasstr::plot_data_screening3(station_number = station)[["Data_Screening"]] + ggdark::dark_theme_bw() ##first version is not dark
 hydrograph_stats_print
 
-ggsave(plot = hydrograph_stats_print, file=paste0("./fig/hydrology_stats_", station, ".png"),
+ggsave(plot = hydrograph_stats_print, file=paste0("fig/hydrology_stats_", station, ".png"),
        h=3.4, w=5.11, units="in", dpi=300)
 
 ##another way to make the graph
@@ -109,7 +109,7 @@ hydrograph1_caption <- hydatr_info$title
 #Bulkley River Near Houston (Station #08EE003 - Lat 54.40 Lon -126.72). Available daily discharge data from 1980 to 2018.
 
 
-hydrograph_stats_print <- fasstr::plot_data_screening3(station_number = station, start_year = 1980)[["Data_Screening"]] + ggdark::dark_theme_bw
+hydrograph_stats_print <- fasstr::plot_data_screening3(station_number = station, start_year = 1980)[["Data_Screening"]] + ggdark::dark_theme_bw()
 hydrograph_stats_print
 
 ggsave(plot = hydrograph_stats_print, file=paste0("./fig/hydrology_stats_", station, ".png"),

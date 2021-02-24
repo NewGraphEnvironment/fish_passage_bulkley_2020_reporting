@@ -1,6 +1,7 @@
 fig:overview-map
 fig:hydrology-plot
-fig:hydrology-stats
+fig:hydrology-stats1
+fig:hydrology-stats2
 tab:fiss-species-table
 tab:tablethreshaverage
 tab:tab-hab-value
@@ -10,7 +11,7 @@ tab:tab-cost-mult
 fig:map-interactive
 tab:cost-est-phase-1
 tab:tab-overview
-tab:unnamed-chunk-6
+tab:unnamed-chunk-7
 tab:cost-est-phase-2
 tab:tab-habitat-summary
 tab:tab-culvert-3139
@@ -168,7 +169,9 @@ fisheries
 bulkley-river-1
 morice-river
 fish-species
-fish-passage-restoration-and-implementation
+fish-passage-restoration-planning-and-implementation
+bulkley-river-2
+morice-river-1
 methods
 planning
 fish-passage-assessments

@@ -244,7 +244,7 @@ my_tab_overview <- function(dat, caption_text = '', font = font_set){
     kable(caption = caption_text, booktabs = T) %>%
     kableExtra::kable_styling(c("condensed", "responsive"), full_width = T, font_size = font) %>%
     kableExtra::column_spec(column = c(9), width_min = '1.5in') %>%
-    kableExtra::column_spec(column = c(5), width_min = '0.5in')
+    kableExtra::column_spec(column = c(5), width_min = '1.0in', width_max = '1.0in')
 }
 
 my_tab_overview_scroll <- function(dat, caption_text = '', font = font_set){
@@ -254,7 +254,7 @@ my_tab_overview_scroll <- function(dat, caption_text = '', font = font_set){
                               full_width = T,
                               font_size = font) %>%
     kableExtra::column_spec(column = c(9), width_min = '1.5in') %>%
-    kableExtra::column_spec(column = c(5), width_min = '0.5in') %>%
+    kableExtra::column_spec(column = c(5), width_max = '1in') %>%
     kableExtra::scroll_box(width = "100%", height = "500px")
 }
 

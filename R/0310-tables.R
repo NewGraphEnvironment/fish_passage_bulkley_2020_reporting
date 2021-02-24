@@ -9,13 +9,14 @@ bcfishpass <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/bcf
 #   filter(source %like% 'phase2')
 
 
-##this is our new file made from 0282-extract-bcfishpass2-crossing-corrections.R
+##this is our new db made from 0282-extract-bcfishpass2-crossing-corrections.R and 0290
 conn <- rws_connect("data/bcfishpass.sqlite")
 bcfishpass_phase2 <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk", conn = conn) %>%
   filter(stream_crossing_id %in% (pscis_phase2 %>% pull(pscis_crossing_id))) %>%
   mutate(downstream_route_measure = as.integer(downstream_route_measure))
 bcfishpass_all <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk", conn = conn) %>%
   mutate(downstream_route_measure = as.integer(downstream_route_measure))
+pscis_historic_phase1 <- readwritesqlite::rws_read_table("pscis_historic_phase1", conn = conn)
 rws_disconnect(conn)
 
 

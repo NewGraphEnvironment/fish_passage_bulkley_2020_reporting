@@ -10,6 +10,7 @@ pacman::p_load(
   kableExtra,
   httr,
   RPostgres,
+  RPostgreSQL,
   DBI,
   sf,
   magick,

@@ -1,8 +1,7 @@
 
 
-# Executive Summary {-} 
+# Executive Summary {.front-matter .unnumbered} 
 
-<!-- .front-matter .unnumbered -->
 
 The Society for Ecosystem Restoration Northern BC and New Graph Environment were retained by the Habitat Conservation Trust, the Provincial Fish Passage Remediation Program and the Canadian Wildlife Federation in 2020 to plan and conduct fish passage and habitat confirmation assessments at road-stream crossings as part of connectivity restoration planning. Although planning was conducted for both the Morice River watershed group and the Bulkley River watershed group, on the ground surveys in 2020 focused primarily within Bulkley River tributaries. 
 

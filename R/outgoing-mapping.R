@@ -8,7 +8,7 @@ make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping', utm_zone = 9){
   nm <-deparse(substitute(dat))
   dat %>%
     sf::st_as_sf(coords = c("utm_easting", "utm_northing"), crs = 26900 + utm_zone, remove = F) %>%
-    st_transform(crs = 3005) %>%
+    st_transform(crs = 4326) %>%
     sf::st_write(paste0("./data/", gpkg_name, ".gpkg"), nm, delete_layer = TRUE)
 }
 
@@ -16,12 +16,12 @@ make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping', utm_zone = 9){
 make_geopackage(dat = hab_fish_collect)
 make_geopackage(dat = hab_features)
 make_geopackage(dat = hab_site_priorities)
-# make_geopackage(dat = phase1_priorities2)
+make_geopackage(dat = phase1_priorities)
 
 ##we do this manually since the
-phase1_priorities %>%
-  st_transform(crs = 3005) %>%
-  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'phase1_priorities', delete_layer = TRUE)
+# phase1_priorities %>%
+#   st_transform(crs = 3005) %>%
+#   sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'phase1_priorities', delete_layer = TRUE)
 
 
 
@@ -39,12 +39,12 @@ conn <- DBI::dbConnect(
   password = "postgres"
 )
 
-dbGetQuery(conn,
-           "SELECT column_name,data_type
-           FROM information_schema.columns
-           WHERE table_name='fwa_watershed_groups_poly'")
+# dbGetQuery(conn,
+#            "SELECT column_name,data_type
+#            FROM information_schema.columns
+#            WHERE table_name='fwa_watershed_groups_poly'")
 
-##here is the flathead
+##here is the study area watersheds
 wshd_study_areas <- st_read(conn,
                            query = "SELECT * FROM whse_basemapping.fwa_watershed_groups_poly a
                                WHERE a.watershed_group_code  = 'BULK'
@@ -54,6 +54,7 @@ wshd_study_areas <- st_read(conn,
 wshd_study_areas %>%
   # select(-wscode_ltree) %>%
   st_cast("POLYGON") %>%
+  sf::st_transform(crs = 4326) %>%
   sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'wshd_study_areas', append = F)
 
 dbDisconnect(conn = conn)
@@ -92,8 +93,8 @@ st_write(wshds, append = TRUE, driver = 'kml', dsn = "data/extracted_inputs/wshd
 ##we need geojsons to make the mapping convenient so lets pull everything out of the geopackage and write to geojson files
 read_gpkg <- function(layers = layer_name){
   sf::st_read(dsn = "./data/fishpass_mapping.gpkg", layer = layers) %>%
-    mutate(name = layers) %>%
-    sf::st_transform(crs = 4326)
+    mutate(name = layers)
+    # sf::st_transform(crs = 4326)
 }
 
 ##get the names of the layers you want

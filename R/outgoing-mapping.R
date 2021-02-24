@@ -9,7 +9,7 @@ make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping', utm_zone = 9){
   dat %>%
     sf::st_as_sf(coords = c("utm_easting", "utm_northing"), crs = 26900 + utm_zone, remove = F) %>%
     st_transform(crs = 4326) %>%
-    sf::st_write(paste0("./data/", gpkg_name, ".gpkg"), nm, delete_layer = TRUE)
+    sf::st_write(paste0("./data/fishpass_mapping/", gpkg_name, ".gpkg"), nm, delete_layer = TRUE)
 }
 
 
@@ -27,7 +27,7 @@ make_geopackage(dat = phase1_priorities)
 
 ##add the tracks
 sf::read_sf("./data/habitat_confirmation_tracks.gpx", layer = "tracks") %>%
-  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_tracks', append = TRUE)
+  sf::st_write(paste0("./data/fishpass_mapping/", 'fishpass_mapping', ".gpkg"), 'hab_tracks', append = TRUE)
 
 ##study area watersheds
 conn <- DBI::dbConnect(
@@ -55,7 +55,7 @@ wshd_study_areas %>%
   # select(-wscode_ltree) %>%
   st_cast("POLYGON") %>%
   sf::st_transform(crs = 4326) %>%
-  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'wshd_study_areas', append = F)
+  sf::st_write(paste0("./data/fishpass_mapping/", 'fishpass_mapping', ".gpkg"), 'wshd_study_areas', append = F)
 
 dbDisconnect(conn = conn)
 
@@ -84,7 +84,7 @@ wshds <- get_watershed(bcfishpass_phase2_clean)
 
 # ##add to the geopackage
 wshds %>%
-  sf::st_write(paste0("./data/", 'fishpass_mapping', ".gpkg"), 'hab_wshds', append = F) ##might want to f the append....
+  sf::st_write(paste0("./data/fishpass_mapping/", 'fishpass_mapping', ".gpkg"), 'hab_wshds', append = F) ##might want to f the append....
 
 #burn to kml as well so we can see elevations
 st_write(wshds, append = TRUE, driver = 'kml', dsn = "data/extracted_inputs/wshds.kml")
@@ -98,7 +98,7 @@ read_gpkg <- function(layers = layer_name){
 }
 
 ##get the names of the layers you want
-layer_names <- sf::st_layers(paste0("./data/", 'fishpass_mapping', ".gpkg")) %>%
+layer_names <- sf::st_layers(paste0("./data/fishpass_mapping/", 'fishpass_mapping', ".gpkg")) %>%
   pluck('name')
 
 ##grab the layers and give them a name

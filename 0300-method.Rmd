@@ -22,7 +22,7 @@ To identify priorities for crossing structure rehabilitation, background literat
 
 <br>
  
-Following delineation of "non-fish habitat" with the `Fish Habitat Model`, the *average* gradient of each stream segment within habitat classified as below the 22% threshold was calculated and summed using `bcfishpass` to quantify upstream habitat potentially available for salmonids and facilitate stream line symbology based on stream morphology.  `bcfishpass` summed average gradients of stream network line segments within seven categories (0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 22%, 22 - 30% and >30%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in four categories: riffle/cascade (0 - 5%), step-pool (5 - 15%), step-pool very steep (15-22%) and extremely steep (22 - 30%) (Table \@ref(tab:tablethreshaverage)). For each crossing location, the the area of lake and wetland habitat upstream, species documented upstream and an estimate of watershed area was also collated using `bcfishpass`, `fwapg` [@norris2020fwapg] and `bcfishobs` [@norris2020bcfishobs] to provide an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.  
+Following delineation of "non-fish habitat" with the `Fish Habitat Model`, the *average* gradient of each stream segment within habitat classified as below the 22% threshold was calculated and summed using `bcfishpass` to quantify upstream habitat potentially available for salmonids and facilitate stream line symbology based on stream morphology.  `bcfishpass` summed average gradients of stream network line segments within six categories (0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 22%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in three categories: riffle/cascade (0 - 5%), step-pool (5 - 15%) and step-pool very steep (15-22%) (Table \@ref(tab:tablethreshaverage)). For each crossing location, the the area of lake and wetland habitat upstream, species documented upstream and an estimate of watershed area was also collated using `bcfishpass`, `fwapg` [@norris2020fwapg] and `bcfishobs` [@norris2020bcfishobs] to provide an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.  
 
 
 <br>
@@ -30,8 +30,8 @@ Following delineation of "non-fish habitat" with the `Fish Habitat Model`, the *
 
 ```{r tablethreshaverage, eval= T}
 #threshold and average gradient table
-table_thresh_average <- tibble::tibble(`Gradient` = c('0 - 5%', '5 - 15%', '15 - 22%', '22 - 30%', '>30%'),
-                                       `Channel Type` = c('Riffle and cascade pool', 'Step pool', 'Step pool - very steep', 'Step pool - extremely steep (bull trout only)', 'Non fish habitat'))
+table_thresh_average <- tibble::tibble(`Gradient` = c('0 - 5%', '5 - 15%', '15 - 22%', '>22%'),
+                                       `Channel Type` = c('Riffle and cascade pool', 'Step pool', 'Step pool - very steep', 'Non fish habitat'))
 
 table_thresh_average %>% 
     my_kable(caption_text = 'Stream gradient categories (threshold and average) and associated channel type.')

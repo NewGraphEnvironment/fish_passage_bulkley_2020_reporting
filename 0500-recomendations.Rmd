@@ -1,6 +1,6 @@
 # Recommendations
 
-Recommendations for potential incorporation into watershed connectivity planning for the Bulkley and Morice watershed groups include:
+Recommendations for potential incorporation into watershed connectivity planning for the Bulkley River and Morice River watershed groups include:
 
 
  * Continue to develop `bcfishpass` and other open source tools that are scalable, facilitate reproducible analysis and can be adapted to incorporate alternative fragmentation indicators and habitat gain/value metrics.

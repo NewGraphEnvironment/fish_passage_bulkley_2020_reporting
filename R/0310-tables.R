@@ -17,6 +17,7 @@ bcfishpass_phase2 <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk", con
 bcfishpass_all <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk", conn = conn) %>%
   mutate(downstream_route_measure = as.integer(downstream_route_measure))
 pscis_historic_phase1 <- readwritesqlite::rws_read_table("pscis_historic_phase1", conn = conn)
+bcfishpass_spawn_rear_model <- readwritesqlite::rws_read_table("bcfishpass_spawn_rear_model", conn = conn)
 rws_disconnect(conn)
 
 

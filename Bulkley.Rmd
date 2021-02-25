@@ -760,9 +760,9 @@ tab_map_phase2 <- tab_map %>% filter(source %like% 'phase2')
 # marker_options <- markerOptions(  
 #   zIndexOffset = 1000)
 tracks <- sf::read_sf("./data/habitat_confirmation_tracks.gpx", layer = "tracks")
-# wshds <- sf::read_sf('data/fishpass_mapping.gpkg', layer = 'hab_wshds_ltree') %>% 
-#   filter(!pscis_crossing_id %in% c(62423, 62426, 50181, 50159)) %>% ##these ones are not correct - fix later
-#   st_transform(crs = 4326)
+wshds <- sf::read_sf('data/fishpass_mapping/fishpass_mapping.gpkg', layer = 'hab_wshds')
+  # filter(!pscis_crossing_id %in% c(62423, 62426, 50181, 50159)) ##these ones are not correct - fix later
+
 wshd_study_areas <- sf::read_sf('data/fishpass_mapping/fishpass_mapping.gpkg', layer = 'wshd_study_areas')
   # st_transform(crs = 4326)
 photo_metadata <- readr::read_csv(file = 'data/photo_metadata.csv')
@@ -775,12 +775,12 @@ map <- leaflet(height=500, width=780) %>%
   # addProviderTiles(providers$"Esri.DeLorme") %>% 
   addProviderTiles("Esri.WorldTopoMap", group = "Topo") %>%
   addProviderTiles("Esri.WorldImagery", group = "ESRI Aerial") %>% 
-  # addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
-  #   opacity = 1.0, fillOpacity = 0.25,
-  #   fillColor = "#00DBFF") %>%
+  addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
+    opacity = 1.0, fillOpacity = 0.25,
+    fillColor = "#00DBFF", label = wshds$stream_crossing_id) %>%
   addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'BULK'), color = "#F29A6E", weight = 1, smoothFactor = 0.5,
     opacity = 1.0, fillOpacity = 0,
-    fillColor = "#F29A6E", label = 'Bulkley River') %>%
+    fillColor = "#F29A6E", label = 'Bulkley River', group = "Phase 2") %>%
   addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'MORR'), color = "#C39D50", weight = 1, smoothFactor = 0.5,
     opacity = 1.0, fillOpacity = 0,
     fillColor = "#C39D50", label = 'Morice River') %>%

@@ -111,7 +111,7 @@ Our fish passage connection to the watershed began with the trust of Craig Mount
 <br>
 
 
-The Skeena Fisheries Commission honoured us by putting us in touch with its members in the fall of 2019 and hosting a forum for us to give a presentation about our project in the spring of 2020.  Thank you for having the patience to listen to our story which is based on a story you told us to begin with. Thank you Kenny Rabnett, Stu Barnes, Ryneld Starr, Allison Oliver, and the rest of the teams.
+The Skeena Fisheries Commission honoured us by putting us in touch with its members in the fall of 2019 and hosting a forum for us to give a presentation about our project in the spring of 2020.  Thank you for having the patience to listen to our story which was based on a story you told us to begin with. Thank you Kenny Rabnett, Stu Barnes, Ryneld Starr, Allison Oliver, and the rest of the teams.
 
 <br>
 
@@ -126,12 +126,7 @@ The Gitskan Watershed Authority had the grace to share their past work with us a
 <br>
 
 
-Much gratitude to Simon Norris from Hillcrest Geographics and Craig Mount from MoE for leveraging decades of hard work towards the datbase management, GIS, modeling and mapping that has been absolutely essential to this work since the beginning. 
-
-<br>
-
-
-Thank you to David Wilford, Glen Buhr, Greg Tamblyn, Robyn Vaniderstine, Jesse Fraser, Chris Schell, Kenji Miyazaki, Dean Peard, Brian Kolman, Megan Peloso, Troy Larden, Beth Eagles and Julie Sheppard from FLNRORD for your insight, advise, and assistance. Among the other things you have done for us, helping us tie our project to some of the numerous initiatives in your areas has been invaluable.
+Much gratitude to Simon Norris from Hillcrest Geographics and Craig Mount from MoE for leveraging decades of hard work towards the database management, GIS, modeling and mapping that has been absolutely essential to this work since the beginning. 
 
 <br>
 
@@ -140,23 +135,27 @@ We feel privileged to benefit from a great amount of hard work and significant i
 
 <br>
 
-
-Thank you to Karla Graf from CN Rail and Kathryn Graham from the Ministry of Transportation and Infrastructure (MoTi) for reviewing target sites, providing insight/background for individual crossings, for providing letter of support for the project and for their continuous encouragement. 
-
-<br>
-
-
-Thank you so much to Steve Page, Darren Loverin, Ron Donnelly, Tom Bosch, Mark Dewit, Visti Mosumgaard and Miro Kosalko from the FLNRORD northern engineering and forestry team for sharing their experience, knowledge and know-how related to road engineering and what it takes to pull stream crossing replacement/removal planning off with style and good humour. 
+Thank you to David Wilford, Glen Buhr, Greg Tamblyn, Robyn Vaniderstine, Jesse Fraser, Chris Schell, Kenji Miyazaki, Dean Peard, Brian Kolman, Megan Peloso, Troy Larden, Beth Eagles and Julie Sheppard from FLNRORD for your insight, advise, and assistance. Among the other things you have done for us, helping us tie our project to some of the numerous initiatives in your areas has been invaluable.
 
 <br>
 
 
-Thank you to the crew at DFO who sluthed out reports and put us in touch with the powers and places that be. Thank you Sandra Devcic, Peter Dekoning, Lana Miller and Natalie Newman.
+Thank you to Karla Graf from CN Rail and Kathryn Graham from the Ministry of Transportation and Infrastructure (MoTi) for reviewing target sites, providing insight/background for individual crossings, for providing letters of support for the project and for their continuous encouragement. 
 
 <br>
 
 
-Thank you to Don Morgan from MoE and Lars Reese-Hanson from FLNRORD for a living demonstration of people that obviously love their work and care deeply for the Owen Creek and greater Morice/Bulkley River watersheds.
+Thank you so much to Steve Page, Darren Loverin, Ron Donnelly, Tom Bosch, Mark Dewit, Visti Mosumgaard and Miro Kosalko from the FLNRORD northern engineering and forestry team for sharing their experience, knowledge and know-how related to road engineering in their regions. 
+
+<br>
+
+
+Thank you to the crew at DFO who sluthed out reports, attended numerous meetings and put us in touch with the powers and places that be. Thank you Sandra Devcic, Peter Dekoning, Lana Miller and Natalie Newman.
+
+<br>
+
+
+Thank you to Don Morgan from MoE and Lars Reese-Hanson from FLNRORD for sharing their work (and the work of many others) with watershed status indicators and introducing us to some amazing places in the Owen Creek watershed. Whoa. 
 
 <br>
 
@@ -171,27 +170,27 @@ Thank you to Marc Gaboury for making space to discuss his work with Wet’suwet�
 <br>
 
 
-We are extremely glad that Jonathan Van Barneveld, Forester - FLNR hunts waterfalls and is very good at it. His input was monstrous for connectivity planning in the watershed. Thank you.
+We are extremely glad that Jonathan Van Barneveld, Forester - FLNR hunts waterfalls and is very very good at it. His input was monstrous for connectivity planning in the watershed. Thank you.
 
 <br>
 
 
-Michael Price is busy enough to produce numerous documents with enormous depth yet finds the time to attend meetings and help answer old questions. Thank you.
+Michael Price is busy enough to undertake huge amounts of research with enormous depth yet found the time to attend our meetings and explore options for collaboration. Thank you.
 
 <br>
 
 
-We are grateful for Ian Sharpe's input. Ian helps coordinate stewardship programs (Morice Watershed Monitoring Trust) of great importance and authors wonderful documents (including one that inspired this report's acknowledgment section - Upper Bulkley and Morice Water and Salmon Sustainability Views - 2019) yet also finds the time to return phone calls, contribute to conference calls and help answer old questions.
+Ian Sharpe's input helps coordinate incredible stewardship programs (Morice Watershed Monitoring Trust) of great importance and authors wonderful documents (including one that inspired this report's acknowledgment section - Upper Bulkley and Morice Water and Salmon Sustainability Views - 2019) yet also finds the time to return phone calls, share details of local initiatives and provide encouragement.
 
 <br>
 
 
-Cindy Verbeek from the Upper Bulkley Streamkeepers has been very giving.  She took time off from running the Buck Creek hatchery and from building the new Watershed Stewardship Centre in Houston to tour us on some key sites in the field, fill us in about important context for Upper Bulkley streams and to vouch for us with the kind and generous local land owner - Roger Groot. Thank you.
+Cindy Verbeek from the Upper Bulkley Streamkeepers took time off from running the Canfor Buck Creek hatchery and from building the new Watershed Stewardship Centre in Houston to tour us on some key sites in the field, fill us in on important Upper Bulkley context and to vouch for us with the kind and generous local land owner - Roger Groot. Thank you.
 
 <br>
 
 
-Thank you to Matt Sear and Dave Ripmeester from Pacific Inland Resources as well as Jesse Ahtiainen, Kevin Skarda and Vince Ross from Canadian Forest Products Ltd.  You saved us a ton of field time by taking the time for meetings, answering emails and sharing your valuable information.  
+Thank you to Matt Sear and Dave Ripmeester from Pacific Inland Resources as well as Jesse Ahtiainen, Kevin Skarda and Vince Ross from Canadian Forest Products Ltd.  You saved us a ton of field work by taking the time for meetings, answering emails and sharing your valuable information.  
 
 <br>
 
@@ -231,7 +230,7 @@ There are many others to which we owe our gratitude and please accept our apolog
 <br>
 
 
-Fish passage is a onederful example of how all things are connected and interdependent.  Long term restoration of aquatic connectivity will demonstrate how the things that stand between us will eventually fall once we understand together where and how they divide.
+Fish passage is a onederful example of how all things are connected and interdependent.  The barriers that divide will eventually fall once we understand together where, how and why they stand between.
 
 <br>
 
@@ -547,29 +546,42 @@ To identify priorities for crossing structure rehabilitation, background literat
 
 <br>
  
-Following delineation of "non-fish habitat" with the `Fish Habitat Model`, the *average* gradient of each stream segment within habitat classified as below the 22% threshold was calculated and summed using `bcfishpass` to quantify upstream habitat potentially available for salmonids and facilitate stream line symbology based on stream morphology.  `bcfishpass` summed average gradients of stream network line segments within seven categories (0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 22%, 22 - 30% and >30%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in four categories: riffle/cascade (0 - 5%), step-pool (5 - 15%), step-pool very steep (15-22%) and extremely steep (22 - 30%) (Table \@ref(tab:tablethreshaverage)). For each crossing location, the the area of lake and wetland habitat upstream, species documented upstream and an estimate of watershed area was also collated using `bcfishpass`, `fwapg` [@norris2020fwapg] and `bcfishobs` [@norris2020bcfishobs] to provide an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.  
-
+Following delineation of "non-fish habitat" with the `Fish Habitat Model`, the *average* gradient of each stream segment within habitat classified as below the 22% threshold was calculated and summed using `bcfishpass` to quantify upstream habitat potentially available for salmonids and facilitate stream line symbology based on stream morphology.  Gradient is a  key  factor  in  fish  distribution and channel type. High  value  rearing, overwintering  and spawning habitat is often located within channel types with lower gradients, while high gradient sections typically  present  upstream  migration  barriers  and  less  available  habitat.  Additionally, the size of the stream (indicated by channel width) is an important determinant for its habitat suitability for different species and furthermore life stages of particular species.  For  this  reason,  `bcfishpass` was used to categorize and sum potentially accessible stream segments in the study area watersheds within gradient categories as well as estimate the width of each stream segement. 
 
 <br>
 
+### Gradient
+
+(0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 22%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in three categories: riffle/cascade (0 - 5%), step-pool (5 - 15%) and step-pool very steep (15-22%) (Table \@ref(tab:tablethreshaverage)). For each crossing location, the the area of lake and wetland habitat upstream, species documented upstream and an estimate of watershed area was also collated using `bcfishpass`, `fwapg` [@norris2020fwapg] and `bcfishobs` [@norris2020bcfishobs] to provide an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.  
+
+<br>
 
 ```{r tablethreshaverage, eval= T}
 #threshold and average gradient table
-table_thresh_average <- tibble::tibble(`Gradient` = c('0 - 5%', '5 - 15%', '15 - 22%', '22 - 30%', '>30%'),
-                                       `Channel Type` = c('Riffle and cascade pool', 'Step pool', 'Step pool - very steep', 'Step pool - extremely steep (bull trout only)', 'Non fish habitat'))
+table_thresh_average <- tibble::tibble(`Gradient` = c('0 - 5%', '5 - 15%', '15 - 22%', '>22%'),
+                                       `Channel Type` = c('Riffle and cascade pool', 'Step pool', 'Step pool - very steep', 'Non fish habitat'))
 
 table_thresh_average %>% 
     my_kable(caption_text = 'Stream gradient categories (threshold and average) and associated channel type.')
 ```
 
 
-<br>
+### Channel Width
+
+Placeholder
+
+
+
+
+
+### PSCIS and Modelled Stream Crossing Review
 
 To prepare for Phase 1 and 2 assessments in the study area, past fish passage assessment reports for the Bulkley River and Morice River watershed groups were first reviewed to identify crossing structures not yet assessed or previously ranked as priorities for rehabilitation [@casselman_stanley2010BulkleyFulton; @irvine2018AnalysisPriority; @mccarthy_fernando20152015Inventory; @smith2018AssessingBarriers; @wilson_rabnett2007FishPassage].  To determine which of those crossings had not yet been assessed with Phase 1 and Phase 2 assessments we cross-referenced these reports with the PSCIS database, available background info and viewed sites within the output of the `Fish Habitat Model` and `bcfishpass`.  Outputs for modelled and PSCIS crossings (barriers and potential barriers) that met the following criteria underwent a detailed review to facilitate prioritization for Phase1 - Fish Passage Assessments and Phase 2 - Habitat Confirmations.
 
  * Confirmed fish presence upstream of the structure.
  * Stream width documented as > 2.0m in PSCIS.
- * Linear lengths of modelled upstream habitat <22% gradient for ≥1km for PSCIS crossings or ≥2km for modelled crossings.
+ * Linear lengths of modelled upstream habitat <22% gradient for ≥1km for PSCIS crossings 
+ * Linear lengths of modelled upstream habitat <22% gradient for ≥2km for modelled crossings.
  * Crossings located on streams classified as 3rd order or higher.
  * Crossings located on streams with >5 ha of modeled wetland and/or lake habitat upstream.
  * Habitat value rated as "medium" or “high” in PSCIS.  
@@ -635,7 +647,15 @@ A cost benefit analysis was conducted for each crossing determined to be a barri
 
 #### Habitat Gain Index
 
-The habitat gain index is the quantity of modelled habitat upstream of the subject crossing and represents an estimate of habitat gained with remediation of fish passage at the crossing.  For this project, a gradient threshold between accessible and non-accessible habitat was set at 20% (for a minimimum length of 100m) intended to represent the maximum gradient of which anadromous species are likely to be able to migrate upstream.  For Phase 1 assessments a "net" value of habitat quantity output from `bcfishpass` was used to estimate the amount of habitat upstream of each crossing less than 20% gradient before either a falls of height >5m - as recorded in @ProvincialObstaclesFish, a road-stream crossing recorded in PSCIS as a barrier, or a modelled unassessed crossing.  For Phase 2 assessments, to provide a conservative estimate of habitat to be potentially gained by fish passage restoration, the amount of habitat upstream of each crossing was estimated by measuring the amount of mainstem and stream segments > 1st order upstream of the crossing using the measure tool within QGIS [@QGIS_software].
+The habitat gain index is the quantity of modelled habitat upstream of the subject crossing and represents an estimate of habitat gained with remediation of fish passage at the crossing.  For this project, a gradient threshold between accessible and non-accessible habitat was set at 22% (for a minimimum length of 100m) intended to represent the maximum gradient of which the strongest swimmers of anadromous species (steelhead) are likely to be able to migrate upstream.  
+
+<br>
+
+For reporting of Phase 1 - fish passage assessments within the body of this report (Table \@ref(tab:tab-barrier-scoring)), a "total" value of habitat <20% output from `bcfishpass` was used to estimate the amount of habitat upstream of each crossing less than 20% gradient before a falls of height >5m - as recorded in @ProvincialObstaclesFish or documented in other [`bcfishpass` falls documentation](https://github.com/smnorris/bcfishpass/tree/main/01_prep/05_falls). To generate areas of habitat upstream, the estimated linear length was multiplied by the downstream channel width measured as part of the fish passage assessment protocol.  Although these estimates are not generally conservative, have low accuracy and do not account for upstream stream crossing structures they do allow a rough screening of the best candidates for follow up with more detailed Phase 2 assessments. 
+
+<br>
+
+For Phase 2 - habitat confirmation sites, conservative estimates of the linear quantity of habitat to be potentially gained by fish passage restoration, mainstem and large tributary streams (>1st order streams) segments upstream of each crossing that were <20%, below natural barriers and downstream of documented culvert barriers were measured by hand with the measure tool within QGIS [@QGIS_software]. To generate estimates of the area of habitat upstream of these sites, the length of habitat was multiplied by the upstream average channel width that was measured in the field.
 
 <br>
 
@@ -878,12 +898,9 @@ Although not assessed in 2020, @wilson_rabnett2007FishPassage report that the cr
 
 <br>
 
-In 2020, surveys in some larger mid Bulkley River tributaries were not conducted due to poor survey conditions caused by high water.  Additionally, assessment at crossings on some large tributary streams in the upper Bulkley River were not conducted due to finite quantities of field time.  
-
-<br>
 
  
-During 2020 field assessments habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 15 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority and `r hab_site_priorities %>% filter(priority %ilike% 'no fix') %>% nrow() %>% english::as.english()` rated as "no fix". Results are summarized in `r if(gitbook_on){knitr::asis_output("Figure \\@ref(fig:map-interactive) and ")}`Tables \@ref(tab:tab-overview) - \@ref(tab:tab-habitat-summary) with raw habitat and fish sampling data included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/habitat_confirmations.xls).  Detailed information for each site assessed with Phase 2 assessments is included within site specific reports included as appendices to this document with pdf maps stored [here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/).
+During 2020 field assessments habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 15 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority and `r hab_site_priorities %>% filter(priority %ilike% 'no fix') %>% nrow() %>% english::as.english()` rated as "no fix". Results are summarized in `r if(gitbook_on){knitr::asis_output("Figure \\@ref(fig:map-interactive) and ")}`Tables \@ref(tab:tab-overview) - \@ref(tab:tab-habitat-summary) with raw habitat and fish sampling data included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/habitat_confirmations.xls).  Detailed information for each site assessed with Phase 2 assessments is included within site specific reports included as appendices to this document with pdf maps stored [here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/). Of note, in 2020, surveys in some larger mid Bulkley River tributaries with high potential low gradient habitat gains (ex. Toboggan Creek and John Brown Creek) were not conducted due to poor survey conditions caused by high water.  Additionally, assessment at crossings on some large tributary streams in the upper Bulkley River were not conducted due to finite quantities of field time. 
 
 
 <br>
@@ -959,7 +976,7 @@ plot_fish_box_all()
 
 # Recommendations
 
-Recommendations for potential incorporation into watershed connectivity planning for the Bulkley and Morice watershed groups include:
+Recommendations for potential incorporation into watershed connectivity planning for the Bulkley River and Morice River watershed groups include:
 
 
  * Continue to develop `bcfishpass` and other open source tools that are scalable, facilitate reproducible analysis and can be adapted to incorporate alternative fragmentation indicators and habitat gain/value metrics.

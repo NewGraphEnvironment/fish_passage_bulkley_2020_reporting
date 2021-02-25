@@ -102,10 +102,11 @@ tab_hab_map <- left_join(
   # mutate(data_link = paste0('<a href =',
   #                           'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/docs/sum/', pscis_crossing_id,
   #                           '.html', '>', 'data link', '</a>')) %>%
-  mutate(data_link = paste0('<a href =', 'sum/', pscis_crossing_id,
-                            '.html', '>', 'data (right click - open in new tab)', '</a>')) %>%
-  mutate(photo_link = paste0('<a href =', 'data/photos/', pscis_crossing_id,
-                            '/crossing_all.JPG', '>', 'photos (right click - open in new tab)', '</a>'))
+  mutate(data_link = paste0('<a href =', 'sum/', pscis_crossing_id, '.html ', 'target="_blank">Data</a>')) %>%
+  mutate(photo_link = paste0('<a href =', 'data/photos/', pscis_crossing_id, '/crossing_all.JPG ',
+                            'target="_blank">Photos</a>'))
+  # mutate(photo_link = paste0('<a href =', 'data/photos/', pscis_crossing_id,
+  #                           '/crossing_all.JPG', '>', 'Photos', '>New Tab</a>'))
   # mutate(data_link = paste0('[data](fig/sum/', pscis_crossing_id, '.png)')) %>%
   # mutate(photo_link = paste0('<a href =',
   #                            'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', pscis_crossing_id,
@@ -120,7 +121,8 @@ tab_map_prep <- left_join(
   by = 'pscis_crossing_id'
 )
 
-
+# mutate(data_link = paste0('<a href =', 'sum/', pscis_crossing_id,
+#                           '.html', '>', 'Data', '>New Tab</a>'))
 
 tab_map <- tab_map_prep %>%
   # mutate(pscis_crossing_id = as.character(pscis_crossing_id),
@@ -134,10 +136,9 @@ tab_map <- tab_map_prep %>%
   # sf::st_transform(crs = 4326) %>%
   mutate(priority_phase1 = case_when(priority_phase1 == 'mod' ~ 'moderate',
                                      T ~ priority_phase1)) %>%
-  mutate(data_link = paste0('<a href =', 'sum/', pscis_crossing_id,
-                            '.html', '>', 'data (right click - open in new tab)', '</a>')) %>%
-  mutate(photo_link = paste0('<a href =', 'data/photos/', amalgamated_crossing_id,
-                             '/crossing_all.JPG', '>', 'photos (right click - open in new tab)', '</a>'))
+  mutate(data_link = paste0('<a href =', 'sum/', pscis_crossing_id, '.html ', 'target="_blank">Data</a>')) %>%
+  mutate(photo_link = paste0('<a href =', 'data/photos/', amalgamated_crossing_id, '/crossing_all.JPG ',
+                             'target="_blank">Photos</a>'))
   # mutate(data_link = paste0('<a href =',
   #                           'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/fig/sum/', pscis_crossing_id,
   #                           '.png', '>', 'data link', '</a>')) %>%

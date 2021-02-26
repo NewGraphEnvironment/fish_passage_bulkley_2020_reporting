@@ -3,7 +3,6 @@ fig:hydrology-plot
 fig:hydrology-stats1
 fig:hydrology-stats2
 tab:fiss-species-table
-tab:tablethreshaverage
 tab:tab-fish-spawning-rearing
 tab:tab-hab-value
 tab:tab-barrier-scoring
@@ -176,8 +175,6 @@ morice-river-1
 methods
 planning
 accessible-habitat
-habitat-quality-and-quantity
-gradient
 channel-width
 mean-annual-discharge
 pscis-and-modelled-stream-crossing-review

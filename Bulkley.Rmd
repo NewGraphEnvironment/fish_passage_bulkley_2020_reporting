@@ -78,18 +78,6 @@ knitr::write_bib(c(
 ), 'packages.bib')
 ```
 
-## {-}
-
-
-
-```{js, logo-header, echo = FALSE, eval= T}
-title=document.getElementById('header');
-title.innerHTML = '<img src="fig/logo_sern.png" alt="NewGraph">' + title.innerHTML
-```
-
-
-<!--chapter:end:index.Rmd-->
-
 # Acknowledgement {.front-matter .unnumbered}
 
 The Bulkley River and Morice River watersheds are within Wet’suwet’en and Gitxsan territory. Misiyh and Ham i yaa.
@@ -239,16 +227,20 @@ Dzïn scudïlh’iy misiyh. Hami yaa nee loosim.
 
 
 
+```{js, logo-header, echo = FALSE, eval= T}
+title=document.getElementById('header');
+title.innerHTML = '<img src="fig/logo_sern.png" alt="NewGraph">' + title.innerHTML
+```
 
 
-<!--chapter:end:0030-acknowledgement.Rmd-->
+<!--chapter:end:index.Rmd-->
 
 
 
 # Executive Summary {.front-matter .unnumbered} 
 
 
-The Society for Ecosystem Restoration Northern BC and New Graph Environment were retained by the Habitat Conservation Trust, the Provincial Fish Passage Remediation Program and the Canadian Wildlife Federation in 2020 to plan and conduct fish passage and habitat confirmation assessments at road-stream crossings as part of connectivity restoration planning. Although planning was conducted for both the Morice River watershed group and the Bulkley River watershed group, on the ground surveys in 2020 focused primarily within Bulkley River tributaries. 
+The Society for Ecosystem Restoration Northern BC undertook an initiative in April of 2020 to plan and conduct fish passage restoration planning activities in the Bulkley River and Morice River watershed groups which are sub-basins of the Skeena River watershed.  The initiative was supported by a grant from the Habitat Conservation Trust Fund that leveraged funding committed in the fall of 2019 from the Provincial Fish Passage Remediation Program and the Canadian Wildlife Federation.  New Graph Environment and Hillcrest Geographics were subcontracted to complete the work which included updating and implementation of GIS analysis tools used to quantify potential habitat gains of fish passage restoration for target species as well as on the ground fish passage assessments and habitat confirmation assessments.  In August of 2020, following a province wide prioritization exercise and a series of workshops, the Canadian Wildlife Federation selected the Bulkley River watershed group as a target watershed for connectivity planning efforts supported by a grant from the British Columbia Salmon Restoration and Innovation Fund.  Recognizing synergies between the two initiatives, project activities of both initiatives became a collaboration between SERNbc and CWF with extensive input from numerous organizations and individuals connected to the watershed. Although fish passage restoration planning was conducted for both the Morice River watershed group and the Bulkley River watershed group, on the ground surveys in 2020 focused primarily within Bulkley River tributaries.
 
 <br>
 
@@ -256,7 +248,11 @@ The health and viability of freshwater fish populations can depend on access to 
 
 <br>
 
-Although remediation and replacement of crossing structures can have benefits to local fish populations, the costs of remedial works can be significant, impacts of the work often complex to isolate/quantify and outside investments in infrastructure on transportation right of ways are not always considered ethical from all perspectives.  When funds are finite and invested groups are engaged in fund raising for ecosystem restoration activities, cost benefits and the ethics of fish passage investments should be explored collaboratively alongside the cost benefits and ethics of alternative restoration activities (ex. land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, etc.).  A Fish Passage Working Group consisting of First Nations, non-profits, stakeholder groups and regulators has been established for the Bulkley River through a connectivity planning initiative spearheaded by the Canadian Wildlife Federation. At the time of reporting, collaborative decision making processes regarding connectivity issues were underway through monthly meetings with results forthcoming in a watershed connectivity remediation plan. At the time of reporting, the scope of connectivity planning explored by the Working Group included the Bulkley River watershed group and not yet the Morice River and other sub-basins of the Skeena River watershed.
+Although remediation and replacement of crossing structures can have benefits to local fish populations, the costs of remedial works can be significant, impacts of the work often complex to isolate/quantify and outside investments in infrastructure on transportation right of ways are not always considered ethical from all perspectives.  When funds are finite and invested groups are engaged in fund raising for ecosystem restoration activities, cost benefits and the ethics of fish passage investments should be explored collaboratively alongside the cost benefits and ethics of alternative restoration activities (ex. transportation corridor relocation/deactivation, land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, etc.).  A Fish Passage Working Group consisting of First Nations, non-profits, stakeholder groups and regulators has been established for the Bulkley River through a connectivity planning initiative spearheaded by the Canadian Wildlife Federation. At the time of reporting, collaborative decision making processes regarding connectivity issues were underway through monthly meetings with results forthcoming in a watershed connectivity remediation plan. At the time of reporting, the scope of connectivity planning explored by the Working Group included the Bulkley River watershed group and not yet the Morice River and other sub-basins of the Skeena River watershed.
+
+<br>
+
+Fish passage restoration planning for the Morice River watershed was informed by engagement with the Office of Wet'suwet'en, the Morice Watershed Monitoring Trust and numerous others along with the application of the open-source `bcfishpass` tools which were utilized to analyze potential habitat gains of remediation activities based on species and life stage specific habitat characteristics. online interactive and georeferenced field maps were produced and a field plan for future on the ground assessments formulated.  Some key areas targeted for future fieldwork activity include assessments within the Owen Creek, Lamprey Creek, McBride/Morice Lake etc (placeholder).
 
 <br>
 
@@ -266,6 +262,25 @@ During 2020 fieldwork, a total of `r n_distinct(pscis_phase1_reassessments$my_cr
 <br>
 
 Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites with a total of approximately 18 km of stream assessed. `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english()` crossings were rated as moderate priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as a low priority.
+
+<br>
+
+Recommendations for potential incorporation into collaborative watershed connectivity planning for the Bulkley River and Morice River watershed groups include:
+
+
+ * Continue to develop `bcfishpass` and other open source tools that are scalable, facilitate reproducible analysis and can be adapted to incorporate alternative fragmentation indicators and habitat gain/value metrics.
+ 
+ * Continue to conduct fish passage and habitat confirmation assessments at road and rail stream crossings at sites in the study areas prioritized through this project and future connectivity analysis/modelling. In the Bulkley River watershed group, particular sites of note where future Phase 1 and Phase 2 assessments are recommended include John Brown Creek, Toboggan Creek, Cesford Creek, Watson Creek and Ailport Creek.
+ 
+ * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of fish passage investments alongside the cost benefits and ethics of alternative restoration activities (ex. land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, etc.).
+ 
+ * Refine barrier thresholds for road-stream crossing structures to explore metrics specific to life stage and life history types of species of interest. This will further focus efforts of potential remediation actions based on biological attributes (ex. timing of migration, size/direction of fish migrating, etc.) and could result in the consideration of interim "stop-gap" physical works to alter crossing characteristics that can be significantly less costly than structure replacements (ex. building up of downstream area with rock riffles to decrease the outlet drop size and/or increaseing water depth within pipe with baffles and substrate additions).
+ 
+ * Model fish densities (fish/m^2^) vs. habitat/water quality characteristics (i.e. gradient, watershed size, channel size, alkalinity, elevation, etc.) using historically gathered electrofishing data to inform crossing prioritization and the monitoring of subsequent restoration actions.
+ 
+ * Expand the scope of the working group to include the entire Skeena River watershed.  A Skeena level effort will facilitate a more inclusive decision making environment, open up opportunities for collaboration/funding to more governments/organizations/stakeholders and allow consideration of all potential remediation sites that could benefit Skeena fish populations.
+ 
+ * Continue to collaborate with potential partners to build relationships, explore perspectives and develop “road maps” for fish passage restoration in different situations (MoT roads, rail lines, permit roads of different usages, FSRs, etc.) – documenting the people involved, discussions and processes that are undertaken, funding options, synergies, measures of success, etc. Through this collaboration such as is occurring with the Bulkley River working group, continue to draft and implement plans for fish passage restoration investments as well as to monitor the impacts of those investments on fish populations.
 
 
 <!--chapter:end:0040-executive_summary.Rmd-->
@@ -277,6 +292,7 @@ Habitat confirmation assessments were conducted at `r hab_site_priorities %>% nr
 # New Graph Environment was retained by the Canadian Wildlife Federation and Nupgu Limited Partnership in the fall of 2020 to plan and conduct fish passage and habitat confirmation assessments at road-stream crossings as part of connectivity restoration planning targeting westslope cutthrout trout. Although some planning was conducted for both the Elk River watershed upstream of the Elko Dam near Elko, BC and the Flathead River, on the ground surveys in 2020 focused on the Elk River and tributaries located upstream of the Elko Dam. 
 ```
 
+The Society for Ecosystem Restoration Northern BC undertook an initiative in April of 2020 to plan and conduct fish passage restoration planning activities in the Bulkley River and Morice River watershed groups which are sub-basins of the Skeena River watershed.  The initiative was supported by a grant from the Habitat Conservation Trust Fund that leveraged funding committed in the fall of 2019 from the Provincial Fish Passage Remediation Program and the Canadian Wildlife Federation.  New Graph Environment and Hillcrest Geographics were subcontracted to complete the work which included updating and implementation of GIS analysis tools used to quantify potential habitat gains of fish passage restoration for target species as well as on the ground fish passage assessments and habitat confirmation assessments.  In August of 2020, following a province wide prioritization exercise and a series of workshops, the Canadian Wildlife Federation selected the Bulkley River watershed group as a target watershed for connectivity planning efforts supported by a grant from the British Columbia Salmon Restoration and Innovation Fund.  Recognizing synergies between the two initiatives, project activities of both initiatives became a collaboration between SERNbc and CWF with extensive input from numerous organizations and individuals connected to the watershed. Although fish passage restoration planning was conducted for both the Morice River watershed group and the Bulkley River watershed group, on the ground surveys in 2020 focused primarily within Bulkley River tributaries.
 
 <br>
 
@@ -284,7 +300,7 @@ The health and viability of freshwater fish populations can depend on access to 
 
 <br>
 
-Although remediation and replacement of crossing structures can have benefits to local fish populations, the costs of remedial works can be significant, impacts of the work often complex to isolate/quantify and outside investments in infrastructure on transportation right of ways are not always considered ethical from all perspectives.  When funds are finite and invested groups are engaged in fund raising for ecosystem restoration activities, cost benefit relationships and the ethics of fish passage investments should be explored collaboratively alongside the cost benefits and ethics of alternative restoration activities (ex. land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, etc.).  A Fish Passage Working Group consisting of First Nations, non-profits, stakeholder groups and regulators has been established for the Bulkley River through a connectivity planning initiative spearheaded by the Canadian Wildlife Federation. At the time of reporting, collaborative decision making processes regarding connectivity issues were underway through monthly meetings with results forthcoming in a watershed connectivity remediation plan. At the time of reporting, the scope of connectivity planning explored by the Working Group was limited to the Bulkley River watershed group and excluded the Morice River and other sub-basins of the Skeena River watershed.
+Although remediation and replacement of crossing structures can have benefits to local fish populations, the costs of remedial works can be significant, impacts of the work often complex to isolate/quantify and outside investments in infrastructure on transportation right of ways are not always considered ethical from all perspectives.  When funds are finite and invested groups are engaged in fund raising for ecosystem restoration activities, cost benefit relationships and the ethics of fish passage investments should be explored collaboratively alongside the cost benefits and ethics of alternative restoration activities (ex. transportation corridor relocation/deactivation, land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, etc.).  A Fish Passage Working Group consisting of First Nations, non-profits, stakeholder groups and regulators has been established for the Bulkley River through a connectivity planning initiative spearheaded by the Canadian Wildlife Federation. At the time of reporting, collaborative decision making processes regarding connectivity issues were underway through monthly meetings with results forthcoming in a watershed connectivity remediation plan. At the time of reporting, the scope of connectivity planning explored by the Working Group was limited to the Bulkley River watershed group and excluded the Morice River and other sub-basins of the Skeena River watershed.
 
 <!--chapter:end:0100-intro.Rmd-->
 
@@ -543,29 +559,66 @@ To identify priorities for crossing structure rehabilitation, background literat
  
 <br>
 
-### Accessible Habitat
+### Accessible Habitat 
 
-The `Fish Habitat Model` was developed by the BC Ministry of Environment to provide estimates of the amount of fish habitat potentially accessible to fish upstream of crossing locations based on the ability of fish to swim upstream against user defined gradient thresholds. The model calculates the average gradient of BC Freshwater Atlas [stream network lines](https://catalogue.data.gov.bc.ca/dataset/freshwater-atlas-stream-network) at minimum 100m long intervals starting from the downstream end of the streamline segment and working upstream.  The network lines are broken into max gradient categories with new segments created when the average gradient of the stream lines exceeds user provided gradient thresholds. For this project the user provided gradient thresholds were based on estimated max gradients that salmon (15%) and steelhead (20%) are likely to be capable of ascending. At the time of reporting plans are in place to port over of the latest model version (V2.3.1) into `bcfishpass`.
+The `Fish Habitat Model` was developed by the BC Ministry of Environment to provide estimates of the amount of fish habitat potentially accessible to fish upstream of crossing locations based on the ability of fish to swim upstream against user defined gradient thresholds. The model calculates the average gradient of BC Freshwater Atlas [stream network lines](https://catalogue.data.gov.bc.ca/dataset/freshwater-atlas-stream-network) at minimum 100m long intervals starting from the downstream end of the streamline segment and working upstream.  The network lines are broken into max gradient categories with new segments created when the average gradient of the stream lines exceeds user provided gradient thresholds. For this project the user provided gradient thresholds used to delineate "potentially accessible habitat" were based on estimated max gradients that salmon (15%) and steelhead (20%) are likely to be capable of ascending. At the time of reporting, plans were in place to port over of the latest model version of the `Fish Habitat Model` (V2.3.1) into `bcfishpass`.
+
+<br>
 
 
-
-### Habitat Quality and Quantity
-
-### Gradient
-
- `bcfishpass` is comprised of sql and python based shell script libraries that "generate a simple model of aquatic habitat connectivity by identifying natural barriers to fish passage (plus hydro dams that are not feasible to remediate) and classifying all streams not upstream of these barriers as 'potentially accessible'" [@norrisBcfishpass2020]. On potentially accessible streams, `bcfishpass` scripts "identify known barriers and additional anthropogenic features (primarily road/railway stream crossings, i.e. culverts) that are potentially barriers. To prioritize these features for assessment or remediation," the scripts  "report on how much modelled potentially accessible aquatic habitat the barriers may obstruct. The model can be refined with known fish observations. Depending on the modelling scenario, all aquatic habitat downstream of a given fish observation can be classified as 'observed accessible', overriding any downstream barriers."
+ `bcfishpass` is an open-source code repository that builds on the work of the `Fish Habitat Model`, porting over numerous tools developed over the years to analyze fish habitat in British Columbia.  Comprised of sql and python based shell script libraries that "generate a simple model of aquatic habitat connectivity by identifying natural barriers to fish passage (plus hydro dams that are not feasible to remediate) and classifying all streams not upstream of these barriers as 'potentially accessible'" [@norrisBcfishpass2020]. On potentially accessible streams, `bcfishpass` scripts "identify known barriers and additional anthropogenic features (primarily road/railway stream crossings, i.e. culverts) that are potentially barriers. To prioritize these features for assessment or remediation," the scripts  "report on how much modelled potentially accessible aquatic habitat the barriers may obstruct. The model can be refined with known fish observations. Depending on the modelling scenario, all aquatic habitat downstream of a given fish observation can be classified as 'observed accessible', overriding any downstream barriers."  For each crossing location, the area of lake and wetland habitat upstream, species documented upstream and an estimate of watershed area can be collated using `bcfishpass`, `fwapg` [@norris2020fwapg] and `bcfishobs` [@norris2020bcfishobs] to provide an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.
  
  <br>
 
-Following delineation of "non-fish habitat" with the `Fish Habitat Model`, the *average* gradient of each stream segment within habitat classified as below the 22% threshold was calculated and summed using `bcfishpass` to quantify upstream habitat potentially available for salmonids and facilitate stream line symbology based on stream morphology.  Gradient is a  key  factor  in  fish  distribution and channel type. High  value  rearing, overwintering  and spawning habitat is often located within channel types with lower gradients, while high gradient sections typically  present  upstream  migration  barriers  and  less  available  habitat.  Additionally, the size of the stream (indicated by channel width) is an important determinant for its habitat suitability for different species and furthermore life stages of particular species.  For  this  reason,  `bcfishpass` was used to categorize and sum potentially accessible stream segments in the study area watersheds within gradient categories as well as estimate the width of each stream segement. 
+Gradient, channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High  value  rearing, overwintering  and spawning habitat is often located within channel types with relatively low gradients and the size of the channel (also effectively quantified by the amount of flow in the stream) is often a good predictor of species/life stage utilization.  Following delineation of "potentially accessible habitat" with the `Fish Habitat Model`, the *average* gradient of each stream segment within habitat classified as below the 15% threshold as well as the 22% threshold was calculated and summed using `bcfishpass` within species and life stage specific gradient and channel width categories. For the Bulkley River watershed group, stream discharge acquired from a proprietary analysis was also added to the dataset and categorized by intrinic potential for a set of species and life stages.   `bcfishpass` has been designed to be flexible in analysis, accepting user defined gradient, channel width and stream discharge categories.  Although currently in draft form and subject to revisions throughout the development of this reporting, gradient, channel width and stream discharge thresholds for a number of fish species in the Bulkley River and Morice River watersheds groups are detailed in Table \@ref(tab:tab-fish-spawning-rearing).  Determination of the average gradient of stream line segments is trivial since the provincial streamline dataset contains elevations. Estimations of channel width and stream discharge are more complicated to derive so a breakdown of the processes involved in deriving estimations used in this work is provided in the following sections.
 
 <br>
 
-(0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 22%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in three categories: riffle/cascade (0 - 5%), step-pool (5 - 15%) and step-pool very steep (15-22%) (Table \@ref(tab:tablethreshaverage)). For each crossing location, the the area of lake and wetland habitat upstream, species documented upstream and an estimate of watershed area was also collated using `bcfishpass`, `fwapg` [@norris2020fwapg] and `bcfishobs` [@norris2020bcfishobs] to provide an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.  
+Placeholder
 
-<br>
+```{r tab-fish-spawning-rearing}
+bcfishpass_spawn_rear_model %>% 
+  mutate(Species = fishbc::fbc_common_name(species_code),
+         spawn_gradient_max = round(spawn_gradient_max * 100 ,1),
+         rear_gradient_max = round(rear_gradient_max * 100 ,1)) %>% 
+  select(Species, 
+         `Spawn Gradient  Max (%)`= spawn_gradient_max,
+         `Spawn Width Min (m)` = spawn_channel_width_min,
+         `Spawn Width Max (m)` = spawn_channel_width_max,
+         spawn_mad_min,
+         spawn_mad_max,
+         `Rear Gradient Max (%)` = rear_gradient_max,
+         rear_mad_min,
+         rear_mad_max) %>% 
+  my_kable_scroll_no_height(caption_text = 'Stream gradient, width and mean annual discharge used in habitat modelling.')
 
-```{r tablethreshaverage, eval= T}
+```
+
+
+### Channel Width
+
+Placeholder
+Pinning of FISS sites to streams
+Lake/Wetland multipliers (table here?)
+Linear regression.  Table with cutoffs and confidence intervals. Insert flexible references table that links to bcfishpass_spawn_rear_model and zotero.
+
+### Mean Annual Discharge
+
+Used in Bulkley only
+Placeholder
+Insert details and references.
+
+
+
+
+```{r tablethreshaverage, eval= F}
+#to quantify upstream habitat potentially available for salmonids and facilitate stream line symbology based on stream morphology.
+# while high gradient sections typically  present  upstream  migration  barriers  and  less  available  habitat.  Additionally, the size of the stream (indicated by channel width) is an important determinant for habitat suitability for different species as well as specific life stages of those species. 
+
+# `bcfishpass` was used to categorize and sum potentially accessible stream segments in the study area watersheds within gradient and width categories for each stream segment. 
+# (0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 22%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in three categories: riffle/cascade (0 - 5%), step-pool (5 - 15%) and step-pool very steep (15-22%) (Table \@ref(tab:tablethreshaverage)).  
+
+
 #threshold and average gradient table
 table_thresh_average <- tibble::tibble(`Gradient` = c('0 - 5%', '5 - 15%', '15 - 22%', '>22%'),
                                        `Channel Type` = c('Riffle and cascade pool', 'Step pool', 'Step pool - very steep', 'Non fish habitat'))
@@ -574,20 +627,8 @@ table_thresh_average %>%
     my_kable(caption_text = 'Stream gradient categories (threshold and average) and associated channel type.')
 ```
 
-```{r tab-fish-spawning-rearing}
-bcfishpass_spawn_rear_model %>% 
-    my_kable_scroll_no_height(caption_text = 'Stream gradient, width and mean annual discharge used in habitat modelling.')
-
-```
 
 
-### Channel Width
-
-Placeholder
-
-### Mean Annual Discharge
-
-Placeholder
 
 
 <br>
@@ -995,16 +1036,16 @@ plot_fish_box_all()
 
 # Recommendations
 
-Recommendations for potential incorporation into watershed connectivity planning for the Bulkley River and Morice River watershed groups include:
+Recommendations for potential incorporation into collaborative watershed connectivity planning for the Bulkley River and Morice River watershed groups include:
 
 
  * Continue to develop `bcfishpass` and other open source tools that are scalable, facilitate reproducible analysis and can be adapted to incorporate alternative fragmentation indicators and habitat gain/value metrics.
  
  * Continue to conduct fish passage and habitat confirmation assessments at road and rail stream crossings at sites in the study areas prioritized through this project and future connectivity analysis/modelling. In the Bulkley River watershed group, particular sites of note where future Phase 1 and Phase 2 assessments are recommended include John Brown Creek, Toboggan Creek, Cesford Creek, Watson Creek and Ailport Creek.
  
- * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of fish passage investments alongside the cost benefits and ethics of alternative restoration activities (ex. land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, etc.).
+ * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of fish passage investments alongside the cost benefits and ethics of alternative restoration activities (ex. transportation corridor relocation/deactivation, land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, etc.).
  
-  * Refine barrier thresholds for road-stream crossing structures to explore metrics specific to life stage and life history types of species of interest. This will further focus efforts of potential remediation actions based on biological attributes (ex. timing of migration, size/direction of fish migrating, etc.) and could result in the consideration of interim physical works to alter crossing characteristics that can be significantly less costly than structure replacements (ex. building up of downstream area with rock riffles to decrease the outlet drop size and/or increaseing water depth within pipe with baffles and substrate additions).
+  * Refine barrier thresholds for road-stream crossing structures to explore metrics specific to life stage and life history types of species of interest. This will further focus efforts of potential remediation actions based on biological attributes (ex. timing of migration, size/direction of fish migrating, etc.) and could result in the consideration of interim "stop-gap" physical works to alter crossing characteristics that can be significantly less costly than structure replacements (ex. building up of downstream area with rock riffles to decrease the outlet drop size and/or increaseing water depth within pipe with baffles and substrate additions).
  
  * Model fish densities (fish/m^2^) vs. habitat/water quality characteristics (i.e. gradient, watershed size, channel size, alkalinity, elevation, etc.) using historically gathered electrofishing data to inform crossing prioritization and the monitoring of subsequent restoration actions.
  

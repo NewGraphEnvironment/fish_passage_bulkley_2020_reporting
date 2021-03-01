@@ -229,6 +229,9 @@ print_tab_summary <- function(dat = pscis_phase2, site = my_site, site_photo_id 
   # kableExtra::scroll_box(width = "100%", height = "500px") ##not scrolling to simplify our pagedown output
 }
 
+
+
+
 ####------my_kable-------------------------------
 my_kable_scroll <- function(dat, caption_text = '', font = font_set){
   dat %>%
@@ -390,4 +393,71 @@ make_html_tbl <- function(df) {
 openHTML <- function(x) browseURL(paste0('file://', file.path(getwd(), x)))
 
 
+######modelling summary table
+####---------------make the report table-----
+##grab a df with the names of the left hand side of the table
+make_tab_summary_bcfp <- function(dat = bcfishpass_all,
+                                  xref_table = xref_bcfishpass_names,
+                                  site = my_site){
+  df <- dat %>%
+    mutate(across(where(is.numeric), round, 1)) %>%
+    filter(stream_crossing_id == site) %>%
+    distinct(stream_crossing_id, .keep_all = T)
+  tab_results_left <- xref_table %>%
+    filter(id_side == 1) %>%
+    arrange(id_join)
+  ##get the data
+  tab_pull_left <- df %>%
+    select(pull(tab_results_left,bcfishpass)) %>%
+    # slice(1) %>%
+    t() %>%
+    as.data.frame() %>%
+    tibble::rownames_to_column()
 
+  left <- left_join(tab_pull_left, xref_table, by = c('rowname' = 'bcfishpass'))
+
+  tab_results_right <- xref_table %>%
+    filter(id_side == 2)
+
+  ##get the data
+  tab_pull_right<- df %>%
+    select(pull(tab_results_right,bcfishpass)) %>%
+    # slice(1) %>%
+    t() %>%
+    as.data.frame() %>%
+    tibble::rownames_to_column()
+
+  right <- left_join(tab_pull_right, xref_table, by = c('rowname' = 'bcfishpass'))
+
+  tab_joined <- left_join(
+    select(left, report, V1, id_join),
+    select(right, report, V1, id_join),
+    by = 'id_join'
+  ) %>%
+    select(-id_join) %>%
+    purrr::set_names(c('Habitat', 'Potential', 'remove', 'Remediation Gain')) %>%
+    mutate(Potential = as.numeric(Potential),
+           `Remediation Gain` = as.numeric(`Remediation Gain`)) %>%
+    mutate(`Remediation Gain (%)` = round(`Remediation Gain`/Potential * 100,0),
+           Habitat = stringr::str_replace_all(Habitat, 'Ha', '(ha)'),
+           Habitat = stringr::str_replace_all(Habitat, 'Km', '(km)'),
+           Habitat = stringr::str_replace_all(Habitat, 'Lakereservoir', 'Lake and Reservoir'),
+           Habitat = stringr::str_replace_all(Habitat, 'Spawningrearing ', 'Spawning and Rearing ')) %>%
+    select(-remove)
+  return(tab_joined)
+}
+
+print_tab_summary_bcfp <- function(site = my_site, font = 11, ...){
+  make_tab_summary_bcfp() %>%
+    kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
+    kableExtra::add_footnote('Model data is preliminary and subject to adjustments.', notation = 'symbol') %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)
+}
+
+text_ref_tab_summary_bcfp <-  function(site = my_site){
+  paste0('presents preliminary fish passage modelling data for crossing ', site,
+         ' with spawning and rearing habitat estimated for chinook, coho, sockeye and steelhead. ',
+         'Modelled estimates of the total length of salmon or steelhead habitat upstream of the crossing before potential barriers are ',
+         my_bcfishpass(round_dig = 1) %>% pull(all_spawning_belowupstrbarriers_km), 'km of potential spawning habitat and ',
+         my_bcfishpass(round_dig = 1) %>% pull(all_rearing_belowupstrbarriers_km), 'km of potential rearing habitat.')
+}

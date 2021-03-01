@@ -64,9 +64,9 @@ my_pscis_info <- function(dat = pscis_phase2, site = my_site){
 }
 
 
-my_bcfishpass <- function(dat = bcfishpass_phase2, site = my_site){
+my_bcfishpass <- function(dat = bcfishpass_phase2, site = my_site, round_dig = 0){
   dat %>%
-    mutate(across(where(is.numeric), round, 0)) %>%
+    mutate(across(where(is.numeric), round, round_dig)) %>%
     filter(stream_crossing_id == site) %>%
     distinct(stream_crossing_id, .keep_all = T)
 }

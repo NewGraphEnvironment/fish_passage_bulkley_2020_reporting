@@ -23,3 +23,5 @@ images_to_combine <- paste0(getwd(), c('/fig/logo_sern.png','/fig/logo_html3.png
 image_read('data/photos/124487/IMG_8245_k_d1_.JPG') %>%
   image_rotate(180) %>%
   image_write(path = "data/photos/124487/IMG_8245_k_d1_rotated.JPG", format = 'jpg')
+
+

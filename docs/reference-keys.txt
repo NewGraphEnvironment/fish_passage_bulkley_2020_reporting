@@ -3,7 +3,11 @@ fig:hydrology-plot
 fig:hydrology-stats1
 fig:hydrology-stats2
 tab:fiss-species-table
+fig:fish-plot-grad
+fig:fish-plot-width
+fig:fish-plot-wshed
 tab:tab-fish-spawning-rearing
+tab:tab-fish-spawning-rearing-references
 tab:tab-hab-value
 tab:tab-barrier-scoring
 tab:tab-barrier-result
@@ -14,6 +18,8 @@ tab:tab-overview
 tab:unnamed-chunk-7
 tab:cost-est-phase-2
 tab:tab-habitat-summary
+fig:plot-fish-all
+fig:plot-model-all
 tab:tab-culvert-3139
 tab:tab-habitat-summary-3139
 fig:photo-3139-01
@@ -23,6 +29,7 @@ fig:photo-3139-04
 tab:tab-culvert-58159
 tab:tab-culvert-58158
 tab:tab-habitat-summary-58159
+tab:tab-culvert-bcfp-58159
 fig:photo-58159-01
 fig:photo-58159-02
 fig:photo-58159-03
@@ -34,6 +41,7 @@ tab:tab-culvert-123445
 tab:tab-culvert-123446
 tab:tab-culvert-123463
 tab:tab-habitat-summary-123445
+tab:tab-culvert-bcfp-123445
 fig:photo-123445-01
 fig:photo-123445-02
 fig:photo-123445-03
@@ -42,18 +50,21 @@ fig:photo-123445-05
 fig:photo-123445-06
 tab:tab-culvert-123794
 tab:tab-habitat-summary-123794
+tab:tab-culvert-bcfp-123794
 fig:photo-123794-01
 fig:photo-123794-02
 fig:photo-123794-03
 fig:photo-123794-04
 tab:tab-culvert-123795
 tab:tab-habitat-summary-123795
+tab:tab-culvert-bcfp-123795
 fig:photo-123795-01
 fig:photo-123795-02
 fig:photo-123795-03
 fig:photo-123795-04
 tab:tab-culvert-124487
 tab:tab-habitat-summary-124487
+tab:tab-culvert-bcfp-124487
 fig:photo-124487-01
 fig:photo-124487-02
 fig:photo-124487-03
@@ -61,6 +72,7 @@ fig:photo-124487-04
 tab:tab-culvert-124500
 tab:tab-culvert-197666
 tab:tab-habitat-summary-124500
+tab:tab-culvert-bcfp-124500
 fig:photo-124500-01
 fig:photo-124500-02
 fig:photo-124500-03
@@ -70,6 +82,7 @@ fig:model-caption-195288
 tab:tab-culvert-195290
 tab:tab-culvert-195288
 tab:tab-habitat-summary-195290
+tab:tab-culvert-bcfp-195290
 tab:tab-fish-site-195290
 tab:tab-fish-dens-195290
 fig:plot-fish-box-195290
@@ -80,7 +93,9 @@ fig:photo-195290-03-print
 fig:photo-195290-04-print
 fig:model-caption-197360
 tab:tab-culvert-197360
+tab:tab-culvert-197669
 tab:tab-habitat-summary-197360
+tab:tab-culvert-bcfp-197360
 tab:tab-fish-site-197360
 tab:tab-fish-dens-197360
 fig:plot-fish-box-197360
@@ -88,16 +103,17 @@ fig:photo-197360-01
 fig:photo-197360-02
 fig:photo-197360-03
 fig:photo-197360-04
-tab:tab-culvert-197669
 tab:tab-culvert-197640
 tab:tab-culvert-197647
 tab:tab-habitat-summary-197640
+tab:tab-culvert-bcfp-197640
 fig:photo-197640-01
 fig:photo-197640-02
 fig:photo-197640-03
 fig:photo-197640-04
 tab:tab-culvert-197658
 tab:tab-habitat-summary-197658
+tab:tab-culvert-bcfp-197658
 tab:tab-fish-mt-197658
 fig:photo-197658-01
 fig:photo-197658-02
@@ -107,6 +123,7 @@ fig:photo-197658-05
 fig:photo-197658-06
 tab:tab-culvert-197662
 tab:tab-habitat-summary-197662
+tab:tab-culvert-bcfp-197662
 tab:tab-fish-dens-197662
 fig:photo-197662-01
 fig:photo-197662-02
@@ -117,6 +134,7 @@ fig:photo-197662-06
 tab:tab-culvert-197663
 tab:tab-culvert-3054
 tab:tab-habitat-summary-197663
+tab:tab-culvert-bcfp-197663
 tab:tab-fish-site-197663
 tab:tab-fish-dens-197663
 fig:plot-fish-box-197663
@@ -133,6 +151,7 @@ tab:tab-culvert-197665
 tab:tab-culvert-197664
 tab:tab-culvert-3042
 tab:tab-habitat-summary-197665
+tab:tab-culvert-bcfp-197665
 fig:photo-197665-01
 fig:photo-197665-02
 fig:photo-197665-03
@@ -144,6 +163,7 @@ fig:photo-197665-08
 tab:tab-culvert-197667
 tab:tab-culvert-124501
 tab:tab-habitat-summary-197667
+tab:tab-culvert-bcfp-197667
 tab:tab-fish-mt-197667
 fig:photo-197667-01
 fig:photo-197667-02
@@ -152,6 +172,7 @@ fig:photo-197667-04
 tab:tab-culvert-197668
 tab:tab-culvert-124504
 tab:tab-habitat-summary-197668
+tab:tab-culvert-bcfp-197668
 tab:tab-fish-mt-197668
 fig:photo-197668-01
 fig:photo-197668-02
@@ -176,6 +197,7 @@ methods
 planning
 accessible-habitat
 channel-width
+lakewetland-multipliers
 mean-annual-discharge
 pscis-and-modelled-stream-crossing-review
 fish-passage-assessments
@@ -184,7 +206,9 @@ cost-benefit-analysis
 habitat-gain-index
 habitat-confirmation-assessments
 reporting
+mapping
 results-and-discussion
+planning-1
 phase-1
 phase-2
 recommendations

@@ -16,8 +16,11 @@ bcfishpass_phase2 <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk", con
   mutate(downstream_route_measure = as.integer(downstream_route_measure))
 bcfishpass_all <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk", conn = conn) %>%
   mutate(downstream_route_measure = as.integer(downstream_route_measure))
+# bcfishpass_archived <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk_archive", conn = conn) %>%
+#   mutate(downstream_route_measure = as.integer(downstream_route_measure))
 pscis_historic_phase1 <- readwritesqlite::rws_read_table("pscis_historic_phase1", conn = conn)
 bcfishpass_spawn_rear_model <- readwritesqlite::rws_read_table("bcfishpass_spawn_rear_model", conn = conn)
+fiss_sum <- readwritesqlite::rws_read_table("fiss_sum", conn = conn)
 rws_disconnect(conn)
 
 

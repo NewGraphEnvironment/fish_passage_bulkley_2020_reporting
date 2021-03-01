@@ -71,7 +71,7 @@ The Bulkley River is located approximately 30m downstream of the outlet of `r as
 
 ## Stream Characteristics Upstream of `r as.character(my_site)` and downstream of `r as.character(my_site2)`{-}
 
-The stream was surveyed upstream from `r as.character(my_site)` for `r my_priority_info(sit = my_site2, loc = 'ds') %>% pull(survey_length_m)`m to `r as.character(my_site2)`  `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197667-01) - \\@ref(fig:photo-197667-02))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-197667-d1))"))`. Within the area surveyed, total cover amount was rated as `r my_habitat_info2(sit = my_site2, loc = 'ds') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(sit = my_site2, loc = 'ds') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(sit = my_site2, loc = 'ds') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197667)). The average channel width was `r my_habitat_info3(sit = my_site2, loc = 'ds', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(sit = my_site2, loc = 'ds', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(sit = my_site2, loc = 'ds', row = 'average gradient percent')`%.  There were pockets of gravels and small cobbles suitable for resident and anadromous salmonid spawning present throughout the area surveyed. Habitat was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` value for salmonid rearing and spawning.
+The stream was surveyed upstream from `r as.character(my_site)` for `r my_priority_info(sit = my_site2, loc = 'ds') %>% pull(survey_length_m)`m to `r as.character(my_site2)`  `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197667-01) - \\@ref(fig:photo-197667-02))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-197667-d01))"))`. Within the area surveyed, total cover amount was rated as `r my_habitat_info2(sit = my_site2, loc = 'ds') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(sit = my_site2, loc = 'ds') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(sit = my_site2, loc = 'ds') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197667)). The average channel width was `r my_habitat_info3(sit = my_site2, loc = 'ds', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(sit = my_site2, loc = 'ds', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(sit = my_site2, loc = 'ds', row = 'average gradient percent')`%.  There were pockets of gravels and small cobbles suitable for resident and anadromous salmonid spawning present throughout the area surveyed. Habitat was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` value for salmonid rearing and spawning.
 
 
 <br>
@@ -79,8 +79,14 @@ The stream was surveyed upstream from `r as.character(my_site)` for `r my_priori
 
 ## Stream Characteristics Upstream of `r as.character(my_site2)`{-}
 
-`r my_pscis_info() %>% pull(stream_name)` was surveyed upstream from `r as.character(my_site2)` for `r my_priority_info(sit = my_site2, loc = 'us') %>% pull(survey_length_m)`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197667-03) - \\@ref(fig:photo-197667-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-197667-d2))"))`. Within the area surveyed, total cover amount was rated as `r my_habitat_info2(sit = my_site2, loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(sit = my_site2, loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(sit = my_site2, loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197667)). The average channel width was `r my_habitat_info3(sit = my_site2, loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(sit = my_site2, loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(sit = my_site2, loc = 'us', row = 'average gradient percent')`%.  There were multiple debris jams present upstream from 350m above Larson Road with heights ranging from 0.4 - 1m high. Habitat was noted as complexwith abundant gravels suitable for resident, fluvial and anadromous salmonid spawning. Habitat was rated as `r my_priority_info(sit = my_site2, loc = 'us') %>% pull(hab_value)` value.
+`r my_pscis_info() %>% pull(stream_name)` was surveyed upstream from `r as.character(my_site2)` for `r my_priority_info(sit = my_site2, loc = 'us') %>% pull(survey_length_m)`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197667-03) - \\@ref(fig:photo-197667-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-197667-d02))"))`. Within the area surveyed, total cover amount was rated as `r my_habitat_info2(sit = my_site2, loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(sit = my_site2, loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(sit = my_site2, loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197667)). The average channel width was `r my_habitat_info3(sit = my_site2, loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(sit = my_site2, loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(sit = my_site2, loc = 'us', row = 'average gradient percent')`%.  There were multiple debris jams present upstream from 350m above Larson Road with heights ranging from 0.4 - 1m high. Habitat was noted as complexwith abundant gravels suitable for resident, fluvial and anadromous salmonid spawning. Habitat was rated as `r my_priority_info(sit = my_site2, loc = 'us') %>% pull(hab_value)` value.
 
+<br>
+
+
+Table \@ref(tab:tab-culvert-bcfp-197667) `r text_ref_tab_summary_bcfp()` 
+
+<br>
 
 ## Fish Sampling {-}
 
@@ -125,6 +131,12 @@ tab_hab_summary %>%
   # select(-Site) %>% 
   my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossings ', my_site, 'and ', my_site2, '.'))
 
+```
+
+<br>
+
+```{r tab-culvert-bcfp-197667, eval = T}
+print_tab_summary_bcfp()
 ```
 
 <br>

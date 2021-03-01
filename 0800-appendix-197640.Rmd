@@ -78,6 +78,11 @@ One crossing (PSCIS 197647) was assessed on an upstream tributary crossed by the
 
 <br>
 
+
+Table \@ref(tab:tab-culvert-bcfp-197640) `r text_ref_tab_summary_bcfp()` 
+
+<br>
+
 ## Structure Remediation and Cost Estimate {-}
 
 Replacement of PSCIS crossing `r as.character(my_site)` with a bridge (`r my_pscis_info() %>% pull(recommended_diameter_or_span_meters)`m span) is recommended. The cost of the work is estimated at \$`r format(my_cost_estimate() %>% pull(cost_est_1000s) * 1000, big.mark = ',')` for a cost benefit of `r as.character(my_cost_estimate() %>% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %>% pull(cost_area_net))`m^2^/\$1000.
@@ -119,6 +124,12 @@ tab_hab_summary %>%
   # select(-Site) %>% 
   my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, '.')) 
 
+```
+
+<br>
+
+```{r tab-culvert-bcfp-197640, eval = T}
+print_tab_summary_bcfp()
 ```
 
 <br>

@@ -53,13 +53,18 @@ hab_site %>% filter(site == my_site & location == 'us') %>% pull(comments)
 
 ## Stream Characteristics Downstream {-}
 
-The stream was surveyed downstream from the culvert for `r my_priority_info(loc = 'ds') %>% pull(survey_length_m)`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-123795-01) - \\@ref(fig:photo-123795-02))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-123795-d1))"))`. Total cover amount was rated as `r my_habitat_info2(loc = 'ds') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'ds') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'ds') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-123795)). The average channel width was `r my_habitat_info3(loc = 'ds', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'ds', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'ds', row = 'average gradient percent')`%. The dominant substrate was `r my_habitat_info3(loc = 'ds', row = "bed material dominant")` with `r my_habitat_info3(loc = 'ds', row = "bed material subdominant")` subdominant. Within the area surveyed, the stream was noted as having somewhat low complexity, with occasional deep pools and primarily glide habitat. Abundant gravels were noted as present but with only occasional patches unembedded.  The habitat was rated as `r my_priority_info(loc = 'ds') %>%  pull(hab_value)` value.
+The stream was surveyed downstream from the culvert for `r my_priority_info(loc = 'ds') %>% pull(survey_length_m)`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-123795-01) - \\@ref(fig:photo-123795-02))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-123795-d01))"))`. Total cover amount was rated as `r my_habitat_info2(loc = 'ds') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'ds') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'ds') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-123795)). The average channel width was `r my_habitat_info3(loc = 'ds', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'ds', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'ds', row = 'average gradient percent')`%. The dominant substrate was `r my_habitat_info3(loc = 'ds', row = "bed material dominant")` with `r my_habitat_info3(loc = 'ds', row = "bed material subdominant")` subdominant. Within the area surveyed, the stream was noted as having somewhat low complexity, with occasional deep pools and primarily glide habitat. Abundant gravels were noted as present but with only occasional patches unembedded.  The habitat was rated as `r my_priority_info(loc = 'ds') %>%  pull(hab_value)` value.
 
 <br>
 
 ## Stream Characteristics Upstream {-}
 
-The stream was surveyed immediately upstream from `r as.character(my_site)` for approximately `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m to the location of a ford (PSCIS123796).`r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-123795-03) - \\@ref(fig:photo-123795-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-123795-d2))"))`. Within the area surveyed, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-123795)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  The dominant substrate was `r my_habitat_info3(loc = 'us', row = "bed material dominant")` with `r my_habitat_info3(loc = 'us', row = "bed material subdominant")` subdominant. Deep glide habitat was noted as prevalent in the area surveyed. Gradients leveled out at top end of site, with primarily shrub and wetland riparian area present.  Very occasional pockets of gravel suitable for resident and adfluvial salmonid spawning were noted. Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` for salmonid spawning and rearing. 
+The stream was surveyed immediately upstream from `r as.character(my_site)` for approximately `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m to the location of a ford (PSCIS123796).`r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-123795-03) - \\@ref(fig:photo-123795-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-123795-d02))"))`. Within the area surveyed, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-123795)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  The dominant substrate was `r my_habitat_info3(loc = 'us', row = "bed material dominant")` with `r my_habitat_info3(loc = 'us', row = "bed material subdominant")` subdominant. Deep glide habitat was noted as prevalent in the area surveyed. Gradients leveled out at top end of site, with primarily shrub and wetland riparian area present.  Very occasional pockets of gravel suitable for resident and adfluvial salmonid spawning were noted. Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` for salmonid spawning and rearing. 
+
+<br>
+
+
+Table \@ref(tab:tab-culvert-bcfp-123795) `r text_ref_tab_summary_bcfp()` 
 
 <br>
 
@@ -94,6 +99,12 @@ tab_hab_summary %>%
   # select(-Site) %>% 
   my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, '.')) 
 
+```
+
+<br>
+
+```{r tab-culvert-bcfp-123795, eval = T}
+print_tab_summary_bcfp()
 ```
 
 <br>

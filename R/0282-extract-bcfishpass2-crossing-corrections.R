@@ -89,10 +89,10 @@ query <- "SELECT *
 
 ##import and grab the coordinates - this is already done
 bcfishpass_morr_bulk <- st_read(conn, query =  query) %>%
-  st_transform(crs = 26909) %>%
-  mutate(utm_zone = 9,
-         easting = sf::st_coordinates(.)[,1],
-         northing = sf::st_coordinates(.)[,2]) %>%
+  # st_transform(crs = 26909) %>%  ##simon does this now on his end.
+  # mutate(utm_zone = 9,
+  #        easting = sf::st_coordinates(.)[,1],
+  #        northing = sf::st_coordinates(.)[,2]) %>%
   st_drop_geometry()
 
 dbDisconnect(conn = conn)
@@ -111,14 +111,20 @@ my_pscis_modelledcrossings_streams_xref <- dat_joined %>%
   select(pscis_crossing_id, stream_crossing_id, modelled_crossing_id, source) %>%
   st_drop_geometry()
 
-##this is already done
+##this is how we update our local db.
+##my time format format(Sys.time(), "%Y%m%d-%H%M%S")
 # mydb <- DBI::dbConnect(RSQLite::SQLite(), "data/bcfishpass.sqlite")
 conn <- rws_connect("data/bcfishpass.sqlite")
 rws_list_tables(conn)
-rws_drop_table("bcfishpass_morr_bulk", conn = conn)
+##archive the last version for now
+bcfishpass_archive <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk", conn = conn)
+# rws_drop_table("bcfishpass_archive", conn = conn) ##if it exists get rid of it - might be able to just change exists to T in next line
+rws_write(bcfishpass_archive, exists = F, delete = TRUE,
+          conn = conn, x_name = "bcfishpass_morr_bulk_archive")
+rws_drop_table("bcfishpass_morr_bulk", conn = conn) ##now drop the table so you can replace it
 rws_write(bcfishpass_morr_bulk, exists = F, delete = TRUE,
           conn = conn, x_name = "bcfishpass_morr_bulk")
-rws_drop_table("my_pscis_modelledcrossings_streams_xref", conn = conn)
+# rws_drop_table("my_pscis_modelledcrossings_streams_xref", conn = conn)
 # rws_write(my_pscis_modelledcrossings_streams_xref, exists = FALSE, delete = TRUE,
 #           conn = conn, x_name = "my_pscis_modelledcrossings_streams_xref")
 rws_list_tables(conn)

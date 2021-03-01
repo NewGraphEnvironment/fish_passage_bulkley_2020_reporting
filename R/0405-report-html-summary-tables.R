@@ -28,7 +28,6 @@ print_tab_summary_html <- function(site){
   # kableExtra::scroll_box(width = "100%", height = "500px") ##not scrolling to simplify our pagedown output
 }
 
-
 # print_tab_summary_phase1_png(site = '4600005')
 sites <- pscis_all %>%
   # slice(1:2) %>%
@@ -51,3 +50,21 @@ sites %>%
 #
 # sites_phase2 %>%
 #   map(print_tab_summary_phase2_png)
+
+#print off the tables for the modelling for phase2 sites.
+##we need to have the correct modelled crossing ids for all of our phase 1s to pull this off for those. I think we do though actually...do it later!
+print_tab_summary_bcfp_html <- function(sites){
+  make_tab_summary_bcfp(site = sites) %>%
+  kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', sites, '.'), booktabs = T) %>%    #
+    kableExtra::add_footnote('Model data is preliminary and subject to adjustments.', notation = 'symbol') %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 18) %>%
+    readr::write_file(., file = paste0("docs/sum/bcfp/", sites, ".html"))
+}
+
+##for now we just print out the phase 2 tables
+pscis_all %>%
+  filter(source %ilike% 'phase2') %>%
+  pull(pscis_crossing_id) %>%
+  map(print_tab_summary_bcfp_html)
+
+

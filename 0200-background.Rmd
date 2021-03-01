@@ -102,13 +102,19 @@ Lots to do here still
 
 <br>
 
-### Fish Species
+#### Fish Species
 
 Fish species recorded in the Bulkley River and Morice River watershed groups are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Coastal cutthrout trout and bull trout are considered of special concern (blue-listed) provincially. Summaries of some of the Skeena and Bulkley River fish species life history, biology, stock status, and traditional use are documented in  @schell2003BriefOverview,  @wilson_rabnett2007FishPassage,   @gottesfeld_etal2002ConservingSkeena and @officeofthewetsuweten2013Wetsuwet.  @wilson_rabnett2007FishPassage discuss chinook, pink, sockeye, coho, steelhead and indigenous freshwater Bulkley River fish stocks within the context of key lower and upper Bulkley River habitats such as the Suskwa River, Station  Creek,  Harold  Price  Creek,  Telkwa  River  and  Buck  Creek.    Key  areas  within  the  upper  Bulkley River  watershed  with  high  fishery  values,   documented  in  @schell2003BriefOverview,  are  the  upper  Bulkley mainstem, Buck Creek,  Dungate Creek, Barren Creek, McQuarrie Creek, Byman Creek, Richfield Creek, Johnny David Creek, Aitken Creek and Emerson Creek. 
 
 <br>
 
+PLACEHOLDER for gantt chart (under construction) and minimal text for life history timing of chinook, coho, steelhead, bull trout, and coastal cutthrout.
 
+<br>
+
+Summaries of historical fish observations in the Bulkley River watershed group, graphed by remotely sensed average gradient as well as estimated channel width and upstream watershed area categories for their associated stream segments where calculated with `bcfishpass` and `bcfishobs` and are provided in Figures \@ref(fig:fish-plot-grad) - \@ref(fig:fish-plot-wshed). 
+
+<br>
 
 
 ```{r fiss-species-table}
@@ -121,8 +127,8 @@ fiss_species_table %>%
 ```
 
 
-```{r fish-fiss-summary, eval=F}
-fiss_sum <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum.csv'))
+```{r fish-fiss-summary, eval=T}
+# fiss_sum <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum.csv'))
 fiss_sum_grad <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum_grad.csv'))
 fiss_sum_width <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum_width.csv'))
 
@@ -130,52 +136,58 @@ fiss_sum_width <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs
 
 ```
 
-```{r fish-plot-grad, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. stream gradient category for the Bulkley River watershed group.', eval=F}
+```{r fish-plot-grad, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. stream gradient category for the Bulkley River watershed group.', eval=T}
 ##bar graph
 plot_grad <- fiss_sum_grad %>% 
   filter(gradient_id != 99) %>% 
   ggplot(aes(x = Gradient, y = Percent)) +
   geom_bar(stat = "identity")+
   facet_wrap(~species_code, ncol = 2)+
-  theme_bw(base_size = 11)+
+  ggdark::dark_theme_bw(base_size = 11)+
   labs(x = "Average Stream Gradient", y = "Occurrences (%)")
 plot_grad
 
 ```
 
-```{r fish-plot-width, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. channel width category for the Bulkley River watershed group.', eval=F}
+<br>
+
+
+```{r fish-plot-width, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. channel width category for the Bulkley River watershed group.', eval=T}
 ##bar graph
 plot_width <- fiss_sum_width %>% 
   filter(!is.na(width_id)) %>%
   ggplot(aes(x = Width, y = Percent)) +
   geom_bar(stat = "identity")+
   facet_wrap(~species_code, ncol = 2)+
-  theme_bw(base_size = 11)+
+  ggdark::dark_theme_bw(base_size = 11)+
   labs(x = "Channel Width", y = "Occurrences (%)")
 plot_width
 ```
 
-```{r fish-plot-wshed, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. watershed size category for the Bulkley River watershed group.', eval=F}
+<br>
+
+```{r fish-plot-wshed, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. watershed size category for the Bulkley River watershed group.', eval=T}
 ##bar graph
 fiss_sum_wshed_filter <- fiss_sum %>% 
-  filter(upstream_area_ha < 10000)
+  filter(upstream_area_ha < 5000) %>% 
+  mutate(upstream_area_km = upstream_area_ha/100)
 
 bin_1 <- 0
 # bin_1 <- floor(min(fiss_sum_wshed_filter$upstream_area_ha, na.rm = TRUE)/5)*5
-bin_n <- ceiling(max(fiss_sum_wshed_filter$upstream_area_ha, na.rm = TRUE)/5)*5
-bins <- seq(bin_1,bin_n, by = 1000)
+bin_n <- ceiling(max(fiss_sum_wshed_filter$upstream_area_km, na.rm = TRUE)/5)*5
+bins <- seq(bin_1,bin_n, by = 5)
 
-plot_wshed_hist <- ggplot(fiss_sum_wshed_filter, aes(x=upstream_area_ha
+plot_wshed_hist <- ggplot(fiss_sum_wshed_filter, aes(x=upstream_area_km
                                            # fill=alias_local_name
                                            # color = alias_local_name
 )) +
   geom_histogram(breaks = bins, 
                  position="identity", size = 0.75)+
-  labs(x = "Upstream Watershed Area (ha)", y = "Count Fish (#)") +
+  labs(x = "Upstream Watershed Area (km)", y = "Count Fish (#)") +
   facet_wrap(~species_code, ncol = 2)+
   # scale_color_grey() +
   # scale_fill_grey() +
-  theme_bw(base_size = 11)+
+  ggdark::dark_theme_bw(base_size = 11)+
   scale_x_continuous(breaks = bins[seq(1, length(bins), by = 2)])+
   # scale_color_manual(values=c("grey90", "grey60", "grey30", "grey0"))+
   # theme(axis.text.x = element_text(angle = 45, hjust = 1))+
@@ -211,21 +223,18 @@ As a result of high-level direction from the provincial government, a Fish Passa
 
 ### Bulkley River
 
-There is a rich history of fish passage restoration planning in the Bulkley River watershed group with not all the work documented in the PSCIS system.  A not exhaustive list of historic fish passage reports for the watershed includes @wilson_rabnett2007FishPassage, @mccarthy_fernando20152015Inventory,@smith2018AssessingBarriers @casselman_stanley2010BulkleyFulton and @irvine2018AnalysisPriority.
+There is a rich history of fish passage restoration planning in the Bulkley River watershed group with not all the work documented in the PSCIS system.  A non-exhaustive list of historic fish passage reports for the watershed includes @wilson_rabnett2007FishPassage, @mccarthy_fernando20152015Inventory,@smith2018AssessingBarriers @casselman_stanley2010BulkleyFulton and @irvine2018AnalysisPriority.
 
 <br>
 
-Review of the PSCIS database indicated that prior to 2020, `r pscis_historic_phase1 %>% filter(watershed_group_code %ilike% 'BULK' & assessment_date < '2020-01-01') %>% nrow()` assessments for fish passage (Phase 1) have been conducted at crossing structures within the Bulkley River watershed group .  
-<br>
-
-Within the Bulkley River watershed group a number of remediation projects have been completed over the years with backwatering works conducted on Toboggan Creek, Coffin Creek, Moan Creek, Johnny David Creek and potentially others. Three culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS and include works on Barren Creek as well as two tributaries to Harold Prince Creek [@moe2021PSCISRemediation].  McDowell Creek at Highway 16 was replaced with a horizontally drilled baffled structure in 2017 and a design is currently being drafted for the Highway 16 crossing over Taman Creek (pers. comm. Kathryn Graham, Regional Manager Environmental Services - Ministry of Transportation and Infrastructure).
+Review of the PSCIS database indicated that prior to 2020, `r pscis_historic_phase1 %>% filter(watershed_group_code %ilike% 'BULK' & assessment_date < '2020-01-01') %>% nrow()` assessments for fish passage (Phase 1) have been conducted at crossing structures within the Bulkley River watershed group. No habitat confirmations are recorded in the database [@moe2021PSCISHabitat].  Within the Bulkley River watershed group, a number of remediation projects have been completed over the years with backwatering works conducted on Toboggan Creek, Coffin Creek, Moan Creek, Johnny David Creek and potentially others. Three culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS and include works on Barren Creek as well as two tributaries to Harold Prince Creek [@moe2021PSCISRemediation].  McDowell Creek at Highway 16 was replaced with a horizontally drilled baffled structure in 2017 and a design is currently being drafted for the Highway 16 crossing over Taman Creek (pers. comm. Kathryn Graham, Regional Manager Environmental Services - Ministry of Transportation and Infrastructure).
 
 <br>
 
 ## Morice river
 
 
-Within the Morice River watershed group  `r pscis_historic_phase1 %>% filter(watershed_group_code %ilike% 'MORR' & assessment_date < '2020-01-01') %>% nrow()` fish passage assessments (Phase 1) had been conducted. At the time of reporting no habitat confirmations had been conducted in the watershed [@moe2021PSCISHabitat]. Two culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS in the  and include works on a tributary to the Morice River located at km 39.2 of the Morice River FSR and on bridge installation at km 4 of McBride Road on a tributary to McBride Lake [@moe2021PSCISRemediation]. 
+Within the Morice River watershed group  `r pscis_historic_phase1 %>% filter(watershed_group_code %ilike% 'MORR' & assessment_date < '2020-01-01') %>% nrow()` fish passage assessments (Phase 1) had been conducted. At the time of reporting no habitat confirmations had been recorded in the database [@moe2021PSCISHabitat]. Two culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS in the  and include works on a tributary to the Morice River located at km 39.2 of the Morice River FSR and on bridge installation at km 4 of McBride Road on a tributary to McBride Lake [@moe2021PSCISRemediation]. 
 
 
 

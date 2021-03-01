@@ -2,6 +2,7 @@ source('R/functions.R')
 source('R/packages.R')
 source('R/private_info.R')
 
+#!!!!!!!!!all the width data is gone so we need to use our archived version!!!!!!!!!!!!Scroll down to the hashed out section
 ##get the road info from the database
 conn <- DBI::dbConnect(
   RPostgres::Postgres(),
@@ -52,8 +53,28 @@ species_of_interest <- c('BT', 'CH', 'CM', 'CO', 'CT', 'DV', 'PK', 'RB','SK', 'S
 fiss_sum <- st_read(conn, query = query) %>%
   filter(species_code %in% species_of_interest)
 
+
+#!!!!!!!!!all the width data is gone so we need to use our archived version!!!!!!!!!!!!
+
+
 ##burn it all to a file we can use later
-fiss_sum %>% readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum.csv'))
+# fiss_sum %>% readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum.csv'))
+# fiss_sum <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum.csv'))
+#
+# ##lets put it in the sqlite for safekeeping
+# conn <- rws_connect("data/bcfishpass.sqlite")
+# rws_list_tables(conn)
+# rws_write(fiss_sum, exists = F, delete = TRUE,
+#           conn = conn, x_name = "fiss_sum")
+# rws_list_tables(conn)
+# rws_disconnect(conn)
+
+
+######################################################################################################################
+######################################################################################################################
+#########################################START HERE#########################################################
+######################################################################################################################
+######################################################################################################################
 
 fiss_sum_grad_prep1 <- fiss_sum %>%
   mutate(Gradient = case_when(
@@ -104,17 +125,21 @@ plot_grad
 
 fiss_sum_width_prep1 <- fiss_sum %>%
   mutate(Width = case_when(
-    channel_width < 5 ~ '0 - 5m',
-    channel_width >= 5 &  channel_width < 10 ~ '05 - 10m',
+    channel_width < 2 ~ '0 - 2m',
+    channel_width >= 2 &  channel_width < 4 ~ '02 - 04m',
+    channel_width >= 4 &  channel_width < 6 ~ '04 - 06m',
+    channel_width >= 6 &  channel_width < 10 ~ '06 - 10m',
     channel_width >= 10 &  channel_width < 15 ~ '10 - 15m',
-    channel_width >= 15 &  channel_width < 20 ~ '15 - 20m',
-    channel_width >= 20  ~ '20m+')) %>%
+    # channel_width >= 15 &  channel_width < 20 ~ '15 - 20m',
+    channel_width >= 15  ~ '15m+')) %>%
   mutate(width_id = case_when(
-    channel_width < 5 ~ 5,
-    channel_width >= 5 &  channel_width < 10 ~ 10,
+    channel_width < 2 ~ 2,
+    channel_width >= 2 &  channel_width < 4 ~ 4,
+    channel_width >= 4 &  channel_width < 6 ~ 6,
+    channel_width >= 6 &  channel_width < 10 ~ 10,
     channel_width >= 10 &  channel_width < 15 ~ 15,
-    channel_width >= 15 &  channel_width < 20 ~ 20,
-    channel_width >= 20  ~ 99))
+    # channel_width >= 15 &  channel_width < 20 ~ 20,
+    channel_width >= 15  ~ 99))
 
 fiss_sum_width_prep2 <- fiss_sum_width_prep1 %>%
   group_by(species_code) %>%
@@ -135,12 +160,14 @@ fiss_sum_width <- left_join(
 ##burn it all to a file we can use later
 fiss_sum_width %>% readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum_width.csv'))
 
+
+
 plot_width <- fiss_sum_width %>%
   filter(!is.na(width_id)) %>%
   ggplot(aes(x = Width, y = Percent)) +
   geom_bar(stat = "identity")+
   facet_wrap(~species_code, ncol = 2)+
-  theme_bw(base_size = 11)+
+  ggdark::dark_theme_bw(base_size = 11)+
   labs(x = "Channel Width", y = "Occurrences (%)")
 plot_width
 

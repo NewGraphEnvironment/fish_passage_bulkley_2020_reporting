@@ -1,6 +1,6 @@
 # Methods
 
-Workflows for the project have been classified into planning, fish passage assessments, habitat confirmation assessments and reporting. All components leveraged the `R` programming language and environment for statistical computing to facilitate workflow tracking and reproducibility [@rcoreteam2020languageenvironment]. 
+Workflows for the project have been classified into planning, fish passage assessments, habitat confirmation assessments, reporting and mapping. All components leveraged the `R` programming language and environment for statistical computing to facilitate workflow tracking, collaboration and continual improvement [@rcoreteam2020languageenvironment]. Databases utilized for the project included local and remote `postgreSQL` as well as a local "snapshot" of datasets utilized for reporting contained within `sqlite`.
 
 
 ```{r eval=F}
@@ -13,7 +13,7 @@ source('R/tables.R')
 ## Planning
 
  
-To identify priorities for crossing structure rehabilitation, background literature, fisheries information, PSCIS, `Fish Habitat Model` outputs modified from @fish_habitat_model and `bcfishpass` [@norrisBcfishpass2020] outputs were reviewed. 
+To identify priorities for crossing structure rehabilitation, background literature, fisheries information, PSCIS, `Fish Habitat Model` outputs modified from @fish_habitat_model and `bcfishpass` [@norris2021smnorrisbcfishpass] outputs were reviewed. The `Fish Habitat Model` was developed by the BC Ministry of Environment to provide estimates of the amount of fish habitat that would potentially be accessible upstream of crossing locations based on the ability of fish to swim upstream against user defined gradient thresholds [@fish_habitat_model]. `bcfishpass` is an updated open-source code repository comprised of tools ported over from the `Fish Habitat Model` along with a number of significant upgrades and new features. Scripts within `bcfishpass` also pull and analyze data using other open-source tools such as `bcdata` [@norris2021smnorrisbcdata], `bcfishobs` [@norris2021smnorrisbcfishobs], and `fwapg` [@norris2021smnorrisfwapg] which serve numerous functions related to open-data access as well as the analysis of the BC Freshwater Atlas, fish and fish habitat in British Columbia.
 
 
  
@@ -21,36 +21,68 @@ To identify priorities for crossing structure rehabilitation, background literat
 
 ### Accessible Habitat 
 
-The `Fish Habitat Model` was developed by the BC Ministry of Environment to provide estimates of the amount of fish habitat potentially accessible to fish upstream of crossing locations based on the ability of fish to swim upstream against user defined gradient thresholds. The model calculates the average gradient of BC Freshwater Atlas [stream network lines](https://catalogue.data.gov.bc.ca/dataset/freshwater-atlas-stream-network) at minimum 100m long intervals starting from the downstream end of the streamline segment and working upstream.  The network lines are broken into max gradient categories with new segments created when the average gradient of the stream lines exceeds user provided gradient thresholds. For this project the user provided gradient thresholds used to delineate "potentially accessible habitat" were based on estimated max gradients that salmon (15%) and steelhead (20%) are likely to be capable of ascending. At the time of reporting, plans were in place to port over of the latest model version of the `Fish Habitat Model` (V2.3.1) into `bcfishpass`.
+The `Fish Habitat Model` calculates the average gradient of BC Freshwater Atlas stream network lines at minimum 100m long intervals starting from the downstream end of the streamline segment and working upstream.  The network lines are broken into max gradient categories with new segments created if and when the average slope of the stream line segment exceeds user provided thresholds. For this project, the user provided gradient thresholds used to delineate "potentially accessible habitat" were based on estimated max gradients that salmon (15%) and steelhead (20%) are likely to be capable of ascending. Although not housed within `bcfishpass` at the time of reporting, plans were in place to port over of the latest model version (V2.3.1) of the stream profile analysis tools from `FWAToolsArchive` into `bcfishpass`.  
 
 <br>
 
 
- `bcfishpass` is an open-source code repository that builds on the work of the `Fish Habitat Model`, porting over numerous tools developed over the years to analyze fish habitat in British Columbia.  Comprised of sql and python based shell script libraries that "generate a simple model of aquatic habitat connectivity by identifying natural barriers to fish passage (plus hydro dams that are not feasible to remediate) and classifying all streams not upstream of these barriers as 'potentially accessible'" [@norrisBcfishpass2020]. On potentially accessible streams, `bcfishpass` scripts "identify known barriers and additional anthropogenic features (primarily road/railway stream crossings, i.e. culverts) that are potentially barriers. To prioritize these features for assessment or remediation," the scripts  "report on how much modelled potentially accessible aquatic habitat the barriers may obstruct. The model can be refined with known fish observations. Depending on the modelling scenario, all aquatic habitat downstream of a given fish observation can be classified as 'observed accessible', overriding any downstream barriers."  For each crossing location, the area of lake and wetland habitat upstream, species documented upstream and an estimate of watershed area can be collated using `bcfishpass`, `fwapg` [@norris2020fwapg] and `bcfishobs` [@norris2020bcfishobs] to provide an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.
+`bcfishpass` is comprised of sql and python based shell script libraries that "generate a simple model of aquatic habitat connectivity by identifying natural barriers to fish passage (plus hydro dams that are not feasible to remediate) and classifying all streams not upstream of these barriers as 'potentially accessible'" [@norris2021smnorrisbcfishpass]. On potentially accessible streams, scripts "identify known barriers and additional anthropogenic features (primarily road/railway stream crossings, i.e. culverts) that are potentially barriers. To prioritize these features for assessment or remediation," the scripts "report on how much modelled potentially accessible aquatic habitat the barriers may obstruct. The model can be refined with known fish observations. Depending on the modelling scenario, all aquatic habitat downstream of a given fish observation can be classified as 'observed accessible', overriding any downstream barriers."  For each crossing location, the area of lake and wetland habitat upstream, species documented upstream and an estimate of watershed area can be collated using `bcfishpass`, `fwapg` and `bcfishobs` to provide an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.
  
  <br>
 
-Gradient, channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High  value  rearing, overwintering  and spawning habitat is often located within channel types with relatively low gradients and the size of the channel (also effectively quantified by the amount of flow in the stream) is often a good predictor of species/life stage utilization.  Following delineation of "potentially accessible habitat" with the `Fish Habitat Model`, the *average* gradient of each stream segment within habitat classified as below the 15% threshold as well as the 22% threshold was calculated and summed using `bcfishpass` within species and life stage specific gradient and channel width categories. For the Bulkley River watershed group, stream discharge acquired from a proprietary analysis was also added to the dataset and categorized by intrinic potential for a set of species and life stages.   `bcfishpass` has been designed to be flexible in analysis, accepting user defined gradient, channel width and stream discharge categories.  Although currently in draft form and subject to revisions throughout the development of this reporting, gradient, channel width and stream discharge thresholds for a number of fish species in the Bulkley River and Morice River watersheds groups are detailed in Table \@ref(tab:tab-fish-spawning-rearing).  Determination of the average gradient of stream line segments is trivial since the provincial streamline dataset contains elevations. Estimations of channel width and stream discharge are more complicated to derive so a breakdown of the processes involved in deriving estimations used in this work is provided in the following sections.
+Gradient, channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High  value  rearing, overwintering  and spawning habitat is often located within channel types with relatively low gradients and the size of the channel (also effectively quantified by the amount of flow in the stream) is often a good predictor of species/life stage utilization.  Following delineation of "potentially accessible habitat", the *average* gradient of each stream segment within habitat classified as below the 15% threshold as well as the 22% threshold was calculated and summed within species and life stage specific gradient and channel width categories. For the Bulkley River watershed group, stream discharge acquired from a proprietary analysis was also added to the dataset and categorized by intrinsic potential for a set of species and life stages.  `bcfishpass` and associated tools have been designed to be flexible in analysis, accepting user defined gradient, channel width and stream discharge categories.  Although currently in draft form, and subject to revisions throughout the development of this reporting, gradient, channel width and stream discharge thresholds for a number of fish species in the Bulkley River and Morice River watersheds groups have been gathered from available literature and applied to stream crossing locations  (Table \@ref(tab:tab-fish-spawning-rearing)).  References for thresholds are provided in  Table \@ref(tab:tab-fish-spawning-rearing-references). Average gradient of stream line segments can be calculated from elevations contained in the provincial freshwater atlas streamline dataset. Methodology to calculate estimates of channel width and stream discharge are provided in the following sections.
 
 <br>
 
-Placeholder
 
 ```{r tab-fish-spawning-rearing}
 bcfishpass_spawn_rear_model %>% 
-  mutate(Species = fishbc::fbc_common_name(species_code),
+  mutate(Species = fishbc::fbc_common_name(species_code), 
          spawn_gradient_max = round(spawn_gradient_max * 100 ,1),
-         rear_gradient_max = round(rear_gradient_max * 100 ,1)) %>% 
+         rear_gradient_max = round(rear_gradient_max * 100 ,1)) %>%
   select(Species, 
-         `Spawn Gradient  Max (%)`= spawn_gradient_max,
-         `Spawn Width Min (m)` = spawn_channel_width_min,
-         `Spawn Width Max (m)` = spawn_channel_width_max,
-         spawn_mad_min,
-         spawn_mad_max,
-         `Rear Gradient Max (%)` = rear_gradient_max,
-         rear_mad_min,
-         rear_mad_max) %>% 
-  my_kable_scroll_no_height(caption_text = 'Stream gradient, width and mean annual discharge used in habitat modelling.')
+         `Spawning Gradient  Max (%)`= spawn_gradient_max,
+         `Spawning Width Min (m)` = spawn_channel_width_min,
+         `Spawning Width Max (m)` = spawn_channel_width_max,
+         `Spawning MAD Min (m3/s)` = spawn_mad_min,
+         `Spawning MAD Max (m3/s)` = spawn_mad_max,
+         `Rearing Gradient Max (%)` = rear_gradient_max,
+         `Rearing MAD Min (m3/s)` = rear_mad_min,
+         `Rearing MAD Max (m3/s)` = rear_mad_max,
+         `Rearing Wetland Multiplier` = rear_wetland_multiplier,
+         `Rearing Lake Multiplier` = rear_lake_multiplier) %>% 
+  t() %>% 
+  as_tibble(rownames = "row_names") %>% 
+  janitor::row_to_names(row_number = 1) %>% 
+  rename(Variable = Species) %>% 
+  my_kable(caption_text = 'Stream gradient, width and mean annual discharge thresholds used in habitat modelling.')
+
+```
+
+<br>
+
+```{r tab-fish-spawning-rearing-references}
+bcfishpass_spawn_rear_model_references <- readr::read_csv(file = 'data/width_modelling/model_spawning_rearing_habitat.csv')
+  
+bcfishpass_spawn_rear_model_references %>% 
+  mutate(Species = fishbc::fbc_common_name(species_code)) %>% 
+  select(Species, 
+         `Spawning Gradient  Max (%)`= spawn_gradient_max,
+         `Spawning Width Min (m)` = spawn_channel_width_min,
+         `Spawning Width Max (m)` = spawn_channel_width_max,
+         # `Spawning MAD Min (m3/s)` = spawn_mad_min,
+         # `Spawning MAD Max (m3/s)` = spawn_mad_max,
+         `Rearing Gradient Max (%)` = rear_gradient_max,
+         `Rearing Wetland Multiplier` = rear_wetland_multiplier,
+         `Rearing Lake Multiplier` = rear_lake_multiplier) %>% 
+         # `Rearing MAD Min (m3/s)` = rear_mad_min,
+         # `Rearing MAD Max (m3/s)` = rear_mad_max) %>% 
+  t() %>% 
+  as_tibble(rownames = "row_names") %>% 
+  janitor::row_to_names(row_number = 1) %>% 
+  rename(Variable = Species) %>% 
+  my_kable(caption_text = 'References for stream gradient, width and mean annual discharge thresholds used in habitat modelling.')
+
 
 ```
 
@@ -58,14 +90,23 @@ bcfishpass_spawn_rear_model %>%
 ### Channel Width
 
 Placeholder
+
 Pinning of FISS sites to streams
-Lake/Wetland multipliers (table here?)
-Linear regression.  Table with cutoffs and confidence intervals. Insert flexible references table that links to bcfishpass_spawn_rear_model and zotero.
+
+
+Linear regression. Stream order, magnitude, watershed size, precipitation.  Table with cutoffs and confidence intervals. Make references table link to zotero citekeys.
+
+
+### Lake/Wetland multipliers
+Placeholder (maybe to section above)
+
 
 ### Mean Annual Discharge
 
-Used in Bulkley only
 Placeholder
+
+Used in Bulkley only
+
 Insert details and references.
 
 
@@ -86,9 +127,6 @@ table_thresh_average <- tibble::tibble(`Gradient` = c('0 - 5%', '5 - 15%', '15 -
 table_thresh_average %>% 
     my_kable(caption_text = 'Stream gradient categories (threshold and average) and associated channel type.')
 ```
-
-
-
 
 
 <br>
@@ -247,7 +285,9 @@ Reporting was generated with `bookdown` [@bookdown2016] from `Rmarkdown` [@R-rma
  + [Photos](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos) and [photo metadata](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photo_metadata.csv)
 
 
+## Mapping
 
+Mapping was completed by Hillcrest Geographics.  `pdf` maps were generated using `QGIS` with data supplied via a local `postgreSQL` database.  A QGIS layer file defining and symbolizing all layers required for general fish passage mapping was developed and at the time of reporting was kept under version control within `bcfishpass`.
  
 
  

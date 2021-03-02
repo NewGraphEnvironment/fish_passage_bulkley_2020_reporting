@@ -26,15 +26,6 @@ my_site <- 124500
 PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` on `r my_overview_info() %>% pull(road_name)` approximately 5km south of Telkwa.  The culvert is located approximately 1.7km upstream from the confluence with the Bulkley River. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.
 
 
-
-<br>
-
-```{r eval=F}
-##idon't think we need this here but...
-#During 2020 surveys, PSCIS culvert 197669 was documented on `r my_pscis_info() %>% pull(stream_name)`, 1.2km upstream of the FSR.
-
-```
-
 <br>
 
 ## Background {-}

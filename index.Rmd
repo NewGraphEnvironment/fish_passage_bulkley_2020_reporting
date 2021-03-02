@@ -19,7 +19,7 @@ author: |
  | Society for Ecosytem Restoration Northern BC
 date: |
  |
- | DRafT - Version 0.0.2
+ | DRafT - Version 0.0.3
  | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
@@ -201,6 +201,10 @@ Our gratitude to Phil MacDonald from BC Timber Sales, Matt Hawkins from MoTI and
 <br>
 
 Thank you to Lee Hesketh from British Columbia Cattlemen’s Association for some encouraging conversations about a promising future for salmon in our  agriculturally modified landscapes.
+
+<br>
+
+Thanks so much to Living Lakes for finding the space for Kyle Prince to team up on the project.  We all know he is about as good as it gets in the field and a certified riot to work with. Thank you Kat Hartwig, Raegan Malinson and the rest of the teams. 
 
 <br>
 

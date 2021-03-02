@@ -2,7 +2,7 @@
 
 # Background
 
-The study area includes the Bulkley River and Morice River watershed groups (Figure \@ref(fig:overview-map)) and is  within the  traditional territories of the Gitxsan and Wet'suwet'en. The valley  bottom has  seen  extensive  settlement  over  the  past hundred years with major population centers including the Village of Hazelton, the Town of Smithers, the Village of Telkwa and the District Municipality of Houston.  The watersheds are within the Skeena, Stikine, and the Nadina Natural Resource Districts. 
+The study area includes the Bulkley River and Morice River watershed groups (Figure \@ref(fig:overview-map)) and is  within the  traditional territories of the Gitxsan and Wet'suwet'en.  
 
 <br>
 
@@ -16,29 +16,18 @@ Wet'suwet'en hereditary territory covers an area of 22,000km^2^ including the Bu
 
 ## Gitxsan
 
-The Gitxsan Laxyip (traditional territories) covers an area of 33,000km^2^ within the Skeena River and Nass River watersheds.  The Laxyip is governed by 60 Simgiigyet (Hereditary Chiefs), within the traditional hereditary system made up of Wilps (House groups).  Traditional governance of the Gitxsan is guided by the principles of Ayookw (Gitxsan law) [@GitxsanHuwilpGovernment2021]. 
+The Gitxsan Laxyip (traditional territories) covers an area of 33,000km^2^ within the Skeena River and Nass River watersheds.  The Laxyip is governed by 60 Simgiigyet (Hereditary Chiefs), within the traditional hereditary system made up of Wilps (House groups). Anaat are fisheries tenures found throughout the Laxyip. Traditional governance within a matrilineal society operates under the principles of Ayookw (Gitxsan law) [@GitxsanHuwilpGovernment2021]. 
+
+```{r}
+# Salmon is considered the source of life and always treated with high regard.  It was brought by the Raven who also taught people how to fish and hunt.
+
+```
 
 <br>
 
 
 
 ## Project Location
-### Bulkley River
-
-The Bukley River is an 8th  order stream that drains an area of 7,762 km^2^ in a generally northerly direction from Bulkley Lake on the Nechako Plateau to its confluence with the Skeena River at Hazleton. It has a mean annual discharge of `r round(fasstr::calc_longterm_mean(station_number = "08EE004")$LTMAD,1)` m^3^/s at station 08EE004 located near Quick (~27km south of Telkwa) and `r round(fasstr::calc_longterm_mean(station_number = "08EE003")$LTMAD,1)` m^3^/s at station 08EE003 located upstream near Houston.  Flow patterns at Quick are heavily influenced by inflows from the Morice River (enters at Houston) resulting in flow patterns typical of high elevation watersheds which receive large amounts of precipitation as snow leading to peak levels of discharge during snowmelt, typically from May to July (Figures \@ref(fig:hydrology-plot) - \@ref(fig:hydrology-stats1)). The hydrograph peaks faster and generally earlier (May - June) for the Bulkley River upstream of Houston where the topography is lower (Figures \@ref(fig:hydrology-plot) - \@ref(fig:hydrology-stats2)).  Fisheries are discussed in the Fisheries Section below.
-
-<br>
-
-
-
-Numerous water licenses are held within the watershed with a potential over-allocation of flows identified during low flow  periods  [@ilmb2007MoriceLand].  Changes  to  the  climate  systems  are  causing  impacts  to  natural  and  human systems  on  all  continents  with  alterations  to  hydrological  systems  caused  by  changing  precipitation  or melting  snow  and  ice  increasing  the  frequency  and  magnitude  of  extreme  events  such  as  floods  as droughts [@ipcc2014Climatechange; @eccc2016Climatedata].  These changes are resulting in modifications to the quantity and quality of water resources throughout British Columbia and are likely to compound issues related to drought and flooding in the Bulkley River watershed. 
-
-<br>
-
-As  a  major  access  corridor  to  northwestern  British  Columbia,  Highway  16  and  the  Canadian  National Railway  are  major  linear  developments  that  run  along  the  Bulkley  River  within  and  adjacent  to  the floodplain with numerous crossing structures blocking fish access to important fish habitats.  Additionally, as the valley bottom  contains some of the most productive land in the area, there has been extensive conversion  of  riparian  ecosystems  to  hayfields  and  pastures  leading  to  alterations  in  flow  regimes, increases  in  water  temperatures,  reduced  streambank  stability,  loss  of  overstream  cover  and channelization [@ilmb2007MoriceLand; @wilson_rabnett2007FishPassage]. 
-
-<br>
-
 
 ```{r overview-map, fig.cap = 'Overview map of Study Areas',eval=T}
 knitr::include_graphics("fig/BulkelyMoriceOverview2.jpeg")
@@ -46,8 +35,24 @@ knitr::include_graphics("fig/BulkelyMoriceOverview2.jpeg")
 
 <br>
 
+### Bulkley River
 
-```{r hydrology-plot, fig.cap = 'Hydrograph for Bulkley River at Quick (Station #08EE004 - daily discharge data from 1930 to 2018) and near Houston (Station #08EE003 - daily discharge data from 1980 to 2018.', fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=T}
+The Bukley River is an 8th  order stream that drains an area of 7,762 km^2^ in a generally northerly direction from Bulkley Lake on the Nechako Plateau to its confluence with the Skeena River at Hazleton. It has a mean annual discharge of `r round(fasstr::calc_longterm_mean(station_number = "08EE004")$LTMAD,1)` m^3^/s at station 08EE004 located near Quick (~27km south of Telkwa) and `r round(fasstr::calc_longterm_mean(station_number = "08EE003")$LTMAD,1)` m^3^/s at station 08EE003 located upstream near Houston.  Flow patterns at Quick are heavily influenced by inflows from the Morice River (enters just downstream of Houston) resulting in flow patterns typical of high elevation watersheds which receive large amounts of precipitation as snow leading to peak levels of discharge during snowmelt, typically from May to July (Figures \@ref(fig:hydrology-plot) - \@ref(fig:hydrology-stats1)). The hydrograph peaks faster and generally earlier (May - June) for the Bulkley River upstream of Houston where the topography is of lower lower elevation (Figures \@ref(fig:hydrology-plot) and \@ref(fig:hydrology-stats2)).  
+
+<br>
+
+
+Changes  to  the  climate  systems  are  causing  impacts  to  natural  and  human systems  on  all  continents  with  alterations  to  hydrological  systems  caused  by  changing  precipitation  or melting  snow  and  ice  increasing  the  frequency  and  magnitude  of  extreme  events  such  as  floods  and droughts [@ipcc2014Climatechange; @eccc2016Climatedata].  These changes are resulting in modifications to the quantity and quality of water resources throughout British Columbia and are likely to compound issues related to drought and flooding in the Bulkley River watershed where numerous water licenses are held with a potential over-allocation of flows identified during low flow  periods  [@ilmb2007MoriceLand]. 
+
+<br>
+
+The valley  bottom has  seen  extensive  settlement  over  the  past hundred years with major population centers including the Village of Hazelton, the Town of Smithers, the Village of Telkwa and the District Municipality of Houston.  As  a  major  access  corridor  to  northwestern  British  Columbia,  Highway  16  and  the  Canadian  National Railway  are  major  linear  developments  that  run  along  the  Bulkley  River  within  and  adjacent  to  the floodplain with numerous crossing structures impeding fish access into and potentially out from important fish habitats.  Additionally, as the valley bottom  contains some of the most productive land in the area, there has been extensive conversion  of  riparian  ecosystems  to  hayfields  and  pastures  leading  to  alterations  in  flow  regimes, increases  in  water  temperatures,  reduced  streambank  stability,  loss  of  overstream  cover  and channelization [@ilmb2007MoriceLand; @wilson_rabnett2007FishPassage]. 
+
+
+<br>
+
+
+```{r hydrology-plot, fig.cap = 'Hydrograph for Bulkley River at Quick (Station #08EE004) and near Houston (Station #08EE003).', fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=T}
 knitr::include_graphics("fig/hydrograph_08EE004.png")
 knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics("fig/hydrograph_08EE003.png")
@@ -55,25 +60,45 @@ knitr::include_graphics("fig/hydrograph_08EE003.png")
 
 <br>
 
-```{r hydrology-stats1, fig.cap = 'Summary of hydrology statistics for Bulkley River at Quick (Station #08EE004).', eval=T}
+```{r hydrology-stats1, fig.cap = 'Summary of hydrology statistics for Bulkley River at Quick (Station #08EE004 - daily discharge data from 1930 to 2018).', eval=T}
 knitr::include_graphics("fig/hydrology_stats_08EE004.png")
 ```
 
 <br>
 
-```{r hydrology-stats2, fig.cap = 'Summary of hydrology statistics for Bulkley River near Houston (Station #08EE003).', eval=T}
+```{r hydrology-stats2, fig.cap = 'Summary of hydrology statistics for Bulkley River near Houston (Station #08EE003 - daily discharge data from 1980 to 2018).', eval=T}
 
 knitr::include_graphics("fig/hydrology_stats_08EE003.png")
 
 ```
 
-
+<br>
 
 ```{r hydrology-stats-old, fig.cap = 'Summary of hydrology statistics for Bulkley River at Quick (Station #08EE004) and near Houston (Station #08EE003).', fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=F}
 
 knitr::include_graphics("fig/hydrology_stats_08EE004.png")
 knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics("fig/hydrology_stats_08EE003.png")
+
+```
+
+### Morice River
+
+The Morice River is an 8th order stream that drains an area of 4,379 km^2^ in a generally south-eastern direction from Morice Lake on the Nechako Plateau to its confluence with the Skeena River at Hazleton. There area numerous large lakes situated on the south side of the watershed including Morice Lake, McBride Lake, Stepp Lake, Nanika Lake, Kid Price Lake, Owen Lake and others. There is one active hydrometric station on the mainstem of the Morice River near the outlet of Morice Lake and one historic station that was located at the mouth of the river near Houston that gathered data in 1971 only [@environmentandclimatechangecanada2021NationalWater].  An estimate of mean annual discharge for the one year of data available for the Morice near it's confluence with the Bulkley River is `r round(fasstr::calc_longterm_mean(station_number = "08ED003")$LTMAD,1)` m^3^/s.  Mean annual discharge is estimated at `r round(fasstr::calc_longterm_mean(station_number = "08ED002")$LTMAD,1)` m^3^/s at station 08ED002 located near the outlet of Morice Lake.  Flow patterns are typical of high elevation watersheds influenced by coast weather patterns which receive large amounts of winter precipitation as snow in the winter and large precipitation events in the fall.  This leads to peak levels of discharge during snowmelt, typically from May to July with high flows not uncommon in the fall (Figures \@ref(fig:hydrology-plot2) - \@ref(fig:hydrology-stats3)).   
+
+<br>
+
+```{r hydrology-plot2, fig.cap = 'Left: Hydrograph for Morice River near Houston (Station #08ED003 - 1971 data only). Right: Hydrograph for Morice River near outlet of Morice Lake (Station #08ED002).', fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=T}
+knitr::include_graphics("fig/hydrograph_08ED003.png")
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics("fig/hydrograph_08ED002.png")
+```
+
+<br>
+
+```{r hydrology-stats3, fig.cap = 'Summary of hydrology statistics for Morice River near outlet of Morice Lake (Station #08ED002 - Lat 54.116829 Lon -127.426582).', eval=T}
+
+knitr::include_graphics("fig/hydrology_stats_08ED002.png")
 
 ```
 

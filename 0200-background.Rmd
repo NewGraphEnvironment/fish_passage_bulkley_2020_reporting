@@ -84,7 +84,7 @@ knitr::include_graphics("fig/hydrology_stats_08EE003.png")
 
 ### Morice River
 
-The Morice River is an 8th order stream that drains an area of 4,379 km^2^ in a generally south-eastern direction from Morice Lake on the Nechako Plateau to its confluence with the Skeena River at Hazleton. There area numerous large lakes situated on the south side of the watershed including Morice Lake, McBride Lake, Stepp Lake, Nanika Lake, Kid Price Lake, Owen Lake and others. There is one active hydrometric station on the mainstem of the Morice River near the outlet of Morice Lake and one historic station that was located at the mouth of the river near Houston that gathered data in 1971 only [@environmentandclimatechangecanada2021NationalWater].  An estimate of mean annual discharge for the one year of data available for the Morice near it's confluence with the Bulkley River is `r round(fasstr::calc_longterm_mean(station_number = "08ED003")$LTMAD,1)` m^3^/s.  Mean annual discharge is estimated at `r round(fasstr::calc_longterm_mean(station_number = "08ED002")$LTMAD,1)` m^3^/s at station 08ED002 located near the outlet of Morice Lake.  Flow patterns are typical of high elevation watersheds influenced by coast weather patterns which receive large amounts of winter precipitation as snow in the winter and large precipitation events in the fall.  This leads to peak levels of discharge during snowmelt, typically from May to July with high flows not uncommon in the fall (Figures \@ref(fig:hydrology-plot2) - \@ref(fig:hydrology-stats3)).   
+The Morice River is an 8th order stream that drains an area of 4,379 km^2^ in a generally south-eastern direction from Morice Lake to the confluence with the upper Bulkley River just north of Houston. There area numerous large lakes situated on the south side of the watershed including Morice Lake, McBride Lake, Stepp Lake, Nanika Lake, Kid Price Lake, Owen Lake and others. There is one active hydrometric station on the mainstem of the Morice River near the outlet of Morice Lake and one historic station that was located at the mouth of the river near Houston that gathered data in 1971 only [@environmentandclimatechangecanada2021NationalWater].  An estimate of mean annual discharge for the one year of data available for the Morice near it's confluence with the Bulkley River is `r round(fasstr::calc_longterm_mean(station_number = "08ED003")$LTMAD,1)` m^3^/s.  Mean annual discharge is estimated at `r round(fasstr::calc_longterm_mean(station_number = "08ED002")$LTMAD,1)` m^3^/s at station 08ED002 located near the outlet of Morice Lake.  Flow patterns are typical of high elevation watersheds influenced by coast weather patterns which receive large amounts of winter precipitation as snow in the winter and large precipitation events in the fall.  This leads to peak levels of discharge during snowmelt, typically from May to July with high flows not uncommon in the fall (Figures \@ref(fig:hydrology-plot2) - \@ref(fig:hydrology-stats3)).   
 
 <br>
 
@@ -96,7 +96,7 @@ knitr::include_graphics("fig/hydrograph_08ED002.png")
 
 <br>
 
-```{r hydrology-stats3, fig.cap = 'Summary of hydrology statistics for Morice River near outlet of Morice Lake (Station #08ED002 - Lat 54.116829 Lon -127.426582).', eval=T}
+```{r hydrology-stats3, fig.cap = 'Summary of hydrology statistics for Morice River near outlet of Morice Lake (Station #08ED002 - Lat 54.116829 Lon -127.426582). Available daily discharge data from 1961 to 2018.', eval=T}
 
 knitr::include_graphics("fig/hydrology_stats_08ED002.png")
 

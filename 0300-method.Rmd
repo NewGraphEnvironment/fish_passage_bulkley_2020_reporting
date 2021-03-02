@@ -1,6 +1,6 @@
 # Methods
 
-Workflows for the project have been classified into planning, fish passage assessments, habitat confirmation assessments, reporting and mapping. All components leveraged the `R` programming language and environment for statistical computing to facilitate workflow tracking, collaboration and continual improvement [@rcoreteam2020languageenvironment]. Databases utilized for the project included local and remote `postgreSQL` as well as a local "snapshot" of datasets utilized for reporting contained within `sqlite`.
+Workflows for the project have been classified into planning, fish passage assessments, habitat confirmation assessments, reporting and mapping. All components leveraged `R`, `SQL` or `Python` programming languages to facilitate workflow tracking, collaboration, transparency and continually improving research. Project workflows utilized local and remote `postgreSQL` databases as well as a "snapshot" of select datasets contained within a local `sqlite` database.
 
 
 ```{r eval=F}

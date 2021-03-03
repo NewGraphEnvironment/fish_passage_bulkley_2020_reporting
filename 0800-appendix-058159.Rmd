@@ -24,7 +24,7 @@ my_site2 <- 58158
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` on the `r my_overview_info() %>% pull(road_name)` accessed from Houston, BC. The `r my_overview_info() %>% pull(road_name)` is a private road owned by the Woodmere Nursery.  At the time of field surveys it was used to access a newly constructed agricultural facility and by nursery operations to access a waste storage/burn pile area.
+PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` on the `r my_overview_info() %>% pull(road_name)` accessed from Highway 16 immediately south of Telkwa, BC. The `r my_overview_info() %>% pull(road_name)` is a private road owned by the Woodmere Nursery.  At the time of field surveys it was used to access a newly constructed agricultural facility and by nursery operations to access a waste storage/burn pile area.
 
 ```{r eval=F}
 ##idon't think we need this here but...

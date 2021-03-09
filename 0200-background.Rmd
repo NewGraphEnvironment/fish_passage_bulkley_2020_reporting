@@ -134,28 +134,25 @@ Fish species recorded in the Bulkley River and Morice River watershed groups are
 <br>
 
 PLACEHOLDER for gantt chart (under construction) and minimal text for life history timing of chinook, coho, steelhead, bull trout, and coastal cutthrout.
-
-<<<<<<< HEAD
+ 
+ 
 ```{r}
 
 ```
 
 
-##### Chinook
-@buckwalter_kirsch2012Fishinventory have uvenile chinook have been recorded rearing in small non natal streams 
-=======
 
 ```{r}
 ##### Chinook
 #  In the 1990's Morice River watershed, @gottesfeld_rabnett2007SkeenaFish estimated that chinook comprised 30% of the total Skeena system chinook escapements. @buckwalter_kirsch2012Fishinventory have recorded juvenile chinook rearing in small non natal streams. 
+
+# @buckwalter_kirsch2012Fishinventory have uvenile chinook have been recorded rearing in small non natal streams 
 
 
 #It is estimated that Morice River coho comprise approximatley 4% of the Skeena escapement with a declining trend noted since the 1950 in @gottesfeld_rabnett2007SkeenaFish.  Coho spawn in major tributaries and small streams ideally at locations where downstream dispersal can result in seeding of prime off channel habitats including warm productive sloughs and side channels.  Of all the salmon species, coho rely on small tributaries the most [@bustard_schell2002ConservingMorice]. @bustard_schell2002ConservingMorice report that much of the distribution of coho into non-natal tributaries occurs during high flow periods of May - early July with road culverts blocking migration into these habitats.
 ```
 
 
-
->>>>>>> 50e39d3ab838350987c28c28e245a8348f7ed564
 
 <br>
 

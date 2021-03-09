@@ -17,7 +17,7 @@ tab:tab-cost-mult
 fig:map-interactive
 tab:cost-est-phase-1
 tab:tab-overview
-tab:unnamed-chunk-7
+tab:unnamed-chunk-9
 tab:cost-est-phase-2
 tab:tab-habitat-summary
 fig:plot-fish-all

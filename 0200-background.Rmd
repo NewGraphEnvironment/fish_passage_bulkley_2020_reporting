@@ -84,7 +84,7 @@ knitr::include_graphics("fig/hydrology_stats_08EE003.png")
 
 ### Morice River
 
-The Morice River is an 8th order stream that drains an area of 4,379 km^2^ in a generally south-eastern direction from Morice Lake to the confluence with the upper Bulkley River just north of Houston. There area numerous large lakes situated on the south side of the watershed including Morice Lake, McBride Lake, Stepp Lake, Nanika Lake, Kid Price Lake, Owen Lake and others. There is one active hydrometric station on the mainstem of the Morice River near the outlet of Morice Lake and one historic station that was located at the mouth of the river near Houston that gathered data in 1971 only [@environmentandclimatechangecanada2021NationalWater].  An estimate of mean annual discharge for the one year of data available for the Morice near it's confluence with the Bulkley River is `r round(fasstr::calc_longterm_mean(station_number = "08ED003")$LTMAD,1)` m^3^/s.  Mean annual discharge is estimated at `r round(fasstr::calc_longterm_mean(station_number = "08ED002")$LTMAD,1)` m^3^/s at station 08ED002 located near the outlet of Morice Lake.  Flow patterns are typical of high elevation watersheds influenced by coast weather patterns which receive large amounts of winter precipitation as snow in the winter and large precipitation events in the fall.  This leads to peak levels of discharge during snowmelt, typically from May to July with high flows not uncommon in the fall (Figures \@ref(fig:hydrology-plot2) - \@ref(fig:hydrology-stats3)).   
+The Morice River watershed drains 4,379 km^2^ of Coast Mountains and Interior Plateau in a generally south-eastern direction.  The Morice River is an 8th order stream that flows approximatley 80km from Morice Lake to the confluence with the upper Bulkley River just north of Houston. Major tributaries include the Nanika River, the Atna River, Gosnell Creek and the Thautil River.  There area numerous large lakes situated on the south side of the watershed including Morice Lake, McBride Lake, Stepp Lake, Nanika Lake, Kid Price Lake, Owen Lake and others. There is one active hydrometric station on the mainstem of the Morice River near the outlet of Morice Lake and one historic station that was located at the mouth of the river near Houston that gathered data in 1971 only [@environmentandclimatechangecanada2021NationalWater].  An estimate of mean annual discharge for the one year of data available for the Morice near it's confluence with the Bulkley River is `r round(fasstr::calc_longterm_mean(station_number = "08ED003")$LTMAD,1)` m^3^/s.  Mean annual discharge is estimated at `r round(fasstr::calc_longterm_mean(station_number = "08ED002")$LTMAD,1)` m^3^/s at station 08ED002 located near the outlet of Morice Lake.  Flow patterns are typical of high elevation watersheds influenced by coastal weather patterns which receive large amounts of winter precipitation as snow in the winter and large precipitation events in the fall.  This leads to peak levels of discharge during snowmelt, typically from May to July with isolated high flows related to rain and rain on snow events common in the fall (Figures \@ref(fig:hydrology-plot2) - \@ref(fig:hydrology-stats3)).   
 
 <br>
 
@@ -123,7 +123,7 @@ Renowned as a world class recreational steelhead and coho fishery, the Bulkley R
 
 ### Morice River
 
-Lots to do here still
+Detailed reviews of Morice River watershed fisheries can be found in @bustard_schell2002ConservingMorice,  @gottesfeld_etal2002ConservingSkeena, @schell2003BriefOverview, @gottesfeld_rabnett2007SkeenaFish, and @ilmb2007MoriceLand with a comprehensive review of water quality by @oliver2018Analysiswater.  Overall, the Morice watershed contains high fisheries values as a major producer of chinook, pink, sockeye, coho and steelhead.  
 
 <br>
 
@@ -134,6 +134,18 @@ Fish species recorded in the Bulkley River and Morice River watershed groups are
 <br>
 
 PLACEHOLDER for gantt chart (under construction) and minimal text for life history timing of chinook, coho, steelhead, bull trout, and coastal cutthrout.
+
+
+```{r}
+##### Chinook
+#  In the 1990's Morice River watershed, @gottesfeld_rabnett2007SkeenaFish estimated that chinook comprised 30% of the total Skeena system chinook escapements. @buckwalter_kirsch2012Fishinventory have recorded juvenile chinook rearing in small non natal streams. 
+
+
+#It is estimated that Morice River coho comprise approximatley 4% of the Skeena escapement with a declining trend noted since the 1950 in @gottesfeld_rabnett2007SkeenaFish.  Coho spawn in major tributaries and small streams ideally at locations where downstream dispersal can result in seeding of prime off channel habitats including warm productive sloughs and side channels.  Of all the salmon species, coho rely on small tributaries the most [@bustard_schell2002ConservingMorice]. @bustard_schell2002ConservingMorice report that much of the distribution of coho into non-natal tributaries occurs during high flow periods of May - early July with road culverts blocking migration into these habitats.
+```
+
+
+
 
 <br>
 
@@ -252,14 +264,14 @@ There is a rich history of fish passage restoration planning in the Bulkley Rive
 
 <br>
 
-Review of the PSCIS database indicated that prior to 2020, `r pscis_historic_phase1 %>% filter(watershed_group_code %ilike% 'BULK' & assessment_date < '2020-01-01') %>% nrow()` assessments for fish passage (Phase 1) have been conducted at crossing structures within the Bulkley River watershed group. No habitat confirmations are recorded in the database [@moe2021PSCISHabitat].  Within the Bulkley River watershed group, a number of remediation projects have been completed over the years with backwatering works conducted on Toboggan Creek, Coffin Creek, Moan Creek, Johnny David Creek and potentially others. Three culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS and include works on Barren Creek as well as two tributaries to Harold Prince Creek [@moe2021PSCISRemediation].  McDowell Creek at Highway 16 was replaced with a horizontally drilled baffled structure in 2017 and a design is currently being drafted for the Highway 16 crossing over Taman Creek (pers. comm. Kathryn Graham, Regional Manager Environmental Services - Ministry of Transportation and Infrastructure).
+Review of the PSCIS database indicated that prior to 2020, `r pscis_historic_phase1 %>% filter(watershed_group_code %ilike% 'BULK' & assessment_date < '2020-01-01') %>% nrow()` assessments for fish passage (Phase 1) at crossing structures within the Bulkley River watershed group have been recorded in the PSCIS database [@moe2021PSCISAssessments]. No habitat confirmations are recorded in the PSCIS database [@moe2021PSCISHabitat].  Within the Bulkley River watershed group, a number of remediation projects have been completed over the years with backwatering works conducted on Toboggan Creek, Coffin Creek, Moan Creek, Johnny David Creek and potentially others. Three culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS and include works on Barren Creek as well as two tributaries to Harold Prince Creek [@moe2021PSCISRemediation].  McDowell Creek at Highway 16 was replaced with a horizontally drilled baffled structure in 2017 and a design is currently being drafted for the Highway 16 crossing over Taman Creek (pers. comm. Kathryn Graham, Regional Manager Environmental Services - Ministry of Transportation and Infrastructure).
 
 <br>
 
 ## Morice river
 
 
-Within the Morice River watershed group  `r pscis_historic_phase1 %>% filter(watershed_group_code %ilike% 'MORR' & assessment_date < '2020-01-01') %>% nrow()` fish passage assessments (Phase 1) had been conducted. At the time of reporting no habitat confirmations had been recorded in the database [@moe2021PSCISHabitat]. Two culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS in the  and include works on a tributary to the Morice River located at km 39.2 of the Morice River FSR and on bridge installation at km 4 of McBride Road on a tributary to McBride Lake [@moe2021PSCISRemediation]. 
+Within the Morice River watershed group prior to 2020, `r pscis_historic_phase1 %>% filter(watershed_group_code %ilike% 'MORR' & assessment_date < '2020-01-01') %>% nrow()` fish passage assessments (Phase 1) had been recorded in the PSCIS database [@moe2021PSCISAssessments]. At the time of reporting, no habitat confirmations had been recorded  [@moe2021PSCISHabitat]. Two culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS in the  and include works on a tributary to the Morice River located at km 39.2 of the Morice River FSR and on bridge installation at km 4 of McBride Road on a tributary to McBride Lake [@moe2021PSCISRemediation]. 
 
 
 

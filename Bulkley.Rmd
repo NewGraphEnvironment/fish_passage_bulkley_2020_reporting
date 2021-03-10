@@ -19,7 +19,7 @@ author: |
  | Society for Ecosytem Restoration Northern BC
 date: |
  |
- | DRafT - Version 0.0.3
+ | DRafT - Version 0.0.4
  | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
@@ -90,7 +90,7 @@ Modern civilization has a long journey ahead to acknowledge and address the hist
 
 <br>
 
-The Skeena Fisheries Commission honoured us by putting us in touch with its members in the fall of 2019 and hosting a forum for us to give a presentation about our project in the spring of 2020.  Thank you for having the patience to listen to our story which is a story you told us. Thank you Kenny Rabnett, Stu Barnes, Ryneld Starr, Allison Oliver, and the rest of the teams.
+The Skeena Fisheries Commission honoured us when they put us in touch with their members in the fall of 2019 and hosted a forum for us to give a presentation about our project in the spring of 2020.  Thank you for having the patience to listen to our story which is a story you told us. Thank you Kenny Rabnett, Stu Barnes, Ryneld Starr, Allison Oliver, and the rest of the teams.
 
 <br>
 
@@ -100,12 +100,12 @@ Mike Risdale, David Dewit, walter Joseph and Dallas Nikal from the Office of Wet
 <br>
 
 
-The Gitskan Watershed Authority had the grace to share their past work with us and provide valuable input into our study plan. Ham i yaa Alecia Fernando and the rest of the teams.
+The Gitskan Watershed Authority had the grace to share their past fish passage work with us and provide valuable input into our study plan. Ham i yaa Alecia Fernando and the rest of the teams.
 
 <br>
 
 
-The contribution of all the Bulkley River watershed fish passage working group members has been wonderful and extremely helpful. Thank you Maureen Luggi, Jesse Stoeppler, Bill Blackwater, Brian Williams, Gordon Sebastian, Sean Staplin and Elaine Sampson.
+The contribution of all the Bulkley River watershed fish passage working group members has been wonderful and critical. Thank you Maureen Luggi, Jesse Stoeppler, Bill Blackwater, Brian Williams, Gordon Sebastian, Sean Staplin, Elaine Sampson and the rest of the current as well as future members.
 
 <br>
 
@@ -216,7 +216,7 @@ Thank you to Joe Thorley from Poisson Consulting Ltd.  The probability of better
 <br>
 
 
-Many thanks to John DeGagne and Marc Steynen from SERNbc for their guidance, insight and encouragement for multiple aspects of the project. 
+Many thanks to John DeGagne and Marc Steynen from SERNbc for their guidance, insight and encouragement for numerous aspects of the project. 
 
 <br>
 
@@ -231,7 +231,7 @@ There are many others to which we owe our gratitude and please accept our apolog
 <br>
 
 
-Fish passage is a onederful example of how all things are connected and interdependent.  The barriers that divide will eventually fall once we understand together where, how and why they stand between.
+Fish passage is a wonderful example of how all things are connected and interdependent.  The barriers that divide will eventually fall once we understand together where, how and why they stand between.
 
 <br>
 
@@ -256,12 +256,12 @@ The health and viability of freshwater fish populations can depend on access to 
 
 <br>
 
-In April of 2020, the Society for Ecosystem Restoration Northern British Columbia (SERNbc) undertook an initiative to plan and conduct fish passage restoration planning activities in the Bulkley River and Morice River watershed groups which are sub-basins of the Skeena River watershed.  The initiative was supported by a grant from the Habitat Conservation Trust Fund that leveraged funds committed in the fall of 2019 from the Provincial Fish Passage Remediation Program and the Canadian Wildlife Federation.  New Graph Environment and Hillcrest Geographics were the project team subcontracted to devise the study plan, submit proposals and complete the work which included information gathering, updating/implementation of open source data analysis tools, fish passage assessments and habitat confirmation assessments. 
+In April of 2020, the Society for Ecosystem Restoration Northern British Columbia (SERNbc) undertook an initiative to plan and conduct fish passage restoration planning activities in the Bulkley River and Morice River watershed groups which are sub-basins of the Skeena River watershed.  The initiative was supported by a grant from the Habitat Conservation Trust Fund that leveraged funds committed in the fall of 2019 from the Provincial Fish Passage Remediation Program and the Canadian Wildlife Federation.  New Graph Environment and Hillcrest Geographics were the project team subcontracted to devise the study plan, submit proposals and complete the work which included information gathering, updating/implementation of open source data analysis tools, fish passage assessments and habitat confirmation assessments. Although fish passage restoration planning was conducted for both the Morice River watershed group and the Bulkley River watershed group, on the ground surveys in 2020 focused primarily within Bulkley River tributaries.
 
 
 <br>
 
-In August of 2020, following a province wide prioritization exercise and a series of workshops, the Canadian Wildlife Federation selected the Bulkley River watershed group as a target watershed for connectivity planning efforts supported by a grant from the British Columbia Salmon Restoration and Innovation Fund.  Recognizing synergies between the two initiatives, select project activities of both initiatives became a collaboration between SERNbc and CWF with extensive input from numerous organizations and individuals connected to the watersheds. Although fish passage restoration planning was conducted for both the Morice River watershed group and the Bulkley River watershed group, on the ground surveys in 2020 focused primarily within Bulkley River tributaries.
+In August of 2020, following a province wide prioritization exercise and a series of workshops, the Canadian Wildlife Federation selected the Bulkley River watershed group as a target watershed for connectivity planning efforts supported by a grant from the British Columbia Salmon Restoration and Innovation Fund.  Recognizing synergies between the two initiatives, select project activities of both initiatives became a collaboration between SERNbc and CWF with extensive input from numerous organizations and individuals connected to the watersheds. 
 
 
 <br>
@@ -275,7 +275,7 @@ Although remediation and replacement of stream crossing structures can have bene
 
 <br>
 
-Fish passage restoration planning for the Morice River watershed was informed by engagement with the Office of Wet'suwet'en, the Morice Watershed Monitoring Trust and numerous others along with the development and application of open-source `bcfishpass` tools which were utilized to analyze potential habitat gains of remediation activities based on species and life stage specific habitat characteristics. Online interactive and georeferenced field maps were produced and a field plan for future on the ground assessments formulated.  Some key areas targeted for future fieldwork activity include assessments within the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds (!!!!!!!!!!!placeholder!!!!!!!!!!!!!!!!).
+Fish passage restoration planning for the Morice River watershed was informed by engagement with the Office of Wet'suwet'en, the Morice Watershed Monitoring Trust and numerous others along with the development and application of open-source `bcfishpass` tools which were utilized to analyze potential habitat gains of remediation activities based on species and life stage specific habitat characteristics. Online interactive and georeferenced field maps were produced and a field plan for future on the ground assessments formulated.  Some key areas targeted for future fieldwork activity include assessments within the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds.
 
 <br>
 
@@ -299,7 +299,7 @@ Recommendations for potential incorporation into collaborative watershed connect
  
  * Continue to conduct fish passage and habitat confirmation assessments at road and rail stream crossings at sites in the study areas prioritized through this project and future connectivity analysis/modelling. In the Bulkley River watershed group, particular sites of note where future Phase 1 and Phase 2 assessments are recommended include John Brown Creek, Toboggan Creek, Cesford Creek, Watson Creek and Ailport Creek.
  
- * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of crossing structure upgrades alongside the cost benefits and ethics of alternative restoration activities such as transportation corridor relocation/deactivation, land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, sediment input reduction, etc.
+ * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of crossing structure upgrades alongside the cost benefits and ethics of alternative restoration activities such as transportation corridor relocation/deactivation, land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, commercial/recreational fishing closures, salt water interventions and research.
  
  * Refine barrier thresholds for road-stream crossing structures to explore passability metrics specific to life stage and life history types of species of interest. This will further focus efforts of potential remediation actions based on biological attributes (ex. timing of migration, size/direction of fish migrating, etc.) and could result in the consideration of interim "stop-gap" physical works to alter crossing characteristics that can address key connectivity issues yet be significantly less costly than structure replacements (ex. building up of downstream area with rock riffles to decrease the outlet drop size and/or increasing water depth within pipe with baffles and substrate additions).
  
@@ -307,7 +307,7 @@ Recommendations for potential incorporation into collaborative watershed connect
  
  * Expand the working group focus area to include the greater Skeena River watershed.  A Skeena level effort will facilitate a more inclusive decision making environment, open up opportunities for collaboration/funding to more governments/organizations/stakeholders and allow consideration of all potential remediation sites that could benefit Skeena fish populations and the livelihoods they support.
  
-  * Build relationships with other working groups (ex. Washington Wildlife Habitat Connectivity Working Group) to benefit from extensive experience with large scale connectivity remediation.
+  * Build relationships with other working groups (ex. Washington Wildlife Habitat Connectivity Working Group) to share knowledge related to large scale connectivity remediation.
  
  * Continue to collaborate with potential partners to build relationships, explore perspectives and develop “road maps” for fish passage restoration in different situations (MoT roads, rail lines, permit roads of different usages, FSRs, etc.) – documenting the people involved, discussions and processes that are undertaken, funding options, synergies, measures of success, etc. Through this collaboration, such as is occurring with the Bulkley River working group, continue to draft and implement plans for fish passage restoration investments as well as to monitor the impacts of those investments on fish populations.
 
@@ -322,12 +322,12 @@ The health and viability of freshwater fish populations can depend on access to 
 
 <br>
 
-In April of 2020, the Society for Ecosystem Restoration Northern British Columbia (SERNbc) undertook an initiative to plan and conduct fish passage restoration planning activities in the Bulkley River and Morice River watershed groups which are sub-basins of the Skeena River watershed.  The initiative was supported by a grant from the Habitat Conservation Trust Fund that leveraged funds committed in the fall of 2019 from the Provincial Fish Passage Remediation Program and the Canadian Wildlife Federation.  New Graph Environment and Hillcrest Geographics were the project team subcontracted to devise the study plan, submit proposals and complete the work which included information gathering, updating/implementation of open source data analysis tools, fish passage assessments and habitat confirmation assessments.  
+In April of 2020, the Society for Ecosystem Restoration Northern British Columbia (SERNbc) undertook an initiative to plan and conduct fish passage restoration planning activities in the Bulkley River and Morice River watershed groups which are sub-basins of the Skeena River watershed.  The initiative was supported by a grant from the Habitat Conservation Trust Fund that leveraged funds committed in the fall of 2019 from the Provincial Fish Passage Remediation Program and the Canadian Wildlife Federation.  New Graph Environment and Hillcrest Geographics were the project team subcontracted to devise the study plan, submit proposals and complete the work which included information gathering, updating/implementation of open source data analysis tools, fish passage assessments and habitat confirmation assessments.  Although fish passage restoration planning was conducted for both the Morice River watershed group and the Bulkley River watershed group, on the ground surveys in 2020 focused primarily within Bulkley River tributaries.
 
 
 <br>
 
-In August of 2020, following a province wide prioritization exercise and a series of workshops, the Canadian Wildlife Federation selected the Bulkley River watershed group as a target watershed for connectivity planning efforts supported by a grant from the British Columbia Salmon Restoration and Innovation Fund.  Recognizing synergies between the two initiatives, select project activities of both initiatives became a collaboration between SERNbc and CWF with extensive input from numerous organizations and individuals connected to the watersheds. Although fish passage restoration planning was conducted for both the Morice River watershed group and the Bulkley River watershed group, on the ground surveys in 2020 focused primarily within Bulkley River tributaries.
+In August of 2020, following a province wide prioritization exercise and a series of workshops, the Canadian Wildlife Federation selected the Bulkley River watershed group as a target watershed for connectivity planning efforts supported by a grant from the British Columbia Salmon Restoration and Innovation Fund.  Recognizing synergies between the two initiatives, select project activities of both initiatives became a collaboration between SERNbc and CWF with extensive input from numerous organizations and individuals connected to the watersheds. 
 
 
 <br>
@@ -336,7 +336,7 @@ Spearheaded by the Canadian Wildlife Federation, a Fish Passage Working Group co
 
 <br>
 
-Although remediation and replacement of stream crossing structures can have benefits to local fish populations, the costs of remedial works can be significant and the impacts of the work often complex to evaluate and quantify.  Additionally, allocation of ecosystem restoration funding towards infrastructure upgrades on transportation right of ways are not always considered ethical under all circumstances from all perspectives.  When funds are finite and invested groups are engaged in fund raising, cost benefits and the ethics of crossing replacements should be explored collaboratively alongside the cost benefits and ethics of alternative investment activities including transportation corridor relocation/deactivation, land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, and research.
+Although remediation and replacement of stream crossing structures can have benefits to local fish populations, the costs of remedial works can be significant and the impacts of the work often complex to evaluate and quantify.  Additionally, allocation of ecosystem restoration funding towards infrastructure upgrades on transportation right of ways are not always considered ethical under all circumstances from all perspectives.  When funds are finite and invested groups are engaged in fund raising, cost benefits and the ethics of crossing replacements should be explored collaboratively alongside the cost benefits and ethics of alternative investment activities including transportation corridor relocation/deactivation, land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, commercial/recreational fishing closures, salt water interventions and research.
 
 
 
@@ -1236,7 +1236,7 @@ Recommendations for potential incorporation into collaborative watershed connect
  
  * Continue to conduct fish passage and habitat confirmation assessments at road and rail stream crossings at sites in the study areas prioritized through this project and future connectivity analysis/modelling. In the Bulkley River watershed group, particular sites of note where future Phase 1 and Phase 2 assessments are recommended include John Brown Creek, Toboggan Creek, Cesford Creek, Watson Creek and Ailport Creek.
  
- * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of crossing structure upgrades alongside the cost benefits and ethics of alternative alternative investment activities including transportation corridor relocation/deactivation, land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, and research.
+ * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of crossing structure upgrades alongside the cost benefits and ethics of alternative alternative investment activities including transportation corridor relocation/deactivation, land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, commercial/recreational fishing closures, salt water interventions and research.
  
  * Refine barrier thresholds for road-stream crossing structures to explore metrics specific to life stage and life history types of species of interest. This will further focus efforts of potential remediation actions based on biological attributes (ex. timing of migration, size/direction of fish migrating, etc.) and could result in the consideration of interim "stop-gap" physical works to alter crossing characteristics that can address key connectivity issues yet be significantly less costly than structure replacements (ex. building up of downstream area with rock riffles to decrease the outlet drop size and/or increaseing water depth within pipe with baffles and substrate additions).
  
@@ -1244,7 +1244,7 @@ Recommendations for potential incorporation into collaborative watershed connect
  
  * Expand the working group focus area to include the greater Skeena River watershed.  A Skeena level effort will facilitate a more inclusive decision making environment, open up opportunities for collaboration/funding to more governments/organizations/stakeholders and allow consideration of all potential remediation sites that could benefit Skeena fish populations and the livelihoods they support.
  
- * Build relationships with other working groups (ex. Washington Wildlife Habitat Connectivity Working Group) to benefit from extensive experience with large scale connectivity remediation.
+ * Build relationships with other working groups (ex. Washington Wildlife Habitat Connectivity Working Group) to share knowledge related to large scale connectivity remediation.
  
  * Continue to collaborate with potential partners to build relationships, explore perspectives and develop “road maps” for fish passage restoration in different situations (MoT roads, rail lines, permit roads of different usages, FSRs, etc.) – documenting the people involved, discussions and processes that are undertaken, funding options, synergies, measures of success, etc. Through this collaboration, such as is occurring with the Bulkley River working group, continue to draft and implement plans for fish passage restoration investments as well as to monitor the impacts of those investments on fish populations.
 
@@ -2849,7 +2849,7 @@ Table \@ref(tab:tab-culvert-bcfp-195290) `r text_ref_tab_summary_bcfp()`
 
 ## Fish Sampling {-}
 
-To assess potential impacts of the culvert on fisheries values in the stream, electrofishing and minnowtrapping was conducted upstream and downstream of the crossing.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured upstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish captured downstream (Figure \@ref(fig:photo-195290-03)). Species captured downstream included coho, bull trout (or potentially dolly varden) and rainbow trout.  Only rainbow trout were captured upstream.  Electrofishing results are summarized in Tables \@ref(tab:tab-fish-site-195290) - Tables \@ref(tab:tab-fish-dens-195290) and Figure \@ref(fig:plot-fish-box-195290) with minnowtrapping results summarized in Table \@ref(tab:tab-fish-mt-195290).
+To assess potential impacts of the culvert on fisheries values in the stream, electrofishing and minnowtrapping was conducted upstream and downstream of the crossing.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured upstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish captured downstream. Species captured downstream included coho, bull trout (or potentially dolly varden) and rainbow trout.  Only rainbow trout were captured upstream.  Electrofishing results are summarized in Tables \@ref(tab:tab-fish-site-195290) - Tables \@ref(tab:tab-fish-dens-195290) and Figure \@ref(fig:plot-fish-box-195290) with minnowtrapping results summarized in Table \@ref(tab:tab-fish-mt-195290).
 
 
 <br>

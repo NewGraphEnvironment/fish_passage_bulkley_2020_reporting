@@ -9,8 +9,11 @@ library(hydatr)
 # download_hydat()
 
 ##C:\Users\allan\AppData\Local\tidyhydat\tidyhydat
+# C:\Users\al\AppData\Local\tidyhydat\tidyhydat
 
 hydatr::hydat_load(source = "C://Users//allan//AppData//Local//tidyhydat//tidyhydat") # loads the database (you'll need to call this one each time you load the package)
+# hydatr::hydat_load(source = "C://Users//al//AppData//Local//tidyhydat//tidyhydat") # loads the database (you'll need to call this one each time you load the package)
+
 
 tidyhat_info <- search_stn_name("Morice")
 hydatr_info <- as.data.frame(hydat_station_info(tidyhat_info$STATION_NUMBER))

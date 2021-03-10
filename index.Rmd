@@ -19,7 +19,7 @@ author: |
  | Society for Ecosytem Restoration Northern BC
 date: |
  |
- | DRafT - Version 0.0.3
+ | DRafT - Version 0.0.4
  | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
@@ -90,7 +90,7 @@ Modern civilization has a long journey ahead to acknowledge and address the hist
 
 <br>
 
-The Skeena Fisheries Commission honoured us by putting us in touch with its members in the fall of 2019 and hosting a forum for us to give a presentation about our project in the spring of 2020.  Thank you for having the patience to listen to our story which is a story you told us. Thank you Kenny Rabnett, Stu Barnes, Ryneld Starr, Allison Oliver, and the rest of the teams.
+The Skeena Fisheries Commission honoured us when they put us in touch with their members in the fall of 2019 and hosted a forum for us to give a presentation about our project in the spring of 2020.  Thank you for having the patience to listen to our story which is a story you told us. Thank you Kenny Rabnett, Stu Barnes, Ryneld Starr, Allison Oliver, and the rest of the teams.
 
 <br>
 
@@ -100,12 +100,12 @@ Mike Risdale, David Dewit, walter Joseph and Dallas Nikal from the Office of Wet
 <br>
 
 
-The Gitskan Watershed Authority had the grace to share their past work with us and provide valuable input into our study plan. Ham i yaa Alecia Fernando and the rest of the teams.
+The Gitskan Watershed Authority had the grace to share their past fish passage work with us and provide valuable input into our study plan. Ham i yaa Alecia Fernando and the rest of the teams.
 
 <br>
 
 
-The contribution of all the Bulkley River watershed fish passage working group members has been wonderful and extremely helpful. Thank you Maureen Luggi, Jesse Stoeppler, Bill Blackwater, Brian Williams, Gordon Sebastian, Sean Staplin and Elaine Sampson.
+The contribution of all the Bulkley River watershed fish passage working group members has been wonderful and critical. Thank you Maureen Luggi, Jesse Stoeppler, Bill Blackwater, Brian Williams, Gordon Sebastian, Sean Staplin, Elaine Sampson and the rest of the current as well as future members.
 
 <br>
 
@@ -216,7 +216,7 @@ Thank you to Joe Thorley from Poisson Consulting Ltd.  The probability of better
 <br>
 
 
-Many thanks to John DeGagne and Marc Steynen from SERNbc for their guidance, insight and encouragement for multiple aspects of the project. 
+Many thanks to John DeGagne and Marc Steynen from SERNbc for their guidance, insight and encouragement for numerous aspects of the project. 
 
 <br>
 
@@ -231,7 +231,7 @@ There are many others to which we owe our gratitude and please accept our apolog
 <br>
 
 
-Fish passage is a onederful example of how all things are connected and interdependent.  The barriers that divide will eventually fall once we understand together where, how and why they stand between.
+Fish passage is a wonderful example of how all things are connected and interdependent.  The barriers that divide will eventually fall once we understand together where, how and why they stand between.
 
 <br>
 

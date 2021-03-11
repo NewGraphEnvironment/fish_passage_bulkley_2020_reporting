@@ -3,7 +3,7 @@
 Recommendations for potential incorporation into collaborative watershed connectivity planning for the Bulkley River and Morice River watershed groups include:
 
 
- * Continue to develop `bcfishpass`,`bcfishobs`, `fwapg` and other open source data analysis and presentation tools that are scalable and facilitate continual improvement and collaborative adaptation.  Tools should continue to flexible and well documented to allow the future incorporation of alternative fragmentation indicators, habitat gain/value metrics, watershed sensitivity indicators/risk factors and information sharing formats.
+ * Continue to develop `bcfishpass`,`bcfishobs`, `fwapg` and other open source data analysis and presentation tools that are scalable and facilitate continual improvement and collaborative adaptation.  Tools should continue to be flexible and well documented to allow the future incorporation of alternative fragmentation indicators, habitat gain/value metrics, watershed sensitivity indicators/risk factors and information sharing formats.
  
  * Continue to conduct fish passage and habitat confirmation assessments at road and rail stream crossings at sites in the study areas prioritized through this project and future connectivity analysis/modelling. In the Bulkley River watershed group, particular sites of note where future Phase 1 and Phase 2 assessments are recommended include John Brown Creek, Toboggan Creek, Cesford Creek, Watson Creek and Ailport Creek.
  

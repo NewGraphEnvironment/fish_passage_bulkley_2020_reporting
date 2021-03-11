@@ -56,7 +56,7 @@ sites %>%
 print_tab_summary_bcfp_html <- function(sites){
   make_tab_summary_bcfp(site = sites) %>%
   kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', sites, '.'), booktabs = T) %>%    #
-    kableExtra::add_footnote('Model data is preliminary and subject to adjustments.', notation = 'symbol') %>%
+    kableExtra::add_footnote('Model data is preliminary and subject to adjustments including incorperation of area based estimates.', notation = 'symbol') %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 18) %>%
     readr::write_file(., file = paste0("docs/sum/bcfp/", sites, ".html"))
 }

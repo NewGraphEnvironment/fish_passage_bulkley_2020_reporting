@@ -1,0 +1,5 @@
+v0.0.5
+- add Ptolemy to acknoledgments
+- add comment on modelling with areas
+- add reference to fisheries managemnt rather than closures
+- add note in pdf to reference online version

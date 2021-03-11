@@ -14,9 +14,48 @@ conn <- DBI::dbConnect(
 )
 #
 # ##listthe schemas in the database
-# dbGetQuery(conn,
-#            "SELECT schema_name
-#            FROM information_schema.schemata")
+dbGetQuery(conn,
+           "SELECT schema_name
+           FROM information_schema.schemata")
+
+##see the size of each schema in the database (https://www.postgresonline.com/journal/archives/110-Determining-size-of-database,-schema,-tables,-and-geometry.html)
+dbGetQuery(conn,
+           "SELECT schema_name,
+       pg_size_pretty(sum(table_size)::bigint),
+       (sum(table_size) / pg_database_size(current_database())) * 100
+FROM (
+  SELECT pg_catalog.pg_namespace.nspname as schema_name,
+         pg_relation_size(pg_catalog.pg_class.oid) as table_size
+  FROM   pg_catalog.pg_class
+     JOIN pg_catalog.pg_namespace ON relnamespace = pg_catalog.pg_namespace.oid
+) t
+GROUP BY schema_name
+ORDER BY schema_name")
+
+
+##size of tables
+tab_size <- dbGetQuery(conn,
+           "SELECT
+  schema_name,
+  relname,
+  pg_size_pretty(table_size) AS size,
+  table_size
+
+FROM (
+       SELECT
+         pg_catalog.pg_namespace.nspname           AS schema_name,
+         relname,
+         pg_relation_size(pg_catalog.pg_class.oid) AS table_size
+
+       FROM pg_catalog.pg_class
+         JOIN pg_catalog.pg_namespace ON relnamespace = pg_catalog.pg_namespace.oid
+     ) t
+WHERE schema_name NOT LIKE 'pg_%'
+ORDER BY table_size DESC;") %>%
+  arrange(table_size)
+
+
+
 # #
 # #
 # # # ##list tables in a schema
@@ -29,7 +68,10 @@ dbGetQuery(conn,
 dbGetQuery(conn,
            "SELECT column_name,data_type
            FROM information_schema.columns
-           WHERE table_name='fiss_obstacles_pnt_sp'")
+           WHERE table_name='fwa_stream_networks_sp'")
+
+dbGetQuery(conn,
+           "DROP TABLE whse_basemapping.fwa_linear_boundaries_sp;")
 
 
 # test <- dbGetQuery(conn, "SELECT * FROM bcfishpass.waterfalls")

@@ -127,11 +127,15 @@ Much gratitude to Simon Norris from Hillcrest Geographics and Craig Mount from M
 <br>
 
 
-We feel privileged to benefit from a great amount of hard work and meaningful investments of the Canadian Wildlife Federation towards the open source tools we use and develop for the analysis of study area streams/watersheds/landscapes/climates.  We also recognize that CWF's work to coordinate the Bulkley River Fish Passage Working Group is one more massive step towards actionable plans. Thank you Nick LaPointe, David Browne, Betty Rebellato, Nick Mazany-Wright, Sarah Sra, Sami Kurani, Nick O'Hanley and Dave Hillary.  
+We feel privileged to benefit from a great amount of hard work and meaningful investments of the Canadian Wildlife Federation towards the open source tools we use and develop for the analysis of study area streams/watersheds/landscapes/climates.  We also recognize that CWF's work to coordinate the Bulkley River Fish Passage Working Group is one more massive step towards actionable plans. Thank you Nick LaPointe, David Browne, Betty Rebellato, Nick Mazany-Wright, Sarah Sra, Sami Kurani, Nick O'Hanley and Dave Hillary.  Thank you.
 
 <br>
 
 Thank you to David Wilford, Glen Buhr, Greg Tamblyn, Robyn Vaniderstine, Jesse Fraser, Chris Schell, Kenji Miyazaki, Dean Peard, Brian Kolman, Megan Peloso, Troy Larden, Beth Eagles and Julie Sheppard from FLNRORD for your insight, advise, and assistance. Among the manyu other things you have done for us, helping us tie our project to some of the numerous initiatives in your areas has been invaluable.
+
+<br>
+
+Thank you to Ron Ptolemy from MoE for enlightening discussions regarding the fish density modelling work  he has been developing over many years.
 
 <br>
 

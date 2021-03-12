@@ -264,12 +264,16 @@ phase1_priorities <- pscis_phase1_reassessments %>%
 
 
 ##turn spreadsheet into list of data frames
-pscis_split <- pscis_phase1_reassessments  %>%
+pscis_phase1_for_tables <- pscis_all %>%
+  filter(source %ilike% 'phase1') %>%
+  arrange(pscis_crossing_id)
+
+pscis_split <- pscis_phase1_for_tables  %>% #pscis_phase1_reassessments
   # sf::st_drop_geometry() %>%
   # mutate_if(is.numeric, as.character) %>% ##added this to try to get the outlet drop to not disapear
   # tibble::rownames_to_column() %>%
   dplyr::group_split(pscis_crossing_id) %>%
-  purrr::set_names(pscis_phase1_reassessments$pscis_crossing_id)
+  purrr::set_names(pscis_phase1_for_tables$pscis_crossing_id)
 
 ##make result summary tables for each of the crossings
 tab_summary <- pscis_split %>%
@@ -285,12 +289,25 @@ tab_photo_url <- list.files(path = paste0(getwd(), '/data/photos/'), full.names 
   mutate(value = as.integer(value)) %>%  ##need this to sort
   dplyr::arrange(value)  %>%
   mutate(photo = paste0('![](data/photos/', value, '/crossing_all.JPG)')) %>%
-  filter(value %in% pscis_phase1_reassessments$amalgamated_crossing_id) %>%  ##we don't want all the photos - just the phase 1 photos for this use case!!!
-  dplyr::group_split(value) %>%
-  purrr::set_names(nm = pscis_phase1_reassessments$pscis_crossing_id)
+  filter(value %in% pscis_phase1_for_tables$my_crossing_reference)  %>% ##we don't want all the photos - just the phase 1 photos for this use case!!!
+  left_join(., xref_pscis_my_crossing_modelled, by = c('value' = 'external_crossing_reference'))  %>% ##we need to add the pscis id so that we can sort the same
+  arrange(stream_crossing_id) %>%
+  select(-value) %>%
+  # pull(photo)
+  dplyr::group_split(stream_crossing_id)
+  # purrr::set_names(nm = . %>% bind_rows() %>% arrange(value) %>% pull(stream_crossing_id)) %>%
+  # bind_rows()
+  # arrange(stream_crossing_id) %>%
+  # dplyr::group_split(value)
 
+
+
+
+##these are the reassessments!!!!!
 ##built from funciton in functions.R file
 tabs_phase1 <- mapply(print_tab_summary_all, tab_sum = tab_summary, comments = tab_summary_comments, photos = tab_photo_url)
 
+##built from funciton in functions.R file
+tabs_phase1_pdf <- mapply(print_tab_summary_all_pdf, tab_sum = tab_summary, comments = tab_summary_comments, photos = tab_photo_url)
 
 

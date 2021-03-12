@@ -211,10 +211,21 @@ print_tab_summary_all <- function(tab_sum, comments, photos){
   kable(tab_sum, booktabs = T) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
     kableExtra::add_footnote(label = paste0('Comments: ', comments[[1]]), notation = 'none') %>% #this grabs the comments out
-    kableExtra::add_footnote(label = paste0('Photos: PSCIS ID ', photos[[1]],
+    kableExtra::add_footnote(label = paste0('Photos: PSCIS ID ', photos[[2]],
                                             '. From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.',
-                                            photos[[2]]), notation = 'none')
+                                            photos[[1]]), notation = 'none')
     # kableExtra::add_footnote(label = '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>', escape = F, notation = 'none')
+}
+
+####--------------phase1 summary tables pdf--------------------------
+print_tab_summary_all_pdf <- function(tab_sum, comments, photos){
+  kable(tab_sum, booktabs = T) %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
+    kableExtra::add_footnote(label = paste0('Comments: ', comments[[1]]), notation = 'none') %>% #this grabs the comments out
+    kableExtra::add_footnote(label = paste0('Photos: PSCIS ID ', photos[[2]],
+                                            '. From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.',
+                                            photos[[1]]), notation = 'none') %>%
+  kableExtra::add_footnote(label = '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>', escape = F, notation = 'none')
 }
 
 ##summary table

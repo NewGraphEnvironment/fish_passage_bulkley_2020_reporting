@@ -25,7 +25,7 @@ pacman::p_load(
   english,
   leaflet.extras,
   ggdark,
-  # pdftools,
+  pdftools,
   geojsonsf,
   bit64 ##to make integer column type for pg
   # gert  ##to track git moves

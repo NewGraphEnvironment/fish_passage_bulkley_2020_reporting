@@ -59,9 +59,7 @@ openHTML('docs/Bulkley.html')}
 ##move the phase 1 appendix back to main directory
 file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')
 
-#################################################################################################
-##go to the index.Rmd and change html_on <- TRUE
-#################################################################################################
+
 
 
 ##this is how we clean up our bib file.  We need to find a way to add together the packages.bib file with the book.bib file first though.
@@ -75,6 +73,11 @@ file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')
 
 ##  make the site
 source('R/photos-extract-metadata.R')
+
+
+#################################################################################################
+##go to the index.Rmd and change gitbook_on <- TRUE
+#################################################################################################
 rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')
 
 

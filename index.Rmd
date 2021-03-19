@@ -19,7 +19,7 @@ author: |
  | Society for Ecosytem Restoration Northern BC
 date: |
  |
- | DRafT - Version 0.0.5
+ | DRafT - Version 0.0.6
  | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
@@ -90,7 +90,7 @@ Modern civilization has a long journey ahead to acknowledge and address the hist
 
 <br>
 
-The Skeena Fisheries Commission honoured us when they put us in touch with their members in the fall of 2019 and hosted a forum for us to give a presentation about our project in the spring of 2020.  Thank you for having the patience to listen to our story which is a story you told us. Thank you Kenny Rabnett, Stu Barnes, Ryneld Starr, Allison Oliver, and the rest of the teams.
+The Skeena Fisheries Commission honoured us when they put us in touch with their members in the fall of 2019 and hosted a forum for us to give a presentation about our project in the spring of 2020.  Thank you for having the patience to listen to our story which is a story you told us. Thank you Stu Barnes, Ryneld Starr, Allison Oliver, and the rest of the teams.
 
 <br>
 
@@ -101,6 +101,10 @@ Mike Risdale, David Dewit, walter Joseph and Dallas Nikal from the Office of Wet
 
 
 The Gitskan Watershed Authority had the grace to share their past fish passage work with us and provide valuable input into our study plan. Ham i yaa Alecia Fernando and the rest of the teams.
+
+<br>
+
+Thank you to Kenny Rabnett for all the great work over the years that fed much of the background information for this report as well as for taking the time to answer questions and provide encouragement in 2017.
 
 <br>
 
@@ -127,7 +131,7 @@ Much gratitude to Simon Norris from Hillcrest Geographics and Craig Mount from M
 <br>
 
 
-We feel privileged to benefit from a great amount of hard work and meaningful investments of the Canadian Wildlife Federation towards the open source tools we use and develop for the analysis of study area streams/watersheds/landscapes/climates.  We also recognize that CWF's work to coordinate the Bulkley River Fish Passage Working Group is one more massive step towards actionable plans. Thank you Nick LaPointe, David Browne, Betty Rebellato, Nick Mazany-Wright, Sarah Sra, Sami Kurani, Nick O'Hanley and Dave Hillary.  Thank you.
+We feel privileged to benefit from a great amount of hard work and meaningful investments of the Canadian Wildlife Federation towards the open source tools we use and develop for the analysis of study area streams/watersheds/landscapes/climates.  We also recognize that CWF's work to coordinate the Bulkley River Fish Passage Working Group is one more massive step towards actionable plans. Thank you Nick LaPointe, David Browne, Betty Rebellato, Nick Mazany-Wright, Sarah Sra, olivia Baudet, Alex Laudadio, Sami Kurani, Nick O'Hanley and Dave Hillary.  
 
 <br>
 

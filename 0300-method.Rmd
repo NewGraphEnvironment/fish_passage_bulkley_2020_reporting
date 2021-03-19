@@ -30,7 +30,7 @@ The `Fish Habitat Model` calculates the average gradient of BC Freshwater Atlas 
  
  <br>
 
-Gradient, channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High  value  rearing, overwintering  and spawning habitat is often located within channel types with relatively low gradients and the size of the channel (also effectively quantified by the amount of flow in the stream) is often a good predictor of species/life stage utilization.  Following delineation of "potentially accessible habitat", the *average* gradient of each stream segment within habitat classified as below the 15% threshold as well as the 22% threshold was calculated and summed within species and life stage specific gradient and channel width categories. For the Bulkley River watershed group, stream discharge acquired from a proprietary analysis was also added to the dataset and categorized by intrinsic potential for a set of species and life stages.  `bcfishpass` and associated tools have been designed to be flexible in analysis, accepting user defined gradient, channel width and stream discharge categories.  Although currently in draft form, and subject to revisions throughout the development of this reporting, gradient, channel width and stream discharge thresholds for a number of fish species in the Bulkley River and Morice River watersheds groups have been gathered from available literature and applied to stream crossing locations  (Table \@ref(tab:tab-fish-spawning-rearing)).  References for thresholds are provided in  Table \@ref(tab:tab-fish-spawning-rearing-references). Average gradient of stream line segments can be calculated from elevations contained in the provincial freshwater atlas streamline dataset. Methodology to calculate estimates of channel width and stream discharge are provided in the following sections.
+Gradient, channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High  value  rearing, overwintering  and spawning habitat is often located within channel types with relatively low gradients and the size of the channel (also effectively quantified by the amount of flow in the stream) is often a good predictor of species/life stage utilization.  Following delineation of "potentially accessible habitat", the *average* gradient of each stream segment within habitat classified as below the 15% threshold as well as the 20% threshold was calculated and summed within species and life stage specific gradient and channel width categories. For the Bulkley River watershed group, stream discharge acquired from a proprietary analysis was also added to the dataset and categorized by intrinsic potential for a set of species and life stages.  `bcfishpass` and associated tools have been designed to be flexible in analysis, accepting user defined gradient, channel width and stream discharge categories.  Although currently in draft form, and subject to revisions throughout the development of this reporting, gradient, channel width and stream discharge thresholds for a number of fish species in the Bulkley River and Morice River watersheds groups have been gathered from available literature and applied to stream crossing locations  (Table \@ref(tab:tab-fish-spawning-rearing)).  References for thresholds are provided in  Table \@ref(tab:tab-fish-spawning-rearing-references). Average gradient of stream line segments can be calculated from elevations contained in the provincial freshwater atlas streamline dataset. Methodology to calculate estimates of channel width and stream discharge are provided in the following sections.
 
 <br>
 
@@ -81,35 +81,18 @@ bcfishpass_spawn_rear_model_references %>%
   as_tibble(rownames = "row_names") %>% 
   janitor::row_to_names(row_number = 1) %>% 
   rename(Variable = Species) %>% 
-  my_kable(caption_text = 'References for stream gradient, width and mean annual discharge thresholds used in habitat modelling.')
-
-
+  my_kable(caption_text = 'References for stream gradient, width and mean annual discharge thresholds used in habitat modelling. Preliminary and subject to revisions.')
 ```
 
 
 ### Channel Width
 
-Placeholder
+Placeholder. Curently watershed group specific linear regression best fit including, stream order, magnitude, watershed size and precipitation. Validated using FISS sample site channel width measurements and PSCIS stream crossing measurements.
 
-Pinning of FISS sites to streams
-
-
-Linear regression. Stream order, magnitude, watershed size, precipitation.  Table with cutoffs and confidence intervals. Make references table link to zotero citekeys.
-
-
-### Lake/Wetland multipliers
-Placeholder (maybe to section above)
 
 
 ### Mean Annual Discharge
-
-Placeholder
-
-Used in Bulkley only
-
-Insert details and references.
-
-
+Placeholder. Currently used in Bulkley only. Proprietary data from Foundry Geospatial. 
 
 
 ```{r tablethreshaverage, eval= F}
@@ -117,15 +100,16 @@ Insert details and references.
 # while high gradient sections typically  present  upstream  migration  barriers  and  less  available  habitat.  Additionally, the size of the stream (indicated by channel width) is an important determinant for habitat suitability for different species as well as specific life stages of those species. 
 
 # `bcfishpass` was used to categorize and sum potentially accessible stream segments in the study area watersheds within gradient and width categories for each stream segment. 
-# (0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 22%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in three categories: riffle/cascade (0 - 5%), step-pool (5 - 15%) and step-pool very steep (15-22%) (Table \@ref(tab:tablethreshaverage)).  
+# (0 - 3%, 3 - 5%, 5 - 8%, 8 - 15%, 15 - 20%) with these outputs further amalgamated to summarize and symbolize potential upstream habitat in three categories: riffle/cascade (0 - 5%), step-pool (5 - 15%) and step-pool very steep (15-20%) (Table \@ref(tab:tablethreshaverage)).  
 
 
 #threshold and average gradient table
-table_thresh_average <- tibble::tibble(`Gradient` = c('0 - 5%', '5 - 15%', '15 - 22%', '>22%'),
+table_thresh_average <- tibble::tibble(`Gradient` = c('0 - 5%', '5 - 15%', '15 - 20%', '>20%'),
                                        `Channel Type` = c('Riffle and cascade pool', 'Step pool', 'Step pool - very steep', 'Non fish habitat'))
 
 table_thresh_average %>% 
     my_kable(caption_text = 'Stream gradient categories (threshold and average) and associated channel type.')
+
 ```
 
 
@@ -138,8 +122,8 @@ To prepare for Phase 1 and 2 assessments in the study area, past fish passage as
 
  * Confirmed fish presence upstream of the structure.
  * Stream width documented as > 2.0m in PSCIS.
- * Linear lengths of modelled upstream habitat <22% gradient for ≥1km for PSCIS crossings 
- * Linear lengths of modelled upstream habitat <22% gradient for ≥2km for modelled crossings.
+ * Linear lengths of modelled upstream habitat <20% gradient for ≥1km for PSCIS crossings 
+ * Linear lengths of modelled upstream habitat <20% gradient for ≥2km for modelled crossings.
  * Crossings located on streams classified as 3rd order or higher.
  * Crossings located on streams with >5 ha of modeled wetland and/or lake habitat upstream.
  * Habitat value rated as "medium" or “high” in PSCIS.  
@@ -183,7 +167,6 @@ tab <- as_tibble(t(tab_barrier_scoring)) %>%
 tab %>% 
   my_kable(caption_text = 'Fish Barrier Risk Assessment (MoE 2011).')
 
-
 ```
 
 <br>
@@ -205,7 +188,7 @@ A cost benefit analysis was conducted for each crossing determined to be a barri
 
 #### Habitat Gain Index
 
-The habitat gain index is the quantity of modelled habitat upstream of the subject crossing and represents an estimate of habitat gained with remediation of fish passage at the crossing.  For this project, a gradient threshold between accessible and non-accessible habitat was set at 22% (for a minimimum length of 100m) intended to represent the maximum gradient of which the strongest swimmers of anadromous species (steelhead) are likely to be able to migrate upstream.  
+The habitat gain index is the quantity of modelled habitat upstream of the subject crossing and represents an estimate of habitat gained with remediation of fish passage at the crossing.  For this project, a gradient threshold between accessible and non-accessible habitat was set at 20% (for a minimimum length of 100m) intended to represent the maximum gradient of which the strongest swimmers of anadromous species (steelhead) are likely to be able to migrate upstream.  
 
 <br>
 

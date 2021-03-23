@@ -66,5 +66,3 @@ pscis_all %>%
   filter(source %ilike% 'phase2') %>%
   pull(pscis_crossing_id) %>%
   map(print_tab_summary_bcfp_html)
-
-

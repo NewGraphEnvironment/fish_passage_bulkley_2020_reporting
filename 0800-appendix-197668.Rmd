@@ -95,7 +95,7 @@ The stream was surveyed downstream from the culvert for `r my_priority_info(loc 
 <br>
 
 
-Table \@ref(tab:tab-culvert-bcfp-197668) `r text_ref_tab_summary_bcfp()` 
+Table \@ref(tab:tab-culvert-bcfp-197668) `r text_ref_tab_summary_bcfp()` Table \@ref(tab:tab-culvert-bcfp-124504) `r text_ref_tab_summary_bcfp(site = my_site2)`  
 
 <br>
 
@@ -147,6 +147,12 @@ tab_hab_summary %>%
 
 ```{r tab-culvert-bcfp-197668, eval = T}
 print_tab_summary_bcfp()
+```
+
+<br>
+
+```{r tab-culvert-bcfp-124504, eval = T}
+print_tab_summary_bcfp(site = my_site2)
 ```
 
 <br>

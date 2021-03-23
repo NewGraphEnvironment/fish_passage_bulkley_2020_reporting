@@ -101,7 +101,7 @@ The stream was surveyed downstream from `r as.character(my_site2)` for `r my_pri
 <br>
 
 
-Table \@ref(tab:tab-culvert-bcfp-197663) `r text_ref_tab_summary_bcfp()` 
+Table \@ref(tab:tab-culvert-bcfp-197663) `r text_ref_tab_summary_bcfp()` Table \@ref(tab:tab-culvert-bcfp-3054) `r text_ref_tab_summary_bcfp(site = my_site2)`
 
 <br>
 
@@ -162,6 +162,12 @@ tab_hab_summary %>%
 
 ```{r tab-culvert-bcfp-197663, eval = T}
 print_tab_summary_bcfp()
+```
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+```{r tab-culvert-bcfp-3054, eval = T}
+print_tab_summary_bcfp(site = my_site2)
 ```
 
 <br>

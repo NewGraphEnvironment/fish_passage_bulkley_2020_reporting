@@ -19,7 +19,7 @@ author: |
  | Society for Ecosytem Restoration Northern BC
 date: |
  |
- | DRafT - Version 0.0.7
+ | DRafT - Version 0.0.8
  | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
@@ -37,7 +37,7 @@ description: "My Description."
 ```{r setup, include = TRUE, echo =FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, dpi=60, out.width = "100%")
 options(scipen=999)
-options(knitr.kable.NA = '--')
+options(knitr.kable.NA = '--') #'--'
 options(knitr.kable.NAN = '--')
 
 gitbook_on <- TRUE
@@ -54,7 +54,6 @@ font_set <- 11
 ```{r settings-paged-html, eval= identical(gitbook_on, FALSE)}
 photo_width <- "80%"
 font_set <- 9
-
 ```
 
 
@@ -1790,7 +1789,7 @@ Crossing 123463 is located on Victor Creek and Tyhee Lake Road.  Victor Creek fl
 <br>
 
 
-Table \@ref(tab:tab-culvert-bcfp-123445) `r text_ref_tab_summary_bcfp()` 
+Table \@ref(tab:tab-culvert-bcfp-123445) `r text_ref_tab_summary_bcfp()` Table \@ref(tab:tab-culvert-bcfp-123446) `r text_ref_tab_summary_bcfp(site = my_site2)` 
 
 <br>
 
@@ -1849,6 +1848,14 @@ tab_hab_summary %>%
 
 ```{r tab-culvert-bcfp-123445, eval = T}
 print_tab_summary_bcfp()
+```
+
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+
+```{r tab-culvert-bcfp-123446, eval = T}
+print_tab_summary_bcfp(site = my_site2)
 ```
 
 <br>
@@ -2821,7 +2828,7 @@ The stream was surveyed upstream from `r as.character(my_site)` for `r my_priori
 <br>
 
 
-Table \@ref(tab:tab-culvert-bcfp-195290) `r text_ref_tab_summary_bcfp()` 
+Table \@ref(tab:tab-culvert-bcfp-195290) `r text_ref_tab_summary_bcfp()` Table \@ref(tab:tab-culvert-bcfp-195288) `r text_ref_tab_summary_bcfp(site = my_site2)`
 
 <br>
 
@@ -2874,6 +2881,12 @@ tab_hab_summary %>%
 
 ```{r tab-culvert-bcfp-195290, eval = T}
 print_tab_summary_bcfp()
+```
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+```{r tab-culvert-bcfp-195288, eval = T}
+print_tab_summary_bcfp(site = my_site2)
 ```
 
 <br>
@@ -4115,7 +4128,7 @@ The stream was surveyed downstream from `r as.character(my_site2)` for `r my_pri
 <br>
 
 
-Table \@ref(tab:tab-culvert-bcfp-197663) `r text_ref_tab_summary_bcfp()` 
+Table \@ref(tab:tab-culvert-bcfp-197663) `r text_ref_tab_summary_bcfp()` Table \@ref(tab:tab-culvert-bcfp-3054) `r text_ref_tab_summary_bcfp(site = my_site2)`
 
 <br>
 
@@ -4168,7 +4181,7 @@ print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2)
 tab_hab_summary %>% 
   filter(Site  == my_site | Site  == my_site2) %>% 
   # select(-Site) %>% 
-  my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossings ', my_site, 'and ', my_site2, '.'))
+  my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossings ', my_site, ' and ', my_site2, '.'))
 
 ```
 
@@ -4176,6 +4189,14 @@ tab_hab_summary %>%
 
 ```{r tab-culvert-bcfp-197663, eval = T}
 print_tab_summary_bcfp()
+```
+
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+
+```{r tab-culvert-bcfp-3054, eval = T}
+print_tab_summary_bcfp(site = my_site2)
 ```
 
 <br>
@@ -4795,7 +4816,7 @@ The stream was surveyed upstream from `r as.character(my_site)` for `r my_priori
 <br>
 
 
-Table \@ref(tab:tab-culvert-bcfp-197667) `r text_ref_tab_summary_bcfp()` 
+Table \@ref(tab:tab-culvert-bcfp-197667) `r text_ref_tab_summary_bcfp()` Table \@ref(tab:tab-culvert-bcfp-124501) `r text_ref_tab_summary_bcfp(site = my_site2)` 
 
 <br>
 
@@ -4848,6 +4869,12 @@ tab_hab_summary %>%
 
 ```{r tab-culvert-bcfp-197667, eval = T}
 print_tab_summary_bcfp()
+```
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+```{r tab-culvert-bcfp-124501, eval = T}
+print_tab_summary_bcfp(site = my_site2)
 ```
 
 <br>
@@ -5030,7 +5057,7 @@ The stream was surveyed downstream from the culvert for `r my_priority_info(loc 
 <br>
 
 
-Table \@ref(tab:tab-culvert-bcfp-197668) `r text_ref_tab_summary_bcfp()` 
+Table \@ref(tab:tab-culvert-bcfp-197668) `r text_ref_tab_summary_bcfp()` Table \@ref(tab:tab-culvert-bcfp-124504) `r text_ref_tab_summary_bcfp(site = my_site2)`  
 
 <br>
 
@@ -5082,6 +5109,12 @@ tab_hab_summary %>%
 
 ```{r tab-culvert-bcfp-197668, eval = T}
 print_tab_summary_bcfp()
+```
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+```{r tab-culvert-bcfp-124504, eval = T}
+print_tab_summary_bcfp(site = my_site2)
 ```
 
 <br>

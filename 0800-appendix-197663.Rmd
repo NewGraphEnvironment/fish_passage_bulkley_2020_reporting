@@ -154,7 +154,7 @@ print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2)
 tab_hab_summary %>% 
   filter(Site  == my_site | Site  == my_site2) %>% 
   # select(-Site) %>% 
-  my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossings ', my_site, 'and ', my_site2, '.'))
+  my_kable(caption_text = paste0('Summary of habitat details for PSCIS crossings ', my_site, ' and ', my_site2, '.'))
 
 ```
 
@@ -164,7 +164,9 @@ tab_hab_summary %>%
 print_tab_summary_bcfp()
 ```
 
+
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-culvert-bcfp-3054, eval = T}
 print_tab_summary_bcfp(site = my_site2)

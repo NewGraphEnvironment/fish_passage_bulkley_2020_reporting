@@ -34,11 +34,18 @@ preview_chapter('index.Rmd')
 
 
 
-#######################################################################################
+
 ##to build both a paged html version and a gitbook follow the steps below
 
-
+#######################################################################################
 ##change your VErsion #
+#######################################################################################
+
+#######################################################################################
+##if you have changed your bcfishpass model outputs by saving to sqlite with 0282-extract-bcfishpass2...
+##you also need to make new html tables to link to in the leaflet map  use 0355-tables-reporting-html.R
+########################################################################################
+
 
 ##move the phase 1 appendix out of the main directory to a backup file
 {file.rename('0600-appendix.Rmd', 'data/0600-appendix.Rmd')
@@ -115,3 +122,4 @@ pdftools::pdf_subset(paste0(getwd(), "/docs/Attachment_3_Phase_1_Data_and_Photos
 ##clean out the old file
 file.remove(paste0(getwd(), "/docs/Attachment_3_Phase_1_Data_and_Photos_prep.pdf"))
 file.remove(paste0(getwd(), "/docs/Attachment_3_Phase_1_Data_and_Photos_prep.html"))
+

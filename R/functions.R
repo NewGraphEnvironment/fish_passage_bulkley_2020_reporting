@@ -469,6 +469,6 @@ text_ref_tab_summary_bcfp <-  function(site = my_site){
   paste0('presents preliminary fish passage modelling data for crossing ', site,
          ' with spawning and rearing habitat estimated for chinook, coho, sockeye and steelhead. ',
          'Modelled estimates of the total length of salmon or steelhead habitat upstream of the crossing before potential barriers are ',
-         my_bcfishpass(round_dig = 1) %>% pull(all_spawning_belowupstrbarriers_km), 'km of potential spawning habitat and ',
-         my_bcfishpass(round_dig = 1) %>% pull(all_rearing_belowupstrbarriers_km), 'km of potential rearing habitat.')
+         my_bcfishpass(site = site, round_dig = 1) %>% pull(all_spawning_belowupstrbarriers_km), 'km of potential spawning habitat and ',
+         my_bcfishpass(site = site, round_dig = 1) %>% pull(all_rearing_belowupstrbarriers_km), 'km of potential rearing habitat.')
 }

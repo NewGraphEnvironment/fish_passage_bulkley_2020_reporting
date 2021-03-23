@@ -3,3 +3,7 @@ v0.0.5
 - add comment on modelling with areas
 - add reference to fisheries managemnt rather than closures
 - add note in pdf to reference online version
+
+
+v0.0.8
+- add areas for co and sk rearing

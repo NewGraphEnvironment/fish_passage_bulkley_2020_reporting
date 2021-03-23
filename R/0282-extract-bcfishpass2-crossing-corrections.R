@@ -95,7 +95,14 @@ bcfishpass_morr_bulk <- st_read(conn, query =  query) %>%
   #        northing = sf::st_coordinates(.)[,2]) %>%
   st_drop_geometry()
 
+
+
+# porphyryr <- st_read(conn, query =
+# "SELECT * FROM bcfishpass.crossings
+#    WHERE stream_crossing_id = '124487'")
+
 dbDisconnect(conn = conn)
+
 
 ##join the modelled road data to our pscis submission info
 

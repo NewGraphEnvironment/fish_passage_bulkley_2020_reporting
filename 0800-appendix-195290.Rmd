@@ -111,7 +111,7 @@ The stream was surveyed upstream from `r as.character(my_site)` for `r my_priori
 <br>
 
 
-Table \@ref(tab:tab-culvert-bcfp-195290) `r text_ref_tab_summary_bcfp()` 
+Table \@ref(tab:tab-culvert-bcfp-195290) `r text_ref_tab_summary_bcfp()` Table \@ref(tab:tab-culvert-bcfp-195288) `r text_ref_tab_summary_bcfp(site = my_site2)`
 
 <br>
 
@@ -164,6 +164,12 @@ tab_hab_summary %>%
 
 ```{r tab-culvert-bcfp-195290, eval = T}
 print_tab_summary_bcfp()
+```
+
+<br>
+
+```{r tab-culvert-bcfp-195288, eval = T}
+print_tab_summary_bcfp(site = my_site2)
 ```
 
 <br>

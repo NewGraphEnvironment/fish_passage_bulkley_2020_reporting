@@ -105,7 +105,7 @@ Crossing 123463 is located on Victor Creek and Tyhee Lake Road.  Victor Creek fl
 <br>
 
 
-Table \@ref(tab:tab-culvert-bcfp-123445) `r text_ref_tab_summary_bcfp()` 
+Table \@ref(tab:tab-culvert-bcfp-123445) `r text_ref_tab_summary_bcfp()` Table \@ref(tab:tab-culvert-bcfp-123446) `r text_ref_tab_summary_bcfp(site = my_site2)` 
 
 <br>
 
@@ -164,6 +164,12 @@ tab_hab_summary %>%
 
 ```{r tab-culvert-bcfp-123445, eval = T}
 print_tab_summary_bcfp()
+```
+
+<br>
+
+```{r tab-culvert-bcfp-123446, eval = T}
+print_tab_summary_bcfp(site = my_site2)
 ```
 
 <br>

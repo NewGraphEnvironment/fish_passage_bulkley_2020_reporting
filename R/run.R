@@ -61,10 +61,10 @@ rmarkdown::render_site(output_format = 'pagedown::html_paged',
 file.rename('Bulkley.html', 'docs/Bulkley.html')
 
 ##now we need to print the docs/Elk.html file to Elk.pdf with chrome.  We should automate this step.  Do in browser for now
-openHTML('docs/Bulkley.html')}
+openHTML('docs/Bulkley.html')
 
 ##move the phase 1 appendix back to main directory
-file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')
+file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')}
 
 
 
@@ -85,7 +85,9 @@ source('R/photos-extract-metadata.R')
 #################################################################################################
 ##go to the index.Rmd and change gitbook_on <- TRUE
 #################################################################################################
-rmarkdown::render_site(output_format = 'bookdown::gitbook', encoding = 'UTF-8')
+
+rmarkdown::render_site(output_format = 'bookdown::gitbook',
+                       encoding = 'UTF-8')
 
 
 

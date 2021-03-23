@@ -19,7 +19,7 @@ author: |
  | Society for Ecosytem Restoration Northern BC
 date: |
  |
- | DRafT - Version 0.0.7
+ | DRafT - Version 0.0.8
  | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
@@ -37,7 +37,7 @@ description: "My Description."
 ```{r setup, include = TRUE, echo =FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, dpi=60, out.width = "100%")
 options(scipen=999)
-options(knitr.kable.NA = '--')
+options(knitr.kable.NA = '--') #'--'
 options(knitr.kable.NAN = '--')
 
 gitbook_on <- TRUE
@@ -54,7 +54,6 @@ font_set <- 11
 ```{r settings-paged-html, eval= identical(gitbook_on, FALSE)}
 photo_width <- "80%"
 font_set <- 9
-
 ```
 
 

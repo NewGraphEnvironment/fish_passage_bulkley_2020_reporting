@@ -459,7 +459,7 @@ make_tab_summary_bcfp <- function(dat = bcfishpass_all,
 }
 
 print_tab_summary_bcfp <- function(site = my_site, font = 11, ...){
-  make_tab_summary_bcfp() %>%
+  make_tab_summary_bcfp(site = site) %>%
     kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
     kableExtra::add_footnote('Model data is preliminary and subject to adjustments including incorperation of area based estimates.', notation = 'symbol') %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)

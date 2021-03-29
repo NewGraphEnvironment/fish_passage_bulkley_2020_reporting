@@ -7,3 +7,6 @@ v0.0.5
 
 v0.0.8
 - add areas for co and sk rearing
+
+v0.0.9
+- add short section for morice results as per exec summary

@@ -25,3 +25,4 @@ docs/Bulkley.html
 *.sqlite
 hold
 R/channel_width_model_draft*.R
+data/watershed_reports/*

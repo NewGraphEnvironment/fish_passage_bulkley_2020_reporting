@@ -44,71 +44,56 @@ DBI::dbGetQuery(conn,
 
 
 
-map <- sf::st_read(conn,
-                   query = "SELECT *
-              FROM bcfishpass.mean_annual_precip;")
+# map <- sf::st_read(conn,
+#                    query = "SELECT *
+#               FROM bcfishpass.mean_annual_precip;")
 
 cw <- sf::st_read(conn,
                   query = "SELECT *
-              FROM bcfishpass.channel_width_measured"
-) %>%
-  mutate(cw_diff = round(abs(channel_width_fiss - channel_width_pscis)/((channel_width_fiss + channel_width_pscis)/2) *100),1)
-  # filter(!is.na(channel_width_fiss) & !is.na(channel_width_pscis)) %>%
+              FROM bcfishpass.channel_width_measured")  # filter(!is.na(channel_width_fiss) & !is.na(channel_width_pscis)) %>%
   # filter(cw_diff < 30)
 # filter(cw_diff != Inf)
 # summarize(m = mean(cw_diff, na.rm = T))
 
 
-
-
-
 dbDisconnect(conn = conn)
 
 
-##add the map_upstream values and filter down
-cw_map_upstream <- left_join(
-  cw,
-  select(map, wscode_ltree, localcode_ltree, map_upstream),
-  by = c('wscode_ltree', 'localcode_ltree'))
-  # select(-`1`, -stream_sample_site_ids, -stream_crossing_ids) %>%
-  # mutate(across(everything(), ~stringr::str_replace_all(., '[{}]', '')))
 
 
-##lets burn a copy of the cw to send to joe incase we mess something up
-cw_map_upstream %>% readr::write_csv(file = paste0(getwd(), '/data/channel_width_measured_20210331.csv'))
+## burn a copy to file
+cw %>%
+  readr::write_csv(file = paste0(getwd(), '/data/width_modelling/channel_width_measured.csv'))
 
 
-cw2 <- cw_map_upstream %>%
+cw2 <- cw %>%
   mutate(
-    cw_ave = (channel_width_fiss + channel_width_pscis)/2,
+    cw_diff = round(abs(channel_width_fiss - channel_width_pscis)/((channel_width_fiss + channel_width_pscis)/2) *100),1,
+    cw_ave = (channel_width_fiss + channel_width_pscis)/2,  ##should mutate all at once but not taking the time figure out the syntax now
     upstream_area_ha_log = log10(upstream_area_ha),
     map_upstream_log = log10(map_upstream),
     channel_width_measured_log = log10(channel_width_measured),
-    # channel_width_measured_sqrt = sqrt(channel_width_measured),
     cw_ave_log = log(cw_ave),
-    # upstream_area_ha_sqrt = sqrt(upstream_area_ha),
-    # map_upstream_sqrt = sqrt(map_upstream),
-    # cw_ave_sqrt = sqrt(cw_ave),
+    stream_order_log = log10(stream_order),
+    stream_magnitude_log = log10(stream_magnitude)
   ) %>%  ##we want the average of our collaborating channel widths
-
   filter(
     channel_width_measured <=15 &  ##we are mostly interested in streams that would have culverts so lets try cw of 15m or less
-      upstream_area_ha <= 100000 &  ##same thing for enormous watersheds.  20000ha seems reasonable as only one of our qualifying sites is in a whsd bigger than this
+      channel_width_measured >=1 &  ##seems like a lot of our error is from small channel widths
+      upstream_area_ha <= 20000 &  ##lots of error from enormous watersheds.  20000ha is quite a bit bigger than Richfield our largest potential culvert site...
       upstream_area_ha > 0 &
-      !is.na(map_upstream) &
-      is.finite(map_upstream_log) &
-      is.finite(upstream_area_ha_log) &
-      is.finite(channel_width_measured_log)
-
-    # cw_diff <=25 & ##we only use the channel widths that have agreeing values for fiss and pscis.
-    # cw_ave <=1.5  ##seems like a lot of our error is from small channel widths
+      !is.na(map_upstream)
+      # is.finite(map_upstream_log) &
+      # is.finite(upstream_area_ha_log) &
+      # is.finite(channel_width_measured_log)
+    # cw_diff <=25  ##we can use only the channel widths that have agreeing values for fiss and pscis but then our dataset is tiny with mostly very small widths represented.
   ) %>%
   arrange(desc(upstream_area_ha))
 
 
 ##lets visualize our data and see what is going on
 ## watershed area looks like a poisson distribution....
-ggplot(cw2, aes(x=channel_width_measured_log)) +
+ggplot(cw2, aes(x=log10(stream_order))) +
   geom_histogram(
     position="identity", size = 0.75)+
   labs(x = "Variable", y = "Sites (#)") +
@@ -122,9 +107,14 @@ ggplot(cw2, aes(x=channel_width_measured_log)) +
 ##here is what happens using porters equation and the resulting errors
 cw_porter <- cw2 %>%
   mutate(cw_mod = round(0.042 * (upstream_area_ha/100)^0.48 * (map_upstream/10)^0.74 ,2)) %>%  ##km2 and mm - this is Porter et al 2008 equations
-  mutate(cw_qa = abs(round((cw_mod - channel_width_measured)/channel_width_measured * 100, 0))) %>% ##see how close the porter model gets.... Not bad actually.
-  summarize(rmse = mean(cw_qa), median_error = median(cw_qa))
+  mutate(cw_qa_perc = abs(round((cw_mod - channel_width_measured)/channel_width_measured * 100, 0))) %>% ##see how close the porter model gets.... Not bad actually.
+  arrange(desc(cw_qa_perc))
+  # summarize(rmse = mean(cw_qa_perc), median_error = median(cw_qa_perc))
 
+ggplot(cw_porter, aes(x=upstream_area_ha, y = cw_qa_perc)) +
+  geom_point()+
+  labs(x = "Variable", y = "Error (%)") +
+  theme_bw(base_size = 11)
 
 cw_m1 <- lm(channel_width_measured_log  ~ upstream_area_ha_log +
               map_upstream_log,
@@ -139,32 +129,20 @@ summary(cw_m1)
 
 
 ##lets see how well it works on all the data
-cw_predict <- cw2
+cw_predict <- cw2 %>%
+  mutate(cw_predicted_log = predict(cw_m1),
+         cw_predicted = 10^cw_predicted_log,
+         cw_qa_perc = round(abs((channel_width_measured - cw_predicted)/channel_width_measured * 100),0)) %>%
+  arrange(desc(cw_qa_perc))
+  # summarize(rmse = mean(cw_qa_perc), median_error = median(cw_qa_perc))  ##interestingly I get almost the same error as Porter....
 
-cw_predict$cw_predicted_log <- predict(cw_m1)
-
-
-cw_predict <- cw_predict %>%
-  mutate(cw_predicted = 10^cw_predicted_log,
-         error = round(abs((channel_width_measured - cw_predicted)/channel_width_measured * 100),0))  %>%
-  # filter(channel_width_measured < 6) %>%
-  # arrange(desc(error))
-  summarise(error_mean = mean(error), error_median = median(error))
-
-
-# Checking that the residuals are normally distributed
-resid <- resid(cw_m2) # Extracting the residuals
-fitted <- fitted(cw_m2)
-predictions <- predict(cw_m2)
-coef <- coef(cw_m2)
-deviance <- deviance(cw_m2)
+ggplot(cw_predict, aes(x=upstream_area_ha, y = cw_qa_perc)) +
+  geom_point()+
+  labs(x = "Variable", y = "Error (%)") +
+  theme_bw(base_size = 11)
 
 
-
-
-
-
-ggplot(data=cw2, aes(cw_m2$residuals)) +
+ggplot(data=cw2, aes(cw_m1$residuals)) +
   geom_histogram(binwidth = 1, color = "black", fill = "purple4") +
   theme(panel.background = element_rect(fill = "white"),
         axis.line.x=element_line(),
@@ -178,7 +156,9 @@ ggplot(data = cw2, aes(x = channel_width_measured_log, y = map_upstream_log)) +
         axis.line.x=element_line(),
         axis.line.y=element_line()) +
   ggtitle("Linear Model Fitted to Data")
-# cw_subset <-  olsrr::ols_step_best_subset(cw_m1)
+
+
+cw_subset <-  olsrr::ols_step_best_subset(cw_m1)
 
 #split data into model training and testing sets
 set.seed(123)
@@ -192,10 +172,6 @@ test.data_watershed = cw2[-training.samples_watershed,]
 
 test.data_watershed$cw_predictions <- cw_m1 %>%
   predict(test.data_watershed) ##add the predictions
-
-test.data_watershed <- test.data_watershed %>%
-  mutate(cw_qa = abs(cw_predictions - channel_width_fiss)/channel_width_fiss *100) %>%
-  summarise(qa_median = median(cw_qa))
 
 
 predictions_watershed = cw_m1 %>% predict(test.data_watershed)

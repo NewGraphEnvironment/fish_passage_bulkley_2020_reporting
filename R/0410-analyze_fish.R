@@ -6,11 +6,11 @@ source('R/private_info.R')
 ##get the road info from the database
 conn <- DBI::dbConnect(
   RPostgres::Postgres(),
-  dbname = dbname,
-  host = host,
-  port = port,
-  user = user,
-  password = password
+  dbname = dbname_wsl,
+  host = host_wsl,
+  port = port_wsl,
+  user = user_wsl,
+  password = password_wsl
 )
 
 # # ##list tables in a schema
@@ -39,11 +39,12 @@ query = "SELECT
   s.upstream_area_ha,
   s.channel_width,
   e.species_code,
+  e.watershed_group_code,
   round((ST_Z((ST_Dump(ST_LocateAlong(s.geom, e.downstream_route_measure))).geom))::numeric) as elevation
 FROM whse_fish.fiss_fish_obsrvtn_events_sp e
 INNER JOIN bcfishpass.streams s
 ON e.linear_feature_id = s.linear_feature_id
-WHERE e.watershed_group_code = 'BULK';"
+WHERE e.watershed_group_code IN ('BULK','MORR');"
 
 ##e.species_code = 'WCT' AND
 # unique(fiss_sum$species_code)
@@ -62,13 +63,16 @@ fiss_sum <- st_read(conn, query = query) %>%
 # fiss_sum <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum.csv'))
 #
 # ##lets put it in the sqlite for safekeeping
-# conn <- rws_connect("data/bcfishpass.sqlite")
-# rws_list_tables(conn)
-# rws_write(fiss_sum, exists = F, delete = TRUE,
-#           conn = conn, x_name = "fiss_sum")
-# rws_list_tables(conn)
-# rws_disconnect(conn)
-
+conn <- rws_connect("data/bcfishpass.sqlite")
+rws_list_tables(conn)
+archive <- readwritesqlite::rws_read_table("fiss_sum", conn = conn)
+rws_drop_table("fiss_sum", conn = conn) ##if it exists get rid of it - might be able to just change exists to T in next line
+rws_write(archive, exists = F, delete = TRUE,
+          conn = conn, x_name = paste0("fiss_sum_archive_", format(Sys.time(), "%Y-%m-%d-%H%m")))
+rws_write(fiss_sum, exists = F, delete = TRUE,
+          conn = conn, x_name = "fiss_sum")
+rws_list_tables(conn)
+rws_disconnect(conn)
 
 ######################################################################################################################
 ######################################################################################################################

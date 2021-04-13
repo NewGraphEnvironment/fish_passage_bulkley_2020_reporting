@@ -12,10 +12,12 @@ dbGetQuery(conn,
 DBI::dbGetQuery(conn,
            "SELECT column_name,data_type
            FROM information_schema.columns
-           WHERE table_name='fwa_lakes_poly'")
+           WHERE table_name='bec_biogeoclimatic_poly'")
 
+DBI::dbGetQuery(conn,
+                "select distinct a.zone from whse_forest_vegetation.bec_biogeoclimatic_poly a;")
 
-test <- st_read(conn2,
+test <- st_read(conn,
                             query = "SELECT * FROM bcfishpass.model_spawning_rearing_habitat a
                                 LIMIT 1000"
 )
@@ -122,3 +124,14 @@ wsg_skeena <- st_read(conn,
 ##make a list of the skeena watershed groups
 
 ## BULK, MORR, LSKE, KISP, KLUM, LKEL, ZYMO, BABL, BABR, MSKE, SUST, USKE
+test <- sf::st_read(conn,
+                query = "select * from bcfishpass.streams where watershed_group_code = 'BULK';")
+
+test <- sf::st_read(conn,
+                    query = "select * from bcfishpass.channel_width_measured_all;")
+
+
+test2 <- test %>%
+  # filter(channel_width >2,
+  #        channel_width <50) %>%
+  filter(spawning_model_chinook  == T)

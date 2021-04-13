@@ -1,3 +1,5 @@
+# install.packages('pacman')
+
 pacman::p_load(
   tidyverse,
   readwritesqlite,

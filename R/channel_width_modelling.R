@@ -37,33 +37,47 @@ DBI::dbGetQuery(conn,
 #     ORDER BY watershed_group_code;")
 #
 # # # # # # ##list column names in a table
-# DBI::dbGetQuery(conn,
-#                 "SELECT column_name,data_type
-#            FROM information_schema.columns
-#            WHERE table_name='fwa_watersheds_poly'")
+DBI::dbGetQuery(conn,
+                "SELECT column_name,data_type
+           FROM information_schema.columns
+           WHERE table_name='crossings'")
 
-
-
-# map <- sf::st_read(conn,
-#                    query = "SELECT *
-#               FROM bcfishpass.mean_annual_precip;")
-
+##bring in the new width file
 cw <- sf::st_read(conn,
                   query = "SELECT *
-              FROM bcfishpass.channel_width_measured")  # filter(!is.na(channel_width_fiss) & !is.na(channel_width_pscis)) %>%
+              FROM bcfishpass.channel_width_modelled")  # filter(!is.na(channel_width_fiss) & !is.na(channel_width_pscis)) %>%
   # filter(cw_diff < 30)
 # filter(cw_diff != Inf)
 # summarize(m = mean(cw_diff, na.rm = T))
 
 
+cw_mod_porter <- sf::st_read(conn,
+                  query = "SELECT *
+              FROM bcfishpass.channel_width_modelled")
+
 dbDisconnect(conn = conn)
 
+##add some columns for flagging error sites
+error_stream_sample_site_ids <- c(44813,44815,10997,8518,37509,37510,53526,15603,98,8644,117,8627,142,8486,8609,15609,10356)
+error_stream_crossing_ids <- c(57592,123894,57408,124137)
 
-
+cw <- cw %>%
+  mutate(
+    error_flag = case_when(
+    (stream_sample_site_id %in% error_stream_sample_site_ids |
+      stream_crossing_id %in% error_stream_crossing_ids) ~ T
+  ),
+  error_comment = case_when(
+    error_flag == T ~ 'errors in measurement and/or linking to streams'
+  ),
+  error_reviewer = case_when(
+    error_flag == T ~ 'CWF'
+    )
+  )
 
 ## burn a copy to file
 cw %>%
-  readr::write_csv(file = paste0(getwd(), '/data/width_modelling/channel_width_measured.csv'))
+  readr::write_csv(file = paste0(getwd(), '/data/width_modelling/channel_width_measured_analyze.csv'))
 
 
 cw2 <- cw %>%
@@ -75,7 +89,9 @@ cw2 <- cw %>%
     channel_width_measured_log = log10(channel_width_measured),
     cw_ave_log = log(cw_ave),
     stream_order_log = log10(stream_order),
-    stream_magnitude_log = log10(stream_magnitude)
+    stream_magnitude_log = log10(stream_magnitude),
+    gradient = case_when(gradient < 0.0001 ~ 0.0001, T ~ gradient),
+    gradient_log = log10(abs(gradient))
   ) %>%  ##we want the average of our collaborating channel widths
   filter(
     channel_width_measured <=15 &  ##we are mostly interested in streams that would have culverts so lets try cw of 15m or less
@@ -93,7 +109,7 @@ cw2 <- cw %>%
 
 ##lets visualize our data and see what is going on
 ## watershed area looks like a poisson distribution....
-ggplot(cw2, aes(x=log10(stream_order))) +
+ggplot(cw2, aes(x=gradient)) +
   geom_histogram(
     position="identity", size = 0.75)+
   labs(x = "Variable", y = "Sites (#)") +
@@ -117,14 +133,14 @@ ggplot(cw_porter, aes(x=upstream_area_ha, y = cw_qa_perc)) +
   theme_bw(base_size = 11)
 
 cw_m1 <- lm(channel_width_measured_log  ~ upstream_area_ha_log +
-              map_upstream_log,
+              map_upstream_log + stream_magnitude_log + gradient_log,
             data = cw2)
 
-##so cw_log_predicted = -7.56499 + 0.36919 * upstream_area_ha_log + 0.93301 * map_upstream_log
-# summary(cw_m1)
+cw_subset <-  olsrr::ols_step_best_subset(cw_m1)  ##we don't gain much from the stream_order or gradient it seems
+
+
 summary(cw_m1)
 
-# pchisq(200.3, 272, lower.tail = FALSE)
 
 
 
@@ -158,42 +174,90 @@ ggplot(data = cw2, aes(x = channel_width_measured_log, y = map_upstream_log)) +
   ggtitle("Linear Model Fitted to Data")
 
 
-cw_subset <-  olsrr::ols_step_best_subset(cw_m1)
-
 #split data into model training and testing sets
 set.seed(123)
-training.samples_watershed = cw2$channel_width_measured %>%
+train <-  cw2$channel_width_measured %>%
   createDataPartition(p=0.8,list = FALSE)
-train.data_watershed = cw2[training.samples_watershed,]
-test.data_watershed = cw2[-training.samples_watershed,]
+mod_trainer = cw2[train,]
+mod_tester = cw2[-train,]
 
 
 #use model results to predict channel width for test data, generate some performance metrics
-
-test.data_watershed$cw_predictions <- cw_m1 %>%
-  predict(test.data_watershed) ##add the predictions
-
-
-predictions_watershed = cw_m1 %>% predict(test.data_watershed)
-caret::RMSE(predictions_watershed,test.data_watershed$channel_width_measured)
-caret::R2(predictions_watershed,test.data_watershed$channel_width_measured)
+cw_modelled <- lm(channel_width_measured_log  ~ upstream_area_ha_log +
+              map_upstream_log, data = mod_trainer)
+summary(cw_modelled)
 
 
 
+tester$cw_predictions <- cw_modelled %>%
+  predict(mod_tester) ##add the predictions
 
 
 
+predictions = cw_modelled %>% predict(mod_tester)
+caret::RMSE(predictions,tester$channel_width_measured)
+caret::R2(predictions,tester$channel_width_measured)
 
-#https://ourcodingclub.github.io/tutorials/modelling/
-cw2 %>%
-  filter(channel_width_measured_log > 0) %>%
-  ggplot(aes(x = channel_width_measured_log, y = upstream_area_ha_log))+
-  geom_point(aes(colour = map_log)) +
-  labs(x = "channel_width_measured_log", y = "upstream_area_ha_log") +
-  stat_smooth(method = 'lm')
-  # scale_colour_manual(values = c("#FFC125", "#36648B")) +
-  # scale_fill_manual(values = c("#FFC125", "#36648B")) +
-  # theme.clean()
+
+
+################predicted values after bayesian analysis##################################
+## this section was just used to explore how to translate equation from our channel-width-21 repo set up by Joe into postgresql
+## in R we have eWidth[i] = exp(b0 + bArea * log(area[i])  + bPrecipitation * log(precipitation[i]))
+
+
+streams2 <- DBI::dbGetQuery(
+  conn,
+  "With streams AS
+  (
+  SELECT
+  s.wscode_ltree,
+  s.localcode_ltree,
+  s.watershed_group_code,
+  max(s.stream_order) as stream_order,
+  max(s.stream_magnitude) as stream_magnitude,
+  max(COALESCE(s.upstream_area_ha, 0)) + 1 as upstream_area_ha,
+  max(COALESCE(s.upstream_lake_ha, 0)) + 1 as upstream_lake_ha,
+  max(COALESCE(s.upstream_wetland_ha, 0)) + 1 as upstream_wetland_ha
+FROM whse_basemapping.fwa_stream_networks_sp s
+LEFT OUTER JOIN whse_basemapping.fwa_waterbodies wb
+ON s.waterbody_key = wb.waterbody_key
+WHERE s.watershed_group_code IN ('BULK','MORR','ELKR','HORS')
+-- we only want widths of streams/rivers
+AND (wb.waterbody_type = 'R' OR (wb.waterbody_type IS NULL AND s.edge_type IN (1000,1100,2000,2300)))
+AND s.localcode_ltree IS NOT NULL
+GROUP BY wscode_ltree, localcode_ltree, watershed_group_code)
+
+  SELECT
+  s.wscode_ltree,
+  s.localcode_ltree,
+  s.watershed_group_code,
+  s.upstream_area_ha,
+  p.map_upstream,
+  -- The formula for predicting channel width based on Thorley and Irvine 2021
+  -- eWidth[i] = exp(b0 + bArea * log(area[i]) + bArea * log(area[i]) + bPrecipitation * log(precipitation[i])
+  -- the OLD equation we used that is referenced in porter translated to postgresql was
+  --OLD -- 0.042 * power((s.upstream_area_ha/100),0.48) * power((p.map_upstream/10),0.74) -- OLD do not use
+  round(
+      (EXP(-2.2383120 + 0.3121556 * ln(s.upstream_area_ha/100) + 0.6546995 * ln(p.map_upstream/10))
+    )::numeric, 2
+  )
+  as channel_width_modelled
+FROM streams s
+INNER JOIN bcfishpass.mean_annual_precip p
+ON s.wscode_ltree = p.wscode_ltree
+AND s.localcode_ltree = p.localcode_ltree
+WHERE s.upstream_area_ha IS NOT NULL;"
+)
+
+streams_cw <- streams %>%
+  mutate(
+    channel_width_modelled =
+      exp(-2.2383120 + 0.3121556  * log(upstream_area_ha/100) + 0.6546995 * log(map_upstream/10))
+  )
+
+cw <- sf::st_read(conn,
+                  query = "SELECT *
+              FROM bcfishpass.channel_width_modelled")
 
 
 
@@ -202,7 +266,7 @@ cw2 %>%
 
 ######################################################################################################
 #########################Extras - Al#################################################################
-##this is how we got the list of watershed groups to use.
+##this is how we got the list of watershed groups to use to fit in memory for one precip run.
 # wshds_find <- cw %>%
 #   group_by(watershed_group_code) %>%
 #   summarise(n = n()) %>%
@@ -225,54 +289,6 @@ cw2 %>%
 #   mutate(across(starts_with('stream_sample_site_ids_'), ~ stringr::str_replace_all(., '[{}]', ''))) %>%
 #   mutate(across(starts_with('stream_crossing_ids_'), ~ stringr::str_replace_all(., '[{}]', '')))
 
-######################################################################################################
-#########################Extras - NICK#################################################################
-
-#adjust parameters after the '~' based on results of 'channel_width_best_subset'
-model_final = lm(channel_width_measured ~ stream_order * log_stream_magnitude * log_map * log_upstream_area_ha, data = train.data_watershed)
-summary(model_final)
-
-#use model results to predict channel width for test data, generate some performance metrics
-predictions_watershed = model_final %>% predict(test.data_watershed)
-RMSE(predictions_watershed,test.data_watershed$channel_width_measured)
-R2(predictions_watershed,test.data_watershed$channel_width_measured)
-
-#further model performance metrics
-
-predictions_watershed = as.data.frame(predictions_watershed)
-predictions_watershed$r_id = row.names(predictions_watershed)
-
-channel_width_watershed$r_id = row.names(channel_width_watershed)
-
-prediction_eval_watershed = inner_join(channel_width_watershed,predictions_watershed,by="r_id")
-
-prediction_eval_watershed$predictions_watershed = abs(prediction_eval_watershed$predictions_watershed)
-
-prediction_eval_watershed = subset(prediction_eval_watershed, select = c(r_id,channel_width_measured,predictions_watershed))
-View(prediction_eval_watershed)
-
-
-MAPE(prediction_eval_watershed$predictions_watershed,prediction_eval_watershed$channel_width_measured)
-
-prediction_eval_watershed$difference = abs((prediction_eval_watershed$channel_width_measured - prediction_eval_watershed$predictions_watershed))
-prediction_eval_watershed$percent_diff = ifelse(prediction_eval_watershed$channel_width_measured > prediction_eval_watershed$predictions_watershed,1-(prediction_eval_watershed$predictions_watershed/prediction_eval_watershed$channel_width_measured),1-(prediction_eval_watershed$channel_width_measured/prediction_eval_watershed$predictions_watershed))
-View(prediction_eval_watershed)
-mean(prediction_eval_watershed$percent_diff)
-
-#assess prediction binning success
-prediction_eval_watershed$measured_bin = NA
-prediction_eval_watershed$predicted_bin = NA
-
-#CH and ST spawn; can test other species/habitat types by changing cut thresholds
-cuts = c(-Inf,3.7,50,Inf)
-bins = c(0,1,0)
-prediction_eval_watershed$measured_bin = bins[findInterval(prediction_eval_watershed$channel_width,cuts)]
-prediction_eval_watershed$predicted_bin = bins[findInterval(prediction_eval_watershed$predictions_watershed,cuts)]
-
-View(prediction_eval_watershed)
-
-prediction_eval_watershed$prediction_correct = ifelse(prediction_eval_watershed$measured_bin == prediction_eval_watershed$predicted_bin,1,0)
-sum(prediction_eval_watershed$prediction_correct)/length(prediction_eval_watershed$prediction_correct)
 
 
 

@@ -36,10 +36,10 @@ map <- leaflet(height=500, width=780) %>%
   addProviderTiles("Esri.WorldImagery", group = "ESRI Aerial") %>% 
   addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
     opacity = 1.0, fillOpacity = 0.25,
-    fillColor = "#00DBFF", label = wshds$stream_crossing_id) %>%
+    fillColor = "#00DBFF", label = wshds$stream_crossing_id, group = "Phase 2") %>%
   addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'BULK'), color = "#F29A6E", weight = 1, smoothFactor = 0.5,
     opacity = 1.0, fillOpacity = 0,
-    fillColor = "#F29A6E", label = 'Bulkley River', group = "Phase 2") %>%
+    fillColor = "#F29A6E", label = 'Bulkley River') %>%
   addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'MORR'), color = "#C39D50", weight = 1, smoothFactor = 0.5,
     opacity = 1.0, fillOpacity = 0,
     fillColor = "#C39D50", label = 'Morice River') %>%
@@ -129,7 +129,7 @@ map %>%
 
 ## Planning
 
-Following review of background literature, fisheries information, PSCIS and `bcfishpass` outputs, `r tab_plan_sf %>% nrow()` modelled and PSCIS crossings were reviewed to select sites for follow up with Phase 1 and 2 assessments in the Morice River watershed.   `r tab_plan_sf %>% filter(Priority == 'high') %>%  nrow()` crossings ranked as high priority for future follow up with Phase 1 and/or Phase 2 assessments, `r tab_plan_sf %>% filter(Priority == 'moderate') %>%  nrow()` crossings ranked as moderate priorities, and `r tab_plan_sf %>% filter(Priority == 'low') %>%  nrow()` crossings ranked as low priorities. Results are presented `r if(gitbook_on){knitr::asis_output("in Figure \\@ref(fig:map-interactive) and included as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)). Georeferenced pdf maps are available in [Attachment 2](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/) ")} else knitr::asis_output("as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)) with georeferenced maps available at [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_2_maps.zip).")` Some key areas that will be targeted for fieldwork include the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds. 
+Following review of background literature, fisheries information, PSCIS and `bcfishpass` outputs, `r tab_plan_sf %>% nrow()` modelled and PSCIS crossings were reviewed to select sites for follow up with Phase 1 and 2 assessments in the Morice River watershed.   `r tab_plan_sf %>% filter(Priority == 'high') %>%  nrow()` crossings ranked as high priority for future follow up with Phase 1 and/or Phase 2 assessments, `r tab_plan_sf %>% filter(Priority == 'moderate') %>%  nrow()` crossings ranked as moderate priorities, and `r tab_plan_sf %>% filter(Priority == 'low') %>%  nrow()` crossings ranked as low priorities. Results are presented `r if(gitbook_on){knitr::asis_output("in Figure \\@ref(fig:map-interactive) and included as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)). Georeferenced pdf maps are available in [Attachment 2](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/) ")} else knitr::asis_output("as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)) with georeferenced maps available at [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_2_maps.zip).")` Although planning for field assessments ws still underway at the time of reporting through ongoing modelling, engagement with the Office of Wet’suwet’en, DFO, FLNRORD, BC Ministry of Environment, the Morice Watershed Monitoring Trust and numerous others, some key areas likely targeted for fieldwork include the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds. 
 
 ```{r eval=F}
 

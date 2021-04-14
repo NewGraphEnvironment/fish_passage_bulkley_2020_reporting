@@ -458,6 +458,7 @@ make_tab_summary_bcfp <- function(dat = bcfishpass_all,
   return(tab_joined)
 }
 
+##this is in two places and should not be - see 0355-tables-reporting-html
 print_tab_summary_bcfp <- function(site = my_site, font = 11, ...){
   make_tab_summary_bcfp(site = site) %>%
     kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
@@ -472,3 +473,59 @@ text_ref_tab_summary_bcfp <-  function(site = my_site){
          my_bcfishpass(site = site, round_dig = 1) %>% pull(all_spawning_belowupstrbarriers_km), 'km of potential spawning habitat and ',
          my_bcfishpass(site = site, round_dig = 1) %>% pull(all_rearing_belowupstrbarriers_km), 'km of potential rearing habitat.')
 }
+
+
+#this is ugly but im out of time so going to copy above to make bcfp summaries for modelled crossings
+##grab a df with the names of the left hand side of the table
+make_tab_summary_bcfp_planning <- function(dat = bcfishpass_all,
+                                  xref_table = xref_bcfishpass_names,
+                                  site = my_site){
+  df <- dat %>%
+    mutate(across(where(is.numeric), round, 1)) %>%
+    filter(aggregated_crossings_id == site)  ##this is all that changes.  need to script but it tidyeval and don't want to deal
+    # distinct(stream_crossing_id, .keep_all = T)
+  tab_results_left <- xref_table %>%
+    filter(id_side == 1) %>%
+    arrange(id_join)
+  ##get the data
+  tab_pull_left <- df %>%
+    select(pull(tab_results_left,bcfishpass)) %>%
+    # slice(1) %>%
+    t() %>%
+    as.data.frame() %>%
+    tibble::rownames_to_column()
+
+  left <- left_join(tab_pull_left, xref_table, by = c('rowname' = 'bcfishpass'))
+
+  tab_results_right <- xref_table %>%
+    filter(id_side == 2)
+
+  ##get the data
+  tab_pull_right<- df %>%
+    select(pull(tab_results_right,bcfishpass)) %>%
+    # slice(1) %>%
+    t() %>%
+    as.data.frame() %>%
+    tibble::rownames_to_column()
+
+  right <- left_join(tab_pull_right, xref_table, by = c('rowname' = 'bcfishpass'))
+
+  tab_joined <- left_join(
+    select(left, report, V1, id_join),
+    select(right, report, V1, id_join),
+    by = 'id_join'
+  ) %>%
+    select(-id_join) %>%
+    purrr::set_names(c('Habitat', 'Potential', 'remove', 'Remediation Gain')) %>%
+    mutate(Potential = as.numeric(Potential),
+           `Remediation Gain` = as.numeric(`Remediation Gain`)) %>%
+    mutate(`Remediation Gain (%)` = round(`Remediation Gain`/Potential * 100,0),
+           Habitat = stringr::str_replace_all(Habitat, 'Ha', '(ha)'),
+           Habitat = stringr::str_replace_all(Habitat, 'Km', '(km)'),
+           Habitat = stringr::str_replace_all(Habitat, 'Lakereservoir', 'Lake and Reservoir'),
+           Habitat = stringr::str_replace_all(Habitat, 'Spawningrearing ', 'Spawning and Rearing ')) %>%
+    select(-remove)
+  return(tab_joined)
+}
+
+

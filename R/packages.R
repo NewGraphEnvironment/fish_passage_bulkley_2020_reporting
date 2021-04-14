@@ -14,15 +14,16 @@ pacman::p_load(
   RPostgres,
   RPostgreSQL,
   DBI,
-  sf,
   magick,
   bcdata,
+  jpeg,
   datapasta,
   knitr,
   data.table,
   lubridate,
   forcats,
   bookdown,
+  fasstr,
   # flextable,
   english,
   leaflet.extras,
@@ -31,6 +32,7 @@ pacman::p_load(
   geojsonsf,
   bit64 ##to make integer column type for pg
   # gert  ##to track git moves
+  ##leafpop I think
   )
 
 

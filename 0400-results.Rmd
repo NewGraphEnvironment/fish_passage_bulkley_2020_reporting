@@ -53,6 +53,22 @@ map <- leaflet(height=500, width=780) %>%
     labels = c("High", "Moderate", "Low", 'No fix'), opacity = 1,
     title = "Fish Passage Priorities",
   ) %>%
+    addCircleMarkers(
+    data=tab_plan_sf,
+    label = tab_plan_sf$Comments,
+    labelOptions = labelOptions(noHide = F, textOnly = F),
+    popup = leafpop::popupTable(x = tab_plan_sf %>% st_drop_geometry(),
+                                feature.id = F,
+                                row.numbers = F),
+    radius = 9,
+    fillColor = ~pal_phase1(tab_plan_sf$Priority),
+    color= "#ffffff",
+    stroke = TRUE,
+    fillOpacity = 1.0,
+    weight = 2,
+    opacity = 1.0,
+    group = "Planning") %>% 
+
     addCircleMarkers(data=tab_map %>% filter(source %like% 'phase1' | source %like% 'pscis_reassessments'),
     label = tab_map %>% filter(source %like% 'phase1' | source %like% 'pscis_reassessments') %>% pull(pscis_crossing_id),               
     # label = tab_map$pscis_crossing_id,
@@ -100,25 +116,27 @@ map <- leaflet(height=500, width=780) %>%
     baseGroups = c(
       "Esri.DeLorme",
       "ESRI Aerial"),
-    overlayGroups = c("Phase 1", "Phase 2"),
+    overlayGroups = c("Planning", "Phase 1", "Phase 2"),
     options = layersControlOptions(collapsed = F)) %>%
   leaflet.extras::addFullscreenControl() %>% 
   addMiniMap(tiles = providers$"Esri.NatGeoWorldMap",
              zoomLevelOffset = -6, width = 100, height = 100)
 
 map %>% 
-  hideGroup("Phase 1")
+  hideGroup(c("Planning","Phase 1"))
 ```
 
 
 ## Planning
 
-Fish passage restoration planning for the Morice River watershed was informed by engagement with the Office of Wet'suwet'en, the Morice Watershed Monitoring Trust and numerous others along with the development and application of open-source `bcfishpass` tools which were utilized to analyze potential habitat gains of remediation activities based on species and life stage specific habitat characteristics. Online interactive and georeferenced field maps were produced and a field plan for future on the ground assessments formulated.  Some key areas targeted for future fieldwork activity include assessments within the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds. Results are summarized in `r if(gitbook_on){knitr::asis_output("Figure \\@ref(fig:map-interactive) with georeferenced pdf maps available in [Attachment 2](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/)")} else knitr::asis_output("[Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_2_maps.zip)")` 
+Following review of background literature, fisheries information, PSCIS and `bcfishpass` outputs, `r tab_plan_sf %>% nrow()` modelled and PSCIS crossings were reviewed to select sites for follow up with Phase 1 and 2 assessments in the Morice River watershed.   `r tab_plan_sf %>% filter(Priority == 'high') %>%  nrow()` crossings ranked as high priority for future follow up with Phase 1 and/or Phase 2 assessments, `r tab_plan_sf %>% filter(Priority == 'moderate') %>%  nrow()` crossings ranked as moderate priorities, and `r tab_plan_sf %>% filter(Priority == 'low') %>%  nrow()` crossings ranked as low priorities. Results are presented `r if(gitbook_on){knitr::asis_output("in Figure \\@ref(fig:map-interactive) and included as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)). Georeferenced pdf maps are available in [Attachment 2](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/) ")} else knitr::asis_output("as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)) with georeferenced maps available at [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_2_maps.zip).")` Some key areas that will be targeted for fieldwork include the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds. 
 
 ```{r eval=F}
 
 conn <- rws_connect("data/bcfishpass.sqlite")
 rws_disconnect(conn)
+
+# Results are `r if(html_on)knitr::asis_output("presented in Figure \\@ref(fig:map-interactive) and ")`included as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)).
 
 
 # ## Planning

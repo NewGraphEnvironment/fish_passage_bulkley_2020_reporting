@@ -311,3 +311,25 @@ tabs_phase1 <- mapply(print_tab_summary_all, tab_sum = tab_summary, comments = t
 tabs_phase1_pdf <- mapply(print_tab_summary_all_pdf, tab_sum = tab_summary, comments = tab_summary_comments, photos = tab_photo_url)
 
 
+tab_plan_raw <- readr::read_csv(file = 'data/extracted_inputs/planning_results.csv', guess_max = 1500)
+
+tab_plan_sf <- tab_plan_raw %>%
+  filter(!is.na(my_text)) %>%
+  arrange(stream_crossing_id, modelled_crossing_id) %>%
+  st_as_sf(crs = 3005, coords = c("long", "lat")) %>%
+  st_transform(crs = 4326) %>%
+  mutate(my_priority = case_when(my_priority == 'mod' ~ 'moderate',
+                                 T ~ my_priority)) %>%
+  dplyr::mutate(image_view_url = case_when(is.na(image_view_url) ~ NA_character_,
+                                           T ~ paste0('<a href =', image_view_url,'>', 'PSCIS Image link', '</a>'))) %>%
+  select(
+         Priority = my_priority,
+         `PSCIS ID` = stream_crossing_id,
+         `Modelled ID` = modelled_crossing_id,
+         `Species` = observedspp_upstr,
+         `Order` = stream_order,
+         `Upstream habitat (km)` = salmon_network_km,
+         `Channel width` = downstream_channel_width,
+         `Habitat value` = habitat_value_code,
+         `Image link` = image_view_url,
+         Comments = my_text)

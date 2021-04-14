@@ -19,11 +19,22 @@ author: |
  | Society for Ecosytem Restoration Northern BC
 date: |
  |
- | DRafT - Version 0.0.9
+ | DRafT - Version 0.0.10
  | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
 output: bookdown::gitbook
+nocite: |
+  @busch_etal2013LandscapeLevelModel, 
+  @woll_etal2017SalmonEcological,
+  @kirsch_etal2014Fishinventory,
+  @cooney_holzer2006AppendixInterior,
+  @roberge_etal2002LifeHistory,
+  @sloat_etal2017Streamnetworka,
+  @woll_etal2017SalmonEcological,
+  @porter_etal2008DevelopingFish,
+  @rosenfeld_etal2000Habitatfactorsa,
+  
 documentclass: book
 bibliography: [book.bib, references.bib, packages.bib]
 biblio-style: apalike

@@ -25,3 +25,5 @@ docs/Bulkley.html
 *.sqlite
 hold
 data/watershed_reports/*
+*.Kmz
+*.kml

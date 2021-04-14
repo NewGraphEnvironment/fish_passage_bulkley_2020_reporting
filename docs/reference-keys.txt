@@ -4,10 +4,10 @@ fig:hydrology-stats1
 fig:hydrology-stats2
 fig:hydrology-plot2
 fig:hydrology-stats3
+fig:fish-gantt-morice
 tab:fiss-species-table
 fig:fish-plot-grad
 fig:fish-plot-width
-fig:fish-plot-wshed
 tab:tab-fish-spawning-rearing
 tab:tab-fish-spawning-rearing-references
 tab:tab-hab-value
@@ -17,7 +17,7 @@ tab:tab-cost-mult
 fig:map-interactive
 tab:cost-est-phase-1
 tab:tab-overview
-tab:unnamed-chunk-9
+tab:unnamed-chunk-8
 tab:cost-est-phase-2
 tab:tab-habitat-summary
 fig:plot-fish-all
@@ -32,13 +32,13 @@ tab:tab-culvert-58159
 tab:tab-culvert-58158
 tab:tab-habitat-summary-58159
 tab:tab-culvert-bcfp-58159
+tab:tab-fish-site-58159
+tab:tab-fish-dens-58159
+fig:plot-fish-box-58159
 fig:photo-58159-01
 fig:photo-58159-02
 fig:photo-58159-03
 fig:photo-58159-04
-tab:tab-fish-site-58159
-tab:tab-fish-dens-58159
-fig:plot-fish-box-58159
 tab:tab-culvert-123445
 tab:tab-culvert-123446
 tab:tab-culvert-123463
@@ -204,8 +204,6 @@ morice-river-2
 methods
 planning
 accessible-habitat
-channel-width
-mean-annual-discharge
 pscis-and-modelled-stream-crossing-review
 fish-passage-assessments
 barrier-scoring

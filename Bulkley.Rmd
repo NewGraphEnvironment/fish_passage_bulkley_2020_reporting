@@ -19,11 +19,22 @@ author: |
  | Society for Ecosytem Restoration Northern BC
 date: |
  |
- | DRafT - Version 0.0.9
+ | DRafT - Version 0.0.10
  | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
 output: bookdown::gitbook
+nocite: |
+  @busch_etal2013LandscapeLevelModel, 
+  @woll_etal2017SalmonEcological,
+  @kirsch_etal2014Fishinventory,
+  @cooney_holzer2006AppendixInterior,
+  @roberge_etal2002LifeHistory,
+  @sloat_etal2017Streamnetworka,
+  @woll_etal2017SalmonEcological,
+  @porter_etal2008DevelopingFish,
+  @rosenfeld_etal2000Habitatfactorsa,
+  
 documentclass: book
 bibliography: [book.bib, references.bib, packages.bib]
 biblio-style: apalike
@@ -467,15 +478,51 @@ Detailed reviews of Morice River watershed fisheries can be found in @bustard_sc
 
 #### Fish Species
 
-Fish species recorded in the Bulkley River and Morice River watershed groups are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Coastal cutthrout trout and bull trout are considered of special concern (blue-listed) provincially. Summaries of some of the Skeena and Bulkley River fish species life history, biology, stock status, and traditional use are documented in  @schell2003BriefOverview,  @wilson_rabnett2007FishPassage,   @gottesfeld_etal2002ConservingSkeena and @officeofthewetsuweten2013Wetsuwet.  @wilson_rabnett2007FishPassage discuss chinook, pink, sockeye, coho, steelhead and indigenous freshwater Bulkley River fish stocks within the context of key lower and upper Bulkley River habitats such as the Suskwa River, Station  Creek,  Harold  Price  Creek,  Telkwa  River  and  Buck  Creek.    Key  areas  within  the  upper  Bulkley River  watershed  with  high  fishery  values,   documented  in  @schell2003BriefOverview,  are  the  upper  Bulkley mainstem, Buck Creek,  Dungate Creek, Barren Creek, McQuarrie Creek, Byman Creek, Richfield Creek, Johnny David Creek, Aitken Creek and Emerson Creek. 
+Fish species recorded in the Bulkley River and Morice River watershed groups are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Coastal cutthrout trout and bull trout are considered of special concern (blue-listed) provincially. Summaries of some of the Skeena and Bulkley River fish species life history, biology, stock status, and traditional use are documented in  @schell2003BriefOverview,  @wilson_rabnett2007FishPassage,   @gottesfeld_etal2002ConservingSkeena and @officeofthewetsuweten2013Wetsuwet.  @wilson_rabnett2007FishPassage discuss chinook, pink, sockeye, coho, steelhead and indigenous freshwater Bulkley River fish stocks within the context of key lower and upper Bulkley River habitats such as the Suskwa River, Station  Creek,  Harold  Price  Creek,  Telkwa  River  and  Buck  Creek.    Key  areas  within  the  upper  Bulkley River  watershed  with  high  fishery  values,   documented  in  @schell2003BriefOverview,  are  the  upper  Bulkley mainstem, Buck Creek,  Dungate Creek, Barren Creek, McQuarrie Creek, Byman Creek, Richfield Creek, Johnny David Creek, Aitken Creek and Emerson Creek. A gantt chart for select species in the Morice River watershed is included as Figure \@ref(fig:fish-gantt-morice).
 
 <br>
 
-PLACEHOLDER for gantt chart (under construction) and minimal text for life history timing of chinook, coho, steelhead, bull trout, and coastal cutthrout.
  
- 
-```{r}
+```{r fish-gantt-morice, fig.cap = 'Gantt chart for select species in the Morice River watershed.  To be updated.', eval=T}
+gantt_raw <- read_csv("data/inputs_raw/fish_species_life_history_gantt.csv")
 
+
+##start with just the morice to keep it simple
+# ungroup()
+##start with just the morice to keep it simple
+gantt <- gantt_raw %>%
+  select(Species,
+         life_stage,
+         morice_start2,
+         morice_end2) %>%
+  filter(
+    life_stage != 'Rearing' &
+      life_stage != 'Upstream fry migration' &
+      !is.na(life_stage),
+    !is.na(morice_start2)
+  )%>%
+  mutate(
+    morice_start2 = lubridate::as_date(morice_start2),
+    morice_end2 = lubridate::as_date(morice_end2),
+    life_stage = factor(life_stage, levels =
+                          c('Migration', 'Overwintering', 'Spawning', 'Incubation', 'Emergence', 'Outmigration')),
+    life_stage = forcats::fct_rev(life_stage) ##last line was upside down!
+  ) %>%
+  filter(life_stage != 'Overwintering')
+
+
+##make a plot
+ggplot(gantt, aes(xmin = morice_start2,
+                  xmax = morice_end2,
+                  y = life_stage,
+                  color = life_stage)) +
+  geom_linerange(size = 2) +
+  labs(x=NULL, y=NULL)+
+  # theme_bw()+
+  ggdark::dark_theme_bw(base_size = 11)+
+  theme(legend.position = "none")+
+  scale_x_date(date_labels = "%B")+
+  facet_wrap(~Species, ncol = 1)
 ```
 
 
@@ -494,7 +541,7 @@ PLACEHOLDER for gantt chart (under construction) and minimal text for life histo
 
 <br>
 
-Summaries of historical fish observations in the Bulkley River watershed group, graphed by remotely sensed average gradient as well as estimated channel width and upstream watershed area categories for their associated stream segments where calculated with `bcfishpass` and `bcfishobs` and are provided in Figures \@ref(fig:fish-plot-grad) - \@ref(fig:fish-plot-wshed). 
+Summaries of historical fish observations in the Bulkley River and Morice River watershed groups (n=4033), graphed by remotely sensed average gradient as well as measured or modelled channel width categories for their associated stream segments where calculated with `bcfishpass` and `bcfishobs` and are provided in Figures \@ref(fig:fish-plot-grad) - \@ref(fig:fish-plot-width). 
 
 <br>
 
@@ -548,7 +595,7 @@ plot_width
 
 <br>
 
-```{r fish-plot-wshed, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. watershed size category for the Bulkley River watershed group.', eval=T}
+```{r fish-plot-wshed, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. watershed size category for the Bulkley River watershed group.', eval=F}
 ##bar graph
 fiss_sum_wshed_filter <- fiss_sum %>% 
   filter(upstream_area_ha < 5000) %>% 
@@ -655,7 +702,13 @@ The `Fish Habitat Model` calculates the average gradient of BC Freshwater Atlas 
  
  <br>
 
-Gradient, channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High  value  rearing, overwintering  and spawning habitat is often located within channel types with relatively low gradients and the size of the channel (also effectively quantified by the amount of flow in the stream) is often a good predictor of species/life stage utilization.  Following delineation of "potentially accessible habitat", the *average* gradient of each stream segment within habitat classified as below the 15% threshold as well as the 20% threshold was calculated and summed within species and life stage specific gradient and channel width categories. For the Bulkley River watershed group, stream discharge acquired from a proprietary analysis was also added to the dataset and categorized by intrinsic potential for a set of species and life stages.  `bcfishpass` and associated tools have been designed to be flexible in analysis, accepting user defined gradient, channel width and stream discharge categories.  Although currently in draft form, and subject to revisions throughout the development of this reporting, gradient, channel width and stream discharge thresholds for a number of fish species in the Bulkley River and Morice River watersheds groups have been gathered from available literature and applied to stream crossing locations  (Table \@ref(tab:tab-fish-spawning-rearing)).  References for thresholds are provided in  Table \@ref(tab:tab-fish-spawning-rearing-references). Average gradient of stream line segments can be calculated from elevations contained in the provincial freshwater atlas streamline dataset. Methodology to calculate estimates of channel width and stream discharge are provided in the following sections.
+Gradient and channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High value  rearing, overwintering  and spawning habitat is often located within channel types with relatively low gradients and the size of the channel (also effectively quantified by the amount of flow in the stream) is often a good predictor of species/life stage utilization.  Following delineation of "potentially accessible habitat", the average gradient of each stream segment within habitat classified as below the 15% threshold as well as the 20% threshold was calculated and summed within species and life stage specific gradient categories.  Average gradient of stream line segments can be calculated from elevations contained in the provincial freshwater atlas streamline dataset. To obtain estimates of channel width upstream of crossing locations, Where available, `bcfishpass` was utilized to pull average channel gradients from Fisheries Information Summary System (FISS) site assessment data [@moeStreamInventorySample] or PSCIS and associate with stream segment lines. To derive a formula to estimate channel width for 2nd order and above stream segments without associated FISS or PSCIS sites, `fwapg` was used to estimate the drainage area upstream of the segment.  Additionally, rasters from ClimateBC [@wang_etal2012ClimateWNAHighResolution] were sampled for all stream segments and a mean annual precipitation weighted by upstream watershed area was calculated. Mean annual precipitation was then combined with the channel width and BEC zone information (gathered through a spatial query tied to the bottom of the stream segment) into a dataset (n = 22990) for analysis.  The details of this bayesian analysis and resulting formula used to estimate channel width on stream segements in the Bukley River and Morice River watersheds is included as a technical appendix at https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/docs/channel-width-21.pdf. 
+
+<br>
+
+
+
+`bcfishpass` and associated tools have been designed to be flexible in analysis, accepting user defined gradient, channel width and stream discharge categories [@moeStreamInventorySample].  Although currently in draft form, and subject to development revisions, gradient and channel width thresholds for habitat with the highest intrinsic value for a number of fish species in the Bulkley River and Morice River watersheds groups have been specified and applied to model habitat upstream of stream crossing locations with the highest intrinsic value (Table \@ref(tab:tab-fish-spawning-rearing)).  Thresholds were derived based on a literature review with references provided in Table \@ref(tab:tab-fish-spawning-rearing-references). 
 
 <br>
 
@@ -668,14 +721,14 @@ bcfishpass_spawn_rear_model %>%
   select(Species, 
          `Spawning Gradient  Max (%)`= spawn_gradient_max,
          `Spawning Width Min (m)` = spawn_channel_width_min,
-         `Spawning Width Max (m)` = spawn_channel_width_max,
-         `Spawning MAD Min (m3/s)` = spawn_mad_min,
-         `Spawning MAD Max (m3/s)` = spawn_mad_max,
-         `Rearing Gradient Max (%)` = rear_gradient_max,
-         `Rearing MAD Min (m3/s)` = rear_mad_min,
-         `Rearing MAD Max (m3/s)` = rear_mad_max,
-         `Rearing Wetland Multiplier` = rear_wetland_multiplier,
-         `Rearing Lake Multiplier` = rear_lake_multiplier) %>% 
+         # `Spawning Width Max (m)` = spawn_channel_width_max,
+         # `Spawning MAD Min (m3/s)` = spawn_mad_min,
+         # `Spawning MAD Max (m3/s)` = spawn_mad_max,
+         `Rearing Gradient Max (%)` = rear_gradient_max) %>% 
+         # `Rearing MAD Min (m3/s)` = rear_mad_min,
+         # `Rearing MAD Max (m3/s)` = rear_mad_max,
+         # `Rearing Wetland Multiplier` = rear_wetland_multiplier,
+         # `Rearing Lake Multiplier` = rear_lake_multiplier) %>% 
   t() %>% 
   as_tibble(rownames = "row_names") %>% 
   janitor::row_to_names(row_number = 1) %>% 
@@ -687,19 +740,21 @@ bcfishpass_spawn_rear_model %>%
 <br>
 
 ```{r tab-fish-spawning-rearing-references}
-bcfishpass_spawn_rear_model_references <- readr::read_csv(file = 'data/width_modelling/model_spawning_rearing_habitat.csv')
+# bcfishpass_spawn_rear_model_references <- readr::read_csv(file = 'data/width_modelling/model_spawning_rearing_habitat.csv')
+bcfishpass_spawn_rear_model_references <- readr::read_csv(file = 'data/width_modelling/model_spawning_rearing_habitat_ref.csv') %>% 
+  select(species_code, contains('ref'), -contains(c('multiplier','mad')))
   
 bcfishpass_spawn_rear_model_references %>% 
   mutate(Species = fishbc::fbc_common_name(species_code)) %>% 
   select(Species, 
-         `Spawning Gradient  Max (%)`= spawn_gradient_max,
-         `Spawning Width Min (m)` = spawn_channel_width_min,
-         `Spawning Width Max (m)` = spawn_channel_width_max,
+         `Spawning Gradient  Max (%)`= spawn_gradient_max_ref,
+         `Spawning Width Min (m)` = spawn_channel_width_min_ref,
+         # `Spawning Width Max (m)` = spawn_channel_width_max_ref,
          # `Spawning MAD Min (m3/s)` = spawn_mad_min,
          # `Spawning MAD Max (m3/s)` = spawn_mad_max,
-         `Rearing Gradient Max (%)` = rear_gradient_max,
-         `Rearing Wetland Multiplier` = rear_wetland_multiplier,
-         `Rearing Lake Multiplier` = rear_lake_multiplier) %>% 
+         `Rearing Gradient Max (%)` = rear_gradient_max_ref) %>% 
+         # `Rearing Wetland Multiplier` = rear_wetland_multiplier,
+         # `Rearing Lake Multiplier` = rear_lake_multiplier) %>% 
          # `Rearing MAD Min (m3/s)` = rear_mad_min,
          # `Rearing MAD Max (m3/s)` = rear_mad_max) %>% 
   t() %>% 
@@ -710,14 +765,11 @@ bcfishpass_spawn_rear_model_references %>%
 ```
 
 
-### Channel Width
-
-Placeholder. Curently watershed group specific linear regression best fit including, stream order, magnitude, watershed size and precipitation. Validated using FISS sample site channel width measurements and PSCIS stream crossing measurements.
 
 
 
-### Mean Annual Discharge
-Placeholder. Currently used in Bulkley only. Proprietary data from Foundry Geospatial. 
+
+
 
 
 ```{r tablethreshaverage, eval= F}
@@ -747,8 +799,7 @@ To prepare for Phase 1 and 2 assessments in the study area, past fish passage as
 
  * Confirmed fish presence upstream of the structure.
  * Stream width documented as > 2.0m in PSCIS.
- * Linear lengths of modelled upstream habitat <20% gradient for ≥1km for PSCIS crossings 
- * Linear lengths of modelled upstream habitat <20% gradient for ≥2km for modelled crossings.
+ * Linear lengths of modelled upstream habitat <8% gradient for ≥1km. 
  * Crossings located on streams classified as 3rd order or higher.
  * Crossings located on streams with >5 ha of modeled wetland and/or lake habitat upstream.
  * Habitat value rated as "medium" or “high” in PSCIS.  
@@ -962,6 +1013,22 @@ map <- leaflet(height=500, width=780) %>%
     labels = c("High", "Moderate", "Low", 'No fix'), opacity = 1,
     title = "Fish Passage Priorities",
   ) %>%
+    addCircleMarkers(
+    data=tab_plan_sf,
+    label = tab_plan_sf$Comments,
+    labelOptions = labelOptions(noHide = F, textOnly = F),
+    popup = leafpop::popupTable(x = tab_plan_sf %>% st_drop_geometry(),
+                                feature.id = F,
+                                row.numbers = F),
+    radius = 9,
+    fillColor = ~pal_phase1(tab_plan_sf$Priority),
+    color= "#ffffff",
+    stroke = TRUE,
+    fillOpacity = 1.0,
+    weight = 2,
+    opacity = 1.0,
+    group = "Planning") %>% 
+
     addCircleMarkers(data=tab_map %>% filter(source %like% 'phase1' | source %like% 'pscis_reassessments'),
     label = tab_map %>% filter(source %like% 'phase1' | source %like% 'pscis_reassessments') %>% pull(pscis_crossing_id),               
     # label = tab_map$pscis_crossing_id,
@@ -1009,25 +1076,27 @@ map <- leaflet(height=500, width=780) %>%
     baseGroups = c(
       "Esri.DeLorme",
       "ESRI Aerial"),
-    overlayGroups = c("Phase 1", "Phase 2"),
+    overlayGroups = c("Planning", "Phase 1", "Phase 2"),
     options = layersControlOptions(collapsed = F)) %>%
   leaflet.extras::addFullscreenControl() %>% 
   addMiniMap(tiles = providers$"Esri.NatGeoWorldMap",
              zoomLevelOffset = -6, width = 100, height = 100)
 
 map %>% 
-  hideGroup("Phase 1")
+  hideGroup(c("Planning","Phase 1"))
 ```
 
 
 ## Planning
 
-Fish passage restoration planning for the Morice River watershed was informed by engagement with the Office of Wet'suwet'en, the Morice Watershed Monitoring Trust and numerous others along with the development and application of open-source `bcfishpass` tools which were utilized to analyze potential habitat gains of remediation activities based on species and life stage specific habitat characteristics. Online interactive and georeferenced field maps were produced and a field plan for future on the ground assessments formulated.  Some key areas targeted for future fieldwork activity include assessments within the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds. Results are summarized in `r if(gitbook_on){knitr::asis_output("Figure \\@ref(fig:map-interactive) with georeferenced pdf maps available in [Attachment 2](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/)")} else knitr::asis_output("[Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_2_maps.zip)")` 
+Following review of background literature, fisheries information, PSCIS and `bcfishpass` outputs, `r tab_plan_sf %>% nrow()` modelled and PSCIS crossings were reviewed to select sites for follow up with Phase 1 and 2 assessments in the Morice River watershed.   `r tab_plan_sf %>% filter(Priority == 'high') %>%  nrow()` crossings ranked as high priority for future follow up with Phase 1 and/or Phase 2 assessments, `r tab_plan_sf %>% filter(Priority == 'moderate') %>%  nrow()` crossings ranked as moderate priorities, and `r tab_plan_sf %>% filter(Priority == 'low') %>%  nrow()` crossings ranked as low priorities. Results are presented `r if(gitbook_on){knitr::asis_output("in Figure \\@ref(fig:map-interactive) and included as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)). Georeferenced pdf maps are available in [Attachment 2](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/) ")} else knitr::asis_output("as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)) with georeferenced maps available at [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_2_maps.zip).")` Some key areas that will be targeted for fieldwork include the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds. 
 
 ```{r eval=F}
 
 conn <- rws_connect("data/bcfishpass.sqlite")
 rws_disconnect(conn)
+
+# Results are `r if(html_on)knitr::asis_output("presented in Figure \\@ref(fig:map-interactive) and ")`included as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)).
 
 
 # ## Planning
@@ -1570,6 +1639,36 @@ tab_hab_summary %>%
 print_tab_summary_bcfp()
 ```
 
+
+<br>
+
+```{r tab-fish-site-58159, eval=T}
+my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
+
+tab_fish_site() %>% 
+  my_kable(caption_text = my_caption)
+```
+
+
+<br>
+
+```{r tab-fish-dens-58159, eval=T}
+my_caption <- paste0('Fish densities (fish/100m2) for PSCIS crossing ', my_site, '.')
+
+tab_fish_dens() %>% 
+  my_kable(caption_text = my_caption)
+```
+
+<br>
+
+```{r plot-fish-box-58159, fig.cap= my_caption, eval=T}
+my_caption <- paste0('Densities of fish captured (fish/100m2) during electrofishing upstream and downstream of PSCIS crossing ', my_site, '.')
+
+plot_fish_box() 
+
+```
+
+
 <br>
 
 
@@ -1648,34 +1747,6 @@ my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
 knitr::include_graphics(get_img_path(photo = my_photo1))
 knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics(get_img_path(photo = my_photo2))
-```
-
-<br>
-
-```{r tab-fish-site-58159, eval=T}
-my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
-
-tab_fish_site() %>% 
-  my_kable(caption_text = my_caption)
-```
-
-
-<br>
-
-```{r tab-fish-dens-58159, eval=T}
-my_caption <- paste0('Fish densities (fish/100m2) for PSCIS crossing ', my_site, '.')
-
-tab_fish_dens() %>% 
-  my_kable(caption_text = my_caption)
-```
-
-<br>
-
-```{r plot-fish-box-58159, fig.cap= my_caption, eval=T}
-my_caption <- paste0('Densities of fish captured (fish/100m2) during electrofishing upstream and downstream of PSCIS crossing ', my_site, '.')
-
-plot_fish_box() 
-
 ```
 
 

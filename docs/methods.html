@@ -31,7 +31,7 @@
   
 <link rel="prev" href="background.html"/>
 <link rel="next" href="results-and-discussion.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -55,12 +55,12 @@
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
 <link href="libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.css" rel="stylesheet" />
 <script src="libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.min.js"></script>
 <link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
@@ -150,7 +150,9 @@
 <p><br></p>
 <p><code>bcfishpass</code> is comprised of sql and python based shell script libraries that “generate a simple model of aquatic habitat connectivity by identifying natural barriers to fish passage (plus hydro dams that are not feasible to remediate) and classifying all streams not upstream of these barriers as ‘potentially accessible’” <span class="citation">(Norris 2021d)</span>. On potentially accessible streams, scripts “identify known barriers and additional anthropogenic features (primarily road/railway stream crossings, i.e. culverts) that are potentially barriers. To prioritize these features for assessment or remediation,” the scripts “report on how much modelled potentially accessible aquatic habitat the barriers may obstruct. The model can be refined with known fish observations. Depending on the modelling scenario, all aquatic habitat downstream of a given fish observation can be classified as ‘observed accessible,’ overriding any downstream barriers.” For each crossing location, the area of lake and wetland habitat upstream, species documented upstream and an estimate of watershed area can be collated using <code>bcfishpass</code>, <code>fwapg</code> and <code>bcfishobs</code> to provide an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.</p>
 <p><br></p>
-<p>Gradient, channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High value rearing, overwintering and spawning habitat is often located within channel types with relatively low gradients and the size of the channel (also effectively quantified by the amount of flow in the stream) is often a good predictor of species/life stage utilization. Following delineation of “potentially accessible habitat,” the <em>average</em> gradient of each stream segment within habitat classified as below the 15% threshold as well as the 20% threshold was calculated and summed within species and life stage specific gradient and channel width categories. For the Bulkley River watershed group, stream discharge acquired from a proprietary analysis was also added to the dataset and categorized by intrinsic potential for a set of species and life stages. <code>bcfishpass</code> and associated tools have been designed to be flexible in analysis, accepting user defined gradient, channel width and stream discharge categories. Although currently in draft form, and subject to revisions throughout the development of this reporting, gradient, channel width and stream discharge thresholds for a number of fish species in the Bulkley River and Morice River watersheds groups have been gathered from available literature and applied to stream crossing locations (Table <a href="methods.html#tab:tab-fish-spawning-rearing">3.1</a>). References for thresholds are provided in Table <a href="methods.html#tab:tab-fish-spawning-rearing-references">3.2</a>. Average gradient of stream line segments can be calculated from elevations contained in the provincial freshwater atlas streamline dataset. Methodology to calculate estimates of channel width and stream discharge are provided in the following sections.</p>
+<p>Gradient and channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High value rearing, overwintering and spawning habitat is often located within channel types with relatively low gradients and the size of the channel (also effectively quantified by the amount of flow in the stream) is often a good predictor of species/life stage utilization. Following delineation of “potentially accessible habitat,” the average gradient of each stream segment within habitat classified as below the 15% threshold as well as the 20% threshold was calculated and summed within species and life stage specific gradient categories. Average gradient of stream line segments can be calculated from elevations contained in the provincial freshwater atlas streamline dataset. To obtain estimates of channel width upstream of crossing locations, Where available, <code>bcfishpass</code> was utilized to pull average channel gradients from Fisheries Information Summary System (FISS) site assessment data <span class="citation">(MoE 2020c)</span> or PSCIS and associate with stream segment lines. To derive a formula to estimate channel width for 2nd order and above stream segments without associated FISS or PSCIS sites, <code>fwapg</code> was used to estimate the drainage area upstream of the segment. Additionally, rasters from ClimateBC <span class="citation">(Wang et al. 2012)</span> were sampled for all stream segments and a mean annual precipitation weighted by upstream watershed area was calculated. Mean annual precipitation was then combined with the channel width and BEC zone information (gathered through a spatial query tied to the bottom of the stream segment) into a dataset (n = 22990) for analysis. The details of this bayesian analysis and resulting formula used to estimate channel width on stream segements in the Bukley River and Morice River watersheds is included as a technical appendix at <a href="https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/docs/channel-width-21.pdf" class="uri">https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/docs/channel-width-21.pdf</a>.</p>
+<p><br></p>
+<p><code>bcfishpass</code> and associated tools have been designed to be flexible in analysis, accepting user defined gradient, channel width and stream discharge categories <span class="citation">(MoE 2020c)</span>. Although currently in draft form, and subject to development revisions, gradient and channel width thresholds for habitat with the highest intrinsic value for a number of fish species in the Bulkley River and Morice River watersheds groups have been specified and applied to model habitat upstream of stream crossing locations with the highest intrinsic value (Table <a href="methods.html#tab:tab-fish-spawning-rearing">3.1</a>). Thresholds were derived based on a literature review with references provided in Table <a href="methods.html#tab:tab-fish-spawning-rearing-references">3.2</a>.</p>
 <p><br></p>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
@@ -181,7 +183,7 @@ Sockeye Salmon
 Spawning Gradient Max (%)
 </td>
 <td style="text-align:left;">
-3
+4
 </td>
 <td style="text-align:left;">
 5
@@ -198,67 +200,16 @@ Spawning Gradient Max (%)
 Spawning Width Min (m)
 </td>
 <td style="text-align:left;">
-3.7
+4
 </td>
 <td style="text-align:left;">
-2.0
+2
 </td>
 <td style="text-align:left;">
-3.8
+4
 </td>
 <td style="text-align:left;">
-2.0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spawning Width Max (m)
-</td>
-<td style="text-align:left;">
-50
-</td>
-<td style="text-align:left;">
-50
-</td>
-<td style="text-align:left;">
-50
-</td>
-<td style="text-align:left;">
-50
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spawning MAD Min (m3/s)
-</td>
-<td style="text-align:left;">
-0.58
-</td>
-<td style="text-align:left;">
-0.22
-</td>
-<td style="text-align:left;">
-0.59
-</td>
-<td style="text-align:left;">
-0.18
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spawning MAD Max (m3/s)
-</td>
-<td style="text-align:left;">
-300
-</td>
-<td style="text-align:left;">
-300
-</td>
-<td style="text-align:left;">
-300
-</td>
-<td style="text-align:left;">
-300
+2
 </td>
 </tr>
 <tr>
@@ -276,74 +227,6 @@ Rearing Gradient Max (%)
 </td>
 <td style="text-align:left;">
 –
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Rearing MAD Min (m3/s)
-</td>
-<td style="text-align:left;">
-0.56
-</td>
-<td style="text-align:left;">
-0.05
-</td>
-<td style="text-align:left;">
-0.04
-</td>
-<td style="text-align:left;">
-–
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Rearing MAD Max (m3/s)
-</td>
-<td style="text-align:left;">
-100
-</td>
-<td style="text-align:left;">
-40
-</td>
-<td style="text-align:left;">
-60
-</td>
-<td style="text-align:left;">
-–
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Rearing Wetland Multiplier
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-1.5
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-–
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Rearing Lake Multiplier
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-1.5
 </td>
 </tr>
 </tbody>
@@ -378,16 +261,16 @@ Sockeye Salmon
 Spawning Gradient Max (%)
 </td>
 <td style="text-align:left;">
-0.03 (Kirsch et al. 2004, Busch et al. 2011, Cooney and Holzer 2006)
+Kirsch et al. 2004, Busch et al. 2011, Cooney and Holzer 2006
 </td>
 <td style="text-align:left;">
-0.05 (Roberge et al. 2002, Sloat et al. 2017)
+Roberge et al. 2002, Sloat et al. 2017
 </td>
 <td style="text-align:left;">
-0.04 (Scheer and Steel 2006, Cooney and Holzer 2006)
+Scheer and Steel 2006, Cooney and Holzer 2006
 </td>
 <td style="text-align:left;">
-0.02 (Lake 1999, Hoopes 1972)
+Lake 1999, Hoopes 1972
 </td>
 </tr>
 <tr>
@@ -395,33 +278,16 @@ Spawning Gradient Max (%)
 Spawning Width Min (m)
 </td>
 <td style="text-align:left;">
-3.7 (Busch et al. 2011, Cooney and Holzer 2006)
+Busch et al. 2011, Cooney and Holzer 2006
 </td>
 <td style="text-align:left;">
-2 (Sloat et. al 2017)
+Sloat et. al 2017
 </td>
 <td style="text-align:left;">
-3.8 (Cooney and Holzer 2006)
+Cooney and Holzer 2006
 </td>
 <td style="text-align:left;">
-2 (Woll et al. 2017)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Spawning Width Max (m)
-</td>
-<td style="text-align:left;">
-50 (Cooney and Holzer 2006)
-</td>
-<td style="text-align:left;">
-50
-</td>
-<td style="text-align:left;">
-50 (Cooney and Holzer 2006)
-</td>
-<td style="text-align:left;">
-50 (Woll et al. 2017)
+Woll et al. 2017
 </td>
 </tr>
 <tr>
@@ -429,72 +295,29 @@ Spawning Width Max (m)
 Rearing Gradient Max (%)
 </td>
 <td style="text-align:left;">
-0.05 (Woll et al. 2017, Porter et al. 2008)
+Woll et al. 2017, Porter et al. 2008
 </td>
 <td style="text-align:left;">
-0.05 (Kirsch et al. 2004, Porter et al. 2008, Rosenfeld et al. 2000)
+Kirsch et al. 2004, Porter et al. 2008, Rosenfeld et al. 2000
 </td>
 <td style="text-align:left;">
-0.074 (Porter et al. 2008)
-</td>
-<td style="text-align:left;">
-–
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Rearing Wetland Multiplier
+Porter et al. 2008
 </td>
 <td style="text-align:left;">
 –
-</td>
-<td style="text-align:left;">
-1.5
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-–
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Rearing Lake Multiplier
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-1.5
 </td>
 </tr>
 </tbody>
 </table>
-</div>
-<div id="channel-width" class="section level3" number="3.1.2">
-<h3><span class="header-section-number">3.1.2</span> Channel Width</h3>
-<p>Placeholder. Curently watershed group specific linear regression best fit including, stream order, magnitude, watershed size and precipitation. Validated using FISS sample site channel width measurements and PSCIS stream crossing measurements.</p>
-</div>
-<div id="mean-annual-discharge" class="section level3" number="3.1.3">
-<h3><span class="header-section-number">3.1.3</span> Mean Annual Discharge</h3>
-<p>Placeholder. Currently used in Bulkley only. Proprietary data from Foundry Geospatial.</p>
 <p><br></p>
 </div>
-<div id="pscis-and-modelled-stream-crossing-review" class="section level3" number="3.1.4">
-<h3><span class="header-section-number">3.1.4</span> PSCIS and Modelled Stream Crossing Review</h3>
+<div id="pscis-and-modelled-stream-crossing-review" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> PSCIS and Modelled Stream Crossing Review</h3>
 <p>To prepare for Phase 1 and 2 assessments in the study area, past fish passage assessment reports for the Bulkley River and Morice River watershed groups were first reviewed to identify crossing structures not yet assessed or previously ranked as priorities for rehabilitation <span class="citation">(Casselman and Stanley 2010; Irvine 2018; McCarthy and Fernando 2015; Smith 2018; Wilson and Rabnett 2007)</span>. To determine which of those crossings had not yet been assessed with Phase 1 and Phase 2 assessments we cross-referenced these reports with the PSCIS database, available background info and viewed sites within the output of the <code>Fish Habitat Model</code> and <code>bcfishpass</code>. Outputs for modelled and PSCIS crossings (barriers and potential barriers) that met the following criteria underwent a detailed review to facilitate prioritization for Phase1 - Fish Passage Assessments and Phase 2 - Habitat Confirmations.</p>
 <ul>
 <li>Confirmed fish presence upstream of the structure.</li>
 <li>Stream width documented as &gt; 2.0m in PSCIS.</li>
-<li>Linear lengths of modelled upstream habitat &lt;20% gradient for ≥1km for PSCIS crossings</li>
-<li>Linear lengths of modelled upstream habitat &lt;20% gradient for ≥2km for modelled crossings.</li>
+<li>Linear lengths of modelled upstream habitat &lt;8% gradient for ≥1km.</li>
 <li>Crossings located on streams classified as 3rd order or higher.</li>
 <li>Crossings located on streams with &gt;5 ha of modeled wetland and/or lake habitat upstream.</li>
 <li>Habitat value rated as “medium” or “high” in PSCIS.</li>
@@ -1010,7 +833,7 @@ Rail
 </div>
 <div id="reporting" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Reporting</h2>
-<p>Reporting was generated with <code>bookdown</code> <span class="citation">(Xie 2016)</span> from <code>Rmarkdown</code> <span class="citation">(Allaire et al. 2020)</span> with primarily <code>R</code> <span class="citation">(R Core Team 2020)</span> and <code>SQL</code> scripts. In addition to numerous spatial layers sourced through the BC Data Catalogue then stored and queried in local and remote <code>postgresql</code> databases, <a href="https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data">data inputs</a> for this project include:</p>
+<p>Reporting was generated with <code>bookdown</code> <span class="citation">(Xie 2016)</span> from <code>Rmarkdown</code> <span class="citation">(Allaire et al. 2021)</span> with primarily <code>R</code> <span class="citation">(R Core Team 2020)</span> and <code>SQL</code> scripts. In addition to numerous spatial layers sourced through the BC Data Catalogue then stored and queried in local and remote <code>postgresql</code> databases, <a href="https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data">data inputs</a> for this project include:</p>
 <ul>
 <li><p>Populated <a href="https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data#submitfish">Fish Data Submission Spreadsheet Template - V 2.0, January 20, 2020</a></p></li>
 <li><p>Populated <a href="https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/assessment-projects">pscis_assessment_template_v24.xls</a></p></li>

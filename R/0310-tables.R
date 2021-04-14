@@ -320,8 +320,11 @@ tab_plan_sf <- tab_plan_raw %>%
   st_transform(crs = 4326) %>%
   mutate(my_priority = case_when(my_priority == 'mod' ~ 'moderate',
                                  T ~ my_priority)) %>%
+  # dplyr::mutate(image_view_url = case_when(is.na(image_view_url) ~ NA_character_,
+  #                                          T ~ paste0('<a href =', image_view_url,'>', 'PSCIS Image link', '</a>'))) %>%
   dplyr::mutate(image_view_url = case_when(is.na(image_view_url) ~ NA_character_,
-                                           T ~ paste0('<a href =', image_view_url,'>', 'PSCIS Image link', '</a>'))) %>%
+                                           T ~ paste0('<a href =', image_view_url,' target="_blank">PSCIS Image</a>'))) %>%
+  dplyr::mutate(model_link = paste0('<a href =', 'sum/bcfp/', aggregated_crossings_id, '.html ', 'target="_blank">Model Data</a>')) %>%
   select(
          Priority = my_priority,
          `PSCIS ID` = stream_crossing_id,
@@ -332,4 +335,5 @@ tab_plan_sf <- tab_plan_raw %>%
          `Channel width` = downstream_channel_width,
          `Habitat value` = habitat_value_code,
          `Image link` = image_view_url,
+         `Model link` = model_link,
          Comments = my_text)

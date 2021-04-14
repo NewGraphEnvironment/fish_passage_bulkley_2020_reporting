@@ -381,7 +381,7 @@ make_kml_col <- function(df){
            label = paste0(site_id, '-', Priority),
            `Image link` = case_when(!is.na(`Image link`) ~ cell_spec('crossing', "html", link = `Image link`),
                                     T ~ `Image link`)) %>%
-    select(site_id, Area, Priority, label, color, shape, everything())
+    select(site_id, Priority, label, color, shape, everything())
   # mutate(across(where(is.numeric), round(.,2)))
 
 }
@@ -461,7 +461,7 @@ make_tab_summary_bcfp <- function(dat = bcfishpass_all,
 print_tab_summary_bcfp <- function(site = my_site, font = 11, ...){
   make_tab_summary_bcfp(site = site) %>%
     kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
-    kableExtra::add_footnote('Model data is preliminary and subject to adjustments including incorperation of area based estimates.', notation = 'symbol') %>%
+    kableExtra::add_footnote('Model data is preliminary and subject to adjustments.', notation = 'symbol') %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)
 }
 

@@ -8,12 +8,7 @@
 source('R/private_info.R')
 source('R/packages.R')
 
-##svDialogs
 
-# Load latest channel width measurement points (FISS and PSCIS)
-# channel_width = fread(input = dlg_open(default = "./data/*",
-#                                        title = "Please select the measured channel width file",
-#                                        gui = .GUI)$res)
 
 ##local wsl
 conn <- DBI::dbConnect(
@@ -154,7 +149,16 @@ res <- dbSendQuery(conn, "CREATE INDEX ON working.morice_planning_20210412 USING
 dbClearResult(res)
 res <- dbSendQuery(conn, "ALTER TABLE working.morice_planning_20210412 ADD PRIMARY KEY (misc_point_id)")
 dbClearResult(res)
+# dbDisconnect(conn = conn)
 
+
+query <- "SELECT * FROM working.morice_planning_20210412"
+dat_after_review<- st_read(conn, query = query) %>%
+  dplyr::mutate(long = sf::st_coordinates(.)[,1],
+                lat = sf::st_coordinates(.)[,2])
+# arrange(my_text) ##this is weird. it will not read out the
+
+dat_after_review %>% readr::write_csv(file = 'data/extracted_inputs/planning_results.csv')
 # dbDisconnect(conn = conn)
 
 ##we should screen out our crossings that are in the coastal bridge registry as bridges so we need to join to our crossings

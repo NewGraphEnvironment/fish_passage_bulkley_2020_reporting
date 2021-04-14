@@ -129,15 +129,51 @@ Detailed reviews of Morice River watershed fisheries can be found in @bustard_sc
 
 #### Fish Species
 
-Fish species recorded in the Bulkley River and Morice River watershed groups are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Coastal cutthrout trout and bull trout are considered of special concern (blue-listed) provincially. Summaries of some of the Skeena and Bulkley River fish species life history, biology, stock status, and traditional use are documented in  @schell2003BriefOverview,  @wilson_rabnett2007FishPassage,   @gottesfeld_etal2002ConservingSkeena and @officeofthewetsuweten2013Wetsuwet.  @wilson_rabnett2007FishPassage discuss chinook, pink, sockeye, coho, steelhead and indigenous freshwater Bulkley River fish stocks within the context of key lower and upper Bulkley River habitats such as the Suskwa River, Station  Creek,  Harold  Price  Creek,  Telkwa  River  and  Buck  Creek.    Key  areas  within  the  upper  Bulkley River  watershed  with  high  fishery  values,   documented  in  @schell2003BriefOverview,  are  the  upper  Bulkley mainstem, Buck Creek,  Dungate Creek, Barren Creek, McQuarrie Creek, Byman Creek, Richfield Creek, Johnny David Creek, Aitken Creek and Emerson Creek. 
+Fish species recorded in the Bulkley River and Morice River watershed groups are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Coastal cutthrout trout and bull trout are considered of special concern (blue-listed) provincially. Summaries of some of the Skeena and Bulkley River fish species life history, biology, stock status, and traditional use are documented in  @schell2003BriefOverview,  @wilson_rabnett2007FishPassage,   @gottesfeld_etal2002ConservingSkeena and @officeofthewetsuweten2013Wetsuwet.  @wilson_rabnett2007FishPassage discuss chinook, pink, sockeye, coho, steelhead and indigenous freshwater Bulkley River fish stocks within the context of key lower and upper Bulkley River habitats such as the Suskwa River, Station  Creek,  Harold  Price  Creek,  Telkwa  River  and  Buck  Creek.    Key  areas  within  the  upper  Bulkley River  watershed  with  high  fishery  values,   documented  in  @schell2003BriefOverview,  are  the  upper  Bulkley mainstem, Buck Creek,  Dungate Creek, Barren Creek, McQuarrie Creek, Byman Creek, Richfield Creek, Johnny David Creek, Aitken Creek and Emerson Creek. A gantt chart for select species in the Morice River watershed is included as Figure \@ref(fig:fish-gantt-morice).
 
 <br>
 
-PLACEHOLDER for gantt chart (under construction) and minimal text for life history timing of chinook, coho, steelhead, bull trout, and coastal cutthrout.
  
- 
-```{r}
+```{r fish-gantt-morice, fig.cap = 'Gantt chart for select species in the Morice River watershed.  To be updated.', eval=T}
+gantt_raw <- read_csv("data/inputs_raw/fish_species_life_history_gantt.csv")
 
+
+##start with just the morice to keep it simple
+# ungroup()
+##start with just the morice to keep it simple
+gantt <- gantt_raw %>%
+  select(Species,
+         life_stage,
+         morice_start2,
+         morice_end2) %>%
+  filter(
+    life_stage != 'Rearing' &
+      life_stage != 'Upstream fry migration' &
+      !is.na(life_stage),
+    !is.na(morice_start2)
+  )%>%
+  mutate(
+    morice_start2 = lubridate::as_date(morice_start2),
+    morice_end2 = lubridate::as_date(morice_end2),
+    life_stage = factor(life_stage, levels =
+                          c('Migration', 'Overwintering', 'Spawning', 'Incubation', 'Emergence', 'Outmigration')),
+    life_stage = forcats::fct_rev(life_stage) ##last line was upside down!
+  ) %>%
+  filter(life_stage != 'Overwintering')
+
+
+##make a plot
+ggplot(gantt, aes(xmin = morice_start2,
+                  xmax = morice_end2,
+                  y = life_stage,
+                  color = life_stage)) +
+  geom_linerange(size = 2) +
+  labs(x=NULL, y=NULL)+
+  # theme_bw()+
+  ggdark::dark_theme_bw(base_size = 11)+
+  theme(legend.position = "none")+
+  scale_x_date(date_labels = "%B")+
+  facet_wrap(~Species, ncol = 1)
 ```
 
 
@@ -156,7 +192,7 @@ PLACEHOLDER for gantt chart (under construction) and minimal text for life histo
 
 <br>
 
-Summaries of historical fish observations in the Bulkley River watershed group, graphed by remotely sensed average gradient as well as estimated channel width and upstream watershed area categories for their associated stream segments where calculated with `bcfishpass` and `bcfishobs` and are provided in Figures \@ref(fig:fish-plot-grad) - \@ref(fig:fish-plot-wshed). 
+Summaries of historical fish observations in the Bulkley River and Morice River watershed groups (n=4033), graphed by remotely sensed average gradient as well as measured or modelled channel width categories for their associated stream segments where calculated with `bcfishpass` and `bcfishobs` and are provided in Figures \@ref(fig:fish-plot-grad) - \@ref(fig:fish-plot-width). 
 
 <br>
 
@@ -210,7 +246,7 @@ plot_width
 
 <br>
 
-```{r fish-plot-wshed, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. watershed size category for the Bulkley River watershed group.', eval=T}
+```{r fish-plot-wshed, out.width = photo_width, fig.cap= 'Summary of historic salmonid observations vs. watershed size category for the Bulkley River watershed group.', eval=F}
 ##bar graph
 fiss_sum_wshed_filter <- fiss_sum %>% 
   filter(upstream_area_ha < 5000) %>% 

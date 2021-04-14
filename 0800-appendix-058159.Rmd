@@ -138,6 +138,36 @@ tab_hab_summary %>%
 print_tab_summary_bcfp()
 ```
 
+
+<br>
+
+```{r tab-fish-site-58159, eval=T}
+my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
+
+tab_fish_site() %>% 
+  my_kable(caption_text = my_caption)
+```
+
+
+<br>
+
+```{r tab-fish-dens-58159, eval=T}
+my_caption <- paste0('Fish densities (fish/100m2) for PSCIS crossing ', my_site, '.')
+
+tab_fish_dens() %>% 
+  my_kable(caption_text = my_caption)
+```
+
+<br>
+
+```{r plot-fish-box-58159, fig.cap= my_caption, eval=T}
+my_caption <- paste0('Densities of fish captured (fish/100m2) during electrofishing upstream and downstream of PSCIS crossing ', my_site, '.')
+
+plot_fish_box() 
+
+```
+
+
 <br>
 
 
@@ -216,34 +246,6 @@ my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
 knitr::include_graphics(get_img_path(photo = my_photo1))
 knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics(get_img_path(photo = my_photo2))
-```
-
-<br>
-
-```{r tab-fish-site-58159, eval=T}
-my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
-
-tab_fish_site() %>% 
-  my_kable(caption_text = my_caption)
-```
-
-
-<br>
-
-```{r tab-fish-dens-58159, eval=T}
-my_caption <- paste0('Fish densities (fish/100m2) for PSCIS crossing ', my_site, '.')
-
-tab_fish_dens() %>% 
-  my_kable(caption_text = my_caption)
-```
-
-<br>
-
-```{r plot-fish-box-58159, fig.cap= my_caption, eval=T}
-my_caption <- paste0('Densities of fish captured (fish/100m2) during electrofishing upstream and downstream of PSCIS crossing ', my_site, '.')
-
-plot_fish_box() 
-
 ```
 
 

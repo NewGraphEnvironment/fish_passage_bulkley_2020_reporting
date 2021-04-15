@@ -17,3 +17,9 @@ v0.1.0
 - finalize methods and references for fish
 - finalize pdf formating
 - add fish gantt chart and much fish detail
+
+v0.1.1
+- 2021-04-15
+- host map attachment on google drive for now until we get set up on aws
+- fix attachment names
+- notes for next release - point to both hillcrest files for MORR and BULK maps?

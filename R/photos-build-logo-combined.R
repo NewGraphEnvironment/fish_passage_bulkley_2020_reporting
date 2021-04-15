@@ -31,10 +31,7 @@ image_read("fig/hctf_large.jpg") %>%
   image_write(path = "fig/logo_hctf.png", format = 'png')
 
 ##combine newgraph and hctf logos
-images_to_combine <- paste0(getwd(), c('/fig/logo_sern.png','/fig/logo_hctf.png')) %>%
+images_to_combine <- paste0(getwd(), c('/fig/logo_hctf.png','/fig/logo_html3.png')) %>%
   image_read() %>%
-  image_mosaic()  %>%  ##half the original height
-  image_write(path = paste0(getwd(), '/fig/logo_sern_hctf.png'), format = 'png')
-
-
-
+  image_append(stack = T)  %>%  ##half the original height
+  image_write(path = paste0(getwd(), '/fig/logo_hctf_newg.png'), format = 'png')

@@ -9,12 +9,13 @@ source('R/0255-load-pscis.R')
 
 conn <- DBI::dbConnect(
   RPostgres::Postgres(),
-  dbname = dbname,
-  host = host,
-  port = port,
-  user = user,
-  password = password
+  dbname = dbname_wsl,
+  host = host_wsl,
+  port = port_wsl,
+  user = user_wsl,
+  password = password_wsl
 )
+
 #
 # ##listthe schemas in the database
 # dbGetQuery(conn,
@@ -127,7 +128,7 @@ rws_list_tables(conn)
 bcfishpass_archive <- readwritesqlite::rws_read_table("bcfishpass_morr_bulk", conn = conn)
 # rws_drop_table("bcfishpass_archive", conn = conn) ##if it exists get rid of it - might be able to just change exists to T in next line
 rws_write(bcfishpass_archive, exists = F, delete = TRUE,
-          conn = conn, x_name = paste0("bcfishpass_morr_bulk_archive_cw", "_", format(Sys.time(), "%Y-%m-%d-%H%m")))
+          conn = conn, x_name = paste0("bcfishpass_morr_bulk_archive_", "_", format(Sys.time(), "%Y-%m-%d-%H%m")))
 rws_drop_table("bcfishpass_morr_bulk", conn = conn) ##now drop the table so you can replace it
 rws_write(bcfishpass_morr_bulk, exists = F, delete = TRUE,
           conn = conn, x_name = "bcfishpass_morr_bulk")

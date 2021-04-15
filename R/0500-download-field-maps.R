@@ -26,6 +26,6 @@ for (filename in filenames) {
 }
 
 ##get a list of the files and zip them up together into
-files_to_zip <- paste0("maps/", list.files(path = "data/", pattern = "\\.pdf$"))  ##this used to includes the planning file which we don't want to do so watch out
+files_to_zip <- paste0("maps/", list.files(path = "maps/", pattern = "\\.pdf$"))  ##this used to includes the planning file which we don't want to do so watch out
 zip::zipr("data/Attachment_2_maps.zip", files = files_to_zip)
 

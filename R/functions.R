@@ -479,10 +479,10 @@ text_ref_tab_summary_bcfp <-  function(site = my_site){
 ##grab a df with the names of the left hand side of the table
 make_tab_summary_bcfp_planning <- function(dat = bcfishpass_all,
                                   xref_table = xref_bcfishpass_names,
-                                  site = my_site){
+                                  siteid){
   df <- dat %>%
     mutate(across(where(is.numeric), round, 1)) %>%
-    filter(aggregated_crossings_id == site)  ##this is all that changes.  need to script but it tidyeval and don't want to deal
+    filter(aggregated_crossings_id == siteid)  ##this is all that changes.  need to script but it tidyeval and don't want to deal
     # distinct(stream_crossing_id, .keep_all = T)
   tab_results_left <- xref_table %>%
     filter(id_side == 1) %>%

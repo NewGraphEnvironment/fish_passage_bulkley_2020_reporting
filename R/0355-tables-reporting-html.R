@@ -78,8 +78,11 @@ pscis_all %>%
   pull(pscis_crossing_id) %>%
   map(print_tab_summary_bcfp_html)
 
+##print the modelled crossing tables
 tab_plan_raw %>%
   filter(!is.na(my_text)) %>%
   pull(aggregated_crossings_id) %>%
   map(print_tab_summary_html_planning)
+
+##should do phase 1 as well
 

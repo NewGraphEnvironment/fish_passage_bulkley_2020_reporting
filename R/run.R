@@ -79,7 +79,8 @@ file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')}
 ##i did this by hand last time but would be good to automate!!!
 
 ##  make the site
-source('R/photos-extract-metadata.R')
+# source('R/photos-extract-metadata.R') ##if you added new photos
+# source('R/0355-tables-reporting-html.R')  #if you changed the modelling outputs
 
 
 #################################################################################################
@@ -98,7 +99,10 @@ files_to_move <- list.files(pattern = ".Rmd$") %>%
   stringr::str_subset(., 'index|Bulkley|0600', negate = T)
 files_destination <- paste0('hold/', files_to_move)
 
+##move the files
 mapply(file.rename, from = files_to_move, to = files_destination)
+
+
 
 ##this is hacky but hash out the following from the functions.R file print_tab_summary_all function
 # kableExtra::add_footnote(label = '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>', escape = F, notation = 'none')

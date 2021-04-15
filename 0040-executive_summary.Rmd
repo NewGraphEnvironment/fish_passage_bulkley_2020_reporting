@@ -6,7 +6,11 @@ The health and viability of freshwater fish populations can depend on access to 
 
 <br>
 
-Following review of background literature, fisheries information, PSCIS and `bcfishpass` outputs, `r tab_plan_sf %>% nrow()` modelled and PSCIS crossings were reviewed to select sites for follow up with Phase 1 and 2 assessments in the Morice River watershed. Although planning for field assessments ws still underway at the time of reporting through ongoing modelling, engagement with the Office of Wet’suwet’en, DFO, FLNRORD, BC Ministry of Environment, the Morice Watershed Monitoring Trust and numerous others, `r tab_plan_sf %>% filter(Priority == 'high') %>%  nrow()` crossings were ranked as high priority for future follow up with Phase 1 and/or Phase 2 assessments, `r tab_plan_sf %>% filter(Priority == 'moderate') %>%  nrow()` crossings ranked as moderate priorities, and `r tab_plan_sf %>% filter(Priority == 'low') %>%  nrow()` crossings ranked as low priorities. Online interactive and georeferenced field maps were produced and a field plan for future on the ground assessments formulated.  Some key areas targeted for future fieldwork activity include assessments within the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds.
+Through this initiative, the Provincial Fish Passage Remediation Program and connectivity restoration planning led by the Canadian Wildlife Federation and funded by the British Columbia Salmon Restoration and Innovation Fund, `bcfishpass` has been designed to prioritize potential fish passage barriers for assessment or remediation. The software is under continual development and has been designed and constructed by @norris2021smnorrisbcfishpass using of sql and python based shell script libraries to generate a simple model of aquatic habitat connectivity which includes tools to assess the intrinsic value of habitat upstream of potential barrier locations.
+
+<br>
+
+Following review of background literature, fisheries information, Provincial Stream Crossing Inventory System (PSCIS) and `bcfishpass` outputs, `r tab_plan_sf %>% nrow()` modelled and PSCIS crossings were reviewed to select sites for follow up with Phase 1 and 2 fish passage assessments in the Morice River watershed. Although planning for field assessments ws still underway at the time of reporting through ongoing modelling, engagement with the Office of Wet’suwet’en, DFO, FLNRORD, BC Ministry of Environment, the Morice Watershed Monitoring Trust and numerous others, `r tab_plan_sf %>% filter(Priority == 'high') %>%  nrow()` crossings were ranked as high priority for future follow up with Phase 1 and/or Phase 2 assessments, `r tab_plan_sf %>% filter(Priority == 'moderate') %>%  nrow()` crossings ranked as moderate priorities, and `r tab_plan_sf %>% filter(Priority == 'low') %>%  nrow()` crossings ranked as low priorities. Online interactive and georeferenced field maps were produced and a field plan for future on the ground assessments formulated.  Some key areas targeted for future fieldwork activity include assessments within the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds.
 
 <br>
 
@@ -30,15 +34,15 @@ Recommendations for potential incorporation into collaborative watershed connect
  
  * Continue to conduct fish passage and habitat confirmation assessments at road and rail stream crossings at sites in the study areas prioritized through this project and future connectivity analysis/modelling. In the Bulkley River watershed group, particular sites of note where future Phase 1 and Phase 2 assessments are recommended include John Brown Creek, Toboggan Creek, Cesford Creek, Watson Creek and Ailport Creek.
  
- * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of crossing structure upgrades alongside the cost benefits and ethics of alternative restoration activities.
+ * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of crossing structure upgrades alongside the cost benefits and ethics of alternative restoration activities and look for opportunities to leverage initiatives together for maximum restoration benefits.
  
  * Refine barrier thresholds for road-stream crossing structures to explore passability metrics specific to life stage and life history types of species of interest. 
  
  * Model fish densities (fish/m^2^) vs. habitat/water quality characteristics (i.e. gradient, watershed size, channel size, alkalinity, elevation, etc.) using historically gathered electrofishing data to inform crossing prioritization, future data acquisition needs, and the monitoring of subsequent restoration actions.
  
- * Expand the working group focus area to include the greater Skeena River watershed. 
+ * Expand the Bulkley River fish passage working group focus area to include the greater Skeena River watershed. 
  
-  * Build relationships with other working groups (ex. Washington Wildlife Habitat Connectivity Working Group) to share knowledge related to large scale connectivity remediation.
+ * Build relationships with other working groups (ex. Washington Wildlife Habitat Connectivity Working Group) to share knowledge and biuld capacity related to large scale connectivity remediation.
  
  * Continue to collaborate with potential partners to build relationships, explore perspectives and develop “road maps” for fish passage restoration in different situations (MoT roads, rail lines, permit roads of different usages, FSRs, etc.) – documenting the people involved, discussions and processes that are undertaken, funding options, synergies, measures of success, etc. 
 

@@ -10,3 +10,10 @@ v0.0.8
 
 v0.0.9
 - add short section for morice results as per exec summary
+
+v0.1.0
+- release draft to HCTF
+- use channel width model
+- finalize methods and references for fish
+- finalize pdf formating
+- add fish gantt chart and much fish detail

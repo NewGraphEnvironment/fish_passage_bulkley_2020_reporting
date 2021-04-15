@@ -1,10 +1,9 @@
 --- 
-title: "DRAFT - Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning"
+title: "Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning"
 author: |
  |
- |
  | Prepared for
- | Habitat Conservation Trust Fund
+ | Habitat Conservation Trust Foundation - CAT21-6-288
  | BC Fish Passage Remediation Program
  | Canadian Wildlife Federation
  |
@@ -12,14 +11,11 @@ author: |
  | Prepared by
  | Al Irvine, B.Sc., R.P.Bio.
  | New Graph Environment
- | 6 Regent St
- | Nelson, BC V1L 2P1
- |  
  | on behalf of
  | Society for Ecosytem Restoration Northern BC
 date: |
  |
- | DRafT - Version 0.0.10
+ | Version 0.1.0
  | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
@@ -33,8 +29,7 @@ nocite: |
   @sloat_etal2017Streamnetworka,
   @woll_etal2017SalmonEcological,
   @porter_etal2008DevelopingFish,
-  @rosenfeld_etal2000Habitatfactorsa,
-  
+  @rosenfeld_etal2000Habitatfactorsa
 documentclass: book
 bibliography: [book.bib, references.bib, packages.bib]
 biblio-style: apalike
@@ -46,13 +41,16 @@ description: "My Description."
 
 
 ```{r setup, include = TRUE, echo =FALSE, message=FALSE, warning=FALSE}
+gitbook_on <- TRUE
+# gitbook_on <- FALSE  ##we just need turn  this on and off to switch between gitbook and pdf via paged.js
+
+
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, dpi=60, out.width = "100%")
 options(scipen=999)
 options(knitr.kable.NA = '--') #'--'
 options(knitr.kable.NAN = '--')
 
-gitbook_on <- TRUE
-# gitbook_on <- FALSE  ##we just need turn  this on and off to switch between gitbook and pdf via paged.js
+
 
 ```
 
@@ -260,7 +258,7 @@ Dzïn scudïlh’iy misiyh. Hami yaa nee loosim.
 
 ```{js, logo-header, echo = FALSE, eval= T}
 title=document.getElementById('header');
-title.innerHTML = '<img src="fig/logo_sern.png" alt="NewGraph">' + title.innerHTML
+title.innerHTML = '<img src="fig/logo_sern_hctf.png" alt="NewGraph">' + title.innerHTML
 ```
 
 
@@ -274,7 +272,11 @@ The health and viability of freshwater fish populations can depend on access to 
 
 <br>
 
-Fish passage restoration planning for the Morice River watershed was informed by engagement with the Office of Wet'suwet'en, the Morice Watershed Monitoring Trust and numerous others along with the development and application of open-source `bcfishpass` tools which were utilized to analyze potential habitat gains of remediation activities based on species and life stage specific habitat characteristics. Online interactive and georeferenced field maps were produced and a field plan for future on the ground assessments formulated.  Some key areas targeted for future fieldwork activity include assessments within the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds.
+Through this initiative, the Provincial Fish Passage Remediation Program and connectivity restoration planning led by the Canadian Wildlife Federation and funded by the British Columbia Salmon Restoration and Innovation Fund, `bcfishpass` has been designed to prioritize potential fish passage barriers for assessment or remediation. The software is under continual development and has been designed and constructed by @norris2021smnorrisbcfishpass using of sql and python based shell script libraries to generate a simple model of aquatic habitat connectivity which includes tools to assess the intrinsic value of habitat upstream of potential barrier locations.
+
+<br>
+
+Following review of background literature, fisheries information, Provincial Stream Crossing Inventory System (PSCIS) and `bcfishpass` outputs, `r tab_plan_sf %>% nrow()` modelled and PSCIS crossings were reviewed to select sites for follow up with Phase 1 and 2 fish passage assessments in the Morice River watershed. Although planning for field assessments ws still underway at the time of reporting through ongoing modelling, engagement with the Office of Wet’suwet’en, DFO, FLNRORD, BC Ministry of Environment, the Morice Watershed Monitoring Trust and numerous others, `r tab_plan_sf %>% filter(Priority == 'high') %>%  nrow()` crossings were ranked as high priority for future follow up with Phase 1 and/or Phase 2 assessments, `r tab_plan_sf %>% filter(Priority == 'moderate') %>%  nrow()` crossings ranked as moderate priorities, and `r tab_plan_sf %>% filter(Priority == 'low') %>%  nrow()` crossings ranked as low priorities. Online interactive and georeferenced field maps were produced and a field plan for future on the ground assessments formulated.  Some key areas targeted for future fieldwork activity include assessments within the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds.
 
 <br>
 
@@ -298,15 +300,15 @@ Recommendations for potential incorporation into collaborative watershed connect
  
  * Continue to conduct fish passage and habitat confirmation assessments at road and rail stream crossings at sites in the study areas prioritized through this project and future connectivity analysis/modelling. In the Bulkley River watershed group, particular sites of note where future Phase 1 and Phase 2 assessments are recommended include John Brown Creek, Toboggan Creek, Cesford Creek, Watson Creek and Ailport Creek.
  
- * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of crossing structure upgrades alongside the cost benefits and ethics of alternative restoration activities.
+ * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of crossing structure upgrades alongside the cost benefits and ethics of alternative restoration activities and look for opportunities to leverage initiatives together for maximum restoration benefits.
  
  * Refine barrier thresholds for road-stream crossing structures to explore passability metrics specific to life stage and life history types of species of interest. 
  
  * Model fish densities (fish/m^2^) vs. habitat/water quality characteristics (i.e. gradient, watershed size, channel size, alkalinity, elevation, etc.) using historically gathered electrofishing data to inform crossing prioritization, future data acquisition needs, and the monitoring of subsequent restoration actions.
  
- * Expand the working group focus area to include the greater Skeena River watershed. 
+ * Expand the Bulkley River fish passage working group focus area to include the greater Skeena River watershed. 
  
-  * Build relationships with other working groups (ex. Washington Wildlife Habitat Connectivity Working Group) to share knowledge related to large scale connectivity remediation.
+ * Build relationships with other working groups (ex. Washington Wildlife Habitat Connectivity Working Group) to share knowledge and biuld capacity related to large scale connectivity remediation.
  
  * Continue to collaborate with potential partners to build relationships, explore perspectives and develop “road maps” for fish passage restoration in different situations (MoT roads, rail lines, permit roads of different usages, FSRs, etc.) – documenting the people involved, discussions and processes that are undertaken, funding options, synergies, measures of success, etc. 
 
@@ -455,6 +457,8 @@ knitr::include_graphics("fig/hydrology_stats_08ED002.png")
 
 ## Fisheries
 
+In 2004, @ibmbusinessconsultingservices2006ValuationWild estimated the value of Skeena Fisheries at an annual average of $110 million dollars.  The Bulkley-Morice watershed is an integral part of the salmon production in the Skeena drainage and supports an internationally renown steelhead, chinook and coho sport fishery [@tamblyn2005PlanConserve].  
+
 ### Bulkley River
 
 Traditionally, the salmon stocks passing through and spawning in Bulkley River were the principal food source for the Gitxsan and Wet’suwet’en people living there [@wilson_rabnett2007FishPassage]. @wilson_rabnett2007FishPassage detail numerous fishing  areas located within the lower Bulkley  drainage (from  the confluence of the Skeena to the confluence with the Telkwa River) and the upper Bulkley drainage which includes the mainstem Bulkley River and tributaries upstream of the Telkwa River confluence. Anadromous lamprey passing through and spawning in the upper Bulkley River were traditionally also an important food source for the Wet'suwet'en  (Wilson and Rabnett 2007; pers comm. Mike Ridsdale, Environmental Assessment Coordinator, Office of the Wet'suwet'en).
@@ -478,12 +482,60 @@ Detailed reviews of Morice River watershed fisheries can be found in @bustard_sc
 
 #### Fish Species
 
-Fish species recorded in the Bulkley River and Morice River watershed groups are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Coastal cutthrout trout and bull trout are considered of special concern (blue-listed) provincially. Summaries of some of the Skeena and Bulkley River fish species life history, biology, stock status, and traditional use are documented in  @schell2003BriefOverview,  @wilson_rabnett2007FishPassage,   @gottesfeld_etal2002ConservingSkeena and @officeofthewetsuweten2013Wetsuwet.  @wilson_rabnett2007FishPassage discuss chinook, pink, sockeye, coho, steelhead and indigenous freshwater Bulkley River fish stocks within the context of key lower and upper Bulkley River habitats such as the Suskwa River, Station  Creek,  Harold  Price  Creek,  Telkwa  River  and  Buck  Creek.    Key  areas  within  the  upper  Bulkley River  watershed  with  high  fishery  values,   documented  in  @schell2003BriefOverview,  are  the  upper  Bulkley mainstem, Buck Creek,  Dungate Creek, Barren Creek, McQuarrie Creek, Byman Creek, Richfield Creek, Johnny David Creek, Aitken Creek and Emerson Creek. A gantt chart for select species in the Morice River watershed is included as Figure \@ref(fig:fish-gantt-morice).
+Fish species recorded in the Bulkley River and Morice River watershed groups are detailed in Table \@ref(tab:fiss-species-table) [@data_fish_obs].  Coastal cutthrout trout and bull trout are considered of special concern (blue-listed) provincially. Summaries of some of the Skeena and Bulkley River fish species life history, biology, stock status, and traditional use are documented in  @schell2003BriefOverview,  @wilson_rabnett2007FishPassage,   @gottesfeld_etal2002ConservingSkeena and @officeofthewetsuweten2013Wetsuwet.  @wilson_rabnett2007FishPassage discuss chinook, pink, sockeye, coho, steelhead and indigenous freshwater Bulkley River fish stocks within the context of key lower and upper Bulkley River habitats such as the Suskwa River, Station  Creek,  Harold  Price  Creek,  Telkwa  River  and  Buck  Creek.    Key  areas  within  the  upper  Bulkley River  watershed  with  high  fishery  values,   documented  in  @schell2003BriefOverview,  are  the  upper  Bulkley mainstem, Buck Creek,  Dungate Creek, Barren Creek, McQuarrie Creek, Byman Creek, Richfield Creek, Johnny David Creek, Aitken Creek and Emerson Creek. 
+
+<br>
+
+Some key areas of high fisheries values for chinook, sockeye and coho are noted in @bustard_schell2002ConservingMorice as McBride Lake, Nanika Lake, and Morice Lake watersheds. A draft gantt chart for select species in the Morice River and Bulkley River watersheds was derived from reviews of the aforementioned references and is included as Figure \@ref(fig:fish-gantt-morice).  The data is considered in draft form and will be refined over the spring and summer of 2021 with local fisheries technicians and knowledge holders during the collaboratory assessment planning and fieldwork activities planned.
+
+<br>
+
+In the 1990's the Morice River watershed, @gottesfeld_rabnett2007SkeenaFish estimated that chinook comprised 30% of the total Skeena system chinook escapements. It is estimated that Morice River coho comprise approximatley 4% of the Skeena escapement with a declining trend noted since the 1950 in @gottesfeld_rabnett2007SkeenaFish.  Coho spawn in major tributaries and small streams ideally at locations where downstream dispersal can result in seeding of prime off channel habitats including warm productive sloughs and side channels.  Of all the salmon species, coho rely on small tributaries the most [@bustard_schell2002ConservingMorice]. @bustard_schell2002ConservingMorice report that much of the distribution of coho into non-natal tributaries occurs during high flow periods of May - early July with road culverts blocking migration into these habitats.
+
+
+
+```{r}
+##### Chinook
+#  In the 1990's Morice River watershed, @gottesfeld_rabnett2007SkeenaFish estimated that chinook comprised 30% of the total Skeena system chinook escapements. @buckwalter_kirsch2012Fishinventory have recorded juvenile chinook rearing in small non natal streams. 
+
+# @buckwalter_kirsch2012Fishinventory have uvenile chinook have been recorded rearing in small non natal streams 
+
+
+#It is estimated that Morice River coho comprise approximatley 4% of the Skeena escapement with a declining trend noted since the 1950 in @gottesfeld_rabnett2007SkeenaFish.  Coho spawn in major tributaries and small streams ideally at locations where downstream dispersal can result in seeding of prime off channel habitats including warm productive sloughs and side channels.  Of all the salmon species, coho rely on small tributaries the most [@bustard_schell2002ConservingMorice]. @bustard_schell2002ConservingMorice report that much of the distribution of coho into non-natal tributaries occurs during high flow periods of May - early July with road culverts blocking migration into these habitats.
+```
+
+
+
+<br>
+
+
+Summaries of historical fish observations in the Bulkley River and Morice River watershed groups (n=4033), graphed by remotely sensed average gradient as well as measured or modelled channel width categories for their associated stream segments where calculated with `bcfishpass` and `bcfishobs` and are provided in Figures \@ref(fig:fish-plot-grad) - \@ref(fig:fish-plot-width). 
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br><br>")`
+
+
+```{r fiss-species-table}
+fiss_species_table <- readr::read_csv(paste0(getwd(), '/data/extracted_inputs/fiss_species_table.csv'))
+  # filter(`Species Code` != 'CT') %>% 
+# fiss_species_table %>%  
+#   my_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
+
+
+if(gitbook_on){
+fiss_species_table %>% 
+  my_kable_scroll(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
+} else fiss_species_table[1:41, ] %>% 
+  my_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
+
+if(identical(gitbook_on, FALSE)){fiss_species_table[42:nrow(fiss_species_table), ] %>% 
+  my_kable()}
+
+```
 
 <br>
 
  
-```{r fish-gantt-morice, fig.cap = 'Gantt chart for select species in the Morice River watershed.  To be updated.', eval=T}
+```{r fish-gantt-morice, fig.cap = 'Gantt chart for select species in the Morice River and Bulkley River watersheds.  To be updated in consultation with local fisheries techicians and knowledge holders.', eval=T}
 gantt_raw <- read_csv("data/inputs_raw/fish_species_life_history_gantt.csv")
 
 
@@ -526,35 +578,7 @@ ggplot(gantt, aes(xmin = morice_start2,
 ```
 
 
-
-```{r}
-##### Chinook
-#  In the 1990's Morice River watershed, @gottesfeld_rabnett2007SkeenaFish estimated that chinook comprised 30% of the total Skeena system chinook escapements. @buckwalter_kirsch2012Fishinventory have recorded juvenile chinook rearing in small non natal streams. 
-
-# @buckwalter_kirsch2012Fishinventory have uvenile chinook have been recorded rearing in small non natal streams 
-
-
-#It is estimated that Morice River coho comprise approximatley 4% of the Skeena escapement with a declining trend noted since the 1950 in @gottesfeld_rabnett2007SkeenaFish.  Coho spawn in major tributaries and small streams ideally at locations where downstream dispersal can result in seeding of prime off channel habitats including warm productive sloughs and side channels.  Of all the salmon species, coho rely on small tributaries the most [@bustard_schell2002ConservingMorice]. @bustard_schell2002ConservingMorice report that much of the distribution of coho into non-natal tributaries occurs during high flow periods of May - early July with road culverts blocking migration into these habitats.
-```
-
-
-
 <br>
-
-Summaries of historical fish observations in the Bulkley River and Morice River watershed groups (n=4033), graphed by remotely sensed average gradient as well as measured or modelled channel width categories for their associated stream segments where calculated with `bcfishpass` and `bcfishobs` and are provided in Figures \@ref(fig:fish-plot-grad) - \@ref(fig:fish-plot-width). 
-
-<br>
-
-
-```{r fiss-species-table}
-fiss_species_table <- readr::read_csv(paste0(getwd(), '/data/extracted_inputs/fiss_species_table.csv'))
-  # filter(`Species Code` != 'CT') %>% 
-fiss_species_table %>%  
-  my_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
-
-
-```
-
 
 ```{r fish-fiss-summary, eval=T}
 # fiss_sum <- readr::read_csv(file = paste0(getwd(), '/data/extracted_inputs/fiss_sum.csv'))
@@ -698,11 +722,11 @@ The `Fish Habitat Model` calculates the average gradient of BC Freshwater Atlas 
 <br>
 
 
-`bcfishpass` is comprised of sql and python based shell script libraries that "generate a simple model of aquatic habitat connectivity by identifying natural barriers to fish passage (plus hydro dams that are not feasible to remediate) and classifying all streams not upstream of these barriers as 'potentially accessible'" [@norris2021smnorrisbcfishpass]. On potentially accessible streams, scripts "identify known barriers and additional anthropogenic features (primarily road/railway stream crossings, i.e. culverts) that are potentially barriers. To prioritize these features for assessment or remediation," the scripts "report on how much modelled potentially accessible aquatic habitat the barriers may obstruct. The model can be refined with known fish observations. Depending on the modelling scenario, all aquatic habitat downstream of a given fish observation can be classified as 'observed accessible', overriding any downstream barriers."  For each crossing location, the area of lake and wetland habitat upstream, species documented upstream and an estimate of watershed area can be collated using `bcfishpass`, `fwapg` and `bcfishobs` to provide an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored.
+Through this initiative, the Provincial Fish Passage Remediation Program and connectivity restoration planning led by Canadian Wildlife Federation and funded by the British Columbia Salmon Restoration and Innovation Fund, `bcfishpass` has been designed to prioritize potential fish passage barriers for assessment or remediation. The software is under continual development and has been designed and constructed by @norris2021smnorrisbcfishpass using of sql and python based shell script libraries to generate a simple model of aquatic habitat connectivity.  The model identifes natural barriers (ex. steep gradients for extended distances) and hydroelectric dams to classifying the accessibility upstream by fish [@norris2021smnorrisbcfishpass]. On potentially accessible streams, scripts identify known barriers (ex. waterfalls >5m high) and additional anthropogenic features which are primarily road/railway stream crossings (i.e. culverts) that are potentially barriers. To prioritize these features for assessment or remediation, scripts report on how much modelled potentially accessible aquatic habitat the barriers may obstruct. The model can be refined with known fish observations upstream of identified barriers and for each crossing location, the area of lake and wetland habitat upstream, species documented upstream/downstream, an estimate of watershed area (on 2nd order and higher streams), mean annual precipitation weighted to upstream watershed area and channel width can be collated using `bcfishpass`, `fwapg` and `bcfishobs`.  This, information, can be used to provides an indication of the potential quantity and quality of habitat potentially gained should fish passage be restored by comparing to user defined thresholds for the aforementioned parameters. A discussion of the methodology to derive channel width is below.
  
  <br>
 
-Gradient and channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High value  rearing, overwintering  and spawning habitat is often located within channel types with relatively low gradients and the size of the channel (also effectively quantified by the amount of flow in the stream) is often a good predictor of species/life stage utilization.  Following delineation of "potentially accessible habitat", the average gradient of each stream segment within habitat classified as below the 15% threshold as well as the 20% threshold was calculated and summed within species and life stage specific gradient categories.  Average gradient of stream line segments can be calculated from elevations contained in the provincial freshwater atlas streamline dataset. To obtain estimates of channel width upstream of crossing locations, Where available, `bcfishpass` was utilized to pull average channel gradients from Fisheries Information Summary System (FISS) site assessment data [@moeStreamInventorySample] or PSCIS and associate with stream segment lines. To derive a formula to estimate channel width for 2nd order and above stream segments without associated FISS or PSCIS sites, `fwapg` was used to estimate the drainage area upstream of the segment.  Additionally, rasters from ClimateBC [@wang_etal2012ClimateWNAHighResolution] were sampled for all stream segments and a mean annual precipitation weighted by upstream watershed area was calculated. Mean annual precipitation was then combined with the channel width and BEC zone information (gathered through a spatial query tied to the bottom of the stream segment) into a dataset (n = 22990) for analysis.  The details of this bayesian analysis and resulting formula used to estimate channel width on stream segements in the Bukley River and Morice River watersheds is included as a technical appendix at https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/docs/channel-width-21.pdf. 
+Gradient, channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High value  rearing, overwintering  and spawning habitat preferred by numerous species/life stages of fish is often located within channel types that have relatively low gradients and large channel widths (also quantified by the amount of flow in the stream).  Following delineation of "potentially accessible habitat", the average gradient of each stream segment within habitat classified as below the 15% threshold as well as the 20% threshold was calculated and summed within species and life stage specific gradient categories.  Average gradient of stream line segments can be calculated from elevations contained in the provincial freshwater atlas streamline dataset. To obtain estimates of channel width upstream of crossing locations, Where available, `bcfishpass` was utilized to pull average channel gradients from Fisheries Information Summary System (FISS) site assessment data [@moeStreamInventorySample] or PSCIS assessment data [@moe2021PSCISAssessments] and associate with stream segment lines. To model channel width for 2nd order and above stream segments without associated FISS or PSCIS sites, first `fwapg` was used to estimate the drainage area upstream of the segment.  Then, rasters from ClimateBC [@wang_etal2012ClimateWNAHighResolution] were sampled for all stream segments and a mean annual precipitation weighted by upstream watershed area was calculated. Mean annual precipitation was then combined with the channel widths and BEC zone information (gathered through a spatial query tied to the bottom of the stream segment) into a dataset (n = 22990) for analysis.  The details of this analysis and resulting formula used to estimate channel width on stream segments in the Bukley River and Morice River watersheds is included as a technical appendix at https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/docs/channel-width-21.pdf. 
 
 <br>
 
@@ -710,10 +734,13 @@ Gradient and channel size and stream discharge are key determinants of channel m
 
 `bcfishpass` and associated tools have been designed to be flexible in analysis, accepting user defined gradient, channel width and stream discharge categories [@moeStreamInventorySample].  Although currently in draft form, and subject to development revisions, gradient and channel width thresholds for habitat with the highest intrinsic value for a number of fish species in the Bulkley River and Morice River watersheds groups have been specified and applied to model habitat upstream of stream crossing locations with the highest intrinsic value (Table \@ref(tab:tab-fish-spawning-rearing)).  Thresholds were derived based on a literature review with references provided in Table \@ref(tab:tab-fish-spawning-rearing-references). 
 
-<br>
+
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br>")`
 
 
 ```{r tab-fish-spawning-rearing}
+#`r if(identical(gitbook_on, FALSE)){knitr::asis_output("<br><br><br>")}`
 bcfishpass_spawn_rear_model %>% 
   mutate(Species = fishbc::fbc_common_name(species_code), 
          spawn_gradient_max = round(spawn_gradient_max * 100 ,1),
@@ -824,7 +851,7 @@ tab_habvalue %>%
   
 ```
  
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ### Barrier Scoring
 
@@ -868,7 +895,7 @@ The habitat gain index is the quantity of modelled habitat upstream of the subje
 
 <br>
 
-For reporting of Phase 1 - fish passage assessments within the body of this report (Table \@ref(tab:tab-barrier-scoring)), a "total" value of habitat <20% output from `bcfishpass` was used to estimate the amount of habitat upstream of each crossing less than 20% gradient before a falls of height >5m - as recorded in @ProvincialObstaclesFish or documented in other [`bcfishpass` falls documentation](https://github.com/smnorris/bcfishpass/tree/main/01_prep/05_falls). To generate areas of habitat upstream, the estimated linear length was multiplied by the downstream channel width measured as part of the fish passage assessment protocol.  Although these estimates are not generally conservative, have low accuracy and do not account for upstream stream crossing structures they do allow a rough screening of the best candidates for follow up with more detailed Phase 2 assessments. 
+For reporting of Phase 1 - fish passage assessments within the body of this report (Table \@ref(tab:tab-barrier-scoring)), a "total" value of habitat <20% output from `bcfishpass` was used to estimate the amount of habitat upstream of each crossing less than 20% gradient before a falls of height >5m - as recorded in @ProvincialObstaclesFish or documented in other `bcfishpass` online documentation. To generate areas of habitat upstream, the estimated linear length was multiplied by the downstream channel width measured as part of the fish passage assessment protocol.  Although these estimates are not generally conservative, have low accuracy and do not account for upstream stream crossing structures they do allow a rough screening of the best candidates for follow up with more detailed Phase 2 assessments. 
 
 <br>
 
@@ -893,9 +920,7 @@ Cost estimates for structure replacement with bridges and embedded culverts were
 
 Base costs for installation of bridges on forest service roads and permit roads with surfaces specified in provincial GIS road layers as rough and loose was estimated at \$12500/linear m and assumed that the road could be closed during construction and a minimum bridge span of 10m. For streams with channel widths <2m, embedded culverts were reported as an effective solution with total installation costs estimated at $25k/crossing (pers. comm. Phil MacDonald, Steve Page). For larger streams (>6m), span width increased proportionally to the size of the stream (ex. for an 8m wide stream a 12m wide span was prescribed).  For crossings with large amounts of fill (>3m), the replacement bridge span was increased by an additional 3m for each 1m of fill >3m to account for cutslopes to the stream at a 1.5:1 ratio. To account for road type, a multiplier table was also generated to estimate incremental cost increases with costs estimated for structure replacement on paved surfaces, railways and arterial/highways costing up to 20 times more than forest service roads due to expenses associate with design/engineering requirements, traffic control and paving.  The cost multiplier table (Table \@ref(tab:tab-cost-mult)) should be considered very approximate with refinement recommended for future projects.  
 
-<br>
-
-\pagebreak
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-cost-mult}
 # print_tab_cost_mult(caption_text = 'Cost multiplier table based on road class and surface type.')
@@ -923,7 +948,7 @@ Fish sampling was conducted a subset of sites when biological data was considere
 
 ## Reporting
 
-Reporting was generated with `bookdown` [@bookdown2016] from `Rmarkdown` [@R-rmarkdown] with primarily `R` [@rcoreteam2020languageenvironment] and `SQL` scripts. In addition to numerous spatial layers sourced through the BC Data Catalogue then stored and queried in local and remote `postgresql` databases, [data inputs](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data) for this project include: 
+Reporting was generated with `bookdown` [@bookdown2016] from `Rmarkdown` [@R-rmarkdown] with primarily `R` [@rcoreteam2020languageenvironment] and `SQL` scripts. In addition to numerous spatial layers sourced through the BC Data Catalogue then stored and queried in a local `postgresql` database [data inputs](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data) for this project include: 
 
  + Populated [Fish Data Submission Spreadsheet Template - V 2.0, January 20, 2020 ](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data#submitfish) 
 
@@ -996,10 +1021,10 @@ map <- leaflet(height=500, width=780) %>%
   addProviderTiles("Esri.WorldImagery", group = "ESRI Aerial") %>% 
   addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
     opacity = 1.0, fillOpacity = 0.25,
-    fillColor = "#00DBFF", label = wshds$stream_crossing_id) %>%
+    fillColor = "#00DBFF", label = wshds$stream_crossing_id, group = "Phase 2") %>%
   addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'BULK'), color = "#F29A6E", weight = 1, smoothFactor = 0.5,
     opacity = 1.0, fillOpacity = 0,
-    fillColor = "#F29A6E", label = 'Bulkley River', group = "Phase 2") %>%
+    fillColor = "#F29A6E", label = 'Bulkley River') %>%
   addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'MORR'), color = "#C39D50", weight = 1, smoothFactor = 0.5,
     opacity = 1.0, fillOpacity = 0,
     fillColor = "#C39D50", label = 'Morice River') %>%
@@ -1089,7 +1114,7 @@ map %>%
 
 ## Planning
 
-Following review of background literature, fisheries information, PSCIS and `bcfishpass` outputs, `r tab_plan_sf %>% nrow()` modelled and PSCIS crossings were reviewed to select sites for follow up with Phase 1 and 2 assessments in the Morice River watershed.   `r tab_plan_sf %>% filter(Priority == 'high') %>%  nrow()` crossings ranked as high priority for future follow up with Phase 1 and/or Phase 2 assessments, `r tab_plan_sf %>% filter(Priority == 'moderate') %>%  nrow()` crossings ranked as moderate priorities, and `r tab_plan_sf %>% filter(Priority == 'low') %>%  nrow()` crossings ranked as low priorities. Results are presented `r if(gitbook_on){knitr::asis_output("in Figure \\@ref(fig:map-interactive) and included as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)). Georeferenced pdf maps are available in [Attachment 2](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/) ")} else knitr::asis_output("as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)) with georeferenced maps available at [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_2_maps.zip).")` Some key areas that will be targeted for fieldwork include the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds. 
+Following review of background literature, fisheries information, PSCIS and `bcfishpass` outputs, `r tab_plan_sf %>% nrow()` modelled and PSCIS crossings were reviewed to select sites for follow up with Phase 1 and 2 assessments in the Morice River watershed.   `r tab_plan_sf %>% filter(Priority == 'high') %>%  nrow()` crossings ranked as high priority for future follow up with Phase 1 and/or Phase 2 assessments, `r tab_plan_sf %>% filter(Priority == 'moderate') %>%  nrow()` crossings ranked as moderate priorities, and `r tab_plan_sf %>% filter(Priority == 'low') %>%  nrow()` crossings ranked as low priorities. Results are presented `r if(gitbook_on){knitr::asis_output("in Figure \\@ref(fig:map-interactive) and included as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)). Georeferenced pdf maps are available in [Attachment 2](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/) ")} else knitr::asis_output("as a zipped Google Earth kml file ([Attachment 1](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_1_morice_planning_kml.zip)) with georeferenced maps available at [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/Attachment_2_maps.zip).")` Although planning for field assessments ws still underway at the time of reporting through ongoing modelling, engagement with the Office of Wet’suwet’en, DFO, FLNRORD, BC Ministry of Environment, the Morice Watershed Monitoring Trust and numerous others, some key areas likely targeted for fieldwork include the Owen Creek, Lamprey Creek, McBride Lake, Nanika Lake, and Morice Lake watersheds. 
 
 ```{r eval=F}
 
@@ -1120,9 +1145,14 @@ Field assessments were conducted between `r format(min(pscis_phase1$date), forma
 
 "Barrier" and "Potential Barrier" rankings used in this project followed @fish_passage_assessments and reflect an assessment of passability for juvenile salmon or small resident rainbow trout at any flows potentially present throughout the year [@clarkinNationalInventoryAssessment2005 ;@bellFisheriesHandbookEngineering1991; @thompsonAssessingFishPassage2013].  As noted in @bourne_etal2011Barriersfish, with a detailed review of different criteria in @kemp_ohanley2010Proceduresevaluating, passability of barriers can be quantified in many different ways. Fish physiology (i.e. species, length, swim speeds) can make defining passability complex but with important implications for evaluating connectivity and prioritizing remediation candidates [@bourne_etal2011Barriersfish; @shaw_etal2016Importancepartial; @mahlum_etal2014EvaluatingBarrier; @kemp_ohanley2010Proceduresevaluating].  @washingtondepartmentoffishwildlife2009FishPassage present criteria for assigning passability scores to culverts that have already been assessed as barriers in coarser level assessments.  These passability scores provide additional information to feed into decision making processes related to the prioritization of remediation site candidates and have potential for application in British Columbia.  
 
-<br>
+
+
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br><br>")`
+
 
 ```{r cost-est-phase-1}
+#`r if(identical(gitbook_on, FALSE)){knitr::asis_output("<br>")}`
 if(gitbook_on){
   tab_cost_est_phase1 %>% 
   my_kable_scroll(caption_text = 'Upstream habitat estimates and cost benefit analysis for Phase 1 assessments.  ')
@@ -1134,7 +1164,7 @@ if(gitbook_on){
 
 ## Phase 2
 
-Although not assessed in 2020, @wilson_rabnett2007FishPassage report that the crossing structure located on Highway 16 and Station Creek  (PSCIS  124420, UTM: 9U.586630.6122416) has  been the subject  of  numerous  assessments  and  designs  with  respect  to  the rehabilitation of fish passage, and they rated this crossing as the highest priority for rehabilitation in the Bulkley River watershed.  Gitxsan Watershed Authorities report that Xsan Xsagiibil was a fishing site located at the mouth of Station Creek (Xsi Gwin Sagiiblax) [@wilson_rabnett2007FishPassage].  Identified as a high priority for additional assessments by @rabnett_williams2004Highway16, @skrconsultantsltd_2006FishPassage conducted a detailed inspection, offered rehabilitation  design  options  and  identified  the  natural limits  of  potential  fish distribution to support rehabilitation efforts.  At the time of this report, fish passage at the crossing had not yet been remediated due to complexities and costs associated with rehabilitation designs (Kathryn Graham, Regional Manager Environmental Services - Ministry of Transportation and Infrastructure pers. comm.). 
+Although not assessed in 2020, @wilson_rabnett2007FishPassage report that the crossing structure located on Highway 16 and Station Creek  (PSCIS  124420, UTM: 9U.586630.6122416) has  been the subject  of  numerous  assessments  and  designs  with  respect  to  the rehabilitation of fish passage, and they rated this crossing as the highest priority for rehabilitation in the Bulkley River watershed.  Gitxsan Watershed Authority reports that Xsan Xsagiibil was a fishing site located at the mouth of Station Creek (Xsi Gwin Sagiiblax) [@wilson_rabnett2007FishPassage].  Identified as a high priority for additional assessments by @rabnett_williams2004Highway16, @skrconsultantsltd_2006FishPassage conducted a detailed inspection, offered rehabilitation  design  options  and  identified  the  natural limits  of  potential  fish distribution to support rehabilitation efforts.  At the time of this report, fish passage at the crossing had not yet been remediated due to complexities and costs associated with rehabilitation designs (Kathryn Graham, Regional Manager Environmental Services - Ministry of Transportation and Infrastructure pers. comm.). 
 
 <br>
 
@@ -1145,21 +1175,38 @@ During 2020 field assessments, habitat confirmation assessments were conducted a
 As collaborative decision making was ongoing at the time of reporting, site prioritization can be considered preliminary.  In total, `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english()` crossings were rated as moderate priorities, and `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as low priorities. Results are summarized in `r if(gitbook_on){knitr::asis_output("Figure \\@ref(fig:map-interactive) and ")}`Tables \@ref(tab:tab-overview) - \@ref(fig:plot-fish-all) with raw habitat and fish sampling data included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/habitat_confirmations.xls).  A summary of preliminary modelling results illustrating the quantity of chinook, coho and steelhead spawning and rearing habitat potentially available upstream of each crossing are presented in Figure \@ref(fig:plot-model-all). Detailed information for each site assessed with Phase 2 assessments are presented within site specific reports included as appendices to this document with maps included as [Attachment 2](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/). 
 
 
-<br>
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-overview}
+#`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>")`
 if(gitbook_on){
 tab_overview %>% 
   select(-Tenure) %>%
   my_tab_overview_scroll(caption_text = 'Overview of habitat confirmation sites.')
-} else tab_overview %>% 
+} else tab_overview[1:17, ] %>% 
   select(-Tenure) %>%
+  mutate(`Fish Species` = case_when(Stream %ilike% 'Tyhee' ~ 'see appendices',
+                                    T ~ `Fish Species`)) %>% 
   my_tab_overview(caption_text = 'Overview of habitat confirmation sites.')
+  if(identical(gitbook_on, FALSE)){tab_overview[18:nrow(tab_overview), ] %>% 
+    select(-Tenure) %>%
+    my_tab_overview()}
+
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("")} else knitr::asis_output("\\pagebreak")`
 
-\pagebreak
+
+
+```{r}
+
+```
+
+
+
 
 ```{r}
 
@@ -1167,7 +1214,9 @@ make_tab_cv(dat = pscis_phase2) %>%
   my_kable(caption_text = 'Summary of Phase 2 fish passage reassessments.')
 ```
 
-<br>
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r cost-est-phase-2}
 tab_cost_est_phase2_report %>% 
@@ -1179,7 +1228,11 @@ tab_cost_est_phase2_report %>%
 
 ```
 
-<br>
+
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+
 
 ```{r tab-habitat-summary}
 tab_hab_summary %>% 
@@ -1228,7 +1281,7 @@ plot_fish_box_all2()
 
 <br>
 
-```{r plot-model-all, fig.cap='Summary of potential habitat modelled upstream of habitat confirmation assessment sites.', eval=T}
+```{r plot-model-all, fig.cap='Summary of potential habitat upstream of habitat confirmation assessment sites estimated based on modelled channel width and upstream channel length.', eval=T}
 
 
 bcfp_xref_plot <- xref_bcfishpass_names %>% 
@@ -1283,15 +1336,15 @@ Recommendations for potential incorporation into collaborative watershed connect
  
  * Continue to conduct fish passage and habitat confirmation assessments at road and rail stream crossings at sites in the study areas prioritized through this project and future connectivity analysis/modelling. In the Bulkley River watershed group, particular sites of note where future Phase 1 and Phase 2 assessments are recommended include John Brown Creek, Toboggan Creek, Cesford Creek, Watson Creek and Ailport Creek.
  
- * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of crossing structure upgrades alongside the cost benefits and ethics of alternative alternative investment activities including transportation corridor relocation/deactivation, land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, commercial/recreational fishing management, salt water interventions and research.
+ * Continue to acquire funding to procure site plans and replacement designs for structures collaboratively identified as high priorities for restoration. Explore cost benefits and ethics of crossing structure upgrades alongside the cost benefits and ethics of alternative alternative investment activities including transportation corridor relocation/deactivation, land procurement/covenant, cattle exclusion, riparian restoration, habitat complexing, water conservation, commercial/recreational fishing management, salt water interventions and research. Look for opportunities to leverage initiatives together for maximum restoration benefits.
  
  * Refine barrier thresholds for road-stream crossing structures to explore metrics specific to life stage and life history types of species of interest. This will further focus efforts of potential remediation actions based on biological attributes (ex. timing of migration, size/direction of fish migrating, etc.) and could result in the consideration of interim "stop-gap" physical works to alter crossing characteristics that can address key connectivity issues yet be significantly less costly than structure replacements (ex. building up of downstream area with rock riffles to decrease the outlet drop size and/or increasing water depth within pipe with baffles and substrate additions).
  
  * Model fish densities (fish/m^2^) vs. habitat/water quality characteristics (i.e. gradient, watershed size, channel size, alkalinity, elevation, etc.) using historically gathered electrofishing data to inform crossing prioritization, future data acquisition needs, and the monitoring of subsequent restoration actions.
  
- * Expand the working group focus area to include the greater Skeena River watershed.  A Skeena level effort will facilitate a more inclusive decision making environment, open up opportunities for collaboration/funding to more governments/organizations/stakeholders and allow consideration of all potential remediation sites that could benefit Skeena fish populations and the livelihoods they support.
+ * Expand the Bulkley River fish passage working group focus area to include the greater Skeena River watershed.  A Skeena level effort will facilitate a more inclusive decision making environment, open up opportunities for collaboration/funding to more governments/organizations/stakeholders and allow consideration of all potential remediation sites that could benefit Skeena fish populations and the livelihoods they support.
  
- * Build relationships with other working groups (ex. Washington Wildlife Habitat Connectivity Working Group) to share knowledge related to large scale connectivity remediation.
+ * Build relationships with other working groups (ex. Washington Wildlife Habitat Connectivity Working Group) to share knowledge and biuld capacity related to large scale connectivity remediation.
  
  * Continue to collaborate with potential partners to build relationships, explore perspectives and develop “road maps” for fish passage restoration in different situations (MoT roads, rail lines, permit roads of different usages, FSRs, etc.) – documenting the people involved, discussions and processes that are undertaken, funding options, synergies, measures of success, etc. Through this collaboration, such as is occurring with the Bulkley River working group, continue to draft and implement plans for fish passage restoration investments as well as to monitor the impacts of those investments on fish populations.
 
@@ -1890,14 +1943,14 @@ print_tab_summary()
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-123446, eval = T}
 print_tab_summary(site = my_site2, site_photo_id = my_site2)
 
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-123463, eval = T}
 print_tab_summary(dat = pscis_all, site = my_site3, site_photo_id = my_site3)
@@ -1905,7 +1958,7 @@ print_tab_summary(dat = pscis_all, site = my_site3, site_photo_id = my_site3)
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-habitat-summary-123445}
 tab_hab_summary %>% 
@@ -1915,7 +1968,7 @@ tab_hab_summary %>%
 
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-bcfp-123445, eval = T}
 print_tab_summary_bcfp()
@@ -2132,7 +2185,8 @@ print_tab_summary()
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-habitat-summary-123794}
 tab_hab_summary %>% 
@@ -2304,10 +2358,8 @@ Replacement of PSCIS crossing `r as.character(my_site)` with an embedded culvert
 
 A conservative estimate of mainstem habitat upstream of crossing `r as.character(my_site)` is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km.  Habitat in the areas surveyed was rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing and spawning. `r my_overview_info() %>% pull(road_name)` is the responsibility of FLNR - Skeena Stikine District.  The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. Future fish sampling is recommended upstream and downstream fo the road to clarify salmon species presence and assess densities of fish present. 
 
-<!-- this is a bit strange but the pages.js will not build beyond this so we leave for now -->
-<!-- `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")` -->
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-123795, eval = T}
 print_tab_summary()
@@ -2315,7 +2367,8 @@ print_tab_summary()
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-habitat-summary-123795}
 tab_hab_summary %>% 
@@ -2932,6 +2985,7 @@ print_tab_summary()
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
+
 ```{r tab-culvert-195288, eval = T}
 print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2)
 
@@ -2939,6 +2993,7 @@ print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2)
 
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-habitat-summary-195290}
 tab_hab_summary %>% 
@@ -2954,7 +3009,9 @@ tab_hab_summary %>%
 print_tab_summary_bcfp()
 ```
 
+
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-culvert-bcfp-195288, eval = T}
 print_tab_summary_bcfp(site = my_site2)
@@ -3213,7 +3270,7 @@ There is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of habita
 print_tab_summary()
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-197669, eval = T}
 print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2_xref)
@@ -3221,7 +3278,8 @@ print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2_xre
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-habitat-summary-197360}
 tab_hab_summary %>% 
@@ -3237,7 +3295,7 @@ tab_hab_summary %>%
 print_tab_summary_bcfp()
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-fish-site-197360, eval=T}
 my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
@@ -4256,7 +4314,7 @@ tab_hab_summary %>%
 
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-bcfp-197663, eval = T}
 print_tab_summary_bcfp()
@@ -4622,7 +4680,8 @@ print_tab_summary()
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-culvert-197664, eval = T}
 print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2)
@@ -4630,7 +4689,7 @@ print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2)
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-3042, eval = T}
 print_tab_summary(dat = pscis_all, site = my_site3, site_photo_id = my_site3)
@@ -4638,7 +4697,8 @@ print_tab_summary(dat = pscis_all, site = my_site3, site_photo_id = my_site3)
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-habitat-summary-197665}
 tab_hab_summary %>% 
@@ -4942,6 +5002,8 @@ tab_hab_summary %>%
 print_tab_summary_bcfp()
 ```
 
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-bcfp-124501, eval = T}
@@ -5182,6 +5244,7 @@ tab_hab_summary %>%
 print_tab_summary_bcfp()
 ```
 
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-bcfp-124504, eval = T}

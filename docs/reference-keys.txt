@@ -4,8 +4,8 @@ fig:hydrology-stats1
 fig:hydrology-stats2
 fig:hydrology-plot2
 fig:hydrology-stats3
-fig:fish-gantt-morice
 tab:fiss-species-table
+fig:fish-gantt-morice
 fig:fish-plot-grad
 fig:fish-plot-width
 tab:tab-fish-spawning-rearing
@@ -17,7 +17,7 @@ tab:tab-cost-mult
 fig:map-interactive
 tab:cost-est-phase-1
 tab:tab-overview
-tab:unnamed-chunk-8
+tab:unnamed-chunk-9
 tab:cost-est-phase-2
 tab:tab-habitat-summary
 fig:plot-fish-all

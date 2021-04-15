@@ -27,3 +27,4 @@ hold
 data/watershed_reports/*
 *.Kmz
 *.kml
+maps/*

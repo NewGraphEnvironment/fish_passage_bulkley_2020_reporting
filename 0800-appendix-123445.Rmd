@@ -135,14 +135,14 @@ print_tab_summary()
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-123446, eval = T}
 print_tab_summary(site = my_site2, site_photo_id = my_site2)
 
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-123463, eval = T}
 print_tab_summary(dat = pscis_all, site = my_site3, site_photo_id = my_site3)
@@ -150,7 +150,7 @@ print_tab_summary(dat = pscis_all, site = my_site3, site_photo_id = my_site3)
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-habitat-summary-123445}
 tab_hab_summary %>% 
@@ -160,7 +160,7 @@ tab_hab_summary %>%
 
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-bcfp-123445, eval = T}
 print_tab_summary_bcfp()

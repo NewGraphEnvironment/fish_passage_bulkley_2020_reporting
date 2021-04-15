@@ -144,6 +144,7 @@ print_tab_summary()
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
+
 ```{r tab-culvert-195288, eval = T}
 print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2)
 
@@ -151,6 +152,7 @@ print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2)
 
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-habitat-summary-195290}
 tab_hab_summary %>% 
@@ -166,7 +168,9 @@ tab_hab_summary %>%
 print_tab_summary_bcfp()
 ```
 
+
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-culvert-bcfp-195288, eval = T}
 print_tab_summary_bcfp(site = my_site2)

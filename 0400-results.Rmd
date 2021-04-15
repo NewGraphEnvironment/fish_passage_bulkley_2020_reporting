@@ -160,9 +160,14 @@ Field assessments were conducted between `r format(min(pscis_phase1$date), forma
 
 "Barrier" and "Potential Barrier" rankings used in this project followed @fish_passage_assessments and reflect an assessment of passability for juvenile salmon or small resident rainbow trout at any flows potentially present throughout the year [@clarkinNationalInventoryAssessment2005 ;@bellFisheriesHandbookEngineering1991; @thompsonAssessingFishPassage2013].  As noted in @bourne_etal2011Barriersfish, with a detailed review of different criteria in @kemp_ohanley2010Proceduresevaluating, passability of barriers can be quantified in many different ways. Fish physiology (i.e. species, length, swim speeds) can make defining passability complex but with important implications for evaluating connectivity and prioritizing remediation candidates [@bourne_etal2011Barriersfish; @shaw_etal2016Importancepartial; @mahlum_etal2014EvaluatingBarrier; @kemp_ohanley2010Proceduresevaluating].  @washingtondepartmentoffishwildlife2009FishPassage present criteria for assigning passability scores to culverts that have already been assessed as barriers in coarser level assessments.  These passability scores provide additional information to feed into decision making processes related to the prioritization of remediation site candidates and have potential for application in British Columbia.  
 
-<br>
+
+
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br><br>")`
+
 
 ```{r cost-est-phase-1}
+#`r if(identical(gitbook_on, FALSE)){knitr::asis_output("<br>")}`
 if(gitbook_on){
   tab_cost_est_phase1 %>% 
   my_kable_scroll(caption_text = 'Upstream habitat estimates and cost benefit analysis for Phase 1 assessments.  ')
@@ -174,7 +179,7 @@ if(gitbook_on){
 
 ## Phase 2
 
-Although not assessed in 2020, @wilson_rabnett2007FishPassage report that the crossing structure located on Highway 16 and Station Creek  (PSCIS  124420, UTM: 9U.586630.6122416) has  been the subject  of  numerous  assessments  and  designs  with  respect  to  the rehabilitation of fish passage, and they rated this crossing as the highest priority for rehabilitation in the Bulkley River watershed.  Gitxsan Watershed Authorities report that Xsan Xsagiibil was a fishing site located at the mouth of Station Creek (Xsi Gwin Sagiiblax) [@wilson_rabnett2007FishPassage].  Identified as a high priority for additional assessments by @rabnett_williams2004Highway16, @skrconsultantsltd_2006FishPassage conducted a detailed inspection, offered rehabilitation  design  options  and  identified  the  natural limits  of  potential  fish distribution to support rehabilitation efforts.  At the time of this report, fish passage at the crossing had not yet been remediated due to complexities and costs associated with rehabilitation designs (Kathryn Graham, Regional Manager Environmental Services - Ministry of Transportation and Infrastructure pers. comm.). 
+Although not assessed in 2020, @wilson_rabnett2007FishPassage report that the crossing structure located on Highway 16 and Station Creek  (PSCIS  124420, UTM: 9U.586630.6122416) has  been the subject  of  numerous  assessments  and  designs  with  respect  to  the rehabilitation of fish passage, and they rated this crossing as the highest priority for rehabilitation in the Bulkley River watershed.  Gitxsan Watershed Authority reports that Xsan Xsagiibil was a fishing site located at the mouth of Station Creek (Xsi Gwin Sagiiblax) [@wilson_rabnett2007FishPassage].  Identified as a high priority for additional assessments by @rabnett_williams2004Highway16, @skrconsultantsltd_2006FishPassage conducted a detailed inspection, offered rehabilitation  design  options  and  identified  the  natural limits  of  potential  fish distribution to support rehabilitation efforts.  At the time of this report, fish passage at the crossing had not yet been remediated due to complexities and costs associated with rehabilitation designs (Kathryn Graham, Regional Manager Environmental Services - Ministry of Transportation and Infrastructure pers. comm.). 
 
 <br>
 
@@ -185,21 +190,38 @@ During 2020 field assessments, habitat confirmation assessments were conducted a
 As collaborative decision making was ongoing at the time of reporting, site prioritization can be considered preliminary.  In total, `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english()` crossings were rated as moderate priorities, and `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as low priorities. Results are summarized in `r if(gitbook_on){knitr::asis_output("Figure \\@ref(fig:map-interactive) and ")}`Tables \@ref(tab:tab-overview) - \@ref(fig:plot-fish-all) with raw habitat and fish sampling data included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/habitat_confirmations.xls).  A summary of preliminary modelling results illustrating the quantity of chinook, coho and steelhead spawning and rearing habitat potentially available upstream of each crossing are presented in Figure \@ref(fig:plot-model-all). Detailed information for each site assessed with Phase 2 assessments are presented within site specific reports included as appendices to this document with maps included as [Attachment 2](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/). 
 
 
-<br>
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-overview}
+#`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>")`
 if(gitbook_on){
 tab_overview %>% 
   select(-Tenure) %>%
   my_tab_overview_scroll(caption_text = 'Overview of habitat confirmation sites.')
-} else tab_overview %>% 
+} else tab_overview[1:17, ] %>% 
   select(-Tenure) %>%
+  mutate(`Fish Species` = case_when(Stream %ilike% 'Tyhee' ~ 'see appendices',
+                                    T ~ `Fish Species`)) %>% 
   my_tab_overview(caption_text = 'Overview of habitat confirmation sites.')
+  if(identical(gitbook_on, FALSE)){tab_overview[18:nrow(tab_overview), ] %>% 
+    select(-Tenure) %>%
+    my_tab_overview()}
+
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("")} else knitr::asis_output("\\pagebreak")`
 
-\pagebreak
+
+
+```{r}
+
+```
+
+
+
 
 ```{r}
 
@@ -207,7 +229,9 @@ make_tab_cv(dat = pscis_phase2) %>%
   my_kable(caption_text = 'Summary of Phase 2 fish passage reassessments.')
 ```
 
-<br>
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r cost-est-phase-2}
 tab_cost_est_phase2_report %>% 
@@ -219,7 +243,11 @@ tab_cost_est_phase2_report %>%
 
 ```
 
-<br>
+
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+
 
 ```{r tab-habitat-summary}
 tab_hab_summary %>% 
@@ -268,7 +296,7 @@ plot_fish_box_all2()
 
 <br>
 
-```{r plot-model-all, fig.cap='Summary of potential habitat modelled upstream of habitat confirmation assessment sites.', eval=T}
+```{r plot-model-all, fig.cap='Summary of potential habitat upstream of habitat confirmation assessment sites estimated based on modelled channel width and upstream channel length.', eval=T}
 
 
 bcfp_xref_plot <- xref_bcfishpass_names %>% 

@@ -80,10 +80,8 @@ Replacement of PSCIS crossing `r as.character(my_site)` with an embedded culvert
 
 A conservative estimate of mainstem habitat upstream of crossing `r as.character(my_site)` is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km.  Habitat in the areas surveyed was rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing and spawning. `r my_overview_info() %>% pull(road_name)` is the responsibility of FLNR - Skeena Stikine District.  The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. Future fish sampling is recommended upstream and downstream fo the road to clarify salmon species presence and assess densities of fish present. 
 
-<!-- this is a bit strange but the pages.js will not build beyond this so we leave for now -->
-<!-- `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")` -->
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-123795, eval = T}
 print_tab_summary()
@@ -91,7 +89,8 @@ print_tab_summary()
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-habitat-summary-123795}
 tab_hab_summary %>% 

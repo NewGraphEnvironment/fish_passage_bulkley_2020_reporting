@@ -167,7 +167,8 @@ print_tab_summary()
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-culvert-197664, eval = T}
 print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2)
@@ -175,7 +176,7 @@ print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2)
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-3042, eval = T}
 print_tab_summary(dat = pscis_all, site = my_site3, site_photo_id = my_site3)
@@ -183,7 +184,8 @@ print_tab_summary(dat = pscis_all, site = my_site3, site_photo_id = my_site3)
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-habitat-summary-197665}
 tab_hab_summary %>% 

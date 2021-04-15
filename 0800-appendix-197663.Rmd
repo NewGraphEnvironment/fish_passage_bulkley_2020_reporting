@@ -158,7 +158,7 @@ tab_hab_summary %>%
 
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-bcfp-197663, eval = T}
 print_tab_summary_bcfp()

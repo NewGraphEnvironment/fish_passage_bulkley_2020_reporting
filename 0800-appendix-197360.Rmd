@@ -138,7 +138,7 @@ There is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of habita
 print_tab_summary()
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-culvert-197669, eval = T}
 print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2_xref)
@@ -146,7 +146,8 @@ print_tab_summary(dat = pscis_all, site = my_site2, site_photo_id = my_site2_xre
 ```
 
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
 
 ```{r tab-habitat-summary-197360}
 tab_hab_summary %>% 
@@ -162,7 +163,7 @@ tab_hab_summary %>%
 print_tab_summary_bcfp()
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-fish-site-197360, eval=T}
 my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')

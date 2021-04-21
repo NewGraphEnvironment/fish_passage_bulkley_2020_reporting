@@ -28,3 +28,4 @@ data/watershed_reports/*
 *.Kmz
 *.kml
 maps/*
+data/streams.csv

@@ -103,7 +103,7 @@ The Skeena Fisheries Commission honoured us when they put us in touch with their
 <br>
 
 
-Mike Risdale, David Dewit, walter Joseph and Dallas Nikal from the Office of Wet'suwet'en (and the Witset First Nation) were incredibly generous with our team, provided a letter of support for the project, allowed us into their territory and shared some of their timeless knowledge of the Yintahk.  This continues to open our eyes to incredibly wise perspectives.  Misiyh.
+Mike Risdale, David de Wit, Walter Joseph and Dallas Nikal from the Office of Wet'suwet'en (and the Witset First Nation) were incredibly generous with our team, provided a letter of support for the project, allowed us into their territory and shared some of their timeless knowledge of the Yintahk.  This continues to open our eyes to incredibly wise perspectives.  Misiyh.
 
 <br>
 
@@ -117,7 +117,7 @@ Thank you to Kenny Rabnett for all the great work over the years that fed much o
 <br>
 
 
-The contribution of all the Bulkley River watershed fish passage working group members has been wonderful and critical. Thank you Maureen Luggi, Jesse Stoeppler, Bill Blackwater, Brian Williams, Gordon Sebastian, Sean Staplin, Elaine Sampson and the rest of the current as well as future members.
+The contribution of all the Bulkley River watershed fish passage working group members has been wonderful. Thank you Maureen Luggi, Jesse Stoeppler, Bill Blackwater, Brian Williams, Gordon Sebastian, Sean Staplin, Elaine Sampson and the rest of the current as well as future members.
 
 <br>
 
@@ -127,7 +127,7 @@ We are very grateful for the financial support of the the Habitat Conservation T
 <br>
 
 
-Our fish passage connection to the watershed began with the trust of Craig Mount, Richard Thompson, Dave Maloney and the rest of the British Columbia Fish Passage Technical Working group through a 2017 project commissioned by the Ministry of Environment and Climate Change Strategy (MoE). Thank you.
+Our fish passage connection to the watersheds began with the trust of Craig Mount, Richard Thompson, Dave Maloney and the rest of the British Columbia Fish Passage Technical Working group through a 2017 project commissioned by the Ministry of Environment and Climate Change Strategy (MoE). Thank you.
 
 
 
@@ -139,7 +139,7 @@ Much gratitude to Simon Norris from Hillcrest Geographics and Craig Mount from M
 <br>
 
 
-We feel privileged to benefit from a great amount of hard work and meaningful investments of the Canadian Wildlife Federation towards the open source tools we use and develop for the analysis of study area streams/watersheds/landscapes/climates.  We also recognize that CWF's work to coordinate the Bulkley River Fish Passage Working Group is one more massive step towards actionable plans. Thank you Nick LaPointe, David Browne, Betty Rebellato, Nick Mazany-Wright, Sarah Sra, olivia Baudet, Alex Laudadio, Sami Kurani, Nick O'Hanley and Dave Hillary.  
+We feel privileged to benefit from a great amount of hard work and meaningful investments of the Canadian Wildlife Federation towards the open source tools we use and develop for the analysis of study area streams/watersheds/landscapes/climates.  We also recognize that CWF's work to coordinate the Bulkley River Fish Passage Working Group is one more massive step towards actionable plans. Thank you Nick LaPointe, David Browne, Betty Rebellato, Nick Mazany-Wright, Sarah Sra, Olivia Baudet, Alex Laudadio, Sami Kurani, Nick O'Hanley and Dave Hillary.  
 
 <br>
 

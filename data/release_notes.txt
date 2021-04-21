@@ -23,3 +23,8 @@ v0.1.1
 - host map attachment on google drive for now until we get set up on aws
 - fix attachment names
 - notes for next release - point to both hillcrest files for MORR and BULK maps?
+
+v0.1.2
+- 2021-04-21
+- add viewable pdf appendix link for Thorley and Irvine 2021
+- change some wording to note that model is trying to screen for "high" intrinsic value.

@@ -12,7 +12,7 @@ author: |
  | Al Irvine, B.Sc., R.P.Bio.
  | New Graph Environment
  | on behalf of
- | Society for Ecosytem Restoration Northern BC
+ | Society for Ecosytem Restoration in Northern British Columbia
 date: |
  |
  | Version 0.1.2

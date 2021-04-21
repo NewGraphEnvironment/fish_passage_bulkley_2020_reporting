@@ -12,10 +12,10 @@ author: |
  | Al Irvine, B.Sc., R.P.Bio.
  | New Graph Environment
  | on behalf of
- | Society for Ecosytem Restoration Northern BC
+ | Society for Ecosytem Restoration in Northern British Columbia
 date: |
  |
- | Version 0.1.1
+ | Version 0.1.2
  | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
@@ -726,7 +726,7 @@ Through this initiative, the Provincial Fish Passage Remediation Program and con
  
  <br>
 
-Gradient, channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High value  rearing, overwintering  and spawning habitat preferred by numerous species/life stages of fish is often located within channel types that have relatively low gradients and large channel widths (also quantified by the amount of flow in the stream).  Following delineation of "potentially accessible habitat", the average gradient of each stream segment within habitat classified as below the 15% threshold as well as the 20% threshold was calculated and summed within species and life stage specific gradient categories.  Average gradient of stream line segments can be calculated from elevations contained in the provincial freshwater atlas streamline dataset. To obtain estimates of channel width upstream of crossing locations, Where available, `bcfishpass` was utilized to pull average channel gradients from Fisheries Information Summary System (FISS) site assessment data [@moeStreamInventorySample] or PSCIS assessment data [@moe2021PSCISAssessments] and associate with stream segment lines. To model channel width for 2nd order and above stream segments without associated FISS or PSCIS sites, first `fwapg` was used to estimate the drainage area upstream of the segment.  Then, rasters from ClimateBC [@wang_etal2012ClimateWNAHighResolution] were sampled for all stream segments and a mean annual precipitation weighted by upstream watershed area was calculated. Mean annual precipitation was then combined with the channel widths and BEC zone information (gathered through a spatial query tied to the bottom of the stream segment) into a dataset (n = 22990) for analysis.  The details of this analysis and resulting formula used to estimate channel width on stream segments in the Bukley River and Morice River watersheds is included as a technical appendix at https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/docs/channel-width-21.pdf. 
+Gradient, channel size and stream discharge are key determinants of channel morphology and subsequently fish distribution. High value  rearing, overwintering  and spawning habitat preferred by numerous species/life stages of fish are often located within channel types that have relatively low gradients and large channel widths (also quantified by the amount of flow in the stream).  Following delineation of "potentially accessible habitat", the average gradient of each stream segment within habitat classified as below the 15% and 20% thresholds was calculated and summed within species and life stage specific gradient categories.  Average gradient of stream line segments can be calculated from elevations contained in the provincial freshwater atlas streamline dataset. To obtain estimates of channel width upstream of crossing locations, Where available, `bcfishpass` was utilized to pull average channel gradients from Fisheries Information Summary System (FISS) site assessment data [@moeStreamInventorySample] or PSCIS assessment data [@moe2021PSCISAssessments] and associate with stream segment lines. When both FISS and PSCIS values were associated with a particular stream segment, FISS channel width was used.  When multiple FISS sites were associated with a particular stream segment a mean of the average channel widths was taken.  To model channel width for 2nd order and above stream segments without associated FISS or PSCIS sites, first `fwapg` was used to estimate the drainage area upstream of the segment.  Then, rasters from ClimateBC [@wang_etal2012ClimateWNAHighResolution] were sampled for each stream segments and a mean annual precipitation weighted by upstream watershed area was calculated. Mean annual precipitation was then combined with the channel widths and BEC zone information (gathered through a spatial query tied to the bottom of the stream segment) into a dataset (n = 22990) for analysis fo the relationship between these variables.  The details of this analysis and resulting formula used to estimate channel width on stream segments in the Bukley River and Morice River watersheds is included as a technical appendix at `r if(gitbook_on){knitr::asis_output("[here](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/blob/master/docs/channel-width-21.pdf)")} else knitr::asis_output("https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/docs/channel-width-21.pdf")`. 
 
 <br>
 
@@ -760,7 +760,7 @@ bcfishpass_spawn_rear_model %>%
   as_tibble(rownames = "row_names") %>% 
   janitor::row_to_names(row_number = 1) %>% 
   rename(Variable = Species) %>% 
-  my_kable(caption_text = 'Stream gradient, width and mean annual discharge thresholds used in habitat modelling.')
+  my_kable(caption_text = 'Stream gradient and channel width thresholds used to model potentially highest value fish habitat.')
 
 ```
 
@@ -788,7 +788,7 @@ bcfishpass_spawn_rear_model_references %>%
   as_tibble(rownames = "row_names") %>% 
   janitor::row_to_names(row_number = 1) %>% 
   rename(Variable = Species) %>% 
-  my_kable(caption_text = 'References for stream gradient, width and mean annual discharge thresholds used in habitat modelling. Preliminary and subject to revisions.')
+  my_kable(caption_text = 'References for stream gradient and channel width thresholds used to model potentially highest value fish habitat. Preliminary and subject to revisions.')
 ```
 
 
@@ -1144,8 +1144,6 @@ Field assessments were conducted between `r format(min(pscis_phase1$date), forma
 <br>
 
 "Barrier" and "Potential Barrier" rankings used in this project followed @fish_passage_assessments and reflect an assessment of passability for juvenile salmon or small resident rainbow trout at any flows potentially present throughout the year [@clarkinNationalInventoryAssessment2005 ;@bellFisheriesHandbookEngineering1991; @thompsonAssessingFishPassage2013].  As noted in @bourne_etal2011Barriersfish, with a detailed review of different criteria in @kemp_ohanley2010Proceduresevaluating, passability of barriers can be quantified in many different ways. Fish physiology (i.e. species, length, swim speeds) can make defining passability complex but with important implications for evaluating connectivity and prioritizing remediation candidates [@bourne_etal2011Barriersfish; @shaw_etal2016Importancepartial; @mahlum_etal2014EvaluatingBarrier; @kemp_ohanley2010Proceduresevaluating].  @washingtondepartmentoffishwildlife2009FishPassage present criteria for assigning passability scores to culverts that have already been assessed as barriers in coarser level assessments.  These passability scores provide additional information to feed into decision making processes related to the prioritization of remediation site candidates and have potential for application in British Columbia.  
-
-
 
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br><br>")`

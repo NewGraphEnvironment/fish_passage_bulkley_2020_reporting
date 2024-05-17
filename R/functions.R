@@ -461,9 +461,10 @@ make_tab_summary_bcfp <- function(dat = bcfishpass_all,
 ##this is in two places and should not be - see 0355-tables-reporting-html
 print_tab_summary_bcfp <- function(site = my_site, font = 11, ...){
   make_tab_summary_bcfp(site = site) %>%
-    kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
-    kableExtra::add_footnote('Model data is preliminary and subject to adjustments.', notation = 'symbol') %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)
+    kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', site, '.'), booktabs = T) %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) |>
+    kableExtra::add_footnote('Model data is preliminary and subject to adjustments.', notation = 'symbol')
+
 }
 
 text_ref_tab_summary_bcfp <-  function(site = my_site){

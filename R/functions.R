@@ -409,17 +409,19 @@ openHTML <- function(x) browseURL(paste0('file://', file.path(getwd(), x)))
 ##grab a df with the names of the left hand side of the table
 make_tab_summary_bcfp <- function(dat = bcfishpass_all,
                                   xref_table = xref_bcfishpass_names,
-                                  site = my_site){
+                                  site = my_site,
+                                  col = stream_crossing_id,
+                                  ...){
   df <- dat %>%
-    mutate(across(where(is.numeric), round, 1)) %>%
-    filter(stream_crossing_id == site) %>%
-    distinct(stream_crossing_id, .keep_all = T)
+    dplyr::mutate(across(where(is.numeric), round, 1)) %>%
+    dplyr::filter({{ col }} == site) %>%
+    distinct({{ col }}, .keep_all = T)
   tab_results_left <- xref_table %>%
-    filter(id_side == 1) %>%
-    arrange(id_join)
+    dplyr::filter(id_side == 1) %>%
+    dplyr::arrange(id_join)
   ##get the data
   tab_pull_left <- df %>%
-    select(pull(tab_results_left,bcfishpass)) %>%
+    select(dplyr::pull(tab_results_left,bcfishpass)) %>%
     # slice(1) %>%
     t() %>%
     as.data.frame() %>%
@@ -428,11 +430,11 @@ make_tab_summary_bcfp <- function(dat = bcfishpass_all,
   left <- left_join(tab_pull_left, xref_table, by = c('rowname' = 'bcfishpass'))
 
   tab_results_right <- xref_table %>%
-    filter(id_side == 2)
+    dplyr::filter(id_side == 2)
 
   ##get the data
   tab_pull_right<- df %>%
-    select(pull(tab_results_right,bcfishpass)) %>%
+    dplyr::select(dplyr::pull(tab_results_right,bcfishpass)) %>%
     # slice(1) %>%
     t() %>%
     as.data.frame() %>%
@@ -441,30 +443,40 @@ make_tab_summary_bcfp <- function(dat = bcfishpass_all,
   right <- left_join(tab_pull_right, xref_table, by = c('rowname' = 'bcfishpass'))
 
   tab_joined <- left_join(
-    select(left, report, V1, id_join),
-    select(right, report, V1, id_join),
+    dplyr::select(left, report, V1, id_join),
+    dplyr::select(right, report, V1, id_join),
     by = 'id_join'
   ) %>%
     select(-id_join) %>%
     purrr::set_names(c('Habitat', 'Potential', 'remove', 'Remediation Gain')) %>%
-    mutate(Potential = as.numeric(Potential),
-           `Remediation Gain` = as.numeric(`Remediation Gain`)) %>%
-    mutate(`Remediation Gain (%)` = round(`Remediation Gain`/Potential * 100,0),
-           Habitat = stringr::str_replace_all(Habitat, 'Ha', '(ha)'),
-           Habitat = stringr::str_replace_all(Habitat, 'Km', '(km)'),
-           Habitat = stringr::str_replace_all(Habitat, 'Lakereservoir', 'Lake and Reservoir'),
-           Habitat = stringr::str_replace_all(Habitat, 'Spawningrearing ', 'Spawning and Rearing ')) %>%
-    select(-remove)
+    dplyr::mutate(Potential = as.numeric(Potential),
+                  `Remediation Gain` = as.numeric(`Remediation Gain`)) %>%
+    dplyr::mutate(`Remediation Gain (%)` = round(`Remediation Gain`/Potential * 100,0),
+                  Habitat = stringr::str_replace_all(Habitat, 'Ha', '(ha)'),
+                  Habitat = stringr::str_replace_all(Habitat, 'Km', '(km)'),
+                  Habitat = stringr::str_replace_all(Habitat, 'Lakereservoir', 'Lake and Reservoir'),
+                  Habitat = stringr::str_replace_all(Habitat, 'Spawningrearing ', 'Spawning and Rearing ')) %>%
+    dplyr::select(-remove)
   return(tab_joined)
 }
 
-##this is in two places and should not be - see 0355-tables-reporting-html
-print_tab_summary_bcfp <- function(site = my_site, font = 11, ...){
-  make_tab_summary_bcfp(site = site) %>%
-    kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', site, '.'), booktabs = T) %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) |>
-    kableExtra::add_footnote('Model data is preliminary and subject to adjustments.', notation = 'symbol')
+# ##this is in two places and should not be - see 0355-tables-reporting-html
+# print_tab_summary_bcfp <- function(site = my_site, font = 11, ...){
+#   make_tab_summary_bcfp(site = site) %>%
+#     kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', site, '.'), booktabs = T) %>%
+#     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) |>
+#     kableExtra::add_footnote('Model data is preliminary and subject to adjustments.', notation = 'symbol')
+#
+# }
 
+print_tab_summary_bcfp <- function(sites = my_site, ...){
+  make_tab_summary_bcfp(site = sites) %>%
+    kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', sites, '.'), booktabs = T) %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 18) %>%
+    kableExtra::add_footnote(c('Model data is preliminary and subject to adjustments including incorporating area based estimates.',
+                               'Modelled rearing habitat estimates include linear lengths of centrelines within wetlands for coho and within lakes >100ha (multiplied by 1.5) for sockeye.',
+                               'Remediation Gain is an estimate of the amount of habitat to be gained by providing access above the crossing.  This assumes that all upstream habitat is currently unavailable and that all modelled unassessed crossings located upstream would prevent further passage.'),
+                             notation = 'symbol')
 }
 
 text_ref_tab_summary_bcfp <-  function(site = my_site){

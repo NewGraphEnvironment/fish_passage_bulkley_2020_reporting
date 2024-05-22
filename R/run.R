@@ -87,6 +87,10 @@ file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')}
 ##go to the index.Rmd and change gitbook_on <- TRUE
 #################################################################################################
 
+library(tidyverse)
+source('R/functions.R')
+news_to_appendix()
+
 rmarkdown::render_site(output_format = 'bookdown::gitbook',
                        encoding = 'UTF-8')
 

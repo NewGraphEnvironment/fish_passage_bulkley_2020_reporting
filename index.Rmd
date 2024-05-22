@@ -20,6 +20,8 @@ date: |
 toc-title: Table of Contents
 site: bookdown::bookdown_site
 output: bookdown::gitbook
+params:
+ repo_url: 'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/'
 nocite: |
   @busch_etal2013LandscapeLevelModel, 
   @woll_etal2017SalmonEcological,
@@ -70,6 +72,7 @@ font_set <- 9
 source('R/packages.R')
 source('R/functions.R')
 source('R/functions-phase2.R')
+source('R/tables_2023.R')
 source('R/0310-tables.R')
 source('R/0320-tables-phase2.R')
 source('R/0330-tables-phase1-cost-estimate.R')

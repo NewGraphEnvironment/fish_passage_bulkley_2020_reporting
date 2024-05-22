@@ -9,7 +9,6 @@ pkgs_cran <- c(
   'leafem',
   'leaflet',
   'plotKML',
-  'kableExtra',
   'httr',
   'RPostgres',
   'RPostgreSQL',

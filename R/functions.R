@@ -231,12 +231,12 @@ print_tab_summary_all_pdf <- function(tab_sum, comments, photos){
 ##summary table
 print_tab_summary <- function(dat = pscis_phase2, site = my_site, site_photo_id = my_site, font = 11){
   make_tab_summary(df = dat %>% filter(pscis_crossing_id == site)) %>%
-    kable(caption = paste0('Summary of fish passage assessment for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
+    kable(caption = paste0('Summary of fish passage assessment for PSCIS crossing ', site, '.'), booktabs = T) %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) |>
     kableExtra::add_footnote(label = paste0('Comments: ', dat %>% filter(pscis_crossing_id == site) %>%
                                               pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
     kableExtra::add_footnote(label = paste0('Photos: From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.',
-                                            paste0('![](data/photos/', site_photo_id, '/crossing_all.JPG)')), notation = 'none') %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)
+                                            paste0('![](data/photos/', site_photo_id, '/crossing_all.JPG)')), notation = 'none')
   # kableExtra::scroll_box(width = "100%", height = "500px") ##not scrolling to simplify our pagedown output
 }
 
@@ -469,10 +469,10 @@ make_tab_summary_bcfp <- function(dat = bcfishpass_all,
 #
 # }
 
-print_tab_summary_bcfp <- function(sites = my_site, ...){
+print_tab_summary_bcfp <- function(sites = my_site, font = 11, ...){
   make_tab_summary_bcfp(site = sites) %>%
     kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', sites, '.'), booktabs = T) %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 18) %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) %>%
     kableExtra::add_footnote(c('Model data is preliminary and subject to adjustments including incorporating area based estimates.',
                                'Modelled rearing habitat estimates include linear lengths of centrelines within wetlands for coho and within lakes >100ha (multiplied by 1.5) for sockeye.',
                                'Remediation Gain is an estimate of the amount of habitat to be gained by providing access above the crossing.  This assumes that all upstream habitat is currently unavailable and that all modelled unassessed crossings located upstream would prevent further passage.'),
@@ -541,4 +541,21 @@ make_tab_summary_bcfp_planning <- function(dat = bcfishpass_all,
   return(tab_joined)
 }
 
+# write the contents of the NEWS.md file to a RMD file that will be included as an appendix
+news_to_appendix <- function(
+    md_name = "NEWS.md",
+    rmd_name = "2090-report-change-log.Rmd",
+    appendix_title = "# Report Change Log") {
+
+  # Read and modify the contents of the markdown file
+  news_md <- readLines(md_name)
+  news_md <- stringr::str_replace(news_md, "^#", "###") |>
+    stringr::str_replace_all("(^(### .*?$))", "\\1 {-}")
+
+  # Write the title, a blank line, and the modified contents to the Rmd file
+  writeLines(
+    c(paste0(appendix_title, " {-}"), "", news_md),
+    rmd_name
+  )
+}
 

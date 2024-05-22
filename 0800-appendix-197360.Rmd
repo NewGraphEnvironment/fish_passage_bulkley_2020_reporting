@@ -37,22 +37,25 @@ PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pu
 ## Background {-}
 
 
-`r my_pscis_info() %>% pull(stream_name)` flows through an extensive area of wetland type habitat into the top end of Owen Lake approximately 1km downstream of the crossing.  Owen Lake is drained by Owen Creek emptying into the Morice River approximately 20km to the north.  At the crossing location, `r my_pscis_info() %>% pull(stream_name)` is a 4th order stream with a watershed area upstream of the highway of approximately 29km^2^. The elevation of the watershed ranges from a maximum of 1140 to 750m at PSCIS crossing `r as.character(my_site)`. `r my_pscis_info() %>% pull(stream_name)` is known to contain longnose sucker and rainbow trout usptream of the subject culvert [@data_fish_obs]. On the north side of the upper watershed, at an elevation of 1160m, are the 25ha Neuch Lakes. The limit of fish distribution in the `r my_pscis_info() %>% pull(stream_name)` mainstem is documented by @davidbustardandassociatesltd_1999StreamInventory as a 6m high waterfall located 2.4km upstream of the FSR  with the three main tributary systems classified as either non-fish bearing or fish bearing for only short distances (<200m) from the mainstem.  Of note, a dam is documented in @ProvincialObstaclesFish just downstream of Owen Lake and is visible on google earth imagery. FLNRORD team members note that the structure is a beaver dam (pers comm. Lars Reese-Hanson, Aquatic Habitat Specialist, FLNR).  
+Crossing `r as.character(my_site)` was first assessed in 2020. `r my_pscis_info() %>% pull(stream_name)` flows through an extensive area of wetland type habitat into the top end of Owen Lake approximately 1km downstream of the crossing.  Owen Lake is drained by Owen Creek emptying into the Morice River approximately 20km to the north.  At the crossing location, `r my_pscis_info() %>% pull(stream_name)` is a 4th order stream with a watershed area upstream of the highway of approximately 29km^2^. The elevation of the watershed ranges from a maximum of 1140 to 750m at PSCIS crossing . `r my_pscis_info() %>% pull(stream_name)` is known to contain longnose sucker and rainbow trout usptream of the subject culvert [@data_fish_obs]. On the north side of the upper watershed, at an elevation of 1160m, are the 25ha Neuch Lakes. The limit of fish distribution in the `r my_pscis_info() %>% pull(stream_name)` mainstem is documented by @davidbustardandassociatesltd_1999StreamInventory as a 6m high waterfall located 2.4km upstream of the FSR  with the three main tributary systems classified as either non-fish bearing or fish bearing for only short distances (<200m) from the mainstem.  Of note, a dam is documented in @ProvincialObstaclesFish just downstream of Owen Lake and is visible on google earth imagery. FLNRORD team members note that the structure is a beaver dam (pers comm. Lars Reese-Hanson, Aquatic Habitat Specialist, FLNR).  
 
 <br>
 
-At the time of reporting, as an initiative of the Forest and Range Evaluation Program as well as the Bulkley Valley Research Centre, FLNR and the BC Ministry of Environment and Climate Change Strategy were undertaking a watershed status evaluation of the Owen Creek watershed [@pickard_etalDRAFTOwen].  The evaluation uses remotely sensed and field based surveys to interpret the current functioning condition of the watershed as well as its possible future state as a result of continuing human and natural activities by ranking eight indicators of watershed pressure related to riparian health, fish passage and fine sediment delivery [@pickard_etal2014FishValues; @porter_etal2019WatershedStatus]. 
+At the time of reporting in 2020, as an initiative of the Forest and Range Evaluation Program as well as the Bulkley Valley Research Centre, FLNR and the BC Ministry of Environment and Climate Change Strategy were undertaking a watershed status evaluation of the Owen Creek watershed [@pickard_etalDRAFTOwen].  The evaluation uses remotely sensed and field based surveys to interpret the current functioning condition of the watershed as well as its possible future state as a result of continuing human and natural activities by ranking eight indicators of watershed pressure related to riparian health, fish passage and fine sediment delivery [@pickard_etal2014FishValues; @porter_etal2019WatershedStatus]. 
 
 <br>
 
-PSCIS stream crossing `r as.character(my_site)` was prioritized for follow up with a habitat confirmation through consultation with Lars Reese-Hansen and Don Morgan (Wildlife Habitat Specialist, MoE). They indicated (pers comm.) that following fish passage assessments in 2014 (implemented through watershed status evaluation field surveys throughout the Owen Creek watershed), Riddeck Creek upstream of the crossing contained the highest value habitat potentially blocked by a road-stream crossing barrier. A map of the watershed is provided in map attachment [`r my_bcfishpass() %>% pull(dbm_mof_50k_grid)`](`r my_mapsheet()`).
+PSCIS stream crossing `r as.character(my_site)` was prioritized for follow up with a habitat confirmation through consultation with Lars Reese-Hansen and Don Morgan (Wildlife Habitat Specialist, MoE). They indicated (pers comm.) that following the fish passage assessments in 2014 (implemented through watershed status evaluation field surveys throughout the Owen Creek watershed), Riddeck Creek upstream of the crossing contained the highest value habitat potentially blocked by a road-stream crossing barrier. Based of these recommendations, a habitat assessment was conducted during the initial 2020 survey. A map of the watershed is provided in map attachment [`r my_bcfishpass() %>% pull(dbm_mof_50k_grid)`](`r my_mapsheet()`).
 
+<br>
+
+In 2022, planning began to replace crossing `r as.character(my_site)` as part of the Bii Wenii Kwa Restoration/Recovery Plan lead by the Office of the Wet’suwet’en (@pickard_etal2023BiiWenii). As of 2023, engineering plans have been completed, some materials have be purchased, and the replacement cost is estimated at $900,000.  On September 13, 2023, crossing `r as.character(my_site)` was revisited and electrofishing was conducted for baseline monitoring and to scope again for anadromous species. Fish sampling results are included in this report, along with the initial 2020 results. 
 
 <br>
 
 ## Stream Characteristics at Crossing {-}
 
-At the time of the survey, the culvert was un-embedded, non-backwatered and considered a barrier to upstream fish passage. The pipe was `r my_pscis_info() %>% pull(diameter_or_span_meters)`m in diameter with a pipe length of `r my_pscis_info() %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info() %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info() %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info() %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-197360)). Water temperature was `r my_habitat_info() %>% filter(rowname == 'temperature c') %>% pull(us)`$^\circ$C, pH was `r my_habitat_info() %>% filter(rowname == 'p h') %>% pull(us)` and conductivity was `r my_habitat_info() %>% filter(rowname == 'conductivity m s cm') %>% pull(us)`uS/cm.  
+At the time of the 2020 survey, the culvert was un-embedded, non-backwatered and considered a barrier to upstream fish passage. The pipe was `r my_pscis_info() %>% pull(diameter_or_span_meters)`m in diameter with a pipe length of `r my_pscis_info() %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info() %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info() %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info() %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-197360)). Water temperature was `r my_habitat_info() %>% filter(rowname == 'temperature c') %>% pull(us)`$^\circ$C, pH was `r my_habitat_info() %>% filter(rowname == 'p h') %>% pull(us)` and conductivity was `r my_habitat_info() %>% filter(rowname == 'conductivity m s cm') %>% pull(us)`uS/cm.  
 
 <br>
 
@@ -93,18 +96,23 @@ The stream was surveyed downstream from the culvert for `r my_priority_info(loc 
 
 <br>
 
+During the 2023 reassessment, the stream was surveyed below the crossing for ~50m. Downstream of the crossing, the stream was only watered at the outlet of the culvert and occasional pools, otherwise the channel was dry. The outlet pool was turbid and murky with small and large woody debris present, which made for challenging electrofishing.
+
+<br>
+
 ## Stream Characteristics Upstream {-}
 
 The stream was surveyed upstream from `r as.character(my_site)` for `r my_priority_info(loc = 'us') %>% pull(survey_length_m)`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197360-03) - \\@ref(fig:photo-197360-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-197360-d02))"))`. Immediately upstream of the crossing for a distance of approximately 150m is a beaver influenced wetland with a beaver dam structure located approximately 40m upstream of the road.  Within the area surveyed, total cover amount was rated as `r my_habitat_info2(loc = 'us') %>% filter(rowname == 'total cover') %>% pull(v)` with  `r my_habitat_info2(loc = 'us') %>% filter(v == 'dominant') %>% pull(rowname)` dominant. Cover was also present as `r my_habitat_info2(loc = 'us') %>% filter(v == 'sub-dominant') %>% pull(rowname) %>% knitr::combine_words()` (Table \@ref(tab:tab-habitat-summary-197360)). The average channel width was `r my_habitat_info3(loc = 'us', row = 'avg channel width m')`m, the average wetted width was `r my_habitat_info3(loc = 'us', row = 'avg wetted width m')`m and the average gradient was `r my_habitat_info3(loc = 'us', row = 'average gradient percent')`%.  Abundant gravels and small cobbles suitable for resident, fluvial, adfluvial and anadromous salmonid spawning were present throughout the area surveyed. Habitat value was rated as `r my_priority_info(loc = 'us') %>% pull(hab_value)` for salmonid rearing and spawning. 
-
 
 <br>
 
 PSCIS culvert `r as.character(my_site2)` was documented on `r my_pscis_info() %>% pull(stream_name)`, 1.2km upstream of the FSR and PSCIS crossing `r as.character(my_site)`. The culvert was un-embedded, non-backwatered and considered a barrier to upstream fish passage. The pipe was `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(diameter_or_span_meters)`m in diameter with a pipe length of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info(dat = pscis_all, site = my_site2) %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-197669)).
 
-
 <br>
 
+During the 2023 reassessment, the stream was surveyed above the crossing for ~350m. Immediately upstream of the crossing was a small amount of wetted wetland before the stream went subsurface for the remaining ~350m which was characterized by beaver activity and low gradients.
+
+<br>
 
 Table \@ref(tab:tab-culvert-bcfp-197360) `r text_ref_tab_summary_bcfp()` 
 
@@ -114,8 +122,11 @@ Table \@ref(tab:tab-culvert-bcfp-197360) `r text_ref_tab_summary_bcfp()`
 
 ## Fish Sampling {-}
 
-To assess potential impacts of the culvert on fisheries values in the stream, electrofishing was conducted upstream and downstream of the crossing.  Two sites were sampled upstream and one site was sampled downstream.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'RB') %>% pull(count_fish)` rainbow trout captured upstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'RB') %>% pull(count_fish)` rainbow trout captured downstream. Raw results are included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/habitat_confirmations.xls) and summarized in Tables \@ref(tab:tab-fish-site-197360) - \@ref(tab:tab-fish-dens-197360) and Figure \@ref(fig:plot-fish-box-197360).
+To assess potential impacts of the culvert on fisheries values in the stream, electrofishing was conducted upstream and downstream of the crossing in 2020.  Two sites were sampled upstream and one site was sampled downstream.  A total of `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_us') & species_code == 'RB') %>% pull(count_fish)` rainbow trout captured upstream with `r tab_fish_summary %>% filter(site_id == paste0(my_site, '_ds') & species_code == 'RB') %>% pull(count_fish)` rainbow trout captured downstream. Raw results are included in digital format as [Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/habitat_confirmations.xls) and summarized in Tables \@ref(tab:tab-fish-site-197360) - \@ref(tab:tab-fish-dens-197360) and Figure \@ref(fig:plot-fish-box-197360).
 
+<br>
+
+For monitoring purposes, the site was revisited in 2023 and electrofishing was once again conducted above and below crossing `r as.character(my_site)`, with results summarized in Tables \@ref(tab:tab-fish-site-197360-2023) - \@ref(tab:tab-fish-dens-197360-2023) and Figure \@ref(fig:plot-fish-box-197360-2023). Sampling was limited both above and below the crossing due shallowness. Rainbow trout were the only species captured, `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)`  upstream and `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` downstream Figure \@ref(fig:photo-197360-05). All fish captured with a fork length greater than 60mm were tagged with Passive Integrated Transponders (PIT tags) with data stored [here](`r paste0(params$repo_url, "blob/main/data/2023/habitat_confirmations.xls")`).
 
 <br>
 
@@ -131,6 +142,9 @@ Structure replacement with a bridge (`r my_pscis_info() %>% pull(recommended_dia
 
 There is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km of habitat upstream of crossing `r as.character(my_site)` and downstream of PSCIS barrier culvert `r as.character(my_site2)`.  Habitat in this area was rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing/spawning.  Remediation of PSCIS culvert `r as.character(my_site2)` would facilitate fish passage to an additional 1.5km of habitat upstream of the area surveyed and can also be considered in the future. Densities of rainbow trout fry captured at upstream sites were higher than the density of fish captured downstream however this may have been a result of habitat differences and difficult electrofishing conditions downstream including thick shrub overhead cover and areas deep water. Although only rainbow trout were captured both upstream and downstream the stream contains habitat likely suitable for spawning and rearing for other species including lamprey, burbot, coho salmon and others. In order to delineate pre-road channel locations/conditions and to inform the positioning of a replacement bridge, a pre-road hydrology assessment could be undertaken. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Forests, Lands, Natural Resource Operations & Rural Development.  The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. 
 
+<br>
+
+Crossing `r as.character(my_site)` is part of the Bii Wenii Kwa Restoration/Recovery Plan lead by the Office of the Wet’suwet’en (@pickard_etal2023BiiWenii). Planning has begun to replace the culvert and the cost is estimated at $900,000. The site was revisited in 2023 and electrofishing was conducted for baseline monitoring during the replacement. The only species captured was rainbow trout, with two fry captured downstream and one fry captured upstream.
 
 <br>
 
@@ -166,7 +180,7 @@ print_tab_summary_bcfp()
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-fish-site-197360, eval=T}
-my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, '.')
+my_caption <- paste0('Electrofishing sites for PSCIS crossing ', my_site, ' in 2020.')
 
 tab_fish_site() %>% 
   my_kable(caption_text = my_caption)
@@ -176,7 +190,7 @@ tab_fish_site() %>%
 <br>
 
 ```{r tab-fish-dens-197360, eval=T}
-my_caption <- paste0('Rainbow trout densities (fish/100m2) for PSCIS crossing ', my_site, '.')
+my_caption <- paste0('Rainbow trout densities (fish/100m2) for PSCIS crossing ', my_site, ' in 2020.')
 
 tab_fish_dens() %>% 
   my_kable(caption_text = my_caption)
@@ -185,7 +199,7 @@ tab_fish_dens() %>%
 <br>
 
 ```{r plot-fish-box-197360, fig.cap= my_caption, eval=T}
-my_caption <- paste0('Densites of rainbow trout (fish/100m2) capture upstream and downstream of PSCIS crossing ', my_site, '.')
+my_caption <- paste0('Densites of rainbow trout (fish/100m2) capture upstream and downstream of PSCIS crossing ', my_site, ', in 2020.')
 
 plot_fish_box() 
 
@@ -193,6 +207,28 @@ plot_fish_box()
 
 <br>
 
+```{r tab-fish-site-197360-2023, eval=T}
+fpr::fpr_table_fish_site(dat = tab_fish_sites_sum_2023, sit = my_site)
+
+```
+
+<br>
+
+```{r tab-fish-dens-197360-2023, eval=T}
+fpr::fpr_table_fish_density(dat = fish_abund_2023, sit = my_site)
+
+```
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+```{r plot-fish-box-197360-2023, fig.cap= my_caption, eval=T}
+my_caption <- paste0('Densites of fish (fish/100m2) captured upstream and downstream of PSCIS crossing ', my_site, ', in 2023.')
+
+fpr::fpr_plot_fish_box(dat = fish_abund_2023, sit = my_site)
+
+```
+
+<br>
 
 ```{r photo-197360-01-prep, eval=T}
 my_photo1 = pull_photo_by_str(str_to_pull = '_d1_')
@@ -246,7 +282,7 @@ grid::grid.raster(get_img(photo = my_photo1))
 ```{r photo-197360-04-prep}
 my_photo2 = pull_photo_by_str(str_to_pull = '_f1_')
 
-my_caption2 = paste0('Rainbow trout captured upstream of PSCIS crossing ', my_site, '.')
+my_caption2 = paste0('Rainbow trout captured upstream of PSCIS crossing ', my_site, ' in 2020.')
 
 ```
 
@@ -263,6 +299,18 @@ knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics(get_img_path(photo = my_photo2))
 ```
 
+<br>
 
+```{r photo-197360-05-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site, dir_photos = "data/2023/photos/", str_to_pull = 'fish1')
+
+my_caption1 = paste0('Rainbow trout captured upstream of crossing ', my_site, ' in 2023.')
+
+```
+
+```{r photo-197360-05, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+knitr::include_graphics(my_photo1)
+
+```
 
 

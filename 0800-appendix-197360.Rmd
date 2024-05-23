@@ -132,8 +132,7 @@ For monitoring purposes, the site was revisited in 2023 and electrofishing was o
 
 ## Structure Remediation and Cost Estimate {-}
 
-Structure replacement with a bridge (`r my_pscis_info() %>% pull(recommended_diameter_or_span_meters)`m span) is recommended to provide access to the habitat located upstream of PSCIS crossing `r as.character(my_site)`.  In addition to not facilitating high velocities and erosion due resulting from flow constriction, structures with large openings in relation to stream channel size have been demonstrated to reduce the likelyhood of structure blockage due to beaver [@jensen_etal2001HabitatStructural]. The cost of the work is estimated at \$`r format(my_cost_estimate() %>% pull(cost_est_1000s) * 1000, big.mark = ',')` for a cost benefit of `r as.character(my_cost_estimate() %>% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %>% pull(cost_area_net))`m^2^/\$1000.
-
+In 2022, planning began to replace crossing `r as.character(my_site)` as part of the Bii Wenii Kwa Restoration/Recovery Plan lead by the Office of the Wet’suwet’en (@pickard_etal2023BiiWenii). As of 2023, engineering plans have been completed, some materials have be purchased, and the replacement cost is estimated at $900,000.
 
 <br>
 

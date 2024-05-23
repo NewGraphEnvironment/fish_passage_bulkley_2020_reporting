@@ -1,7 +1,7 @@
 # fish_passage_Bulkley_2020_reporting v0.1.1 (20240522)
 
-- Update "Riddeck Creek" memo (Tributary to Owen Creek - 197379) to include 2023 fish sampling data and brief detail of Bii Wenii recovery/restoration initiative. 
-- Updated "Helps Creek" memo to include 2023 fish sampling data. 
-- Update cost estimate for unpaved resource roads to 30k/per m to better reflect inflated prices in 2024.
+- Update Riddeck Creek - 197360 memo to include 2023 fish sampling data and brief detail of Bii Wenii recovery/restoration initiative. Updated cost estimate by hand to reflect the price quoted in the Bii Wenii recovery/restoration initiative. 
+- Updated Helps Creek - 124500 memo to include 2023 fish sampling data. 
 - Created `NEWS.md` to track updates.
-- Added `news_to_appendix` function. 
+- Update cost estimates of all memos to better reflect inflated prices in 2024.
+- Added session info. 

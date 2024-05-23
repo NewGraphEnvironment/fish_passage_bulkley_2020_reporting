@@ -96,7 +96,7 @@ The stream was surveyed downstream from the culvert for `r my_priority_info(loc 
 
 <br>
 
-During the 2023 reassessment, the stream was surveyed below the crossing for ~50m. Downstream of the crossing, the stream was only watered at the outlet of the culvert and occasional pools, otherwise the channel was dry. The outlet pool was turbid and murky with small and large woody debris present, which made for challenging electrofishing.
+During the 2023 reassessment, the stream was surveyed below the crossing for ~50m. Downstream of the crossing, the stream was only watered at the outlet of the culvert and occasional pools, otherwise the channel was dry. The outlet pool was turbid and murky with small and large woody debris present, which made for challenging electrofishing `r if(gitbook_on){knitr::asis_output("(Figure \\@ref(fig:photo-197360-05))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-197360-d03))"))`.
 
 <br>
 
@@ -126,7 +126,7 @@ To assess potential impacts of the culvert on fisheries values in the stream, el
 
 <br>
 
-For monitoring purposes, the site was revisited in 2023 and electrofishing was once again conducted above and below crossing `r as.character(my_site)`, with results summarized in Tables \@ref(tab:tab-fish-site-197360-2023) - \@ref(tab:tab-fish-dens-197360-2023) and Figure \@ref(fig:plot-fish-box-197360-2023). Sampling was limited both above and below the crossing due shallowness. Rainbow trout were the only species captured, `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)`  upstream and `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` downstream Figure \@ref(fig:photo-197360-05). All fish captured with a fork length greater than 60mm were tagged with Passive Integrated Transponders (PIT tags) with data stored [here](`r paste0(params$repo_url, "blob/main/data/2023/habitat_confirmations.xls")`).
+For monitoring purposes, the site was revisited in 2023 and electrofishing was once again conducted above and below crossing `r as.character(my_site)`, with results summarized in Tables \@ref(tab:tab-fish-site-197360-2023) - \@ref(tab:tab-fish-dens-197360-2023) and Figure \@ref(fig:plot-fish-box-197360-2023). Sampling was limited both above and below the crossing due shallowness. Rainbow trout were the only species captured, `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)`  upstream and `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` downstream `r if(gitbook_on){knitr::asis_output("(Figure \\@ref(fig:photo-197360-06))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-197360-d03))"))`. All fish captured with a fork length greater than 60mm were tagged with Passive Integrated Transponders (PIT tags) with data stored [here](`r paste0(params$repo_url, "blob/main/data/2023/habitat_confirmations.xls")`).
 
 <br>
 
@@ -232,7 +232,7 @@ fpr::fpr_plot_fish_box(dat = fish_abund_2023, sit = my_site)
 ```{r photo-197360-01-prep, eval=T}
 my_photo1 = pull_photo_by_str(str_to_pull = '_d1_')
 
-my_caption1 = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
+my_caption1 = paste0('Typical habitat downstream of PSCIS crossing ', my_site, ' in 2020.')
 
 ```
 
@@ -245,7 +245,7 @@ grid::grid.raster(get_img(photo = my_photo1))
 ```{r photo-197360-02-prep}
 my_photo2 = pull_photo_by_str(str_to_pull = '_d2_')
 
-my_caption2 = paste0('Aerial view of typical habitat downstream of PSCIS crossing ', my_site, '.')
+my_caption2 = paste0('Aerial view of typical habitat downstream of PSCIS crossing ', my_site, ' in 2020.')
 ```
 
 ```{r photo-197360-02, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
@@ -263,11 +263,10 @@ knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics(get_img_path(photo = my_photo2))
 ```
 
-
 ```{r photo-197360-03-prep}
 my_photo1 = pull_photo_by_str(str_to_pull = '_u1_')
 
-my_caption1 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+my_caption1 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, ' in 2020.')
 
 ```
 
@@ -301,9 +300,9 @@ knitr::include_graphics(get_img_path(photo = my_photo2))
 <br>
 
 ```{r photo-197360-05-prep}
-my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site, dir_photos = "data/2023/photos/", str_to_pull = 'fish1')
+my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site, dir_photos = "data/2023/photos/", str_to_pull = 'ds_ef1_typical_1')
 
-my_caption1 = paste0('Rainbow trout captured upstream of crossing ', my_site, ' in 2023.')
+my_caption1 = paste0('Outlet pool at crossing ', my_site, ' in 2023.')
 
 ```
 
@@ -312,4 +311,26 @@ knitr::include_graphics(my_photo1)
 
 ```
 
+<br>
+
+```{r photo-197360-06-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(site = my_site, dir_photos = "data/2023/photos/", str_to_pull = 'fish1')
+
+my_caption2 = paste0('Rainbow trout captured upstream of crossing ', my_site, ' in 2023.')
+
+```
+
+```{r photo-197360-06, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+knitr::include_graphics(my_photo2)
+
+```
+
+```{r photo-197360-d03, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
 

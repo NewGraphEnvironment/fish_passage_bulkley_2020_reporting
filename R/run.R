@@ -34,15 +34,9 @@ preview_chapter('index.Rmd')
 
 
 #######################################################################################
-## script to get the most up to date 2023 habitat_confirmations.xls. You must have the 2023 Skeena repo cloned to your computer.
-year = "2023"
-file <- "habitat_confirmations.xls"
-move_from <- paste0("~/Projects/repo/fish_passage_skeena_2023_reporting/data/", file)
-move_to <- paste0("data/", year)
-fs::dir_create(move_to)
-
-##move the file over from the 2023 repo
-file.copy(from = move_from, to = move_to, overwrite = TRUE)
+## move the file over from the 2023 repo, you must have the 2023 Skeena repo cloned to your computer.
+fs::file_copy("~/Projects/repo/fish_passage_skeena_2023_reporting/data/habitat_confirmations.xls",
+              "data/2023/habitat_confirmations.xls", overwrite = TRUE)
 #######################################################################################
 
 

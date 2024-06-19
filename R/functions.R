@@ -208,7 +208,7 @@ tab_culvert <- tab_culvert_prep %>%
 
 ####--------------phase1 summary tables--------------------------
 print_tab_summary_all <- function(tab_sum, comments, photos){
-  kable(tab_sum, booktabs = T) %>%
+  kable(tab_sum, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
     kableExtra::add_footnote(label = paste0('Comments: ', comments[[1]]), notation = 'none') %>% #this grabs the comments out
     kableExtra::add_footnote(label = paste0('Photos: PSCIS ID ', photos[[2]],
@@ -219,7 +219,7 @@ print_tab_summary_all <- function(tab_sum, comments, photos){
 
 ####--------------phase1 summary tables pdf--------------------------
 print_tab_summary_all_pdf <- function(tab_sum, comments, photos){
-  kable(tab_sum, booktabs = T) %>%
+  kable(tab_sum, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
     kableExtra::add_footnote(label = paste0('Comments: ', comments[[1]]), notation = 'none') %>% #this grabs the comments out
     kableExtra::add_footnote(label = paste0('Photos: PSCIS ID ', photos[[2]],
@@ -231,7 +231,7 @@ print_tab_summary_all_pdf <- function(tab_sum, comments, photos){
 ##summary table
 print_tab_summary <- function(dat = pscis_phase2, site = my_site, site_photo_id = my_site, font = 11){
   make_tab_summary(df = dat %>% filter(pscis_crossing_id == site)) %>%
-    kable(caption = paste0('Summary of fish passage assessment for PSCIS crossing ', site, '.'), booktabs = T) %>%
+    kable(caption = paste0('Summary of fish passage assessment for PSCIS crossing ', site, '.'), booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) |>
     kableExtra::add_footnote(label = paste0('Comments: ', dat %>% filter(pscis_crossing_id == site) %>%
                                               pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
@@ -246,7 +246,7 @@ print_tab_summary <- function(dat = pscis_phase2, site = my_site, site_photo_id 
 ####------my_kable-------------------------------
 my_kable_scroll <- function(dat, caption_text = '', font = font_set){
   dat %>%
-    kable(caption = caption_text, booktabs = T) %>%
+    kable(caption = caption_text, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed", "responsive"),
                               full_width = T,
                               font_size = font) %>%
@@ -255,7 +255,7 @@ my_kable_scroll <- function(dat, caption_text = '', font = font_set){
 
 my_tab_overview <- function(dat, caption_text = '', font = font_set){
   dat %>%
-    kable(caption = caption_text, booktabs = T) %>%
+    kable(caption = caption_text, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed", "responsive"), full_width = T, font_size = font) %>%
     kableExtra::column_spec(column = c(9), width_min = '1.5in') %>%
     kableExtra::column_spec(column = c(5), width_min = '1.0in', width_max = '1.0in')
@@ -263,7 +263,7 @@ my_tab_overview <- function(dat, caption_text = '', font = font_set){
 
 my_tab_overview_scroll <- function(dat, caption_text = '', font = font_set){
   dat %>%
-    kable(caption = caption_text, booktabs = T) %>%
+    kable(caption = caption_text, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed"),
                               full_width = T,
                               font_size = font) %>%
@@ -275,7 +275,7 @@ my_tab_overview_scroll <- function(dat, caption_text = '', font = font_set){
 
 my_kable_scroll_no_height <- function(dat, caption_text = ''){
   dat %>%
-    kable(caption = caption_text, booktabs = T) %>%
+    kable(caption = caption_text, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
     kableExtra::scroll_box(width = "100%")
 }
@@ -289,7 +289,7 @@ my_kable_scroll_no_height <- function(dat, caption_text = ''){
 
 my_kable <- function(dat, caption_text = '', font = font_set){
   dat %>%
-    kable(caption = caption_text, booktabs = T) %>%
+    kable(caption = caption_text, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed", "responsive"),
                               full_width = T,
                               font_size = font)
@@ -392,7 +392,7 @@ make_html_tbl <- function(df) {
   #   dplyr::mutate(`Image link` = cell_spec('crossing', "html", link = `Image link`))
   df2 <- select(df, -shape, -color, -label) %>% janitor::remove_empty()
   df %>%
-    mutate(html_tbl = knitr::kable(df2, 'html', escape = F) %>%
+    mutate(html_tbl = knitr::kable(df2, 'html', escape = F, label = NA) %>%
              kableExtra::row_spec(0:nrow(df2), extra_css = "border: 1px solid black;") %>% # All cells get a border
              kableExtra::row_spec(0, background = "yellow") %>%
              kableExtra::column_spec(column = ncol(df2) - 1, width_min = '0.5in') %>%
@@ -471,7 +471,7 @@ make_tab_summary_bcfp <- function(dat = bcfishpass_all,
 
 print_tab_summary_bcfp <- function(sites = my_site, font = 11, ...){
   make_tab_summary_bcfp(site = sites) %>%
-    kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', sites, '.'), booktabs = T) %>%
+    kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', sites, '.'), booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) %>%
     kableExtra::add_footnote(c('Model data is preliminary and subject to adjustments including incorporating area based estimates.',
                                'Modelled rearing habitat estimates include linear lengths of centrelines within wetlands for coho and within lakes >100ha (multiplied by 1.5) for sockeye.',

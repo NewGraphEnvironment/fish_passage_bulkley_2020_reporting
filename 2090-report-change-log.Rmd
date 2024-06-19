@@ -7,3 +7,4 @@
 - Created `NEWS.md` to track updates.
 - Update cost estimates of all memos to better reflect inflated prices in 2024.
 - Added session info. 
+- Updated Trib to Buck - 197640 memo to include 2023 updates

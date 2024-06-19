@@ -8,10 +8,10 @@ pkgs_cran <- c(
   'janitor',
   'leafem',
   'leaflet',
-  'plotKML',
+  # 'plotKML',
   'httr',
   'RPostgres',
-  'RPostgreSQL',
+  # 'RPostgreSQL',
   'DBI',
   'magick',
   'bcdata',
@@ -29,7 +29,8 @@ pkgs_cran <- c(
   'ggdark',
   'pdftools',
   'geojsonsf',
-  'bit64' ##to make integer column type for pg
+  'bit64', ##to make integer column type for pg
+  "pagedown"
   # gert  ##to track git moves
   ##leafpop I think
   )
@@ -37,9 +38,7 @@ pkgs_cran <- c(
 pkgs_gh <- c(
   'poissonconsulting/fwapgr',
   "newgraphenvironment/fpr",
-  "haozhu233/kableExtra", ## 2024 update, this prevents black text in dark mode
-  "crsh/citr",
-  "rstudio/pagedown"
+  "haozhu233/kableExtra@a9c509a" ## 2024 update, this prevents black text in dark mode
 )
 
 pkgs_all <- c(pkgs_cran,

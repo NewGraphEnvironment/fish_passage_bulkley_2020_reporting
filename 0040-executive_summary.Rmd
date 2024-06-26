@@ -3,11 +3,11 @@
 # Executive Summary {.front-matter .unnumbered} 
 
 *Updated: 2024-06-26*
+
 This report is one in a series of reports from the Society for Ecosystem Restoration Northern British Columbia. It was 
 originally released in 2020 but has been updated many times since.  As of 2024, revisions and updates are tracked in the "Changelog"
 section of the report and the reader can refer to the additional reports below related not only to sites in the Bulkley River
-and Morice River watershed groups but also to other areas within the Skeena region. At the time of this update, other reports
-including:
+and Morice River watershed groups but also to other areas within the Skeena region. 
 
 - [Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021](https://newgraphenvironment.github.io/fish_passage_skeena_2021_reporting/)
 - [Bulkley River Watershed Fish Passage Restoration Planning 2022](https://newgraphenvironment.github.io/fish_passage_bulkley_2022_reporting/)

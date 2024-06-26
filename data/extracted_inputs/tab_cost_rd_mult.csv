@@ -1,9 +1,9 @@
 my_road_class,my_road_surface,road_class_mult,road_surface_mult,cost_m_1000s_bridge,cost_embed_cv
-Forest Service Road,loose,1,1,30,50
-resource,loose,1,1,30,50
-Road Permit,loose,1,1,30,50
-unclassified,loose,1,1,30,50
-unclassified,rough,1,1,30,50
+Forest Service Road,loose,1,1,30,100
+resource,loose,1,1,30,100
+Road Permit,loose,1,1,30,100
+unclassified,loose,1,1,30,100
+unclassified,rough,1,1,30,100
 local,loose,4,1,100,200
 local,paved,4,2,200,400
 highway,paved,15,2,750,1500

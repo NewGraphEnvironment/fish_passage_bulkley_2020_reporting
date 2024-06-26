@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning</title>
   <meta name="description" content="My Description." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="My Description." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
@@ -31,8 +30,8 @@
   
 
 <link rel="next" href="executive-summary.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -48,19 +47,23 @@
 
 
 
-
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-binding-2.2.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
 <link href="libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.css" rel="stylesheet" />
 <script src="libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.min.js"></script>
 <link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
@@ -75,6 +78,34 @@
 <script src="libs/leaflet-minimap-3.3.1/Minimap-binding.js"></script>
 
 
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -95,28 +126,210 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Acknowledgement</a></li>
 <li class="chapter" data-level="" data-path="executive-summary.html"><a href="executive-summary.html"><i class="fa fa-check"></i>Executive Summary</a></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>2</b> Background</a></li>
-<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a></li>
-<li class="chapter" data-level="4" data-path="results-and-discussion.html"><a href="results-and-discussion.html"><i class="fa fa-check"></i><b>4</b> Results and Discussion</a></li>
+<li class="chapter" data-level="2" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>2</b> Background</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="background.html"><a href="background.html#wetsuweten"><i class="fa fa-check"></i><b>2.1</b> Wet’suwet’en</a></li>
+<li class="chapter" data-level="2.2" data-path="background.html"><a href="background.html#gitxsan"><i class="fa fa-check"></i><b>2.2</b> Gitxsan</a></li>
+<li class="chapter" data-level="2.3" data-path="background.html"><a href="background.html#project-location"><i class="fa fa-check"></i><b>2.3</b> Project Location</a></li>
+<li class="chapter" data-level="2.4" data-path="background.html"><a href="background.html#fisheries"><i class="fa fa-check"></i><b>2.4</b> Fisheries</a></li>
+<li class="chapter" data-level="2.5" data-path="background.html"><a href="background.html#fish-passage-restoration-planning-and-implementation"><i class="fa fa-check"></i><b>2.5</b> Fish Passage Restoration Planning and Implementation</a></li>
+<li class="chapter" data-level="2.6" data-path="background.html"><a href="background.html#morice-river-2"><i class="fa fa-check"></i><b>2.6</b> Morice river</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="methods.html"><a href="methods.html#planning"><i class="fa fa-check"></i><b>3.1</b> Planning</a></li>
+<li class="chapter" data-level="3.2" data-path="methods.html"><a href="methods.html#fish-passage-assessments"><i class="fa fa-check"></i><b>3.2</b> Fish Passage Assessments</a></li>
+<li class="chapter" data-level="3.3" data-path="methods.html"><a href="methods.html#habitat-confirmation-assessments"><i class="fa fa-check"></i><b>3.3</b> Habitat Confirmation Assessments</a></li>
+<li class="chapter" data-level="3.4" data-path="methods.html"><a href="methods.html#reporting"><i class="fa fa-check"></i><b>3.4</b> Reporting</a></li>
+<li class="chapter" data-level="3.5" data-path="methods.html"><a href="methods.html#mapping"><i class="fa fa-check"></i><b>3.5</b> Mapping</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="results-and-discussion.html"><a href="results-and-discussion.html"><i class="fa fa-check"></i><b>4</b> Results and Discussion</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="results-and-discussion.html"><a href="results-and-discussion.html#planning-1"><i class="fa fa-check"></i><b>4.1</b> Planning</a></li>
+<li class="chapter" data-level="4.2" data-path="results-and-discussion.html"><a href="results-and-discussion.html#phase-1"><i class="fa fa-check"></i><b>4.2</b> Phase 1</a></li>
+<li class="chapter" data-level="4.3" data-path="results-and-discussion.html"><a href="results-and-discussion.html#phase-2"><i class="fa fa-check"></i><b>4.3</b> Phase 2</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="recommendations.html"><a href="recommendations.html"><i class="fa fa-check"></i><b>5</b> Recommendations</a></li>
-<li class="chapter" data-level="" data-path="appendix-phase-1-fish-passage-assessment-data-and-photos.html"><a href="appendix-phase-1-fish-passage-assessment-data-and-photos.html"><i class="fa fa-check"></i>Appendix - Phase 1 Fish Passage Assessment Data and Photos</a></li>
-<li class="chapter" data-level="" data-path="appendix-3139-trib-to-mcquarrie-creek.html"><a href="appendix-3139-trib-to-mcquarrie-creek.html"><i class="fa fa-check"></i>Appendix - 3139 - Trib to McQuarrie Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-58159-mcdowell-creek.html"><a href="appendix-58159-mcdowell-creek.html"><i class="fa fa-check"></i>Appendix - 58159 - McDowell Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-123445-123446-tyhee-creek.html"><a href="appendix-123445-123446-tyhee-creek.html"><i class="fa fa-check"></i>Appendix - 123445 &amp; 123446 - Tyhee Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-123794-tributary-to-blunt-creek.html"><a href="appendix-123794-tributary-to-blunt-creek.html"><i class="fa fa-check"></i>Appendix - 123794 - Tributary to Blunt Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-123795-tributary-to-blunt-creek.html"><a href="appendix-123795-tributary-to-blunt-creek.html"><i class="fa fa-check"></i>Appendix - 123795 - Tributary to Blunt Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-124487-porphyryr-creek.html"><a href="appendix-124487-porphyryr-creek.html"><i class="fa fa-check"></i>Appendix - 124487 - Porphyryr Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-124500-helps-creek.html"><a href="appendix-124500-helps-creek.html"><i class="fa fa-check"></i>Appendix - 124500 - Helps Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-195290-195288-gibson-creek.html"><a href="appendix-195290-195288-gibson-creek.html"><i class="fa fa-check"></i>Appendix - 195290 &amp; 195288 - Gibson Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197360-riddeck-creek.html"><a href="appendix-197360-riddeck-creek.html"><i class="fa fa-check"></i>Appendix - 197360 - Riddeck Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197640-tributary-to-buck-creek.html"><a href="appendix-197640-tributary-to-buck-creek.html"><i class="fa fa-check"></i>Appendix - 197640 - Tributary to Buck Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197658-byman-creek.html"><a href="appendix-197658-byman-creek.html"><i class="fa fa-check"></i>Appendix - 197658 - Byman Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197662-richfield-creek.html"><a href="appendix-197662-richfield-creek.html"><i class="fa fa-check"></i>Appendix - 197662 - Richfield Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197663-3054-johnny-david-creek.html"><a href="appendix-197663-3054-johnny-david-creek.html"><i class="fa fa-check"></i>Appendix - 197663 &amp; 3054 - Johnny David Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197665-197664-3042-barren-creek.html"><a href="appendix-197665-197664-3042-barren-creek.html"><i class="fa fa-check"></i>Appendix - 197665 &amp; 197664 &amp; 3042 - Barren Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197667-124501-moan-creek.html"><a href="appendix-197667-124501-moan-creek.html"><i class="fa fa-check"></i>Appendix - 197667 &amp; 124501 - Moan Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197668-124504-coffin-creek.html"><a href="appendix-197668-124504-coffin-creek.html"><i class="fa fa-check"></i>Appendix - 197668 &amp; 124504 - Coffin Creek</a></li>
+<li class="chapter" data-level="" data-path="appendix---phase-1-fish-passage-assessment-data-and-photos.html"><a href="appendix---phase-1-fish-passage-assessment-data-and-photos.html"><i class="fa fa-check"></i>Appendix - Phase 1 Fish Passage Assessment Data and Photos</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html"><i class="fa fa-check"></i>Appendix - 3139 - Trib to McQuarrie Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#site-location"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#background-1"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#stream-characteristics-at-crossing"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#stream-characteristics-downstream"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#stream-characteristics-upstream"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#structure-remediation-and-cost-estimate"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#conclusion"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html"><i class="fa fa-check"></i>Appendix - 58159 - McDowell Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#site-location-1"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#background-2"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#stream-characteristics-at-crossing-1"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#stream-characteristics-downstream-1"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#stream-characteristics-upstream-1"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#fish-sampling"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#structure-remediation-and-cost-estimate-1"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#conclusion-1"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html"><i class="fa fa-check"></i>Appendix - 123445 &amp; 123446 - Tyhee Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#site-location-2"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#background-3"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#stream-characteristics-at-crossings-123445-and-123446"><i class="fa fa-check"></i>Stream Characteristics at Crossings 123445 and 123446</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#stream-characteristics-downstream-of-123445"><i class="fa fa-check"></i>Stream Characteristics Downstream of 123445</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#stream-characteristics-upstream-of-123445-and-downstream-of-123446"><i class="fa fa-check"></i>Stream Characteristics Upstream of 123445 and downstream of 123446</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#stream-characteristics-upstream-of-123446"><i class="fa fa-check"></i>Stream Characteristics Upstream of 123446</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#structure-remediation-and-cost-estimate-2"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#conclusion-2"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html"><i class="fa fa-check"></i>Appendix - 123794 - Tributary to Blunt Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#site-location-3"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#background-4"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#stream-characteristics-at-crossing-2"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#stream-characteristics-downstream-2"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#stream-characteristics-upstream-2"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#structure-remediation-and-cost-estimate-3"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#conclusion-3"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html"><i class="fa fa-check"></i>Appendix - 123795 - Tributary to Blunt Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#site-location-4"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#background-5"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#stream-characteristics-at-crossing-3"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#stream-characteristics-downstream-3"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#stream-characteristics-upstream-3"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#structure-remediation-and-cost-estimate-4"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#conclusion-4"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html"><i class="fa fa-check"></i>Appendix - 124487 - Porphyryr Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#site-location-5"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#background-6"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#stream-characteristics-at-crossing-4"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#stream-characteristics-downstream-4"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#stream-characteristics-upstream-4"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#structure-remediation-and-cost-estimate-5"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#conclusion-5"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html"><i class="fa fa-check"></i>Appendix - 124500 - Helps Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#site-location-6"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#background-7"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#stream-characteristics-at-crossing-5"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#stream-characteristics-downstream-5"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#stream-characteristics-upstream-5"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#fish-sampling-1"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#structure-remediation-and-cost-estimate-6"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#conclusion-6"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html"><i class="fa fa-check"></i>Appendix - 195290 &amp; 195288 - Gibson Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#site-location-7"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#background-8"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#stream-characteristics-at-crossing-6"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#stream-characteristics-downstream-6"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#stream-characteristics-upstream-of-195290-and-downstream-of-195288"><i class="fa fa-check"></i>Stream Characteristics Upstream of 195290 and downstream of 195288</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#stream-characteristics-upstream-of-195288"><i class="fa fa-check"></i>Stream Characteristics Upstream of 195288</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#fish-sampling-2"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#structure-remediation-and-cost-estimate-7"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#conclusion-7"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html"><i class="fa fa-check"></i>Appendix - 197360 - Riddeck Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#site-location-8"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#background-9"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#stream-characteristics-at-crossing-7"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#stream-characteristics-downstream-7"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#stream-characteristics-upstream-6"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#fish-sampling-3"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#structure-remediation-and-cost-estimate-8"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#conclusion-8"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html"><i class="fa fa-check"></i>Appendix - 197640 - Tributary to Buck Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#site-location-9"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#background-10"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#stream-characteristics-at-crossing-8"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#stream-characteristics-downstream-8"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#stream-characteristics-upstream-7"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#structure-remediation-and-cost-estimate-9"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#conclusion-9"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html"><i class="fa fa-check"></i>Appendix - 197658 - Byman Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#site-location-10"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#background-11"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#stream-characteristics-at-crossing-9"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#stream-characteristics-downstream-9"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#stream-characteristics-upstream-8"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#fish-sampling-4"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#structure-remediation-and-cost-estimate-10"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#conclusion-10"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html"><i class="fa fa-check"></i>Appendix - 197662 - Richfield Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#site-location-11"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#background-12"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#stream-characteristics-at-crossing-10"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#stream-characteristics-downstream-10"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#stream-characteristics-upstream-9"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#fish-sampling-5"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#structure-remediation-and-cost-estimate-11"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#conclusion-11"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html"><i class="fa fa-check"></i>Appendix - 197663 &amp; 3054 - Johnny David Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#site-location-12"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#background-13"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#stream-characteristics-at-crossings-197663-and-3054"><i class="fa fa-check"></i>Stream Characteristics at Crossings 197663 and 3054</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#stream-characteristics-downstream-of-197663"><i class="fa fa-check"></i>Stream Characteristics Downstream of 197663</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#stream-characteristics-upstream-of-197663-and-downstream-of-3054"><i class="fa fa-check"></i>Stream Characteristics Upstream of 197663 and downstream of 3054</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#stream-characteristics-upstream-of-3054"><i class="fa fa-check"></i>Stream Characteristics Upstream of 3054</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#fish-sampling-6"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#structure-remediation-and-cost-estimate-12"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#conclusion-12"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html"><i class="fa fa-check"></i>Appendix - 197665 &amp; 197664 &amp; 3042 - Barren Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#site-location-13"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#background-14"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#stream-characteristics-at-crossings-197665-and-197664"><i class="fa fa-check"></i>Stream Characteristics at Crossings 197665 and 197664</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#stream-characteristics-downstream-of-197665"><i class="fa fa-check"></i>Stream Characteristics Downstream of 197665</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#stream-characteristics-upstream-of-197665-and-downstream-of-197664"><i class="fa fa-check"></i>Stream Characteristics Upstream of 197665 and downstream of 197664</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#stream-characteristics-upstream-of-197664"><i class="fa fa-check"></i>Stream Characteristics Upstream of 197664</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#stream-characteristics-downstream-of-3042"><i class="fa fa-check"></i>Stream Characteristics Downstream of 3042</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#stream-characteristics-upstream-of-3042"><i class="fa fa-check"></i>Stream Characteristics Upstream of 3042</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#structure-remediation-and-cost-estimate-13"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#conclusion-13"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html"><i class="fa fa-check"></i>Appendix - 197667 &amp; 124501 - Moan Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#site-location-14"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#background-15"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#stream-characteristics-at-crossings-197667-and-124501"><i class="fa fa-check"></i>Stream Characteristics at Crossings 197667 and 124501</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#stream-characteristics-downstream-of-197667"><i class="fa fa-check"></i>Stream Characteristics Downstream of 197667</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#stream-characteristics-upstream-of-197667-and-downstream-of-124501"><i class="fa fa-check"></i>Stream Characteristics Upstream of 197667 and downstream of 124501</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#stream-characteristics-upstream-of-124501"><i class="fa fa-check"></i>Stream Characteristics Upstream of 124501</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#fish-sampling-7"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#structure-remediation-and-cost-estimate-14"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#conclusion-14"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html"><i class="fa fa-check"></i>Appendix - 197668 &amp; 124504 - Coffin Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#site-location-15"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#background-16"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#stream-characteristics-at-crossings-197668-and-124504"><i class="fa fa-check"></i>Stream Characteristics at Crossings 197668 and 124504</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#stream-characteristics-downstream-of-197668"><i class="fa fa-check"></i>Stream Characteristics Downstream of 197668</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#stream-characteristics-upstream-of-124504"><i class="fa fa-check"></i>Stream Characteristics Upstream of 124504</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#fish-sampling-8"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#structure-remediation-and-cost-estimate-15"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#conclusion-15"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="changelog.html"><a href="changelog.html"><i class="fa fa-check"></i>Changelog</a></li>
+<li class="chapter" data-level="" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i>Session Info</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting" target="blank">Scripts and Data</a></li>
 
@@ -152,11 +365,11 @@ New Graph Environment<br />
 on behalf of<br />
 Society for Ecosytem Restoration in Northern British Columbia</div></em></p>
 <p class="date"><em><div class="line-block"><br />
-Version 0.1.2<br />
-2021-04-21</div></em></p>
+Version 0.1.3<br />
+2024-06-26</div></em></p>
 </div>
-<div id="acknowledgement" class="section level1 front-matter unnumbered">
-<h1>Acknowledgement</h1>
+<div id="acknowledgement" class="section level1 front-matter unnumbered hasAnchor">
+<h1>Acknowledgement<a href="index.html#acknowledgement" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The Bulkley River and Morice River watersheds are within Wet’suwet’en and Gitxsan territory.</p>
 <p><br></p>
 <p>Modern civilization has a long journey ahead to acknowledge and address the historic and ongoing impacts of colonialism that have resulted in harm to the ecosystems in Northern British Columbia. That harm naturally extends to the cultures and livelihoods of those that have lived in harmony with the Yintahk/Laxyip (land) for many thousands of years.</p>
@@ -224,7 +437,7 @@ Version 0.1.2<br />
 <p>Fish passage is a wonderful example of how all things are connected and interdependent. The barriers that divide will eventually fall once we understand together where, how and why they stand between.</p>
 <p><br></p>
 <p>Dzïn scudïlh’iy misiyh. Hami yaa nee loosim.</p>
-<script type="text/javascript">
+<script>
 title=document.getElementById('header');
 title.innerHTML = '<img src="fig/logo_sern_hctf.png" alt="NewGraph">' + title.innerHTML
 </script>
@@ -240,7 +453,6 @@ title.innerHTML = '<img src="fig/logo_sern_hctf.png" alt="NewGraph">' + title.in
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -259,6 +471,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -279,8 +492,12 @@ gitbook.start({
 "text": null
 },
 "download": ["Bulkley.pdf", "Bulkley.html"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 }
 });
 });
@@ -292,7 +509,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

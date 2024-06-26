@@ -69,7 +69,7 @@ font_set <- 9
 ```
 
 
-```{r}
+```{r source}
 source('R/packages.R')
 source('R/functions.R')
 source('R/functions-phase2.R')

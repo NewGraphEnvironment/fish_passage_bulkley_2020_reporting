@@ -1,110 +1,63 @@
 ##this is for as we work through
 # preview_chapter('index.Rmd')
-# preview_chapter('0300-method.Rmd')
-# preview_chapter('0400-results.Rmd')
-# preview_chapter('0200-background.Rmd')
-preview_chapter('0800-appendix-003139.Rmd') #mcquarrie
-preview_chapter('0800-appendix-123795.Rmd') #tirb to blunt
-preview_chapter('0800-appendix-124487.Rmd') #porphyryr
-preview_chapter('0800-appendix-124500.Rmd') #helps
-preview_chapter('0800-appendix-195290.Rmd')
-preview_chapter('0800-appendix-197360.Rmd')
-preview_chapter('0800-appendix-195290.Rmd')
-preview_chapter('0800-appendix-197640.Rmd') #buck
-preview_chapter('0800-appendix-197658.Rmd')
-preview_chapter('0800-appendix-197663.Rmd')
-preview_chapter('0800-appendix-197665.Rmd') #barren
-preview_chapter('0800-appendix-197667.Rmd') #moan
-preview_chapter('0800-appendix-197668.Rmd') #coffin
-preview_chapter('0800-appendix-123445.Rmd')
-preview_chapter('0100-intro.Rmd')
-preview_chapter('0200-background.Rmd')
-preview_chapter('0300-method.Rmd')
-preview_chapter('0400-results.Rmd')
-preview_chapter('0600-appendix.Rmd')
-preview_chapter('index.Rmd')
-##this is how we clean up our bib file.  We need to find a way to add together the packages.bib file with the book.bib file first though.
-# citr::tidy_bib_file(
-#   rmd_file = "Elk-River-Fish-Passage-2020.Rmd",
-#   messy_bibliography = 'book.bib',
-#   file = 'book_tidy.bib')
-
-##we also need to change all the date header to year in the bib file so that it can be run by our pdf maker
-##i did this by hand last time but would be good to automate!!!
-
-
-#######################################################################################
-## move the file over from the 2023 repo, you must have the 2023 Skeena repo cloned to your computer.
-fs::file_copy("~/Projects/repo/fish_passage_skeena_2023_reporting/data/habitat_confirmations.xls",
-              "data/2023/habitat_confirmations.xls", overwrite = TRUE)
-#######################################################################################
 
 
 
-##to build both a paged html version and a gitbook follow the steps below
-
-#######################################################################################
-##change your VErsion #
-#######################################################################################
-
-#######################################################################################
-##if you have changed your bcfishpass model outputs by saving to sqlite with 0282-extract-bcfishpass2...
-##you also need to make new html tables to link to in the leaflet map  use 0355-tables-reporting-html.R
-########################################################################################
-
-
-##move the phase 1 appendix out of the main directory to a backup file
-{file.rename('0600-appendix.Rmd', 'data/0600-appendix.Rmd')
-
-#################################################################################################
-##go to the index.Rmd and change gitbook_on <- FALSE
-#################################################################################################
-
-##   then make our printable pdf
-rmarkdown::render_site(output_format = 'pagedown::html_paged',
-                       encoding = 'UTF-8')
-##  move it to the docs folder so that it can be seen by the download button
-file.rename('Bulkley.html', 'docs/Bulkley.html')
-
-##now we need to print the docs/Elk.html file to Elk.pdf with chrome.  We should automate this step.  Do in browser for now
-openHTML('docs/Bulkley.html')
-
-##move the phase 1 appendix back to main directory
-file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')}
-
-
-
-
-##this is how we clean up our bib file.  We need to find a way to add together the packages.bib file with the book.bib file first though.
-# citr::tidy_bib_file(
-#   rmd_file = "Elk-River-Fish-Passage-2020.Rmd",
-#   messy_bibliography = 'book.bib',
-#   file = 'book_tidy.bib')
-
-##we also need to change all the date header to year in the bib file so that it can be run by our pdf maker
-##i did this by hand last time but would be good to automate!!!
-
-##  make the site
+# if you have changed your bcfishpass model outputs by saving to sqlite with 0282-extract-bcfishpass2...
+# you also need to make new html tables to link to in the leaflet map  use 0355-tables-reporting-html.R
 # source('R/photos-extract-metadata.R') ##if you added new photos
 # source('R/0355-tables-reporting-html.R')  #if you changed the modelling outputs
 
+# 2023 fish sampling data - must have the 2023 Skeena repo cloned to your computer.
+fs::file_copy("~/Projects/repo/fish_passage_skeena_2023_reporting/data/habitat_confirmations.xls",
+              "data/2023/habitat_confirmations.xls", overwrite = TRUE)
 
-#################################################################################################
-##go to the index.Rmd and change gitbook_on <- TRUE
-#################################################################################################
 
-library(tidyverse)
+#-----photos from 2023------------------------------------------------------------------------------------------
+dir_2023_photos_stub = "~/Library/CloudStorage/OneDrive-Personal/Projects/2023_data/skeena/photos/"
+dir_2023_photos <- c("124500", "197360")
+dir_repo_photos_stub = "data/2023/photos/"
+# copy the directories with purrr::map
+purrr::map(dir_2023_photos,
+           ~fs::dir_copy(paste0(dir_2023_photos_stub, .x),
+                         paste0(dir_repo_photos_stub, .x),
+                         overwrite = TRUE))
+
+# Gitbook
+library(magrittr)
+{
 source('R/functions.R')
 news_to_appendix()
 
 rmarkdown::render_site(output_format = 'bookdown::gitbook',
                        encoding = 'UTF-8')
+}
 
-
-
-##########################################make Phase 1 appendix seperately
+# pdf
 #################################################################################################
-##we need a workflow to print the Phase 1 attachment
+##go to the index.Rmd and change gitbook_on <- FALSE
+#################################################################################################
+
+##move the phase 1 appendix out of the main directory to a backup file
+{
+  file.rename('0600-appendix.Rmd', 'data/0600-appendix.Rmd')
+
+
+
+  ##   then make our printable pdf
+  rmarkdown::render_site(output_format = 'pagedown::html_paged',
+                         encoding = 'UTF-8')
+  ##  move it to the docs folder so that it can be seen by the download button
+  file.rename('Bulkley.html', 'docs/Bulkley.html')
+
+  ##now we need to print the docs/Elk.html file to Elk.pdf with chrome.  We should automate this step.  Do in browser for now
+  openHTML('docs/Bulkley.html')
+
+  ##move the phase 1 appendix back to main directory
+  file.rename('data/0600-appendix.Rmd', '0600-appendix.Rmd')
+}
+
+#make Phase 1 appendix seperately
 files_to_move <- list.files(pattern = ".Rmd$") %>%
   stringr::str_subset(., 'index|Bulkley|0600', negate = T)
 files_destination <- paste0('hold/', files_to_move)

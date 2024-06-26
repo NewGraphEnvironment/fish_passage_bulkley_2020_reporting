@@ -23,7 +23,7 @@ my_site <- 197640
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` is located on a `r my_pscis_info() %>% pull(stream_name)` on `r my_overview_info() %>% pull(road_name)` approximately 18km south of Houston and immediately south of the Carrier FSR turn-off.  The crossing consisted of two culverts (`moti_chris_culvert_id:` 1756173 and 1756168) located approximately `r my_priority_info(loc = 'ds') %>% pull(survey_length_m)`m upstream from the confluence with the Bulkley River. `r my_overview_info() %>% pull(road_name)` is the responsibility of the B.C. Ministry of Transportation and Infrastructure.
+PSCIS crossing `r as.character(my_site)` is located on a `r my_pscis_info() %>% pull(stream_name)` on `r my_overview_info() %>% pull(road_name)` approximately 18km south of Houston and immediately south of the Carrier FSR turn-off.  The crossing consisted of two culverts (`moti_chris_culvert_id:` 1756173 and 1756168) located approximately `r my_priority_info(loc = 'ds') %>% pull(survey_length_m)`m upstream from the confluence with the Bulkley River. `r my_overview_info() %>% pull(road_name)` is the responsibility of the B.C. Ministry of Transportation and Infrastructure (MoTI).
 
 <br>
 
@@ -46,7 +46,11 @@ PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority fo
 
 <br>
  
-Following the 2020 assessment, planning began to replace crossing `r as.character(my_site)` with help from the Ministry of Transportation and Infrastructure (MOTI). Crossing `r as.character(my_site)` was revisited on September 12, 2023 to conduct baseline fish sampling but at the time of the survey the crossing was primarily dry and sampling was not possible.
+Following the 2020 assessment, planning began to replace crossing `r as.character(my_site)` with preliminary designs commissioned
+from the Canadian Wildlife Federation in collaboration with the MoTI. Crossing `r as.character(my_site)` was revisited in the 
+summer of 2023 to conduct baseline fish sampling but at the time of the survey the stream adjacent to the crossing was primarily dry so sampling was not conducted.
+
+<br>
 
 A map of the watershed is provided in map attachment [`r my_bcfishpass() %>% pull(dbm_mof_50k_grid)`](`r my_mapsheet()`).
 
@@ -59,7 +63,8 @@ At the time of the 2020 survey, both culverts were un-embedded, non-backwatered 
 
 <br>
 
-A previously mentioned, during the 2023 reassessment the crossing was primarily dry with only a very small outlet pool (Figure \@ref(fig:summary-197640-2023)). Both culverts were un-embedded, non-backwatered and had a 0.6m outlet drop. 
+As previously noted, during the 2023 reassessment the crossing was primarily dry with only a very small outlet pool (Figure \@ref(fig:summary-197640-2023)). Both culverts were un-embedded, non-backwatered and had 0.6m outlet drops. Complete 
+reassessment data from the 2023 fish passage assessment will be submitted to the PSCIS database and is available [here](https://github.com/NewGraphEnvironment/fish_passage_skeena_2023_reporting/blob/main/data/backup/pscis_all.csv).
 
 <br>
 
@@ -94,18 +99,21 @@ Table \@ref(tab:tab-culvert-bcfp-197640) `r text_ref_tab_summary_bcfp()`
 
 Replacement of PSCIS crossing `r as.character(my_site)` with a bridge (`r my_pscis_info() %>% pull(recommended_diameter_or_span_meters)`m span) is recommended. The cost of the work is estimated at \$`r format(my_cost_estimate() %>% pull(cost_est_1000s) * 1000, big.mark = ',')` for a cost benefit of `r as.character(my_cost_estimate() %>% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %>% pull(cost_area_net))`m^2^/\$1000.
 
+<br>
+
 As of March 2024, replacement of PSCIS crossing `r as.character(my_site)` is currently in the planning process, lead by the Ministry of Transportation and Infrastructure.
 
 <br>
 
 ## Conclusion {-}
 
-A conservative estimate of mainstem habitat upstream of crossing `r as.character(my_site)` is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km to the top end of a 71ha wetland where rainbow trout have been recorded. Habitat in the areas surveyed upstream of the culvert were rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing with areas of wetland habitat likely suitable for rainbow trout, coho and steelhead rearing. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.  The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. 
+A conservative estimate of mainstem habitat upstream of crossing `r as.character(my_site)` on `r my_overview_info() %>% pull(road_name)` is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km to the top end of a 71ha wetland where rainbow trout have been recorded. Habitat in the areas surveyed upstream of the culvert were rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing with areas of wetland habitat likely suitable for rainbow trout, coho and steelhead rearing. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure adn the crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. 
 
-Following the 2020 assessment, planning began to replace crossing `r as.character(my_site)` with help from the Ministry of Transportation and Infrastructure (MOTI). Crossing `r as.character(my_site)` was revisited during the 2023 season to conduct baseline fish sampling but at the time of the survey the crossing was primarily dry and sampling was not possible. The crossing is still being considereing for replacement as of March 2024. 
+<br>
 
-<!-- this is a bit strange but the pages.js will not build beyond this so we leave for now -->
-<!-- `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")` -->
+Following the 2020 habitat confirmation assessment and the initial release of this report, planning began to replace crossing `r as.character(my_site)` with preliminary designs commissioned by the Canadian Wildlife Federation in collaboration with the MoTI. Although baseline fish sampling could not be completed in 2023 due to low water conditions, the crossing 
+was still considered a high priority for replacement due to relatively lower costs of replacement (when compared to paved major roads), significant amounts of potential habitat upstream, its proximity to the high value Buck Creek and because of the severity of migration barrier presented by the large culvert outlet drops.
+
 
 <br>
 
@@ -122,7 +130,8 @@ print_tab_summary()
 ```{r tab-culvert-197647, eval = T}
 print_tab_summary(dat = pscis_all, 
                   site = 197647, 
-                  site_photo_id = 1804986)
+                  site_photo_id = 1804986
+                  )
 
 ```
 
@@ -131,7 +140,7 @@ print_tab_summary(dat = pscis_all,
 ```{r summary-197640-2023-prep}
 my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site, dir_photos = "data/2023/photos/", str_to_pull = 'crossing_all')
 
-my_caption1 = paste0('Summary of 2023 fish passage assessment for PSCIS crossing ', my_site, '.')
+my_caption1 = paste0('Photos of PSCIS crossing ', my_site, ' taken in September 2023. From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.')
 
 ```
 

@@ -23,7 +23,7 @@ my_site <- 124500
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pull(stream_name)` on `r my_overview_info() %>% pull(road_name)` approximately 5km south of Telkwa.  The culvert is located approximately 1.7km upstream from the confluence with the Bulkley River. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.
+PSCIS crossing `r as.character(my_site)` is located approximately 5km south of Telkwa adjacent to the W Diamond Ramch on `r my_pscis_info() %>% pull(stream_name)` and `r my_overview_info() %>% pull(road_name)`.  The culvert is located approximately 1.7km upstream from the confluence with the Bulkley River. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.
 
 
 <br>
@@ -31,21 +31,25 @@ PSCIS crossing `r as.character(my_site)` is located on `r my_pscis_info() %>% pu
 ## Background {-}
 
 
-At crossing `r as.character(my_site)`, `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream with an upstream watershed area of approximately `r round(my_bcfishpass() %>% pull(watershed_upstr_ha)/100,1)`km^2^. The elevation of the watershed ranges from a maximum of 1350m to 530m at PSCIS crossing `r as.character(my_site)`. Upstream of `r my_overview_info() %>% pull(road_name)`, `r my_fish_sp()` have been previously recorded as present and coho, steelhead, rainbow trout and burbot have been observed below the crossing [@data_fish_obs]. A backwatered and passable rail stream crossing consisting of three round culverts (PSCIS 197666) is located under the railway approximately 1.2km downstream.  There is one major tributary to `r my_pscis_info() %>% pull(stream_name)` that intersects the mainstem of the creek approximately 1.7km upstream of `r my_overview_info() %>% pull(road_name)`.  There are several stream crossing structures documented on this tributary with the first of which located 4.7km upstream of `r my_overview_info() %>% pull(road_name)`. The adjacent landowner anecdotally reported a drop in numbers of fry/parr in stream over last 20 years. At the time of the survey a staff gauge was present just upstream of crossing.
+At crossing `r as.character(my_site)`, `r my_pscis_info() %>% pull(stream_name)` is a `r my_bcfishpass() %>% pull(stream_order) %>% english::ordinal()` order stream with an upstream watershed area of approximately `r round(my_bcfishpass() %>% pull(watershed_upstr_ha)/100,1)`km^2^. The elevation of the watershed ranges from a maximum of 1350m to 530m at PSCIS crossing `r as.character(my_site)`. Upstream of `r my_overview_info() %>% pull(road_name)`, `r my_fish_sp()` have been previously recorded as present and coho, steelhead, rainbow trout and burbot have been observed below the crossing [@data_fish_obs]. A backwatered and passable rail stream crossing consisting of three round culverts (PSCIS 197666) is located under the railway approximately 1.2km downstream.  There is one major tributary to `r my_pscis_info() %>% pull(stream_name)` that intersects the mainstem of the creek approximately 1.7km upstream of `r my_overview_info() %>% pull(road_name)`.  There are several stream crossing structures documented on this tributary with the first of which located 4.7km upstream of `r my_overview_info() %>% pull(road_name)`. The adjacent landowner anecdotally reported a drop in numbers of fry/parr in stream over last 20 years and also mentioned that - at some points in
+time in the past - there were large numbers of adult lamprey present within the downstream railway crossing. At the time of the survey a staff gauge was present just upstream of crossing `r as.character(my_site)` on `r my_overview_info() %>% pull(road_name)`.
 
 <br>
 
-PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @irvine2018AnalysisPriority.  The site was assessed by @smith2018AssessingBarriers in 2017 with maintenance to clear the inlet of debris recommended and replacement of the crossing assessed as a low priority.  A map of the watershed is provided in map attachment [`r my_bcfishpass() %>% pull(dbm_mof_50k_grid)`](`r my_mapsheet()`).
+PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @irvine2018AnalysisPriority.  The site was assessed by @smith2018AssessingBarriers in 2017 with maintenance to clear the inlet of debris recommended and replacement of the crossing assessed as a low priority.  
 
 <br>
 
-After initial assessment in 2020, the site was revisited on September 15, 2023 and electrofishing was conducted to help provide insight into fish community composition and density, with results included in this report.
+Following the 2020 assessment, planning began to replace crossing `r as.character(my_site)` with preliminary designs commissioned
+from the Canadian Wildlife Federation in collaboration with the MoTI. To assess the severity of impacts of the culvert on fisheries values in the stream and inform baseline monitoring before a potential replacement, the site was electrofished in the summer of 2023 to provide insight into fish community composition and density.  Results from 2023 have been incorperated into an updated version of this report.
 
 <br>
+
+A map of the watershed is provided in map attachment [`r my_bcfishpass() %>% pull(dbm_mof_50k_grid)`](`r my_mapsheet()`).
 
 ## Stream Characteristics at Crossing {-}
 
-At the time of the survey, the culvert under `r my_overview_info() %>% pull(road_name)` was un-embedded, non-backwatered and ranked as a barrier to upstream fish passage acoording to the provincial protocol [@fish_passage_assessments]. The pipe was `r my_pscis_info() %>% pull(diameter_or_span_meters)`m in diameter with a length of `r my_pscis_info() %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info() %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info() %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info() %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-124500)). Water temperature was `r my_habitat_info3(row = 'temperature c')`$^\circ$C, pH was `r my_habitat_info3(row = 'p h')` and conductivity was `r my_habitat_info3(row = 'conductivity m s cm')`uS/cm. There was a beaver grate on the inlet of the culvert.  
+At the time of the survey, the culvert under `r my_overview_info() %>% pull(road_name)` was un-embedded, non-backwatered and ranked as a barrier to upstream fish passage according to the provincial protocol [@fish_passage_assessments]. The pipe was `r my_pscis_info() %>% pull(diameter_or_span_meters)`m in diameter with a length of `r my_pscis_info() %>% pull(length_or_width_meters)`m, a culvert slope of `r my_pscis_info() %>% pull(culvert_slope_percent)`%, a stream width ratio of `r my_pscis_info() %>% pull(stream_width_ratio)` and an outlet drop of `r my_pscis_info() %>% pull(outlet_drop_meters)`m (Table \@ref(tab:tab-culvert-124500)). Water temperature was `r my_habitat_info3(row = 'temperature c')`$^\circ$C, pH was `r my_habitat_info3(row = 'p h')` and conductivity was `r my_habitat_info3(row = 'conductivity m s cm')`uS/cm. There was a beaver grate on the inlet of the culvert.  
 
 
 <br>
@@ -76,13 +80,21 @@ Table \@ref(tab:tab-culvert-bcfp-124500) `r text_ref_tab_summary_bcfp()`
 
 ## Fish Sampling {-}
 
-To assess potential impacts of the culvert on fisheries values in the stream, the site was revisited on September 15, 2023 and electrofishing was conducted upstream and downstream of the crossing with results summarized in Tables \@ref(tab:tab-fish-site-124500) - \@ref(tab:tab-fish-dens-124500) and Figure \@ref(fig:plot-fish-box-124500). A total of `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured upstream, including coho, longnose dace and suckers,  and `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured downstream, including coho, rainbow trout, longnose dace, suckers and lamprey `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-124500-05) - \\@ref(fig:photo-124500-06)).")}else(knitr::asis_output("(Figures \\@ref(fig:photo-124500-d03))."))` All fish captured with a fork length greater than 60mm were tagged with Passive Integrated Transponders (PIT tags) with data stored [here](`r paste0(params$repo_url, "blob/main/data/2023/habitat_confirmations.xls")`).
+As noted above, to assess the severity of impacts of the culvert on fisheries values in the stream and inform baseline monitoring, 
+the site was revisited on September 15, 2023 with electrofishing conducted upstream and downstream of the crossing.
+ Results are summarized in Tables \@ref(tab:tab-fish-site-124500) - \@ref(tab:tab-fish-dens-124500) and Figure \@ref(fig:plot-fish-box-124500). 
+ 
+ <br>
+ 
+A total of `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured upstream, including coho, longnose dace and suckers.
+Downstream, `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured including coho, rainbow trout, longnose dace, suckers and lamprey `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-124500-05) - \\@ref(fig:photo-124500-06)).")}else(knitr::asis_output("(Figures \\@ref(fig:photo-124500-d03))."))` All coho and rainbow
+captured with a fork length greater than 60mm were tagged with Passive Integrated Transponders (PIT tags) with data stored [here](`r paste0(params$repo_url, "blob/main/data/2023/habitat_confirmations.xls")`).
 
 
 
 ## Structure Remediation and Cost Estimate {-}
 
-Replacement of PSCIS crossing `r as.character(my_site)` with a bridge (`r my_pscis_info() %>% pull(recommended_diameter_or_span_meters)`m span) is recommended in the long term. The cost of the work is estimated at \$`r format(my_cost_estimate() %>% pull(cost_est_1000s) * 1000, big.mark = ',')` for a cost benefit of `r as.character(my_cost_estimate() %>% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %>% pull(cost_area_net))`m^2^/\$1000.
+Replacement of PSCIS crossing `r as.character(my_site)` with a bridge (`r my_pscis_info() %>% pull(recommended_diameter_or_span_meters)`m span) is recommended. The cost of the work is estimated at \$`r format(my_cost_estimate() %>% pull(cost_est_1000s) * 1000, big.mark = ',')` for a cost benefit of `r as.character(my_cost_estimate() %>% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %>% pull(cost_area_net))`m^2^/\$1000.
 
 
 <br>
@@ -90,9 +102,16 @@ Replacement of PSCIS crossing `r as.character(my_site)` with a bridge (`r my_psc
 
 ## Conclusion {-}
 
-A conservative estimate of mainstem and major tributary habitat upstream of crossing `r as.character(my_site)` is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km.  Habitat in the areas surveyed was rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing with habitat noted as particulary suitable for coho and cutthrout. Although classified as a "barrier" according to the provincial metric, the crossing is likely passable to adult salmonids during moderate flows.  During low flow periods, water depths in the culverts may be an impediment to upstream passage for large adult fish. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.  The crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. 
+A conservative estimate of mainstem and major tributary habitat upstream of crossing `r as.character(my_site)` on `r my_overview_info() %>% pull(road_name)` is `r my_priority_info() %>% pull(upstream_habitat_length_km)`km.  Habitat in the areas surveyed was rated as `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` value for salmonid rearing with habitat noted as particularly suitable for coho and cutthroat.  the crossing is likely passable to upstream 
+migrating adult salmonids during moderate flows as no outlet drop was present and because low gradient habitat was 
+not expected to result in overly high flow velocities.  During low flow periods, water depths in the culverts may be an impediment to upstream passage for large adult fish but this is unconfirmed. `r my_overview_info() %>% pull(road_name)` is the responsibility of the Ministry of Transportation and Infrastructure and the crossing was ranked as a `r my_priority_info() %>% pull(priority)` priority for proceeding to design for replacement. 
 
-Due to the initial assessment's `r my_priority_info(sit = my_site, loc = 'us') %>% pull(hab_value)` habitat value rating and expansive habitat upstream, crossing `r as.character(my_site)` was revisited in for electrofishing in 2023. Coho fry and parr were capture below the crossing, and coho parr above the crossing. Additionally, longnose dace and suckers were captured above crossing `r as.character(my_site)`, and rainbow trout, longnose dace, suckers, and lamprey below the crossing. 
+<br>
+
+Although classified as a "barrier" according to the provincial metric, the presence of coho fry and parr upstream of `r my_overview_info() %>% pull(road_name)` in areas surveyed with electrofishing in 2023 demonstrated that some or all life stages of coho were able to ascend above the crossing in 2022 and/or 2023. Although,
+this indicates that PSCIS crossing `r as.character(my_site)` was not blocking upstream migration for these species during the 
+years preceding the sampling event, it may still be hindering connectivity at some times of year and for some species and life stages
+of fish present in the watershed including lamprey.
 
 <!-- this is a bit strange but the pages.js will not build beyond this so we leave for now -->
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`

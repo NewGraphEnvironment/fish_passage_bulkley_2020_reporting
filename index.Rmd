@@ -22,6 +22,7 @@ site: bookdown::bookdown_site
 output: bookdown::gitbook
 params:
  repo_url: 'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/'
+ update_packages: FALSE
 nocite: |
   @busch_etal2013LandscapeLevelModel, 
   @woll_etal2017SalmonEcological,

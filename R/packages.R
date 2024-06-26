@@ -36,13 +36,22 @@ pkgs_cran <- c(
   )
 
 pkgs_gh <- c(
+  ## 2024 update, this prevents black text in dark mode
+  "haozhu233/kableExtra@a9c509a",
   'poissonconsulting/fwapgr',
-  "newgraphenvironment/fpr",
-  "haozhu233/kableExtra@a9c509a" ## 2024 update, this prevents black text in dark mode
+  "newgraphenvironment/fpr"
+
 )
 
 pkgs_all <- c(pkgs_cran,
               pkgs_gh)
+
+# install or upgrade all the packages with pak
+if(params$update_packages){
+  lapply(pkgs_all,
+         pak::pkg_install,
+         ask = FALSE)
+}
 
 pkgs_ld <- c(pkgs_cran,
              basename(pkgs_gh))

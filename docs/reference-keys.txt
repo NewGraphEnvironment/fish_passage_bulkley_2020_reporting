@@ -17,7 +17,7 @@ tab:tab-cost-mult
 fig:map-interactive
 tab:cost-est-phase-1
 tab:tab-overview
-tab:unnamed-chunk-9
+tab:unnamed-chunk-8
 tab:cost-est-phase-2
 tab:tab-habitat-summary
 fig:plot-fish-all
@@ -225,6 +225,6 @@ reporting
 mapping
 results-and-discussion
 planning-1
-phase-1
-phase-2
+fish-passage-assessments-1
+habitat-confirmation-assessments-1
 recommendations

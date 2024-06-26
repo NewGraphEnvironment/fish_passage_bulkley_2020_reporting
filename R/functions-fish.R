@@ -55,8 +55,8 @@ tab_fish_dens <- function(dat = hab_fish_dens, sit = my_site){ #species = 'RB'
            Species = species_code,
            everything()) %>% ##removed fry, parr
     purrr::set_names(nm = stringr::str_to_title(names(.))) %>%
-    arrange(Species) %>%
-    mutate_all(~replace_na(.,"0"))
+    arrange(Species)
+    # mutate_all(~replace_na(.,'0')) #2024 update, index covers this with `options(knitr.kable.NA = '--')`
 }
 
 # tab_fish_dens <- function(dat = hab_fish_dens, sit = my_site){ #species = 'RB'
@@ -134,8 +134,8 @@ tab_fish_mt <- function(sit = my_site){
                 values_from = Number) %>%
     mutate(Location = case_when(Location == 'us' ~ 'Upstream',
                                 T ~ 'Downstream')) %>%
-    arrange(Species) %>%
-    mutate_all(~replace_na(.,"0"))
+    arrange(Species)
+    # mutate_all(~replace_na(.,"0"))  #2024 update, index covers this with `options(knitr.kable.NA = '--')`
 }
 
 

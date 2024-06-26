@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Background | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning</title>
   <meta name="description" content="My Description." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Background | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="My Description." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
@@ -31,8 +30,8 @@
   
 <link rel="prev" href="intro.html"/>
 <link rel="next" href="methods.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -48,19 +47,23 @@
 
 
 
-
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-binding-2.2.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
 <link href="libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.css" rel="stylesheet" />
 <script src="libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.min.js"></script>
 <link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
@@ -75,6 +78,34 @@
 <script src="libs/leaflet-minimap-3.3.1/Minimap-binding.js"></script>
 
 
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -95,28 +126,210 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Acknowledgement</a></li>
 <li class="chapter" data-level="" data-path="executive-summary.html"><a href="executive-summary.html"><i class="fa fa-check"></i>Executive Summary</a></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>2</b> Background</a></li>
-<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a></li>
-<li class="chapter" data-level="4" data-path="results-and-discussion.html"><a href="results-and-discussion.html"><i class="fa fa-check"></i><b>4</b> Results and Discussion</a></li>
+<li class="chapter" data-level="2" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>2</b> Background</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="background.html"><a href="background.html#wetsuweten"><i class="fa fa-check"></i><b>2.1</b> Wet’suwet’en</a></li>
+<li class="chapter" data-level="2.2" data-path="background.html"><a href="background.html#gitxsan"><i class="fa fa-check"></i><b>2.2</b> Gitxsan</a></li>
+<li class="chapter" data-level="2.3" data-path="background.html"><a href="background.html#project-location"><i class="fa fa-check"></i><b>2.3</b> Project Location</a></li>
+<li class="chapter" data-level="2.4" data-path="background.html"><a href="background.html#fisheries"><i class="fa fa-check"></i><b>2.4</b> Fisheries</a></li>
+<li class="chapter" data-level="2.5" data-path="background.html"><a href="background.html#fish-passage-restoration-planning-and-implementation"><i class="fa fa-check"></i><b>2.5</b> Fish Passage Restoration Planning and Implementation</a></li>
+<li class="chapter" data-level="2.6" data-path="background.html"><a href="background.html#morice-river-2"><i class="fa fa-check"></i><b>2.6</b> Morice river</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="methods.html"><a href="methods.html#planning"><i class="fa fa-check"></i><b>3.1</b> Planning</a></li>
+<li class="chapter" data-level="3.2" data-path="methods.html"><a href="methods.html#fish-passage-assessments"><i class="fa fa-check"></i><b>3.2</b> Fish Passage Assessments</a></li>
+<li class="chapter" data-level="3.3" data-path="methods.html"><a href="methods.html#habitat-confirmation-assessments"><i class="fa fa-check"></i><b>3.3</b> Habitat Confirmation Assessments</a></li>
+<li class="chapter" data-level="3.4" data-path="methods.html"><a href="methods.html#reporting"><i class="fa fa-check"></i><b>3.4</b> Reporting</a></li>
+<li class="chapter" data-level="3.5" data-path="methods.html"><a href="methods.html#mapping"><i class="fa fa-check"></i><b>3.5</b> Mapping</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="results-and-discussion.html"><a href="results-and-discussion.html"><i class="fa fa-check"></i><b>4</b> Results and Discussion</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="results-and-discussion.html"><a href="results-and-discussion.html#planning-1"><i class="fa fa-check"></i><b>4.1</b> Planning</a></li>
+<li class="chapter" data-level="4.2" data-path="results-and-discussion.html"><a href="results-and-discussion.html#phase-1"><i class="fa fa-check"></i><b>4.2</b> Phase 1</a></li>
+<li class="chapter" data-level="4.3" data-path="results-and-discussion.html"><a href="results-and-discussion.html#phase-2"><i class="fa fa-check"></i><b>4.3</b> Phase 2</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="recommendations.html"><a href="recommendations.html"><i class="fa fa-check"></i><b>5</b> Recommendations</a></li>
-<li class="chapter" data-level="" data-path="appendix-phase-1-fish-passage-assessment-data-and-photos.html"><a href="appendix-phase-1-fish-passage-assessment-data-and-photos.html"><i class="fa fa-check"></i>Appendix - Phase 1 Fish Passage Assessment Data and Photos</a></li>
-<li class="chapter" data-level="" data-path="appendix-3139-trib-to-mcquarrie-creek.html"><a href="appendix-3139-trib-to-mcquarrie-creek.html"><i class="fa fa-check"></i>Appendix - 3139 - Trib to McQuarrie Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-58159-mcdowell-creek.html"><a href="appendix-58159-mcdowell-creek.html"><i class="fa fa-check"></i>Appendix - 58159 - McDowell Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-123445-123446-tyhee-creek.html"><a href="appendix-123445-123446-tyhee-creek.html"><i class="fa fa-check"></i>Appendix - 123445 &amp; 123446 - Tyhee Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-123794-tributary-to-blunt-creek.html"><a href="appendix-123794-tributary-to-blunt-creek.html"><i class="fa fa-check"></i>Appendix - 123794 - Tributary to Blunt Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-123795-tributary-to-blunt-creek.html"><a href="appendix-123795-tributary-to-blunt-creek.html"><i class="fa fa-check"></i>Appendix - 123795 - Tributary to Blunt Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-124487-porphyryr-creek.html"><a href="appendix-124487-porphyryr-creek.html"><i class="fa fa-check"></i>Appendix - 124487 - Porphyryr Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-124500-helps-creek.html"><a href="appendix-124500-helps-creek.html"><i class="fa fa-check"></i>Appendix - 124500 - Helps Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-195290-195288-gibson-creek.html"><a href="appendix-195290-195288-gibson-creek.html"><i class="fa fa-check"></i>Appendix - 195290 &amp; 195288 - Gibson Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197360-riddeck-creek.html"><a href="appendix-197360-riddeck-creek.html"><i class="fa fa-check"></i>Appendix - 197360 - Riddeck Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197640-tributary-to-buck-creek.html"><a href="appendix-197640-tributary-to-buck-creek.html"><i class="fa fa-check"></i>Appendix - 197640 - Tributary to Buck Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197658-byman-creek.html"><a href="appendix-197658-byman-creek.html"><i class="fa fa-check"></i>Appendix - 197658 - Byman Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197662-richfield-creek.html"><a href="appendix-197662-richfield-creek.html"><i class="fa fa-check"></i>Appendix - 197662 - Richfield Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197663-3054-johnny-david-creek.html"><a href="appendix-197663-3054-johnny-david-creek.html"><i class="fa fa-check"></i>Appendix - 197663 &amp; 3054 - Johnny David Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197665-197664-3042-barren-creek.html"><a href="appendix-197665-197664-3042-barren-creek.html"><i class="fa fa-check"></i>Appendix - 197665 &amp; 197664 &amp; 3042 - Barren Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197667-124501-moan-creek.html"><a href="appendix-197667-124501-moan-creek.html"><i class="fa fa-check"></i>Appendix - 197667 &amp; 124501 - Moan Creek</a></li>
-<li class="chapter" data-level="" data-path="appendix-197668-124504-coffin-creek.html"><a href="appendix-197668-124504-coffin-creek.html"><i class="fa fa-check"></i>Appendix - 197668 &amp; 124504 - Coffin Creek</a></li>
+<li class="chapter" data-level="" data-path="appendix---phase-1-fish-passage-assessment-data-and-photos.html"><a href="appendix---phase-1-fish-passage-assessment-data-and-photos.html"><i class="fa fa-check"></i>Appendix - Phase 1 Fish Passage Assessment Data and Photos</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html"><i class="fa fa-check"></i>Appendix - 3139 - Trib to McQuarrie Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#site-location"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#background-1"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#stream-characteristics-at-crossing"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#stream-characteristics-downstream"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#stream-characteristics-upstream"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#structure-remediation-and-cost-estimate"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---3139---trib-to-mcquarrie-creek.html"><a href="appendix---3139---trib-to-mcquarrie-creek.html#conclusion"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html"><i class="fa fa-check"></i>Appendix - 58159 - McDowell Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#site-location-1"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#background-2"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#stream-characteristics-at-crossing-1"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#stream-characteristics-downstream-1"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#stream-characteristics-upstream-1"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#fish-sampling"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#structure-remediation-and-cost-estimate-1"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---58159---mcdowell-creek.html"><a href="appendix---58159---mcdowell-creek.html#conclusion-1"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html"><i class="fa fa-check"></i>Appendix - 123445 &amp; 123446 - Tyhee Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#site-location-2"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#background-3"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#stream-characteristics-at-crossings-123445-and-123446"><i class="fa fa-check"></i>Stream Characteristics at Crossings 123445 and 123446</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#stream-characteristics-downstream-of-123445"><i class="fa fa-check"></i>Stream Characteristics Downstream of 123445</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#stream-characteristics-upstream-of-123445-and-downstream-of-123446"><i class="fa fa-check"></i>Stream Characteristics Upstream of 123445 and downstream of 123446</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#stream-characteristics-upstream-of-123446"><i class="fa fa-check"></i>Stream Characteristics Upstream of 123446</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#structure-remediation-and-cost-estimate-2"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---123445-123446---tyhee-creek.html"><a href="appendix---123445-123446---tyhee-creek.html#conclusion-2"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html"><i class="fa fa-check"></i>Appendix - 123794 - Tributary to Blunt Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#site-location-3"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#background-4"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#stream-characteristics-at-crossing-2"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#stream-characteristics-downstream-2"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#stream-characteristics-upstream-2"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#structure-remediation-and-cost-estimate-3"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---123794---tributary-to-blunt-creek.html"><a href="appendix---123794---tributary-to-blunt-creek.html#conclusion-3"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html"><i class="fa fa-check"></i>Appendix - 123795 - Tributary to Blunt Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#site-location-4"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#background-5"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#stream-characteristics-at-crossing-3"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#stream-characteristics-downstream-3"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#stream-characteristics-upstream-3"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#structure-remediation-and-cost-estimate-4"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---123795---tributary-to-blunt-creek.html"><a href="appendix---123795---tributary-to-blunt-creek.html#conclusion-4"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html"><i class="fa fa-check"></i>Appendix - 124487 - Porphyryr Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#site-location-5"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#background-6"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#stream-characteristics-at-crossing-4"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#stream-characteristics-downstream-4"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#stream-characteristics-upstream-4"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#structure-remediation-and-cost-estimate-5"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---124487---porphyryr-creek.html"><a href="appendix---124487---porphyryr-creek.html#conclusion-5"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html"><i class="fa fa-check"></i>Appendix - 124500 - Helps Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#site-location-6"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#background-7"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#stream-characteristics-at-crossing-5"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#stream-characteristics-downstream-5"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#stream-characteristics-upstream-5"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#fish-sampling-1"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#structure-remediation-and-cost-estimate-6"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---124500---helps-creek.html"><a href="appendix---124500---helps-creek.html#conclusion-6"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html"><i class="fa fa-check"></i>Appendix - 195290 &amp; 195288 - Gibson Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#site-location-7"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#background-8"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#stream-characteristics-at-crossing-6"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#stream-characteristics-downstream-6"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#stream-characteristics-upstream-of-195290-and-downstream-of-195288"><i class="fa fa-check"></i>Stream Characteristics Upstream of 195290 and downstream of 195288</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#stream-characteristics-upstream-of-195288"><i class="fa fa-check"></i>Stream Characteristics Upstream of 195288</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#fish-sampling-2"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#structure-remediation-and-cost-estimate-7"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---195290-195288---gibson-creek.html"><a href="appendix---195290-195288---gibson-creek.html#conclusion-7"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html"><i class="fa fa-check"></i>Appendix - 197360 - Riddeck Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#site-location-8"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#background-9"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#stream-characteristics-at-crossing-7"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#stream-characteristics-downstream-7"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#stream-characteristics-upstream-6"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#fish-sampling-3"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#structure-remediation-and-cost-estimate-8"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197360---riddeck-creek.html"><a href="appendix---197360---riddeck-creek.html#conclusion-8"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html"><i class="fa fa-check"></i>Appendix - 197640 - Tributary to Buck Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#site-location-9"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#background-10"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#stream-characteristics-at-crossing-8"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#stream-characteristics-downstream-8"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#stream-characteristics-upstream-7"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#structure-remediation-and-cost-estimate-9"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197640---tributary-to-buck-creek.html"><a href="appendix---197640---tributary-to-buck-creek.html#conclusion-9"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html"><i class="fa fa-check"></i>Appendix - 197658 - Byman Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#site-location-10"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#background-11"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#stream-characteristics-at-crossing-9"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#stream-characteristics-downstream-9"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#stream-characteristics-upstream-8"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#fish-sampling-4"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#structure-remediation-and-cost-estimate-10"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197658---byman-creek.html"><a href="appendix---197658---byman-creek.html#conclusion-10"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html"><i class="fa fa-check"></i>Appendix - 197662 - Richfield Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#site-location-11"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#background-12"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#stream-characteristics-at-crossing-10"><i class="fa fa-check"></i>Stream Characteristics at Crossing</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#stream-characteristics-downstream-10"><i class="fa fa-check"></i>Stream Characteristics Downstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#stream-characteristics-upstream-9"><i class="fa fa-check"></i>Stream Characteristics Upstream</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#fish-sampling-5"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#structure-remediation-and-cost-estimate-11"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197662---richfield-creek.html"><a href="appendix---197662---richfield-creek.html#conclusion-11"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html"><i class="fa fa-check"></i>Appendix - 197663 &amp; 3054 - Johnny David Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#site-location-12"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#background-13"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#stream-characteristics-at-crossings-197663-and-3054"><i class="fa fa-check"></i>Stream Characteristics at Crossings 197663 and 3054</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#stream-characteristics-downstream-of-197663"><i class="fa fa-check"></i>Stream Characteristics Downstream of 197663</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#stream-characteristics-upstream-of-197663-and-downstream-of-3054"><i class="fa fa-check"></i>Stream Characteristics Upstream of 197663 and downstream of 3054</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#stream-characteristics-upstream-of-3054"><i class="fa fa-check"></i>Stream Characteristics Upstream of 3054</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#fish-sampling-6"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#structure-remediation-and-cost-estimate-12"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197663-3054---johnny-david-creek.html"><a href="appendix---197663-3054---johnny-david-creek.html#conclusion-12"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html"><i class="fa fa-check"></i>Appendix - 197665 &amp; 197664 &amp; 3042 - Barren Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#site-location-13"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#background-14"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#stream-characteristics-at-crossings-197665-and-197664"><i class="fa fa-check"></i>Stream Characteristics at Crossings 197665 and 197664</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#stream-characteristics-downstream-of-197665"><i class="fa fa-check"></i>Stream Characteristics Downstream of 197665</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#stream-characteristics-upstream-of-197665-and-downstream-of-197664"><i class="fa fa-check"></i>Stream Characteristics Upstream of 197665 and downstream of 197664</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#stream-characteristics-upstream-of-197664"><i class="fa fa-check"></i>Stream Characteristics Upstream of 197664</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#stream-characteristics-downstream-of-3042"><i class="fa fa-check"></i>Stream Characteristics Downstream of 3042</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#stream-characteristics-upstream-of-3042"><i class="fa fa-check"></i>Stream Characteristics Upstream of 3042</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#structure-remediation-and-cost-estimate-13"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197665-197664-3042---barren-creek.html"><a href="appendix---197665-197664-3042---barren-creek.html#conclusion-13"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html"><i class="fa fa-check"></i>Appendix - 197667 &amp; 124501 - Moan Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#site-location-14"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#background-15"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#stream-characteristics-at-crossings-197667-and-124501"><i class="fa fa-check"></i>Stream Characteristics at Crossings 197667 and 124501</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#stream-characteristics-downstream-of-197667"><i class="fa fa-check"></i>Stream Characteristics Downstream of 197667</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#stream-characteristics-upstream-of-197667-and-downstream-of-124501"><i class="fa fa-check"></i>Stream Characteristics Upstream of 197667 and downstream of 124501</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#stream-characteristics-upstream-of-124501"><i class="fa fa-check"></i>Stream Characteristics Upstream of 124501</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#fish-sampling-7"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#structure-remediation-and-cost-estimate-14"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197667-124501---moan-creek.html"><a href="appendix---197667-124501---moan-creek.html#conclusion-14"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html"><i class="fa fa-check"></i>Appendix - 197668 &amp; 124504 - Coffin Creek</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#site-location-15"><i class="fa fa-check"></i>Site Location</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#background-16"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#stream-characteristics-at-crossings-197668-and-124504"><i class="fa fa-check"></i>Stream Characteristics at Crossings 197668 and 124504</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#stream-characteristics-downstream-of-197668"><i class="fa fa-check"></i>Stream Characteristics Downstream of 197668</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#stream-characteristics-upstream-of-124504"><i class="fa fa-check"></i>Stream Characteristics Upstream of 124504</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#fish-sampling-8"><i class="fa fa-check"></i>Fish Sampling</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#structure-remediation-and-cost-estimate-15"><i class="fa fa-check"></i>Structure Remediation and Cost Estimate</a></li>
+<li class="chapter" data-level="" data-path="appendix---197668-124504---coffin-creek.html"><a href="appendix---197668-124504---coffin-creek.html#conclusion-15"><i class="fa fa-check"></i>Conclusion</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="changelog.html"><a href="changelog.html"><i class="fa fa-check"></i>Changelog</a></li>
+<li class="chapter" data-level="" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i>Session Info</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting" target="blank">Scripts and Data</a></li>
 
@@ -137,52 +350,52 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="background" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Background</h1>
+<div id="background" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Background<a href="background.html#background" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The study area includes the Bulkley River and Morice River watershed groups (Figure <a href="background.html#fig:overview-map">2.1</a>) and is within the traditional territories of the Gitxsan and Wet’suwet’en.</p>
 <p><br></p>
-<div id="wetsuweten" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Wet’suwet’en</h2>
+<div id="wetsuweten" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Wet’suwet’en<a href="background.html#wetsuweten" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Wet’suwet’en hereditary territory covers an area of 22,000km<sup>2</sup> including the Bulkley River and Morice River watersheds and portions of the Nechako River watershed. The Wet’suwet’en people are a matrilineal society organized into the Gilseyhu (Big Frog), Laksilyu (Small Frog), Tsayu (Beaver clan), Gitdumden (Wolf/Bear) and Laksamshu (Fireweed) clans. Within each of the clans there are are a number of kin-based groups known as Yikhs or House groups. The Yikh is a partnership between the people and the territory. Thirteen Yikhs with Hereditary Chiefs manage a total of 38 distinct territories upon which they have jurisdiction. Within a clan, the head Chief is entrusted with the stewardship of the House territory to ensure the Land is managed in a sustainable manner. Inuk Nu’at’en (Wet’suwet’en law) governing the harvesting of fish within their lands are based on values founded on thousands of years of social, subsistence and environmental dynamics. The Yintahk (Land) is the centre of life as well as culture and it’s management is intended to provide security for sustaining salmon, wildlife, and natural foods to ensure the health and well-being of the Wet’suwet’en <span class="citation">(Office of the Wet’suwet’en 2013; <span>“Office of the <span>Wet</span>’suwet’en”</span> 2021; FLNRORD 2017)</span>.</p>
 <p><br></p>
 </div>
-<div id="gitxsan" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Gitxsan</h2>
+<div id="gitxsan" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Gitxsan<a href="background.html#gitxsan" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Gitxsan Laxyip (traditional territories) covers an area of 33,000km<sup>2</sup> within the Skeena River and Nass River watersheds. The Laxyip is governed by 60 Simgiigyet (Hereditary Chiefs), within the traditional hereditary system made up of Wilps (House groups). Anaat are fisheries tenures found throughout the Laxyip. Traditional governance within a matrilineal society operates under the principles of Ayookw (Gitxsan law) <span class="citation">(<span>“Gitxsan <span>Huwilp Government</span>”</span> 2021)</span>.</p>
 <p><br></p>
 </div>
-<div id="project-location" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Project Location</h2>
-<div class="figure"><span id="fig:overview-map"></span>
+<div id="project-location" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Project Location<a href="background.html#project-location" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="figure"><span style="display:block;" id="fig:overview-map"></span>
 <img src="fig/BulkelyMoriceOverview2.jpeg" alt="Overview map of Study Areas" width="100%" />
 <p class="caption">
 Figure 2.1: Overview map of Study Areas
 </p>
 </div>
 <p><br></p>
-<div id="bulkley-river" class="section level3" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Bulkley River</h3>
-<p>The Bukley River is an 8th order stream that drains an area of 7,762 km<sup>2</sup> in a generally northerly direction from Bulkley Lake on the Nechako Plateau to its confluence with the Skeena River at Hazleton. It has a mean annual discharge of 139.1 m<sup>3</sup>/s at station 08EE004 located near Quick (~27km south of Telkwa) and 19.6 m<sup>3</sup>/s at station 08EE003 located upstream near Houston. Flow patterns at Quick are heavily influenced by inflows from the Morice River (enters just downstream of Houston) resulting in flow patterns typical of high elevation watersheds which receive large amounts of precipitation as snow leading to peak levels of discharge during snowmelt, typically from May to July (Figures <a href="background.html#fig:hydrology-plot">2.2</a> - <a href="background.html#fig:hydrology-stats1">2.3</a>). The hydrograph peaks faster and generally earlier (May - June) for the Bulkley River upstream of Houston where the topography is of lower lower elevation (Figures <a href="background.html#fig:hydrology-plot">2.2</a> and <a href="background.html#fig:hydrology-stats2">2.4</a>).</p>
+<div id="bulkley-river" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Bulkley River<a href="background.html#bulkley-river" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Bukley River is an 8th order stream that drains an area of 7,762 km<sup>2</sup> in a generally northerly direction from Bulkley Lake on the Nechako Plateau to its confluence with the Skeena River at Hazleton. It has a mean annual discharge of 139.1 m<sup>3</sup>/s at station 08EE004 located near Quick (~27km south of Telkwa) and 19.2 m<sup>3</sup>/s at station 08EE003 located upstream near Houston. Flow patterns at Quick are heavily influenced by inflows from the Morice River (enters just downstream of Houston) resulting in flow patterns typical of high elevation watersheds which receive large amounts of precipitation as snow leading to peak levels of discharge during snowmelt, typically from May to July (Figures <a href="background.html#fig:hydrology-plot">2.2</a> - <a href="background.html#fig:hydrology-stats1">2.3</a>). The hydrograph peaks faster and generally earlier (May - June) for the Bulkley River upstream of Houston where the topography is of lower lower elevation (Figures <a href="background.html#fig:hydrology-plot">2.2</a> and <a href="background.html#fig:hydrology-stats2">2.4</a>).</p>
 <p><br></p>
 <p>Changes to the climate systems are causing impacts to natural and human systems on all continents with alterations to hydrological systems caused by changing precipitation or melting snow and ice increasing the frequency and magnitude of extreme events such as floods and droughts <span class="citation">(IPCC 2014; ECCC 2016)</span>. These changes are resulting in modifications to the quantity and quality of water resources throughout British Columbia and are likely to compound issues related to drought and flooding in the Bulkley River watershed where numerous water licenses are held with a potential over-allocation of flows identified during low flow periods <span class="citation">(ILMB 2007)</span>.</p>
 <p><br></p>
 <p>The valley bottom has seen extensive settlement over the past hundred years with major population centers including the Village of Hazelton, the Town of Smithers, the Village of Telkwa and the District Municipality of Houston. As a major access corridor to northwestern British Columbia, Highway 16 and the Canadian National Railway are major linear developments that run along the Bulkley River within and adjacent to the floodplain with numerous crossing structures impeding fish access into and potentially out from important fish habitats. Additionally, as the valley bottom contains some of the most productive land in the area, there has been extensive conversion of riparian ecosystems to hayfields and pastures leading to alterations in flow regimes, increases in water temperatures, reduced streambank stability, loss of overstream cover and channelization <span class="citation">(ILMB 2007; Wilson and Rabnett 2007)</span>.</p>
 <p><br></p>
-<div class="figure"><span id="fig:hydrology-plot"></span>
+<div class="figure"><span style="display:block;" id="fig:hydrology-plot"></span>
 <img src="fig/hydrograph_08EE004.png" alt="Hydrograph for Bulkley River at Quick (Station #08EE004) and near Houston (Station #08EE003)." width="49.5%" /><img src="fig/pixel.png" alt="Hydrograph for Bulkley River at Quick (Station #08EE004) and near Houston (Station #08EE003)." width="1%" /><img src="fig/hydrograph_08EE003.png" alt="Hydrograph for Bulkley River at Quick (Station #08EE004) and near Houston (Station #08EE003)." width="49.5%" />
 <p class="caption">
 Figure 2.2: Hydrograph for Bulkley River at Quick (Station #08EE004) and near Houston (Station #08EE003).
 </p>
 </div>
 <p><br></p>
-<div class="figure"><span id="fig:hydrology-stats1"></span>
+<div class="figure"><span style="display:block;" id="fig:hydrology-stats1"></span>
 <img src="fig/hydrology_stats_08EE004.png" alt="Summary of hydrology statistics for Bulkley River at Quick (Station #08EE004 - daily discharge data from 1930 to 2018)." width="100%" />
 <p class="caption">
 Figure 2.3: Summary of hydrology statistics for Bulkley River at Quick (Station #08EE004 - daily discharge data from 1930 to 2018).
 </p>
 </div>
 <p><br></p>
-<div class="figure"><span id="fig:hydrology-stats2"></span>
+<div class="figure"><span style="display:block;" id="fig:hydrology-stats2"></span>
 <img src="fig/hydrology_stats_08EE003.png" alt="Summary of hydrology statistics for Bulkley River near Houston (Station #08EE003 - daily discharge data from 1980 to 2018)." width="100%" />
 <p class="caption">
 Figure 2.4: Summary of hydrology statistics for Bulkley River near Houston (Station #08EE003 - daily discharge data from 1980 to 2018).
@@ -190,18 +403,18 @@ Figure 2.4: Summary of hydrology statistics for Bulkley River near Houston (Stat
 </div>
 <p><br></p>
 </div>
-<div id="morice-river" class="section level3" number="2.3.2">
-<h3><span class="header-section-number">2.3.2</span> Morice River</h3>
-<p>The Morice River watershed drains 4,379 km<sup>2</sup> of Coast Mountains and Interior Plateau in a generally south-eastern direction. The Morice River is an 8th order stream that flows approximatley 80km from Morice Lake to the confluence with the upper Bulkley River just north of Houston. Major tributaries include the Nanika River, the Atna River, Gosnell Creek and the Thautil River. There area numerous large lakes situated on the south side of the watershed including Morice Lake, McBride Lake, Stepp Lake, Nanika Lake, Kid Price Lake, Owen Lake and others. There is one active hydrometric station on the mainstem of the Morice River near the outlet of Morice Lake and one historic station that was located at the mouth of the river near Houston that gathered data in 1971 only <span class="citation">(Environment and limate Change Canada 2021)</span>. An estimate of mean annual discharge for the one year of data available for the Morice near it’s confluence with the Bulkley River is 113.3 m<sup>3</sup>/s. Mean annual discharge is estimated at 75.2 m<sup>3</sup>/s at station 08ED002 located near the outlet of Morice Lake. Flow patterns are typical of high elevation watersheds influenced by coastal weather patterns which receive large amounts of winter precipitation as snow in the winter and large precipitation events in the fall. This leads to peak levels of discharge during snowmelt, typically from May to July with isolated high flows related to rain and rain on snow events common in the fall (Figures <a href="background.html#fig:hydrology-plot2">2.5</a> - <a href="background.html#fig:hydrology-stats3">2.6</a>).</p>
+<div id="morice-river" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Morice River<a href="background.html#morice-river" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Morice River watershed drains 4,379 km<sup>2</sup> of Coast Mountains and Interior Plateau in a generally south-eastern direction. The Morice River is an 8th order stream that flows approximatley 80km from Morice Lake to the confluence with the upper Bulkley River just north of Houston. Major tributaries include the Nanika River, the Atna River, Gosnell Creek and the Thautil River. There area numerous large lakes situated on the south side of the watershed including Morice Lake, McBride Lake, Stepp Lake, Nanika Lake, Kid Price Lake, Owen Lake and others. There is one active hydrometric station on the mainstem of the Morice River near the outlet of Morice Lake and one historic station that was located at the mouth of the river near Houston that gathered data in 1971 only <span class="citation">(Environment and limate Change Canada 2021)</span>. An estimate of mean annual discharge for the one year of data available for the Morice near it’s confluence with the Bulkley River is 113.3 m<sup>3</sup>/s. Mean annual discharge is estimated at 75.4 m<sup>3</sup>/s at station 08ED002 located near the outlet of Morice Lake. Flow patterns are typical of high elevation watersheds influenced by coastal weather patterns which receive large amounts of winter precipitation as snow in the winter and large precipitation events in the fall. This leads to peak levels of discharge during snowmelt, typically from May to July with isolated high flows related to rain and rain on snow events common in the fall (Figures <a href="background.html#fig:hydrology-plot2">2.5</a> - <a href="background.html#fig:hydrology-stats3">2.6</a>).</p>
 <p><br></p>
-<div class="figure"><span id="fig:hydrology-plot2"></span>
+<div class="figure"><span style="display:block;" id="fig:hydrology-plot2"></span>
 <img src="fig/hydrograph_08ED003.png" alt="Left: Hydrograph for Morice River near Houston (Station #08ED003 - 1971 data only). Right: Hydrograph for Morice River near outlet of Morice Lake (Station #08ED002)." width="49.5%" /><img src="fig/pixel.png" alt="Left: Hydrograph for Morice River near Houston (Station #08ED003 - 1971 data only). Right: Hydrograph for Morice River near outlet of Morice Lake (Station #08ED002)." width="1%" /><img src="fig/hydrograph_08ED002.png" alt="Left: Hydrograph for Morice River near Houston (Station #08ED003 - 1971 data only). Right: Hydrograph for Morice River near outlet of Morice Lake (Station #08ED002)." width="49.5%" />
 <p class="caption">
 Figure 2.5: Left: Hydrograph for Morice River near Houston (Station #08ED003 - 1971 data only). Right: Hydrograph for Morice River near outlet of Morice Lake (Station #08ED002).
 </p>
 </div>
 <p><br></p>
-<div class="figure"><span id="fig:hydrology-stats3"></span>
+<div class="figure"><span style="display:block;" id="fig:hydrology-stats3"></span>
 <img src="fig/hydrology_stats_08ED002.png" alt="Summary of hydrology statistics for Morice River near outlet of Morice Lake (Station #08ED002 - Lat 54.116829 Lon -127.426582). Available daily discharge data from 1961 to 2018." width="100%" />
 <p class="caption">
 Figure 2.6: Summary of hydrology statistics for Morice River near outlet of Morice Lake (Station #08ED002 - Lat 54.116829 Lon -127.426582). Available daily discharge data from 1961 to 2018.
@@ -209,11 +422,11 @@ Figure 2.6: Summary of hydrology statistics for Morice River near outlet of Mori
 </div>
 </div>
 </div>
-<div id="fisheries" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Fisheries</h2>
+<div id="fisheries" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Fisheries<a href="background.html#fisheries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In 2004, <span class="citation">IBM Business Consulting Services (2006)</span> estimated the value of Skeena Fisheries at an annual average of $110 million dollars. The Bulkley-Morice watershed is an integral part of the salmon production in the Skeena drainage and supports an internationally renown steelhead, chinook and coho sport fishery <span class="citation">(Tamblyn 2005)</span>.</p>
-<div id="bulkley-river-1" class="section level3" number="2.4.1">
-<h3><span class="header-section-number">2.4.1</span> Bulkley River</h3>
+<div id="bulkley-river-1" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Bulkley River<a href="background.html#bulkley-river-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Traditionally, the salmon stocks passing through and spawning in Bulkley River were the principal food source for the Gitxsan and Wet’suwet’en people living there <span class="citation">(Wilson and Rabnett 2007)</span>. <span class="citation">Wilson and Rabnett (2007)</span> detail numerous fishing areas located within the lower Bulkley drainage (from the confluence of the Skeena to the confluence with the Telkwa River) and the upper Bulkley drainage which includes the mainstem Bulkley River and tributaries upstream of the Telkwa River confluence. Anadromous lamprey passing through and spawning in the upper Bulkley River were traditionally also an important food source for the Wet’suwet’en (Wilson and Rabnett 2007; pers comm. Mike Ridsdale, Environmental Assessment Coordinator, Office of the Wet’suwet’en).</p>
 <p><br></p>
 <p>Approximately 11.3 km downstream of the Bulkley Lake outlet and just upstream of Watson Creek, the upper Bulkley falls is an approximately 4m high narrow rock sill that crosses the Bulkley River, producing a steep cascade section. This obstacle to fish passage is recorded as an almost complete barrier to fish passage for salmon during low water flows. Coho have not been observed beyond the falls since 1972 <span class="citation">(Wilson and Rabnett 2007)</span>.</p>
@@ -221,12 +434,12 @@ Figure 2.6: Summary of hydrology statistics for Morice River near outlet of Mori
 <p>Renowned as a world class recreational steelhead and coho fishery, the Bulkley River receives some of the heaviest angling pressure in the province. In response to longstanding angler concerns with respect to overcrowding, quality of experience and conflict amongst anglers, an Angling Management Plan was drafted for the river following the initiation of the Skeena Quality Waters Strategy process in 2006 and an extensive multi-year consultation process. The plan introduces a number of regulatory measures with the intent to provide Canadian resident anglers with quality steelhead fishing opportunities. Regulatory measures introduced with the Angling Management Plan include prohibited angling for non-guided non-resident aliens on Saturdays and Sundays, Sept 1 - Oct 31 within the Bulkley River, angling prohibited for non-guided non-resident aliens on Saturdays and Sundays, all year within the Suskwa River and angling prohibited for non-guided non-resident aliens Sept 1 - Oct 31 in the Telkwa River. The Bukley River is considered Class II waterand there is no fshing permitted upstream of the Morice/Bulkley River Confluence <span class="citation">(FLNRO 2013a, 2013b; FLNRORD 2019)</span>.</p>
 <p><br></p>
 </div>
-<div id="morice-river-1" class="section level3" number="2.4.2">
-<h3><span class="header-section-number">2.4.2</span> Morice River</h3>
+<div id="morice-river-1" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Morice River<a href="background.html#morice-river-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Detailed reviews of Morice River watershed fisheries can be found in <span class="citation">D. Bustard and Schell (2002)</span>, <span class="citation">Allen Gottesfeld, Rabnett, and Hall (2002)</span>, <span class="citation">Schell (2003)</span>, <span class="citation">A. Gottesfeld and Rabnett (2007)</span>, and <span class="citation">ILMB (2007)</span> with a comprehensive review of water quality by <span class="citation">Oliver (2018)</span>. Overall, the Morice watershed contains high fisheries values as a major producer of chinook, pink, sockeye, coho and steelhead.</p>
 <p><br></p>
-<div id="fish-species" class="section level4" number="2.4.2.1">
-<h4><span class="header-section-number">2.4.2.1</span> Fish Species</h4>
+<div id="fish-species" class="section level4 hasAnchor" number="2.4.2.1">
+<h4><span class="header-section-number">2.4.2.1</span> Fish Species<a href="background.html#fish-species" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Fish species recorded in the Bulkley River and Morice River watershed groups are detailed in Table <a href="background.html#tab:fiss-species-table">2.1</a> <span class="citation">(MoE 2020a)</span>. Coastal cutthrout trout and bull trout are considered of special concern (blue-listed) provincially. Summaries of some of the Skeena and Bulkley River fish species life history, biology, stock status, and traditional use are documented in <span class="citation">Schell (2003)</span>, <span class="citation">Wilson and Rabnett (2007)</span>, <span class="citation">Allen Gottesfeld, Rabnett, and Hall (2002)</span> and <span class="citation">Office of the Wet’suwet’en (2013)</span>. <span class="citation">Wilson and Rabnett (2007)</span> discuss chinook, pink, sockeye, coho, steelhead and indigenous freshwater Bulkley River fish stocks within the context of key lower and upper Bulkley River habitats such as the Suskwa River, Station Creek, Harold Price Creek, Telkwa River and Buck Creek. Key areas within the upper Bulkley River watershed with high fishery values, documented in <span class="citation">Schell (2003)</span>, are the upper Bulkley mainstem, Buck Creek, Dungate Creek, Barren Creek, McQuarrie Creek, Byman Creek, Richfield Creek, Johnny David Creek, Aitken Creek and Emerson Creek.</p>
 <p><br></p>
 <p>Some key areas of high fisheries values for chinook, sockeye and coho are noted in <span class="citation">D. Bustard and Schell (2002)</span> as McBride Lake, Nanika Lake, and Morice Lake watersheds. A draft gantt chart for select species in the Morice River and Bulkley River watersheds was derived from reviews of the aforementioned references and is included as Figure <a href="background.html#fig:fish-gantt-morice">2.7</a>. The data is considered in draft form and will be refined over the spring and summer of 2021 with local fisheries technicians and knowledge holders during the collaboratory assessment planning and fieldwork activities planned.</p>
@@ -236,7 +449,7 @@ Figure 2.6: Summary of hydrology statistics for Morice River near outlet of Mori
 <p>Summaries of historical fish observations in the Bulkley River and Morice River watershed groups (n=4033), graphed by remotely sensed average gradient as well as measured or modelled channel width categories for their associated stream segments where calculated with <code>bcfishpass</code> and <code>bcfishobs</code> and are provided in Figures <a href="background.html#fig:fish-plot-grad">2.8</a> - <a href="background.html#fig:fish-plot-width">2.9</a>.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
-<table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:fiss-species-table">Table 2.1: </span>Fish species recorded in the Bulkley River and Morice River watershed groups.
 </caption>
@@ -1581,21 +1794,21 @@ Yes
 </table>
 </div>
 <p><br></p>
-<div class="figure"><span id="fig:fish-gantt-morice"></span>
+<div class="figure"><span style="display:block;" id="fig:fish-gantt-morice"></span>
 <img src="Bulkley_files/figure-html/fish-gantt-morice-1.png" alt="Gantt chart for select species in the Morice River and Bulkley River watersheds.  To be updated in consultation with local fisheries techicians and knowledge holders." width="100%" />
 <p class="caption">
 Figure 2.7: Gantt chart for select species in the Morice River and Bulkley River watersheds. To be updated in consultation with local fisheries techicians and knowledge holders.
 </p>
 </div>
 <p><br></p>
-<div class="figure"><span id="fig:fish-plot-grad"></span>
+<div class="figure"><span style="display:block;" id="fig:fish-plot-grad"></span>
 <img src="Bulkley_files/figure-html/fish-plot-grad-1.png" alt="Summary of historic salmonid observations vs. stream gradient category for the Bulkley River watershed group." width="100%" />
 <p class="caption">
 Figure 2.8: Summary of historic salmonid observations vs. stream gradient category for the Bulkley River watershed group.
 </p>
 </div>
 <p><br></p>
-<div class="figure"><span id="fig:fish-plot-width"></span>
+<div class="figure"><span style="display:block;" id="fig:fish-plot-width"></span>
 <img src="Bulkley_files/figure-html/fish-plot-width-1.png" alt="Summary of historic salmonid observations vs. channel width category for the Bulkley River watershed group." width="100%" />
 <p class="caption">
 Figure 2.9: Summary of historic salmonid observations vs. channel width category for the Bulkley River watershed group.
@@ -1606,8 +1819,8 @@ Figure 2.9: Summary of historic salmonid observations vs. channel width categor
 </div>
 </div>
 </div>
-<div id="fish-passage-restoration-planning-and-implementation" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Fish Passage Restoration Planning and Implementation</h2>
+<div id="fish-passage-restoration-planning-and-implementation" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Fish Passage Restoration Planning and Implementation<a href="background.html#fish-passage-restoration-planning-and-implementation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As a result of high-level direction from the provincial government, a Fish Passage Strategic Approach protocol has been developed for British Columbia to ensure that the greatest opportunities for restoration of fish passage are pursued. A Fish Passage Technical Working Group has been formed to coordinate the protocol and data is continuously amalgamated within the Provincial Steam Crossing Inventory System (PSCIS). The strategic approach protocol involves a four-phase process as described in <span class="citation">Fish Passage Technical Working Group (2014)</span> :</p>
 <ul>
 <li>Phase 1: Fish Passage Assessment – Fish stream crossings within watersheds with high fish values are assessed to determine barrier status of structures and document a general assessment of adjacent habitat quality and quantity.</li>
@@ -1616,16 +1829,16 @@ Figure 2.9: Summary of historic salmonid observations vs. channel width categor
 <li>Phase 4: Remediation – Re-connection of isolated habitats through replacement, rehabilitation or removal of prioritized crossing structure barriers.</li>
 </ul>
 <p><br></p>
-<div id="bulkley-river-2" class="section level3" number="2.5.1">
-<h3><span class="header-section-number">2.5.1</span> Bulkley River</h3>
+<div id="bulkley-river-2" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Bulkley River<a href="background.html#bulkley-river-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There is a rich history of fish passage restoration planning in the Bulkley River watershed group with not all the work documented in the PSCIS system. A non-exhaustive list of historic fish passage reports for the watershed includes <span class="citation">Wilson and Rabnett (2007)</span>, <span class="citation">McCarthy and Fernando (2015)</span>,<span class="citation">Smith (2018)</span> <span class="citation">Casselman and Stanley (2010)</span> and <span class="citation">Irvine (2018)</span>.</p>
 <p><br></p>
 <p>Review of the PSCIS database indicated that prior to 2020, 1635 assessments for fish passage (Phase 1) at crossing structures within the Bulkley River watershed group have been recorded in the PSCIS database <span class="citation">(MoE 2021a)</span>. No habitat confirmations are recorded in the PSCIS database <span class="citation">(MoE 2021b)</span>. Within the Bulkley River watershed group, a number of remediation projects have been completed over the years with backwatering works conducted on Toboggan Creek, Coffin Creek, Moan Creek, Johnny David Creek and potentially others. Three culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS and include works on Barren Creek as well as two tributaries to Harold Prince Creek <span class="citation">(MoE 2021c)</span>. McDowell Creek at Highway 16 was replaced with a horizontally drilled baffled structure in 2017 and a design is currently being drafted for the Highway 16 crossing over Taman Creek (pers. comm. Kathryn Graham, Regional Manager Environmental Services - Ministry of Transportation and Infrastructure).</p>
 <p><br></p>
 </div>
 </div>
-<div id="morice-river-2" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Morice river</h2>
+<div id="morice-river-2" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Morice river<a href="background.html#morice-river-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Within the Morice River watershed group prior to 2020, 21 fish passage assessments (Phase 1) had been recorded in the PSCIS database <span class="citation">(MoE 2021a)</span>. At the time of reporting, no habitat confirmations had been recorded <span class="citation">(MoE 2021b)</span>. Two culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS in the and include works on a tributary to the Morice River located at km 39.2 of the Morice River FSR and on bridge installation at km 4 of McBride Road on a tributary to McBride Lake <span class="citation">(MoE 2021c)</span>.</p>
 
 </div>
@@ -1640,7 +1853,6 @@ Figure 2.9: Summary of historic salmonid observations vs. channel width categor
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1659,6 +1871,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -1679,8 +1892,12 @@ gitbook.start({
 "text": null
 },
 "download": ["Bulkley.pdf", "Bulkley.html"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 }
 });
 });
@@ -1692,7 +1909,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

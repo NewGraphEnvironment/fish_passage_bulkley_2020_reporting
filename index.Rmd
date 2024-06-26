@@ -15,11 +15,14 @@ author: |
  | Society for Ecosytem Restoration in Northern British Columbia
 date: |
  |
- | Version 0.1.2
+ | Version 0.1.3
  | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
 output: bookdown::gitbook
+params:
+ repo_url: 'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/'
+ update_packages: FALSE
 nocite: |
   @busch_etal2013LandscapeLevelModel, 
   @woll_etal2017SalmonEcological,
@@ -66,10 +69,11 @@ font_set <- 9
 ```
 
 
-```{r}
+```{r source}
 source('R/packages.R')
 source('R/functions.R')
 source('R/functions-phase2.R')
+source('R/tables_2023.R')
 source('R/0310-tables.R')
 source('R/0320-tables-phase2.R')
 source('R/0330-tables-phase1-cost-estimate.R')

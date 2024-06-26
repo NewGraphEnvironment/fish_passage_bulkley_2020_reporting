@@ -1,5 +1,5 @@
 bookdown::gitbook:
-  toc_depth: 1
+  toc_depth: 2
   css: style.css
   config:
     toc:
@@ -7,6 +7,7 @@ bookdown::gitbook:
         <li><a href="./">Bulkley River Watershed Group Fish Passage Restoration Planning</a></li>
       after: |
         <li><a href="https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting" target="blank">Scripts and Data</a></li>
+      collapse: section
     download: ["Bulkley.pdf", "Bulkley.html"]
     fontsettings:
       theme: night

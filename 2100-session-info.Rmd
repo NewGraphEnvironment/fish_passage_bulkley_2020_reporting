@@ -1,0 +1,15 @@
+
+# Session Info {-}
+
+Information about the computing environment is important for reproducibility. A summary of the computing environment 
+is saved to `session_info.csv` that can be viewed and downloaded from `r paste0(params$repo_url, "blob/main/data/session_info.csv")`.
+
+```{r session-info}
+
+if(gitbook_on){
+  devtools::session_info(to_file = 'data/session_info.csv')
+} else {
+  devtools::session_info()
+}
+
+```

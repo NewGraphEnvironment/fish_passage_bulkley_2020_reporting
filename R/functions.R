@@ -208,7 +208,7 @@ tab_culvert <- tab_culvert_prep %>%
 
 ####--------------phase1 summary tables--------------------------
 print_tab_summary_all <- function(tab_sum, comments, photos){
-  kable(tab_sum, booktabs = T) %>%
+  kable(tab_sum, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
     kableExtra::add_footnote(label = paste0('Comments: ', comments[[1]]), notation = 'none') %>% #this grabs the comments out
     kableExtra::add_footnote(label = paste0('Photos: PSCIS ID ', photos[[2]],
@@ -219,7 +219,7 @@ print_tab_summary_all <- function(tab_sum, comments, photos){
 
 ####--------------phase1 summary tables pdf--------------------------
 print_tab_summary_all_pdf <- function(tab_sum, comments, photos){
-  kable(tab_sum, booktabs = T) %>%
+  kable(tab_sum, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
     kableExtra::add_footnote(label = paste0('Comments: ', comments[[1]]), notation = 'none') %>% #this grabs the comments out
     kableExtra::add_footnote(label = paste0('Photos: PSCIS ID ', photos[[2]],
@@ -231,12 +231,12 @@ print_tab_summary_all_pdf <- function(tab_sum, comments, photos){
 ##summary table
 print_tab_summary <- function(dat = pscis_phase2, site = my_site, site_photo_id = my_site, font = 11){
   make_tab_summary(df = dat %>% filter(pscis_crossing_id == site)) %>%
-    kable(caption = paste0('Summary of fish passage assessment for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
+    kable(caption = paste0('Summary of fish passage assessment for PSCIS crossing ', site, '.'), booktabs = T, label = NA) %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) |>
     kableExtra::add_footnote(label = paste0('Comments: ', dat %>% filter(pscis_crossing_id == site) %>%
                                               pull(assessment_comment)), notation = 'none') %>% #this grabs the comments out
     kableExtra::add_footnote(label = paste0('Photos: From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.',
-                                            paste0('![](data/photos/', site_photo_id, '/crossing_all.JPG)')), notation = 'none') %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)
+                                            paste0('![](data/photos/', site_photo_id, '/crossing_all.JPG)')), notation = 'none')
   # kableExtra::scroll_box(width = "100%", height = "500px") ##not scrolling to simplify our pagedown output
 }
 
@@ -246,7 +246,7 @@ print_tab_summary <- function(dat = pscis_phase2, site = my_site, site_photo_id 
 ####------my_kable-------------------------------
 my_kable_scroll <- function(dat, caption_text = '', font = font_set){
   dat %>%
-    kable(caption = caption_text, booktabs = T) %>%
+    kable(caption = caption_text, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed", "responsive"),
                               full_width = T,
                               font_size = font) %>%
@@ -255,7 +255,7 @@ my_kable_scroll <- function(dat, caption_text = '', font = font_set){
 
 my_tab_overview <- function(dat, caption_text = '', font = font_set){
   dat %>%
-    kable(caption = caption_text, booktabs = T) %>%
+    kable(caption = caption_text, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed", "responsive"), full_width = T, font_size = font) %>%
     kableExtra::column_spec(column = c(9), width_min = '1.5in') %>%
     kableExtra::column_spec(column = c(5), width_min = '1.0in', width_max = '1.0in')
@@ -263,7 +263,7 @@ my_tab_overview <- function(dat, caption_text = '', font = font_set){
 
 my_tab_overview_scroll <- function(dat, caption_text = '', font = font_set){
   dat %>%
-    kable(caption = caption_text, booktabs = T) %>%
+    kable(caption = caption_text, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed"),
                               full_width = T,
                               font_size = font) %>%
@@ -275,7 +275,7 @@ my_tab_overview_scroll <- function(dat, caption_text = '', font = font_set){
 
 my_kable_scroll_no_height <- function(dat, caption_text = ''){
   dat %>%
-    kable(caption = caption_text, booktabs = T) %>%
+    kable(caption = caption_text, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
     kableExtra::scroll_box(width = "100%")
 }
@@ -289,7 +289,7 @@ my_kable_scroll_no_height <- function(dat, caption_text = ''){
 
 my_kable <- function(dat, caption_text = '', font = font_set){
   dat %>%
-    kable(caption = caption_text, booktabs = T) %>%
+    kable(caption = caption_text, booktabs = T, label = NA) %>%
     kableExtra::kable_styling(c("condensed", "responsive"),
                               full_width = T,
                               font_size = font)
@@ -392,7 +392,7 @@ make_html_tbl <- function(df) {
   #   dplyr::mutate(`Image link` = cell_spec('crossing', "html", link = `Image link`))
   df2 <- select(df, -shape, -color, -label) %>% janitor::remove_empty()
   df %>%
-    mutate(html_tbl = knitr::kable(df2, 'html', escape = F) %>%
+    mutate(html_tbl = knitr::kable(df2, 'html', escape = F, label = NA) %>%
              kableExtra::row_spec(0:nrow(df2), extra_css = "border: 1px solid black;") %>% # All cells get a border
              kableExtra::row_spec(0, background = "yellow") %>%
              kableExtra::column_spec(column = ncol(df2) - 1, width_min = '0.5in') %>%
@@ -409,17 +409,19 @@ openHTML <- function(x) browseURL(paste0('file://', file.path(getwd(), x)))
 ##grab a df with the names of the left hand side of the table
 make_tab_summary_bcfp <- function(dat = bcfishpass_all,
                                   xref_table = xref_bcfishpass_names,
-                                  site = my_site){
+                                  site = my_site,
+                                  col = stream_crossing_id,
+                                  ...){
   df <- dat %>%
-    mutate(across(where(is.numeric), round, 1)) %>%
-    filter(stream_crossing_id == site) %>%
-    distinct(stream_crossing_id, .keep_all = T)
+    dplyr::mutate(across(where(is.numeric), round, 1)) %>%
+    dplyr::filter({{ col }} == site) %>%
+    distinct({{ col }}, .keep_all = T)
   tab_results_left <- xref_table %>%
-    filter(id_side == 1) %>%
-    arrange(id_join)
+    dplyr::filter(id_side == 1) %>%
+    dplyr::arrange(id_join)
   ##get the data
   tab_pull_left <- df %>%
-    select(pull(tab_results_left,bcfishpass)) %>%
+    select(dplyr::pull(tab_results_left,bcfishpass)) %>%
     # slice(1) %>%
     t() %>%
     as.data.frame() %>%
@@ -428,11 +430,11 @@ make_tab_summary_bcfp <- function(dat = bcfishpass_all,
   left <- left_join(tab_pull_left, xref_table, by = c('rowname' = 'bcfishpass'))
 
   tab_results_right <- xref_table %>%
-    filter(id_side == 2)
+    dplyr::filter(id_side == 2)
 
   ##get the data
   tab_pull_right<- df %>%
-    select(pull(tab_results_right,bcfishpass)) %>%
+    dplyr::select(dplyr::pull(tab_results_right,bcfishpass)) %>%
     # slice(1) %>%
     t() %>%
     as.data.frame() %>%
@@ -441,29 +443,40 @@ make_tab_summary_bcfp <- function(dat = bcfishpass_all,
   right <- left_join(tab_pull_right, xref_table, by = c('rowname' = 'bcfishpass'))
 
   tab_joined <- left_join(
-    select(left, report, V1, id_join),
-    select(right, report, V1, id_join),
+    dplyr::select(left, report, V1, id_join),
+    dplyr::select(right, report, V1, id_join),
     by = 'id_join'
   ) %>%
     select(-id_join) %>%
     purrr::set_names(c('Habitat', 'Potential', 'remove', 'Remediation Gain')) %>%
-    mutate(Potential = as.numeric(Potential),
-           `Remediation Gain` = as.numeric(`Remediation Gain`)) %>%
-    mutate(`Remediation Gain (%)` = round(`Remediation Gain`/Potential * 100,0),
-           Habitat = stringr::str_replace_all(Habitat, 'Ha', '(ha)'),
-           Habitat = stringr::str_replace_all(Habitat, 'Km', '(km)'),
-           Habitat = stringr::str_replace_all(Habitat, 'Lakereservoir', 'Lake and Reservoir'),
-           Habitat = stringr::str_replace_all(Habitat, 'Spawningrearing ', 'Spawning and Rearing ')) %>%
-    select(-remove)
+    dplyr::mutate(Potential = as.numeric(Potential),
+                  `Remediation Gain` = as.numeric(`Remediation Gain`)) %>%
+    dplyr::mutate(`Remediation Gain (%)` = round(`Remediation Gain`/Potential * 100,0),
+                  Habitat = stringr::str_replace_all(Habitat, 'Ha', '(ha)'),
+                  Habitat = stringr::str_replace_all(Habitat, 'Km', '(km)'),
+                  Habitat = stringr::str_replace_all(Habitat, 'Lakereservoir', 'Lake and Reservoir'),
+                  Habitat = stringr::str_replace_all(Habitat, 'Spawningrearing ', 'Spawning and Rearing ')) %>%
+    dplyr::select(-remove)
   return(tab_joined)
 }
 
-##this is in two places and should not be - see 0355-tables-reporting-html
-print_tab_summary_bcfp <- function(site = my_site, font = 11, ...){
-  make_tab_summary_bcfp(site = site) %>%
-    kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', site, '.'), booktabs = T) %>%    #
-    kableExtra::add_footnote('Model data is preliminary and subject to adjustments.', notation = 'symbol') %>%
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font)
+# ##this is in two places and should not be - see 0355-tables-reporting-html
+# print_tab_summary_bcfp <- function(site = my_site, font = 11, ...){
+#   make_tab_summary_bcfp(site = site) %>%
+#     kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', site, '.'), booktabs = T) %>%
+#     kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) |>
+#     kableExtra::add_footnote('Model data is preliminary and subject to adjustments.', notation = 'symbol')
+#
+# }
+
+print_tab_summary_bcfp <- function(sites = my_site, font = 11, ...){
+  make_tab_summary_bcfp(site = sites) %>%
+    kable(caption = paste0('Summary of fish habitat modelling for PSCIS crossing ', sites, '.'), booktabs = T, label = NA) %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font) %>%
+    kableExtra::add_footnote(c('Model data is preliminary and subject to adjustments including incorporating area based estimates.',
+                               'Modelled rearing habitat estimates include linear lengths of centrelines within wetlands for coho and within lakes >100ha (multiplied by 1.5) for sockeye.',
+                               'Remediation Gain is an estimate of the amount of habitat to be gained by providing access above the crossing.  This assumes that all upstream habitat is currently unavailable and that all modelled unassessed crossings located upstream would prevent further passage.'),
+                             notation = 'symbol')
 }
 
 text_ref_tab_summary_bcfp <-  function(site = my_site){
@@ -528,4 +541,21 @@ make_tab_summary_bcfp_planning <- function(dat = bcfishpass_all,
   return(tab_joined)
 }
 
+# write the contents of the NEWS.md file to a RMD file that will be included as an appendix
+news_to_appendix <- function(
+    md_name = "NEWS.md",
+    rmd_name = "2090-report-change-log.Rmd",
+    appendix_title = "# Changelog") {
+
+  # Read and modify the contents of the markdown file
+  news_md <- readLines(md_name)
+  news_md <- stringr::str_replace(news_md, "^#", "###") |>
+    stringr::str_replace_all("(^(### .*?$))", "\\1 {-}")
+
+  # Write the title, a blank line, and the modified contents to the Rmd file
+  writeLines(
+    c(paste0(appendix_title, " {-}"), "", news_md),
+    rmd_name
+  )
+}
 

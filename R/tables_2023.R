@@ -1,25 +1,19 @@
 ## Scripts to update and add data from the recent sampling year.
 ## Creating objects needed for fpr_table_fish_site(), fpr_table_fish_density() and fpr_plot_fish_box()
 ## so that we can add tables with most recent data to the report.
-## copy select 2023 photo directories from shared server to repo so we can include in report. photo file name changes
 ## occurring on shared server only
 
 
-source("R/packages.R")
+# source("R/packages.R")
 
 year = "2023"
-file <- "habitat_confirmations.xls"
 
-
-## Prep needed to make objects
-####-------------- habitat and fish data------------------
-habitat_confirmations <- fpr_import_hab_con(path = paste0("data/", year, "/habitat_confirmations.xls"),
+# import habitat and fish data------------------
+habitat_confirmations <- fpr_import_hab_con(path = paste0("data/2023/habitat_confirmations.xls"),
                                             col_filter_na = T,
                                             row_empty_remove = T,
                                             backup = FALSE)
 
-## to test with old repo data
-# habitat_confirmations <- fpr_import_hab_con(col_filter_na = T, row_empty_remove = T, backup = FALSE)
 
 hab_loc <- habitat_confirmations %>%
   purrr::pluck("step_1_ref_and_loc_info") %>%
@@ -244,23 +238,6 @@ rm(fish_abund_prep,
 # Rename so we can call fpr_table_fish_site() with updated data
 tab_fish_sites_sum_2023 <- tab_fish_sites_sum
 
-#-----photos------------------------------------------------------------------------------------------
-## copy select 2023 photo directories from shared server to repo so we can include in report. photo file name changes
-# make list of directories to transfer
 
-
-dir_2023_photos_stub = "~/Library/CloudStorage/OneDrive-Personal/Projects/2023_data/skeena/photos/"
-dir_2023_photos <- c("124500", "197360")
-
-dir_repo_photos_stub = "data/2023/photos/"
-
-# create the directory
-fs::dir_create(dir_repo_photos_stub)
-
-# copy the directories with purrr::map
-purrr::map(dir_2023_photos,
-           ~fs::dir_copy(paste0(dir_2023_photos_stub, .x),
-                         paste0(dir_repo_photos_stub, .x),
-           overwrite = TRUE))
 
 

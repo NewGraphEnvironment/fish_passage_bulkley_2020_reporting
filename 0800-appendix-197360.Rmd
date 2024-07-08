@@ -323,7 +323,7 @@ knitr::include_graphics(get_img_path(photo = my_photo2))
 ```{r photo-197360-05-prep}
 my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site, dir_photos = "data/2023/photos/", str_to_pull = 'ds_ef1_typical_1')
 
-my_caption1 = paste0('Outlet pool at crossing ', my_site, ' in 2023.')
+my_caption1 = paste0('Outlet pool electrofished downstream of crossing ', my_site, ' in 2023.')
 
 ```
 
@@ -335,13 +335,13 @@ knitr::include_graphics(my_photo1)
 <br>
 
 ```{r photo-197360-06-prep}
-my_photo2 = fpr::fpr_photo_pull_by_str(site = my_site, dir_photos = "data/2023/photos/", str_to_pull = 'fish1')
+my_photo2 = fpr::fpr_photo_pull_by_str(site = my_site, dir_photos = "data/2023/photos/", str_to_pull = 'us_ef1_typical_2')
 
-my_caption2 = paste0('Rainbow trout captured upstream of crossing ', my_site, ' in 2023.')
+my_caption2 = paste0('Area electrofished ~350m upstream of crossing ', my_site, ' in 2023.')
 
 ```
 
-```{r photo-197360-06, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+```{r photo-197360-06, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
 knitr::include_graphics(my_photo2)
 
 ```

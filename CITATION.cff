@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: If you cite this report, please cite it as below.
+title: Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning
+  2020
+authors:
+- family-names: Irvine
+  given-names: Allan
+  orcid: https://orcid.org/0000-0002-3495-2128
+date-released: '2024-07-08'
+url: https://www.newgraphenvironment.com/fish_passage_bulkley_2020_reporting/
+repository-code: https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting
+preferred-citation:
+  type: report
+  title: Bulkley River and Morice River Watershed Groups Fish Passage Restoration
+    Planning 2020
+  authors:
+  - family-names: Irvine
+    given-names: Allan
+    orcid: https://orcid.org/0000-0002-3495-2128
+  institution:
+    name: New Graph Environment Ltd.
+  year: 2024
+  date-published: '2024-07-08'
+  url: https://www.newgraphenvironment.com/fish_passage_bulkley_2020_reporting/
+  repository-code: https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting
+
